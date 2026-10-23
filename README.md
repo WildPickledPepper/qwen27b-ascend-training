@@ -2,6 +2,10 @@
 
 记录我们在Ascend 910B2上学习和验证Qwen后训练的过程。这里维护训练环境、数据划分、可复现配置、实验代码和结果；推理部署与性能调优继续由原推理调优仓库维护。
 
+当前全参数训练准备已按用户要求暂停：2/3号卡初始化与双卡通信通过，27B尚未加载或训练；18:45:47确认两卡无活动进程。环境保留，不自动恢复。
+
+当前研究转向降低FP32 Adam显存占用：不做CPU卸载、不降低状态精度，讨论梯度窗口、无损压缩及单组状态能否还原m/v。相关容量是静态预算，尚未进行全参Adam实验，详见[讨论记录](research/2026-10-23-fp32-adam-memory.md)。
+
 ## 当前结果
 
 **Qwen3.8-27B已在单张910B2上完成BF16 LoRA训练基线。** 原权重冻结，不量化、不做CPU卸载；这次不是全参数训练。
@@ -23,6 +27,7 @@
 
 - [首个基线的完整配置、结果与复现方法](experiments/qwen27b-swift-sft/README.md)
 - [2026-10-23训练日志](journal/2026-10-23.md)
+- [FP32 Adam显存讨论与论文线索](research/2026-10-23-fp32-adam-memory.md)
 - [过滤后的逐步指标与证据](evidence/2026-10-23/qwen27b-swift-sft.json)
 - [训练入口与参数更新审计](experiments/qwen27b-swift-sft/train_baseline.py)
 - [独立数据划分](experiments/qwen27b-swift-sft/prepare_data.py)
