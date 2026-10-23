@@ -1,0 +1,252 @@
+{
+  "audit": [
+    {
+      "event": "train_begin",
+      "time": 1792751334.722262,
+      "trainable": 4456448,
+      "total": 27361185008,
+      "dtypes": [
+        "torch.bfloat16",
+        "torch.float32"
+      ],
+      "allocated": 54731891200,
+      "reserved": 54746152960,
+      "local_time": "2026-10-23T18:28:54.722262+08:00"
+    },
+    {
+      "event": "log",
+      "time": 1792751344.4266489,
+      "step": 0,
+      "logs": {
+        "eval_loss": 2.169002056121826,
+        "eval_runtime": 9.7009,
+        "eval_samples_per_second": 0.825,
+        "eval_steps_per_second": 0.825,
+        "eval_token_acc": 0.5219399538106235,
+        "epoch": 0
+      },
+      "peak_allocated": 55053389312,
+      "peak_reserved": 55083794432,
+      "local_time": "2026-10-23T18:29:04.426649+08:00"
+    },
+    {
+      "event": "log",
+      "time": 1792751364.1351323,
+      "step": 1,
+      "logs": {
+        "loss": 2.0105018615722656,
+        "grad_norm": 1.6005501747131348,
+        "learning_rate": 0.0001,
+        "token_acc": 0.5062240663900415,
+        "epoch": 0.125
+      },
+      "peak_allocated": 55282951168,
+      "peak_reserved": 55410950144,
+      "local_time": "2026-10-23T18:29:24.135132+08:00"
+    },
+    {
+      "event": "log",
+      "time": 1792751382.9600291,
+      "step": 2,
+      "logs": {
+        "loss": 2.5256056785583496,
+        "grad_norm": 0.7206734418869019,
+        "learning_rate": 0.0001,
+        "token_acc": 0.4567901234567901,
+        "epoch": 0.25
+      },
+      "peak_allocated": 55305764864,
+      "peak_reserved": 55465476096,
+      "local_time": "2026-10-23T18:29:42.960029+08:00"
+    },
+    {
+      "event": "log",
+      "time": 1792751401.35328,
+      "step": 3,
+      "logs": {
+        "loss": 1.802465558052063,
+        "grad_norm": 0.9887440800666809,
+        "learning_rate": 0.0001,
+        "token_acc": 0.7307692307692307,
+        "epoch": 0.375
+      },
+      "peak_allocated": 55319723008,
+      "peak_reserved": 55467573248,
+      "local_time": "2026-10-23T18:30:01.353280+08:00"
+    },
+    {
+      "event": "log",
+      "time": 1792751419.897687,
+      "step": 4,
+      "logs": {
+        "loss": 1.4215655326843262,
+        "grad_norm": 0.6299520134925842,
+        "learning_rate": 0.0001,
+        "token_acc": 0.726027397260274,
+        "epoch": 0.5
+      },
+      "peak_allocated": 55319723008,
+      "peak_reserved": 55473864704,
+      "local_time": "2026-10-23T18:30:19.897687+08:00"
+    },
+    {
+      "event": "log",
+      "time": 1792751438.5467944,
+      "step": 5,
+      "logs": {
+        "loss": 2.2401812076568604,
+        "grad_norm": 1.0150115489959717,
+        "learning_rate": 0.0001,
+        "token_acc": 0.5337837837837838,
+        "epoch": 0.625
+      },
+      "peak_allocated": 55319723008,
+      "peak_reserved": 55473864704,
+      "local_time": "2026-10-23T18:30:38.546794+08:00"
+    },
+    {
+      "event": "log",
+      "time": 1792751457.371547,
+      "step": 6,
+      "logs": {
+        "loss": 1.8605084419250488,
+        "grad_norm": 0.8912719488143921,
+        "learning_rate": 0.0001,
+        "token_acc": 0.5708333333333333,
+        "epoch": 0.75
+      },
+      "peak_allocated": 55354857472,
+      "peak_reserved": 55473864704,
+      "local_time": "2026-10-23T18:30:57.371547+08:00"
+    },
+    {
+      "event": "log",
+      "time": 1792751476.2907798,
+      "step": 7,
+      "logs": {
+        "loss": 2.3966012001037598,
+        "grad_norm": 0.7959252595901489,
+        "learning_rate": 0.0001,
+        "token_acc": 0.5,
+        "epoch": 0.875
+      },
+      "peak_allocated": 55355038720,
+      "peak_reserved": 55494836224,
+      "local_time": "2026-10-23T18:31:16.290780+08:00"
+    },
+    {
+      "event": "log",
+      "time": 1792751494.7911174,
+      "step": 8,
+      "logs": {
+        "loss": 2.0512804985046387,
+        "grad_norm": 0.8218547701835632,
+        "learning_rate": 0.0001,
+        "token_acc": 0.5625,
+        "epoch": 1.0
+      },
+      "peak_allocated": 55361899008,
+      "peak_reserved": 55494836224,
+      "local_time": "2026-10-23T18:31:34.791117+08:00"
+    },
+    {
+      "event": "log",
+      "time": 1792751503.7606971,
+      "step": 8,
+      "logs": {
+        "eval_loss": 1.9408514499664307,
+        "eval_runtime": 8.9654,
+        "eval_samples_per_second": 0.892,
+        "eval_steps_per_second": 0.892,
+        "eval_token_acc": 0.6073903002309469,
+        "epoch": 1.0
+      },
+      "peak_allocated": 55361899008,
+      "peak_reserved": 55494836224,
+      "local_time": "2026-10-23T18:31:43.760697+08:00"
+    },
+    {
+      "event": "log",
+      "time": 1792751504.3433075,
+      "step": 8,
+      "logs": {
+        "train_runtime": 169.6622,
+        "train_samples_per_second": 0.189,
+        "train_steps_per_second": 0.047,
+        "total_flos": 372054682288800.0,
+        "train_loss": 2.038588747382164,
+        "epoch": 1.0
+      },
+      "peak_allocated": 55361899008,
+      "peak_reserved": 55494836224,
+      "local_time": "2026-10-23T18:31:44.343307+08:00"
+    },
+    {
+      "event": "train_end",
+      "time": 1792751504.3729444,
+      "step": 8,
+      "changed_lora_tensors": 160,
+      "peak_allocated": 55361899008,
+      "peak_reserved": 55494836224,
+      "local_time": "2026-10-23T18:31:44.372944+08:00"
+    }
+  ],
+  "dataset": {
+    "source": "Instruction-Tuning-with-GPT-4/GPT-4-LLM/data/alpaca_gpt4_data_zh.json",
+    "sha256": "6fcb98c6d79691d1f9a88ef513335da9124e7fdeef5103343f5d9f9a6e8f4903",
+    "train": 32,
+    "validation": 8,
+    "seed": 20261023,
+    "max_tokens": 128,
+    "gsm8k_used": false
+  },
+  "adapter": {
+    "bytes": 17850184,
+    "sha256": "6e44ea1378170f6d3bd9bec471fa6b941ea885ed31b5ea0b0d4e9fa6af25a771",
+    "tensor_count": 160,
+    "only_lora": true,
+    "dtype": [
+      "F32"
+    ]
+  },
+  "model": "Qwen3.8-27B (Qwen3_5ForConditionalGeneration)",
+  "physical_device": 2,
+  "framework": {
+    "ms_swift": "4.6.0",
+    "torch": "2.10.0+cpu",
+    "torch_npu": "2.10.0.post4",
+    "transformers": "5.14.1",
+    "peft": "0.20.0",
+    "trl": "0.29.1",
+    "cann": "9.1.0",
+    "qwen_vl_utils": "0.0.14"
+  },
+  "configuration": {
+    "frozen_base_dtype": "BF16",
+    "lora_dtype": "FP32",
+    "target_modules": [
+      "q_proj",
+      "v_proj",
+      "in_proj_qkv"
+    ],
+    "rank": 4,
+    "alpha": 16,
+    "dropout": 0,
+    "batch": 1,
+    "gradient_accumulation": 4,
+    "max_length": 128,
+    "steps": 8,
+    "learning_rate": 0.0001,
+    "gradient_checkpointing": true,
+    "enable_npu_model_patch": false,
+    "attn_impl": "eager",
+    "gated_delta_net": "native Torch fallback",
+    "offload": false,
+    "quantized": false
+  },
+  "cleanup": {
+    "checked_at": "2026-10-23T18:32:12+08:00",
+    "card2_no_active_process": true,
+    "other_processes_stopped": false
+  }
+}
