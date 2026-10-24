@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "route": "direct_to_cpu_slice",
+      "copy_bytes": 134217728,
+      "seconds": 0.02938882983289659
+    },
+    {
+      "route": "new_cpu_tensor_then_cpu_copy",
+      "copy_bytes": 134217728,
+      "seconds": 0.03829261986538768,
+      "same_bits": true
+    }
+  ],
+  "scope": "128 MiB micro-copy within a 356 MiB CPU state, while full FP32 trial active; not whole-model bandwidth. Alternative did not improve this probe and was not adopted."
+}

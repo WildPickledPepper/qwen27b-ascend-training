@@ -1,0 +1,138 @@
+{
+  "scope": "Existing four-step runs; no additional training. Step2-4 mean, wall-clock harness instrumentation, not an Insight kernel trace.",
+  "groups": {
+    "fp32-npuadam-run1": {
+      "rows": [
+        {
+          "step": 1,
+          "total_seconds": 492.2228822300676,
+          "forward_wall_seconds": 1.3774948120117188,
+          "backward_update_and_other_seconds": 490.8453874180559,
+          "instrumented_counter_delta": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 359.8224584944546,
+            "device_copy_seconds": 70.39388275961392,
+            "npu_adam_seconds": 12.949247584445402
+          }
+        },
+        {
+          "step": 2,
+          "total_seconds": 190.71973497001454,
+          "forward_wall_seconds": 1.4061436653137207,
+          "backward_update_and_other_seconds": 189.31359130470082,
+          "instrumented_counter_delta": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 71.72754856292158,
+            "device_copy_seconds": 71.22467077500187,
+            "npu_adam_seconds": 12.570128922117874
+          }
+        },
+        {
+          "step": 3,
+          "total_seconds": 154.56092003989033,
+          "forward_wall_seconds": 1.5687310695648193,
+          "backward_update_and_other_seconds": 152.99218897032551,
+          "instrumented_counter_delta": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 46.90505611849949,
+            "device_copy_seconds": 58.52553577697836,
+            "npu_adam_seconds": 13.071893603773788
+          }
+        },
+        {
+          "step": 4,
+          "total_seconds": 139.98698946996592,
+          "forward_wall_seconds": 1.5881752967834473,
+          "backward_update_and_other_seconds": 138.39881417318247,
+          "instrumented_counter_delta": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 38.94585437234491,
+            "device_copy_seconds": 52.60361337359063,
+            "npu_adam_seconds": 13.114608615171164
+          }
+        }
+      ],
+      "warm_mean": {
+        "total_seconds": 161.75588149329027,
+        "forward_wall_seconds": 1.5210166772206624,
+        "backward_update_and_other_seconds": 160.2348648160696
+      }
+    },
+    "compressed-run1": {
+      "rows": [
+        {
+          "step": 1,
+          "total_seconds": 324.7386149801314,
+          "forward_wall_seconds": 1.8483755588531494,
+          "backward_update_and_other_seconds": 322.89023942127824,
+          "instrumented_counter_delta": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 0.0,
+            "device_copy_seconds": 0.0,
+            "npu_adam_seconds": 0.0
+          }
+        },
+        {
+          "step": 2,
+          "total_seconds": 320.60261808987707,
+          "forward_wall_seconds": 1.892197847366333,
+          "backward_update_and_other_seconds": 318.71042024251074,
+          "instrumented_counter_delta": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 0.0,
+            "device_copy_seconds": 0.0,
+            "npu_adam_seconds": 0.0
+          }
+        },
+        {
+          "step": 3,
+          "total_seconds": 323.36420944007114,
+          "forward_wall_seconds": 1.8588037490844727,
+          "backward_update_and_other_seconds": 321.50540569098666,
+          "instrumented_counter_delta": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 0.0,
+            "device_copy_seconds": 0.0,
+            "npu_adam_seconds": 0.0
+          }
+        },
+        {
+          "step": 4,
+          "total_seconds": 321.67603391990997,
+          "forward_wall_seconds": 1.8865349292755127,
+          "backward_update_and_other_seconds": 319.78949899063446,
+          "instrumented_counter_delta": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 0.0,
+            "device_copy_seconds": 0.0,
+            "npu_adam_seconds": 0.0
+          }
+        }
+      ],
+      "warm_mean": {
+        "total_seconds": 321.8809538166194,
+        "forward_wall_seconds": 1.8791788419087727,
+        "backward_update_and_other_seconds": 320.0017749747106
+      }
+    }
+  },
+  "notes": [
+    "Full-state reference keeps FP32 moments on CPU but performs Adam math on NPU.",
+    "Compressed counters were not instrumented for quantization or codec; zeros do not mean absent work.",
+    "Cannot assign exact percentages to quantization, ENEC, verification, or synchronization without additional profiling."
+  ],
+  "cleanup_cards_2_3_idle": {
+    "2": true,
+    "3": true
+  },
+  "latest_bf16_preflight": {
+    "completed": false,
+    "steps": 0,
+    "cache_probe": {
+      "default_passed": false,
+      "default_error": "Nonfinite validation 6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c tokens=49",
+      "disabled_tested": true
+    },
+    "result": "Initial native BF16 validation nonfinite with default and disabled autocast cache; not a cache-only fix."
+  }
+}

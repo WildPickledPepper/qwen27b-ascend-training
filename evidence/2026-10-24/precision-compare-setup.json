@@ -1,0 +1,103 @@
+{
+  "smoke": {
+    "passed": true,
+    "tests": [
+      {
+        "mode": "fp32",
+        "device": "npu:0",
+        "forward_max_abs": 0.0,
+        "input_gradient_max_abs": 0.0,
+        "first_update_max_abs": 1.862645149230957e-09,
+        "complete_steps": 2,
+        "moment_bytes": 524288
+      },
+      {
+        "mode": "fp32",
+        "device": "npu:1",
+        "forward_max_abs": 0.0,
+        "input_gradient_max_abs": 0.0,
+        "first_update_max_abs": 1.862645149230957e-09,
+        "complete_steps": 2,
+        "moment_bytes": 524288
+      },
+      {
+        "mode": "bf16",
+        "device": "npu:0",
+        "forward_max_abs": 0.0,
+        "input_gradient_max_abs": 0.0,
+        "first_update_max_abs": 1.862645149230957e-09,
+        "complete_steps": 2,
+        "moment_bytes": 524288
+      },
+      {
+        "mode": "bf16",
+        "device": "npu:1",
+        "forward_max_abs": 0.0,
+        "input_gradient_max_abs": 0.0,
+        "first_update_max_abs": 1.862645149230957e-09,
+        "complete_steps": 2,
+        "moment_bytes": 524288
+      },
+      {
+        "mode": "compressed",
+        "device": "npu:0",
+        "forward_max_abs": 0.0,
+        "input_gradient_max_abs": 0.0,
+        "first_update_max_abs": 1.862645149230957e-09,
+        "complete_steps": 2,
+        "moment_bytes": 71744
+      },
+      {
+        "mode": "compressed",
+        "device": "npu:1",
+        "forward_max_abs": 0.0,
+        "input_gradient_max_abs": 0.0,
+        "first_update_max_abs": 1.862645149230957e-09,
+        "complete_steps": 2,
+        "moment_bytes": 71744
+      }
+    ]
+  },
+  "aborted_initialization": {
+    "reason": "explicitly stopped during CPU m/v allocation; no complete updates; high memory PSI and THP compaction; restart with process-local PR_SET_THP_DISABLE",
+    "stopped_unix": 1792811798.538045,
+    "libc_512MiB_probe_seconds": {
+      "thp_enabled": [
+        6.591260500019416,
+        0.10947319003753364
+      ],
+      "thp_disabled": [
+        0.21730195987038314,
+        0.21558978990651667,
+        0.23324866010807455,
+        0.2238278400618583
+      ]
+    },
+    "global_server_policy_changed": false
+  },
+  "import_error": {
+    "completed_updates": 0,
+    "cause": "New orchestration script queue.py shadowed Python stdlib queue during imports; renamed to run_sequence.py",
+    "stopped_unix": 1792812025.5789504
+  },
+  "source_sha256": {
+    "train_compare.py": "236218378d4f8f195418fc2a1fa8d4e933d8ae6c6c28e0f961a6e704593ecff7",
+    "train_compare_initial.py": "d161bd5263eea7b4f42ed8dac540b04a2488d0dd4c780c8add87039f8dd7783c",
+    "bench_resident.py": "bfb515622be70a000f5a119babfd62ff626e2b4a30b229fda186e25f8a10d12f",
+    "smoke_compare.py": "00e4bb6eba7b1d74631d5ad6152838dc3d40a4c72570019a279949b043ff7df1"
+  },
+  "bridge_sha256": "378ae06e4655062663c9221812984c307e224b54264bbc1fa73258fffab15d77",
+  "source_lf_sha256": {
+    "train_compare.py": "a2c794049f26e2c98ff9e1296c446d9e62a5d7f5282b551fa29d46108d2850c2",
+    "train_compare_initial.py": "4fbeba8ca6c8ac112b61d14615519d892e4a8211b7035d01d559a37d93079ff8",
+    "bench_resident.py": "bfb515622be70a000f5a119babfd62ff626e2b4a30b229fda186e25f8a10d12f",
+    "smoke_compare.py": "00e4bb6eba7b1d74631d5ad6152838dc3d40a4c72570019a279949b043ff7df1"
+  },
+  "probe_source_sha256": {
+    "allocation_probe.py": "a90d137157d553f109e2e56036f012d8166f276ad95890f47a1b39ddd99efad5",
+    "libc_allocation_probe.py": "cea24d7c11ce75c2a0ebb76a646db20997f043dd822d380bf3007fbb55b2aa91",
+    "cpu_window_probe.py": "0c904958f5c4a9f197fce574b0947f0c8a708916bc7fcf75caf562a7e2e2d2f7",
+    "npu_offload_probe.py": "f4b7f9176f49becce1ca972e0971f95c9071517cde3c1fb7d6c5468d3e378be6",
+    "copyback_probe.py": "152c8de3cc59b6d240cb46535a342477049cdde3cc602fca0a69c194ece26d6d"
+  }
+}

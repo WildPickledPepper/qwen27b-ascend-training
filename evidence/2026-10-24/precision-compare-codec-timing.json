@@ -1,0 +1,326 @@
+{
+  "scope": "One newly observed full compressed update of first original training example, not retrospectively decomposed old four-step timings. No numerical algorithm change.",
+  "step_total_seconds": 325.2866942498367,
+  "forward_wall_seconds": 2.307854175567627,
+  "sampled_trajectory_observation_check": {
+    "sampled_coordinates": 52928,
+    "tensors": 851,
+    "first_update_only": true,
+    "weight_before_max_abs_delta": 0.0,
+    "gradient_max_abs_delta": 0.0,
+    "weight_after_max_abs_delta": 0.0
+  },
+  "codec_and_moments": {
+    "weight_read_decode_raw": {
+      "calls": 91,
+      "raw_bytes": 5676990464,
+      "wall_seconds": 0.02289196103811264,
+      "event_seconds": 0.019192219875752918,
+      "exclusive_wall_seconds": 0.02289196103811264,
+      "exclusive_event_seconds": 0.019192219875752918
+    },
+    "weight_read_decode_enec": {
+      "calls": 5625,
+      "raw_bytes": 315657027584,
+      "wall_seconds": 3.2735437620431185,
+      "event_seconds": 2.8828973010480388,
+      "exclusive_wall_seconds": 1.292630858719349,
+      "exclusive_event_seconds": 1.1942372201755622
+    },
+    "enec_read_decompress_bridge": {
+      "calls": 5625,
+      "raw_bytes": 0,
+      "wall_seconds": 1.9809129033237696,
+      "event_seconds": 1.6886600808724768,
+      "exclusive_wall_seconds": 1.9809129033237696,
+      "exclusive_event_seconds": 1.6886600808724768
+    },
+    "moment_update_quantization_and_audit": {
+      "calls": 1897,
+      "raw_bytes": 107573411840,
+      "wall_seconds": 297.73747524782084,
+      "event_seconds": 297.5347519893647,
+      "exclusive_wall_seconds": 297.73747524782084,
+      "exclusive_event_seconds": 297.5347519893647
+    },
+    "weight_encode_total": {
+      "calls": 1957,
+      "raw_bytes": 110593310720,
+      "wall_seconds": 4.1241898376028985,
+      "event_seconds": 3.9988668185472496,
+      "exclusive_wall_seconds": 2.1095350820105523,
+      "exclusive_event_seconds": 2.2479627385884497
+    },
+    "enec_compress_bridge": {
+      "calls": 1957,
+      "raw_bytes": 110593310720,
+      "wall_seconds": 0.8467384881805629,
+      "event_seconds": 0.7241252601593728,
+      "exclusive_wall_seconds": 0.8467384881805629,
+      "exclusive_event_seconds": 0.7241252601593728
+    },
+    "weight_verify_decode_enec": {
+      "calls": 1957,
+      "raw_bytes": 110593310720,
+      "wall_seconds": 1.1679162674117833,
+      "event_seconds": 1.0267788197994234,
+      "exclusive_wall_seconds": 0.48203289648517966,
+      "exclusive_event_seconds": 0.45265935948491237
+    },
+    "enec_verify_decompress_bridge": {
+      "calls": 1957,
+      "raw_bytes": 0,
+      "wall_seconds": 0.6858833709266037,
+      "event_seconds": 0.5741194603145116,
+      "exclusive_wall_seconds": 0.6858833709266037,
+      "exclusive_event_seconds": 0.5741194603145116
+    }
+  },
+  "phase_groups": {
+    "forward/weight_read_decode_raw": {
+      "calls": 43,
+      "raw_bytes": 2688548864,
+      "wall_seconds": 0.009571971371769905,
+      "event_seconds": 0.006827199958264826,
+      "exclusive_wall_seconds": 0.009571971371769905,
+      "exclusive_event_seconds": 0.006827199958264826
+    },
+    "forward/weight_read_decode_enec": {
+      "calls": 1866,
+      "raw_bytes": 104610136064,
+      "wall_seconds": 1.0073893771041185,
+      "event_seconds": 0.8880312403142463,
+      "exclusive_wall_seconds": 0.38913726597093046,
+      "exclusive_event_seconds": 0.3606570598632105
+    },
+    "forward/enec_read_decompress_bridge": {
+      "calls": 1866,
+      "raw_bytes": 0,
+      "wall_seconds": 0.618252111133188,
+      "event_seconds": 0.5273741804510355,
+      "exclusive_wall_seconds": 0.618252111133188,
+      "exclusive_event_seconds": 0.5273741804510355
+    },
+    "backward/weight_read_decode_enec": {
+      "calls": 3759,
+      "raw_bytes": 211046891520,
+      "wall_seconds": 2.266154384939,
+      "event_seconds": 1.9948660607337927,
+      "exclusive_wall_seconds": 0.9034935927484185,
+      "exclusive_event_seconds": 0.8335801603123517
+    },
+    "backward/enec_read_decompress_bridge": {
+      "calls": 3759,
+      "raw_bytes": 0,
+      "wall_seconds": 1.3626607921905816,
+      "event_seconds": 1.1612859004214413,
+      "exclusive_wall_seconds": 1.3626607921905816,
+      "exclusive_event_seconds": 1.1612859004214413
+    },
+    "backward/moment_update_quantization_and_audit": {
+      "calls": 1897,
+      "raw_bytes": 107573411840,
+      "wall_seconds": 297.73747524782084,
+      "event_seconds": 297.5347519893647,
+      "exclusive_wall_seconds": 297.73747524782084,
+      "exclusive_event_seconds": 297.5347519893647
+    },
+    "backward/weight_encode_total": {
+      "calls": 1957,
+      "raw_bytes": 110593310720,
+      "wall_seconds": 4.1241898376028985,
+      "event_seconds": 3.9988668185472496,
+      "exclusive_wall_seconds": 2.1095350820105523,
+      "exclusive_event_seconds": 2.2479627385884497
+    },
+    "backward/enec_compress_bridge": {
+      "calls": 1957,
+      "raw_bytes": 110593310720,
+      "wall_seconds": 0.8467384881805629,
+      "event_seconds": 0.7241252601593728,
+      "exclusive_wall_seconds": 0.8467384881805629,
+      "exclusive_event_seconds": 0.7241252601593728
+    },
+    "backward/weight_verify_decode_enec": {
+      "calls": 1957,
+      "raw_bytes": 110593310720,
+      "wall_seconds": 1.1679162674117833,
+      "event_seconds": 1.0267788197994234,
+      "exclusive_wall_seconds": 0.48203289648517966,
+      "exclusive_event_seconds": 0.45265935948491237
+    },
+    "backward/enec_verify_decompress_bridge": {
+      "calls": 1957,
+      "raw_bytes": 0,
+      "wall_seconds": 0.6858833709266037,
+      "event_seconds": 0.5741194603145116,
+      "exclusive_wall_seconds": 0.6858833709266037,
+      "exclusive_event_seconds": 0.5741194603145116
+    },
+    "backward/weight_read_decode_raw": {
+      "calls": 48,
+      "raw_bytes": 2988441600,
+      "wall_seconds": 0.013319989666342735,
+      "event_seconds": 0.012365019917488092,
+      "exclusive_wall_seconds": 0.013319989666342735,
+      "exclusive_event_seconds": 0.012365019917488092
+    }
+  },
+  "timing_semantics": "NPU event spans and nested exclusive host wall time. Event spans include device idle/host submission gaps inside the scope, not just kernel busy time. Across devices spans may overlap; do not sum event and wall times.",
+  "reference_original_four_steps": [
+    {
+      "step": 1,
+      "total_seconds": 492.2228822300676,
+      "cpu_to_npu_seconds": 70.39388275961392,
+      "npu_to_cpu_seconds": 359.8224584944546,
+      "npu_adam_seconds": 12.949247584445402
+    },
+    {
+      "step": 2,
+      "total_seconds": 190.71973497001454,
+      "cpu_to_npu_seconds": 71.22467077500187,
+      "npu_to_cpu_seconds": 71.72754856292158,
+      "npu_adam_seconds": 12.570128922117874
+    },
+    {
+      "step": 3,
+      "total_seconds": 154.56092003989033,
+      "cpu_to_npu_seconds": 58.52553577697836,
+      "npu_to_cpu_seconds": 46.90505611849949,
+      "npu_adam_seconds": 13.071893603773788
+    },
+    {
+      "step": 4,
+      "total_seconds": 139.98698946996592,
+      "cpu_to_npu_seconds": 52.60361337359063,
+      "npu_to_cpu_seconds": 38.94585437234491,
+      "npu_adam_seconds": 13.114608615171164
+    }
+  ],
+  "reference_warm_means": {
+    "total_seconds": 161.75588149329027,
+    "cpu_to_npu_seconds": 60.78460664185695,
+    "npu_to_cpu_seconds": 52.52615301792199,
+    "npu_adam_seconds": 12.918877047020942
+  },
+  "source_sha256": {
+    "profile_codec_scopes.py": "86bbd38d865c467d82c42bb19ae80c862f60295a82e68a1b3eb467b0c0bea978",
+    "train_profile_codec.py": "fb4f9062ecd9f1ea187dc50ba0a698b0d7d27a5a92d8ad98caf4c5321809822e",
+    "smoke_codec_scopes.py": "b033839ae9b63e53c78749727b008bf73afe7eab6fd61837efaed72880c09718"
+  },
+  "notes": [
+    "Codec scopes use nested accounting; compression total includes its verification child. Do not add inclusive parent and child.",
+    "Event spans exclude work queued before their start, but include internal host-submission gaps; not pure kernel busy time.",
+    "Host wall and device event spans overlap. Do not add the two kinds of time.",
+    "Quantized moment scope includes FP32 Adam math, decode/requantization/packing and existing sample/progress audits. It is not solely entropy coding.",
+    "Reference transfer phase includes allocations, window management and waits; not a peak PCIe/DMA bandwidth measurement."
+  ],
+  "cleanup": {
+    "checked_unix": 1792821635.8568728,
+    "cards_2_3_idle": {
+      "2": true,
+      "3": true
+    },
+    "other_jobs_not_stopped": true
+  },
+  "observer_smoke": {
+    "0": {
+      "timing": "NPU event spans and nested exclusive host wall time. Event spans include device idle/host submission gaps inside the scope, not just kernel busy time. Across devices spans may overlap; do not sum event and wall times.",
+      "groups": {
+        "smoke/weight_encode_total": {
+          "calls": 1,
+          "raw_bytes": 4194304,
+          "wall_seconds": 0.20171379018574953,
+          "event_seconds": 0.011838000297546386,
+          "exclusive_wall_seconds": 0.1999024001415819,
+          "exclusive_event_seconds": 0.010254060328006744
+        },
+        "smoke/enec_compress_bridge": {
+          "calls": 1,
+          "raw_bytes": 4194304,
+          "wall_seconds": 0.0011992799118161201,
+          "event_seconds": 0.0010592399835586549,
+          "exclusive_wall_seconds": 0.0011992799118161201,
+          "exclusive_event_seconds": 0.0010592399835586549
+        },
+        "smoke/weight_verify_decode_enec": {
+          "calls": 1,
+          "raw_bytes": 4194304,
+          "wall_seconds": 0.0006121101323515177,
+          "event_seconds": 0.0005246999859809875,
+          "exclusive_wall_seconds": 0.00027576019056141376,
+          "exclusive_event_seconds": 0.00025709998607635495
+        },
+        "smoke/enec_verify_decompress_bridge": {
+          "calls": 1,
+          "raw_bytes": 0,
+          "wall_seconds": 0.0003363499417901039,
+          "event_seconds": 0.00026759999990463255,
+          "exclusive_wall_seconds": 0.0003363499417901039,
+          "exclusive_event_seconds": 0.00026759999990463255
+        },
+        "smoke/weight_read_decode_raw": {
+          "calls": 1,
+          "raw_bytes": 4194304,
+          "wall_seconds": 0.0003151698037981987,
+          "event_seconds": 0.00013050000369548798,
+          "exclusive_wall_seconds": 0.0003151698037981987,
+          "exclusive_event_seconds": 0.00013050000369548798
+        }
+      },
+      "scopes": 5
+    },
+    "1": {
+      "timing": "NPU event spans and nested exclusive host wall time. Event spans include device idle/host submission gaps inside the scope, not just kernel busy time. Across devices spans may overlap; do not sum event and wall times.",
+      "groups": {
+        "smoke/weight_encode_total": {
+          "calls": 1,
+          "raw_bytes": 4194304,
+          "wall_seconds": 0.004960659891366959,
+          "event_seconds": 0.003465059995651245,
+          "exclusive_wall_seconds": 0.003945270087569952,
+          "exclusive_event_seconds": 0.0026324599981307983
+        },
+        "smoke/enec_compress_bridge": {
+          "calls": 1,
+          "raw_bytes": 4194304,
+          "wall_seconds": 0.0004621099215000868,
+          "event_seconds": 0.0003613199889659882,
+          "exclusive_wall_seconds": 0.0004621099215000868,
+          "exclusive_event_seconds": 0.0003613199889659882
+        },
+        "smoke/weight_verify_decode_enec": {
+          "calls": 1,
+          "raw_bytes": 4194304,
+          "wall_seconds": 0.0005532798822969198,
+          "event_seconds": 0.0004712800085544586,
+          "exclusive_wall_seconds": 0.00025310972705483437,
+          "exclusive_event_seconds": 0.00024366000294685363
+        },
+        "smoke/enec_verify_decompress_bridge": {
+          "calls": 1,
+          "raw_bytes": 0,
+          "wall_seconds": 0.00030017015524208546,
+          "event_seconds": 0.00022762000560760498,
+          "exclusive_wall_seconds": 0.00030017015524208546,
+          "exclusive_event_seconds": 0.00022762000560760498
+        },
+        "smoke/weight_read_decode_raw": {
+          "calls": 1,
+          "raw_bytes": 4194304,
+          "wall_seconds": 0.00026435009203851223,
+          "event_seconds": 0.00019633999466896058,
+          "exclusive_wall_seconds": 0.00026435009203851223,
+          "exclusive_event_seconds": 0.00019633999466896058
+        }
+      },
+      "scopes": 5
+    }
+  },
+  "source_lf_sha256": {
+    "profile_codec_scopes.py": "3514bc37d035ff04f453cbcf6e2c8990bafedad82167043712fb71647331c25d",
+    "train_profile_codec.py": "315c992803d1797015a58385675e81211c66bcdf0d86c604c17f8e77732e9b9e",
+    "smoke_codec_scopes.py": "22415cdacb56a8209d1eb2fb275359a21d4d862df2d466aad399bb3d30c3ef5d"
+  },
+  "source_hash_note": "Raw executed source hashes retained; LF-normalized hashes added for Git text line-ending normalization."
+}

@@ -1,0 +1,3282 @@
+{
+  "guarded_attempt": {
+    "completed": false,
+    "full_parameter_steps": 0,
+    "canonical_validation_before": {
+      "loss": 2.056467010572931,
+      "assistant_token_accuracy": 0.5242494226327945,
+      "assistant_tokens": 433,
+      "examples": [
+        {
+          "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+          "tokens": 49,
+          "assistant_tokens": 24,
+          "loss": 4.169748306274414,
+          "correct": 10
+        },
+        {
+          "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+          "tokens": 56,
+          "assistant_tokens": 31,
+          "loss": 1.9790339469909668,
+          "correct": 15
+        },
+        {
+          "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+          "tokens": 71,
+          "assistant_tokens": 51,
+          "loss": 1.3668724298477173,
+          "correct": 34
+        },
+        {
+          "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+          "tokens": 85,
+          "assistant_tokens": 66,
+          "loss": 1.1862237453460693,
+          "correct": 48
+        },
+        {
+          "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+          "tokens": 91,
+          "assistant_tokens": 35,
+          "loss": 1.4513803720474243,
+          "correct": 22
+        },
+        {
+          "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+          "tokens": 98,
+          "assistant_tokens": 31,
+          "loss": 2.702025890350342,
+          "correct": 12
+        },
+        {
+          "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+          "tokens": 108,
+          "assistant_tokens": 86,
+          "loss": 1.7842814922332764,
+          "correct": 56
+        },
+        {
+          "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+          "tokens": 126,
+          "assistant_tokens": 109,
+          "loss": 2.6882166862487793,
+          "correct": 30
+        }
+      ],
+      "canonical_fp32": true
+    },
+    "failure_stage": "BF16 native validation before optimizer update",
+    "failure": "Nonfinite loss during native evaluation; not old completed four-step run"
+  },
+  "single_example_layer_diagnostic": {
+    "fp32_loss": 4.169748306274414,
+    "bf16_loss": 4.169233798980713
+  },
+  "layer_outputs": {
+    "fp32": [
+      {
+        "module": "model.layers.0",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 37.419837951660156,
+          "rms": 0.2745361030101776
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 0.546875,
+          "rms": 0.01419613417237997
+        }
+      },
+      {
+        "module": "model.layers.1",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 54.287315368652344,
+          "rms": 0.3524729311466217
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 37.419837951660156,
+          "rms": 0.2745361030101776
+        }
+      },
+      {
+        "module": "model.layers.2",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 75.3616714477539,
+          "rms": 0.36707890033721924
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 54.287315368652344,
+          "rms": 0.3524729311466217
+        }
+      },
+      {
+        "module": "model.layers.3",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 82.36071014404297,
+          "rms": 0.47006264328956604
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 75.3616714477539,
+          "rms": 0.36707890033721924
+        }
+      },
+      {
+        "module": "model.layers.4",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 84.4775619506836,
+          "rms": 0.49396657943725586
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 82.36071014404297,
+          "rms": 0.47006264328956604
+        }
+      },
+      {
+        "module": "model.layers.5",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 86.74116516113281,
+          "rms": 0.5226287245750427
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 84.4775619506836,
+          "rms": 0.49396657943725586
+        }
+      },
+      {
+        "module": "model.layers.6",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 104.49667358398438,
+          "rms": 0.5678985118865967
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 86.74116516113281,
+          "rms": 0.5226287245750427
+        }
+      },
+      {
+        "module": "model.layers.7",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 101.84276580810547,
+          "rms": 0.6323500275611877
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 104.49667358398438,
+          "rms": 0.5678985118865967
+        }
+      },
+      {
+        "module": "model.layers.8",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 105.92020416259766,
+          "rms": 0.6940910220146179
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 101.84276580810547,
+          "rms": 0.6323500275611877
+        }
+      },
+      {
+        "module": "model.layers.9",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 120.16895294189453,
+          "rms": 0.7371390461921692
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 105.92020416259766,
+          "rms": 0.6940910220146179
+        }
+      },
+      {
+        "module": "model.layers.10",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 153.1747283935547,
+          "rms": 0.7978654503822327
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 120.16895294189453,
+          "rms": 0.7371390461921692
+        }
+      },
+      {
+        "module": "model.layers.11",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 149.08311462402344,
+          "rms": 0.8553950786590576
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 153.1747283935547,
+          "rms": 0.7978654503822327
+        }
+      },
+      {
+        "module": "model.layers.12",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 150.7205352783203,
+          "rms": 0.9003918170928955
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 149.08311462402344,
+          "rms": 0.8553950786590576
+        }
+      },
+      {
+        "module": "model.layers.13",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 158.25436401367188,
+          "rms": 0.9351942539215088
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 150.7205352783203,
+          "rms": 0.9003918170928955
+        }
+      },
+      {
+        "module": "model.layers.14",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 189.46336364746094,
+          "rms": 0.9918598532676697
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 158.25436401367188,
+          "rms": 0.9351942539215088
+        }
+      },
+      {
+        "module": "model.layers.15",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 183.61459350585938,
+          "rms": 1.0227291584014893
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 189.46336364746094,
+          "rms": 0.9918598532676697
+        }
+      },
+      {
+        "module": "model.layers.16",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 179.2209014892578,
+          "rms": 1.050514578819275
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 183.61459350585938,
+          "rms": 1.0227291584014893
+        }
+      },
+      {
+        "module": "model.layers.17",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 178.82945251464844,
+          "rms": 1.0640373229980469
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 179.2209014892578,
+          "rms": 1.050514578819275
+        }
+      },
+      {
+        "module": "model.layers.18",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 212.91329956054688,
+          "rms": 1.1264581680297852
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 178.82945251464844,
+          "rms": 1.0640373229980469
+        }
+      },
+      {
+        "module": "model.layers.19",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 186.6433868408203,
+          "rms": 1.0814002752304077
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 212.91329956054688,
+          "rms": 1.1264581680297852
+        }
+      },
+      {
+        "module": "model.layers.20",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 150.77403259277344,
+          "rms": 1.0203040838241577
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 186.6433868408203,
+          "rms": 1.0814002752304077
+        }
+      },
+      {
+        "module": "model.layers.21",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 248.56202697753906,
+          "rms": 1.172079086303711
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 150.77403259277344,
+          "rms": 1.0203040838241577
+        }
+      },
+      {
+        "module": "model.layers.22",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 251.2174835205078,
+          "rms": 1.2487645149230957
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 248.56202697753906,
+          "rms": 1.172079086303711
+        }
+      },
+      {
+        "module": "model.layers.23",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 254.1363067626953,
+          "rms": 1.2225432395935059
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 251.2174835205078,
+          "rms": 1.2487645149230957
+        }
+      },
+      {
+        "module": "model.layers.24",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 254.2304229736328,
+          "rms": 1.2333840131759644
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 254.1363067626953,
+          "rms": 1.2225432395935059
+        }
+      },
+      {
+        "module": "model.layers.25",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 278.67034912109375,
+          "rms": 1.2960604429244995
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 254.2304229736328,
+          "rms": 1.2333840131759644
+        }
+      },
+      {
+        "module": "model.layers.26",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.04840087890625,
+          "rms": 1.3859227895736694
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 278.67034912109375,
+          "rms": 1.2960604429244995
+        }
+      },
+      {
+        "module": "model.layers.27",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.37005615234375,
+          "rms": 1.3377196788787842
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.04840087890625,
+          "rms": 1.3859227895736694
+        }
+      },
+      {
+        "module": "model.layers.28",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 280.9769592285156,
+          "rms": 1.3195937871932983
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.37005615234375,
+          "rms": 1.3377196788787842
+        }
+      },
+      {
+        "module": "model.layers.29",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 280.7166442871094,
+          "rms": 1.325929880142212
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 280.9769592285156,
+          "rms": 1.3195937871932983
+        }
+      },
+      {
+        "module": "model.layers.30",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 282.2113037109375,
+          "rms": 1.3966261148452759
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 280.7166442871094,
+          "rms": 1.325929880142212
+        }
+      },
+      {
+        "module": "model.layers.31",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.748291015625,
+          "rms": 1.3530696630477905
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 282.2113037109375,
+          "rms": 1.3966261148452759
+        }
+      },
+      {
+        "module": "model.layers.32",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.37786865234375,
+          "rms": 1.3377443552017212
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.748291015625,
+          "rms": 1.3530696630477905
+        }
+      },
+      {
+        "module": "model.layers.33",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 280.9901123046875,
+          "rms": 1.33284330368042
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.37786865234375,
+          "rms": 1.3377443552017212
+        }
+      },
+      {
+        "module": "model.layers.34",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 282.03631591796875,
+          "rms": 1.4186824560165405
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 280.9901123046875,
+          "rms": 1.33284330368042
+        }
+      },
+      {
+        "module": "model.layers.35",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.0103454589844,
+          "rms": 1.3678807020187378
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 282.03631591796875,
+          "rms": 1.4186824560165405
+        }
+      },
+      {
+        "module": "model.layers.36",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 280.5948181152344,
+          "rms": 1.3739633560180664
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.0103454589844,
+          "rms": 1.3678807020187378
+        }
+      },
+      {
+        "module": "model.layers.37",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 280.0755920410156,
+          "rms": 1.414056420326233
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 280.5948181152344,
+          "rms": 1.3739633560180664
+        }
+      },
+      {
+        "module": "model.layers.38",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 279.8646545410156,
+          "rms": 1.4824469089508057
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 280.0755920410156,
+          "rms": 1.414056420326233
+        }
+      },
+      {
+        "module": "model.layers.39",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 276.39984130859375,
+          "rms": 1.4228898286819458
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 279.8646545410156,
+          "rms": 1.4824469089508057
+        }
+      },
+      {
+        "module": "model.layers.40",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 274.36376953125,
+          "rms": 1.432725429534912
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 276.39984130859375,
+          "rms": 1.4228898286819458
+        }
+      },
+      {
+        "module": "model.layers.41",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 274.57720947265625,
+          "rms": 1.4703443050384521
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 274.36376953125,
+          "rms": 1.432725429534912
+        }
+      },
+      {
+        "module": "model.layers.42",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 270.6529235839844,
+          "rms": 1.601995825767517
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 274.57720947265625,
+          "rms": 1.4703443050384521
+        }
+      },
+      {
+        "module": "model.layers.43",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 266.58209228515625,
+          "rms": 1.581777572631836
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 270.6529235839844,
+          "rms": 1.601995825767517
+        }
+      },
+      {
+        "module": "model.layers.44",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 264.09564208984375,
+          "rms": 1.5995301008224487
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 266.58209228515625,
+          "rms": 1.581777572631836
+        }
+      },
+      {
+        "module": "model.layers.45",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 262.6715393066406,
+          "rms": 1.6267262697219849
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 264.09564208984375,
+          "rms": 1.5995301008224487
+        }
+      },
+      {
+        "module": "model.layers.46",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 253.7765655517578,
+          "rms": 1.721843957901001
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 262.6715393066406,
+          "rms": 1.6267262697219849
+        }
+      },
+      {
+        "module": "model.layers.47",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 230.57473754882812,
+          "rms": 1.6822320222854614
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 253.7765655517578,
+          "rms": 1.721843957901001
+        }
+      },
+      {
+        "module": "model.layers.48",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 199.38893127441406,
+          "rms": 1.685521125793457
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 230.57473754882812,
+          "rms": 1.6822320222854614
+        }
+      },
+      {
+        "module": "model.layers.49",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 194.70355224609375,
+          "rms": 1.717321753501892
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 199.38893127441406,
+          "rms": 1.685521125793457
+        }
+      },
+      {
+        "module": "model.layers.50",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 200.33706665039062,
+          "rms": 1.980158805847168
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 194.70355224609375,
+          "rms": 1.717321753501892
+        }
+      },
+      {
+        "module": "model.layers.51",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 132.55581665039062,
+          "rms": 2.022484540939331
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 200.33706665039062,
+          "rms": 1.980158805847168
+        }
+      },
+      {
+        "module": "model.layers.52",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 113.58218383789062,
+          "rms": 2.2422080039978027
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 132.55581665039062,
+          "rms": 2.022484540939331
+        }
+      },
+      {
+        "module": "model.layers.53",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 124.82588195800781,
+          "rms": 2.4703054428100586
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 113.58218383789062,
+          "rms": 2.2422080039978027
+        }
+      },
+      {
+        "module": "model.layers.54",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 540.4892578125,
+          "rms": 3.2232322692871094
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 124.82588195800781,
+          "rms": 2.4703054428100586
+        }
+      },
+      {
+        "module": "model.layers.55",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 334.2917785644531,
+          "rms": 3.1074917316436768
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 540.4892578125,
+          "rms": 3.2232322692871094
+        }
+      },
+      {
+        "module": "model.layers.56",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 387.45599365234375,
+          "rms": 3.3530426025390625
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 334.2917785644531,
+          "rms": 3.1074917316436768
+        }
+      },
+      {
+        "module": "model.layers.57",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 396.7614440917969,
+          "rms": 3.59423565864563
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 387.45599365234375,
+          "rms": 3.3530426025390625
+        }
+      },
+      {
+        "module": "model.layers.58",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 817.498779296875,
+          "rms": 4.391662120819092
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 396.7614440917969,
+          "rms": 3.59423565864563
+        }
+      },
+      {
+        "module": "model.layers.59",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 208.28265380859375,
+          "rms": 3.9130094051361084
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 817.498779296875,
+          "rms": 4.391662120819092
+        }
+      },
+      {
+        "module": "model.layers.60",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 223.97682189941406,
+          "rms": 4.253157615661621
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 208.28265380859375,
+          "rms": 3.9130094051361084
+        }
+      },
+      {
+        "module": "model.layers.61",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 223.242431640625,
+          "rms": 4.478821754455566
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 223.97682189941406,
+          "rms": 4.253157615661621
+        }
+      },
+      {
+        "module": "model.layers.62",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 226.40084838867188,
+          "rms": 5.0316853523254395
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 223.242431640625,
+          "rms": 4.478821754455566
+        }
+      },
+      {
+        "module": "model.layers.63",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 621.2249755859375,
+          "rms": 6.592174053192139
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 226.40084838867188,
+          "rms": 5.0316853523254395
+        }
+      }
+    ],
+    "bf16": [
+      {
+        "module": "model.layers.0",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 37.39031982421875,
+          "rms": 0.2744721472263336
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 0.546875,
+          "rms": 0.01419613417237997
+        }
+      },
+      {
+        "module": "model.layers.1",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 54.14813232421875,
+          "rms": 0.3521987497806549
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 37.39031982421875,
+          "rms": 0.2744721472263336
+        }
+      },
+      {
+        "module": "model.layers.2",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 75.24188232421875,
+          "rms": 0.3667815029621124
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 54.14813232421875,
+          "rms": 0.3521987497806549
+        }
+      },
+      {
+        "module": "model.layers.3",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 82.26531982421875,
+          "rms": 0.4697421193122864
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 75.24188232421875,
+          "rms": 0.3667815029621124
+        }
+      },
+      {
+        "module": "model.layers.4",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 84.35965728759766,
+          "rms": 0.4936358332633972
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 82.26531982421875,
+          "rms": 0.4697421193122864
+        }
+      },
+      {
+        "module": "model.layers.5",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 86.61148834228516,
+          "rms": 0.5223402380943298
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 84.35965728759766,
+          "rms": 0.4936358332633972
+        }
+      },
+      {
+        "module": "model.layers.6",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 104.42008209228516,
+          "rms": 0.5676717162132263
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 86.61148834228516,
+          "rms": 0.5223402380943298
+        }
+      },
+      {
+        "module": "model.layers.7",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 101.76187896728516,
+          "rms": 0.6321338415145874
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 104.42008209228516,
+          "rms": 0.5676717162132263
+        }
+      },
+      {
+        "module": "model.layers.8",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 105.83023834228516,
+          "rms": 0.6939235925674438
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 101.76187896728516,
+          "rms": 0.6321338415145874
+        }
+      },
+      {
+        "module": "model.layers.9",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 120.10758209228516,
+          "rms": 0.7370306849479675
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 105.83023834228516,
+          "rms": 0.6939235925674438
+        }
+      },
+      {
+        "module": "model.layers.10",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 153.13296508789062,
+          "rms": 0.7978101372718811
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 120.10758209228516,
+          "rms": 0.7370306849479675
+        }
+      },
+      {
+        "module": "model.layers.11",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 149.04312133789062,
+          "rms": 0.8553223609924316
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 153.13296508789062,
+          "rms": 0.7978101372718811
+        }
+      },
+      {
+        "module": "model.layers.12",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 150.67984008789062,
+          "rms": 0.9003207087516785
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 149.04312133789062,
+          "rms": 0.8553223609924316
+        }
+      },
+      {
+        "module": "model.layers.13",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 158.27359008789062,
+          "rms": 0.9351277351379395
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 150.67984008789062,
+          "rms": 0.9003207087516785
+        }
+      },
+      {
+        "module": "model.layers.14",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 189.40640258789062,
+          "rms": 0.9917171597480774
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 158.27359008789062,
+          "rms": 0.9351277351379395
+        }
+      },
+      {
+        "module": "model.layers.15",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 183.55484008789062,
+          "rms": 1.0226256847381592
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 189.40640258789062,
+          "rms": 0.9917171597480774
+        }
+      },
+      {
+        "module": "model.layers.16",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 179.14077758789062,
+          "rms": 1.0503841638565063
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 183.55484008789062,
+          "rms": 1.0226256847381592
+        }
+      },
+      {
+        "module": "model.layers.17",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 178.75405883789062,
+          "rms": 1.0639657974243164
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 179.14077758789062,
+          "rms": 1.0503841638565063
+        }
+      },
+      {
+        "module": "model.layers.18",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 213.09780883789062,
+          "rms": 1.1267539262771606
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 178.75405883789062,
+          "rms": 1.0639657974243164
+        }
+      },
+      {
+        "module": "model.layers.19",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 186.81655883789062,
+          "rms": 1.0816500186920166
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 213.09780883789062,
+          "rms": 1.1267539262771606
+        }
+      },
+      {
+        "module": "model.layers.20",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 151.31655883789062,
+          "rms": 1.0208107233047485
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 186.81655883789062,
+          "rms": 1.0816500186920166
+        }
+      },
+      {
+        "module": "model.layers.21",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 249.2730712890625,
+          "rms": 1.1730676889419556
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 151.31655883789062,
+          "rms": 1.0208107233047485
+        }
+      },
+      {
+        "module": "model.layers.22",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 251.9215087890625,
+          "rms": 1.2496763467788696
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 249.2730712890625,
+          "rms": 1.1730676889419556
+        }
+      },
+      {
+        "module": "model.layers.23",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 254.8511962890625,
+          "rms": 1.2234008312225342
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 251.9215087890625,
+          "rms": 1.2496763467788696
+        }
+      },
+      {
+        "module": "model.layers.24",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 254.9498291015625,
+          "rms": 1.2342400550842285
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 254.8511962890625,
+          "rms": 1.2234008312225342
+        }
+      },
+      {
+        "module": "model.layers.25",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 279.3668212890625,
+          "rms": 1.2969101667404175
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 254.9498291015625,
+          "rms": 1.2342400550842285
+        }
+      },
+      {
+        "module": "model.layers.26",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.7418212890625,
+          "rms": 1.3867133855819702
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 279.3668212890625,
+          "rms": 1.2969101667404175
+        }
+      },
+      {
+        "module": "model.layers.27",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 282.0621337890625,
+          "rms": 1.3385404348373413
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.7418212890625,
+          "rms": 1.3867133855819702
+        }
+      },
+      {
+        "module": "model.layers.28",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.6685791015625,
+          "rms": 1.3204022645950317
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 282.0621337890625,
+          "rms": 1.3385404348373413
+        }
+      },
+      {
+        "module": "model.layers.29",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.40802001953125,
+          "rms": 1.3267055749893188
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.6685791015625,
+          "rms": 1.3204022645950317
+        }
+      },
+      {
+        "module": "model.layers.30",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 282.90411376953125,
+          "rms": 1.3973511457443237
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.40802001953125,
+          "rms": 1.3267055749893188
+        }
+      },
+      {
+        "module": "model.layers.31",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 282.43829345703125,
+          "rms": 1.3537722826004028
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 282.90411376953125,
+          "rms": 1.3973511457443237
+        }
+      },
+      {
+        "module": "model.layers.32",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 282.06585693359375,
+          "rms": 1.3384647369384766
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 282.43829345703125,
+          "rms": 1.3537722826004028
+        }
+      },
+      {
+        "module": "model.layers.33",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.67791748046875,
+          "rms": 1.3334888219833374
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 282.06585693359375,
+          "rms": 1.3384647369384766
+        }
+      },
+      {
+        "module": "model.layers.34",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 282.72479248046875,
+          "rms": 1.4193024635314941
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.67791748046875,
+          "rms": 1.3334888219833374
+        }
+      },
+      {
+        "module": "model.layers.35",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.69549560546875,
+          "rms": 1.3683080673217773
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 282.72479248046875,
+          "rms": 1.4193024635314941
+        }
+      },
+      {
+        "module": "model.layers.36",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.2802734375,
+          "rms": 1.374396800994873
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.69549560546875,
+          "rms": 1.3683080673217773
+        }
+      },
+      {
+        "module": "model.layers.37",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 280.763916015625,
+          "rms": 1.4145621061325073
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 281.2802734375,
+          "rms": 1.374396800994873
+        }
+      },
+      {
+        "module": "model.layers.38",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 280.556884765625,
+          "rms": 1.4829376935958862
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 280.763916015625,
+          "rms": 1.4145621061325073
+        }
+      },
+      {
+        "module": "model.layers.39",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 277.095947265625,
+          "rms": 1.423353672027588
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 280.556884765625,
+          "rms": 1.4829376935958862
+        }
+      },
+      {
+        "module": "model.layers.40",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 275.066650390625,
+          "rms": 1.4332554340362549
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 277.095947265625,
+          "rms": 1.423353672027588
+        }
+      },
+      {
+        "module": "model.layers.41",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 275.285400390625,
+          "rms": 1.4708088636398315
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 275.066650390625,
+          "rms": 1.4332554340362549
+        }
+      },
+      {
+        "module": "model.layers.42",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 271.371337890625,
+          "rms": 1.6023187637329102
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 275.285400390625,
+          "rms": 1.4708088636398315
+        }
+      },
+      {
+        "module": "model.layers.43",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 267.316650390625,
+          "rms": 1.582075834274292
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 271.371337890625,
+          "rms": 1.6023187637329102
+        }
+      },
+      {
+        "module": "model.layers.44",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 264.832275390625,
+          "rms": 1.5998294353485107
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 267.316650390625,
+          "rms": 1.582075834274292
+        }
+      },
+      {
+        "module": "model.layers.45",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 263.408447265625,
+          "rms": 1.6270360946655273
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 264.832275390625,
+          "rms": 1.5998294353485107
+        }
+      },
+      {
+        "module": "model.layers.46",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 254.489501953125,
+          "rms": 1.722083330154419
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 263.408447265625,
+          "rms": 1.6270360946655273
+        }
+      },
+      {
+        "module": "model.layers.47",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 231.270751953125,
+          "rms": 1.6824167966842651
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 254.489501953125,
+          "rms": 1.722083330154419
+        }
+      },
+      {
+        "module": "model.layers.48",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 200.083251953125,
+          "rms": 1.68558931350708
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 231.270751953125,
+          "rms": 1.6824167966842651
+        }
+      },
+      {
+        "module": "model.layers.49",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 195.419189453125,
+          "rms": 1.7173984050750732
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 200.083251953125,
+          "rms": 1.68558931350708
+        }
+      },
+      {
+        "module": "model.layers.50",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 201.012939453125,
+          "rms": 1.9802086353302002
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 195.419189453125,
+          "rms": 1.7173984050750732
+        }
+      },
+      {
+        "module": "model.layers.51",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 133.262939453125,
+          "rms": 2.0221104621887207
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 201.012939453125,
+          "rms": 1.9802086353302002
+        }
+      },
+      {
+        "module": "model.layers.52",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 113.5775146484375,
+          "rms": 2.2417707443237305
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 133.262939453125,
+          "rms": 2.0221104621887207
+        }
+      },
+      {
+        "module": "model.layers.53",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 124.7611083984375,
+          "rms": 2.4697861671447754
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 113.5775146484375,
+          "rms": 2.2417707443237305
+        }
+      },
+      {
+        "module": "model.layers.54",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 541.8310546875,
+          "rms": 3.2231497764587402
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 124.7611083984375,
+          "rms": 2.4697861671447754
+        }
+      },
+      {
+        "module": "model.layers.55",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 335.8310546875,
+          "rms": 3.1074235439300537
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 541.8310546875,
+          "rms": 3.2231497764587402
+        }
+      },
+      {
+        "module": "model.layers.56",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 386.7044677734375,
+          "rms": 3.3526275157928467
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 335.8310546875,
+          "rms": 3.1074235439300537
+        }
+      },
+      {
+        "module": "model.layers.57",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 396.0638427734375,
+          "rms": 3.593932628631592
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 386.7044677734375,
+          "rms": 3.3526275157928467
+        }
+      },
+      {
+        "module": "model.layers.58",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 816.3779296875,
+          "rms": 4.388666152954102
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 396.0638427734375,
+          "rms": 3.593932628631592
+        }
+      },
+      {
+        "module": "model.layers.59",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 206.3779296875,
+          "rms": 3.9119136333465576
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 816.3779296875,
+          "rms": 4.388666152954102
+        }
+      },
+      {
+        "module": "model.layers.60",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 223.9056396484375,
+          "rms": 4.252742290496826
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 206.3779296875,
+          "rms": 3.9119136333465576
+        }
+      },
+      {
+        "module": "model.layers.61",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 223.1678466796875,
+          "rms": 4.478379726409912
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 223.9056396484375,
+          "rms": 4.252742290496826
+        }
+      },
+      {
+        "module": "model.layers.62",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 226.2811279296875,
+          "rms": 5.031311511993408
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 223.1678466796875,
+          "rms": 4.478379726409912
+        }
+      },
+      {
+        "module": "model.layers.63",
+        "output": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 615.8082275390625,
+          "rms": 6.590029239654541
+        },
+        "input": {
+          "shape": [
+            1,
+            49,
+            5120
+          ],
+          "dtype": "torch.float32",
+          "finite": true,
+          "max_abs": 226.2811279296875,
+          "rms": 5.031311511993408
+        }
+      }
+    ]
+  }
+}

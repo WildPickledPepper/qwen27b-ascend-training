@@ -31,3 +31,5 @@ experiments/fp32-enec-20261024/build/
 experiments/fp32-enec-20261024/author_variant/
 experiments/fp32-online-20261024/*.so
 experiments/fp32-online-20261024/*.o
+experiments/fp32-precision-compare-20261024/*.so
+parameter-probes.json

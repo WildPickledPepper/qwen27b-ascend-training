@@ -1,0 +1,105 @@
+{
+  "micro": {
+    "passed": true,
+    "results": [
+      {
+        "class": "CpuMoments",
+        "steps": 2,
+        "parameters": 16777216,
+        "seconds": 0.5873449600767344,
+        "timing": {
+          "cpu_adam_seconds": 0.16762401023879647,
+          "host_copy_seconds": 0.12501168018206954,
+          "device_copy_seconds": 0.07193141966126859,
+          "npu_adam_seconds": 0.0
+        }
+      },
+      {
+        "class": "NpuOffloadedMoments",
+        "steps": 2,
+        "parameters": 16777216,
+        "seconds": 0.3110307198949158,
+        "timing": {
+          "cpu_adam_seconds": 0.0,
+          "host_copy_seconds": 0.11711424007080495,
+          "device_copy_seconds": 0.11171340057626367,
+          "npu_adam_seconds": 0.046450669411569834
+        },
+        "same_weight_bits_as_resident_fp32_npu": true,
+        "same_m_bits": true,
+        "same_v_bits": true
+      }
+    ]
+  },
+  "smoke": {
+    "passed": true,
+    "tests": [
+      {
+        "mode": "fp32",
+        "device": "npu:0",
+        "forward_max_abs": 0.0,
+        "input_gradient_max_abs": 0.0,
+        "first_update_max_abs": 1.862645149230957e-09,
+        "complete_steps": 2,
+        "moment_bytes": 524288
+      },
+      {
+        "mode": "fp32",
+        "device": "npu:1",
+        "forward_max_abs": 0.0,
+        "input_gradient_max_abs": 0.0,
+        "first_update_max_abs": 4.656612873077393e-10,
+        "complete_steps": 2,
+        "moment_bytes": 524288
+      },
+      {
+        "mode": "bf16",
+        "device": "npu:0",
+        "forward_max_abs": 0.0,
+        "input_gradient_max_abs": 0.0,
+        "first_update_max_abs": 4.656612873077393e-10,
+        "complete_steps": 2,
+        "moment_bytes": 524288
+      },
+      {
+        "mode": "bf16",
+        "device": "npu:1",
+        "forward_max_abs": 0.0,
+        "input_gradient_max_abs": 0.0,
+        "first_update_max_abs": 4.656612873077393e-10,
+        "complete_steps": 2,
+        "moment_bytes": 524288
+      },
+      {
+        "mode": "compressed",
+        "device": "npu:0",
+        "forward_max_abs": 0.0,
+        "input_gradient_max_abs": 0.0,
+        "first_update_max_abs": 1.862645149230957e-09,
+        "complete_steps": 2,
+        "moment_bytes": 71744
+      },
+      {
+        "mode": "compressed",
+        "device": "npu:1",
+        "forward_max_abs": 0.0,
+        "input_gradient_max_abs": 0.0,
+        "first_update_max_abs": 1.862645149230957e-09,
+        "complete_steps": 2,
+        "moment_bytes": 71744
+      }
+    ]
+  },
+  "source_sha256": {
+    "train_compare_npu.py": "a6bb44fbc01b9fd6aff2ff7f67f6c0e9d8c310aa75382a2e73a8ec447ac1be27",
+    "bench_resident_npu.py": "63135361b6bf311f3d879f95a5f8f10480a91ed53d7b14769456c181ebd963f0",
+    "bench_resident.py": "bfb515622be70a000f5a119babfd62ff626e2b4a30b229fda186e25f8a10d12f",
+    "smoke_npu_offload.py": "d40111a4a1b5d2229f87ec6d9132ee525c7a5d34bf3fc44cd190715f498f9561"
+  },
+  "source_lf_sha256": {
+    "train_compare_npu.py": "eaad9bcaaab1011adc92230547e05bb9f91da41f4558fab610ef9918c726b696",
+    "bench_resident_npu.py": "63135361b6bf311f3d879f95a5f8f10480a91ed53d7b14769456c181ebd963f0",
+    "bench_resident.py": "bfb515622be70a000f5a119babfd62ff626e2b4a30b229fda186e25f8a10d12f",
+    "smoke_npu_offload.py": "6ca07d986ba3eda2b2d271e6d8271678a8deba43474d608c5b1e631b893736ef"
+  }
+}

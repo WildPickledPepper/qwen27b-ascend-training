@@ -1,0 +1,721 @@
+{
+  "scope": "Same initial model, complete four-step FP32 text training, same independent 8-example validation; old completed baseline reused, not rerun.",
+  "changes": [
+    "Per-state offload window4MiB to64MiB; original FP32 Adam formulas and pageable copy path unchanged",
+    "Process CPU affinity96-99 near physical2/3 NUMA4; actual anonymous memory also spilled to node5, not claimed fully local"
+  ],
+  "summary": {
+    "baseline": {
+      "steps": [
+        {
+          "step": 1,
+          "seconds": 492.2228822300676,
+          "transfer_h2d_seconds": 70.39388275961392,
+          "transfer_d2h_seconds": 359.8224584944546,
+          "explicit_adam_seconds": 12.949247584445402
+        },
+        {
+          "step": 2,
+          "seconds": 190.71973497001454,
+          "transfer_h2d_seconds": 71.22467077500187,
+          "transfer_d2h_seconds": 71.72754856292158,
+          "explicit_adam_seconds": 12.570128922117874
+        },
+        {
+          "step": 3,
+          "seconds": 154.56092003989033,
+          "transfer_h2d_seconds": 58.52553577697836,
+          "transfer_d2h_seconds": 46.90505611849949,
+          "explicit_adam_seconds": 13.071893603773788
+        },
+        {
+          "step": 4,
+          "seconds": 139.98698946996592,
+          "transfer_h2d_seconds": 52.60361337359063,
+          "transfer_d2h_seconds": 38.94585437234491,
+          "explicit_adam_seconds": 13.114608615171164
+        }
+      ],
+      "warm_means": {
+        "seconds": 161.75588149329027,
+        "transfer_h2d_seconds": 60.78460664185695,
+        "transfer_d2h_seconds": 52.52615301792199,
+        "explicit_adam_seconds": 12.918877047020942
+      },
+      "validation_before": {
+        "loss": 2.056467159791026,
+        "assistant_token_accuracy": 0.5242494226327945,
+        "assistant_tokens": 433,
+        "examples": [
+          {
+            "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+            "tokens": 49,
+            "assistant_tokens": 24,
+            "loss": 4.169748306274414,
+            "correct": 10
+          },
+          {
+            "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+            "tokens": 56,
+            "assistant_tokens": 31,
+            "loss": 1.9790339469909668,
+            "correct": 15
+          },
+          {
+            "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+            "tokens": 71,
+            "assistant_tokens": 51,
+            "loss": 1.3668725490570068,
+            "correct": 34
+          },
+          {
+            "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+            "tokens": 85,
+            "assistant_tokens": 66,
+            "loss": 1.1862238645553589,
+            "correct": 48
+          },
+          {
+            "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+            "tokens": 91,
+            "assistant_tokens": 35,
+            "loss": 1.4513804912567139,
+            "correct": 22
+          },
+          {
+            "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+            "tokens": 98,
+            "assistant_tokens": 31,
+            "loss": 2.702025890350342,
+            "correct": 12
+          },
+          {
+            "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+            "tokens": 108,
+            "assistant_tokens": 86,
+            "loss": 1.7842817306518555,
+            "correct": 56
+          },
+          {
+            "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+            "tokens": 126,
+            "assistant_tokens": 109,
+            "loss": 2.6882169246673584,
+            "correct": 30
+          }
+        ],
+        "canonical_fp32": true
+      },
+      "validation_after": {
+        "loss": 1.5349637019441529,
+        "assistant_token_accuracy": 0.6073903002309469,
+        "assistant_tokens": 433,
+        "examples": [
+          {
+            "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+            "tokens": 49,
+            "assistant_tokens": 24,
+            "loss": 2.9973201751708984,
+            "correct": 11
+          },
+          {
+            "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+            "tokens": 56,
+            "assistant_tokens": 31,
+            "loss": 1.7880455255508423,
+            "correct": 14
+          },
+          {
+            "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+            "tokens": 71,
+            "assistant_tokens": 51,
+            "loss": 0.8668400049209595,
+            "correct": 40
+          },
+          {
+            "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+            "tokens": 85,
+            "assistant_tokens": 66,
+            "loss": 1.0084689855575562,
+            "correct": 46
+          },
+          {
+            "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+            "tokens": 91,
+            "assistant_tokens": 35,
+            "loss": 0.975358247756958,
+            "correct": 22
+          },
+          {
+            "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+            "tokens": 98,
+            "assistant_tokens": 31,
+            "loss": 2.577538251876831,
+            "correct": 16
+          },
+          {
+            "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+            "tokens": 108,
+            "assistant_tokens": 86,
+            "loss": 1.310325026512146,
+            "correct": 59
+          },
+          {
+            "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+            "tokens": 126,
+            "assistant_tokens": 109,
+            "loss": 1.8328185081481934,
+            "correct": 55
+          }
+        ],
+        "canonical_fp32": true
+      },
+      "peak_allocated_gib": [
+        50.92766761779785,
+        50.82723951339722
+      ],
+      "host_peak_rss_gib": 202.81086349487305,
+      "cpu_state_offload": true,
+      "optimizer_window_coordinates": 1048576,
+      "host_affinity": "not recorded in original run"
+    },
+    "optimized": {
+      "steps": [
+        {
+          "step": 1,
+          "seconds": 387.6453534599859,
+          "transfer_h2d_seconds": 22.47151343501173,
+          "transfer_d2h_seconds": 321.6521477038041,
+          "explicit_adam_seconds": 2.1028249789960682
+        },
+        {
+          "step": 2,
+          "seconds": 114.84605264989659,
+          "transfer_h2d_seconds": 57.31204438419081,
+          "transfer_d2h_seconds": 35.98922828189097,
+          "explicit_adam_seconds": 2.014653844991699
+        },
+        {
+          "step": 3,
+          "seconds": 60.82326884008944,
+          "transfer_h2d_seconds": 27.07898857537657,
+          "transfer_d2h_seconds": 12.098461012123153,
+          "explicit_adam_seconds": 1.992730180034414
+        },
+        {
+          "step": 4,
+          "seconds": 53.370537149952725,
+          "transfer_h2d_seconds": 19.60624699993059,
+          "transfer_d2h_seconds": 12.231152537511662,
+          "explicit_adam_seconds": 2.011515795486048
+        }
+      ],
+      "warm_means": {
+        "seconds": 76.34661954664625,
+        "transfer_h2d_seconds": 34.665759986499324,
+        "transfer_d2h_seconds": 20.106280610508595,
+        "explicit_adam_seconds": 2.00629994017072
+      },
+      "validation_before": {
+        "loss": 2.0564670802263962,
+        "assistant_token_accuracy": 0.5242494226327945,
+        "assistant_tokens": 433,
+        "examples": [
+          {
+            "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+            "tokens": 49,
+            "assistant_tokens": 24,
+            "loss": 4.169748306274414,
+            "correct": 10
+          },
+          {
+            "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+            "tokens": 56,
+            "assistant_tokens": 31,
+            "loss": 1.9790339469909668,
+            "correct": 15
+          },
+          {
+            "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+            "tokens": 71,
+            "assistant_tokens": 51,
+            "loss": 1.3668724298477173,
+            "correct": 34
+          },
+          {
+            "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+            "tokens": 85,
+            "assistant_tokens": 66,
+            "loss": 1.1862237453460693,
+            "correct": 48
+          },
+          {
+            "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+            "tokens": 91,
+            "assistant_tokens": 35,
+            "loss": 1.4513804912567139,
+            "correct": 22
+          },
+          {
+            "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+            "tokens": 98,
+            "assistant_tokens": 31,
+            "loss": 2.702025890350342,
+            "correct": 12
+          },
+          {
+            "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+            "tokens": 108,
+            "assistant_tokens": 86,
+            "loss": 1.7842814922332764,
+            "correct": 56
+          },
+          {
+            "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+            "tokens": 126,
+            "assistant_tokens": 109,
+            "loss": 2.6882169246673584,
+            "correct": 30
+          }
+        ],
+        "canonical_fp32": true
+      },
+      "validation_after": {
+        "loss": 1.5349637115800079,
+        "assistant_token_accuracy": 0.6073903002309469,
+        "assistant_tokens": 433,
+        "examples": [
+          {
+            "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+            "tokens": 49,
+            "assistant_tokens": 24,
+            "loss": 2.9973201751708984,
+            "correct": 11
+          },
+          {
+            "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+            "tokens": 56,
+            "assistant_tokens": 31,
+            "loss": 1.7880454063415527,
+            "correct": 14
+          },
+          {
+            "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+            "tokens": 71,
+            "assistant_tokens": 51,
+            "loss": 0.866840124130249,
+            "correct": 40
+          },
+          {
+            "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+            "tokens": 85,
+            "assistant_tokens": 66,
+            "loss": 1.0084689855575562,
+            "correct": 46
+          },
+          {
+            "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+            "tokens": 91,
+            "assistant_tokens": 35,
+            "loss": 0.975358247756958,
+            "correct": 22
+          },
+          {
+            "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+            "tokens": 98,
+            "assistant_tokens": 31,
+            "loss": 2.5775387287139893,
+            "correct": 16
+          },
+          {
+            "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+            "tokens": 108,
+            "assistant_tokens": 86,
+            "loss": 1.310325026512146,
+            "correct": 59
+          },
+          {
+            "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+            "tokens": 126,
+            "assistant_tokens": 109,
+            "loss": 1.8328183889389038,
+            "correct": 55
+          }
+        ],
+        "canonical_fp32": true
+      },
+      "peak_allocated_gib": [
+        51.17767000198364,
+        51.07724189758301
+      ],
+      "host_peak_rss_gib": 202.81215286254883,
+      "cpu_state_offload": true,
+      "optimizer_window_coordinates": 16777216,
+      "host_affinity": [
+        96,
+        97,
+        98,
+        99
+      ]
+    }
+  },
+  "warm_speedup": 2.118703911893056,
+  "sampled_trajectory_analysis": {
+    "scope": "64 deterministic coordinates per real tensor (or all coordinates for smaller tensors); not full-weight verification",
+    "weighting": "Each sampled coordinate weighted by tensor size / sample count; an estimate, not full-weight L2 verification",
+    "per_step": {
+      "1": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "gradient": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "2": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "gradient": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "3": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "gradient": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "4": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "gradient": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      }
+    }
+  },
+  "probes": {
+    "staged-offload-probe.json": {
+      "passed": true,
+      "affinity": [
+        96,
+        97,
+        98,
+        99
+      ],
+      "results": [
+        {
+          "logical_device": 0,
+          "coordinates": 16781312,
+          "updates": 3,
+          "seconds": {
+            "NpuOffloadedMoments": [
+              0.2734986499417573,
+              0.068832480115816,
+              0.06806398998014629
+            ],
+            "StagedNpuMoments": [
+              0.1567722901236266,
+              0.05631680996157229,
+              0.054929529782384634
+            ]
+          },
+          "exact_checks": {
+            "weight_bits": true,
+            "m_bits": true,
+            "v_bits": true
+          }
+        },
+        {
+          "logical_device": 1,
+          "coordinates": 16781312,
+          "updates": 3,
+          "seconds": {
+            "NpuOffloadedMoments": [
+              0.0811719298362732,
+              0.06416751979850233,
+              0.06449922011233866
+            ],
+            "StagedNpuMoments": [
+              0.09431121009401977,
+              0.05704623996280134,
+              0.051666390150785446
+            ]
+          },
+          "exact_checks": {
+            "weight_bits": true,
+            "m_bits": true,
+            "v_bits": true
+          }
+        }
+      ],
+      "staged_counters": {
+        "host_stage_in_seconds": 0.07086748047731817,
+        "host_stage_out_seconds": 0.10168916010297835,
+        "host_slot_wait_seconds": 0.008646080968901515,
+        "h2d_event_seconds": 0.07155767998099326,
+        "adam_event_seconds": 0.028473159857094293,
+        "d2h_event_seconds": 0.13425534075498585,
+        "windows": 102
+      }
+    },
+    "staged-window-probe.json": {
+      "passed": true,
+      "affinity": [
+        96,
+        97,
+        98,
+        99
+      ],
+      "results": [
+        {
+          "logical_device": 0,
+          "coordinates": 33558528,
+          "updates": 3,
+          "method": "NpuOffloadedMoments",
+          "window_coordinates": 1048576,
+          "seconds": [
+            0.3124705601949245,
+            0.13159818993881345,
+            0.13213877007365227
+          ],
+          "warm_mean": 0.13186848000623286,
+          "exact_checks": {
+            "weight_bits": true,
+            "m_bits": true,
+            "v_bits": true
+          }
+        },
+        {
+          "logical_device": 0,
+          "coordinates": 33558528,
+          "updates": 3,
+          "method": "NpuOffloadedMoments",
+          "window_coordinates": 16777216,
+          "seconds": [
+            0.06525390013121068,
+            0.060495160054415464,
+            0.06160230981186032
+          ],
+          "warm_mean": 0.061048734933137894,
+          "exact_checks": {
+            "weight_bits": true,
+            "m_bits": true,
+            "v_bits": true
+          }
+        },
+        {
+          "logical_device": 0,
+          "coordinates": 33558528,
+          "updates": 3,
+          "method": "StagedNpuMoments",
+          "window_coordinates": 1048576,
+          "seconds": [
+            0.21348328003659844,
+            0.10779745993204415,
+            0.1093496500980109
+          ],
+          "warm_mean": 0.10857355501502752,
+          "exact_checks": {
+            "weight_bits": true,
+            "m_bits": true,
+            "v_bits": true
+          }
+        },
+        {
+          "logical_device": 0,
+          "coordinates": 33558528,
+          "updates": 3,
+          "method": "StagedNpuMoments",
+          "window_coordinates": 16777216,
+          "seconds": [
+            0.08332691993564367,
+            0.058248830027878284,
+            0.06003277003765106
+          ],
+          "warm_mean": 0.05914080003276467,
+          "exact_checks": {
+            "weight_bits": true,
+            "m_bits": true,
+            "v_bits": true
+          }
+        },
+        {
+          "logical_device": 1,
+          "coordinates": 33558528,
+          "updates": 3,
+          "method": "NpuOffloadedMoments",
+          "window_coordinates": 1048576,
+          "seconds": [
+            0.1503261299803853,
+            0.12707625003531575,
+            0.13202037988230586
+          ],
+          "warm_mean": 0.1295483149588108,
+          "exact_checks": {
+            "weight_bits": true,
+            "m_bits": true,
+            "v_bits": true
+          }
+        },
+        {
+          "logical_device": 1,
+          "coordinates": 33558528,
+          "updates": 3,
+          "method": "NpuOffloadedMoments",
+          "window_coordinates": 16777216,
+          "seconds": [
+            0.06706251995638013,
+            0.06419674004428089,
+            0.061774469912052155
+          ],
+          "warm_mean": 0.06298560497816652,
+          "exact_checks": {
+            "weight_bits": true,
+            "m_bits": true,
+            "v_bits": true
+          }
+        },
+        {
+          "logical_device": 1,
+          "coordinates": 33558528,
+          "updates": 3,
+          "method": "StagedNpuMoments",
+          "window_coordinates": 1048576,
+          "seconds": [
+            0.15315765980631113,
+            0.108893419848755,
+            0.1018212498165667
+          ],
+          "warm_mean": 0.10535733483266085,
+          "exact_checks": {
+            "weight_bits": true,
+            "m_bits": true,
+            "v_bits": true
+          }
+        },
+        {
+          "logical_device": 1,
+          "coordinates": 33558528,
+          "updates": 3,
+          "method": "StagedNpuMoments",
+          "window_coordinates": 16777216,
+          "seconds": [
+            0.0805410798639059,
+            0.06047148001380265,
+            0.06000815983861685
+          ],
+          "warm_mean": 0.06023981992620975,
+          "exact_checks": {
+            "weight_bits": true,
+            "m_bits": true,
+            "v_bits": true
+          }
+        }
+      ],
+      "staged_counters": {
+        "host_stage_in_seconds": 0.28196219075471163,
+        "host_stage_out_seconds": 0.37521221954375505,
+        "host_slot_wait_seconds": 0.019387138774618506,
+        "h2d_event_seconds": 0.23139186105132123,
+        "adam_event_seconds": 0.06378368006646631,
+        "d2h_event_seconds": 0.25656430035829575,
+        "windows": 216
+      }
+    }
+  },
+  "source_sha256": {
+    "bench_staged_offload.py": "472c358aa47faba5b3aa0bdbbd0376ec9575d6f100a7b1d3d6abe86b9de569fd",
+    "probe_staged_offload.py": "4fb5de07a09881065847b096b8cf17b99ef08efecf9356b28b89712e6026a0ee",
+    "probe_staged_windows.py": "c07026ea750653e49faac943d1e1ba61779bae210c9c439da7c8ac7c1fc57635",
+    "train_fp32_large_window.py": "d9c105e6178714710d48080c145f9592af75c508cf06ce2f5e9d61dea299b15f",
+    "bench_resident_npu.py": "63135361b6bf311f3d879f95a5f8f10480a91ed53d7b14769456c181ebd963f0",
+    "train_compare_npu.py": "a6bb44fbc01b9fd6aff2ff7f67f6c0e9d8c310aa75382a2e73a8ec447ac1be27",
+    "summarize_largewindow.py": "f879be24ad4a1c3ebbd23b71b57ff1ee262be115d8b30c271dd885a08e4c4525"
+  },
+  "notes": [
+    "Small probe gives exact full weight/m/v bit comparison across3 updates including partial tail windows. Whole-model samples are52928coordinates per step, not exhaustive full-model state equality.",
+    "NUMA affinity and larger window are applied together in full model; controlled same-process2x2 microprobe isolates window and staging factors. No full-model factorial claim.",
+    "Historical baseline and new run share server with other workloads; warm-step individual timings retained. No inference about absolute maximum throughput.",
+    "Transfer region includes allocations/synchronization; explicit Adam region is not whole backward.",
+    "Staged two-slot pinned prototype only microtested, not adopted in full-model candidate. No BF16/quantization change."
+  ],
+  "cleanup": {
+    "checked_unix": 1792824083.4145498,
+    "cards_2_3_idle": {
+      "2": true,
+      "3": true
+    },
+    "other_jobs_not_stopped": true
+  },
+  "source_lf_sha256": {
+    "bench_staged_offload.py": "5e9e976f959e97f75e447035669f51aca277117773f1c968204fdcff1b391ef2",
+    "probe_staged_offload.py": "6b91bc8c1a239b4272e35ae9564ec532e1e99237783707e0ee25b4ece64c29c2",
+    "probe_staged_windows.py": "380fff05dec58a14b1e864d2c1797e45776e8066fe2785d496e252fff9c0348e",
+    "train_fp32_large_window.py": "724a277be7c6bd49312b974f9b97514ecd35f7df81d12561fec0a4ec638356e9",
+    "bench_resident_npu.py": "63135361b6bf311f3d879f95a5f8f10480a91ed53d7b14769456c181ebd963f0",
+    "train_compare_npu.py": "eaad9bcaaab1011adc92230547e05bb9f91da41f4558fab610ef9918c726b696",
+    "summarize_largewindow.py": "a141a6c072c18a13b47718b8c3955f61740f53e17c919409885717a1791b74c0"
+  },
+  "source_hash_note": "Raw executed source hashes retained; LF-normalized hashes added for Git text line-ending normalization."
+}

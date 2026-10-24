@@ -1,0 +1,2070 @@
+{
+  "invalid_naive_amp": {
+    "invalid_as_bf16_reference": true,
+    "reason": "First forward loss 9.260 vs FP32 1.542 before any update; global autocast demotes explicitly FP32 gated-delta fallback matmuls. Core guard added and whole-model native preflight required before retraining.",
+    "status": {
+      "completed": true,
+      "full_parameter_steps": 4,
+      "block": 128,
+      "lr": 1e-05,
+      "weight_decay": 0.01,
+      "mode": "bf16",
+      "compute_dtype": "bf16 autocast with FP32 master weights",
+      "bf16_model_copy": false,
+      "cpu_state_offload": true,
+      "gradient_accumulation": 1,
+      "global_gradient_clipping": false,
+      "gradient_policy": "consume in custom backward; native tiny-parameter post-accumulate hooks",
+      "moment_format": "full FP32 m/v on CPU; updated in NPU windows",
+      "quantizer_probability_arithmetic": "FP32 NPU port, not bit-identical NumPy FP64 SR",
+      "seed": 20261024,
+      "physical_devices": [
+        2,
+        3
+      ],
+      "logs": [
+        {
+          "event": "begin",
+          "unix": 1792816059.225697,
+          "elapsed": 0.00853872299194336,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 0,
+              "reserved": 0,
+              "peak_allocated": 0,
+              "peak_reserved": 0
+            },
+            {
+              "logical_device": 1,
+              "allocated": 0,
+              "reserved": 0,
+              "peak_allocated": 0,
+              "peak_reserved": 0
+            }
+          ],
+          "torch": "2.10.0+cpu",
+          "torch_npu": "2.10.0.post4"
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816071.7887642,
+          "elapsed": 12.571606636047363,
+          "tensors": 1,
+          "total_tensors": 851,
+          "logical_owned_bytes": 15256780800,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 5085634048,
+              "reserved": 5140119552,
+              "peak_allocated": 5204231680,
+              "peak_reserved": 5307891712
+            },
+            {
+              "logical_device": 1,
+              "allocated": 0,
+              "reserved": 0,
+              "peak_allocated": 0,
+              "peak_reserved": 0
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816115.4203112,
+          "elapsed": 56.20315361022949,
+          "tensors": 33,
+          "total_tensors": 851,
+          "logical_owned_bytes": 63669534720,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 10789944832,
+              "reserved": 11117002752,
+              "peak_allocated": 10912836096,
+              "peak_reserved": 11326717952
+            },
+            {
+              "logical_device": 1,
+              "allocated": 10433424384,
+              "reserved": 10676600832,
+              "peak_allocated": 10556288512,
+              "peak_reserved": 10928259072
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816140.655801,
+          "elapsed": 81.43864369392395,
+          "tensors": 65,
+          "total_tensors": 851,
+          "logical_owned_bytes": 97895055360,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 16494255616,
+              "reserved": 16947085312,
+              "peak_allocated": 16617029120,
+              "peak_reserved": 17177772032
+            },
+            {
+              "logical_device": 1,
+              "allocated": 16137735168,
+              "reserved": 16464740352,
+              "peak_allocated": 16260544000,
+              "peak_reserved": 16674455552
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816166.5312655,
+          "elapsed": 107.31410789489746,
+          "tensors": 97,
+          "total_tensors": 851,
+          "logical_owned_bytes": 132120576000,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 22198566400,
+              "reserved": 22777167872,
+              "peak_allocated": 22321376768,
+              "peak_reserved": 22944940032
+            },
+            {
+              "logical_device": 1,
+              "allocated": 21842045952,
+              "reserved": 22357737472,
+              "peak_allocated": 21964841984,
+              "peak_reserved": 22588424192
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816191.6218905,
+          "elapsed": 132.40473341941833,
+          "tensors": 129,
+          "total_tensors": 851,
+          "logical_owned_bytes": 166346096640,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 27902877184,
+              "reserved": 28649193472,
+              "peak_allocated": 28025642496,
+              "peak_reserved": 28837937152
+            },
+            {
+              "logical_device": 1,
+              "allocated": 27546356736,
+              "reserved": 28187820032,
+              "peak_allocated": 27669085184,
+              "peak_reserved": 28439478272
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816215.8616962,
+          "elapsed": 156.64453840255737,
+          "tensors": 161,
+          "total_tensors": 851,
+          "logical_owned_bytes": 200571617280,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 33607187968,
+              "reserved": 34395389952,
+              "peak_allocated": 33729838592,
+              "peak_reserved": 34626076672
+            },
+            {
+              "logical_device": 1,
+              "allocated": 33250667520,
+              "reserved": 34059845632,
+              "peak_allocated": 33373228032,
+              "peak_reserved": 34248589312
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816238.1508615,
+          "elapsed": 178.93370389938354,
+          "tensors": 193,
+          "total_tensors": 851,
+          "logical_owned_bytes": 234797137920,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 39311498752,
+              "reserved": 40267415552,
+              "peak_allocated": 39434345472,
+              "peak_reserved": 40519073792
+            },
+            {
+              "logical_device": 1,
+              "allocated": 38954978304,
+              "reserved": 39889928192,
+              "peak_allocated": 39077827584,
+              "peak_reserved": 40141586432
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816254.042156,
+          "elapsed": 194.82499837875366,
+          "tensors": 225,
+          "total_tensors": 851,
+          "logical_owned_bytes": 257383464960,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 43002527232,
+              "reserved": 43979374592,
+              "peak_allocated": 43126571008,
+              "peak_reserved": 44168118272
+            },
+            {
+              "logical_device": 1,
+              "allocated": 42792808448,
+              "reserved": 43790630912,
+              "peak_allocated": 42916837376,
+              "peak_reserved": 43958403072
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816268.3702364,
+          "elapsed": 209.15307879447937,
+          "tensors": 257,
+          "total_tensors": 851,
+          "logical_owned_bytes": 277516124160,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 46358011392,
+              "reserved": 47208988672,
+              "peak_allocated": 46482020864,
+              "peak_reserved": 47376760832
+            },
+            {
+              "logical_device": 1,
+              "allocated": 46148292608,
+              "reserved": 47062188032,
+              "peak_allocated": 46272445440,
+              "peak_reserved": 47313846272
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816277.5458243,
+          "elapsed": 218.32866644859314,
+          "tensors": 289,
+          "total_tensors": 851,
+          "logical_owned_bytes": 289847377920,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 48371301888,
+              "reserved": 49243226112,
+              "peak_allocated": 48488504832,
+              "peak_reserved": 49390026752
+            },
+            {
+              "logical_device": 1,
+              "allocated": 48245470208,
+              "reserved": 49243226112,
+              "peak_allocated": 48362692608,
+              "peak_reserved": 49348083712
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816286.790497,
+          "elapsed": 227.57333946228027,
+          "tensors": 321,
+          "total_tensors": 851,
+          "logical_owned_bytes": 301926973440,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 50384592384,
+              "reserved": 51256492032,
+              "peak_allocated": 50501828096,
+              "peak_reserved": 51382321152
+            },
+            {
+              "logical_device": 1,
+              "allocated": 50258760704,
+              "reserved": 51319406592,
+              "peak_allocated": 50376032256,
+              "peak_reserved": 51424264192
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816295.8879657,
+          "elapsed": 236.67080807685852,
+          "tensors": 353,
+          "total_tensors": 851,
+          "logical_owned_bytes": 314006568960,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 52397882880,
+              "reserved": 53269757952,
+              "peak_allocated": 52515095552,
+              "peak_reserved": 53395587072
+            },
+            {
+              "logical_device": 1,
+              "allocated": 52272051200,
+              "reserved": 53416558592,
+              "peak_allocated": 52389200384,
+              "peak_reserved": 53521416192
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816301.390791,
+          "elapsed": 242.17363286018372,
+          "tensors": 385,
+          "total_tensors": 851,
+          "logical_owned_bytes": 321367572480,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53572308480,
+              "reserved": 54402220032,
+              "peak_allocated": 53611498496,
+              "peak_reserved": 54402220032
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53551334912,
+              "reserved": 54632906752,
+              "peak_allocated": 53590504448,
+              "peak_reserved": 54653878272
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816302.3769,
+          "elapsed": 243.15974187850952,
+          "tensors": 417,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322481356800,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53747961344,
+              "reserved": 54559506432,
+              "peak_allocated": 53779271168,
+              "peak_reserved": 54559506432
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53746976256,
+              "reserved": 54830039040,
+              "peak_allocated": 53779247104,
+              "peak_reserved": 54830039040
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816302.751443,
+          "elapsed": 243.5342845916748,
+          "tensors": 449,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322575728640,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53763706368,
+              "reserved": 54574186496,
+              "peak_allocated": 53779271168,
+              "peak_reserved": 54574186496
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53762721280,
+              "reserved": 54846816256,
+              "peak_allocated": 53779247104,
+              "peak_reserved": 54846816256
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816303.1200836,
+          "elapsed": 243.902925491333,
+          "tensors": 481,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322670100480,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53779451392,
+              "reserved": 54590963712,
+              "peak_allocated": 53781352960,
+              "peak_reserved": 54590963712
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53778466304,
+              "reserved": 54861496320,
+              "peak_allocated": 53780376064,
+              "peak_reserved": 54861496320
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816303.4588413,
+          "elapsed": 244.24168395996094,
+          "tensors": 513,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322727608320,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53789953536,
+              "reserved": 54599352320,
+              "peak_allocated": 53790117888,
+              "peak_reserved": 54599352320
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816303.7527246,
+          "elapsed": 244.53556656837463,
+          "tensors": 545,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322743336960,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53795212800,
+              "reserved": 54603546624,
+              "peak_allocated": 53795377152,
+              "peak_reserved": 54603546624
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816304.0354114,
+          "elapsed": 244.81825399398804,
+          "tensors": 577,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322745733120,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53795884544,
+              "reserved": 54603546624,
+              "peak_allocated": 53795905536,
+              "peak_reserved": 54603546624
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816304.3217015,
+          "elapsed": 245.10454392433167,
+          "tensors": 609,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322747699200,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53796556288,
+              "reserved": 54605643776,
+              "peak_allocated": 53796577280,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816304.6065567,
+          "elapsed": 245.38939905166626,
+          "tensors": 641,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322749665280,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53797228032,
+              "reserved": 54605643776,
+              "peak_allocated": 53797249024,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816304.8898304,
+          "elapsed": 245.6726725101471,
+          "tensors": 673,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751631360,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53797899776,
+              "reserved": 54605643776,
+              "peak_allocated": 53797920768,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816305.1745148,
+          "elapsed": 245.95735669136047,
+          "tensors": 705,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751846400,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53797968384,
+              "reserved": 54605643776,
+              "peak_allocated": 53797969920,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816305.456636,
+          "elapsed": 246.2394778728485,
+          "tensors": 737,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751898624,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798001664,
+              "reserved": 54605643776,
+              "peak_allocated": 53798002688,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816305.743038,
+          "elapsed": 246.5258800983429,
+          "tensors": 769,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751934336,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798026752,
+              "reserved": 54605643776,
+              "peak_allocated": 53798027264,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816306.027213,
+          "elapsed": 246.81005549430847,
+          "tensors": 801,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751952768,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798043136,
+              "reserved": 54605643776,
+              "peak_allocated": 53798043648,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816306.3089495,
+          "elapsed": 247.09179186820984,
+          "tensors": 833,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751971200,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798059520,
+              "reserved": 54605643776,
+              "peak_allocated": 53798060032,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792816306.5785997,
+          "elapsed": 247.36144185066223,
+          "tensors": 851,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751981568,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 54605643776,
+              "peak_allocated": 53798069248,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "model_ready",
+          "unix": 1792816308.1143262,
+          "elapsed": 248.8971676826477,
+          "parameters": 26895998464,
+          "wrapped_parameters": 26893352960,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 54605643776,
+              "peak_allocated": 53798069248,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ],
+          "data": {
+            "source": "Existing independent Alpaca-GPT4 Chinese 32/8 split; shortest complete examples selected deterministically",
+            "train_hashes": [
+              "6261d8d1dc1e4f8690367186c716d0be96cec8a26d18b6f66f70a553f2ffe314",
+              "3b6210998a0c7624c43c3c174ad369644f1d47a0984f9c9bb8bd9f7bb5c9537d",
+              "7242cb3846af9e62e9000c9e09e076b6dd6696f11f7582252fa7f7994ae1afa8",
+              "c5558c6e47daa8b66e9fdabcac9c4780d32fa975a916aefbee1b02c23f1ab75d"
+            ],
+            "validation_hashes": [
+              "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+              "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+              "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+              "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+              "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+              "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+              "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+              "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da"
+            ],
+            "train_lengths": [
+              28,
+              31,
+              31,
+              32
+            ],
+            "validation_lengths": [
+              49,
+              56,
+              71,
+              85,
+              91,
+              98,
+              108,
+              126
+            ],
+            "gsm8k_used": false,
+            "loss": "causal assistant tokens only"
+          }
+        },
+        {
+          "event": "validation_before",
+          "unix": 1792816320.219685,
+          "elapsed": 261.0025267601013,
+          "metrics": {
+            "loss": 2.056467062331237,
+            "assistant_token_accuracy": 0.5242494226327945,
+            "assistant_tokens": 433,
+            "examples": [
+              {
+                "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+                "tokens": 49,
+                "assistant_tokens": 24,
+                "loss": 4.169747829437256,
+                "correct": 10
+              },
+              {
+                "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+                "tokens": 56,
+                "assistant_tokens": 31,
+                "loss": 1.9790339469909668,
+                "correct": 15
+              },
+              {
+                "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+                "tokens": 71,
+                "assistant_tokens": 51,
+                "loss": 1.3668724298477173,
+                "correct": 34
+              },
+              {
+                "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+                "tokens": 85,
+                "assistant_tokens": 66,
+                "loss": 1.1862238645553589,
+                "correct": 48
+              },
+              {
+                "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+                "tokens": 91,
+                "assistant_tokens": 35,
+                "loss": 1.4513803720474243,
+                "correct": 22
+              },
+              {
+                "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+                "tokens": 98,
+                "assistant_tokens": 31,
+                "loss": 2.702025890350342,
+                "correct": 12
+              },
+              {
+                "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+                "tokens": 108,
+                "assistant_tokens": 86,
+                "loss": 1.7842814922332764,
+                "correct": 56
+              },
+              {
+                "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+                "tokens": 126,
+                "assistant_tokens": 109,
+                "loss": 2.6882169246673584,
+                "correct": 30
+              }
+            ],
+            "canonical_fp32": true
+          },
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 55018782720,
+              "peak_allocated": 54184117248,
+              "peak_reserved": 55018782720
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 55228497920,
+              "peak_allocated": 54155194368,
+              "peak_reserved": 55228497920
+            }
+          ]
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792816320.2307808,
+          "elapsed": 261.0136218070984,
+          "step": 1,
+          "tokens": 28
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792816334.4718888,
+          "elapsed": 275.25473070144653,
+          "step": 1,
+          "loss": 9.260351181030273,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53864091648,
+              "reserved": 55188652032,
+              "peak_allocated": 54376039936,
+              "peak_reserved": 55188652032
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 55417241600,
+              "peak_allocated": 54323073024,
+              "peak_reserved": 55417241600
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792816744.1667705,
+          "elapsed": 684.9496116638184,
+          "step": 1,
+          "loss": 9.260351181030273,
+          "seconds": 423.9316307299305,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 107573411840,
+          "moment_bytes": 215167987712,
+          "codec_new_fallbacks": 0,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56302239744,
+              "peak_allocated": 54776200192,
+              "peak_reserved": 56302239744
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56157536256,
+              "peak_allocated": 54683033088,
+              "peak_reserved": 56157536256
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 301.11705320118926,
+            "device_copy_seconds": 64.35275041032583,
+            "npu_adam_seconds": 12.15767105971463
+          },
+          "host_max_rss_kib": 212830632
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792816744.4069192,
+          "elapsed": 685.1897604465485,
+          "step": 2,
+          "tokens": 31
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792816745.8939056,
+          "elapsed": 686.6767475605011,
+          "step": 2,
+          "loss": 10.702569007873535,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53871158784,
+              "reserved": 56302239744,
+              "peak_allocated": 54380248576,
+              "peak_reserved": 56302239744
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56157536256,
+              "peak_allocated": 54323177472,
+              "peak_reserved": 56157536256
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792816929.9029915,
+          "elapsed": 870.6858327388763,
+          "step": 2,
+          "loss": 10.702569007873535,
+          "seconds": 185.49064365006052,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 107573411840,
+          "moment_bytes": 215167987712,
+          "codec_new_fallbacks": 0,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56302239744,
+              "peak_allocated": 54781690880,
+              "peak_reserved": 56302239744
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56346279936,
+              "peak_allocated": 54683506176,
+              "peak_reserved": 56346279936
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 356.3991969653871,
+            "device_copy_seconds": 145.59341072360985,
+            "npu_adam_seconds": 25.070289145223796
+          },
+          "host_max_rss_kib": 212830632
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792816930.4039972,
+          "elapsed": 871.1868381500244,
+          "step": 3,
+          "tokens": 31
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792816931.8380032,
+          "elapsed": 872.6208448410034,
+          "step": 3,
+          "loss": 7.48415994644165,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53871158784,
+              "reserved": 56302239744,
+              "peak_allocated": 54380248576,
+              "peak_reserved": 56302239744
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56346279936,
+              "peak_allocated": 54323177472,
+              "peak_reserved": 56346279936
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792817106.4957795,
+          "elapsed": 1047.2786207199097,
+          "step": 3,
+          "loss": 7.48415994644165,
+          "seconds": 176.0853117799852,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 107573411840,
+          "moment_bytes": 215167987712,
+          "codec_new_fallbacks": 0,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56302239744,
+              "peak_allocated": 54781690880,
+              "peak_reserved": 56302239744
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56346279936,
+              "peak_allocated": 54683506176,
+              "peak_reserved": 56346279936
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 414.4877404428553,
+            "device_copy_seconds": 210.98334854724817,
+            "npu_adam_seconds": 38.94508948433213
+          },
+          "host_max_rss_kib": 212830632
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792817107.2470279,
+          "elapsed": 1048.0298693180084,
+          "step": 4,
+          "tokens": 32
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792817108.6873434,
+          "elapsed": 1049.4701850414276,
+          "step": 4,
+          "loss": 7.778689861297607,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53873515520,
+              "reserved": 56302239744,
+              "peak_allocated": 54381652992,
+              "peak_reserved": 56302239744
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56346279936,
+              "peak_allocated": 54323212288,
+              "peak_reserved": 56346279936
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792817307.0106394,
+          "elapsed": 1247.7934806346893,
+          "step": 4,
+          "loss": 7.778689861297607,
+          "seconds": 199.75834410008974,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 107573411840,
+          "moment_bytes": 215167987712,
+          "codec_new_fallbacks": 0,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56304336896,
+              "peak_allocated": 54783524352,
+              "peak_reserved": 56304336896
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56346279936,
+              "peak_allocated": 54683663872,
+              "peak_reserved": 56346279936
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 473.9595935798716,
+            "device_copy_seconds": 298.4210073999129,
+            "npu_adam_seconds": 53.112099394667894
+          },
+          "host_max_rss_kib": 212830632
+        },
+        {
+          "event": "validation_after",
+          "unix": 1792817320.281457,
+          "elapsed": 1261.064299106598,
+          "metrics": {
+            "loss": 2.008586997248009,
+            "assistant_token_accuracy": 0.5381062355658198,
+            "assistant_tokens": 433,
+            "examples": [
+              {
+                "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+                "tokens": 49,
+                "assistant_tokens": 24,
+                "loss": 4.123937129974365,
+                "correct": 10
+              },
+              {
+                "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+                "tokens": 56,
+                "assistant_tokens": 31,
+                "loss": 1.977768063545227,
+                "correct": 14
+              },
+              {
+                "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+                "tokens": 71,
+                "assistant_tokens": 51,
+                "loss": 1.3369051218032837,
+                "correct": 35
+              },
+              {
+                "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+                "tokens": 85,
+                "assistant_tokens": 66,
+                "loss": 1.1718647480010986,
+                "correct": 49
+              },
+              {
+                "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+                "tokens": 91,
+                "assistant_tokens": 35,
+                "loss": 1.4110032320022583,
+                "correct": 23
+              },
+              {
+                "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+                "tokens": 98,
+                "assistant_tokens": 31,
+                "loss": 2.695500135421753,
+                "correct": 12
+              },
+              {
+                "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+                "tokens": 108,
+                "assistant_tokens": 86,
+                "loss": 1.6703860759735107,
+                "correct": 59
+              },
+              {
+                "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+                "tokens": 126,
+                "assistant_tokens": 109,
+                "loss": 2.6358606815338135,
+                "correct": 31
+              }
+            ],
+            "canonical_fp32": true
+          },
+          "delta": -0.047880065083228285,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56304336896,
+              "peak_allocated": 54783524352,
+              "peak_reserved": 56304336896
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56346279936,
+              "peak_allocated": 54683663872,
+              "peak_reserved": 56346279936
+            }
+          ]
+        },
+        {
+          "event": "validation_after_bf16_execution",
+          "unix": 1792817333.8278263,
+          "elapsed": 1274.6106684207916,
+          "metrics": {
+            "loss": 9.53684543627239,
+            "assistant_token_accuracy": 0.03695150115473441,
+            "assistant_tokens": 433,
+            "examples": [
+              {
+                "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+                "tokens": 49,
+                "assistant_tokens": 24,
+                "loss": 11.184184074401855,
+                "correct": 1
+              },
+              {
+                "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+                "tokens": 56,
+                "assistant_tokens": 31,
+                "loss": 10.418193817138672,
+                "correct": 1
+              },
+              {
+                "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+                "tokens": 71,
+                "assistant_tokens": 51,
+                "loss": 12.5541353225708,
+                "correct": 1
+              },
+              {
+                "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+                "tokens": 85,
+                "assistant_tokens": 66,
+                "loss": 10.367049217224121,
+                "correct": 1
+              },
+              {
+                "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+                "tokens": 91,
+                "assistant_tokens": 35,
+                "loss": 8.07571029663086,
+                "correct": 1
+              },
+              {
+                "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+                "tokens": 98,
+                "assistant_tokens": 31,
+                "loss": 9.13260555267334,
+                "correct": 1
+              },
+              {
+                "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+                "tokens": 108,
+                "assistant_tokens": 86,
+                "loss": 9.043858528137207,
+                "correct": 5
+              },
+              {
+                "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+                "tokens": 126,
+                "assistant_tokens": 109,
+                "loss": 7.982119560241699,
+                "correct": 5
+              }
+            ],
+            "canonical_fp32": false
+          }
+        },
+        {
+          "event": "complete",
+          "unix": 1792817333.8348558,
+          "elapsed": 1274.6176972389221,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56304336896,
+              "peak_allocated": 54783524352,
+              "peak_reserved": 56304336896
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56346279936,
+              "peak_allocated": 54683663872,
+              "peak_reserved": 56346279936
+            }
+          ]
+        }
+      ],
+      "process_thp_disabled": true,
+      "allocator_memory_fraction": 0.995,
+      "comparison": "same custom autograd harness; full FP32 moments offloaded to CPU with NPU compute, not tuned DeepSpeed",
+      "optimizer_compute_device": "npu",
+      "full_state_offload_precision": "FP32 raw copies; no quantization",
+      "validation_precision": "canonical FP32 for all groups, plus execution dtype for BF16",
+      "full_text_parameters": 26895998464,
+      "wrapped_parameters": 26893352960,
+      "native_parameters": 2645504,
+      "data": {
+        "source": "Existing independent Alpaca-GPT4 Chinese 32/8 split; shortest complete examples selected deterministically",
+        "train_hashes": [
+          "6261d8d1dc1e4f8690367186c716d0be96cec8a26d18b6f66f70a553f2ffe314",
+          "3b6210998a0c7624c43c3c174ad369644f1d47a0984f9c9bb8bd9f7bb5c9537d",
+          "7242cb3846af9e62e9000c9e09e076b6dd6696f11f7582252fa7f7994ae1afa8",
+          "c5558c6e47daa8b66e9fdabcac9c4780d32fa975a916aefbee1b02c23f1ab75d"
+        ],
+        "validation_hashes": [
+          "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+          "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+          "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+          "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+          "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+          "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+          "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+          "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da"
+        ],
+        "train_lengths": [
+          28,
+          31,
+          31,
+          32
+        ],
+        "validation_lengths": [
+          49,
+          56,
+          71,
+          85,
+          91,
+          98,
+          108,
+          126
+        ],
+        "gsm8k_used": false,
+        "loss": "causal assistant tokens only"
+      },
+      "validation_before": {
+        "loss": 2.056467062331237,
+        "assistant_token_accuracy": 0.5242494226327945,
+        "assistant_tokens": 433,
+        "examples": [
+          {
+            "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+            "tokens": 49,
+            "assistant_tokens": 24,
+            "loss": 4.169747829437256,
+            "correct": 10
+          },
+          {
+            "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+            "tokens": 56,
+            "assistant_tokens": 31,
+            "loss": 1.9790339469909668,
+            "correct": 15
+          },
+          {
+            "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+            "tokens": 71,
+            "assistant_tokens": 51,
+            "loss": 1.3668724298477173,
+            "correct": 34
+          },
+          {
+            "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+            "tokens": 85,
+            "assistant_tokens": 66,
+            "loss": 1.1862238645553589,
+            "correct": 48
+          },
+          {
+            "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+            "tokens": 91,
+            "assistant_tokens": 35,
+            "loss": 1.4513803720474243,
+            "correct": 22
+          },
+          {
+            "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+            "tokens": 98,
+            "assistant_tokens": 31,
+            "loss": 2.702025890350342,
+            "correct": 12
+          },
+          {
+            "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+            "tokens": 108,
+            "assistant_tokens": 86,
+            "loss": 1.7842814922332764,
+            "correct": 56
+          },
+          {
+            "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+            "tokens": 126,
+            "assistant_tokens": 109,
+            "loss": 2.6882169246673584,
+            "correct": 30
+          }
+        ],
+        "canonical_fp32": true
+      },
+      "validation_after": {
+        "loss": 2.008586997248009,
+        "assistant_token_accuracy": 0.5381062355658198,
+        "assistant_tokens": 433,
+        "examples": [
+          {
+            "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+            "tokens": 49,
+            "assistant_tokens": 24,
+            "loss": 4.123937129974365,
+            "correct": 10
+          },
+          {
+            "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+            "tokens": 56,
+            "assistant_tokens": 31,
+            "loss": 1.977768063545227,
+            "correct": 14
+          },
+          {
+            "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+            "tokens": 71,
+            "assistant_tokens": 51,
+            "loss": 1.3369051218032837,
+            "correct": 35
+          },
+          {
+            "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+            "tokens": 85,
+            "assistant_tokens": 66,
+            "loss": 1.1718647480010986,
+            "correct": 49
+          },
+          {
+            "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+            "tokens": 91,
+            "assistant_tokens": 35,
+            "loss": 1.4110032320022583,
+            "correct": 23
+          },
+          {
+            "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+            "tokens": 98,
+            "assistant_tokens": 31,
+            "loss": 2.695500135421753,
+            "correct": 12
+          },
+          {
+            "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+            "tokens": 108,
+            "assistant_tokens": 86,
+            "loss": 1.6703860759735107,
+            "correct": 59
+          },
+          {
+            "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+            "tokens": 126,
+            "assistant_tokens": 109,
+            "loss": 2.6358606815338135,
+            "correct": 31
+          }
+        ],
+        "canonical_fp32": true
+      },
+      "validation_after_bf16_execution": {
+        "loss": 9.53684543627239,
+        "assistant_token_accuracy": 0.03695150115473441,
+        "assistant_tokens": 433,
+        "examples": [
+          {
+            "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+            "tokens": 49,
+            "assistant_tokens": 24,
+            "loss": 11.184184074401855,
+            "correct": 1
+          },
+          {
+            "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+            "tokens": 56,
+            "assistant_tokens": 31,
+            "loss": 10.418193817138672,
+            "correct": 1
+          },
+          {
+            "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+            "tokens": 71,
+            "assistant_tokens": 51,
+            "loss": 12.5541353225708,
+            "correct": 1
+          },
+          {
+            "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+            "tokens": 85,
+            "assistant_tokens": 66,
+            "loss": 10.367049217224121,
+            "correct": 1
+          },
+          {
+            "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+            "tokens": 91,
+            "assistant_tokens": 35,
+            "loss": 8.07571029663086,
+            "correct": 1
+          },
+          {
+            "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+            "tokens": 98,
+            "assistant_tokens": 31,
+            "loss": 9.13260555267334,
+            "correct": 1
+          },
+          {
+            "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+            "tokens": 108,
+            "assistant_tokens": 86,
+            "loss": 9.043858528137207,
+            "correct": 5
+          },
+          {
+            "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+            "tokens": 126,
+            "assistant_tokens": 109,
+            "loss": 7.982119560241699,
+            "correct": 5
+          }
+        ],
+        "canonical_fp32": false
+      },
+      "elapsed_seconds": 1274.6214458942413
+    },
+    "analysis": {
+      "scope": "64 deterministic coordinates per real tensor (or all coordinates for smaller tensors); not full-weight verification",
+      "weighting": "Each sampled coordinate weighted by tensor size / sample count; an estimate, not full-weight L2 verification",
+      "per_step": {
+        "1": {
+          "sampled_coordinates": 52928,
+          "represented_coordinates": 26895998464.0,
+          "weight": {
+            "max_abs_difference": 2.002716064453125e-05,
+            "rmse": 1.3582223624737617e-05,
+            "relative_l2_error": 0.0010434473951735888,
+            "cosine": 0.9999994556176066
+          },
+          "update": {
+            "max_abs_difference": 2.002716064453125e-05,
+            "rmse": 1.3582223624737617e-05,
+            "relative_l2_error": 1.4274984579330485,
+            "cosine": -0.0013304468226102342
+          },
+          "gradient": {
+            "max_abs_difference": 2.463011622428894,
+            "rmse": 0.0007372413932087189,
+            "relative_l2_error": 1.6299641735052963,
+            "cosine": -0.20242476054666528
+          }
+        },
+        "2": {
+          "sampled_coordinates": 52928,
+          "represented_coordinates": 26895998464.0,
+          "weight": {
+            "max_abs_difference": 4.00543212890625e-05,
+            "rmse": 2.060284921295854e-05,
+            "relative_l2_error": 0.00158280213960778,
+            "cosine": 0.9999987473826788
+          },
+          "update": {
+            "max_abs_difference": 2.002716064453125e-05,
+            "rmse": 9.512526833240652e-06,
+            "relative_l2_error": 1.4097180714973687,
+            "cosine": 0.005237717624456628
+          },
+          "gradient": {
+            "max_abs_difference": 1.2228456735610962,
+            "rmse": 0.0008189223011541997,
+            "relative_l2_error": 1.8796149315851918,
+            "cosine": 0.15955490866888913
+          }
+        },
+        "3": {
+          "sampled_coordinates": 52928,
+          "represented_coordinates": 26895998464.0,
+          "weight": {
+            "max_abs_difference": 5.9798359870910645e-05,
+            "rmse": 2.6503465341813894e-05,
+            "relative_l2_error": 0.0020361053353813914,
+            "cosine": 0.9999979271883735
+          },
+          "update": {
+            "max_abs_difference": 1.985393464565277e-05,
+            "rmse": 7.704657546148604e-06,
+            "relative_l2_error": 1.4139793771915024,
+            "cosine": -0.0031848165363954745
+          },
+          "gradient": {
+            "max_abs_difference": 121.01821770705283,
+            "rmse": 0.036491729156815804,
+            "relative_l2_error": 151.79620792223736,
+            "cosine": 0.047638824914493005
+          }
+        },
+        "4": {
+          "sampled_coordinates": 52928,
+          "represented_coordinates": 26895998464.0,
+          "weight": {
+            "max_abs_difference": 7.77319073677063e-05,
+            "rmse": 3.1602086649044846e-05,
+            "relative_l2_error": 0.0024277930434396374,
+            "cosine": 0.9999970529891153
+          },
+          "update": {
+            "max_abs_difference": 1.9244849681854248e-05,
+            "rmse": 6.490014936365732e-06,
+            "relative_l2_error": 1.4062474595973395,
+            "cosine": 0.0027634641736329017
+          },
+          "gradient": {
+            "max_abs_difference": 0.7231271713972092,
+            "rmse": 0.00032349554545802513,
+            "relative_l2_error": 1.6436237330446304,
+            "cosine": 0.07328399370373112
+          }
+        }
+      },
+      "replay_scope": "Same sampled real gradient trajectory, replayed with complete FP32 Adam moments from zero; compares update mechanics, not a new full-model training run. CPU/NPU arithmetic differences are included.",
+      "reference_full_state_replay_control": {
+        "1": {
+          "sampled_coordinates": 52928,
+          "represented_coordinates": 26895998464.0,
+          "weight": {
+            "max_abs_difference": 1.862645149230957e-09,
+            "rmse": 1.2060881676490202e-11,
+            "relative_l2_error": 9.265710767605315e-10,
+            "cosine": 1.0
+          },
+          "update": {
+            "max_abs_difference": 1.862645149230957e-09,
+            "rmse": 1.2060881676490202e-11,
+            "relative_l2_error": 1.2676046461409582e-06,
+            "cosine": 0.9999999999991968
+          }
+        },
+        "2": {
+          "sampled_coordinates": 52928,
+          "represented_coordinates": 26895998464.0,
+          "weight": {
+            "max_abs_difference": 7.450580596923828e-09,
+            "rmse": 9.62038078931795e-12,
+            "relative_l2_error": 7.390802669961978e-10,
+            "cosine": 0.9999999999999998
+          },
+          "update": {
+            "max_abs_difference": 7.450580596923828e-09,
+            "rmse": 9.62038078931795e-12,
+            "relative_l2_error": 1.4257015901417196e-06,
+            "cosine": 0.9999999999989843
+          }
+        },
+        "3": {
+          "sampled_coordinates": 52928,
+          "represented_coordinates": 26895998464.0,
+          "weight": {
+            "max_abs_difference": 1.862645149230957e-09,
+            "rmse": 1.252581708798884e-11,
+            "relative_l2_error": 9.62284843654912e-10,
+            "cosine": 1.0000000000000004
+          },
+          "update": {
+            "max_abs_difference": 1.862645149230957e-09,
+            "rmse": 1.252581708798884e-11,
+            "relative_l2_error": 2.2987714532520533e-06,
+            "cosine": 0.9999999999973573
+          }
+        },
+        "4": {
+          "sampled_coordinates": 52928,
+          "represented_coordinates": 26895998464.0,
+          "weight": {
+            "max_abs_difference": 1.862645149230957e-09,
+            "rmse": 1.4241741360349352e-11,
+            "relative_l2_error": 1.0941049869665305e-09,
+            "cosine": 1.0
+          },
+          "update": {
+            "max_abs_difference": 1.862645149230957e-09,
+            "rmse": 1.4241741360349352e-11,
+            "relative_l2_error": 3.085880936686862e-06,
+            "cosine": 0.9999999999952393
+          }
+        }
+      },
+      "candidate_same_gradient_full_state_replay": {
+        "1": {
+          "sampled_coordinates": 52928,
+          "represented_coordinates": 26895998464.0,
+          "weight": {
+            "max_abs_difference": 1.862645149230957e-09,
+            "rmse": 1.8627021660746197e-11,
+            "relative_l2_error": 1.4310182185083736e-09,
+            "cosine": 1.0000000000000004
+          },
+          "update": {
+            "max_abs_difference": 1.862645149230957e-09,
+            "rmse": 1.8627021660746197e-11,
+            "relative_l2_error": 1.924281606933066e-06,
+            "cosine": 0.9999999999981495
+          }
+        },
+        "2": {
+          "sampled_coordinates": 52928,
+          "represented_coordinates": 26895998464.0,
+          "weight": {
+            "max_abs_difference": 1.862645149230957e-09,
+            "rmse": 1.3721405724852497e-11,
+            "relative_l2_error": 1.0541462144411474e-09,
+            "cosine": 1.0
+          },
+          "update": {
+            "max_abs_difference": 1.862645149230957e-09,
+            "rmse": 1.3721405724852497e-11,
+            "relative_l2_error": 2.035729244209892e-06,
+            "cosine": 0.9999999999979281
+          }
+        },
+        "3": {
+          "sampled_coordinates": 52928,
+          "represented_coordinates": 26895998464.0,
+          "weight": {
+            "max_abs_difference": 9.313225746154785e-10,
+            "rmse": 9.452089536962178e-12,
+            "relative_l2_error": 7.261574172804653e-10,
+            "cosine": 1.0000000000000004
+          },
+          "update": {
+            "max_abs_difference": 9.313225746154785e-10,
+            "rmse": 9.452089536962178e-12,
+            "relative_l2_error": 1.7407845558745244e-06,
+            "cosine": 0.9999999999984844
+          }
+        },
+        "4": {
+          "sampled_coordinates": 52928,
+          "represented_coordinates": 26895998464.0,
+          "weight": {
+            "max_abs_difference": 1.862645149230957e-09,
+            "rmse": 1.6764776993717715e-11,
+            "relative_l2_error": 1.2879546109702669e-09,
+            "cosine": 1.0
+          },
+          "update": {
+            "max_abs_difference": 1.862645149230957e-09,
+            "rmse": 1.6764776993717715e-11,
+            "relative_l2_error": 3.6638231215059517e-06,
+            "cosine": 0.9999999999932888
+          }
+        }
+      }
+    }
+  },
+  "cpu_core_probe": {
+    "device": "cpu",
+    "passed": true,
+    "guarded_equals_explicit_fp32_core_bits": true,
+    "naive_vs_reference_max_abs": 0.001953125,
+    "naive_core_matmuls": [
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      },
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      },
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      },
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      },
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      },
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      },
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      },
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      }
+    ],
+    "guarded_core_matmuls": [
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      },
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      },
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      },
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      },
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      },
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      },
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      },
+      {
+        "op": "aten.bmm.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      }
+    ]
+  },
+  "source_sha256": {
+    "bf16_precision_guards.py": "f511d2567faac2efc2ab58603943bc8f84884b5631f42d8149282ee512c3c731",
+    "train_compare_bf16_guarded.py": "eaaf45c67575210f7f0066568544d3fb81ef18c253fec1f15dc96127ae93aa1c",
+    "bf16_core_probe_cpu_executed.py": "985a6b8cfb9241edefee988df5634d4d5484ad906e705878814324d0d0b3901e"
+  },
+  "source_lf_sha256": {
+    "bf16_precision_guards.py": "f511d2567faac2efc2ab58603943bc8f84884b5631f42d8149282ee512c3c731",
+    "train_compare_bf16_guarded.py": "0a2c25acaf1375a8e838bcf4d7d2db13a752790d1556c61fc168319766d96e20",
+    "bf16_core_probe_cpu_executed.py": "985a6b8cfb9241edefee988df5634d4d5484ad906e705878814324d0d0b3901e"
+  },
+  "probe_source_versions": {
+    "cpu_run": "bf16_core_probe_cpu_executed.py",
+    "npu_run": "bf16_core_probe.py (also traces aten.matmul for NPU direct dispatch)"
+  },
+  "npu_core_probe": {
+    "device": "npu",
+    "passed": true,
+    "guarded_equals_explicit_fp32_core_bits": true,
+    "naive_vs_reference_max_abs": 0.001708984375,
+    "naive_core_matmuls": [
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      },
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      },
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      },
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      },
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      },
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      },
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      },
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "output": "torch.bfloat16"
+      }
+    ],
+    "guarded_core_matmuls": [
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      },
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      },
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      },
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      },
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      },
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      },
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      },
+      {
+        "op": "aten.matmul.default",
+        "inputs": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "output": "torch.float32"
+      }
+    ]
+  },
+  "npu_source_sha256": {
+    "bf16_precision_guards.py": "f511d2567faac2efc2ab58603943bc8f84884b5631f42d8149282ee512c3c731",
+    "bf16_core_probe.py": "2fefb690dc5361c96efeb6139060a203b09679be23e2bbdbd74e0339a2b2497d",
+    "train_compare_bf16_guarded.py": "eaaf45c67575210f7f0066568544d3fb81ef18c253fec1f15dc96127ae93aa1c"
+  }
+}

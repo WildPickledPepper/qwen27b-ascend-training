@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "window": 1048576,
+      "steps": 2,
+      "parameters": 16777216,
+      "seconds": 0.3422182099893689,
+      "timing": {
+        "cpu_adam_seconds": 0.15972407022491097,
+        "host_copy_seconds": 0.06847648019902408,
+        "device_copy_seconds": 0.028777940198779106
+      },
+      "same_final_fp32_bits": true
+    },
+    {
+      "window": 16777216,
+      "steps": 2,
+      "parameters": 16777216,
+      "seconds": 0.4063991201110184,
+      "timing": {
+        "cpu_adam_seconds": 0.1900677802041173,
+        "host_copy_seconds": 0.09367086994461715,
+        "device_copy_seconds": 0.01669754972681403
+      },
+      "same_final_fp32_bits": true
+    }
+  ],
+  "scope": "Same two FP32 Adam updates on 16,777,216 coordinates, not a full-model speed result; conducted while reference group was active."
+}

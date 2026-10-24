@@ -1,0 +1,251 @@
+{
+  "small_probe": {
+    "passed": true,
+    "affinity": [
+      96,
+      97,
+      98,
+      99
+    ],
+    "results": [
+      {
+        "logical_device": 0,
+        "coordinates": 16781312,
+        "updates": 3,
+        "seconds": {
+          "NpuOffloadedMoments": [
+            0.2734986499417573,
+            0.068832480115816,
+            0.06806398998014629
+          ],
+          "StagedNpuMoments": [
+            0.1567722901236266,
+            0.05631680996157229,
+            0.054929529782384634
+          ]
+        },
+        "exact_checks": {
+          "weight_bits": true,
+          "m_bits": true,
+          "v_bits": true
+        }
+      },
+      {
+        "logical_device": 1,
+        "coordinates": 16781312,
+        "updates": 3,
+        "seconds": {
+          "NpuOffloadedMoments": [
+            0.0811719298362732,
+            0.06416751979850233,
+            0.06449922011233866
+          ],
+          "StagedNpuMoments": [
+            0.09431121009401977,
+            0.05704623996280134,
+            0.051666390150785446
+          ]
+        },
+        "exact_checks": {
+          "weight_bits": true,
+          "m_bits": true,
+          "v_bits": true
+        }
+      }
+    ],
+    "staged_counters": {
+      "host_stage_in_seconds": 0.07086748047731817,
+      "host_stage_out_seconds": 0.10168916010297835,
+      "host_slot_wait_seconds": 0.008646080968901515,
+      "h2d_event_seconds": 0.07155767998099326,
+      "adam_event_seconds": 0.028473159857094293,
+      "d2h_event_seconds": 0.13425534075498585,
+      "windows": 102
+    }
+  },
+  "window_probe": {
+    "passed": true,
+    "affinity": [
+      96,
+      97,
+      98,
+      99
+    ],
+    "results": [
+      {
+        "logical_device": 0,
+        "coordinates": 33558528,
+        "updates": 3,
+        "method": "NpuOffloadedMoments",
+        "window_coordinates": 1048576,
+        "seconds": [
+          0.3124705601949245,
+          0.13159818993881345,
+          0.13213877007365227
+        ],
+        "warm_mean": 0.13186848000623286,
+        "exact_checks": {
+          "weight_bits": true,
+          "m_bits": true,
+          "v_bits": true
+        }
+      },
+      {
+        "logical_device": 0,
+        "coordinates": 33558528,
+        "updates": 3,
+        "method": "NpuOffloadedMoments",
+        "window_coordinates": 16777216,
+        "seconds": [
+          0.06525390013121068,
+          0.060495160054415464,
+          0.06160230981186032
+        ],
+        "warm_mean": 0.061048734933137894,
+        "exact_checks": {
+          "weight_bits": true,
+          "m_bits": true,
+          "v_bits": true
+        }
+      },
+      {
+        "logical_device": 0,
+        "coordinates": 33558528,
+        "updates": 3,
+        "method": "StagedNpuMoments",
+        "window_coordinates": 1048576,
+        "seconds": [
+          0.21348328003659844,
+          0.10779745993204415,
+          0.1093496500980109
+        ],
+        "warm_mean": 0.10857355501502752,
+        "exact_checks": {
+          "weight_bits": true,
+          "m_bits": true,
+          "v_bits": true
+        }
+      },
+      {
+        "logical_device": 0,
+        "coordinates": 33558528,
+        "updates": 3,
+        "method": "StagedNpuMoments",
+        "window_coordinates": 16777216,
+        "seconds": [
+          0.08332691993564367,
+          0.058248830027878284,
+          0.06003277003765106
+        ],
+        "warm_mean": 0.05914080003276467,
+        "exact_checks": {
+          "weight_bits": true,
+          "m_bits": true,
+          "v_bits": true
+        }
+      },
+      {
+        "logical_device": 1,
+        "coordinates": 33558528,
+        "updates": 3,
+        "method": "NpuOffloadedMoments",
+        "window_coordinates": 1048576,
+        "seconds": [
+          0.1503261299803853,
+          0.12707625003531575,
+          0.13202037988230586
+        ],
+        "warm_mean": 0.1295483149588108,
+        "exact_checks": {
+          "weight_bits": true,
+          "m_bits": true,
+          "v_bits": true
+        }
+      },
+      {
+        "logical_device": 1,
+        "coordinates": 33558528,
+        "updates": 3,
+        "method": "NpuOffloadedMoments",
+        "window_coordinates": 16777216,
+        "seconds": [
+          0.06706251995638013,
+          0.06419674004428089,
+          0.061774469912052155
+        ],
+        "warm_mean": 0.06298560497816652,
+        "exact_checks": {
+          "weight_bits": true,
+          "m_bits": true,
+          "v_bits": true
+        }
+      },
+      {
+        "logical_device": 1,
+        "coordinates": 33558528,
+        "updates": 3,
+        "method": "StagedNpuMoments",
+        "window_coordinates": 1048576,
+        "seconds": [
+          0.15315765980631113,
+          0.108893419848755,
+          0.1018212498165667
+        ],
+        "warm_mean": 0.10535733483266085,
+        "exact_checks": {
+          "weight_bits": true,
+          "m_bits": true,
+          "v_bits": true
+        }
+      },
+      {
+        "logical_device": 1,
+        "coordinates": 33558528,
+        "updates": 3,
+        "method": "StagedNpuMoments",
+        "window_coordinates": 16777216,
+        "seconds": [
+          0.0805410798639059,
+          0.06047148001380265,
+          0.06000815983861685
+        ],
+        "warm_mean": 0.06023981992620975,
+        "exact_checks": {
+          "weight_bits": true,
+          "m_bits": true,
+          "v_bits": true
+        }
+      }
+    ],
+    "staged_counters": {
+      "host_stage_in_seconds": 0.28196219075471163,
+      "host_stage_out_seconds": 0.37521221954375505,
+      "host_slot_wait_seconds": 0.019387138774618506,
+      "h2d_event_seconds": 0.23139186105132123,
+      "adam_event_seconds": 0.06378368006646631,
+      "d2h_event_seconds": 0.25656430035829575,
+      "windows": 216
+    }
+  },
+  "whole_model_candidate": "fp32-largewindow-numa-run1",
+  "changes": "Same original FP32 Adam implementation; 4MiB to64MiB window; CPU affinity96-99; no staged pipeline in this whole-model run",
+  "numa_memory_during_load_321_tensors_gib": {
+    "4": 54.89,
+    "5": 138.25,
+    "6": 0.59
+  },
+  "note": "Rounded one read-only anonymous host-memory NUMA sample during initialization. CPU affinity is not proof of fully local state placement.",
+  "source_sha256": {
+    "bench_staged_offload.py": "472c358aa47faba5b3aa0bdbbd0376ec9575d6f100a7b1d3d6abe86b9de569fd",
+    "probe_staged_offload.py": "4fb5de07a09881065847b096b8cf17b99ef08efecf9356b28b89712e6026a0ee",
+    "probe_staged_windows.py": "c07026ea750653e49faac943d1e1ba61779bae210c9c439da7c8ac7c1fc57635",
+    "train_fp32_large_window.py": "d9c105e6178714710d48080c145f9592af75c508cf06ce2f5e9d61dea299b15f"
+  },
+  "source_lf_sha256": {
+    "bench_staged_offload.py": "5e9e976f959e97f75e447035669f51aca277117773f1c968204fdcff1b391ef2",
+    "probe_staged_offload.py": "6b91bc8c1a239b4272e35ae9564ec532e1e99237783707e0ee25b4ece64c29c2",
+    "probe_staged_windows.py": "380fff05dec58a14b1e864d2c1797e45776e8066fe2785d496e252fff9c0348e",
+    "train_fp32_large_window.py": "724a277be7c6bd49312b974f9b97514ecd35f7df81d12561fec0a4ec638356e9"
+  },
+  "source_hash_note": "Raw executed source hashes retained; LF-normalized hashes added for Git text line-ending normalization."
+}

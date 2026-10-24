@@ -1,0 +1,4906 @@
+{
+  "runs": {
+    "fp32-cpu-adam": {
+      "completed": true,
+      "full_parameter_steps": 4,
+      "block": 128,
+      "lr": 1e-05,
+      "weight_decay": 0.01,
+      "mode": "fp32",
+      "compute_dtype": "float32",
+      "bf16_model_copy": false,
+      "cpu_state_offload": true,
+      "gradient_accumulation": 1,
+      "global_gradient_clipping": false,
+      "gradient_policy": "consume in custom backward; native tiny-parameter post-accumulate hooks",
+      "moment_format": "full FP32 m/v on CPU",
+      "quantizer_probability_arithmetic": "FP32 NPU port, not bit-identical NumPy FP64 SR",
+      "seed": 20261024,
+      "physical_devices": [
+        2,
+        3
+      ],
+      "logs": [
+        {
+          "event": "begin",
+          "unix": 1792812041.8004472,
+          "elapsed": 0.00866246223449707,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 0,
+              "reserved": 0,
+              "peak_allocated": 0,
+              "peak_reserved": 0
+            },
+            {
+              "logical_device": 1,
+              "allocated": 0,
+              "reserved": 0,
+              "peak_allocated": 0,
+              "peak_reserved": 0
+            }
+          ],
+          "torch": "2.10.0+cpu",
+          "torch_npu": "2.10.0.post4"
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812051.1748352,
+          "elapsed": 9.38305139541626,
+          "tensors": 1,
+          "total_tensors": 851,
+          "logical_owned_bytes": 15256780800,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 5085634048,
+              "reserved": 5140119552,
+              "peak_allocated": 5204231680,
+              "peak_reserved": 5307891712
+            },
+            {
+              "logical_device": 1,
+              "allocated": 0,
+              "reserved": 0,
+              "peak_allocated": 0,
+              "peak_reserved": 0
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812088.207127,
+          "elapsed": 46.415343284606934,
+          "tensors": 33,
+          "total_tensors": 851,
+          "logical_owned_bytes": 63669534720,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 10789944832,
+              "reserved": 11117002752,
+              "peak_allocated": 10912836096,
+              "peak_reserved": 11326717952
+            },
+            {
+              "logical_device": 1,
+              "allocated": 10433424384,
+              "reserved": 10676600832,
+              "peak_allocated": 10556288512,
+              "peak_reserved": 10928259072
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812116.5063066,
+          "elapsed": 74.71452307701111,
+          "tensors": 65,
+          "total_tensors": 851,
+          "logical_owned_bytes": 97895055360,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 16494255616,
+              "reserved": 16947085312,
+              "peak_allocated": 16617029120,
+              "peak_reserved": 17177772032
+            },
+            {
+              "logical_device": 1,
+              "allocated": 16137735168,
+              "reserved": 16464740352,
+              "peak_allocated": 16260544000,
+              "peak_reserved": 16674455552
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812142.8293238,
+          "elapsed": 101.03754043579102,
+          "tensors": 97,
+          "total_tensors": 851,
+          "logical_owned_bytes": 132120576000,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 22198566400,
+              "reserved": 22777167872,
+              "peak_allocated": 22321376768,
+              "peak_reserved": 22944940032
+            },
+            {
+              "logical_device": 1,
+              "allocated": 21842045952,
+              "reserved": 22357737472,
+              "peak_allocated": 21964841984,
+              "peak_reserved": 22588424192
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812169.8378768,
+          "elapsed": 128.04609322547913,
+          "tensors": 129,
+          "total_tensors": 851,
+          "logical_owned_bytes": 166346096640,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 27902877184,
+              "reserved": 28649193472,
+              "peak_allocated": 28025642496,
+              "peak_reserved": 28837937152
+            },
+            {
+              "logical_device": 1,
+              "allocated": 27546356736,
+              "reserved": 28187820032,
+              "peak_allocated": 27669085184,
+              "peak_reserved": 28439478272
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812196.2764642,
+          "elapsed": 154.484680891037,
+          "tensors": 161,
+          "total_tensors": 851,
+          "logical_owned_bytes": 200571617280,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 33607187968,
+              "reserved": 34395389952,
+              "peak_allocated": 33729838592,
+              "peak_reserved": 34626076672
+            },
+            {
+              "logical_device": 1,
+              "allocated": 33250667520,
+              "reserved": 34059845632,
+              "peak_allocated": 33373228032,
+              "peak_reserved": 34248589312
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812224.037331,
+          "elapsed": 182.24554777145386,
+          "tensors": 193,
+          "total_tensors": 851,
+          "logical_owned_bytes": 234797137920,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 39311498752,
+              "reserved": 40267415552,
+              "peak_allocated": 39434345472,
+              "peak_reserved": 40519073792
+            },
+            {
+              "logical_device": 1,
+              "allocated": 38954978304,
+              "reserved": 39889928192,
+              "peak_allocated": 39077827584,
+              "peak_reserved": 40141586432
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812243.888248,
+          "elapsed": 202.0964641571045,
+          "tensors": 225,
+          "total_tensors": 851,
+          "logical_owned_bytes": 257383464960,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 43002527232,
+              "reserved": 43979374592,
+              "peak_allocated": 43126571008,
+              "peak_reserved": 44168118272
+            },
+            {
+              "logical_device": 1,
+              "allocated": 42792808448,
+              "reserved": 43790630912,
+              "peak_allocated": 42916837376,
+              "peak_reserved": 43958403072
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812262.7066715,
+          "elapsed": 220.91488790512085,
+          "tensors": 257,
+          "total_tensors": 851,
+          "logical_owned_bytes": 277516124160,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 46358011392,
+              "reserved": 47208988672,
+              "peak_allocated": 46482020864,
+              "peak_reserved": 47376760832
+            },
+            {
+              "logical_device": 1,
+              "allocated": 46148292608,
+              "reserved": 47062188032,
+              "peak_allocated": 46272445440,
+              "peak_reserved": 47313846272
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812274.0190794,
+          "elapsed": 232.22729659080505,
+          "tensors": 289,
+          "total_tensors": 851,
+          "logical_owned_bytes": 289847377920,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 48371301888,
+              "reserved": 49243226112,
+              "peak_allocated": 48488504832,
+              "peak_reserved": 49390026752
+            },
+            {
+              "logical_device": 1,
+              "allocated": 48245470208,
+              "reserved": 49243226112,
+              "peak_allocated": 48362692608,
+              "peak_reserved": 49348083712
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812285.6184804,
+          "elapsed": 243.82669687271118,
+          "tensors": 321,
+          "total_tensors": 851,
+          "logical_owned_bytes": 301926973440,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 50384592384,
+              "reserved": 51256492032,
+              "peak_allocated": 50501828096,
+              "peak_reserved": 51382321152
+            },
+            {
+              "logical_device": 1,
+              "allocated": 50258760704,
+              "reserved": 51319406592,
+              "peak_allocated": 50376032256,
+              "peak_reserved": 51424264192
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812297.1971886,
+          "elapsed": 255.40540528297424,
+          "tensors": 353,
+          "total_tensors": 851,
+          "logical_owned_bytes": 314006568960,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 52397882880,
+              "reserved": 53269757952,
+              "peak_allocated": 52515095552,
+              "peak_reserved": 53395587072
+            },
+            {
+              "logical_device": 1,
+              "allocated": 52272051200,
+              "reserved": 53416558592,
+              "peak_allocated": 52389200384,
+              "peak_reserved": 53521416192
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812303.668104,
+          "elapsed": 261.87632036209106,
+          "tensors": 385,
+          "total_tensors": 851,
+          "logical_owned_bytes": 321367572480,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53572308480,
+              "reserved": 54402220032,
+              "peak_allocated": 53611498496,
+              "peak_reserved": 54402220032
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53551334912,
+              "reserved": 54632906752,
+              "peak_allocated": 53590504448,
+              "peak_reserved": 54653878272
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812304.602963,
+          "elapsed": 262.81117939949036,
+          "tensors": 417,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322481356800,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53747961344,
+              "reserved": 54559506432,
+              "peak_allocated": 53779271168,
+              "peak_reserved": 54559506432
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53746976256,
+              "reserved": 54830039040,
+              "peak_allocated": 53779247104,
+              "peak_reserved": 54830039040
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812304.9887047,
+          "elapsed": 263.1969208717346,
+          "tensors": 449,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322575728640,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53763706368,
+              "reserved": 54574186496,
+              "peak_allocated": 53779271168,
+              "peak_reserved": 54574186496
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53762721280,
+              "reserved": 54846816256,
+              "peak_allocated": 53779247104,
+              "peak_reserved": 54846816256
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812305.3443623,
+          "elapsed": 263.5525782108307,
+          "tensors": 481,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322670100480,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53779451392,
+              "reserved": 54590963712,
+              "peak_allocated": 53781352960,
+              "peak_reserved": 54590963712
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53778466304,
+              "reserved": 54861496320,
+              "peak_allocated": 53780376064,
+              "peak_reserved": 54861496320
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812305.6665094,
+          "elapsed": 263.87472581863403,
+          "tensors": 513,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322727608320,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53789953536,
+              "reserved": 54599352320,
+              "peak_allocated": 53790117888,
+              "peak_reserved": 54599352320
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812305.9647493,
+          "elapsed": 264.1729655265808,
+          "tensors": 545,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322743336960,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53795212800,
+              "reserved": 54603546624,
+              "peak_allocated": 53795377152,
+              "peak_reserved": 54603546624
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812306.2468398,
+          "elapsed": 264.45505571365356,
+          "tensors": 577,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322745733120,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53795884544,
+              "reserved": 54603546624,
+              "peak_allocated": 53795905536,
+              "peak_reserved": 54603546624
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812306.5199351,
+          "elapsed": 264.72815132141113,
+          "tensors": 609,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322747699200,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53796556288,
+              "reserved": 54605643776,
+              "peak_allocated": 53796577280,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812306.8064847,
+          "elapsed": 265.01470136642456,
+          "tensors": 641,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322749665280,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53797228032,
+              "reserved": 54605643776,
+              "peak_allocated": 53797249024,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812307.096541,
+          "elapsed": 265.30475759506226,
+          "tensors": 673,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751631360,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53797899776,
+              "reserved": 54605643776,
+              "peak_allocated": 53797920768,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812307.3782854,
+          "elapsed": 265.58650159835815,
+          "tensors": 705,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751846400,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53797968384,
+              "reserved": 54605643776,
+              "peak_allocated": 53797969920,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812307.6610043,
+          "elapsed": 265.869220495224,
+          "tensors": 737,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751898624,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798001664,
+              "reserved": 54605643776,
+              "peak_allocated": 53798002688,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812307.9429169,
+          "elapsed": 266.1511335372925,
+          "tensors": 769,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751934336,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798026752,
+              "reserved": 54605643776,
+              "peak_allocated": 53798027264,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812308.2292907,
+          "elapsed": 266.4375071525574,
+          "tensors": 801,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751952768,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798043136,
+              "reserved": 54605643776,
+              "peak_allocated": 53798043648,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812308.51263,
+          "elapsed": 266.7208468914032,
+          "tensors": 833,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751971200,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798059520,
+              "reserved": 54605643776,
+              "peak_allocated": 53798060032,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792812308.7727623,
+          "elapsed": 266.9809787273407,
+          "tensors": 851,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751981568,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 54605643776,
+              "peak_allocated": 53798069248,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "model_ready",
+          "unix": 1792812310.2112532,
+          "elapsed": 268.4194691181183,
+          "parameters": 26895998464,
+          "wrapped_parameters": 26893352960,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 54605643776,
+              "peak_allocated": 53798069248,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ],
+          "data": {
+            "source": "Existing independent Alpaca-GPT4 Chinese 32/8 split; shortest complete examples selected deterministically",
+            "train_hashes": [
+              "6261d8d1dc1e4f8690367186c716d0be96cec8a26d18b6f66f70a553f2ffe314",
+              "3b6210998a0c7624c43c3c174ad369644f1d47a0984f9c9bb8bd9f7bb5c9537d",
+              "7242cb3846af9e62e9000c9e09e076b6dd6696f11f7582252fa7f7994ae1afa8",
+              "c5558c6e47daa8b66e9fdabcac9c4780d32fa975a916aefbee1b02c23f1ab75d"
+            ],
+            "validation_hashes": [
+              "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+              "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+              "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+              "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+              "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+              "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+              "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+              "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da"
+            ],
+            "train_lengths": [
+              28,
+              31,
+              31,
+              32
+            ],
+            "validation_lengths": [
+              49,
+              56,
+              71,
+              85,
+              91,
+              98,
+              108,
+              126
+            ],
+            "gsm8k_used": false,
+            "loss": "causal assistant tokens only"
+          }
+        },
+        {
+          "event": "validation_before",
+          "unix": 1792812322.4419737,
+          "elapsed": 280.6501896381378,
+          "metrics": {
+            "loss": 2.0564670802263962,
+            "assistant_token_accuracy": 0.5242494226327945,
+            "assistant_tokens": 433,
+            "examples": [
+              {
+                "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+                "tokens": 49,
+                "assistant_tokens": 24,
+                "loss": 4.169748306274414,
+                "correct": 10
+              },
+              {
+                "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+                "tokens": 56,
+                "assistant_tokens": 31,
+                "loss": 1.9790339469909668,
+                "correct": 15
+              },
+              {
+                "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+                "tokens": 71,
+                "assistant_tokens": 51,
+                "loss": 1.3668724298477173,
+                "correct": 34
+              },
+              {
+                "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+                "tokens": 85,
+                "assistant_tokens": 66,
+                "loss": 1.1862237453460693,
+                "correct": 48
+              },
+              {
+                "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+                "tokens": 91,
+                "assistant_tokens": 35,
+                "loss": 1.4513804912567139,
+                "correct": 22
+              },
+              {
+                "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+                "tokens": 98,
+                "assistant_tokens": 31,
+                "loss": 2.702025890350342,
+                "correct": 12
+              },
+              {
+                "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+                "tokens": 108,
+                "assistant_tokens": 86,
+                "loss": 1.7842814922332764,
+                "correct": 56
+              },
+              {
+                "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+                "tokens": 126,
+                "assistant_tokens": 109,
+                "loss": 2.6882169246673584,
+                "correct": 30
+              }
+            ],
+            "canonical_fp32": true
+          },
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 55018782720,
+              "peak_allocated": 54184117248,
+              "peak_reserved": 55018782720
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 55228497920,
+              "peak_allocated": 54155194368,
+              "peak_reserved": 55228497920
+            }
+          ]
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792812322.4528296,
+          "elapsed": 280.66104435920715,
+          "step": 1,
+          "tokens": 28
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792812323.8192487,
+          "elapsed": 282.0274646282196,
+          "step": 1,
+          "loss": 1.541751742362976,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53864378368,
+              "reserved": 55029268480,
+              "peak_allocated": 54196462592,
+              "peak_reserved": 55029268480
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 55228497920,
+              "peak_allocated": 54146363392,
+              "peak_reserved": 55228497920
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792813010.8901918,
+          "elapsed": 969.098406791687,
+          "step": 1,
+          "loss": 1.541751742362976,
+          "seconds": 688.4312743099872,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 107573411840,
+          "moment_bytes": 215167987712,
+          "codec_new_fallbacks": 0,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56184799232,
+              "peak_allocated": 54674932736,
+              "peak_reserved": 56184799232
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56446943232,
+              "peak_allocated": 54574349824,
+              "peak_reserved": 56446943232
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 440.8168843390886,
+            "host_copy_seconds": 75.9239660189487,
+            "device_copy_seconds": 37.021791925188154
+          },
+          "host_max_rss_kib": 212651856
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792813011.135358,
+          "elapsed": 969.3435730934143,
+          "step": 2,
+          "tokens": 31
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792813012.5717428,
+          "elapsed": 970.779958486557,
+          "step": 2,
+          "loss": 2.472484588623047,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53871476224,
+              "reserved": 56195284992,
+              "peak_allocated": 54200953856,
+              "peak_reserved": 56195284992
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56446943232,
+              "peak_allocated": 54146633728,
+              "peak_reserved": 56446943232
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792813558.506148,
+          "elapsed": 1516.7143630981445,
+          "step": 2,
+          "loss": 2.472484588623047,
+          "seconds": 547.364472590154,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 107573411840,
+          "moment_bytes": 215167987712,
+          "codec_new_fallbacks": 0,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56195284992,
+              "peak_allocated": 54681105920,
+              "peak_reserved": 56195284992
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56449040384,
+              "peak_allocated": 54575087104,
+              "peak_reserved": 56449040384
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 747.4772306759842,
+            "host_copy_seconds": 154.95786943961866,
+            "device_copy_seconds": 75.5650498548057
+          },
+          "host_max_rss_kib": 212651856
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792813559.0272007,
+          "elapsed": 1517.2354156970978,
+          "step": 3,
+          "tokens": 31
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792813560.4162695,
+          "elapsed": 1518.6244850158691,
+          "step": 3,
+          "loss": 2.0410056114196777,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53871476224,
+              "reserved": 56197382144,
+              "peak_allocated": 54200953856,
+              "peak_reserved": 56197382144
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56449040384,
+              "peak_allocated": 54146633728,
+              "peak_reserved": 56449040384
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792814089.3179066,
+          "elapsed": 2047.526121377945,
+          "step": 3,
+          "loss": 2.0410056114196777,
+          "seconds": 530.2839615601115,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 107573411840,
+          "moment_bytes": 215167987712,
+          "codec_new_fallbacks": 0,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56197382144,
+              "peak_allocated": 54681105920,
+              "peak_reserved": 56197382144
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56449040384,
+              "peak_allocated": 54575087104,
+              "peak_reserved": 56449040384
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 1015.5093073381577,
+            "host_copy_seconds": 247.90881274966523,
+            "device_copy_seconds": 119.63093495182693
+          },
+          "host_max_rss_kib": 212668700
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792814090.060082,
+          "elapsed": 2048.2682971954346,
+          "step": 4,
+          "tokens": 32
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792814091.4726663,
+          "elapsed": 2049.6808836460114,
+          "step": 4,
+          "loss": 0.7611975073814392,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53873843200,
+              "reserved": 56199479296,
+              "peak_allocated": 54202452480,
+              "peak_reserved": 56199479296
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56449040384,
+              "peak_allocated": 54146723840,
+              "peak_reserved": 56449040384
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792814604.5240643,
+          "elapsed": 2562.7322793006897,
+          "step": 4,
+          "loss": 0.7611975073814392,
+          "seconds": 514.456786549883,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 107573411840,
+          "moment_bytes": 215167987712,
+          "codec_new_fallbacks": 0,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56199479296,
+              "peak_allocated": 54683166720,
+              "peak_reserved": 56199479296
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56449040384,
+              "peak_allocated": 54575332864,
+              "peak_reserved": 56449040384
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 1274.4669726127759,
+            "host_copy_seconds": 339.3384804853704,
+            "device_copy_seconds": 162.76248885015957
+          },
+          "host_max_rss_kib": 212688136
+        },
+        {
+          "event": "validation_after",
+          "unix": 1792814617.6033814,
+          "elapsed": 2575.8115968704224,
+          "metrics": {
+            "loss": 1.5349630557912601,
+            "assistant_token_accuracy": 0.6073903002309469,
+            "assistant_tokens": 433,
+            "examples": [
+              {
+                "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+                "tokens": 49,
+                "assistant_tokens": 24,
+                "loss": 2.9973199367523193,
+                "correct": 11
+              },
+              {
+                "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+                "tokens": 56,
+                "assistant_tokens": 31,
+                "loss": 1.788043737411499,
+                "correct": 14
+              },
+              {
+                "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+                "tokens": 71,
+                "assistant_tokens": 51,
+                "loss": 0.8668391704559326,
+                "correct": 40
+              },
+              {
+                "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+                "tokens": 85,
+                "assistant_tokens": 66,
+                "loss": 1.0084688663482666,
+                "correct": 46
+              },
+              {
+                "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+                "tokens": 91,
+                "assistant_tokens": 35,
+                "loss": 0.9753583669662476,
+                "correct": 22
+              },
+              {
+                "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+                "tokens": 98,
+                "assistant_tokens": 31,
+                "loss": 2.57753586769104,
+                "correct": 16
+              },
+              {
+                "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+                "tokens": 108,
+                "assistant_tokens": 86,
+                "loss": 1.310324788093567,
+                "correct": 59
+              },
+              {
+                "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+                "tokens": 126,
+                "assistant_tokens": 109,
+                "loss": 1.832817792892456,
+                "correct": 55
+              }
+            ],
+            "canonical_fp32": true
+          },
+          "delta": -0.5215040244351361,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56199479296,
+              "peak_allocated": 54683166720,
+              "peak_reserved": 56199479296
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56449040384,
+              "peak_allocated": 54575332864,
+              "peak_reserved": 56449040384
+            }
+          ]
+        },
+        {
+          "event": "complete",
+          "unix": 1792814617.6095245,
+          "elapsed": 2575.817739725113,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56199479296,
+              "peak_allocated": 54683166720,
+              "peak_reserved": 56199479296
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56449040384,
+              "peak_allocated": 54575332864,
+              "peak_reserved": 56449040384
+            }
+          ]
+        }
+      ],
+      "process_thp_disabled": true,
+      "allocator_memory_fraction": 0.995,
+      "comparison": "same custom autograd harness; CPU offload is not a tuned DeepSpeed baseline",
+      "validation_precision": "canonical FP32 for all groups, plus execution dtype for BF16",
+      "full_text_parameters": 26895998464,
+      "wrapped_parameters": 26893352960,
+      "native_parameters": 2645504,
+      "data": {
+        "source": "Existing independent Alpaca-GPT4 Chinese 32/8 split; shortest complete examples selected deterministically",
+        "train_hashes": [
+          "6261d8d1dc1e4f8690367186c716d0be96cec8a26d18b6f66f70a553f2ffe314",
+          "3b6210998a0c7624c43c3c174ad369644f1d47a0984f9c9bb8bd9f7bb5c9537d",
+          "7242cb3846af9e62e9000c9e09e076b6dd6696f11f7582252fa7f7994ae1afa8",
+          "c5558c6e47daa8b66e9fdabcac9c4780d32fa975a916aefbee1b02c23f1ab75d"
+        ],
+        "validation_hashes": [
+          "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+          "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+          "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+          "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+          "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+          "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+          "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+          "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da"
+        ],
+        "train_lengths": [
+          28,
+          31,
+          31,
+          32
+        ],
+        "validation_lengths": [
+          49,
+          56,
+          71,
+          85,
+          91,
+          98,
+          108,
+          126
+        ],
+        "gsm8k_used": false,
+        "loss": "causal assistant tokens only"
+      },
+      "validation_before": {
+        "loss": 2.0564670802263962,
+        "assistant_token_accuracy": 0.5242494226327945,
+        "assistant_tokens": 433,
+        "examples": [
+          {
+            "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+            "tokens": 49,
+            "assistant_tokens": 24,
+            "loss": 4.169748306274414,
+            "correct": 10
+          },
+          {
+            "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+            "tokens": 56,
+            "assistant_tokens": 31,
+            "loss": 1.9790339469909668,
+            "correct": 15
+          },
+          {
+            "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+            "tokens": 71,
+            "assistant_tokens": 51,
+            "loss": 1.3668724298477173,
+            "correct": 34
+          },
+          {
+            "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+            "tokens": 85,
+            "assistant_tokens": 66,
+            "loss": 1.1862237453460693,
+            "correct": 48
+          },
+          {
+            "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+            "tokens": 91,
+            "assistant_tokens": 35,
+            "loss": 1.4513804912567139,
+            "correct": 22
+          },
+          {
+            "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+            "tokens": 98,
+            "assistant_tokens": 31,
+            "loss": 2.702025890350342,
+            "correct": 12
+          },
+          {
+            "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+            "tokens": 108,
+            "assistant_tokens": 86,
+            "loss": 1.7842814922332764,
+            "correct": 56
+          },
+          {
+            "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+            "tokens": 126,
+            "assistant_tokens": 109,
+            "loss": 2.6882169246673584,
+            "correct": 30
+          }
+        ],
+        "canonical_fp32": true
+      },
+      "validation_after": {
+        "loss": 1.5349630557912601,
+        "assistant_token_accuracy": 0.6073903002309469,
+        "assistant_tokens": 433,
+        "examples": [
+          {
+            "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+            "tokens": 49,
+            "assistant_tokens": 24,
+            "loss": 2.9973199367523193,
+            "correct": 11
+          },
+          {
+            "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+            "tokens": 56,
+            "assistant_tokens": 31,
+            "loss": 1.788043737411499,
+            "correct": 14
+          },
+          {
+            "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+            "tokens": 71,
+            "assistant_tokens": 51,
+            "loss": 0.8668391704559326,
+            "correct": 40
+          },
+          {
+            "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+            "tokens": 85,
+            "assistant_tokens": 66,
+            "loss": 1.0084688663482666,
+            "correct": 46
+          },
+          {
+            "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+            "tokens": 91,
+            "assistant_tokens": 35,
+            "loss": 0.9753583669662476,
+            "correct": 22
+          },
+          {
+            "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+            "tokens": 98,
+            "assistant_tokens": 31,
+            "loss": 2.57753586769104,
+            "correct": 16
+          },
+          {
+            "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+            "tokens": 108,
+            "assistant_tokens": 86,
+            "loss": 1.310324788093567,
+            "correct": 59
+          },
+          {
+            "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+            "tokens": 126,
+            "assistant_tokens": 109,
+            "loss": 1.832817792892456,
+            "correct": 55
+          }
+        ],
+        "canonical_fp32": true
+      },
+      "elapsed_seconds": 2575.8211057186127
+    },
+    "fp32_full": {
+      "completed": true,
+      "full_parameter_steps": 4,
+      "block": 128,
+      "lr": 1e-05,
+      "weight_decay": 0.01,
+      "mode": "fp32",
+      "compute_dtype": "float32",
+      "bf16_model_copy": false,
+      "cpu_state_offload": true,
+      "gradient_accumulation": 1,
+      "global_gradient_clipping": false,
+      "gradient_policy": "consume in custom backward; native tiny-parameter post-accumulate hooks",
+      "moment_format": "full FP32 m/v on CPU; updated in NPU windows",
+      "quantizer_probability_arithmetic": "FP32 NPU port, not bit-identical NumPy FP64 SR",
+      "seed": 20261024,
+      "physical_devices": [
+        2,
+        3
+      ],
+      "logs": [
+        {
+          "event": "begin",
+          "unix": 1792814706.7470806,
+          "elapsed": 0.008348703384399414,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 0,
+              "reserved": 0,
+              "peak_allocated": 0,
+              "peak_reserved": 0
+            },
+            {
+              "logical_device": 1,
+              "allocated": 0,
+              "reserved": 0,
+              "peak_allocated": 0,
+              "peak_reserved": 0
+            }
+          ],
+          "torch": "2.10.0+cpu",
+          "torch_npu": "2.10.0.post4"
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814719.226253,
+          "elapsed": 12.487521886825562,
+          "tensors": 1,
+          "total_tensors": 851,
+          "logical_owned_bytes": 15256780800,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 5085634048,
+              "reserved": 5140119552,
+              "peak_allocated": 5204231680,
+              "peak_reserved": 5307891712
+            },
+            {
+              "logical_device": 1,
+              "allocated": 0,
+              "reserved": 0,
+              "peak_allocated": 0,
+              "peak_reserved": 0
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814751.5171454,
+          "elapsed": 44.778414487838745,
+          "tensors": 33,
+          "total_tensors": 851,
+          "logical_owned_bytes": 63669534720,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 10789944832,
+              "reserved": 11117002752,
+              "peak_allocated": 10912836096,
+              "peak_reserved": 11326717952
+            },
+            {
+              "logical_device": 1,
+              "allocated": 10433424384,
+              "reserved": 10676600832,
+              "peak_allocated": 10556288512,
+              "peak_reserved": 10928259072
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814775.001402,
+          "elapsed": 68.26267004013062,
+          "tensors": 65,
+          "total_tensors": 851,
+          "logical_owned_bytes": 97895055360,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 16494255616,
+              "reserved": 16947085312,
+              "peak_allocated": 16617029120,
+              "peak_reserved": 17177772032
+            },
+            {
+              "logical_device": 1,
+              "allocated": 16137735168,
+              "reserved": 16464740352,
+              "peak_allocated": 16260544000,
+              "peak_reserved": 16674455552
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814798.4429126,
+          "elapsed": 91.70418167114258,
+          "tensors": 97,
+          "total_tensors": 851,
+          "logical_owned_bytes": 132120576000,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 22198566400,
+              "reserved": 22777167872,
+              "peak_allocated": 22321376768,
+              "peak_reserved": 22944940032
+            },
+            {
+              "logical_device": 1,
+              "allocated": 21842045952,
+              "reserved": 22357737472,
+              "peak_allocated": 21964841984,
+              "peak_reserved": 22588424192
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814828.2747393,
+          "elapsed": 121.53600788116455,
+          "tensors": 129,
+          "total_tensors": 851,
+          "logical_owned_bytes": 166346096640,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 27902877184,
+              "reserved": 28649193472,
+              "peak_allocated": 28025642496,
+              "peak_reserved": 28837937152
+            },
+            {
+              "logical_device": 1,
+              "allocated": 27546356736,
+              "reserved": 28187820032,
+              "peak_allocated": 27669085184,
+              "peak_reserved": 28439478272
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814860.6745214,
+          "elapsed": 153.93579030036926,
+          "tensors": 161,
+          "total_tensors": 851,
+          "logical_owned_bytes": 200571617280,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 33607187968,
+              "reserved": 34395389952,
+              "peak_allocated": 33729838592,
+              "peak_reserved": 34626076672
+            },
+            {
+              "logical_device": 1,
+              "allocated": 33250667520,
+              "reserved": 34059845632,
+              "peak_allocated": 33373228032,
+              "peak_reserved": 34248589312
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814891.6107185,
+          "elapsed": 184.8719871044159,
+          "tensors": 193,
+          "total_tensors": 851,
+          "logical_owned_bytes": 234797137920,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 39311498752,
+              "reserved": 40267415552,
+              "peak_allocated": 39434345472,
+              "peak_reserved": 40519073792
+            },
+            {
+              "logical_device": 1,
+              "allocated": 38954978304,
+              "reserved": 39889928192,
+              "peak_allocated": 39077827584,
+              "peak_reserved": 40141586432
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814909.9556086,
+          "elapsed": 203.21687769889832,
+          "tensors": 225,
+          "total_tensors": 851,
+          "logical_owned_bytes": 257383464960,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 43002527232,
+              "reserved": 43979374592,
+              "peak_allocated": 43126571008,
+              "peak_reserved": 44168118272
+            },
+            {
+              "logical_device": 1,
+              "allocated": 42792808448,
+              "reserved": 43790630912,
+              "peak_allocated": 42916837376,
+              "peak_reserved": 43958403072
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814927.213594,
+          "elapsed": 220.474862575531,
+          "tensors": 257,
+          "total_tensors": 851,
+          "logical_owned_bytes": 277516124160,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 46358011392,
+              "reserved": 47208988672,
+              "peak_allocated": 46482020864,
+              "peak_reserved": 47376760832
+            },
+            {
+              "logical_device": 1,
+              "allocated": 46148292608,
+              "reserved": 47062188032,
+              "peak_allocated": 46272445440,
+              "peak_reserved": 47313846272
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814938.1285253,
+          "elapsed": 231.389794588089,
+          "tensors": 289,
+          "total_tensors": 851,
+          "logical_owned_bytes": 289847377920,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 48371301888,
+              "reserved": 49243226112,
+              "peak_allocated": 48488504832,
+              "peak_reserved": 49390026752
+            },
+            {
+              "logical_device": 1,
+              "allocated": 48245470208,
+              "reserved": 49243226112,
+              "peak_allocated": 48362692608,
+              "peak_reserved": 49348083712
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814948.1045356,
+          "elapsed": 241.36580419540405,
+          "tensors": 321,
+          "total_tensors": 851,
+          "logical_owned_bytes": 301926973440,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 50384592384,
+              "reserved": 51256492032,
+              "peak_allocated": 50501828096,
+              "peak_reserved": 51382321152
+            },
+            {
+              "logical_device": 1,
+              "allocated": 50258760704,
+              "reserved": 51319406592,
+              "peak_allocated": 50376032256,
+              "peak_reserved": 51424264192
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814958.6736295,
+          "elapsed": 251.93489861488342,
+          "tensors": 353,
+          "total_tensors": 851,
+          "logical_owned_bytes": 314006568960,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 52397882880,
+              "reserved": 53269757952,
+              "peak_allocated": 52515095552,
+              "peak_reserved": 53395587072
+            },
+            {
+              "logical_device": 1,
+              "allocated": 52272051200,
+              "reserved": 53416558592,
+              "peak_allocated": 52389200384,
+              "peak_reserved": 53521416192
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814965.39191,
+          "elapsed": 258.6531789302826,
+          "tensors": 385,
+          "total_tensors": 851,
+          "logical_owned_bytes": 321367572480,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53572308480,
+              "reserved": 54402220032,
+              "peak_allocated": 53611498496,
+              "peak_reserved": 54402220032
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53551334912,
+              "reserved": 54632906752,
+              "peak_allocated": 53590504448,
+              "peak_reserved": 54653878272
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814966.3151224,
+          "elapsed": 259.57639145851135,
+          "tensors": 417,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322481356800,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53747961344,
+              "reserved": 54559506432,
+              "peak_allocated": 53779271168,
+              "peak_reserved": 54559506432
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53746976256,
+              "reserved": 54830039040,
+              "peak_allocated": 53779247104,
+              "peak_reserved": 54830039040
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814966.6696398,
+          "elapsed": 259.93090867996216,
+          "tensors": 449,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322575728640,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53763706368,
+              "reserved": 54574186496,
+              "peak_allocated": 53779271168,
+              "peak_reserved": 54574186496
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53762721280,
+              "reserved": 54846816256,
+              "peak_allocated": 53779247104,
+              "peak_reserved": 54846816256
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814967.0394952,
+          "elapsed": 260.3007643222809,
+          "tensors": 481,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322670100480,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53779451392,
+              "reserved": 54590963712,
+              "peak_allocated": 53781352960,
+              "peak_reserved": 54590963712
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53778466304,
+              "reserved": 54861496320,
+              "peak_allocated": 53780376064,
+              "peak_reserved": 54861496320
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814967.3846724,
+          "elapsed": 260.6459412574768,
+          "tensors": 513,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322727608320,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53789953536,
+              "reserved": 54599352320,
+              "peak_allocated": 53790117888,
+              "peak_reserved": 54599352320
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814967.6801653,
+          "elapsed": 260.94143414497375,
+          "tensors": 545,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322743336960,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53795212800,
+              "reserved": 54603546624,
+              "peak_allocated": 53795377152,
+              "peak_reserved": 54603546624
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814967.9624407,
+          "elapsed": 261.22370958328247,
+          "tensors": 577,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322745733120,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53795884544,
+              "reserved": 54603546624,
+              "peak_allocated": 53795905536,
+              "peak_reserved": 54603546624
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814968.2347186,
+          "elapsed": 261.49598693847656,
+          "tensors": 609,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322747699200,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53796556288,
+              "reserved": 54605643776,
+              "peak_allocated": 53796577280,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814968.5168633,
+          "elapsed": 261.7781319618225,
+          "tensors": 641,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322749665280,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53797228032,
+              "reserved": 54605643776,
+              "peak_allocated": 53797249024,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814968.7987394,
+          "elapsed": 262.0600085258484,
+          "tensors": 673,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751631360,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53797899776,
+              "reserved": 54605643776,
+              "peak_allocated": 53797920768,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814969.0789778,
+          "elapsed": 262.3402490615845,
+          "tensors": 705,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751846400,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53797968384,
+              "reserved": 54605643776,
+              "peak_allocated": 53797969920,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814969.3596187,
+          "elapsed": 262.6208870410919,
+          "tensors": 737,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751898624,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798001664,
+              "reserved": 54605643776,
+              "peak_allocated": 53798002688,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814969.631164,
+          "elapsed": 262.8924329280853,
+          "tensors": 769,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751934336,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798026752,
+              "reserved": 54605643776,
+              "peak_allocated": 53798027264,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814969.9115505,
+          "elapsed": 263.17281913757324,
+          "tensors": 801,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751952768,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798043136,
+              "reserved": 54605643776,
+              "peak_allocated": 53798043648,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814970.1917567,
+          "elapsed": 263.4530258178711,
+          "tensors": 833,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751971200,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798059520,
+              "reserved": 54605643776,
+              "peak_allocated": 53798060032,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792814970.458097,
+          "elapsed": 263.71936535835266,
+          "tensors": 851,
+          "total_tensors": 851,
+          "logical_owned_bytes": 322751981568,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 54605643776,
+              "peak_allocated": 53798069248,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ]
+        },
+        {
+          "event": "model_ready",
+          "unix": 1792814971.9396784,
+          "elapsed": 265.20094633102417,
+          "parameters": 26895998464,
+          "wrapped_parameters": 26893352960,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 54605643776,
+              "peak_allocated": 53798069248,
+              "peak_reserved": 54605643776
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 54869884928,
+              "peak_allocated": 53789224960,
+              "peak_reserved": 54869884928
+            }
+          ],
+          "data": {
+            "source": "Existing independent Alpaca-GPT4 Chinese 32/8 split; shortest complete examples selected deterministically",
+            "train_hashes": [
+              "6261d8d1dc1e4f8690367186c716d0be96cec8a26d18b6f66f70a553f2ffe314",
+              "3b6210998a0c7624c43c3c174ad369644f1d47a0984f9c9bb8bd9f7bb5c9537d",
+              "7242cb3846af9e62e9000c9e09e076b6dd6696f11f7582252fa7f7994ae1afa8",
+              "c5558c6e47daa8b66e9fdabcac9c4780d32fa975a916aefbee1b02c23f1ab75d"
+            ],
+            "validation_hashes": [
+              "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+              "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+              "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+              "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+              "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+              "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+              "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+              "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da"
+            ],
+            "train_lengths": [
+              28,
+              31,
+              31,
+              32
+            ],
+            "validation_lengths": [
+              49,
+              56,
+              71,
+              85,
+              91,
+              98,
+              108,
+              126
+            ],
+            "gsm8k_used": false,
+            "loss": "causal assistant tokens only"
+          }
+        },
+        {
+          "event": "validation_before",
+          "unix": 1792814984.3632452,
+          "elapsed": 277.6245141029358,
+          "metrics": {
+            "loss": 2.056467159791026,
+            "assistant_token_accuracy": 0.5242494226327945,
+            "assistant_tokens": 433,
+            "examples": [
+              {
+                "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+                "tokens": 49,
+                "assistant_tokens": 24,
+                "loss": 4.169748306274414,
+                "correct": 10
+              },
+              {
+                "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+                "tokens": 56,
+                "assistant_tokens": 31,
+                "loss": 1.9790339469909668,
+                "correct": 15
+              },
+              {
+                "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+                "tokens": 71,
+                "assistant_tokens": 51,
+                "loss": 1.3668725490570068,
+                "correct": 34
+              },
+              {
+                "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+                "tokens": 85,
+                "assistant_tokens": 66,
+                "loss": 1.1862238645553589,
+                "correct": 48
+              },
+              {
+                "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+                "tokens": 91,
+                "assistant_tokens": 35,
+                "loss": 1.4513804912567139,
+                "correct": 22
+              },
+              {
+                "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+                "tokens": 98,
+                "assistant_tokens": 31,
+                "loss": 2.702025890350342,
+                "correct": 12
+              },
+              {
+                "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+                "tokens": 108,
+                "assistant_tokens": 86,
+                "loss": 1.7842817306518555,
+                "correct": 56
+              },
+              {
+                "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+                "tokens": 126,
+                "assistant_tokens": 109,
+                "loss": 2.6882169246673584,
+                "correct": 30
+              }
+            ],
+            "canonical_fp32": true
+          },
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 55018782720,
+              "peak_allocated": 54184117248,
+              "peak_reserved": 55018782720
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 55228497920,
+              "peak_allocated": 54155194368,
+              "peak_reserved": 55228497920
+            }
+          ]
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792814984.3745694,
+          "elapsed": 277.6358368396759,
+          "step": 1,
+          "tokens": 28
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792814985.7520635,
+          "elapsed": 279.0133316516876,
+          "step": 1,
+          "loss": 1.541751742362976,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53864378368,
+              "reserved": 55029268480,
+              "peak_allocated": 54196462592,
+              "peak_reserved": 55029268480
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 55228497920,
+              "peak_allocated": 54146363392,
+              "peak_reserved": 55228497920
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792815476.60414,
+          "elapsed": 769.865407705307,
+          "step": 1,
+          "loss": 1.541751742362976,
+          "seconds": 492.2228822300676,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 107573411840,
+          "moment_bytes": 215167987712,
+          "codec_new_fallbacks": 0,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56184799232,
+              "peak_allocated": 54674932736,
+              "peak_reserved": 56184799232
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56409194496,
+              "peak_allocated": 54574349824,
+              "peak_reserved": 56409194496
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 359.8224584944546,
+            "device_copy_seconds": 70.39388275961392,
+            "npu_adam_seconds": 12.949247584445402
+          },
+          "host_max_rss_kib": 212626028
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792815476.8544548,
+          "elapsed": 770.1157224178314,
+          "step": 2,
+          "tokens": 31
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792815478.2605977,
+          "elapsed": 771.5218660831451,
+          "step": 2,
+          "loss": 2.4724843502044678,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53871476224,
+              "reserved": 56195284992,
+              "peak_allocated": 54200953856,
+              "peak_reserved": 56195284992
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56409194496,
+              "peak_allocated": 54146633728,
+              "peak_reserved": 56409194496
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792815667.5825543,
+          "elapsed": 960.8438222408295,
+          "step": 2,
+          "loss": 2.4724843502044678,
+          "seconds": 190.71973497001454,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 107573411840,
+          "moment_bytes": 215167987712,
+          "codec_new_fallbacks": 0,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56195284992,
+              "peak_allocated": 54681105920,
+              "peak_reserved": 56195284992
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56451137536,
+              "peak_allocated": 54575087104,
+              "peak_reserved": 56451137536
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 431.5500070573762,
+            "device_copy_seconds": 141.61855353461578,
+            "npu_adam_seconds": 25.519376506563276
+          },
+          "host_max_rss_kib": 212626028
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792815668.0920625,
+          "elapsed": 961.353330373764,
+          "step": 3,
+          "tokens": 31
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792815669.6607928,
+          "elapsed": 962.9220614433289,
+          "step": 3,
+          "loss": 2.0410048961639404,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53871476224,
+              "reserved": 56197382144,
+              "peak_allocated": 54200953856,
+              "peak_reserved": 56197382144
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56451137536,
+              "peak_allocated": 54146633728,
+              "peak_reserved": 56451137536
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792815822.658884,
+          "elapsed": 1115.9201517105103,
+          "step": 3,
+          "loss": 2.0410048961639404,
+          "seconds": 154.56092003989033,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 107573411840,
+          "moment_bytes": 215167987712,
+          "codec_new_fallbacks": 0,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56197382144,
+              "peak_allocated": 54681105920,
+              "peak_reserved": 56197382144
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56453234688,
+              "peak_allocated": 54575087104,
+              "peak_reserved": 56453234688
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 478.4550631758757,
+            "device_copy_seconds": 200.14408931159414,
+            "npu_adam_seconds": 38.591270110337064
+          },
+          "host_max_rss_kib": 212638976
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792815823.4269218,
+          "elapsed": 1116.6881895065308,
+          "step": 4,
+          "tokens": 32
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792815825.015097,
+          "elapsed": 1118.2763648033142,
+          "step": 4,
+          "loss": 0.7611963748931885,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53873843200,
+              "reserved": 56199479296,
+              "peak_allocated": 54202452480,
+              "peak_reserved": 56199479296
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56453234688,
+              "peak_allocated": 54146723840,
+              "peak_reserved": 56453234688
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792815963.4213605,
+          "elapsed": 1256.6826281547546,
+          "step": 4,
+          "loss": 0.7611963748931885,
+          "seconds": 139.98698946996592,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 107573411840,
+          "moment_bytes": 215167987712,
+          "codec_new_fallbacks": 0,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56199479296,
+              "peak_allocated": 54683166720,
+              "peak_reserved": 56199479296
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56453234688,
+              "peak_allocated": 54575332864,
+              "peak_reserved": 56453234688
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 517.4009175482206,
+            "device_copy_seconds": 252.74770268518478,
+            "npu_adam_seconds": 51.70587872550823
+          },
+          "host_max_rss_kib": 212662604
+        },
+        {
+          "event": "validation_after",
+          "unix": 1792815977.684425,
+          "elapsed": 1270.945693731308,
+          "metrics": {
+            "loss": 1.5349637019441529,
+            "assistant_token_accuracy": 0.6073903002309469,
+            "assistant_tokens": 433,
+            "examples": [
+              {
+                "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+                "tokens": 49,
+                "assistant_tokens": 24,
+                "loss": 2.9973201751708984,
+                "correct": 11
+              },
+              {
+                "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+                "tokens": 56,
+                "assistant_tokens": 31,
+                "loss": 1.7880455255508423,
+                "correct": 14
+              },
+              {
+                "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+                "tokens": 71,
+                "assistant_tokens": 51,
+                "loss": 0.8668400049209595,
+                "correct": 40
+              },
+              {
+                "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+                "tokens": 85,
+                "assistant_tokens": 66,
+                "loss": 1.0084689855575562,
+                "correct": 46
+              },
+              {
+                "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+                "tokens": 91,
+                "assistant_tokens": 35,
+                "loss": 0.975358247756958,
+                "correct": 22
+              },
+              {
+                "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+                "tokens": 98,
+                "assistant_tokens": 31,
+                "loss": 2.577538251876831,
+                "correct": 16
+              },
+              {
+                "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+                "tokens": 108,
+                "assistant_tokens": 86,
+                "loss": 1.310325026512146,
+                "correct": 59
+              },
+              {
+                "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+                "tokens": 126,
+                "assistant_tokens": 109,
+                "loss": 1.8328185081481934,
+                "correct": 55
+              }
+            ],
+            "canonical_fp32": true
+          },
+          "delta": -0.5215034578468729,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56199479296,
+              "peak_allocated": 54683166720,
+              "peak_reserved": 56199479296
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56453234688,
+              "peak_allocated": 54575332864,
+              "peak_reserved": 56453234688
+            }
+          ]
+        },
+        {
+          "event": "complete",
+          "unix": 1792815977.6909857,
+          "elapsed": 1270.9522533416748,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53798068736,
+              "reserved": 56199479296,
+              "peak_allocated": 54683166720,
+              "peak_reserved": 56199479296
+            },
+            {
+              "logical_device": 1,
+              "allocated": 53787322880,
+              "reserved": 56453234688,
+              "peak_allocated": 54575332864,
+              "peak_reserved": 56453234688
+            }
+          ]
+        }
+      ],
+      "process_thp_disabled": true,
+      "allocator_memory_fraction": 0.995,
+      "comparison": "same custom autograd harness; full FP32 moments offloaded to CPU with NPU compute, not tuned DeepSpeed",
+      "optimizer_compute_device": "npu",
+      "full_state_offload_precision": "FP32 raw copies; no quantization",
+      "validation_precision": "canonical FP32 for all groups, plus execution dtype for BF16",
+      "full_text_parameters": 26895998464,
+      "wrapped_parameters": 26893352960,
+      "native_parameters": 2645504,
+      "data": {
+        "source": "Existing independent Alpaca-GPT4 Chinese 32/8 split; shortest complete examples selected deterministically",
+        "train_hashes": [
+          "6261d8d1dc1e4f8690367186c716d0be96cec8a26d18b6f66f70a553f2ffe314",
+          "3b6210998a0c7624c43c3c174ad369644f1d47a0984f9c9bb8bd9f7bb5c9537d",
+          "7242cb3846af9e62e9000c9e09e076b6dd6696f11f7582252fa7f7994ae1afa8",
+          "c5558c6e47daa8b66e9fdabcac9c4780d32fa975a916aefbee1b02c23f1ab75d"
+        ],
+        "validation_hashes": [
+          "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+          "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+          "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+          "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+          "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+          "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+          "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+          "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da"
+        ],
+        "train_lengths": [
+          28,
+          31,
+          31,
+          32
+        ],
+        "validation_lengths": [
+          49,
+          56,
+          71,
+          85,
+          91,
+          98,
+          108,
+          126
+        ],
+        "gsm8k_used": false,
+        "loss": "causal assistant tokens only"
+      },
+      "validation_before": {
+        "loss": 2.056467159791026,
+        "assistant_token_accuracy": 0.5242494226327945,
+        "assistant_tokens": 433,
+        "examples": [
+          {
+            "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+            "tokens": 49,
+            "assistant_tokens": 24,
+            "loss": 4.169748306274414,
+            "correct": 10
+          },
+          {
+            "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+            "tokens": 56,
+            "assistant_tokens": 31,
+            "loss": 1.9790339469909668,
+            "correct": 15
+          },
+          {
+            "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+            "tokens": 71,
+            "assistant_tokens": 51,
+            "loss": 1.3668725490570068,
+            "correct": 34
+          },
+          {
+            "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+            "tokens": 85,
+            "assistant_tokens": 66,
+            "loss": 1.1862238645553589,
+            "correct": 48
+          },
+          {
+            "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+            "tokens": 91,
+            "assistant_tokens": 35,
+            "loss": 1.4513804912567139,
+            "correct": 22
+          },
+          {
+            "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+            "tokens": 98,
+            "assistant_tokens": 31,
+            "loss": 2.702025890350342,
+            "correct": 12
+          },
+          {
+            "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+            "tokens": 108,
+            "assistant_tokens": 86,
+            "loss": 1.7842817306518555,
+            "correct": 56
+          },
+          {
+            "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+            "tokens": 126,
+            "assistant_tokens": 109,
+            "loss": 2.6882169246673584,
+            "correct": 30
+          }
+        ],
+        "canonical_fp32": true
+      },
+      "validation_after": {
+        "loss": 1.5349637019441529,
+        "assistant_token_accuracy": 0.6073903002309469,
+        "assistant_tokens": 433,
+        "examples": [
+          {
+            "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+            "tokens": 49,
+            "assistant_tokens": 24,
+            "loss": 2.9973201751708984,
+            "correct": 11
+          },
+          {
+            "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+            "tokens": 56,
+            "assistant_tokens": 31,
+            "loss": 1.7880455255508423,
+            "correct": 14
+          },
+          {
+            "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+            "tokens": 71,
+            "assistant_tokens": 51,
+            "loss": 0.8668400049209595,
+            "correct": 40
+          },
+          {
+            "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+            "tokens": 85,
+            "assistant_tokens": 66,
+            "loss": 1.0084689855575562,
+            "correct": 46
+          },
+          {
+            "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+            "tokens": 91,
+            "assistant_tokens": 35,
+            "loss": 0.975358247756958,
+            "correct": 22
+          },
+          {
+            "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+            "tokens": 98,
+            "assistant_tokens": 31,
+            "loss": 2.577538251876831,
+            "correct": 16
+          },
+          {
+            "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+            "tokens": 108,
+            "assistant_tokens": 86,
+            "loss": 1.310325026512146,
+            "correct": 59
+          },
+          {
+            "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+            "tokens": 126,
+            "assistant_tokens": 109,
+            "loss": 1.8328185081481934,
+            "correct": 55
+          }
+        ],
+        "canonical_fp32": true
+      },
+      "elapsed_seconds": 1270.955619096756
+    },
+    "compressed_b128": {
+      "completed": true,
+      "full_parameter_steps": 4,
+      "block": 128,
+      "lr": 1e-05,
+      "weight_decay": 0.01,
+      "mode": "compressed",
+      "compute_dtype": "float32",
+      "bf16_model_copy": false,
+      "cpu_state_offload": false,
+      "gradient_accumulation": 1,
+      "global_gradient_clipping": false,
+      "gradient_policy": "consume in custom backward; native tiny-parameter post-accumulate hooks",
+      "moment_format": "NF4 m + zero-preserving log v, 4+4 bit, stochastic rounding; FP32 native tiny tensors",
+      "quantizer_probability_arithmetic": "FP32 NPU port, not bit-identical NumPy FP64 SR",
+      "seed": 20261024,
+      "physical_devices": [
+        2,
+        3
+      ],
+      "logs": [
+        {
+          "event": "begin",
+          "unix": 1792817417.6855896,
+          "elapsed": 0.008223772048950195,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 0,
+              "reserved": 0,
+              "peak_allocated": 0,
+              "peak_reserved": 0
+            },
+            {
+              "logical_device": 1,
+              "allocated": 0,
+              "reserved": 0,
+              "peak_allocated": 0,
+              "peak_reserved": 0
+            }
+          ],
+          "torch": "2.10.0+cpu",
+          "torch_npu": "2.10.0.post4"
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817428.2795308,
+          "elapsed": 10.602165699005127,
+          "tensors": 1,
+          "total_tensors": 851,
+          "logical_owned_bytes": 5816568608,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 5816592384,
+              "reserved": 5832179712,
+              "peak_allocated": 5816592384,
+              "peak_reserved": 5832179712
+            },
+            {
+              "logical_device": 1,
+              "allocated": 0,
+              "reserved": 0,
+              "peak_allocated": 0,
+              "peak_reserved": 0
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817460.4416518,
+          "elapsed": 42.764286518096924,
+          "tensors": 33,
+          "total_tensors": 851,
+          "logical_owned_bytes": 24329882208,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 12360579072,
+              "reserved": 12375293952,
+              "peak_allocated": 12360579072,
+              "peak_reserved": 12375293952
+            },
+            {
+              "logical_device": 1,
+              "allocated": 11969460224,
+              "reserved": 11976835072,
+              "peak_allocated": 11969460224,
+              "peak_reserved": 11976835072
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817480.1776412,
+          "elapsed": 62.5002760887146,
+          "tensors": 65,
+          "total_tensors": 851,
+          "logical_owned_bytes": 37413194240,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 18918192128,
+              "reserved": 18939379712,
+              "peak_allocated": 18918192128,
+              "peak_reserved": 18939379712
+            },
+            {
+              "logical_device": 1,
+              "allocated": 18495275520,
+              "reserved": 18519949312,
+              "peak_allocated": 18495275520,
+              "peak_reserved": 18519949312
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817499.0616324,
+          "elapsed": 81.38426733016968,
+          "tensors": 97,
+          "total_tensors": 851,
+          "logical_owned_bytes": 50461655872,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 25442349056,
+              "reserved": 25461522432,
+              "peak_allocated": 25442349056,
+              "peak_reserved": 25461522432
+            },
+            {
+              "logical_device": 1,
+              "allocated": 25019695104,
+              "reserved": 25042092032,
+              "peak_allocated": 25019695104,
+              "peak_reserved": 25042092032
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817518.436394,
+          "elapsed": 100.75902843475342,
+          "tensors": 129,
+          "total_tensors": 851,
+          "logical_owned_bytes": 63524346208,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 31965212672,
+              "reserved": 31983665152,
+              "peak_allocated": 31965212672,
+              "peak_reserved": 31983665152
+            },
+            {
+              "logical_device": 1,
+              "allocated": 31559638528,
+              "reserved": 31585206272,
+              "peak_allocated": 31559638528,
+              "peak_reserved": 31585206272
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817537.6224077,
+          "elapsed": 119.9450421333313,
+          "tensors": 161,
+          "total_tensors": 851,
+          "logical_owned_bytes": 76591540416,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 38502683648,
+              "reserved": 38526779392,
+              "peak_allocated": 38502683648,
+              "peak_reserved": 38526779392
+            },
+            {
+              "logical_device": 1,
+              "allocated": 38089479680,
+              "reserved": 38107348992,
+              "peak_allocated": 38089479680,
+              "peak_reserved": 38107348992
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817556.6287963,
+          "elapsed": 138.95143127441406,
+          "tensors": 193,
+          "total_tensors": 851,
+          "logical_owned_bytes": 89632381504,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 45019298304,
+              "reserved": 45048922112,
+              "peak_allocated": 45019298304,
+              "peak_reserved": 45048922112
+            },
+            {
+              "logical_device": 1,
+              "allocated": 44613820416,
+              "reserved": 44629491712,
+              "peak_allocated": 44613820416,
+              "peak_reserved": 44629491712
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817569.3788536,
+          "elapsed": 151.70148825645447,
+          "tensors": 225,
+          "total_tensors": 851,
+          "logical_owned_bytes": 98225872576,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 49231769088,
+              "reserved": 49243226112,
+              "peak_allocated": 49231769088,
+              "peak_reserved": 49243226112
+            },
+            {
+              "logical_device": 1,
+              "allocated": 48994939392,
+              "reserved": 49012539392,
+              "peak_allocated": 48994939392,
+              "peak_reserved": 49012539392
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817580.687782,
+          "elapsed": 163.01041722297668,
+          "tensors": 257,
+          "total_tensors": 851,
+          "logical_owned_bytes": 105864645888,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 53051015168,
+              "reserved": 53081014272,
+              "peak_allocated": 53051015168,
+              "peak_reserved": 53081014272
+            },
+            {
+              "logical_device": 1,
+              "allocated": 52814564864,
+              "reserved": 52829356032,
+              "peak_allocated": 52814564864,
+              "peak_reserved": 52829356032
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817588.2852669,
+          "elapsed": 170.60790157318115,
+          "tensors": 289,
+          "total_tensors": 851,
+          "logical_owned_bytes": 110542903904,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 55342430208,
+              "reserved": 55366909952,
+              "peak_allocated": 55342430208,
+              "peak_reserved": 55366909952
+            },
+            {
+              "logical_device": 1,
+              "allocated": 55201487360,
+              "reserved": 55220109312,
+              "peak_allocated": 55201487360,
+              "peak_reserved": 55220109312
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817595.412559,
+          "elapsed": 177.73519372940063,
+          "tensors": 321,
+          "total_tensors": 851,
+          "logical_owned_bytes": 115136041376,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 57642864128,
+              "reserved": 57673777152,
+              "peak_allocated": 57642864128,
+              "peak_reserved": 57673777152
+            },
+            {
+              "logical_device": 1,
+              "allocated": 57494272000,
+              "reserved": 57526976512,
+              "peak_allocated": 57494272000,
+              "peak_reserved": 57526976512
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817603.0013669,
+          "elapsed": 185.32400155067444,
+          "tensors": 353,
+          "total_tensors": 851,
+          "logical_owned_bytes": 119720810080,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 59935289856,
+              "reserved": 59959672832,
+              "peak_allocated": 59935289856,
+              "peak_reserved": 59959672832
+            },
+            {
+              "logical_device": 1,
+              "allocated": 59786696704,
+              "reserved": 59812872192,
+              "peak_allocated": 59786696704,
+              "peak_reserved": 59812872192
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817607.5376103,
+          "elapsed": 189.86024522781372,
+          "tensors": 385,
+          "total_tensors": 851,
+          "logical_owned_bytes": 122531781120,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61281956352,
+              "reserved": 61303947264,
+              "peak_allocated": 61281956352,
+              "peak_reserved": 61303947264
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61251079680,
+              "reserved": 61282975744,
+              "peak_allocated": 61251079680,
+              "peak_reserved": 61282975744
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817608.2342973,
+          "elapsed": 190.55693244934082,
+          "tensors": 417,
+          "total_tensors": 851,
+          "logical_owned_bytes": 122958312512,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61483559424,
+              "reserved": 61507371008,
+              "peak_allocated": 61483559424,
+              "peak_reserved": 61507371008
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61476081664,
+              "reserved": 61505273856,
+              "peak_allocated": 61476081664,
+              "peak_reserved": 61505273856
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817608.5455298,
+          "elapsed": 190.86816453933716,
+          "tensors": 449,
+          "total_tensors": 851,
+          "logical_owned_bytes": 122996369632,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61502595072,
+              "reserved": 61526245376,
+              "peak_allocated": 61502595072,
+              "peak_reserved": 61526245376
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61495174656,
+              "reserved": 61524148224,
+              "peak_allocated": 61495174656,
+              "peak_reserved": 61524148224
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817608.8563502,
+          "elapsed": 191.17898511886597,
+          "tensors": 481,
+          "total_tensors": 851,
+          "logical_owned_bytes": 123034498752,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61521654272,
+              "reserved": 61545119744,
+              "peak_allocated": 61521654272,
+              "peak_reserved": 61545119744
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61514316288,
+              "reserved": 61545119744,
+              "peak_allocated": 61514316288,
+              "peak_reserved": 61545119744
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817609.147832,
+          "elapsed": 191.47046637535095,
+          "tensors": 513,
+          "total_tensors": 851,
+          "logical_owned_bytes": 123062115488,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61538738688,
+              "reserved": 61561896960,
+              "peak_allocated": 61538738688,
+              "peak_reserved": 61561896960
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61525073408,
+              "reserved": 61555605504,
+              "peak_allocated": 61525073408,
+              "peak_reserved": 61555605504
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817609.4149845,
+          "elapsed": 191.7376194000244,
+          "tensors": 545,
+          "total_tensors": 851,
+          "logical_owned_bytes": 123077844128,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61554516480,
+              "reserved": 61578674176,
+              "peak_allocated": 61554516480,
+              "peak_reserved": 61578674176
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61525073408,
+              "reserved": 61555605504,
+              "peak_allocated": 61525073408,
+              "peak_reserved": 61555605504
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817609.6751122,
+          "elapsed": 191.99774646759033,
+          "tensors": 577,
+          "total_tensors": 851,
+          "logical_owned_bytes": 123080240288,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61556818432,
+              "reserved": 61580771328,
+              "peak_allocated": 61556818432,
+              "peak_reserved": 61580771328
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61525073408,
+              "reserved": 61555605504,
+              "peak_allocated": 61525073408,
+              "peak_reserved": 61555605504
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817609.9356725,
+          "elapsed": 192.25830793380737,
+          "tensors": 609,
+          "total_tensors": 851,
+          "logical_owned_bytes": 123082206368,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61558833664,
+              "reserved": 61582868480,
+              "peak_allocated": 61558833664,
+              "peak_reserved": 61582868480
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61525073408,
+              "reserved": 61555605504,
+              "peak_allocated": 61525073408,
+              "peak_reserved": 61555605504
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817610.2177408,
+          "elapsed": 192.54037594795227,
+          "tensors": 641,
+          "total_tensors": 851,
+          "logical_owned_bytes": 123084172448,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61560848896,
+              "reserved": 61584965632,
+              "peak_allocated": 61560848896,
+              "peak_reserved": 61584965632
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61525073408,
+              "reserved": 61555605504,
+              "peak_allocated": 61525073408,
+              "peak_reserved": 61555605504
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817610.4837184,
+          "elapsed": 192.80635285377502,
+          "tensors": 673,
+          "total_tensors": 851,
+          "logical_owned_bytes": 123086138528,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61562864128,
+              "reserved": 61587062784,
+              "peak_allocated": 61562864128,
+              "peak_reserved": 61587062784
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61525073408,
+              "reserved": 61555605504,
+              "peak_allocated": 61525073408,
+              "peak_reserved": 61555605504
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817610.744405,
+          "elapsed": 193.06703972816467,
+          "tensors": 705,
+          "total_tensors": 851,
+          "logical_owned_bytes": 123086353568,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61563108864,
+              "reserved": 61587062784,
+              "peak_allocated": 61563108864,
+              "peak_reserved": 61587062784
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61525073408,
+              "reserved": 61555605504,
+              "peak_allocated": 61525073408,
+              "peak_reserved": 61555605504
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817611.0053382,
+          "elapsed": 193.32797288894653,
+          "tensors": 737,
+          "total_tensors": 851,
+          "logical_owned_bytes": 123086405792,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61563209728,
+              "reserved": 61587062784,
+              "peak_allocated": 61563209728,
+              "peak_reserved": 61587062784
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61525073408,
+              "reserved": 61555605504,
+              "peak_allocated": 61525073408,
+              "peak_reserved": 61555605504
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817611.2660623,
+          "elapsed": 193.58869695663452,
+          "tensors": 769,
+          "total_tensors": 851,
+          "logical_owned_bytes": 123086441504,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61563286016,
+              "reserved": 61587062784,
+              "peak_allocated": 61563286016,
+              "peak_reserved": 61587062784
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61525073408,
+              "reserved": 61555605504,
+              "peak_allocated": 61525073408,
+              "peak_reserved": 61555605504
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817611.5261195,
+          "elapsed": 193.84875392913818,
+          "tensors": 801,
+          "total_tensors": 851,
+          "logical_owned_bytes": 123086459936,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61563335168,
+              "reserved": 61587062784,
+              "peak_allocated": 61563335168,
+              "peak_reserved": 61587062784
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61525073408,
+              "reserved": 61555605504,
+              "peak_allocated": 61525073408,
+              "peak_reserved": 61555605504
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817611.786293,
+          "elapsed": 194.10892748832703,
+          "tensors": 833,
+          "total_tensors": 851,
+          "logical_owned_bytes": 123086478368,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61563384320,
+              "reserved": 61587062784,
+              "peak_allocated": 61563384320,
+              "peak_reserved": 61587062784
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61525073408,
+              "reserved": 61555605504,
+              "peak_allocated": 61525073408,
+              "peak_reserved": 61555605504
+            }
+          ]
+        },
+        {
+          "event": "load_progress",
+          "unix": 1792817612.0363364,
+          "elapsed": 194.35897254943848,
+          "tensors": 851,
+          "total_tensors": 851,
+          "logical_owned_bytes": 123086488736,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61563411968,
+              "reserved": 61587062784,
+              "peak_allocated": 61563411968,
+              "peak_reserved": 61587062784
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61525073408,
+              "reserved": 61555605504,
+              "peak_allocated": 61525073408,
+              "peak_reserved": 61555605504
+            }
+          ]
+        },
+        {
+          "event": "model_ready",
+          "unix": 1792817613.2693996,
+          "elapsed": 195.59203362464905,
+          "parameters": 26895998464,
+          "wrapped_parameters": 26893352960,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61563411968,
+              "reserved": 61587062784,
+              "peak_allocated": 61563411968,
+              "peak_reserved": 61587062784
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61525073408,
+              "reserved": 61555605504,
+              "peak_allocated": 61525073408,
+              "peak_reserved": 61555605504
+            }
+          ],
+          "data": {
+            "source": "Existing independent Alpaca-GPT4 Chinese 32/8 split; shortest complete examples selected deterministically",
+            "train_hashes": [
+              "6261d8d1dc1e4f8690367186c716d0be96cec8a26d18b6f66f70a553f2ffe314",
+              "3b6210998a0c7624c43c3c174ad369644f1d47a0984f9c9bb8bd9f7bb5c9537d",
+              "7242cb3846af9e62e9000c9e09e076b6dd6696f11f7582252fa7f7994ae1afa8",
+              "c5558c6e47daa8b66e9fdabcac9c4780d32fa975a916aefbee1b02c23f1ab75d"
+            ],
+            "validation_hashes": [
+              "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+              "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+              "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+              "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+              "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+              "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+              "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+              "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da"
+            ],
+            "train_lengths": [
+              28,
+              31,
+              31,
+              32
+            ],
+            "validation_lengths": [
+              49,
+              56,
+              71,
+              85,
+              91,
+              98,
+              108,
+              126
+            ],
+            "gsm8k_used": false,
+            "loss": "causal assistant tokens only"
+          }
+        },
+        {
+          "event": "validation_before",
+          "unix": 1792817629.22763,
+          "elapsed": 211.55026412010193,
+          "metrics": {
+            "loss": 2.0564670276421597,
+            "assistant_token_accuracy": 0.5242494226327945,
+            "assistant_tokens": 433,
+            "examples": [
+              {
+                "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+                "tokens": 49,
+                "assistant_tokens": 24,
+                "loss": 4.169748306274414,
+                "correct": 10
+              },
+              {
+                "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+                "tokens": 56,
+                "assistant_tokens": 31,
+                "loss": 1.979034185409546,
+                "correct": 15
+              },
+              {
+                "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+                "tokens": 71,
+                "assistant_tokens": 51,
+                "loss": 1.3668724298477173,
+                "correct": 34
+              },
+              {
+                "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+                "tokens": 85,
+                "assistant_tokens": 66,
+                "loss": 1.1862237453460693,
+                "correct": 48
+              },
+              {
+                "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+                "tokens": 91,
+                "assistant_tokens": 35,
+                "loss": 1.4513803720474243,
+                "correct": 22
+              },
+              {
+                "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+                "tokens": 98,
+                "assistant_tokens": 31,
+                "loss": 2.702025890350342,
+                "correct": 12
+              },
+              {
+                "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+                "tokens": 108,
+                "assistant_tokens": 86,
+                "loss": 1.7842814922332764,
+                "correct": 56
+              },
+              {
+                "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+                "tokens": 126,
+                "assistant_tokens": 109,
+                "loss": 2.6882166862487793,
+                "correct": 30
+              }
+            ],
+            "canonical_fp32": true
+          },
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61563411968,
+              "reserved": 62105059328,
+              "peak_allocated": 61949460480,
+              "peak_reserved": 62105059328
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61525073408,
+              "reserved": 61914218496,
+              "peak_allocated": 61892944896,
+              "peak_reserved": 61914218496
+            }
+          ]
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792817629.239153,
+          "elapsed": 211.56178641319275,
+          "step": 1,
+          "tokens": 28
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792817631.0875278,
+          "elapsed": 213.4101619720459,
+          "step": 1,
+          "loss": 1.541751742362976,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61629721600,
+              "reserved": 62115545088,
+              "peak_allocated": 61961805824,
+              "peak_reserved": 62115545088
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61525073408,
+              "reserved": 61914218496,
+              "peak_allocated": 61884113920,
+              "peak_reserved": 61914218496
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792817953.9835284,
+          "elapsed": 536.3061618804932,
+          "step": 1,
+          "loss": 1.541751742362976,
+          "seconds": 324.7386149801314,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 93484256928,
+          "moment_bytes": 29435800704,
+          "codec_new_fallbacks": 6,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61780499968,
+              "reserved": 64005079040,
+              "peak_allocated": 62824336896,
+              "peak_reserved": 64005079040
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61790307328,
+              "reserved": 63807946752,
+              "peak_allocated": 62704923648,
+              "peak_reserved": 63807946752
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 0.0,
+            "device_copy_seconds": 0.0,
+            "npu_adam_seconds": 0.0
+          },
+          "host_max_rss_kib": 2556124
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792817954.2139945,
+          "elapsed": 536.5366280078888,
+          "step": 2,
+          "tokens": 31
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792817956.1061916,
+          "elapsed": 538.4288258552551,
+          "step": 2,
+          "loss": 2.4724843502044678,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61853907456,
+              "reserved": 64013467648,
+              "peak_allocated": 62183385088,
+              "peak_reserved": 64013467648
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61790307328,
+              "reserved": 63807946752,
+              "peak_allocated": 62149618176,
+              "peak_reserved": 63807946752
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792818274.8223808,
+          "elapsed": 857.1450145244598,
+          "step": 2,
+          "loss": 2.4724843502044678,
+          "seconds": 320.60261808987707,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 93693173056,
+          "moment_bytes": 29435800704,
+          "codec_new_fallbacks": 37,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61876888576,
+              "reserved": 64621641728,
+              "peak_allocated": 62794830848,
+              "peak_reserved": 64621641728
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61902846464,
+              "reserved": 64520978432,
+              "peak_allocated": 62764312064,
+              "peak_reserved": 64520978432
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 0.0,
+            "device_copy_seconds": 0.0,
+            "npu_adam_seconds": 0.0
+          },
+          "host_max_rss_kib": 2570304
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792818275.2955558,
+          "elapsed": 857.618189573288,
+          "step": 3,
+          "tokens": 31
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792818277.154359,
+          "elapsed": 859.4769933223724,
+          "step": 3,
+          "loss": 2.041332483291626,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61950296064,
+              "reserved": 64623738880,
+              "peak_allocated": 62279773696,
+              "peak_reserved": 64623738880
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61902846464,
+              "reserved": 64520978432,
+              "peak_allocated": 62262157312,
+              "peak_reserved": 64520978432
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792818598.6653705,
+          "elapsed": 1180.9880044460297,
+          "step": 3,
+          "loss": 2.041332483291626,
+          "seconds": 323.36420944007114,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 93699078176,
+          "moment_bytes": 29435800704,
+          "codec_new_fallbacks": 69,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61960985600,
+              "reserved": 64300777472,
+              "peak_allocated": 62901043712,
+              "peak_reserved": 64703430656
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61824647680,
+              "reserved": 64711819264,
+              "peak_allocated": 62760699392,
+              "peak_reserved": 64877494272
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 0.0,
+            "device_copy_seconds": 0.0,
+            "npu_adam_seconds": 0.0
+          },
+          "host_max_rss_kib": 2584208
+        },
+        {
+          "event": "step_begin",
+          "unix": 1792818599.3777626,
+          "elapsed": 1181.7003967761993,
+          "step": 4,
+          "tokens": 32
+        },
+        {
+          "event": "forward_done",
+          "unix": 1792818601.2642977,
+          "elapsed": 1183.5869317054749,
+          "step": 4,
+          "loss": 0.7610393166542053,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 62036760064,
+              "reserved": 64334331904,
+              "peak_allocated": 62365369344,
+              "peak_reserved": 64334331904
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61824647680,
+              "reserved": 64711819264,
+              "peak_allocated": 62184048640,
+              "peak_reserved": 64711819264
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "unix": 1792818921.059189,
+          "elapsed": 1503.3818228244781,
+          "step": 4,
+          "loss": 0.7610393166542053,
+          "seconds": 321.67603391990997,
+          "updated_parameters": 26895998464,
+          "remaining_parameter_gradients": 0,
+          "weights_and_guards_bytes": 93641248640,
+          "moment_bytes": 29435800704,
+          "codec_new_fallbacks": 94,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61886862336,
+              "reserved": 64669876224,
+              "peak_allocated": 62928702976,
+              "peak_reserved": 64669876224
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61840940032,
+              "reserved": 64539852800,
+              "peak_allocated": 62718505472,
+              "peak_reserved": 64774733824
+            }
+          ],
+          "host_timing": {
+            "cpu_adam_seconds": 0.0,
+            "host_copy_seconds": 0.0,
+            "device_copy_seconds": 0.0,
+            "npu_adam_seconds": 0.0
+          },
+          "host_max_rss_kib": 2594312
+        },
+        {
+          "event": "validation_after",
+          "unix": 1792818937.7050052,
+          "elapsed": 1520.0276396274567,
+          "metrics": {
+            "loss": 1.5332539003110097,
+            "assistant_token_accuracy": 0.6073903002309469,
+            "assistant_tokens": 433,
+            "examples": [
+              {
+                "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+                "tokens": 49,
+                "assistant_tokens": 24,
+                "loss": 2.994330644607544,
+                "correct": 11
+              },
+              {
+                "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+                "tokens": 56,
+                "assistant_tokens": 31,
+                "loss": 1.7850104570388794,
+                "correct": 14
+              },
+              {
+                "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+                "tokens": 71,
+                "assistant_tokens": 51,
+                "loss": 0.8651241660118103,
+                "correct": 40
+              },
+              {
+                "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+                "tokens": 85,
+                "assistant_tokens": 66,
+                "loss": 1.007662057876587,
+                "correct": 46
+              },
+              {
+                "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+                "tokens": 91,
+                "assistant_tokens": 35,
+                "loss": 0.9752463102340698,
+                "correct": 22
+              },
+              {
+                "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+                "tokens": 98,
+                "assistant_tokens": 31,
+                "loss": 2.572584390640259,
+                "correct": 16
+              },
+              {
+                "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+                "tokens": 108,
+                "assistant_tokens": 86,
+                "loss": 1.3096575736999512,
+                "correct": 59
+              },
+              {
+                "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+                "tokens": 126,
+                "assistant_tokens": 109,
+                "loss": 1.8308106660842896,
+                "correct": 55
+              }
+            ],
+            "canonical_fp32": true
+          },
+          "delta": -0.52321312733115,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61886862336,
+              "reserved": 64669876224,
+              "peak_allocated": 62928702976,
+              "peak_reserved": 64669876224
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61840940032,
+              "reserved": 64539852800,
+              "peak_allocated": 62718505472,
+              "peak_reserved": 64774733824
+            }
+          ]
+        },
+        {
+          "event": "complete",
+          "unix": 1792818937.7110887,
+          "elapsed": 1520.0337226390839,
+          "memory": [
+            {
+              "logical_device": 0,
+              "allocated": 61886862336,
+              "reserved": 64669876224,
+              "peak_allocated": 62928702976,
+              "peak_reserved": 64669876224
+            },
+            {
+              "logical_device": 1,
+              "allocated": 61840940032,
+              "reserved": 64539852800,
+              "peak_allocated": 62718505472,
+              "peak_reserved": 64774733824
+            }
+          ]
+        }
+      ],
+      "process_thp_disabled": true,
+      "allocator_memory_fraction": 0.995,
+      "comparison": "same custom autograd harness; full FP32 moments offloaded to CPU with NPU compute, not tuned DeepSpeed",
+      "optimizer_compute_device": "npu",
+      "full_state_offload_precision": null,
+      "validation_precision": "canonical FP32 for all groups, plus execution dtype for BF16",
+      "full_text_parameters": 26895998464,
+      "wrapped_parameters": 26893352960,
+      "native_parameters": 2645504,
+      "data": {
+        "source": "Existing independent Alpaca-GPT4 Chinese 32/8 split; shortest complete examples selected deterministically",
+        "train_hashes": [
+          "6261d8d1dc1e4f8690367186c716d0be96cec8a26d18b6f66f70a553f2ffe314",
+          "3b6210998a0c7624c43c3c174ad369644f1d47a0984f9c9bb8bd9f7bb5c9537d",
+          "7242cb3846af9e62e9000c9e09e076b6dd6696f11f7582252fa7f7994ae1afa8",
+          "c5558c6e47daa8b66e9fdabcac9c4780d32fa975a916aefbee1b02c23f1ab75d"
+        ],
+        "validation_hashes": [
+          "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+          "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+          "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+          "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+          "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+          "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+          "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+          "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da"
+        ],
+        "train_lengths": [
+          28,
+          31,
+          31,
+          32
+        ],
+        "validation_lengths": [
+          49,
+          56,
+          71,
+          85,
+          91,
+          98,
+          108,
+          126
+        ],
+        "gsm8k_used": false,
+        "loss": "causal assistant tokens only"
+      },
+      "validation_before": {
+        "loss": 2.0564670276421597,
+        "assistant_token_accuracy": 0.5242494226327945,
+        "assistant_tokens": 433,
+        "examples": [
+          {
+            "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+            "tokens": 49,
+            "assistant_tokens": 24,
+            "loss": 4.169748306274414,
+            "correct": 10
+          },
+          {
+            "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+            "tokens": 56,
+            "assistant_tokens": 31,
+            "loss": 1.979034185409546,
+            "correct": 15
+          },
+          {
+            "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+            "tokens": 71,
+            "assistant_tokens": 51,
+            "loss": 1.3668724298477173,
+            "correct": 34
+          },
+          {
+            "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+            "tokens": 85,
+            "assistant_tokens": 66,
+            "loss": 1.1862237453460693,
+            "correct": 48
+          },
+          {
+            "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+            "tokens": 91,
+            "assistant_tokens": 35,
+            "loss": 1.4513803720474243,
+            "correct": 22
+          },
+          {
+            "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+            "tokens": 98,
+            "assistant_tokens": 31,
+            "loss": 2.702025890350342,
+            "correct": 12
+          },
+          {
+            "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+            "tokens": 108,
+            "assistant_tokens": 86,
+            "loss": 1.7842814922332764,
+            "correct": 56
+          },
+          {
+            "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+            "tokens": 126,
+            "assistant_tokens": 109,
+            "loss": 2.6882166862487793,
+            "correct": 30
+          }
+        ],
+        "canonical_fp32": true
+      },
+      "validation_after": {
+        "loss": 1.5332539003110097,
+        "assistant_token_accuracy": 0.6073903002309469,
+        "assistant_tokens": 433,
+        "examples": [
+          {
+            "hash": "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+            "tokens": 49,
+            "assistant_tokens": 24,
+            "loss": 2.994330644607544,
+            "correct": 11
+          },
+          {
+            "hash": "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+            "tokens": 56,
+            "assistant_tokens": 31,
+            "loss": 1.7850104570388794,
+            "correct": 14
+          },
+          {
+            "hash": "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+            "tokens": 71,
+            "assistant_tokens": 51,
+            "loss": 0.8651241660118103,
+            "correct": 40
+          },
+          {
+            "hash": "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+            "tokens": 85,
+            "assistant_tokens": 66,
+            "loss": 1.007662057876587,
+            "correct": 46
+          },
+          {
+            "hash": "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+            "tokens": 91,
+            "assistant_tokens": 35,
+            "loss": 0.9752463102340698,
+            "correct": 22
+          },
+          {
+            "hash": "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+            "tokens": 98,
+            "assistant_tokens": 31,
+            "loss": 2.572584390640259,
+            "correct": 16
+          },
+          {
+            "hash": "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+            "tokens": 108,
+            "assistant_tokens": 86,
+            "loss": 1.3096575736999512,
+            "correct": 59
+          },
+          {
+            "hash": "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da",
+            "tokens": 126,
+            "assistant_tokens": 109,
+            "loss": 1.8308106660842896,
+            "correct": 55
+          }
+        ],
+        "canonical_fp32": true
+      },
+      "elapsed_seconds": 1520.0369622707367
+    }
+  },
+  "cpu_replay_control": {
+    "scope": "64 deterministic coordinates per real tensor (or all coordinates for smaller tensors); not full-weight verification",
+    "weighting": "Each sampled coordinate weighted by tensor size / sample count; an estimate, not full-weight L2 verification",
+    "per_step": {
+      "1": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "gradient": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "2": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "gradient": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "3": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "gradient": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "4": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "gradient": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      }
+    },
+    "replay_scope": "Same sampled real gradient trajectory, replayed with complete FP32 Adam moments from zero; compares update mechanics, not a new full-model training run. CPU/NPU arithmetic differences are included.",
+    "reference_full_state_replay_control": {
+      "1": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "2": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "3": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "4": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      }
+    },
+    "candidate_same_gradient_full_state_replay": {
+      "1": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "2": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "3": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "4": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      }
+    }
+  },
+  "cpu_vs_npu_full_analysis": {
+    "scope": "64 deterministic coordinates per real tensor (or all coordinates for smaller tensors); not full-weight verification",
+    "weighting": "Each sampled coordinate weighted by tensor size / sample count; an estimate, not full-weight L2 verification",
+    "per_step": {
+      "1": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.2060881676490202e-11,
+          "relative_l2_error": 9.265710767645889e-10,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.2060881676490202e-11,
+          "relative_l2_error": 1.2676046625491578e-06,
+          "cosine": 0.9999999999991964
+        },
+        "gradient": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "2": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 2.384185791015625e-07,
+          "rmse": 1.692224625519158e-10,
+          "relative_l2_error": 1.300041916670454e-08,
+          "cosine": 1.0000000000000007
+        },
+        "update": {
+          "max_abs_difference": 2.384185791015625e-07,
+          "rmse": 1.6879271320672185e-10,
+          "relative_l2_error": 2.501439862572513e-05,
+          "cosine": 0.9999999996871481
+        },
+        "gradient": {
+          "max_abs_difference": 1.3789103832095861e-06,
+          "rmse": 2.1011407421098123e-09,
+          "relative_l2_error": 4.8226010045951245e-06,
+          "cosine": 0.9999999999884382
+        }
+      },
+      "3": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 2.384185791015625e-07,
+          "rmse": 2.4129072470738654e-10,
+          "relative_l2_error": 1.853694698480241e-08,
+          "cosine": 1.0000000000000002
+        },
+        "update": {
+          "max_abs_difference": 2.384185791015625e-07,
+          "rmse": 1.519069647896376e-10,
+          "relative_l2_error": 2.787837281251701e-05,
+          "cosine": 0.9999999996114056
+        },
+        "gradient": {
+          "max_abs_difference": 4.500150680541992e-06,
+          "rmse": 2.376420569722313e-09,
+          "relative_l2_error": 9.88529837438174e-06,
+          "cosine": 0.9999999999512404
+        }
+      },
+      "4": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 2.384185791015625e-07,
+          "rmse": 3.0338699167102995e-10,
+          "relative_l2_error": 2.3307347898537196e-08,
+          "cosine": 0.9999999999999988
+        },
+        "update": {
+          "max_abs_difference": 5.960464477539063e-08,
+          "rmse": 1.5872049403908223e-10,
+          "relative_l2_error": 3.439133711046301e-05,
+          "cosine": 0.9999999994086245
+        },
+        "gradient": {
+          "max_abs_difference": 2.0116567611694336e-06,
+          "rmse": 2.6115263001183104e-09,
+          "relative_l2_error": 1.3268703902142732e-05,
+          "cosine": 0.9999999999122478
+        }
+      }
+    },
+    "replay_scope": "Same sampled real gradient trajectory, replayed with complete FP32 Adam moments from zero; compares update mechanics, not a new full-model training run. CPU/NPU arithmetic differences are included.",
+    "reference_full_state_replay_control": {
+      "1": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.2060881676490202e-11,
+          "relative_l2_error": 9.265710767605315e-10,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.2060881676490202e-11,
+          "relative_l2_error": 1.2676046461409582e-06,
+          "cosine": 0.9999999999991968
+        }
+      },
+      "2": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 7.450580596923828e-09,
+          "rmse": 9.62038078931795e-12,
+          "relative_l2_error": 7.390802669961978e-10,
+          "cosine": 0.9999999999999998
+        },
+        "update": {
+          "max_abs_difference": 7.450580596923828e-09,
+          "rmse": 9.62038078931795e-12,
+          "relative_l2_error": 1.4257015901417196e-06,
+          "cosine": 0.9999999999989843
+        }
+      },
+      "3": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.252581708798884e-11,
+          "relative_l2_error": 9.62284843654912e-10,
+          "cosine": 1.0000000000000004
+        },
+        "update": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.252581708798884e-11,
+          "relative_l2_error": 2.2987714532520533e-06,
+          "cosine": 0.9999999999973573
+        }
+      },
+      "4": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.4241741360349352e-11,
+          "relative_l2_error": 1.0941049869665305e-09,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.4241741360349352e-11,
+          "relative_l2_error": 3.085880936686862e-06,
+          "cosine": 0.9999999999952393
+        }
+      }
+    },
+    "candidate_same_gradient_full_state_replay": {
+      "1": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "2": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "3": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "4": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      }
+    }
+  },
+  "compressed_analysis": {
+    "scope": "64 deterministic coordinates per real tensor (or all coordinates for smaller tensors); not full-weight verification",
+    "weighting": "Each sampled coordinate weighted by tensor size / sample count; an estimate, not full-weight L2 verification",
+    "per_step": {
+      "1": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        },
+        "gradient": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "2": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0002466794103384018,
+          "rmse": 3.7588005764499235e-06,
+          "relative_l2_error": 0.00028876771039133207,
+          "cosine": 0.9999999583068288
+        },
+        "update": {
+          "max_abs_difference": 0.0002466794103384018,
+          "rmse": 3.7588005764499235e-06,
+          "relative_l2_error": 0.5570390699198705,
+          "cosine": 0.8728614966267808
+        },
+        "gradient": {
+          "max_abs_difference": 0.0,
+          "rmse": 0.0,
+          "relative_l2_error": 0.0,
+          "cosine": 1.0
+        }
+      },
+      "3": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.00030352361500263214,
+          "rmse": 6.219461528746255e-06,
+          "relative_l2_error": 0.00047780464322530247,
+          "cosine": 0.9999998858514341
+        },
+        "update": {
+          "max_abs_difference": 0.000157257542014122,
+          "rmse": 3.318965054430801e-06,
+          "relative_l2_error": 0.6091053512080276,
+          "cosine": 0.8517170290311318
+        },
+        "gradient": {
+          "max_abs_difference": 0.0008772313594818115,
+          "rmse": 1.2729355459701738e-06,
+          "relative_l2_error": 0.005295084482769844,
+          "cosine": 0.9999861808415657
+        }
+      },
+      "4": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.00035156472586095333,
+          "rmse": 8.541851525668377e-06,
+          "relative_l2_error": 0.000656217671396668,
+          "cosine": 0.9999997846915143
+        },
+        "update": {
+          "max_abs_difference": 0.000117928022518754,
+          "rmse": 3.163977731909422e-06,
+          "relative_l2_error": 0.6855663186210952,
+          "cosine": 0.8213834034965611
+        },
+        "gradient": {
+          "max_abs_difference": 0.004829928278923035,
+          "rmse": 1.950892629450347e-06,
+          "relative_l2_error": 0.009912140897787093,
+          "cosine": 0.9999517478334656
+        }
+      }
+    },
+    "replay_scope": "Same sampled real gradient trajectory, replayed with complete FP32 Adam moments from zero; compares update mechanics, not a new full-model training run. CPU/NPU arithmetic differences are included.",
+    "reference_full_state_replay_control": {
+      "1": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.2060881676490202e-11,
+          "relative_l2_error": 9.265710767605315e-10,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.2060881676490202e-11,
+          "relative_l2_error": 1.2676046461409582e-06,
+          "cosine": 0.9999999999991968
+        }
+      },
+      "2": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 7.450580596923828e-09,
+          "rmse": 9.62038078931795e-12,
+          "relative_l2_error": 7.390802669961978e-10,
+          "cosine": 0.9999999999999998
+        },
+        "update": {
+          "max_abs_difference": 7.450580596923828e-09,
+          "rmse": 9.62038078931795e-12,
+          "relative_l2_error": 1.4257015901417196e-06,
+          "cosine": 0.9999999999989843
+        }
+      },
+      "3": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.252581708798884e-11,
+          "relative_l2_error": 9.62284843654912e-10,
+          "cosine": 1.0000000000000004
+        },
+        "update": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.252581708798884e-11,
+          "relative_l2_error": 2.2987714532520533e-06,
+          "cosine": 0.9999999999973573
+        }
+      },
+      "4": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.4241741360349352e-11,
+          "relative_l2_error": 1.0941049869665305e-09,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.4241741360349352e-11,
+          "relative_l2_error": 3.085880936686862e-06,
+          "cosine": 0.9999999999952393
+        }
+      }
+    },
+    "candidate_same_gradient_full_state_replay": {
+      "1": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.2060881676490202e-11,
+          "relative_l2_error": 9.265710767605315e-10,
+          "cosine": 1.0
+        },
+        "update": {
+          "max_abs_difference": 1.862645149230957e-09,
+          "rmse": 1.2060881676490202e-11,
+          "relative_l2_error": 1.2676046461409582e-06,
+          "cosine": 0.9999999999991968
+        }
+      },
+      "2": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.0002466794103384018,
+          "rmse": 3.758800644821463e-06,
+          "relative_l2_error": 0.0002887677156443494,
+          "cosine": 0.9999999583068324
+        },
+        "update": {
+          "max_abs_difference": 0.0002466794103384018,
+          "rmse": 3.758800644821463e-06,
+          "relative_l2_error": 0.5570390791909193,
+          "cosine": 0.8728614916872797
+        }
+      },
+      "3": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.000157257542014122,
+          "rmse": 3.319007953418911e-06,
+          "relative_l2_error": 0.000254980037247673,
+          "cosine": 0.9999999674926253
+        },
+        "update": {
+          "max_abs_difference": 0.000157257542014122,
+          "rmse": 3.319007953418911e-06,
+          "relative_l2_error": 0.6090865258515855,
+          "cosine": 0.8517132845752239
+        }
+      },
+      "4": {
+        "sampled_coordinates": 52928,
+        "represented_coordinates": 26895998464.0,
+        "weight": {
+          "max_abs_difference": 0.00011799577623605728,
+          "rmse": 3.164162875653515e-06,
+          "relative_l2_error": 0.00024308319901988508,
+          "cosine": 0.9999999704570134
+        },
+        "update": {
+          "max_abs_difference": 0.00011799577623605728,
+          "rmse": 3.164162875653515e-06,
+          "relative_l2_error": 0.6855808152673339,
+          "cosine": 0.8213609200265285
+        }
+      }
+    }
+  }
+}
