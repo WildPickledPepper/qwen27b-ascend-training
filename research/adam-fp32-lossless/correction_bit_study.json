@@ -1,0 +1,219 @@
+{
+  "scope": "Offline CPU scalar/array arithmetic only; synthetic inputs, not model training or real optimizer entropy",
+  "parameter_count": 26895998464,
+  "budget": {
+    "gib": 30,
+    "bits_per_m_v_pair": 9.58127797727703,
+    "raw_m_v_gib": 200.39080429077148
+  },
+  "inverse_m_given_v_and_adjacent_weights": [
+    {
+      "previous_w": 0.0010000000474974513,
+      "learning_rate": 0.001,
+      "next_w": 0.0009204825619235635,
+      "v_given": 9.999999747378752e-05,
+      "m": 0.0010000000474974513,
+      "candidate_m_count": 8,
+      "correction_rank_bits": 3,
+      "log2_candidate_count": 3.0,
+      "m_correction_gib_if_same_width_every_parameter": 9.393318951129913,
+      "plus_uncompressed_v_gib": 109.58872109651566,
+      "side_information": "previous_w, next_w, v, step=1000 and hyperparameters GIVEN FREE for this check"
+    },
+    {
+      "previous_w": 0.0010000000474974513,
+      "learning_rate": 0.0001,
+      "next_w": 0.0009920482989400625,
+      "v_given": 9.999999747378752e-05,
+      "m": 0.0010000000474974513,
+      "candidate_m_count": 127,
+      "correction_rank_bits": 7,
+      "log2_candidate_count": 6.9886846867721655,
+      "m_correction_gib_if_same_width_every_parameter": 21.91774421930313,
+      "plus_uncompressed_v_gib": 122.11314636468887,
+      "side_information": "previous_w, next_w, v, step=1000 and hyperparameters GIVEN FREE for this check"
+    },
+    {
+      "previous_w": 0.0010000000474974513,
+      "learning_rate": 1e-05,
+      "next_w": 0.0009992048144340515,
+      "v_given": 9.999999747378752e-05,
+      "m": 0.0010000000474974513,
+      "candidate_m_count": 1258,
+      "correction_rank_bits": 11,
+      "log2_candidate_count": 10.296916206879288,
+      "m_correction_gib_if_same_width_every_parameter": 34.44216948747635,
+      "plus_uncompressed_v_gib": 134.6375716328621,
+      "side_information": "previous_w, next_w, v, step=1000 and hyperparameters GIVEN FREE for this check"
+    },
+    {
+      "previous_w": 0.009999999776482582,
+      "learning_rate": 0.001,
+      "next_w": 0.009920482523739338,
+      "v_given": 9.999999747378752e-05,
+      "m": 0.0010000000474974513,
+      "candidate_m_count": 100,
+      "correction_rank_bits": 7,
+      "log2_candidate_count": 6.643856189774724,
+      "m_correction_gib_if_same_width_every_parameter": 21.91774421930313,
+      "plus_uncompressed_v_gib": 122.11314636468887,
+      "side_information": "previous_w, next_w, v, step=1000 and hyperparameters GIVEN FREE for this check"
+    },
+    {
+      "previous_w": 0.009999999776482582,
+      "learning_rate": 0.0001,
+      "next_w": 0.009992048144340515,
+      "v_given": 9.999999747378752e-05,
+      "m": 0.0010000000474974513,
+      "candidate_m_count": 1007,
+      "correction_rank_bits": 10,
+      "log2_candidate_count": 9.975847968006784,
+      "m_correction_gib_if_same_width_every_parameter": 31.311063170433044,
+      "plus_uncompressed_v_gib": 131.5064653158188,
+      "side_information": "previous_w, next_w, v, step=1000 and hyperparameters GIVEN FREE for this check"
+    },
+    {
+      "previous_w": 0.009999999776482582,
+      "learning_rate": 1e-05,
+      "next_w": 0.00999920442700386,
+      "v_given": 9.999999747378752e-05,
+      "m": 0.0010000000474974513,
+      "candidate_m_count": 10061,
+      "correction_rank_bits": 14,
+      "log2_candidate_count": 13.296486086615465,
+      "m_correction_gib_if_same_width_every_parameter": 43.83548843860626,
+      "plus_uncompressed_v_gib": 144.030890583992,
+      "side_information": "previous_w, next_w, v, step=1000 and hyperparameters GIVEN FREE for this check"
+    },
+    {
+      "previous_w": 0.10000000149011612,
+      "learning_rate": 0.001,
+      "next_w": 0.09992048144340515,
+      "v_given": 9.999999747378752e-05,
+      "m": 0.0010000000474974513,
+      "candidate_m_count": 805,
+      "correction_rank_bits": 10,
+      "log2_candidate_count": 9.65284497300198,
+      "m_correction_gib_if_same_width_every_parameter": 31.311063170433044,
+      "plus_uncompressed_v_gib": 131.5064653158188,
+      "side_information": "previous_w, next_w, v, step=1000 and hyperparameters GIVEN FREE for this check"
+    },
+    {
+      "previous_w": 0.10000000149011612,
+      "learning_rate": 0.0001,
+      "next_w": 0.0999920517206192,
+      "v_given": 9.999999747378752e-05,
+      "m": 0.0010000000474974513,
+      "candidate_m_count": 8049,
+      "correction_rank_bits": 13,
+      "log2_candidate_count": 12.974593839981678,
+      "m_correction_gib_if_same_width_every_parameter": 40.70438212156296,
+      "plus_uncompressed_v_gib": 140.8997842669487,
+      "side_information": "previous_w, next_w, v, step=1000 and hyperparameters GIVEN FREE for this check"
+    },
+    {
+      "previous_w": 0.10000000149011612,
+      "learning_rate": 1e-05,
+      "next_w": 0.09999920427799225,
+      "v_given": 9.999999747378752e-05,
+      "m": 0.0010000000474974513,
+      "candidate_m_count": 80486,
+      "correction_rank_bits": 17,
+      "log2_candidate_count": 16.296450237471106,
+      "m_correction_gib_if_same_width_every_parameter": 53.228807389736176,
+      "plus_uncompressed_v_gib": 153.42420953512192,
+      "side_information": "previous_w, next_w, v, step=1000 and hyperparameters GIVEN FREE for this check"
+    },
+    {
+      "previous_w": 1.0,
+      "learning_rate": 0.001,
+      "next_w": 0.9999204874038696,
+      "v_given": 9.999999747378752e-05,
+      "m": 0.0010000000474974513,
+      "candidate_m_count": 6439,
+      "correction_rank_bits": 13,
+      "log2_candidate_count": 12.652620934638165,
+      "m_correction_gib_if_same_width_every_parameter": 40.70438212156296,
+      "plus_uncompressed_v_gib": 140.8997842669487,
+      "side_information": "previous_w, next_w, v, step=1000 and hyperparameters GIVEN FREE for this check"
+    },
+    {
+      "previous_w": 1.0,
+      "learning_rate": 0.0001,
+      "next_w": 0.9999920725822449,
+      "v_given": 9.999999747378752e-05,
+      "m": 0.0010000000474974513,
+      "candidate_m_count": 64387,
+      "correction_rank_bits": 16,
+      "log2_candidate_count": 15.974481811231524,
+      "m_correction_gib_if_same_width_every_parameter": 50.09770107269287,
+      "plus_uncompressed_v_gib": 150.2931032180786,
+      "side_information": "previous_w, next_w, v, step=1000 and hyperparameters GIVEN FREE for this check"
+    },
+    {
+      "previous_w": 1.0,
+      "learning_rate": 1e-05,
+      "next_w": 0.9999992251396179,
+      "v_given": 9.999999747378752e-05,
+      "m": 0.0010000000474974513,
+      "candidate_m_count": 983949,
+      "correction_rank_bits": 20,
+      "log2_candidate_count": 19.908224014235184,
+      "m_correction_gib_if_same_width_every_parameter": 62.62212634086609,
+      "plus_uncompressed_v_gib": 162.81752848625183,
+      "side_information": "previous_w, next_w, v, step=1000 and hyperparameters GIVEN FREE for this check"
+    }
+  ],
+  "zero_weight_update_example": {
+    "previous_and_next_w": 1.0,
+    "m": 9.9999998245167e-15,
+    "v_given": 1.0000000031710769e-29,
+    "candidate_nonnegative_finite_m_count": 743552797,
+    "fixed_width_correction_bits": 30,
+    "note": "Counts all nonnegative finite FP32 candidates under this decoder, without extra reachability constraints; not a distributional bound."
+  },
+  "synthetic_rank_codec": {
+    "seed": 20261023,
+    "elements": 4096,
+    "w_log10_range": [
+      -4,
+      0
+    ],
+    "v_log10_range": [
+      -12,
+      -2
+    ],
+    "m_over_sqrt_v_range": [
+      0.001,
+      0.5
+    ],
+    "rank_payload_bytes": 4971,
+    "rank_bits_per_parameter_including_final_byte_padding": 9.708984375,
+    "mean_rank_width_bits": 9.707275390625,
+    "max_rank_width_bits": 23,
+    "rank_plus_raw_v_bits_per_parameter": 41.708984375,
+    "bitwise_roundtrip": true,
+    "not_charged": [
+      "previous weights",
+      "v storage for the m-only rank payload",
+      "metadata and index tables"
+    ]
+  },
+  "same_current_weight_reachable_state_family": {
+    "gradient_source": "1024 fixed BF16-exact scalar values; all ordered pairs enumerated",
+    "gradient_history_combinations": 1048576,
+    "distinct_m_v_pairs": 1048523,
+    "w0_w1_w2": 1.0,
+    "step": 2,
+    "uniform_family_entropy_bits_per_pair": 19.999927077513096,
+    "uniform_family_ideal_gib_at_target_parameter_count": 62.62189801280669,
+    "minimum_fixed_width_bits_per_pair": 20,
+    "claim_scope": "A current-weight-only decoder needs extra distinguishing information. For independently selected states across parameters from this family, a universal 30GiB cap is impossible without other side information/history replay. This is NOT a bound on Qwen's actual training distribution."
+  },
+  "limitations": [
+    "Separate rounded FP32 operations, not Ascend fused arithmetic.",
+    "No Qwen state or training trajectory used.",
+    "Rank bits depend on arithmetic, state values and available side information.",
+    "No proof that all side-information schemes fail; history replay has different compute/storage costs."
+  ]
+}

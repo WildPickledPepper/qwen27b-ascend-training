@@ -1,0 +1,133 @@
+{
+  "scope": "CPU fixed scalar format checks; no model, autograd, NPU, or optimizer training run",
+  "arithmetic": "Explicit separate FP32 operations, lr=1e-4, eps=1e-8; not an Ascend kernel equivalence test",
+  "same_w_and_v_different_m_after_first_step": [
+    {
+      "g": {
+        "value": 9.9999998245167e-14,
+        "bits": "0x29e12e13"
+      },
+      "m": {
+        "value": 9.9999998245167e-15,
+        "bits": "0x283424dc"
+      },
+      "v": {
+        "value": 1.0000000031710769e-29,
+        "bits": "0x0f4ad2f8"
+      },
+      "w": {
+        "value": 1.0,
+        "bits": "0x3f800000"
+      },
+      "update": {
+        "value": 9.99989979710847e-10,
+        "bits": "0x30897005"
+      }
+    },
+    {
+      "g": {
+        "value": -9.9999998245167e-14,
+        "bits": "0xa9e12e13"
+      },
+      "m": {
+        "value": -9.9999998245167e-15,
+        "bits": "0xa83424dc"
+      },
+      "v": {
+        "value": 1.0000000031710769e-29,
+        "bits": "0x0f4ad2f8"
+      },
+      "w": {
+        "value": 1.0,
+        "bits": "0x3f800000"
+      },
+      "update": {
+        "value": -9.99989979710847e-10,
+        "bits": "0xb0897005"
+      }
+    }
+  ],
+  "same_w_and_m_different_v_after_first_step": [
+    {
+      "g": {
+        "value": 1.0000001857395774e-13,
+        "bits": "0x29e12e16"
+      },
+      "m": {
+        "value": 1.0000002365615542e-14,
+        "bits": "0x283424df"
+      },
+      "v": {
+        "value": 1.0000004545609076e-29,
+        "bits": "0x0f4ad2fe"
+      },
+      "w": {
+        "value": 1.0,
+        "bits": "0x3f800000"
+      },
+      "update": {
+        "value": 9.999902017554518e-10,
+        "bits": "0x30897007"
+      }
+    },
+    {
+      "g": {
+        "value": 1.0000002535022132e-13,
+        "bits": "0x29e12e17"
+      },
+      "m": {
+        "value": 1.0000002365615542e-14,
+        "bits": "0x283424df"
+      },
+      "v": {
+        "value": 1.0000006050241845e-29,
+        "bits": "0x0f4ad300"
+      },
+      "w": {
+        "value": 1.0,
+        "bits": "0x3f800000"
+      },
+      "update": {
+        "value": 9.999902017554518e-10,
+        "bits": "0x30897007"
+      }
+    }
+  ],
+  "same_m_and_normalized_ratio_different_v": [
+    {
+      "m": {
+        "value": 0.10000000149011612,
+        "bits": "0x3dcccccd"
+      },
+      "v": {
+        "value": 0.009999999776482582,
+        "bits": "0x3c23d70a"
+      },
+      "u": {
+        "value": 0.9999999403953552,
+        "bits": "0x3f7fffff"
+      }
+    },
+    {
+      "m": {
+        "value": 0.10000000149011612,
+        "bits": "0x3dcccccd"
+      },
+      "v": {
+        "value": 0.010000000707805157,
+        "bits": "0x3c23d70b"
+      },
+      "u": {
+        "value": 0.9999999403953552,
+        "bits": "0x3f7fffff"
+      }
+    }
+  ],
+  "conclusions": [
+    "No universally correct decoder for m from (initial w, current w, v, step metadata) under this arithmetic: a first-step collision exists.",
+    "No universally correct decoder for v from (initial w, current w, m, step metadata) under this arithmetic: a first-step collision exists.",
+    "Even separately retaining a normalized ratio need not determine v exactly with m known in FP32.",
+    "These counterexamples rule out those specified decoders, not every possible joint encoding or recomputation scheme.",
+    "No estimate of required correction bits or compression ratio on real model states is supplied."
+  ]
+}

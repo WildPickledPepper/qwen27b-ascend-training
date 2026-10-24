@@ -1,5 +1,7 @@
 # FP32 Adam 显存讨论：梯度窗口、状态压缩与单组状态
 
+> 后续更新见[2026-10-24讨论汇总](adam-fp32-lossless/discussion-summary.md)及[纠正位容量研究](adam-fp32-lossless/correction-bit-report.md)。本文保留当时的BF16参数等预算口径；最新讨论改为常驻一份FP32参数、按需BF16计算，仍未实现全参训练。
+
 日期：2026-10-23，Asia/Shanghai。本文记录讨论和静态预算；没有启动全参数训练、压缩实验或优化器数值测试。
 
 ## 目标与约束

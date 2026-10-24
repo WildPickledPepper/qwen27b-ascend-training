@@ -1,0 +1,632 @@
+{
+  "scope": "Existing public 11M model's saved FP32 AdamW tensors, read only on CPU; no model or training run",
+  "source_repository": "https://huggingface.co/sup-computer/gatsby-nanogpt-3",
+  "source_revision": "fcefc5fbc149f9763bd79475fa9ee793abb62ee3",
+  "source_sha256": "15d50d8d21ef28f6d7a67ee5e937abdcc9fd8e2fe295959a0680b591e82f5f7b",
+  "checkpoint_iteration": 7750,
+  "torch_version": "2.6.0+cpu",
+  "zstd_version": "0.25.0",
+  "state_elements": 11015040,
+  "state_tensors": 38,
+  "raw_m_v_bytes": 88120320,
+  "target_model_parameter_count": 26895998464,
+  "target_30gib_bits_per_m_v_pair": 9.58127797727703,
+  "codec_results": [
+    {
+      "codec": "raw_fp32_bytes_zstd3",
+      "payload_bytes": 79253141,
+      "metadata_bytes": 0,
+      "total_bytes": 79253141,
+      "bits_per_m_v_pair": 57.559947853117194,
+      "raw_over_encoded": 1.1118842595778002,
+      "projected_gib_if_same_bits_at_target_parameter_count": 180.22631633157843,
+      "bitwise_roundtrip": true,
+      "note": "All m then all v; no side information"
+    },
+    {
+      "codec": "byte_shuffled_fp32_zstd3",
+      "payload_bytes": 71889647,
+      "metadata_bytes": 0,
+      "total_bytes": 71889647,
+      "bits_per_m_v_pair": 52.21199160420661,
+      "raw_over_encoded": 1.2257720503204028,
+      "projected_gib_if_same_bits_at_target_parameter_count": 163.48129673734329,
+      "bitwise_roundtrip": true,
+      "note": ""
+    },
+    {
+      "codec": "current_W_linear_predict_m_and_m_squared_predict_v_xor_shuffle_zstd3",
+      "payload_bytes": 76637923,
+      "metadata_bytes": 768,
+      "total_bytes": 76638691,
+      "bits_per_m_v_pair": 55.661125878798444,
+      "raw_over_encoded": 1.1498150457710714,
+      "projected_gib_if_same_bits_at_target_parameter_count": 174.28090285284836,
+      "bitwise_roundtrip": true,
+      "note": "Current W is given and already charged in model memory; 3 FP32 coefficients/tensor and offsets included. CPU arithmetic only."
+    },
+    {
+      "codec": "retain_u_and_v_plus_exact_m_xor_correction_shuffle_zstd3",
+      "payload_bytes": 73393635,
+      "metadata_bytes": 24,
+      "total_bytes": 73393659,
+      "bits_per_m_v_pair": 53.304324995642325,
+      "raw_over_encoded": 1.2006530427921573,
+      "projected_gib_if_same_bits_at_target_parameter_count": 166.901508719585,
+      "bitwise_roundtrip": true,
+      "note": "u and v are BOTH retained and charged; correction makes m bitwise exact. u is not recoverable for free from a rounded weight update."
+    }
+  ],
+  "exact_high16_low16_correction_test": {
+    "codec": "exact_high16_low16_separate_shuffle_zstd3",
+    "high16_carrier_bytes": 27833580,
+    "low16_correction_bytes": 44061181,
+    "low16_correction_bits_per_m_v_pair": 32.00074153157864,
+    "low16_correction_projected_gib": 100.19772395959592,
+    "total_bytes_including_16byte_lengths": 71894777,
+    "bits_per_m_v_pair": 52.21571741909244,
+    "projected_gib_if_same_bits_at_target_parameter_count": 163.49296265986845,
+    "bitwise_roundtrip": true
+  },
+  "retain_u_v_and_correct_m_test": {
+    "u_plus_v_carrier_bytes": 71725777,
+    "m_correction_bytes": 1658866,
+    "m_correction_bits_per_parameter": 1.2048007088489918,
+    "m_correction_projected_gib": 3.7723591102553296,
+    "carrier_plus_correction_bits_per_m_v_pair": 53.2977942885364,
+    "carrier_plus_correction_projected_gib": 166.88106038131087,
+    "m_prediction_bitwise_exact_fraction": 0.9069311595781767,
+    "max_m_prediction_raw_uint32_distance": 1,
+    "bitwise_roundtrip": true,
+    "changed_mask_direction_codec": {
+      "correction_bytes_including_32byte_header": 851048,
+      "correction_bits_per_parameter": 0.618098890244611,
+      "correction_projected_gib": 1.9353333398023576,
+      "delta_symbol_marginal_entropy_bits": 0.5396998726005439,
+      "u_v_carrier_plus_this_correction_bits_per_pair": 52.711075039219104,
+      "u_v_carrier_plus_this_correction_projected_gib": 165.04398003344258,
+      "escape_count_in_this_checkpoint": 0,
+      "actual_container_bytes": 72576825,
+      "container_header_bytes": 32,
+      "bitwise_roundtrip": true,
+      "limitation": "At-most-one-code correction verified for this checkpoint only; general inputs need escape handling, and u plus v still consume memory."
+    }
+  },
+  "fractions": {
+    "m_zero_fraction": 0.0,
+    "v_zero_fraction": 0.0,
+    "m_low16_zero_fraction": 5.474333275230957e-05,
+    "v_low16_zero_fraction": 1.543344372784847e-05
+  },
+  "tensor_records": [
+    {
+      "name": "transformer.wte.weight",
+      "elements": 393216,
+      "step": 7750.0,
+      "shape": [
+        1024,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.0.attn.c_attn.weight",
+      "elements": 442368,
+      "step": 7750.0,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.0.attn.c_proj.weight",
+      "elements": 147456,
+      "step": 7750.0,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.0.mlp.c_fc.weight",
+      "elements": 589824,
+      "step": 7750.0,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.0.mlp.c_proj.weight",
+      "elements": 589824,
+      "step": 7750.0,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    {
+      "name": "transformer.h.1.attn.c_attn.weight",
+      "elements": 442368,
+      "step": 7750.0,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.1.attn.c_proj.weight",
+      "elements": 147456,
+      "step": 7750.0,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.1.mlp.c_fc.weight",
+      "elements": 589824,
+      "step": 7750.0,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.1.mlp.c_proj.weight",
+      "elements": 589824,
+      "step": 7750.0,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    {
+      "name": "transformer.h.2.attn.c_attn.weight",
+      "elements": 442368,
+      "step": 7750.0,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.2.attn.c_proj.weight",
+      "elements": 147456,
+      "step": 7750.0,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.2.mlp.c_fc.weight",
+      "elements": 589824,
+      "step": 7750.0,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.2.mlp.c_proj.weight",
+      "elements": 589824,
+      "step": 7750.0,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    {
+      "name": "transformer.h.3.attn.c_attn.weight",
+      "elements": 442368,
+      "step": 7750.0,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.3.attn.c_proj.weight",
+      "elements": 147456,
+      "step": 7750.0,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.3.mlp.c_fc.weight",
+      "elements": 589824,
+      "step": 7750.0,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.3.mlp.c_proj.weight",
+      "elements": 589824,
+      "step": 7750.0,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    {
+      "name": "transformer.h.4.attn.c_attn.weight",
+      "elements": 442368,
+      "step": 7750.0,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.4.attn.c_proj.weight",
+      "elements": 147456,
+      "step": 7750.0,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.4.mlp.c_fc.weight",
+      "elements": 589824,
+      "step": 7750.0,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.4.mlp.c_proj.weight",
+      "elements": 589824,
+      "step": 7750.0,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    {
+      "name": "transformer.h.5.attn.c_attn.weight",
+      "elements": 442368,
+      "step": 7750.0,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.5.attn.c_proj.weight",
+      "elements": 147456,
+      "step": 7750.0,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.5.mlp.c_fc.weight",
+      "elements": 589824,
+      "step": 7750.0,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.5.mlp.c_proj.weight",
+      "elements": 589824,
+      "step": 7750.0,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    {
+      "name": "transformer.h.0.ln_1.weight",
+      "elements": 384,
+      "step": 7750.0,
+      "shape": [
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.0.ln_2.weight",
+      "elements": 384,
+      "step": 7750.0,
+      "shape": [
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.1.ln_1.weight",
+      "elements": 384,
+      "step": 7750.0,
+      "shape": [
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.1.ln_2.weight",
+      "elements": 384,
+      "step": 7750.0,
+      "shape": [
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.2.ln_1.weight",
+      "elements": 384,
+      "step": 7750.0,
+      "shape": [
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.2.ln_2.weight",
+      "elements": 384,
+      "step": 7750.0,
+      "shape": [
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.3.ln_1.weight",
+      "elements": 384,
+      "step": 7750.0,
+      "shape": [
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.3.ln_2.weight",
+      "elements": 384,
+      "step": 7750.0,
+      "shape": [
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.4.ln_1.weight",
+      "elements": 384,
+      "step": 7750.0,
+      "shape": [
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.4.ln_2.weight",
+      "elements": 384,
+      "step": 7750.0,
+      "shape": [
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.5.ln_1.weight",
+      "elements": 384,
+      "step": 7750.0,
+      "shape": [
+        384
+      ]
+    },
+    {
+      "name": "transformer.h.5.ln_2.weight",
+      "elements": 384,
+      "step": 7750.0,
+      "shape": [
+        384
+      ]
+    },
+    {
+      "name": "transformer.ln_f.weight",
+      "elements": 384,
+      "step": 7750.0,
+      "shape": [
+        384
+      ]
+    }
+  ],
+  "coefficients_m_from_current_w_and_v_from_m_squared": [
+    [
+      -1.2043593415000942e-05,
+      2.4973726198140866e-08,
+      6.6742844581604
+    ],
+    [
+      -5.520329978025984e-06,
+      -1.680930594716301e-08,
+      7.659574031829834
+    ],
+    [
+      -3.516723882057704e-05,
+      4.957365362656674e-08,
+      7.294593811035156
+    ],
+    [
+      -7.287754897333798e-07,
+      4.1952134210987424e-08,
+      6.544279098510742
+    ],
+    [
+      3.2417881357105216e-06,
+      -4.2677109490796283e-07,
+      6.911116600036621
+    ],
+    [
+      -3.081085424128105e-06,
+      1.1256365617384745e-08,
+      7.813266277313232
+    ],
+    [
+      -3.924956672562985e-06,
+      4.6987835844447545e-08,
+      7.104193210601807
+    ],
+    [
+      -7.130055337256636e-07,
+      -4.21754613455505e-08,
+      8.254487037658691
+    ],
+    [
+      -1.8914346355813905e-06,
+      -1.3008128973979183e-07,
+      6.312017917633057
+    ],
+    [
+      -4.3048944462498184e-06,
+      1.5796265628864603e-08,
+      6.878964900970459
+    ],
+    [
+      -4.637136953533627e-06,
+      6.905690952407895e-08,
+      6.622020244598389
+    ],
+    [
+      -1.175904003503092e-06,
+      5.0817540397929406e-08,
+      7.007641792297363
+    ],
+    [
+      -1.6582893067607074e-06,
+      -6.722491718846868e-08,
+      6.38803243637085
+    ],
+    [
+      -5.994666480546584e-06,
+      4.08040818911104e-08,
+      7.221539497375488
+    ],
+    [
+      -3.5901616683986504e-06,
+      5.973316774543491e-08,
+      6.518722057342529
+    ],
+    [
+      -2.6231205083604436e-06,
+      7.453540895596689e-09,
+      6.576650142669678
+    ],
+    [
+      -2.890223413487547e-06,
+      -8.235164727921074e-08,
+      6.628671646118164
+    ],
+    [
+      -7.340361207752721e-06,
+      -6.644239824993292e-09,
+      6.96550989151001
+    ],
+    [
+      -4.6887957978469785e-06,
+      -5.659322255269217e-08,
+      6.41178035736084
+    ],
+    [
+      -2.4251291961263632e-06,
+      1.8920937705502183e-08,
+      6.555217266082764
+    ],
+    [
+      -2.310307081643259e-06,
+      -4.8373323124906165e-08,
+      6.461557388305664
+    ],
+    [
+      -4.933187938149786e-06,
+      6.033384347681192e-10,
+      6.988119125366211
+    ],
+    [
+      -5.14994371769717e-06,
+      -6.928220841473376e-08,
+      6.3972296714782715
+    ],
+    [
+      -2.910328930738615e-06,
+      -4.421436372581411e-08,
+      6.572260856628418
+    ],
+    [
+      -2.426093487883918e-06,
+      5.7736556868803746e-08,
+      6.474859237670898
+    ],
+    [
+      -9.628892439650372e-05,
+      6.749168278474826e-06,
+      5.150622367858887
+    ],
+    [
+      2.0245808627805673e-05,
+      -1.551446803205181e-05,
+      6.795556545257568
+    ],
+    [
+      8.465349674224854e-05,
+      -6.002068403176963e-05,
+      8.06772518157959
+    ],
+    [
+      4.519492358667776e-05,
+      -4.276553590898402e-05,
+      8.028054237365723
+    ],
+    [
+      -8.39449858176522e-05,
+      5.870236054761335e-05,
+      10.03848648071289
+    ],
+    [
+      -3.2133652894117404e-06,
+      6.035301794327097e-06,
+      6.312160015106201
+    ],
+    [
+      -4.318082210374996e-05,
+      3.0133362088236026e-05,
+      6.55592155456543
+    ],
+    [
+      -2.6119638278032653e-05,
+      2.8891376132378355e-05,
+      7.208206653594971
+    ],
+    [
+      1.0851674232981168e-05,
+      -2.1105259293108247e-05,
+      6.765966415405273
+    ],
+    [
+      -5.937828973401338e-05,
+      7.476012251572683e-05,
+      7.35712194442749
+    ],
+    [
+      -6.870684592286125e-05,
+      6.162498175399378e-05,
+      7.124415397644043
+    ],
+    [
+      -9.01055409485707e-06,
+      1.0214771464234218e-05,
+      8.436596870422363
+    ],
+    [
+      9.85901897365693e-06,
+      -4.7785546485101804e-05,
+      5.505564212799072
+    ]
+  ],
+  "limitations": [
+    "A single public 11M checkpoint, not Qwen27B or Ascend; results do not certify the target model.",
+    "All projected GiB values scale measured bytes/element only; they are not a model measurement.",
+    "These codecs/predictors are examples, not an exhaustive search or a universal entropy lower bound.",
+    "CPU encode/decode equality is verified; no online NPU codec or speed/peak workspace test.",
+    "Floating predictor arithmetic requires identical decoder evaluation for exact reconstruction.",
+    "Full tensors in CPU analysis are not a proposal to retain uncompressed full states in HBM."
+  ]
+}

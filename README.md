@@ -12,6 +12,8 @@
 
 本次只提交已完成的 CPU 研究、失败/更正、轻量源码和 [下一次 benchmark 协议](research/2026-10-24-adam-state-memory/NEXT_BENCHMARK.txt)，没有重跑实验、恢复 NPU 训练或更改精度约束。原始大归档在研究对话中另行交付，Git 中保留文件名和 SHA256。详见 [当天记录](journal/2026-10-24.md)。
 
+2026-10-24归档了后续[混合精度、权重压缩与纠正位研究](research/adam-fp32-lossless/README.md)。仅做CPU位级检查及现成公开11M模型FP32 AdamW状态的离线编码，所有被测恢复方法均逐位还原；所测完整表示按本模型参数量外推仍约163–174 GiB，未达到m/v合计30 GiB目标。这不是Qwen实测，也不是所有无损算法不可能的证明；没有启动训练或NPU任务。
+
 ## 当前结果
 
 **Qwen3.8-27B已在单张910B2上完成BF16 LoRA训练基线。** 原权重冻结，不量化、不做CPU卸载；这次不是全参数训练。
@@ -33,7 +35,10 @@
 
 - [首个基线的完整配置、结果与复现方法](experiments/qwen27b-swift-sft/README.md)
 - [2026-10-23训练日志](journal/2026-10-23.md)
+- [2026-10-24研究归档与验证记录](journal/2026-10-24.md)
 - [FP32 Adam显存讨论与论文线索](research/2026-10-23-fp32-adam-memory.md)
+- [后续讨论汇总：混合精度、梯度窗口与30 GiB预算](research/adam-fp32-lossless/discussion-summary.md)
+- [纠正位容量研究及可复核脚本](research/adam-fp32-lossless/correction-bit-report.md)
 - [过滤后的逐步指标与证据](evidence/2026-10-23/qwen27b-swift-sft.json)
 - [训练入口与参数更新审计](experiments/qwen27b-swift-sft/train_baseline.py)
 - [独立数据划分](experiments/qwen27b-swift-sft/prepare_data.py)

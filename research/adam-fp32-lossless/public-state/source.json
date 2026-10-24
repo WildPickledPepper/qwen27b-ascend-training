@@ -1,0 +1,8 @@
+{
+  "repository": "sup-computer/gatsby-nanogpt-3",
+  "revision": "fcefc5fbc149f9763bd79475fa9ee793abb62ee3",
+  "url": "https://huggingface.co/sup-computer/gatsby-nanogpt-3/resolve/fcefc5fbc149f9763bd79475fa9ee793abb62ee3/ckpt.pt",
+  "sha256": "15d50d8d21ef28f6d7a67ee5e937abdcc9fd8e2fe295959a0680b591e82f5f7b",
+  "bytes": 132227430,
+  "scope": "Existing public checkpoint, downloaded only; no model instantiated or training run"
+}

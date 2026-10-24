@@ -1,0 +1,255 @@
+{
+  "scope": "CPU-only fixed scalar arithmetic; no model or real optimizer state loaded",
+  "numpy_version": "1.26.4",
+  "arithmetic": "FP32 multiply with separately rounded square for v; not an NPU equivalence test",
+  "fixed_cases": [
+    {
+      "gradient": {
+        "value": 0.0,
+        "uint32_hex": "0x00000000",
+        "sign": 0,
+        "exponent": 0,
+        "fraction": 0,
+        "low16_hex": "0x0000"
+      },
+      "m": {
+        "value": 0.0,
+        "uint32_hex": "0x00000000",
+        "sign": 0,
+        "exponent": 0,
+        "fraction": 0,
+        "low16_hex": "0x0000"
+      },
+      "v": {
+        "value": 0.0,
+        "uint32_hex": "0x00000000",
+        "sign": 0,
+        "exponent": 0,
+        "fraction": 0,
+        "low16_hex": "0x0000"
+      }
+    },
+    {
+      "gradient": {
+        "value": 0.25,
+        "uint32_hex": "0x3e800000",
+        "sign": 0,
+        "exponent": 125,
+        "fraction": 0,
+        "low16_hex": "0x0000"
+      },
+      "m": {
+        "value": 0.02500000037252903,
+        "uint32_hex": "0x3ccccccd",
+        "sign": 0,
+        "exponent": 121,
+        "fraction": 5033165,
+        "low16_hex": "0xcccd"
+      },
+      "v": {
+        "value": 6.25000029685907e-05,
+        "uint32_hex": "0x3883126f",
+        "sign": 0,
+        "exponent": 113,
+        "fraction": 201327,
+        "low16_hex": "0x126f"
+      }
+    },
+    {
+      "gradient": {
+        "value": 0.5,
+        "uint32_hex": "0x3f000000",
+        "sign": 0,
+        "exponent": 126,
+        "fraction": 0,
+        "low16_hex": "0x0000"
+      },
+      "m": {
+        "value": 0.05000000074505806,
+        "uint32_hex": "0x3d4ccccd",
+        "sign": 0,
+        "exponent": 122,
+        "fraction": 5033165,
+        "low16_hex": "0xcccd"
+      },
+      "v": {
+        "value": 0.0002500000118743628,
+        "uint32_hex": "0x3983126f",
+        "sign": 0,
+        "exponent": 115,
+        "fraction": 201327,
+        "low16_hex": "0x126f"
+      }
+    },
+    {
+      "gradient": {
+        "value": 1.0,
+        "uint32_hex": "0x3f800000",
+        "sign": 0,
+        "exponent": 127,
+        "fraction": 0,
+        "low16_hex": "0x0000"
+      },
+      "m": {
+        "value": 0.10000000149011612,
+        "uint32_hex": "0x3dcccccd",
+        "sign": 0,
+        "exponent": 123,
+        "fraction": 5033165,
+        "low16_hex": "0xcccd"
+      },
+      "v": {
+        "value": 0.0010000000474974513,
+        "uint32_hex": "0x3a83126f",
+        "sign": 0,
+        "exponent": 117,
+        "fraction": 201327,
+        "low16_hex": "0x126f"
+      }
+    },
+    {
+      "gradient": {
+        "value": 2.0,
+        "uint32_hex": "0x40000000",
+        "sign": 0,
+        "exponent": 128,
+        "fraction": 0,
+        "low16_hex": "0x0000"
+      },
+      "m": {
+        "value": 0.20000000298023224,
+        "uint32_hex": "0x3e4ccccd",
+        "sign": 0,
+        "exponent": 124,
+        "fraction": 5033165,
+        "low16_hex": "0xcccd"
+      },
+      "v": {
+        "value": 0.004000000189989805,
+        "uint32_hex": "0x3b83126f",
+        "sign": 0,
+        "exponent": 119,
+        "fraction": 201327,
+        "low16_hex": "0x126f"
+      }
+    },
+    {
+      "gradient": {
+        "value": -1.0,
+        "uint32_hex": "0xbf800000",
+        "sign": 1,
+        "exponent": 127,
+        "fraction": 0,
+        "low16_hex": "0x0000"
+      },
+      "m": {
+        "value": -0.10000000149011612,
+        "uint32_hex": "0xbdcccccd",
+        "sign": 1,
+        "exponent": 123,
+        "fraction": 5033165,
+        "low16_hex": "0xcccd"
+      },
+      "v": {
+        "value": 0.0010000000474974513,
+        "uint32_hex": "0x3a83126f",
+        "sign": 0,
+        "exponent": 117,
+        "fraction": 201327,
+        "low16_hex": "0x126f"
+      }
+    }
+  ],
+  "restricted_bf16_plus_fp16_packing": {
+    "a_bits": "0x3fc00000",
+    "b_bits": "0xba00",
+    "packed_bits": "0x3fc0ba00",
+    "bitwise_roundtrip": true,
+    "condition": "A must have zero low 16 bits before packing"
+  },
+  "parameter_count_from_repository": 26895998464,
+  "master_bf16_rne_fixed_cases": [
+    {
+      "fp32_bits": "0x3f7f8000",
+      "bf16_rne_bits": "0x3f80",
+      "low16_bits": "0x8000",
+      "carry": 1,
+      "roundtrip_with_carry": true
+    },
+    {
+      "fp32_bits": "0x3f808000",
+      "bf16_rne_bits": "0x3f80",
+      "low16_bits": "0x8000",
+      "carry": 0,
+      "roundtrip_with_carry": true
+    },
+    {
+      "fp32_bits": "0x3f800001",
+      "bf16_rne_bits": "0x3f80",
+      "low16_bits": "0x0001",
+      "carry": 0,
+      "roundtrip_with_carry": true
+    },
+    {
+      "fp32_bits": "0xbf7f8000",
+      "bf16_rne_bits": "0xbf80",
+      "low16_bits": "0x8000",
+      "carry": 1,
+      "roundtrip_with_carry": true
+    }
+  ],
+  "master_bf16_rne_observation": "BF16 RNE plus raw low16 alone is ambiguous at ties; the finite cases roundtrip with a carry bit.",
+  "weight_accounting_gib": {
+    "bf16_text_weights": 50.09770107269287,
+    "optional_fp32_text_master": 100.19540214538574,
+    "bf16_plus_fp32_text_weights": 150.2931032180786,
+    "ideal_packed_33bit_finite_weight_tuple": 103.32650846242905
+  },
+  "raw_two_fp32_state_gib": 200.39080429077148,
+  "state_target_60_gib": {
+    "required_ratio_before_overhead": 3.3398467381795247,
+    "required_bits_per_pair_before_overhead": 19.16255595455406
+  },
+  "conditional_encoding_class_bounds": [
+    {
+      "scenario": "raw_pair",
+      "bits_per_pair": 64,
+      "raw_over_encoded": 1.0,
+      "state_gib": 200.39080429077148,
+      "note": "Hypothetical accounting; excludes headers, exceptions, padding, and workspace."
+    },
+    {
+      "scenario": "only_nonnegative_v_sign_removed_ideal",
+      "bits_per_pair": 63,
+      "raw_over_encoded": 1.0158730158730158,
+      "state_gib": 197.25969797372818,
+      "note": "Hypothetical accounting; excludes headers, exceptions, padding, and workspace."
+    },
+    {
+      "scenario": "two_exponents_4_bits_each_plus_unchanged_47_bits_ideal",
+      "bits_per_pair": 55,
+      "raw_over_encoded": 1.1636363636363636,
+      "state_gib": 172.21084743738174,
+      "note": "Hypothetical accounting; excludes headers, exceptions, padding, and workspace."
+    },
+    {
+      "scenario": "joint_exponents_4_bits_total_plus_unchanged_47_bits_ideal",
+      "bits_per_pair": 51,
+      "raw_over_encoded": 1.2549019607843137,
+      "state_gib": 159.68642216920853,
+      "note": "Hypothetical accounting; excludes headers, exceptions, padding, and workspace."
+    },
+    {
+      "scenario": "both_exponents_free_plus_unchanged_47_bits_ideal",
+      "bits_per_pair": 47,
+      "raw_over_encoded": 1.3617021276595744,
+      "state_gib": 147.1619969010353,
+      "note": "Hypothetical accounting; excludes headers, exceptions, padding, and workspace."
+    }
+  ],
+  "limitations": [
+    "No actual Qwen m/v or checkpoint was available locally.",
+    "No compression ratio, entropy, speed, or convergence measurement of real training.",
+    "A first-step example does not characterize long-run state statistics."
+  ]
+}
