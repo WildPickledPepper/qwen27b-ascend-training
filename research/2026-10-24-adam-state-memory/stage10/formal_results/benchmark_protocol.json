@@ -1,0 +1,34 @@
+{
+  "seeds": [
+    0,
+    1,
+    42,
+    2026,
+    2147483647
+  ],
+  "steps": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "modes": [
+    [
+      0,
+      128
+    ],
+    [
+      2,
+      128
+    ],
+    [
+      1,
+      128
+    ]
+  ],
+  "repeats": 7,
+  "order_seed": 3120,
+  "stack_bytes": 968,
+  "scope": "Sequential CPU elapsed timing, includes initialization/capture/replay/update/digests, excludes cold raw-output proof pass and process launch; not CPU-affinity pinned, shared virtual host, descriptive only."
+}

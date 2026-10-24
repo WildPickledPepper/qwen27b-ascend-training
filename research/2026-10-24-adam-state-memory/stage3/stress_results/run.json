@@ -1,0 +1,65 @@
+{
+  "seconds": 94.76378307899995,
+  "script_sha256": "da72250fcc607c613b7b3fb5591546d322ed5315fb0c47ece3ebf040e30a3d77",
+  "imported_script_sha256": "814d0ef53d30d7e578d7cc4f5f7ad86d9404efefb2f47c2c7521b424311e0d01",
+  "schedule": [
+    [
+      1024,
+      5e-05
+    ],
+    [
+      1024,
+      0.0001
+    ],
+    [
+      1024,
+      0.0002
+    ],
+    [
+      1024,
+      0.0004
+    ],
+    [
+      8192,
+      0.0001
+    ]
+  ],
+  "configs": [
+    {
+      "name": "fp32",
+      "form": "fp32",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 128
+    },
+    {
+      "name": "mv_nf4_sr_b64",
+      "form": "mv",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 64
+    },
+    {
+      "name": "qv_nf4_rtn_b128",
+      "form": "qv",
+      "book": "nf4",
+      "rounding": "rtn",
+      "block": 128
+    },
+    {
+      "name": "qv_u15_rtn_b128",
+      "form": "qv",
+      "book": "u15",
+      "rounding": "rtn",
+      "block": 128
+    },
+    {
+      "name": "qv_nf4_sr_b64",
+      "form": "qv",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 64
+    }
+  ],
+  "meaning": "Known data objective optimum w=target, L=0, but decoupled weight decay and finite horizon mean Adam need not attain it. Reflected quadratic uses one Householder transform. FP32 transform orthogonality is approximate. Noise is fixed across paired configurations and LR. No neural network generalization claim."
+}

@@ -1,0 +1,123 @@
+[
+  {
+    "width": 32,
+    "microbatch": 1,
+    "seed": 42,
+    "steps": 8,
+    "all_weight_m_v_gradient_bits_equal": true,
+    "all_decoded_factor_bits_equal": true,
+    "original_fp32_factors_unchanged": true,
+    "record_bytes_fp32": 1296,
+    "record_bytes_mixed": 1168
+  },
+  {
+    "width": 32,
+    "microbatch": 4,
+    "seed": 42,
+    "steps": 8,
+    "all_weight_m_v_gradient_bits_equal": true,
+    "all_decoded_factor_bits_equal": true,
+    "original_fp32_factors_unchanged": true,
+    "record_bytes_fp32": 4368,
+    "record_bytes_mixed": 3856
+  },
+  {
+    "width": 32,
+    "microbatch": 16,
+    "seed": 42,
+    "steps": 8,
+    "all_weight_m_v_gradient_bits_equal": true,
+    "all_decoded_factor_bits_equal": true,
+    "original_fp32_factors_unchanged": true,
+    "record_bytes_fp32": 16656,
+    "record_bytes_mixed": 14608
+  },
+  {
+    "width": 64,
+    "microbatch": 1,
+    "seed": 42,
+    "steps": 8,
+    "all_weight_m_v_gradient_bits_equal": true,
+    "all_decoded_factor_bits_equal": true,
+    "original_fp32_factors_unchanged": true,
+    "record_bytes_fp32": 2576,
+    "record_bytes_mixed": 2320
+  },
+  {
+    "width": 64,
+    "microbatch": 4,
+    "seed": 42,
+    "steps": 8,
+    "all_weight_m_v_gradient_bits_equal": true,
+    "all_decoded_factor_bits_equal": true,
+    "original_fp32_factors_unchanged": true,
+    "record_bytes_fp32": 8720,
+    "record_bytes_mixed": 7696
+  },
+  {
+    "width": 64,
+    "microbatch": 16,
+    "seed": 42,
+    "steps": 8,
+    "all_weight_m_v_gradient_bits_equal": true,
+    "all_decoded_factor_bits_equal": true,
+    "original_fp32_factors_unchanged": true,
+    "record_bytes_fp32": 33296,
+    "record_bytes_mixed": 29200
+  },
+  {
+    "width": 128,
+    "microbatch": 1,
+    "seed": 42,
+    "steps": 8,
+    "all_weight_m_v_gradient_bits_equal": true,
+    "all_decoded_factor_bits_equal": true,
+    "original_fp32_factors_unchanged": true,
+    "record_bytes_fp32": 5136,
+    "record_bytes_mixed": 4624
+  },
+  {
+    "width": 128,
+    "microbatch": 4,
+    "seed": 42,
+    "steps": 8,
+    "all_weight_m_v_gradient_bits_equal": true,
+    "all_decoded_factor_bits_equal": true,
+    "original_fp32_factors_unchanged": true,
+    "record_bytes_fp32": 17424,
+    "record_bytes_mixed": 15376
+  },
+  {
+    "width": 128,
+    "microbatch": 16,
+    "seed": 42,
+    "steps": 8,
+    "all_weight_m_v_gradient_bits_equal": true,
+    "all_decoded_factor_bits_equal": true,
+    "original_fp32_factors_unchanged": true,
+    "record_bytes_fp32": 66576,
+    "record_bytes_mixed": 58384
+  },
+  {
+    "width": 256,
+    "microbatch": 1,
+    "seed": 42,
+    "steps": 8,
+    "all_weight_m_v_gradient_bits_equal": true,
+    "all_decoded_factor_bits_equal": true,
+    "original_fp32_factors_unchanged": true,
+    "record_bytes_fp32": 10256,
+    "record_bytes_mixed": 9232
+  },
+  {
+    "width": 128,
+    "microbatch": 4,
+    "seed": 7,
+    "steps": 8,
+    "all_weight_m_v_gradient_bits_equal": true,
+    "all_decoded_factor_bits_equal": true,
+    "original_fp32_factors_unchanged": true,
+    "record_bytes_fp32": 17424,
+    "record_bytes_mixed": 15376
+  }
+]

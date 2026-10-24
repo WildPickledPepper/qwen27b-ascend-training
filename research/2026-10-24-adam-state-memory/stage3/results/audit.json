@@ -1,0 +1,86 @@
+{
+  "reference_bit_parity_4_cases_32_steps": true,
+  "edge_cases": {
+    "mv_nf4_zeros": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    },
+    "mv_nf4_constant": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    },
+    "mv_nf4_mixed_zero": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    },
+    "mv_nf4_subnormal": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    },
+    "mv_u15_zeros": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    },
+    "mv_u15_constant": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    },
+    "mv_u15_mixed_zero": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    },
+    "mv_u15_subnormal": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    },
+    "qv_nf4_zeros": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    },
+    "qv_nf4_constant": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    },
+    "qv_nf4_mixed_zero": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    },
+    "qv_nf4_subnormal": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    },
+    "qv_u15_zeros": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    },
+    "qv_u15_constant": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    },
+    "qv_u15_mixed_zero": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    },
+    "qv_u15_subnormal": {
+      "finite": true,
+      "zeros_preserved": true,
+      "serialized_bytes": 312
+    }
+  },
+  "nf4_source": "https://raw.githubusercontent.com/bitsandbytes-foundation/bitsandbytes/main/bitsandbytes/functional.py (lookup values only, no downloaded code executed)"
+}

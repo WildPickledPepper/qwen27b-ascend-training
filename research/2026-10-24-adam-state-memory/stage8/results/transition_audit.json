@@ -1,0 +1,51 @@
+{
+  "checks": [
+    {
+      "t": 1,
+      "coordinates": 128,
+      "u32_compared": 384,
+      "exact": true
+    },
+    {
+      "t": 2,
+      "coordinates": 128,
+      "u32_compared": 384,
+      "exact": true
+    },
+    {
+      "t": 3,
+      "coordinates": 128,
+      "u32_compared": 384,
+      "exact": true
+    },
+    {
+      "t": 6,
+      "coordinates": 128,
+      "u32_compared": 384,
+      "exact": true
+    },
+    {
+      "t": 32,
+      "coordinates": 128,
+      "u32_compared": 384,
+      "exact": true
+    },
+    {
+      "t": 128,
+      "coordinates": 128,
+      "u32_compared": 384,
+      "exact": true
+    },
+    {
+      "t": 4096,
+      "coordinates": 128,
+      "u32_compared": 384,
+      "exact": true
+    }
+  ],
+  "total_u32_compared": 2688,
+  "selected_reference": "stage3.run_stage3 moments/update, itself validated against original scalar reference; not every framework kernel",
+  "bias_correction": "Python binary64 exponentiation followed by float32 cast, identical in both paths",
+  "scalar_sha256": "382017f61db6b5277555b708ea8980b6eb1fd04540ceffbb77833aa9a3a1ea2f",
+  "vector_sha256": "814d0ef53d30d7e578d7cc4f5f7ad86d9404efefb2f47c2c7521b424311e0d01"
+}

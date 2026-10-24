@@ -1,0 +1,169 @@
+{
+  "standalone_frame_audit_pass": true,
+  "frames_checked": 152,
+  "decoded_bytes": 20661088,
+  "no_stage5_or_stage10_sibling_directories": true,
+  "evidence_routes": {
+    "archived_stage5_index": 9,
+    "archived_stage10_trajectory": 3,
+    "archived_control_input": 4
+  },
+  "all_frame_hashes_decode_and_accounting_match_original_audit": true,
+  "training_or_compression_grid_rerun": false,
+  "return_code": 0,
+  "provenance_limit": "Archived fallback verifies preserved evidence and exact frame decoding. It does not rerun or independently recreate the original training trajectories.",
+  "source_evidence": [
+    {
+      "case": "stage5_seed101_step0001",
+      "source_sha256": "075b9be2054617735efb94fe118e2756060df2c24403d670aacd220d23ddb023",
+      "source_bytes": 172064,
+      "training_rerun": false,
+      "route": "archived_stage5_index",
+      "archived_index_sha256": "52c8f6c1107bf261da28653c0f0496fe0008f95f2af58f652d92af4b0ed710b2",
+      "original_snapshot_sha256": "075b9be2054617735efb94fe118e2756060df2c24403d670aacd220d23ddb023",
+      "comparison": "Archived input SHA256, size, seed, step and shapes match the archived original Stage5 index; original training and sibling snapshot are not rerun or re-created."
+    },
+    {
+      "case": "stage5_seed101_step0128",
+      "source_sha256": "5f73992512b5fc132c65aef945ac1b894575925dac257a0c4e1492dddd5ddc62",
+      "source_bytes": 172064,
+      "training_rerun": false,
+      "route": "archived_stage5_index",
+      "archived_index_sha256": "52c8f6c1107bf261da28653c0f0496fe0008f95f2af58f652d92af4b0ed710b2",
+      "original_snapshot_sha256": "5f73992512b5fc132c65aef945ac1b894575925dac257a0c4e1492dddd5ddc62",
+      "comparison": "Archived input SHA256, size, seed, step and shapes match the archived original Stage5 index; original training and sibling snapshot are not rerun or re-created."
+    },
+    {
+      "case": "stage5_seed101_step4096",
+      "source_sha256": "4792b0f3142a9635aeea3aa71a093b2eb06a2c842f41aafd7bb3ebc3106ce9b0",
+      "source_bytes": 172064,
+      "training_rerun": false,
+      "route": "archived_stage5_index",
+      "archived_index_sha256": "52c8f6c1107bf261da28653c0f0496fe0008f95f2af58f652d92af4b0ed710b2",
+      "original_snapshot_sha256": "4792b0f3142a9635aeea3aa71a093b2eb06a2c842f41aafd7bb3ebc3106ce9b0",
+      "comparison": "Archived input SHA256, size, seed, step and shapes match the archived original Stage5 index; original training and sibling snapshot are not rerun or re-created."
+    },
+    {
+      "case": "stage5_seed202_step0001",
+      "source_sha256": "f343dd5d14129278ad3f43154017c827553fadc92c3e82702590affe4b6be130",
+      "source_bytes": 172064,
+      "training_rerun": false,
+      "route": "archived_stage5_index",
+      "archived_index_sha256": "52c8f6c1107bf261da28653c0f0496fe0008f95f2af58f652d92af4b0ed710b2",
+      "original_snapshot_sha256": "f343dd5d14129278ad3f43154017c827553fadc92c3e82702590affe4b6be130",
+      "comparison": "Archived input SHA256, size, seed, step and shapes match the archived original Stage5 index; original training and sibling snapshot are not rerun or re-created."
+    },
+    {
+      "case": "stage5_seed202_step0128",
+      "source_sha256": "75552fde3c5de9a29025e6f76258ea6d899a7fc9bfc352e85178f79470f93ccb",
+      "source_bytes": 172064,
+      "training_rerun": false,
+      "route": "archived_stage5_index",
+      "archived_index_sha256": "52c8f6c1107bf261da28653c0f0496fe0008f95f2af58f652d92af4b0ed710b2",
+      "original_snapshot_sha256": "75552fde3c5de9a29025e6f76258ea6d899a7fc9bfc352e85178f79470f93ccb",
+      "comparison": "Archived input SHA256, size, seed, step and shapes match the archived original Stage5 index; original training and sibling snapshot are not rerun or re-created."
+    },
+    {
+      "case": "stage5_seed202_step4096",
+      "source_sha256": "5b1390e07c4ac9d6808b823bb6f3ce43773d13b95175d1897b08ae072ece3789",
+      "source_bytes": 172064,
+      "training_rerun": false,
+      "route": "archived_stage5_index",
+      "archived_index_sha256": "52c8f6c1107bf261da28653c0f0496fe0008f95f2af58f652d92af4b0ed710b2",
+      "original_snapshot_sha256": "5b1390e07c4ac9d6808b823bb6f3ce43773d13b95175d1897b08ae072ece3789",
+      "comparison": "Archived input SHA256, size, seed, step and shapes match the archived original Stage5 index; original training and sibling snapshot are not rerun or re-created."
+    },
+    {
+      "case": "stage5_seed303_step0001",
+      "source_sha256": "9a4b681c5f31bc106a8d1397f582ce86782ba0e20b0f9d33251cd5a0feca2624",
+      "source_bytes": 172064,
+      "training_rerun": false,
+      "route": "archived_stage5_index",
+      "archived_index_sha256": "52c8f6c1107bf261da28653c0f0496fe0008f95f2af58f652d92af4b0ed710b2",
+      "original_snapshot_sha256": "9a4b681c5f31bc106a8d1397f582ce86782ba0e20b0f9d33251cd5a0feca2624",
+      "comparison": "Archived input SHA256, size, seed, step and shapes match the archived original Stage5 index; original training and sibling snapshot are not rerun or re-created."
+    },
+    {
+      "case": "stage5_seed303_step0128",
+      "source_sha256": "af259cef92071d38b4d9e493a4fd1548a64f3fcfb40f00b1ceeb4407f884b0a4",
+      "source_bytes": 172064,
+      "training_rerun": false,
+      "route": "archived_stage5_index",
+      "archived_index_sha256": "52c8f6c1107bf261da28653c0f0496fe0008f95f2af58f652d92af4b0ed710b2",
+      "original_snapshot_sha256": "af259cef92071d38b4d9e493a4fd1548a64f3fcfb40f00b1ceeb4407f884b0a4",
+      "comparison": "Archived input SHA256, size, seed, step and shapes match the archived original Stage5 index; original training and sibling snapshot are not rerun or re-created."
+    },
+    {
+      "case": "stage5_seed303_step4096",
+      "source_sha256": "c2eb00d65499c249d4539dbcaefb788309680c4967657002e5f3f301eabdf52a",
+      "source_bytes": 172064,
+      "training_rerun": false,
+      "route": "archived_stage5_index",
+      "archived_index_sha256": "52c8f6c1107bf261da28653c0f0496fe0008f95f2af58f652d92af4b0ed710b2",
+      "original_snapshot_sha256": "c2eb00d65499c249d4539dbcaefb788309680c4967657002e5f3f301eabdf52a",
+      "comparison": "Archived input SHA256, size, seed, step and shapes match the archived original Stage5 index; original training and sibling snapshot are not rerun or re-created."
+    },
+    {
+      "case": "stage10_seed42_step0001",
+      "source_sha256": "81ea7538be2511205429b50639ab7c4423b5b27b28de1cf152b674e4e7e1c709",
+      "source_bytes": 50304,
+      "training_rerun": false,
+      "route": "archived_stage10_trajectory",
+      "original_trajectory_sha256": "998d81cbf842cc5dc29a703f788ed4821d3069964a6d4f8ee3f738e52260708e",
+      "original_trajectory_bytes": 1207296,
+      "comparison": "Independent m/v extraction from the preserved trajectory; trajectory SHA256 matches the input record. This does not rerun original training."
+    },
+    {
+      "case": "stage10_seed42_step0008",
+      "source_sha256": "dbdb60abf43006b6b401b910da3f6faab7b68589ed9f5841a31903b83a7f9432",
+      "source_bytes": 50304,
+      "training_rerun": false,
+      "route": "archived_stage10_trajectory",
+      "original_trajectory_sha256": "998d81cbf842cc5dc29a703f788ed4821d3069964a6d4f8ee3f738e52260708e",
+      "original_trajectory_bytes": 1207296,
+      "comparison": "Independent m/v extraction from the preserved trajectory; trajectory SHA256 matches the input record. This does not rerun original training."
+    },
+    {
+      "case": "stage10_seed42_step0016",
+      "source_sha256": "e2f233f5c376befa6cbeafed37907faeabbdc57f543b82fa674c030e19ad793d",
+      "source_bytes": 50304,
+      "training_rerun": false,
+      "route": "archived_stage10_trajectory",
+      "original_trajectory_sha256": "998d81cbf842cc5dc29a703f788ed4821d3069964a6d4f8ee3f738e52260708e",
+      "original_trajectory_bytes": 1207296,
+      "comparison": "Independent m/v extraction from the preserved trajectory; trajectory SHA256 matches the input record. This does not rerun original training."
+    },
+    {
+      "case": "constructed_known_rank2_exact",
+      "source_sha256": "f7e8eca72bde037eeb908044c2b53ca165d3335abc5987e86337cf6a07d3d658",
+      "source_bytes": 131072,
+      "training_rerun": false,
+      "route": "archived_control_input",
+      "comparison": "Constructed/edge input SHA256 matches its index; independent construction checks follow."
+    },
+    {
+      "case": "constructed_known_rank2_sparse_ulp",
+      "source_sha256": "ffbf274ac5f9406542f872b92b949c1e3aa79c42121d0c79b8e7f9142225017b",
+      "source_bytes": 131072,
+      "training_rerun": false,
+      "route": "archived_control_input",
+      "comparison": "Constructed/edge input SHA256 matches its index; independent construction checks follow."
+    },
+    {
+      "case": "constructed_known_rank2_dense_low16",
+      "source_sha256": "54749f17411ba25ce5c3991a923e26156c1609a51031167d504e3746fc497548",
+      "source_bytes": 131072,
+      "training_rerun": false,
+      "route": "archived_control_input",
+      "comparison": "Constructed/edge input SHA256 matches its index; independent construction checks follow."
+    },
+    {
+      "case": "edge_float_bits",
+      "source_sha256": "10d3b657e7004642d224b6a2772701f718f1dc01ca0a92e07f7dd08bc149afba",
+      "source_bytes": 128,
+      "training_rerun": false,
+      "route": "archived_control_input",
+      "comparison": "Constructed/edge input SHA256 matches its index; independent construction checks follow."
+    }
+  ]
+}

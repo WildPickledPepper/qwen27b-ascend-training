@@ -1,0 +1,12 @@
+all_decoded_factor_bits_equal,all_weight_m_v_gradient_bits_equal,microbatch,original_fp32_factors_unchanged,record_bytes_fp32,record_bytes_mixed,seed,steps,width
+True,True,1,True,1296,1168,42,8,32
+True,True,4,True,4368,3856,42,8,32
+True,True,16,True,16656,14608,42,8,32
+True,True,1,True,2576,2320,42,8,64
+True,True,4,True,8720,7696,42,8,64
+True,True,16,True,33296,29200,42,8,64
+True,True,1,True,5136,4624,42,8,128
+True,True,4,True,17424,15376,42,8,128
+True,True,16,True,66576,58384,42,8,128
+True,True,1,True,10256,9232,42,8,256
+True,True,4,True,17424,15376,7,8,128

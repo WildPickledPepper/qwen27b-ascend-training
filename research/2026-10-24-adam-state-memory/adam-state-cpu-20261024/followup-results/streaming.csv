@@ -1,0 +1,4 @@
+kind,n,window,persistent_bytes,metadata_bytes,indices_bytes,scale_bytes,codes_bytes,extra_residual_bytes,decode_pair_numeric_bytes,two_old_new_pair_buffers_bytes,python_peak_including_audit_reference_changes,inplace_size_unchanged,window_matches_block_reference,projected_state_GiB,seconds
+q4,8192,128,8720,16,0,512,8192,0,1024,2048,45567,True,True,26.61440370976925,11.27144079998834
+q4_floor,8192,128,8720,16,0,512,8192,0,1024,2048,45004,True,True,26.61440370976925,11.266381299996283
+q4_log,8192,128,8976,16,0,768,8192,0,1024,2048,45461,True,True,27.397180289030075,8.30828840000322

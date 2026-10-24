@@ -1,0 +1,23 @@
+[
+  {
+    "artifact": "states",
+    "bytes": 798720,
+    "uint32_words": 199680,
+    "sha256": "9f0fa0defd16017d8f8498ae02f476bb5c89c9c9bf68afbba5e46fd80d0ef845",
+    "all_bits_equal": true
+  },
+  {
+    "artifact": "gradients",
+    "bytes": 266240,
+    "uint32_words": 66560,
+    "sha256": "4b61cb9230a70f6256ce28fb7cab70da9bdb71911c62b5811bbcd9b41e2c3e92",
+    "all_bits_equal": true
+  },
+  {
+    "artifact": "factors",
+    "bytes": 69760,
+    "uint32_words": 17440,
+    "sha256": "3b08235f03785280592d28560f1a433d5724ac83c036382a9e8744bf76730d5c",
+    "all_bits_equal": true
+  }
+]

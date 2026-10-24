@@ -1,0 +1,15 @@
+{
+  "all_checks_passed": true,
+  "steps": 64,
+  "moment_words_verified": 8192,
+  "archived_final_words_verified": 128,
+  "scalar_state_words_verified": 128,
+  "nonzero_input_intermediate_output_values_checked_normal_and_finite": 32890,
+  "nonzero_values_min_unbiased_binary32_exponent": -29,
+  "nonzero_values_max_unbiased_binary32_exponent": 20,
+  "proposed_persistent_payload_bytes": 56,
+  "dense_moment_payload_bytes": 512,
+  "payload_ratio": 0.109375,
+  "starts_from_zero_moments": true,
+  "scope": "Archived synthetic fixed-pattern moment recurrence only. No main grid rerun, full training, runtime peak, or arbitrary-gradient claim."
+}

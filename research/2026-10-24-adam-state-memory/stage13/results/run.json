@@ -1,0 +1,15 @@
+{
+  "source_sha256": "b152f92f0a000b4efd723bbe3921fb8794abe749cc9e789fd6c4d296770ce5ea",
+  "source_index_sha256": "4ffa0bdaf288b61cbffcdcd3a6fe22cd6393063dc21bfa13a3714542932491a0",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "zlib": "1.3.2",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "cases": 12,
+  "frames": 132,
+  "all_roundtrips_exact": true,
+  "seconds": 3.5295932680000988,
+  "target_ratio": 0.14970746839495358,
+  "target_interpretation": "30GiB divided by earlier26895998464 text parameters*8B raw FP32 m/v, not a measured feasible whole-model budget.",
+  "scope": "Offline snapshot representation; every predictor is in frame. No online memory peak certification, no full training replay, no NPU."
+}

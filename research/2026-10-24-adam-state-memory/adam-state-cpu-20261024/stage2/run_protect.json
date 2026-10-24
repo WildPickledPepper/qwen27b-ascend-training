@@ -1,0 +1,9 @@
+{
+  "part": "protect",
+  "elapsed_seconds": 82.0735493999673,
+  "reference": "experiment.py fixed lr=1e-4, betas=.9/.999, eps=1e-8, wd=.01; FP32 master weights",
+  "units": "vector step is one small N-dimensional CPU optimizer update, NOT a 27B training step; p99 over coordinates then max over steps; cosine over full vector then min over steps",
+  "toy": "closed-loop exact diagonal convex quadratic gradient, distinct from fixed-gradient replay; same data/init/Adam hyperparameters for each paired configuration",
+  "protection": "budget includes compact payload, two FP32 exception sets and their uint32 indices, 128 bytes per selected top-k heap entry, 8 MiB fixed window/codec allowance. Prototype decodes full toy vector, not full model. No measured NPU peak or production streaming kernel. format_only_* files are SUPERSEDED earlier budgets that omit transition scratch.",
+  "script_sha256": "3d1f1258d9f20f16564a20d6a7f6e0735e4c6424fac1c7c13ba492a35e40e562"
+}

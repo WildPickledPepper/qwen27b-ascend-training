@@ -1,0 +1,467 @@
+{
+  "shape": [
+    8,
+    8
+  ],
+  "steps": 64,
+  "all_raw_moment_words_equal": true,
+  "words_compared": 8192,
+  "moment_scalar_payload_bytes": 8,
+  "row_column_exponent_bytes": 16,
+  "shape_step_and_format_metadata_bytes": 16,
+  "four_fp32_coefficient_bytes": 16,
+  "persistent_representation_and_coefficients_bytes": 56,
+  "raw_dense_m_v_bytes": 512,
+  "not_counted_as_measured_peak": "This is a representational payload audit, not a low-memory runtime implementation; Python temporaries/stack and reconstruction workspace are not measured. No weights/forward/backward training modeled.",
+  "restrictions": "Every gradient has exactly the same separable power-of-two spatial pattern times one scalar; no overflow/subnormal violation; arbitrary changing training gradients need not satisfy this.",
+  "trajectory": [
+    {
+      "step": 1,
+      "input_scalar_word": 3234198120,
+      "m_scalar_word": 3206437767,
+      "v_scalar_word": 1025293151,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 2,
+      "input_scalar_word": 3204670962,
+      "m_scalar_word": 3206261086,
+      "v_scalar_word": 1025353599,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 3,
+      "input_scalar_word": 1078047481,
+      "m_scalar_word": 3195696784,
+      "v_scalar_word": 1027802135,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 4,
+      "input_scalar_word": 3232787646,
+      "m_scalar_word": 3209002616,
+      "v_scalar_word": 1033873778,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 5,
+      "input_scalar_word": 3227980900,
+      "m_scalar_word": 3213301399,
+      "v_scalar_word": 1035613054,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 6,
+      "input_scalar_word": 3229873904,
+      "m_scalar_word": 3215875457,
+      "v_scalar_word": 1037883425,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 7,
+      "input_scalar_word": 1085081292,
+      "m_scalar_word": 3207557035,
+      "v_scalar_word": 1040990201,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 8,
+      "input_scalar_word": 3232787646,
+      "m_scalar_word": 3214246950,
+      "v_scalar_word": 1043020864,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 9,
+      "input_scalar_word": 1086027794,
+      "m_scalar_word": 3203288784,
+      "v_scalar_word": 1045312881,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 10,
+      "input_scalar_word": 1086417530,
+      "m_scalar_word": 1044249106,
+      "v_scalar_word": 1047751050,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 11,
+      "input_scalar_word": 1081016900,
+      "m_scalar_word": 1057642796,
+      "v_scalar_word": 1048623519,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 12,
+      "input_scalar_word": 3233919737,
+      "m_scalar_word": 3186856192,
+      "v_scalar_word": 1049844517,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 13,
+      "input_scalar_word": 1085396793,
+      "m_scalar_word": 1055243809,
+      "v_scalar_word": 1050871224,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 14,
+      "input_scalar_word": 1090955173,
+      "m_scalar_word": 1067412095,
+      "v_scalar_word": 1053237129,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 15,
+      "input_scalar_word": 3206007201,
+      "m_scalar_word": 1065869968,
+      "v_scalar_word": 1053235875,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 16,
+      "input_scalar_word": 1070475463,
+      "m_scalar_word": 1066330518,
+      "v_scalar_word": 1053309870,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 17,
+      "input_scalar_word": 1090862379,
+      "m_scalar_word": 1072379484,
+      "v_scalar_word": 1055623619,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 18,
+      "input_scalar_word": 3234142444,
+      "m_scalar_word": 1065671207,
+      "v_scalar_word": 1056881134,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 19,
+      "input_scalar_word": 3221485296,
+      "m_scalar_word": 1060788505,
+      "v_scalar_word": 1056985854,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 20,
+      "input_scalar_word": 1081016900,
+      "m_scalar_word": 1065592972,
+      "v_scalar_word": 1057211429,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 21,
+      "input_scalar_word": 3231748350,
+      "m_scalar_word": 1054412896,
+      "v_scalar_word": 1057625199,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 22,
+      "input_scalar_word": 1088737389,
+      "m_scalar_word": 1066163572,
+      "v_scalar_word": 1058473949,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 23,
+      "input_scalar_word": 1082408815,
+      "m_scalar_word": 1068710472,
+      "v_scalar_word": 1058750599,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 24,
+      "input_scalar_word": 3221077001,
+      "m_scalar_word": 1065873010,
+      "v_scalar_word": 1058806351,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 25,
+      "input_scalar_word": 1067283338,
+      "m_scalar_word": 1066014042,
+      "v_scalar_word": 1058821507,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 26,
+      "input_scalar_word": 1074484179,
+      "m_scalar_word": 1066935291,
+      "v_scalar_word": 1058890774,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 27,
+      "input_scalar_word": 1090166422,
+      "m_scalar_word": 1072508062,
+      "v_scalar_word": 1059909540,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 28,
+      "input_scalar_word": 1076488536,
+      "m_scalar_word": 1073180780,
+      "v_scalar_word": 1060016458,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 29,
+      "input_scalar_word": 1068545341,
+      "m_scalar_word": 1072717235,
+      "v_scalar_word": 1060036993,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 30,
+      "input_scalar_word": 3191160107,
+      "m_scalar_word": 1070993501,
+      "v_scalar_word": 1060026058,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 31,
+      "input_scalar_word": 3232936117,
+      "m_scalar_word": 1064459490,
+      "v_scalar_word": 1060537753,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 32,
+      "input_scalar_word": 1083819289,
+      "m_scalar_word": 1068143164,
+      "v_scalar_word": 1060913194,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 33,
+      "input_scalar_word": 3238410983,
+      "m_scalar_word": 1052280102,
+      "v_scalar_word": 1062081666,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 34,
+      "input_scalar_word": 1074113001,
+      "m_scalar_word": 1057521634,
+      "v_scalar_word": 1062141340,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 35,
+      "input_scalar_word": 3228611901,
+      "m_scalar_word": 1037338620,
+      "v_scalar_word": 1062365099,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 36,
+      "input_scalar_word": 3235274535,
+      "m_scalar_word": 3205731949,
+      "v_scalar_word": 1063104240,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 37,
+      "input_scalar_word": 1088291976,
+      "m_scalar_word": 1043538988,
+      "v_scalar_word": 1063897310,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 38,
+      "input_scalar_word": 1072999469,
+      "m_scalar_word": 1051884428,
+      "v_scalar_word": 1063943290,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 39,
+      "input_scalar_word": 3229781110,
+      "m_scalar_word": 3183540580,
+      "v_scalar_word": 1064207155,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 40,
+      "input_scalar_word": 3217216757,
+      "m_scalar_word": 3195188273,
+      "v_scalar_word": 1064230394,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 41,
+      "input_scalar_word": 1082668639,
+      "m_scalar_word": 1046049335,
+      "v_scalar_word": 1064518726,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 42,
+      "input_scalar_word": 3230876083,
+      "m_scalar_word": 3196699270,
+      "v_scalar_word": 1064858062,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 43,
+      "input_scalar_word": 3224491833,
+      "m_scalar_word": 3204784339,
+      "v_scalar_word": 1064971326,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 44,
+      "input_scalar_word": 3230764730,
+      "m_scalar_word": 3211543276,
+      "v_scalar_word": 1065302059,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 45,
+      "input_scalar_word": 1070252757,
+      "m_scalar_word": 3207337283,
+      "v_scalar_word": 1065327432,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 46,
+      "input_scalar_word": 1081016900,
+      "m_scalar_word": 3194820022,
+      "v_scalar_word": 1065448941,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 47,
+      "input_scalar_word": 1080423016,
+      "m_scalar_word": 1041926633,
+      "v_scalar_word": 1065548746,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 48,
+      "input_scalar_word": 3207046497,
+      "m_scalar_word": 1032850825,
+      "v_scalar_word": 1065543759,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 49,
+      "input_scalar_word": 3234272356,
+      "m_scalar_word": 3205435082,
+      "v_scalar_word": 1065859851,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 50,
+      "input_scalar_word": 3236499420,
+      "m_scalar_word": 3214776780,
+      "v_scalar_word": 1066295928,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 51,
+      "input_scalar_word": 1089980833,
+      "m_scalar_word": 3198871310,
+      "v_scalar_word": 1066789575,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 52,
+      "input_scalar_word": 3214915457,
+      "m_scalar_word": 3201938164,
+      "v_scalar_word": 1066792811,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 53,
+      "input_scalar_word": 1085192645,
+      "m_scalar_word": 1042760590,
+      "v_scalar_word": 1067033077,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 54,
+      "input_scalar_word": 1067728751,
+      "m_scalar_word": 1049425862,
+      "v_scalar_word": 1067036821,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 55,
+      "input_scalar_word": 3222710181,
+      "m_scalar_word": 1011555376,
+      "v_scalar_word": 1067073232,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 56,
+      "input_scalar_word": 0,
+      "m_scalar_word": 1010224273,
+      "v_scalar_word": 1067063124,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 57,
+      "input_scalar_word": 1079272366,
+      "m_scalar_word": 1051659647,
+      "v_scalar_word": 1067145410,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 58,
+      "input_scalar_word": 1068768048,
+      "m_scalar_word": 1055233797,
+      "v_scalar_word": 1067151837,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 59,
+      "input_scalar_word": 1088403329,
+      "m_scalar_word": 1066214651,
+      "v_scalar_word": 1067551653,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 60,
+      "input_scalar_word": 3238206836,
+      "m_scalar_word": 1043405452,
+      "v_scalar_word": 1068104386,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 61,
+      "input_scalar_word": 3196282354,
+      "m_scalar_word": 1040522522,
+      "v_scalar_word": 1068093798,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 62,
+      "input_scalar_word": 1082928463,
+      "m_scalar_word": 1057888152,
+      "v_scalar_word": 1068243638,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 63,
+      "input_scalar_word": 3236610773,
+      "m_scalar_word": 3194991650,
+      "v_scalar_word": 1068683843,
+      "all128_moment_words_equal": true
+    },
+    {
+      "step": 64,
+      "input_scalar_word": 1070104286,
+      "m_scalar_word": 3177011428,
+      "v_scalar_word": 1068692706,
+      "all128_moment_words_equal": true
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "shape": [
+    3,
+    3
+  ],
+  "accumulated_microbatch_rank": 2,
+  "square_of_sum": [
+    [
+      "1",
+      "9",
+      "25"
+    ],
+    [
+      "25",
+      "0",
+      "16"
+    ],
+    [
+      "0",
+      "25",
+      "49"
+    ]
+  ],
+  "sum_of_individual_squares": [
+    [
+      "5",
+      "5",
+      "13"
+    ],
+    [
+      "17",
+      "8",
+      "40"
+    ],
+    [
+      "8",
+      "17",
+      "25"
+    ]
+  ],
+  "missing_cross_term": [
+    [
+      "-4",
+      "4",
+      "12"
+    ],
+    [
+      "8",
+      "-8",
+      "-24"
+    ],
+    [
+      "-8",
+      "8",
+      "24"
+    ]
+  ],
+  "different_entries_without_cross_terms": 9,
+  "exact_lift_identity": true,
+  "scalar_cancellation_control": {
+    "microbatch_gradients": [
+      2,
+      -2
+    ],
+    "correct_square_of_sum": 0,
+    "wrong_sum_of_squares": 8
+  },
+  "gradient_average_note": "For a mean over two microbatches divide BOTH full square and cross term by4; cross terms do not disappear."
+}

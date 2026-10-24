@@ -1,0 +1,130 @@
+{
+  "seconds": 16.326232423999954,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "script_sha256": "814d0ef53d30d7e578d7cc4f5f7ad86d9404efefb2f47c2c7521b424311e0d01",
+  "input_hashes": {
+    "101": "154f585a47e36e39a5abcc8f9629aa0c6ababad222ba04230911e6b3502a6911",
+    "202": "09b5225aa1cb117016f8daabedb51b7953868acf79d7c04d45c2b7b16c1a6c6a",
+    "303": "bfb2bd2e22f96bbf7c083c29a68b57c4920787e08253a12d0e5391effc2bef7f"
+  },
+  "steps": 1024,
+  "n": 256,
+  "configs": [
+    {
+      "name": "fp32",
+      "form": "fp32",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 128
+    },
+    {
+      "name": "mv_nf4_rtn_b128",
+      "form": "mv",
+      "book": "nf4",
+      "rounding": "rtn",
+      "block": 128
+    },
+    {
+      "name": "mv_nf4_sr_b128",
+      "form": "mv",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 128
+    },
+    {
+      "name": "mv_u15_rtn_b128",
+      "form": "mv",
+      "book": "u15",
+      "rounding": "rtn",
+      "block": 128
+    },
+    {
+      "name": "mv_u15_sr_b128",
+      "form": "mv",
+      "book": "u15",
+      "rounding": "sr",
+      "block": 128
+    },
+    {
+      "name": "qv_nf4_rtn_b128",
+      "form": "qv",
+      "book": "nf4",
+      "rounding": "rtn",
+      "block": 128
+    },
+    {
+      "name": "qv_nf4_sr_b128",
+      "form": "qv",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 128
+    },
+    {
+      "name": "qv_u15_rtn_b128",
+      "form": "qv",
+      "book": "u15",
+      "rounding": "rtn",
+      "block": 128
+    },
+    {
+      "name": "qv_u15_sr_b128",
+      "form": "qv",
+      "book": "u15",
+      "rounding": "sr",
+      "block": 128
+    },
+    {
+      "name": "mv_nf4_sr_b32",
+      "form": "mv",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 32
+    },
+    {
+      "name": "qv_nf4_sr_b32",
+      "form": "qv",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 32
+    },
+    {
+      "name": "mv_nf4_sr_b64",
+      "form": "mv",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 64
+    },
+    {
+      "name": "qv_nf4_sr_b64",
+      "form": "qv",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 64
+    },
+    {
+      "name": "mv_nf4_sr_b256",
+      "form": "mv",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 256
+    },
+    {
+      "name": "qv_nf4_sr_b256",
+      "form": "qv",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 256
+    }
+  ],
+  "reference_hyperparameters": {
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "lr": 0.0001,
+    "eps": 1e-08,
+    "wd": 0.01
+  },
+  "budget": "m/v replacement only, not full-model peak; all global metadata and 8 MiB workspace plus 1 MiB layout reserve included. Flat stream format; actual production tensor tails, allocator, and kernel workspaces unverified.",
+  "limitations": "No neural-network or NPU training. 3 paired data/init seeds, one stateless-rounding seed per data seed. Ratios describe fixed time horizon and reference objective is not an optimum. All quantized representations are lossy."
+}

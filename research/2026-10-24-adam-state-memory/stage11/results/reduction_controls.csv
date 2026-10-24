@@ -1,0 +1,7 @@
+first_step_gradient_different_words,gradients_different_words,gradients_total_words,microbatch,mixed_x,reverse_K,seed,states_different_words,states_total_words,steps,width
+0,0,33280,1,0,True,42,0,99840,4,64
+0,0,33280,1,1,True,42,0,99840,4,64
+1235,14319,33280,4,0,True,42,26084,99840,4,64
+1235,14319,33280,4,1,True,42,26084,99840,4,64
+4361,20886,33280,16,0,True,42,42076,99840,4,64
+4361,20886,33280,16,1,True,42,42076,99840,4,64

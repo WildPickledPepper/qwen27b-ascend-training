@@ -1,0 +1,6 @@
+all_raw_bytes_equal,last_preupdate_halfMSE,numpy,parameters,scope,seed,steps,uint32_compared
+True,0.02035499067308115,2.3.5,6288,"Independent elementwise ordered FP32 implementation; same prescribed operation order, not hardware GEMM or PyTorch parity.",0,16,443712
+True,0.016473337464995436,2.3.5,6288,"Independent elementwise ordered FP32 implementation; same prescribed operation order, not hardware GEMM or PyTorch parity.",1,16,443712
+True,0.014353560826049251,2.3.5,6288,"Independent elementwise ordered FP32 implementation; same prescribed operation order, not hardware GEMM or PyTorch parity.",42,16,443712
+True,0.018157102199790026,2.3.5,6288,"Independent elementwise ordered FP32 implementation; same prescribed operation order, not hardware GEMM or PyTorch parity.",2026,16,443712
+True,0.020827978582416015,2.3.5,6288,"Independent elementwise ordered FP32 implementation; same prescribed operation order, not hardware GEMM or PyTorch parity.",2147483647,16,443712

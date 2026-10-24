@@ -1,0 +1,95 @@
+{
+  "grid_checks": [
+    {
+      "steps": 16,
+      "block": 32,
+      "all_steps_state_digest_equal": true,
+      "final_weights_digest_equal": true,
+      "coordinate_transition_factor": 8.5,
+      "wall_time_factor": 54.806370682343115,
+      "traced_peak_ratio": 0.21232515807625982
+    },
+    {
+      "steps": 16,
+      "block": 128,
+      "all_steps_state_digest_equal": true,
+      "final_weights_digest_equal": true,
+      "coordinate_transition_factor": 8.5,
+      "wall_time_factor": 34.87695435012284,
+      "traced_peak_ratio": 0.22612090438781376
+    },
+    {
+      "steps": 16,
+      "block": 512,
+      "all_steps_state_digest_equal": true,
+      "final_weights_digest_equal": true,
+      "coordinate_transition_factor": 8.5,
+      "wall_time_factor": 10.30098957773227,
+      "traced_peak_ratio": 0.3864725043111707
+    },
+    {
+      "steps": 32,
+      "block": 32,
+      "all_steps_state_digest_equal": true,
+      "final_weights_digest_equal": true,
+      "coordinate_transition_factor": 16.5,
+      "wall_time_factor": 146.6119175800701,
+      "traced_peak_ratio": 0.21232515807625982
+    },
+    {
+      "steps": 32,
+      "block": 128,
+      "all_steps_state_digest_equal": true,
+      "final_weights_digest_equal": true,
+      "coordinate_transition_factor": 16.5,
+      "wall_time_factor": 43.85094279035435,
+      "traced_peak_ratio": 0.22612090438781376
+    },
+    {
+      "steps": 32,
+      "block": 512,
+      "all_steps_state_digest_equal": true,
+      "final_weights_digest_equal": true,
+      "coordinate_transition_factor": 16.5,
+      "wall_time_factor": 19.993896495820643,
+      "traced_peak_ratio": 0.3864725043111707
+    },
+    {
+      "steps": 64,
+      "block": 32,
+      "all_steps_state_digest_equal": true,
+      "final_weights_digest_equal": true,
+      "coordinate_transition_factor": 32.5,
+      "wall_time_factor": 286.8494180391586,
+      "traced_peak_ratio": 0.21232515807625982
+    },
+    {
+      "steps": 64,
+      "block": 128,
+      "all_steps_state_digest_equal": true,
+      "final_weights_digest_equal": true,
+      "coordinate_transition_factor": 32.5,
+      "wall_time_factor": 112.92662133583579,
+      "traced_peak_ratio": 0.22612090438781376
+    },
+    {
+      "steps": 64,
+      "block": 512,
+      "all_steps_state_digest_equal": true,
+      "final_weights_digest_equal": true,
+      "coordinate_transition_factor": 32.5,
+      "wall_time_factor": 36.27179206281603,
+      "traced_peak_ratio": 0.3864725043111707
+    }
+  ],
+  "small_all_raw_bits_equal": true,
+  "small_validation_uint32_values": 744,
+  "small_validation_shape": {
+    "N": 31,
+    "T": 8,
+    "B": 7
+  },
+  "script_sha256": "4f9b61dbf3c44d9b893f79942db2d31b2531cf91c10f34eacb8b8f0102958dda",
+  "assumption": "gradient(seed,time,coordinate) does not depend on historical model weights; synthetic oracle only",
+  "scope": "Persistent full weights included in traces; no full m/v history/backing; validation raw arrays outside benchmark"
+}

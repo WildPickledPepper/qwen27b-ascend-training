@@ -1,0 +1,37 @@
+{
+  "shape": [
+    12,
+    12
+  ],
+  "seeds": [
+    1,
+    7,
+    42
+  ],
+  "rank_per_step": [
+    1,
+    2,
+    4
+  ],
+  "reported_steps": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "factor_source": "Independent deterministic small integer factors /8; all gradient and squared-gradient values exactly representable in binary32 in the main grid.",
+  "coefficient_words": {
+    "beta1": 1063675494,
+    "alpha1": 1036831949,
+    "beta2": 1065336439,
+    "alpha2": 981668463
+  },
+  "coefficients_are_actual_stored_fp32": true,
+  "alpha_is_not_recomputed_as_one_minus_beta": true,
+  "exact_arithmetic": "fractions.Fraction, exact Gaussian elimination, directly rounded integer-ratio binary32 nearest-even",
+  "scope": "Algebra and state-representation experiment, not a coupled full training or memory peak benchmark. FP32 operations use separate elementwise multiply/add. Rational codec bytes are serialization sizes, not Python RSS.",
+  "numpy": "2.3.5",
+  "python_platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "raw_dense_m_v_bytes": 1152,
+  "source_sha256": "04240501d182f0f1490a15fb4f3afe53d79aa5833e8f629ec3ea50b054735cdc"
+}

@@ -1,0 +1,188 @@
+{
+  "checks": {
+    "finite_difference_coordinates": 2180,
+    "finite_difference_max_abs_error": 3.391832301136155e-11,
+    "finite_difference_mean_abs_error": 6.735276413332806e-12,
+    "perturbed_point_directional_checks": 12,
+    "perturbed_directional_max_abs_error": 2.185737354998274e-11,
+    "gradient_check_passed": true,
+    "padding_gradient_exact_zero": true,
+    "disjoint_splits": true,
+    "teacher": "Fixed nearest-key hard attention with per-sequence independent random key-value assignment; no learned teacher weights",
+    "arithmetic_scope": "model gradients and AdamW recurrence/update float32; loss mean and quantizer interpolation/probabilities/uniforms float64"
+  },
+  "codec_checks": {
+    "reference_bit_parity_4_cases_32_steps": true,
+    "edge_cases": {
+      "mv_nf4_zeros": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_nf4_constant": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_nf4_mixed_zero": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_nf4_subnormal": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_u15_zeros": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_u15_constant": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_u15_mixed_zero": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_u15_subnormal": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_nf4_zeros": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_nf4_constant": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_nf4_mixed_zero": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_nf4_subnormal": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_u15_zeros": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_u15_constant": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_u15_mixed_zero": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_u15_subnormal": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      }
+    },
+    "nf4_source": "https://raw.githubusercontent.com/bitsandbytes-foundation/bitsandbytes/main/bitsandbytes/functional.py (lookup values only, no downloaded code executed)"
+  },
+  "input_hashes": {
+    "909": {
+      "train": "e97fc8387b469fc339c55f642cc1592ec72cdc0738d038156f7e0fee98033a7b",
+      "validation": "6045842221d3d941ee16b6afb05754bee45652a1af09e28420e6e01063f379d5",
+      "test": "6550eab04f7bf6c165d27b10c0a9b7ef0263d74e8bd48e081b2d8b4db6a5b05f",
+      "initial_weights": "99496ff9ebaa4a39e64b96b3b6947f0faf397e3632ac78b73b7227f17427e9ff",
+      "batches": "2baf6c1c461494b364bd72b04ba9267645d5595d3301738443f7c54e46d732f7"
+    }
+  },
+  "data_metadata": {
+    "909": {
+      "train": {
+        "class_counts": [
+          1016,
+          1029,
+          1023,
+          1028
+        ],
+        "teacher_accuracy": 1.0,
+        "context_majority_accuracy": 0.45703125
+      },
+      "validation": {
+        "class_counts": [
+          481,
+          515,
+          518,
+          534
+        ],
+        "teacher_accuracy": 1.0,
+        "context_majority_accuracy": 0.431640625
+      },
+      "test": {
+        "class_counts": [
+          500,
+          540,
+          531,
+          477
+        ],
+        "teacher_accuracy": 1.0,
+        "context_majority_accuracy": 0.44091796875
+      }
+    }
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "script_sha256": "ca29839781038f7a76cc31b790c38324ac48a1b418b650d8afe241fa5b2355d7",
+  "codec_sha256": "814d0ef53d30d7e578d7cc4f5f7ad86d9404efefb2f47c2c7521b424311e0d01",
+  "elapsed_seconds": 0.8217647070005114,
+  "configs": [
+    {
+      "name": "fp32",
+      "form": "fp32",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 128
+    }
+  ],
+  "protocol": {
+    "seeds": [
+      909
+    ],
+    "peaks": [
+      0.003
+    ],
+    "steps": 512,
+    "batch": 64,
+    "train": 4096,
+    "validation": 2048,
+    "test": 2048,
+    "student": "Last-query 2-head attention d16, residual tanh FFN16-32-16,4classes,2180declared/1940data-active/2304padded",
+    "teacher": "Fixed nearest-key hard attention with per-sequence independent random key-value assignment; no learned teacher weights",
+    "task": "7 fresh unit 8D keys with independent uniform class values, plus query equal to uniformly selected key; context/query input16features",
+    "optimizer": "beta1=.9,beta2=.999,eps=1e-8,WD=.01;64-step warmup, cosine to1% peak",
+    "test_policy": "Test once at predeclared final checkpoint; paired seed/input/init/batch; no best-method or best-step selection; initial pilot used different arrays preserved separately, final protocol data regenerated with independent split RNGs before full run",
+    "diagnostics": "Uniform attention weights at eval; replace query by a different-class context key and report old/new labels; no retraining controls",
+    "scope": "Small CPU synthetic attention task, not 27B or NPU evidence; lossy state encoding; actual CPU prototype working set separate from theoretical native packed design"
+  },
+  "executed_script_sha256": "655221ff7f92c76e4667bdbce91613a1116839ba1a03d47e8603294a0c1af62b",
+  "post_run_label_only_corrections": {
+    "active_parameters": "declared_parameters",
+    "last_update_RMS": "last_unscaled_adam_direction_RMS",
+    "max_parameter_step_absolute": "max_lr_scaled_adam_direction_absolute",
+    "old_state_plus_codebook_plus_traced_step_peak": "old_state_plus_codebook_plus_isolated_new_allocation_probe_peak",
+    "2180active/2304padded": "2180declared/1940data-active/2304padded",
+    "all_training_arithmetic_dtype": "arithmetic_scope",
+    "float32, loss reporting mean float64": "model gradients and AdamW recurrence/update float32; loss mean and quantizer interpolation/probabilities/uniforms float64"
+  }
+}

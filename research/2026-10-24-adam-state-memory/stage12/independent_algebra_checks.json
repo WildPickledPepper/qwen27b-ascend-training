@@ -1,0 +1,187 @@
+{
+  "reference": "Stage11 separate FP32 mul/add, no FMA; exact stored constants",
+  "constants": {
+    "first_moment": {
+      "beta": {
+        "word": "0x3f666666",
+        "decimal": 0.8999999761581421,
+        "exact": "7549747/8388608"
+      },
+      "injection": {
+        "word": "0x3dcccccd",
+        "decimal": 0.10000000149011612,
+        "exact": "13421773/134217728"
+      },
+      "one_minus_stored_beta": {
+        "word": "0x3dccccd0",
+        "decimal": 0.10000002384185791,
+        "exact": "838861/8388608"
+      },
+      "exact_beta_plus_injection_minus_one": "-3/134217728"
+    },
+    "second_moment": {
+      "beta": {
+        "word": "0x3f7fbe77",
+        "decimal": 0.9990000128746033,
+        "exact": "16760439/16777216"
+      },
+      "injection": {
+        "word": "0x3a83126f",
+        "decimal": 0.0010000000474974513,
+        "exact": "8589935/8589934592"
+      },
+      "one_minus_stored_beta": {
+        "word": "0x3a831200",
+        "decimal": 0.0009999871253967285,
+        "exact": "16777/16777216"
+      },
+      "exact_beta_plus_injection_minus_one": "111/8589934592"
+    }
+  },
+  "real_algebra": {
+    "shape": [
+      3,
+      4
+    ],
+    "steps": 3,
+    "token_columns_per_step": 2,
+    "m_concat_width": 6,
+    "v_symmetric_lift_width": 9,
+    "exact_identity_checks_passed": true,
+    "arithmetic": "Fraction, using exact stored FP32 beta and injection constants"
+  },
+  "moment_rounding_counterexample": [
+    {
+      "gradient": 1,
+      "sequential_m": {
+        "word": "0x3dcccccd",
+        "decimal": 0.10000000149011612,
+        "exact": "13421773/134217728"
+      },
+      "consolidated_m_once_rounded": {
+        "word": "0x3dcccccd",
+        "decimal": 0.10000000149011612,
+        "exact": "13421773/134217728"
+      },
+      "sequential_v": {
+        "word": "0x3a83126f",
+        "decimal": 0.0010000000474974513,
+        "exact": "8589935/8589934592"
+      },
+      "consolidated_v_once_rounded": {
+        "word": "0x3a83126f",
+        "decimal": 0.0010000000474974513,
+        "exact": "8589935/8589934592"
+      }
+    },
+    {
+      "gradient": 2,
+      "sequential_m": {
+        "word": "0x3e947ae1",
+        "decimal": 0.28999999165534973,
+        "exact": "9730785/33554432"
+      },
+      "consolidated_m_once_rounded": {
+        "word": "0x3e947ae1",
+        "decimal": 0.28999999165534973,
+        "exact": "9730785/33554432"
+      },
+      "sequential_v": {
+        "word": "0x3ba3cea7",
+        "decimal": 0.004999000113457441,
+        "exact": "10735271/2147483648"
+      },
+      "consolidated_v_once_rounded": {
+        "word": "0x3ba3cea7",
+        "decimal": 0.004999000113457441,
+        "exact": "10735271/2147483648"
+      }
+    },
+    {
+      "gradient": 3,
+      "sequential_m": {
+        "word": "0x3f0f9db2",
+        "decimal": 0.5609999895095825,
+        "exact": "4706009/8388608"
+      },
+      "consolidated_m_once_rounded": {
+        "word": "0x3f0f9db2",
+        "decimal": 0.5609999895095825,
+        "exact": "4706009/8388608"
+      },
+      "sequential_v": {
+        "word": "0x3c654719",
+        "decimal": 0.013994001783430576,
+        "exact": "15025945/1073741824"
+      },
+      "consolidated_v_once_rounded": {
+        "word": "0x3c654719",
+        "decimal": 0.013994001783430576,
+        "exact": "15025945/1073741824"
+      }
+    },
+    {
+      "gradient": 4,
+      "sequential_m": {
+        "word": "0x3f67a786",
+        "decimal": 0.9048999547958374,
+        "exact": "7590851/8388608"
+      },
+      "consolidated_m_once_rounded": {
+        "word": "0x3f67a787",
+        "decimal": 0.9049000144004822,
+        "exact": "15181703/16777216"
+      },
+      "sequential_v": {
+        "word": "0x3cf598a2",
+        "decimal": 0.02998000755906105,
+        "exact": "8047697/268435456"
+      },
+      "consolidated_v_once_rounded": {
+        "word": "0x3cf598a3",
+        "decimal": 0.0299800094217062,
+        "exact": "16095395/536870912"
+      }
+    }
+  ],
+  "rounded_rank_counterexample": {
+    "factors": [
+      {
+        "word": "0x3f800000",
+        "decimal": 1.0,
+        "exact": "1"
+      },
+      {
+        "word": "0x3f800001",
+        "decimal": 1.0000001192092896,
+        "exact": "8388609/8388608"
+      }
+    ],
+    "exact_product_rank": 1,
+    "rounded_product_exact_rank": 2,
+    "rounded_product_determinant": "-1/70368744177664",
+    "rounded_product_words": [
+      [
+        "0x3f800000",
+        "0x3f800001"
+      ],
+      [
+        "0x3f800001",
+        "0x3f800002"
+      ]
+    ]
+  },
+  "intra_step_cross_term_counterexample": {
+    "two_scalar_token_contributions": [
+      1,
+      1
+    ],
+    "square_of_aggregated_gradient": 4,
+    "sum_of_token_squares_wrong": 2
+  },
+  "cross_step_counterexample": {
+    "two_steps_unit_gradient_weighted_sum_of_squares_unit_weights": 2,
+    "square_of_sum_wrong": 4
+  },
+  "all_assertions_passed": true
+}

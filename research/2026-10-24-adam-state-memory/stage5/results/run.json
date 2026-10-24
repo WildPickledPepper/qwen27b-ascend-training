@@ -1,0 +1,28 @@
+{
+  "seconds": 5.799550845999875,
+  "checks": {
+    "all_12_codecs_bit_exact_on_zero_signed_zero_subnormal_infinity_NaN_payloads": true,
+    "warning": "Predictive arithmetic transforms reproduced in the same NumPy/IEEE environment; cross-platform arithmetic canonicalization is not separately certified."
+  },
+  "zlib_version": "1.3.2",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "script_sha256": "f5d9d72d0350c5ab4991c04754f828984e9a0afa8fe48e9704d4cb845d2f10e0",
+  "snapshot_index_sha256": "52c8f6c1107bf261da28653c0f0496fe0008f95f2af58f652d92af4b0ed710b2",
+  "scope": "Exact current-state storage on real small-model CPU trajectories. No arbitrary input or 27B compressibility claim. All temporal anchors and all predictor scales are embedded and charged. tracemalloc does not measure native zlib workspace or process RSS.",
+  "target_ratio_reference": 0.14970746839495358,
+  "codecs": [
+    "raw",
+    "zlib1",
+    "zlib6",
+    "zlib9",
+    "byte_shuffle",
+    "float_fields",
+    "bitplanes",
+    "adjacent_xor",
+    "cross_m2",
+    "cross_m2_fit",
+    "temporal_raw_anchor",
+    "temporal_best_anchor"
+  ]
+}

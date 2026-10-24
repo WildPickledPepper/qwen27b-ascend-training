@@ -1,0 +1,320 @@
+[
+  {
+    "case": "stage5_seed101_step0001",
+    "family": "stage5_trained",
+    "step": 1,
+    "seed": 101,
+    "filename": "stage5_seed101_step0001.bin",
+    "sha256": "075b9be2054617735efb94fe118e2756060df2c24403d670aacd220d23ddb023",
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ],
+    "raw_state_bytes": 172064,
+    "origin": "Stage5 stored actual nonlinear MLP FP32 AdamW moments; no padding"
+  },
+  {
+    "case": "stage5_seed101_step0128",
+    "family": "stage5_trained",
+    "step": 128,
+    "seed": 101,
+    "filename": "stage5_seed101_step0128.bin",
+    "sha256": "5f73992512b5fc132c65aef945ac1b894575925dac257a0c4e1492dddd5ddc62",
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ],
+    "raw_state_bytes": 172064,
+    "origin": "Stage5 stored actual nonlinear MLP FP32 AdamW moments; no padding"
+  },
+  {
+    "case": "stage5_seed101_step4096",
+    "family": "stage5_trained",
+    "step": 4096,
+    "seed": 101,
+    "filename": "stage5_seed101_step4096.bin",
+    "sha256": "4792b0f3142a9635aeea3aa71a093b2eb06a2c842f41aafd7bb3ebc3106ce9b0",
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ],
+    "raw_state_bytes": 172064,
+    "origin": "Stage5 stored actual nonlinear MLP FP32 AdamW moments; no padding"
+  },
+  {
+    "case": "stage5_seed202_step0001",
+    "family": "stage5_trained",
+    "step": 1,
+    "seed": 202,
+    "filename": "stage5_seed202_step0001.bin",
+    "sha256": "f343dd5d14129278ad3f43154017c827553fadc92c3e82702590affe4b6be130",
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ],
+    "raw_state_bytes": 172064,
+    "origin": "Stage5 stored actual nonlinear MLP FP32 AdamW moments; no padding"
+  },
+  {
+    "case": "stage5_seed202_step0128",
+    "family": "stage5_trained",
+    "step": 128,
+    "seed": 202,
+    "filename": "stage5_seed202_step0128.bin",
+    "sha256": "75552fde3c5de9a29025e6f76258ea6d899a7fc9bfc352e85178f79470f93ccb",
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ],
+    "raw_state_bytes": 172064,
+    "origin": "Stage5 stored actual nonlinear MLP FP32 AdamW moments; no padding"
+  },
+  {
+    "case": "stage5_seed202_step4096",
+    "family": "stage5_trained",
+    "step": 4096,
+    "seed": 202,
+    "filename": "stage5_seed202_step4096.bin",
+    "sha256": "5b1390e07c4ac9d6808b823bb6f3ce43773d13b95175d1897b08ae072ece3789",
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ],
+    "raw_state_bytes": 172064,
+    "origin": "Stage5 stored actual nonlinear MLP FP32 AdamW moments; no padding"
+  },
+  {
+    "case": "stage5_seed303_step0001",
+    "family": "stage5_trained",
+    "step": 1,
+    "seed": 303,
+    "filename": "stage5_seed303_step0001.bin",
+    "sha256": "9a4b681c5f31bc106a8d1397f582ce86782ba0e20b0f9d33251cd5a0feca2624",
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ],
+    "raw_state_bytes": 172064,
+    "origin": "Stage5 stored actual nonlinear MLP FP32 AdamW moments; no padding"
+  },
+  {
+    "case": "stage5_seed303_step0128",
+    "family": "stage5_trained",
+    "step": 128,
+    "seed": 303,
+    "filename": "stage5_seed303_step0128.bin",
+    "sha256": "af259cef92071d38b4d9e493a4fd1548a64f3fcfb40f00b1ceeb4407f884b0a4",
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ],
+    "raw_state_bytes": 172064,
+    "origin": "Stage5 stored actual nonlinear MLP FP32 AdamW moments; no padding"
+  },
+  {
+    "case": "stage5_seed303_step4096",
+    "family": "stage5_trained",
+    "step": 4096,
+    "seed": 303,
+    "filename": "stage5_seed303_step4096.bin",
+    "sha256": "c2eb00d65499c249d4539dbcaefb788309680c4967657002e5f3f301eabdf52a",
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ],
+    "raw_state_bytes": 172064,
+    "origin": "Stage5 stored actual nonlinear MLP FP32 AdamW moments; no padding"
+  },
+  {
+    "case": "stage10_seed42_step0001",
+    "family": "stage10_trained",
+    "step": 1,
+    "seed": 42,
+    "filename": "stage10_seed42_step0001.bin",
+    "sha256": "81ea7538be2511205429b50639ab7c4423b5b27b28de1cf152b674e4e7e1c709",
+    "shapes": [
+      [
+        32,
+        128
+      ],
+      [
+        128
+      ],
+      [
+        128,
+        16
+      ],
+      [
+        16
+      ]
+    ],
+    "raw_state_bytes": 50304,
+    "origin": "Stage10 actual coupled MLP reference mode0 saved states; extract m/v, exclude current weights",
+    "source_states_sha256": "998d81cbf842cc5dc29a703f788ed4821d3069964a6d4f8ee3f738e52260708e",
+    "source_step_offset_bytes": 0
+  },
+  {
+    "case": "stage10_seed42_step0008",
+    "family": "stage10_trained",
+    "step": 8,
+    "seed": 42,
+    "filename": "stage10_seed42_step0008.bin",
+    "sha256": "dbdb60abf43006b6b401b910da3f6faab7b68589ed9f5841a31903b83a7f9432",
+    "shapes": [
+      [
+        32,
+        128
+      ],
+      [
+        128
+      ],
+      [
+        128,
+        16
+      ],
+      [
+        16
+      ]
+    ],
+    "raw_state_bytes": 50304,
+    "origin": "Stage10 actual coupled MLP reference mode0 saved states; extract m/v, exclude current weights",
+    "source_states_sha256": "998d81cbf842cc5dc29a703f788ed4821d3069964a6d4f8ee3f738e52260708e",
+    "source_step_offset_bytes": 528192
+  },
+  {
+    "case": "stage10_seed42_step0016",
+    "family": "stage10_trained",
+    "step": 16,
+    "seed": 42,
+    "filename": "stage10_seed42_step0016.bin",
+    "sha256": "e2f233f5c376befa6cbeafed37907faeabbdc57f543b82fa674c030e19ad793d",
+    "shapes": [
+      [
+        32,
+        128
+      ],
+      [
+        128
+      ],
+      [
+        128,
+        16
+      ],
+      [
+        16
+      ]
+    ],
+    "raw_state_bytes": 50304,
+    "origin": "Stage10 actual coupled MLP reference mode0 saved states; extract m/v, exclude current weights",
+    "source_states_sha256": "998d81cbf842cc5dc29a703f788ed4821d3069964a6d4f8ee3f738e52260708e",
+    "source_step_offset_bytes": 1131840
+  }
+]

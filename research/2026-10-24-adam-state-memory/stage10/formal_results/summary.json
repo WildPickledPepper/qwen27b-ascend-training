@@ -1,0 +1,26 @@
+{
+  "reference_cases": 25,
+  "candidate_complete_cases": 175,
+  "capacity_rejected_cases": 24,
+  "reserved_unused_capacity_cases": 2,
+  "all_raw_bytes_equal": true,
+  "total_complete_candidate_words": 30089220,
+  "independent_oracle_seeds": [
+    0,
+    1,
+    42,
+    2026,
+    2147483647
+  ],
+  "independent_oracle_words": 2218560,
+  "budget_checks": 134,
+  "budget_rejected": 88,
+  "budget_accepted": 46,
+  "ten_percent_budget_accepted": 0,
+  "charged_stack_bytes": 968,
+  "seconds": 34.97140464399854,
+  "capacity_full_arena_comparison_cases": 24,
+  "asan_ubsan_cases": 24,
+  "asan_ubsan_errors": false,
+  "leak_sanitizer": "Could not complete: runtime reports unsupported ptrace environment. Initial stdout/stderr retained; address+undefined tests rerun with leak detection disabled."
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "width": 64,
+    "microbatch": 1,
+    "mixed_x": 0,
+    "steps": 4,
+    "seed": 42,
+    "reverse_K": true,
+    "states_different_words": 0,
+    "states_total_words": 99840,
+    "gradients_different_words": 0,
+    "gradients_total_words": 33280,
+    "first_step_gradient_different_words": 0
+  },
+  {
+    "width": 64,
+    "microbatch": 1,
+    "mixed_x": 1,
+    "steps": 4,
+    "seed": 42,
+    "reverse_K": true,
+    "states_different_words": 0,
+    "states_total_words": 99840,
+    "gradients_different_words": 0,
+    "gradients_total_words": 33280,
+    "first_step_gradient_different_words": 0
+  },
+  {
+    "width": 64,
+    "microbatch": 4,
+    "mixed_x": 0,
+    "steps": 4,
+    "seed": 42,
+    "reverse_K": true,
+    "states_different_words": 26084,
+    "states_total_words": 99840,
+    "gradients_different_words": 14319,
+    "gradients_total_words": 33280,
+    "first_step_gradient_different_words": 1235
+  },
+  {
+    "width": 64,
+    "microbatch": 4,
+    "mixed_x": 1,
+    "steps": 4,
+    "seed": 42,
+    "reverse_K": true,
+    "states_different_words": 26084,
+    "states_total_words": 99840,
+    "gradients_different_words": 14319,
+    "gradients_total_words": 33280,
+    "first_step_gradient_different_words": 1235
+  },
+  {
+    "width": 64,
+    "microbatch": 16,
+    "mixed_x": 0,
+    "steps": 4,
+    "seed": 42,
+    "reverse_K": true,
+    "states_different_words": 42076,
+    "states_total_words": 99840,
+    "gradients_different_words": 20886,
+    "gradients_total_words": 33280,
+    "first_step_gradient_different_words": 4361
+  },
+  {
+    "width": 64,
+    "microbatch": 16,
+    "mixed_x": 1,
+    "steps": 4,
+    "seed": 42,
+    "reverse_K": true,
+    "states_different_words": 42076,
+    "states_total_words": 99840,
+    "gradients_different_words": 20886,
+    "gradients_total_words": 33280,
+    "first_step_gradient_different_words": 4361
+  }
+]

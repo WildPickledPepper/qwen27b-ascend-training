@@ -1,0 +1,14 @@
+{
+  "core_source_sha256": "0766be5147383ee650af391fc3a2483cc82f89702d05097f8e1353f0ba62df2b",
+  "bias_header_sha256": "75257260a6e237cf3b69923bdcf22e4a4dda38a94d663b32bb68f42e961f0bbe",
+  "formal_binary_sha256": "7925d6d791ee45d4d64a00132c2ee2db3694ad4e2f0838b272c5e98340b93fa5",
+  "capacity_harness_command": "gcc -std=c11 -O2 -fno-fast-math -ffp-contract=off -fno-math-errno -mno-red-zone -Wall -Wextra capacity_harness.c -lm -o build/formal/capacity_harness",
+  "sanitizer_command": "gcc -std=c11 -O1 -g -fno-fast-math -ffp-contract=off -fno-math-errno -mno-red-zone -fsanitize=address,undefined -fno-omit-frame-pointer capacity_harness.c -lm -o build/formal/capacity_harness_sanitized",
+  "initial_sanitizer_exit": 1,
+  "initial_sanitizer_limitation": "LeakSanitizer unsupported under ptrace; partial log retained",
+  "successful_sanitizer_environment": "ASAN_OPTIONS=detect_leaks=0:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1",
+  "successful_sanitizer_exit": 0,
+  "successful_sanitizer_stdout": "formal_results/capacity_address_undefined.jsonl",
+  "successful_sanitizer_stderr": "formal_results/capacity_address_undefined.stderr",
+  "timing_note": "Formal correctness timings may overlap independent audit probes; dedicated benchmark afterward was sequential with no overlapping tests; shared host not affinity pinned."
+}

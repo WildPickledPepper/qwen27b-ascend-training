@@ -1,0 +1,178 @@
+{
+  "native_reference_cases": 10,
+  "candidate_cases": 129,
+  "completed_candidates": 98,
+  "operation_capped_cases": 31,
+  "all_completed_raw_bits_equal": true,
+  "total_candidate_uint32_compared": 9636,
+  "numpy_P4_parity": [
+    {
+      "P": 4,
+      "T": 6,
+      "all_raw_words_equal": true,
+      "uint32_compared": 12
+    },
+    {
+      "P": 4,
+      "T": 8,
+      "all_raw_words_equal": true,
+      "uint32_compared": 12
+    }
+  ],
+  "strict_budget_checks": 645,
+  "strict_budget_accepts": 0,
+  "joint_measured_reference_saving_under_100x_cases": [
+    {
+      "P": 32,
+      "T": 2,
+      "policy": "uncached",
+      "Q": 0,
+      "tau": 0,
+      "charged_algorithm_bytes": 1192,
+      "reference_charged_bytes": 1416,
+      "mean_time_ratio_vs_dense_reference": 27.058610356006724
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "policy": "LRU",
+      "Q": 1,
+      "tau": 0,
+      "charged_algorithm_bytes": 1208,
+      "reference_charged_bytes": 1416,
+      "mean_time_ratio_vs_dense_reference": 33.4651362003871
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "policy": "LRU",
+      "Q": 8,
+      "tau": 0,
+      "charged_algorithm_bytes": 1384,
+      "reference_charged_bytes": 1416,
+      "mean_time_ratio_vs_dense_reference": 52.67753636679414
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 1,
+      "charged_algorithm_bytes": 1208,
+      "reference_charged_bytes": 1416,
+      "mean_time_ratio_vs_dense_reference": 29.735871866993854
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "policy": "pinned_slice",
+      "Q": 8,
+      "tau": 1,
+      "charged_algorithm_bytes": 1288,
+      "reference_charged_bytes": 1416,
+      "mean_time_ratio_vs_dense_reference": 29.330558084862822
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "policy": "pinned_slice",
+      "Q": 16,
+      "tau": 1,
+      "charged_algorithm_bytes": 1384,
+      "reference_charged_bytes": 1416,
+      "mean_time_ratio_vs_dense_reference": 29.494869997870648
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "policy": "uncached",
+      "Q": 0,
+      "tau": 0,
+      "charged_algorithm_bytes": 1320,
+      "reference_charged_bytes": 1928,
+      "mean_time_ratio_vs_dense_reference": 61.81365933768922
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "policy": "LRU",
+      "Q": 1,
+      "tau": 0,
+      "charged_algorithm_bytes": 1336,
+      "reference_charged_bytes": 1928,
+      "mean_time_ratio_vs_dense_reference": 58.69397824391997
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 1,
+      "charged_algorithm_bytes": 1336,
+      "reference_charged_bytes": 1928,
+      "mean_time_ratio_vs_dense_reference": 54.065408814812194
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "policy": "pinned_slice",
+      "Q": 16,
+      "tau": 1,
+      "charged_algorithm_bytes": 1512,
+      "reference_charged_bytes": 1928,
+      "mean_time_ratio_vs_dense_reference": 42.22650756049818
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "policy": "pinned_slice",
+      "Q": 32,
+      "tau": 1,
+      "charged_algorithm_bytes": 1704,
+      "reference_charged_bytes": 1928,
+      "mean_time_ratio_vs_dense_reference": 38.13101998129365
+    },
+    {
+      "P": 124,
+      "T": 2,
+      "policy": "uncached",
+      "Q": 0,
+      "tau": 0,
+      "charged_algorithm_bytes": 1560,
+      "reference_charged_bytes": 2888,
+      "mean_time_ratio_vs_dense_reference": 91.54468449123925
+    },
+    {
+      "P": 124,
+      "T": 2,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 1,
+      "charged_algorithm_bytes": 1576,
+      "reference_charged_bytes": 2888,
+      "mean_time_ratio_vs_dense_reference": 91.18638420097123
+    },
+    {
+      "P": 124,
+      "T": 2,
+      "policy": "pinned_slice",
+      "Q": 31,
+      "tau": 1,
+      "charged_algorithm_bytes": 1928,
+      "reference_charged_bytes": 2888,
+      "mean_time_ratio_vs_dense_reference": 67.89773286557646
+    },
+    {
+      "P": 124,
+      "T": 2,
+      "policy": "pinned_slice",
+      "Q": 62,
+      "tau": 1,
+      "charged_algorithm_bytes": 2296,
+      "reference_charged_bytes": 2888,
+      "mean_time_ratio_vs_dense_reference": 43.370801836626775
+    }
+  ],
+  "seconds": 7.478071342000476,
+  "limitations": "Fixed-budget rejects include caller stack and numeric constants. Charged block-level arena+static-stack envelope is not whole-process RSS/allocator arena. 100x is an analysis threshold, not a user limit. No external state/history inputs."
+}

@@ -1,0 +1,71 @@
+{
+  "random": {
+    "steps": 128,
+    "all_steps_state_and_weight_bit_equal": true,
+    "capacity_unchanged": true,
+    "max_used": 2056,
+    "max_prefix_need": 2056,
+    "raw_capacity": 2056,
+    "tail_coordinates": 1
+  },
+  "constant": {
+    "steps": 128,
+    "all_steps_state_and_weight_bit_equal": true,
+    "capacity_unchanged": true,
+    "max_used": 2056,
+    "max_prefix_need": 2056,
+    "raw_capacity": 2056,
+    "tail_coordinates": 1
+  },
+  "alternating": {
+    "steps": 128,
+    "all_steps_state_and_weight_bit_equal": true,
+    "capacity_unchanged": true,
+    "max_used": 2056,
+    "max_prefix_need": 2056,
+    "raw_capacity": 2056,
+    "tail_coordinates": 1
+  },
+  "scale_jump": {
+    "steps": 128,
+    "all_steps_state_and_weight_bit_equal": true,
+    "capacity_unchanged": true,
+    "max_used": 2056,
+    "max_prefix_need": 2056,
+    "raw_capacity": 2056,
+    "tail_coordinates": 1
+  },
+  "near_cancel": {
+    "steps": 128,
+    "all_steps_state_and_weight_bit_equal": true,
+    "capacity_unchanged": true,
+    "max_used": 2046,
+    "max_prefix_need": 2046,
+    "raw_capacity": 2056,
+    "tail_coordinates": 1
+  },
+  "sparse_spikes": {
+    "steps": 128,
+    "all_steps_state_and_weight_bit_equal": true,
+    "capacity_unchanged": true,
+    "max_used": 2056,
+    "max_prefix_need": 2056,
+    "raw_capacity": 2056,
+    "tail_coordinates": 1
+  },
+  "arbitrary_word_fallback": {
+    "flag": 0,
+    "raw_bytes": 4096,
+    "stored_bytes": 4096,
+    "bit_exact": true
+  },
+  "atomic_capacity_rejection": {
+    "ok": false,
+    "required_prefix_bytes": 2056,
+    "capacity": 616,
+    "old_state_unchanged": true
+  },
+  "streamed_FP32_matches_full_vector_FP32": true,
+  "numeric_storage_worst_case": "A + 9*ceil(N/B) + 32 bytes; A=8*N suffices for every raw/compressed mixed prefix because each stored block has length <=8*its_coordinate_count. This is an exact owned-array storage bound, excluding fixed-block codec/runtime workspace.",
+  "workspace_scope": "Only O(B) decoded numeric arrays/bytes and O(1) zlib codec workspace; no N-sized decoded m/v or second state arena in Arena. Python/native allocator total peak is measured separately, not asserted as a formal RSS upper bound."
+}

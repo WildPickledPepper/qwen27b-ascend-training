@@ -1,0 +1,2 @@
+seed,peak_lr,configuration,serialized_state_bytes,codebook_bytes,old_state_python_allocation,traced_step_new_allocations_peak,old_state_plus_codebook_plus_isolated_new_allocation_probe_peak,window_coordinates
+909,0.003,fp32,18464,0,18497,74468,92965,2304

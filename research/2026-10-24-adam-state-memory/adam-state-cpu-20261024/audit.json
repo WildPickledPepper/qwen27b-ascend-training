@@ -1,0 +1,35 @@
+{
+  "all_assertions_passed": true,
+  "checks": "90-row baseline bitwise invariants, subsequent recurrence counterexample, streaming equality, script hash, compressible positive controls, raw bit boundary roundtrips",
+  "candidate_memory": [
+    {
+      "kind": "solo42",
+      "serialized_bytes": 132,
+      "codebook_bytes": 64,
+      "python_encode_decode_peak_bytes": 12551,
+      "decoded_pair_payload_bytes": 1024,
+      "native_allocator_and_process_baseline": "not included"
+    },
+    {
+      "kind": "zip_sr",
+      "serialized_bytes": 160,
+      "codebook_bytes": 128,
+      "python_encode_decode_peak_bytes": 12037,
+      "decoded_pair_payload_bytes": 1024,
+      "native_allocator_and_process_baseline": "not included"
+    },
+    {
+      "kind": "ze_eden",
+      "serialized_bytes": 160,
+      "codebook_bytes": 128,
+      "python_encode_decode_peak_bytes": 10281,
+      "decoded_pair_payload_bytes": 1024,
+      "native_allocator_and_process_baseline": "not included"
+    }
+  ],
+  "target_bytes_per_parameter": 1.1976597471596286,
+  "required_ratio": 6.679693476359049,
+  "q4_ideal_fp32_block_fallback_fraction_budget": 0.01948248607706359,
+  "solo_ideal_fp32_block_fallback_fraction_budget": 0.04945463715767737,
+  "fallback_note": "Ideal optimistic budgets exclude tags, offsets and scratch; production allowance is smaller."
+}

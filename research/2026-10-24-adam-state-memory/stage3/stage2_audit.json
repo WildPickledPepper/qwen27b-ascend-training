@@ -1,0 +1,135 @@
+{
+  "m_codebook_endpoint_audit": {
+    "original": -1.0,
+    "reconstructed": -0.887499988079071,
+    "relative_error": 0.11250001192092896,
+    "positive_max_reconstructed": 1.0,
+    "constant_negative_prequant_m_after_1024": -0.4968942701816559,
+    "reference_m_after_1024": -0.9999997615814209,
+    "ratio": 0.49689438865051
+  },
+  "heap_peak_measurements": [
+    {
+      "k": 1024,
+      "candidate_count": 2048,
+      "peak_python_allocation_bytes": 208664,
+      "peak_bytes_per_selected": 203.7734375,
+      "returned_deep_size_bytes": 119448
+    },
+    {
+      "k": 8192,
+      "candidate_count": 16384,
+      "peak_python_allocation_bytes": 1716016,
+      "peak_bytes_per_selected": 209.474609375,
+      "returned_deep_size_bytes": 951960
+    },
+    {
+      "k": 65536,
+      "candidate_count": 131072,
+      "peak_python_allocation_bytes": 14118480,
+      "peak_bytes_per_selected": 215.430908203125,
+      "returned_deep_size_bytes": 7640376
+    },
+    {
+      "k": 131072,
+      "candidate_count": 262144,
+      "peak_python_allocation_bytes": 28381840,
+      "peak_bytes_per_selected": 216.5362548828125,
+      "returned_deep_size_bytes": 15296344
+    }
+  ],
+  "protection_budget_audit": {
+    "P": 26895998464,
+    "selected_block_count": 1641602,
+    "original_design_peak_GiB": 29.96124877780676,
+    "original_headroom_MiB": 39.681251525878906,
+    "python_heap_peak_allowance_bytes_per_entry": 224,
+    "python_heap_revised_projection_GiB": 30.108019433915615,
+    "python_heap_revised_exceeds_30GiB": true,
+    "important": "This rejects scaling the current Python heap as written. A packed native bounded selector <=128 bytes/entry could retain the original arithmetic budget, but no such production implementation is present. Full-vector decode and b.join exception construction in the CPU prototype are also not production-streaming implementations."
+  },
+  "toy_reference_stats": [
+    {
+      "seed": "101",
+      "initial_loss": 0.010466031036998578,
+      "final_loss": 0.00013825780746273153,
+      "fraction_initial": 0.013210146900384192,
+      "ratio_denominator_is_optimum": false
+    },
+    {
+      "seed": "202",
+      "initial_loss": 0.009807392832564703,
+      "final_loss": 0.00012159623072662022,
+      "fraction_initial": 0.012398425636920464,
+      "ratio_denominator_is_optimum": false
+    },
+    {
+      "seed": "303",
+      "initial_loss": 0.012206831971167273,
+      "final_loss": 0.0001814908650773335,
+      "fraction_initial": 0.014867974385656962,
+      "ratio_denominator_is_optimum": false
+    }
+  ],
+  "conditional_unbiasedness": "ZIP-SR probabilities interpolate f(v)=1/(sqrt(v/c2_t)+eps) between adjacent v-grid points. This is one-step conditional real-arithmetic unbiasedness for fixed current v, not unbiased v, not unchanged Adam recurrence, not bitwise FP32 equality. Rounded scale/output and stochastic histories further break exact equivalence.",
+  "zero_and_log_handling": "Imported ZIP includes zero v codes and may map positive v to zero. Its nonzero eps keeps updates finite but can permit rare large updates; epsilon placement is outside sqrt and matches the scalar reference. Imported SOLO-style floors the zero quantile at 1e-30 and cannot preserve mixed zero v blocks: that is a locally defined edge policy, not a formal complete paper reproduction.",
+  "fairness": "Hyperparameters and input seeds are paired in stage2. CPU FP32 operation order is explicit. m-only and v-only really retain the other FP32 state and do not satisfy the 30 GiB design. All full-method labels require STYLE/LOCAL VARIANT; m is shared custom DE with deterministic rounding. These experiments cannot refute official SOLO, ZIP-SR, or ZE-EDEN.",
+  "original_file_sha256": {
+    "audit.py": "1b14bfbd23d39593407531be4d560953d8805abbff4120e90f93b567652ca1d8",
+    "followup.py": "c97ef5ffe8835efe15d3f963e34b9fca64bcae0ab881cdfda032685cb29c4968",
+    "package_transfer.py": "7052b62c42765aa9f9fe267a22c54a7a89e4c80236440af1603df5b53e5db8b5",
+    "library-stage1.json": "3186842dc74f9b7967efe7457b724e3ddeff5af43c4347dcba10c3dae7ee76cc",
+    "literature_notes.md": "f0c51f7848c8a645bfe76d3b958e1adeec3ab995cfe10cac15473721f83b5255",
+    "README.md": "733b6aa09a178c819859af21a7c56c334ddea3db95b0859d67bea4f7bc2aff98",
+    "experiment.py": "e14d98a316751e7338e07d9e18545c902cabc20686d274c91c78d888c1440a34",
+    "SHA256SUMS.json": "1fdad2d73c84b0e426f8fdc7a8bc3aa0bd35d8ce9a09f0fbcd077a05df42ce09",
+    "audit.json": "9514aa066c43b4b36a407ea62348607e9dfae9f26d9862f3935727b1889fcb44",
+    "candidates.py": "31b3666380341fe871e2ffbf1885de22418d91ffcb06c02d81869f37d07e7c2a",
+    "TRANSFER_MANIFEST.json": "e9ea6ded1ed4c731f725632649e6ebe7a942f54eac3f9fc6bfe86bb243dc7569",
+    "__pycache__/candidates.cpython-312.pyc": "8ac86c9ff8e4583d3a324d26a1533963f8c6e7d8f4fcd476c7a1b48cdca7cf59",
+    "__pycache__/experiment.cpython-312.pyc": "2824089df118eaa5be1cd8b0f07ce262f46cb5e1bdec996814b1dc1df197c092",
+    "followup-results/compression_snapshots.csv": "873a9af750147e937ba06343255f9ea0297985c6658524a03f084d6e7284cddc",
+    "followup-results/summary.json": "d2f7f927cf18579530a30062d927980e96ebdabbe5964c7ac7117c54372d4586",
+    "followup-results/ratio_singularity_exact.csv": "78204d67b91a564b9c2d99a82cc81ff1af41d296bb4c850b50ebe232639c55f1",
+    "followup-results/ratio_beta0.999_quantFalse.csv": "028ae405c4a9d74dbc43b3e6fb23de2be10758cfc69a828a87029ef9b37dd235",
+    "followup-results/ratio_beta0.9_quantFalse.csv": "24329200cc4b1678136b5049f85e8e51587aa91e6170e4cc5a30193941a53b65",
+    "followup-results/streaming.csv": "f119d075ba8941c215c4c5afc917909d115076976ad2fe69c105d51dd27b7a4f",
+    "followup-results/master_boundaries.csv": "4845c44302bfc9ae99e8b07c35350fb0bb195c65c3b11345281dff1f40299391",
+    "followup-results/ratio_beta0.5_quantTrue.csv": "4166b2fbb5ecb11afeb328466068a2a75b6ac72d456fada6763253583652685d",
+    "followup-results/ratio_beta0.999_quantTrue.csv": "6c348e3706cfe3ed111e15ce321fb44232b7b4b94eff51a9502bcedaec3e38db",
+    "followup-results/ratio_beta0.9_quantTrue.csv": "aa81c4e47c8a3b56887c373594ff341c4e49c448786c129aaec2c658075ece6b",
+    "followup-results/ratio_beta0.5_quantFalse.csv": "408758caa7577a505b059890f5b15a18012420e288708a640b62e19e5a026cae",
+    "stage2/toy_summary.csv": "7d28c3fd1a40494074f9e4752c4e067d237e55ccf6330fcb10476dc483a571b5",
+    "stage2/run_toy.json": "20888ba67e4b7d8ab884b5d37c86a9b30fb8b83c0a085d443c2fdecdd9bcf721",
+    "stage2/toy_per_step.csv": "0b76a2ecccde57ad67b91f5f72b760898b07d135da32a9e890ffdf84234487eb",
+    "stage2/format_only_protection_per_step.csv": "51295b33151cb0501a3a70c9293a15fa202e1b4e4a43f1df482c4e21b9ead51a",
+    "stage2/run_replay.json": "54e6282e7eb329fa8d08b2a28a33709297b172690f6d9fc9bcb0dd98616c4eda",
+    "stage2/run_stage2_format_only_snapshot.py": "cc98c662dbfa8c473fda979a030fd19bb56f13aebd617911cf8fed30d12bac7f",
+    "stage2/run_protect.json": "6dd6db85273080e1c3d8628162b1670dd2d6a2eb9d68421a5c42285101ac62c4",
+    "stage2/replay_summary.csv": "f3d8fd03aaa5aa210b6b134a0323c9b2f0b370194af77654e44e139a0b6c1b8e",
+    "stage2/audit_stage2.json": "b6a2f70d10e3b3409a1fa4b34306f69cac1113ddbe505d3b688b000f48dddd30",
+    "stage2/protection_summary.csv": "b1910e70924bd162b8d96f03dfd00cbcfee0afcb77a29ea5222757e286c0d0fc",
+    "stage2/format_only_run_protect.json": "eb689de46a34231ecf1af20b9dece88f374ac84c15128920bcdbc336ae8b69b9",
+    "stage2/REPORT.md": "d9e56fc68dbd82bffaf04f6be56ae859d243748879a6ee223209d9bd0369728b",
+    "stage2/replay_per_step.csv": "289cffede529fe429a7a30f1e4e5ba83d6ee2eeb87a7c4e247a109f042c77ab2",
+    "stage2/toy_inputs_sha256.json": "b15d8144c120cdcde36fed74d436303846eb89fae7091f6a385abea09e191f35",
+    "stage2/finish_stage2.py": "48029128a0d5d198f17676567e3c15385b6d367d39bd843ab04a6c3657315817",
+    "stage2/run_stage2.py": "3d1f1258d9f20f16564a20d6a7f6e0735e4c6424fac1c7c13ba492a35e40e562",
+    "stage2/format_only_protection_summary.csv": "6a44f13cd029674fa54c3b29bad28ebe7858ccbc72b82c73bb84817929bcbff8",
+    "stage2/protection_per_step.csv": "4a42a833568c7502d469fb70a167db819b2207dd6a4d3131d96fd4661ff20651",
+    "candidate-results/per_step.csv": "1db09cfb3c6fdb626abcfeb4a1dac89e317c028f2d86331faa9a28a3e06d292e",
+    "candidate-results/edge_cases.json": "29f4ce6614809e183ce391db4ae9c8d05497f385299c01f535a98d588197a44b",
+    "candidate-results/summary.csv": "ed58e9040f60d06d891e14f8e2e2447984033ea424dbf5327b739b86d581bc38",
+    "journal/2026-10-24.md": "11ddcba0f023670fc1d84f84c83c4750bac3df2c7cd5140a8ac424db01ede76c",
+    "results/per_step.csv": "587b2bfffc87a5385244954588378afe7491eec422d6b611b8c7b349d5ea9ac5",
+    "results/run.json": "84f3810eee6d2165cae8e77557a1fce25e9b8533956d2af4e24f4868d5e47050",
+    "results/temporal.csv": "3b050e41577228462b81382bd2de4cb9efca5f537c3d49aad19a2dafc1e1671a",
+    "results/summary.csv": "6aea0bc69df0aec6e91c1c5939ca3ac84df2f587cf36de442aa853c2fc1dc458",
+    "results/memory.csv": "6f59a5accdda486dc8755ccaec21b374eb374ac75790fc92b2295b1fc7b591d4",
+    "results-v2/per_step.csv": "3b6e0cb5d5f9a34717973c050add9acb6bd091cf3e4775b73bf765e71f24bcdb",
+    "results-v2/run.json": "95e26e722550d4c1065530a444acf2981859b82880b0bde4a6949ad078d74ced",
+    "results-v2/temporal.csv": "3b050e41577228462b81382bd2de4cb9efca5f537c3d49aad19a2dafc1e1671a",
+    "results-v2/summary.csv": "4a7a743130f92b2dea5fd438baf53b1d9b6f8154b78f5f76c640af526a04b118",
+    "results-v2/memory.csv": "2bee8422a1219b8cbb4ad0ea9fb60d27c0c240e3d8dd973b24a1aa5ec7a0bb61"
+  }
+}

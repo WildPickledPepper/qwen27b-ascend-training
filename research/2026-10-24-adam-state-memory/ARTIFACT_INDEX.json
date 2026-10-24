@@ -1,0 +1,162 @@
+[
+  {
+    "stage": "S1",
+    "filename": "adam-state-cpu-stage1-20261024.zip",
+    "bytes": 2962926,
+    "sha256": "7837c4e082d090b4bd479d20e8c2b94b8a38ca87d7121b43172d9265d9b72e4f",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": null,
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S2",
+    "filename": "adam-state-cpu-through-stage2-20261024.zip",
+    "bytes": 9179728,
+    "sha256": "681ebd5d341a5f01f0e6b734ab68a549afe48f4bec00f32fee9234963d18ff78",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": null,
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S3",
+    "filename": "adam-state-cpu-stage3-audit-stress-20261024.zip",
+    "bytes": 9241877,
+    "sha256": "470c703312f5a236c7f9798c6b20c3664aaec344d5c47a6d0559983ea6edc716",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": null,
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S4",
+    "filename": "adam-state-cpu-through-stage4-mlp-20261024.zip",
+    "bytes": 9294576,
+    "sha256": "2865b96e65b580bfc715cb38904e46c35e20fe1d1bf6d5620cb0b4950f2c0019",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": null,
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S5",
+    "filename": "adam-state-cpu-through-stage5-lossless-20261024.zip",
+    "bytes": 15503395,
+    "sha256": "6feb9fa6ecb977635dbf621ad8795bd2117fbad73a98174bfc866ba843e6c23c",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": null,
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S6",
+    "filename": "adam-state-cpu-through-stage6-resident-20261024.zip",
+    "bytes": 15538436,
+    "sha256": "014fb4148e11f97c82f660535dac98187b7330e46196858f0018c9fef65f39ff",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": null,
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S7",
+    "filename": "adam-state-cpu-through-stage7-attention-20261024.zip",
+    "bytes": 16104403,
+    "sha256": "3931a2741fce6c588e9803f08bf5cd1762c65d8dad6052b628c03addf52bd5da",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": null,
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S8",
+    "filename": "adam-state-cpu-through-stage8-exact-replay-20261024.zip",
+    "bytes": 16134041,
+    "sha256": "a312ee1b48412e81a8b9e9d78804e7a6f61ddad6f3b78f6dc40f240c5d074fbe",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": null,
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S9",
+    "filename": "adam-state-cpu-through-stage9-native-frontier-20261024.zip",
+    "bytes": 16271832,
+    "sha256": "2fcb43d5534123c0ef6ee7edab3c9943c8014e47be92f20f88ba20d0abed818b",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": null,
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S10",
+    "filename": "adam-stage10-factor-replay-validated.tar.xz",
+    "bytes": 19421780,
+    "sha256": "dea3e10bf1710f525b1212feff44f264d18a45054213e833a4bac4a1c872ae0a",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": null,
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S11-original",
+    "filename": "adam-stage11-width-token-frontier.tar.xz",
+    "bytes": 42134252,
+    "sha256": "06bcad4839152bec2aa53ef3f918bf863138c5f64d9ff61161613242d6ede4eb",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": "42.13 MB original retained; too large for ChatGPT attachment. Use the four independently extractable parts below.",
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S11-part1",
+    "filename": "adam-stage11-part1-report-source-summary.tar.xz",
+    "bytes": 329488,
+    "sha256": "a24f283b9e01154a53fdbf7c64848050882206fb1cbe6cd72171b698bbe4c9f2",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": "Independently extractable; no byte concatenation needed.",
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S11-part2",
+    "filename": "adam-stage11-part2-raw-width32-64.tar.xz",
+    "bytes": 4620516,
+    "sha256": "cbd13ef0d6656217ca3f7468c9f7b89fa659152853f9286200e0ce0b0b1f0f87",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": "Independently extractable; no byte concatenation needed.",
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S11-part3",
+    "filename": "adam-stage11-part3-raw-width128.tar.xz",
+    "bytes": 15999144,
+    "sha256": "3db39e211871d3390973e73713e549daf2c7060601c4731f6e13927daea00f2e",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": "Independently extractable; no byte concatenation needed.",
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S11-part4",
+    "filename": "adam-stage11-part4-raw-width256.tar.xz",
+    "bytes": 20898932,
+    "sha256": "ebcdd2189da5ccd6f7d1bc4e756ee1da3d48b24c20f3c03049e8604b2f413f86",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": "Independently extractable; no byte concatenation needed.",
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S12",
+    "filename": "adam-stage12-exact-factor-consolidation.tar.xz",
+    "bytes": 277676,
+    "sha256": "762353e783470ef234222d2dad78a80d5530bc63466206ad8cb56a3a9ec7f5df",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": null,
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S13",
+    "filename": "adam-stage13-lossless-residual-coding.tar.xz",
+    "bytes": 18447436,
+    "sha256": "b7b5e5a7c484ce54f6613aad558798d8ef8adf91b70b1c67bd08d13e15e2fe5b",
+    "verification": "Original delivery receipt recorded filename, byte count, and SHA256; this index is not a repository download link.",
+    "note": null,
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  },
+  {
+    "stage": "S1-S13-final-memo",
+    "filename": "adam-research-decision-memo-stages1-13.zip",
+    "bytes": 88047,
+    "sha256": "b5ba772486f14293cb0e9ef91ad6a7a4d4c0fabbf13037d68b127e81d40e826f",
+    "availability": "Delivered separately in the research conversation; not stored in this Git repository."
+  }
+]

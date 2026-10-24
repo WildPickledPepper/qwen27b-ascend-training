@@ -1,0 +1,34 @@
+{
+  "all_assertions_passed": true,
+  "replay_configurations": 162,
+  "toy_configurations": 30,
+  "protection_configurations": 8,
+  "current_stage_vector_steps": 72576,
+  "superseded_format_only_vector_steps": 384,
+  "memory": [
+    {
+      "kind": "zip_sr",
+      "n": 16384,
+      "actual_compact_blob_bytes": 17432,
+      "tracemalloc_scratch_peak_bytes": 3473121,
+      "measurement": "one encode/decode/update/scoring window; initial compressed state and gradient allocated before tracing; no reference arrays",
+      "two_selected_heap_entries_total_python_bytes": 304,
+      "design_topk_allowance_bytes_per_entry": 128,
+      "design_fixed_allowance_bytes": 8388608,
+      "fits_fixed_allowance_this_CPU_window": true
+    },
+    {
+      "kind": "solo42",
+      "n": 16384,
+      "actual_compact_blob_bytes": 13848,
+      "tracemalloc_scratch_peak_bytes": 3468037,
+      "measurement": "one encode/decode/update/scoring window; initial compressed state and gradient allocated before tracing; no reference arrays",
+      "two_selected_heap_entries_total_python_bytes": 304,
+      "design_topk_allowance_bytes_per_entry": 128,
+      "design_fixed_allowance_bytes": 8388608,
+      "fits_fixed_allowance_this_CPU_window": true
+    }
+  ],
+  "stopped_after_current_stage": true,
+  "no_new_training_or_remote_access": true
+}

@@ -1,0 +1,351 @@
+{
+  "context_permutation_checks": [
+    {
+      "seed": 101,
+      "peak_lr": 0.001,
+      "configuration": "fp32",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 101,
+      "peak_lr": 0.001,
+      "configuration": "mv_nf4_sr_b64",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 101,
+      "peak_lr": 0.001,
+      "configuration": "mv_nf4_sr_b128",
+      "examples": 128,
+      "max_logit_absolute_drift": 1.9073486328125e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 101,
+      "peak_lr": 0.001,
+      "configuration": "qv_nf4_sr_b64",
+      "examples": 128,
+      "max_logit_absolute_drift": 1.9073486328125e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 101,
+      "peak_lr": 0.001,
+      "configuration": "qv_nf4_sr_b128",
+      "examples": 128,
+      "max_logit_absolute_drift": 1.9073486328125e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 101,
+      "peak_lr": 0.003,
+      "configuration": "fp32",
+      "examples": 128,
+      "max_logit_absolute_drift": 1.9073486328125e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 101,
+      "peak_lr": 0.003,
+      "configuration": "mv_nf4_sr_b64",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 101,
+      "peak_lr": 0.003,
+      "configuration": "mv_nf4_sr_b128",
+      "examples": 128,
+      "max_logit_absolute_drift": 3.814697265625e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 101,
+      "peak_lr": 0.003,
+      "configuration": "qv_nf4_sr_b64",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 101,
+      "peak_lr": 0.003,
+      "configuration": "qv_nf4_sr_b128",
+      "examples": 128,
+      "max_logit_absolute_drift": 1.9073486328125e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 202,
+      "peak_lr": 0.001,
+      "configuration": "fp32",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 202,
+      "peak_lr": 0.001,
+      "configuration": "mv_nf4_sr_b64",
+      "examples": 128,
+      "max_logit_absolute_drift": 1.9073486328125e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 202,
+      "peak_lr": 0.001,
+      "configuration": "mv_nf4_sr_b128",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 202,
+      "peak_lr": 0.001,
+      "configuration": "qv_nf4_sr_b64",
+      "examples": 128,
+      "max_logit_absolute_drift": 1.9073486328125e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 202,
+      "peak_lr": 0.001,
+      "configuration": "qv_nf4_sr_b128",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 202,
+      "peak_lr": 0.003,
+      "configuration": "fp32",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 202,
+      "peak_lr": 0.003,
+      "configuration": "mv_nf4_sr_b64",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 202,
+      "peak_lr": 0.003,
+      "configuration": "mv_nf4_sr_b128",
+      "examples": 128,
+      "max_logit_absolute_drift": 1.9073486328125e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 202,
+      "peak_lr": 0.003,
+      "configuration": "qv_nf4_sr_b64",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 202,
+      "peak_lr": 0.003,
+      "configuration": "qv_nf4_sr_b128",
+      "examples": 128,
+      "max_logit_absolute_drift": 3.814697265625e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 303,
+      "peak_lr": 0.001,
+      "configuration": "fp32",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 303,
+      "peak_lr": 0.001,
+      "configuration": "mv_nf4_sr_b64",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 303,
+      "peak_lr": 0.001,
+      "configuration": "mv_nf4_sr_b128",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 303,
+      "peak_lr": 0.001,
+      "configuration": "qv_nf4_sr_b64",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 303,
+      "peak_lr": 0.001,
+      "configuration": "qv_nf4_sr_b128",
+      "examples": 128,
+      "max_logit_absolute_drift": 3.814697265625e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 303,
+      "peak_lr": 0.003,
+      "configuration": "fp32",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 303,
+      "peak_lr": 0.003,
+      "configuration": "mv_nf4_sr_b64",
+      "examples": 128,
+      "max_logit_absolute_drift": 3.814697265625e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 303,
+      "peak_lr": 0.003,
+      "configuration": "mv_nf4_sr_b128",
+      "examples": 128,
+      "max_logit_absolute_drift": 3.814697265625e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 303,
+      "peak_lr": 0.003,
+      "configuration": "qv_nf4_sr_b64",
+      "examples": 128,
+      "max_logit_absolute_drift": 2.86102294921875e-06,
+      "predictions_identical": true
+    },
+    {
+      "seed": 303,
+      "peak_lr": 0.003,
+      "configuration": "qv_nf4_sr_b128",
+      "examples": 128,
+      "max_logit_absolute_drift": 3.814697265625e-06,
+      "predictions_identical": true
+    }
+  ],
+  "artifact_rows_verified": 30,
+  "all_saved_final_losses_and_accuracies_recomputed": true,
+  "all_seed_data_init_batch_hashes_reproduced": true,
+  "all_epoch_batches_permutations": true,
+  "structural_zero_audit": [
+    {
+      "seed": 101,
+      "declared_parameters": 2180,
+      "structurally_data_active_parameters": 1940,
+      "structurally_zero_gradient_parameters": 240,
+      "extra_padding": 124,
+      "first_epoch_observed_nonzero_gradient_coordinates": 1940
+    },
+    {
+      "seed": 202,
+      "declared_parameters": 2180,
+      "structurally_data_active_parameters": 1940,
+      "structurally_zero_gradient_parameters": 240,
+      "extra_padding": 124,
+      "first_epoch_observed_nonzero_gradient_coordinates": 1940
+    },
+    {
+      "seed": 303,
+      "declared_parameters": 2180,
+      "structurally_data_active_parameters": 1940,
+      "structurally_zero_gradient_parameters": 240,
+      "extra_padding": 124,
+      "first_epoch_observed_nonzero_gradient_coordinates": 1940
+    }
+  ],
+  "all_zero_gradient_moments_remain_zero": true,
+  "all_runs_completed_finite": true,
+  "gradient_checks": {
+    "finite_difference_coordinates": 2180,
+    "finite_difference_max_abs_error": 3.391832301136155e-11,
+    "finite_difference_mean_abs_error": 6.735276413332806e-12,
+    "perturbed_point_directional_checks": 12,
+    "perturbed_directional_max_abs_error": 2.185737354998274e-11,
+    "gradient_check_passed": true,
+    "padding_gradient_exact_zero": true,
+    "disjoint_splits": true,
+    "teacher": "Fixed nearest-key hard attention with per-sequence independent random key-value assignment; no learned teacher weights",
+    "arithmetic_scope": "model gradients and AdamW recurrence/update float32; loss mean and quantizer interpolation/probabilities/uniforms float64"
+  },
+  "memory_scope": "Same retained-buffer optimizer pattern, not training-process peak; see memory_loop.csv",
+  "full_loop_memory": [
+    {
+      "configuration": "fp32",
+      "serialized_bytes": 18464,
+      "codebook_numeric_bytes": 0,
+      "full_retained_loop_trace_peak": 103845,
+      "full_retained_loop_peak_plus_codebook": 103845,
+      "trace_live_after_step16": 66393,
+      "steps": 16,
+      "window_coordinates": 2304,
+      "includes": "zero initialization retained, old/new decoded m/v, update d, newly allocated returned weights, encoding temporaries, packed state; Python/NumPy traced allocations",
+      "excludes": "input initial model weights and input gradient allocated before trace; teacher/model/data/forward-backward; native allocations not visible to tracemalloc; shared codebook separately charged"
+    },
+    {
+      "configuration": "mv_nf4_sr_b64",
+      "serialized_bytes": 2768,
+      "codebook_numeric_bytes": 64,
+      "full_retained_loop_trace_peak": 402910,
+      "full_retained_loop_peak_plus_codebook": 402974,
+      "trace_live_after_step16": 60305,
+      "steps": 16,
+      "window_coordinates": 2304,
+      "includes": "zero initialization retained, old/new decoded m/v, update d, newly allocated returned weights, encoding temporaries, packed state; Python/NumPy traced allocations",
+      "excludes": "input initial model weights and input gradient allocated before trace; teacher/model/data/forward-backward; native allocations not visible to tracemalloc; shared codebook separately charged"
+    },
+    {
+      "configuration": "mv_nf4_sr_b128",
+      "serialized_bytes": 2552,
+      "codebook_numeric_bytes": 64,
+      "full_retained_loop_trace_peak": 398630,
+      "full_retained_loop_peak_plus_codebook": 398694,
+      "trace_live_after_step16": 57897,
+      "steps": 16,
+      "window_coordinates": 2304,
+      "includes": "zero initialization retained, old/new decoded m/v, update d, newly allocated returned weights, encoding temporaries, packed state; Python/NumPy traced allocations",
+      "excludes": "input initial model weights and input gradient allocated before trace; teacher/model/data/forward-backward; native allocations not visible to tracemalloc; shared codebook separately charged"
+    },
+    {
+      "configuration": "qv_nf4_sr_b64",
+      "serialized_bytes": 2768,
+      "codebook_numeric_bytes": 64,
+      "full_retained_loop_trace_peak": 409998,
+      "full_retained_loop_peak_plus_codebook": 410062,
+      "trace_live_after_step16": 58065,
+      "steps": 16,
+      "window_coordinates": 2304,
+      "includes": "zero initialization retained, old/new decoded m/v, update d, newly allocated returned weights, encoding temporaries, packed state; Python/NumPy traced allocations",
+      "excludes": "input initial model weights and input gradient allocated before trace; teacher/model/data/forward-backward; native allocations not visible to tracemalloc; shared codebook separately charged"
+    },
+    {
+      "configuration": "qv_nf4_sr_b128",
+      "serialized_bytes": 2552,
+      "codebook_numeric_bytes": 64,
+      "full_retained_loop_trace_peak": 407910,
+      "full_retained_loop_peak_plus_codebook": 407974,
+      "trace_live_after_step16": 57849,
+      "steps": 16,
+      "window_coordinates": 2304,
+      "includes": "zero initialization retained, old/new decoded m/v, update d, newly allocated returned weights, encoding temporaries, packed state; Python/NumPy traced allocations",
+      "excludes": "input initial model weights and input gradient allocated before trace; teacher/model/data/forward-backward; native allocations not visible to tracemalloc; shared codebook separately charged"
+    }
+  ]
+}

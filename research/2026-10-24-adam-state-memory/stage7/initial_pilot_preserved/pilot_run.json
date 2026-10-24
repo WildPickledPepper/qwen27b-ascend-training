@@ -1,0 +1,178 @@
+{
+  "checks": {
+    "finite_difference_coordinates": 2180,
+    "finite_difference_max_abs_error": 3.355179675756936e-11,
+    "finite_difference_mean_abs_error": 6.734359340822244e-12,
+    "perturbed_point_directional_checks": 12,
+    "perturbed_directional_max_abs_error": 1.811988059596814e-11,
+    "gradient_check_passed": true,
+    "padding_gradient_exact_zero": true,
+    "all_training_arithmetic_dtype": "float32, loss reporting mean float64",
+    "disjoint_splits": true,
+    "teacher": "Fixed nearest-key hard attention with per-sequence independent random key-value assignment; no learned teacher weights"
+  },
+  "codec_checks": {
+    "reference_bit_parity_4_cases_32_steps": true,
+    "edge_cases": {
+      "mv_nf4_zeros": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_nf4_constant": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_nf4_mixed_zero": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_nf4_subnormal": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_u15_zeros": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_u15_constant": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_u15_mixed_zero": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_u15_subnormal": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_nf4_zeros": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_nf4_constant": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_nf4_mixed_zero": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_nf4_subnormal": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_u15_zeros": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_u15_constant": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_u15_mixed_zero": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_u15_subnormal": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      }
+    },
+    "nf4_source": "https://raw.githubusercontent.com/bitsandbytes-foundation/bitsandbytes/main/bitsandbytes/functional.py (lookup values only, no downloaded code executed)"
+  },
+  "input_hashes": {
+    "101": {
+      "train": "1330bb1dafbaed0c96f28c4edd6d2ef1a877615f77097b1ab654fc48dd7fe47a",
+      "validation": "1588b13ef316f2432be82604849e770ca3e5cdab0e71621b7762264e34504059",
+      "test": "797bc1379f0c3b0ef3cc74ebdf02095cef4edec68fd9cb62b164233b071f8ae7",
+      "initial_weights": "aed32b1828027c4d6368765e819516047435c41d1b9df5512cdac173aa680b6a",
+      "batches": "dd0a96964190886bb1aace2280510eacb2e9052d3eea7a7d6321ec4b319a1c50"
+    }
+  },
+  "data_metadata": {
+    "101": {
+      "train": {
+        "class_counts": [
+          1024,
+          1051,
+          1019,
+          1002
+        ],
+        "teacher_accuracy": 1.0,
+        "context_majority_accuracy": 0.44677734375
+      },
+      "validation": {
+        "class_counts": [
+          506,
+          500,
+          509,
+          533
+        ],
+        "teacher_accuracy": 1.0,
+        "context_majority_accuracy": 0.46337890625
+      },
+      "test": {
+        "class_counts": [
+          470,
+          502,
+          526,
+          550
+        ],
+        "teacher_accuracy": 1.0,
+        "context_majority_accuracy": 0.43310546875
+      }
+    }
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "script_sha256": "96b7709895686203be735daf96106d659febb737185cfeed2f3713ec493240f2",
+  "codec_sha256": "814d0ef53d30d7e578d7cc4f5f7ad86d9404efefb2f47c2c7521b424311e0d01",
+  "elapsed_seconds": 0.6835871080002107,
+  "configs": [
+    {
+      "name": "fp32",
+      "form": "fp32",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 128
+    }
+  ],
+  "protocol": {
+    "seeds": [
+      101
+    ],
+    "peaks": [
+      0.003
+    ],
+    "steps": 512,
+    "batch": 64,
+    "train": 4096,
+    "validation": 2048,
+    "test": 2048,
+    "student": "Last-query 2-head attention d16, residual tanh FFN16-32-16,4classes,2180active/2304padded",
+    "teacher": "Fixed nearest-key hard attention with per-sequence independent random key-value assignment; no learned teacher weights",
+    "task": "7 fresh unit 8D keys with independent uniform class values, plus query equal to uniformly selected key; context/query input16features",
+    "optimizer": "beta1=.9,beta2=.999,eps=1e-8,WD=.01;64-step warmup, cosine to1% peak",
+    "test_policy": "Test once at predeclared final checkpoint; paired seed/input/init/batch; no best-method or best-step selection",
+    "diagnostics": "Uniform attention weights at eval; replace query by a different-class context key and report old/new labels; no retraining controls",
+    "scope": "Small CPU synthetic attention task, not 27B or NPU evidence; lossy state encoding; actual CPU prototype working set separate from theoretical native packed design"
+  }
+}

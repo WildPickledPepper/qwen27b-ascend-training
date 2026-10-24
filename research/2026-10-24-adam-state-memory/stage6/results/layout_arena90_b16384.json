@@ -1,0 +1,60 @@
+{
+  "mode": "layout",
+  "impl": "arena",
+  "n": 4194304,
+  "steps_requested": 16,
+  "steps_completed": 16,
+  "block": 16384,
+  "capacity_fraction": 0.9,
+  "status": "completed",
+  "failure": null,
+  "raw_state_bytes": 33554432,
+  "numeric_reserved_storage_bytes": 30201324,
+  "python_accounted_storage_bytes": 30201774,
+  "metadata_and_preflight_lengths_bytes": 2336,
+  "max_observed_payload_bytes": 28664247,
+  "max_prefix_requirement_bytes": 28664247,
+  "unused_reserved_capacity_bytes": 2960409,
+  "fragmentation_bytes": 0,
+  "second_arena_bytes": 0,
+  "raw_fallback_coordinate_blocks": 0,
+  "total_inplace_memmove_bytes": 53226199864,
+  "optimizer_seconds": 56.36667027799831,
+  "input_seconds": 0.5764960470005462,
+  "total_seconds": 57.47622578699975,
+  "max_optimizer_scope_tracemalloc_bytes": 31606920,
+  "initial_optimizer_step_tracemalloc_bytes": 31606920,
+  "max_later_optimizer_scratch_tracemalloc_bytes": 1396136,
+  "storage_plus_later_traced_scratch_bytes": 31597910,
+  "rss_before_optimizer": 60030976,
+  "rss_after_optimizer": 92180480,
+  "process_peak_rss_before": 76595200,
+  "process_peak_rss_after": 92286976,
+  "process_peak_increase_bytes": 15691776,
+  "all_recorded_checkpoints_bit_equal": true,
+  "checkpoints": [
+    {
+      "step": 1,
+      "state_sha256": "b80e23c6740766bc2bd95a50950b36623c9887f2e9f295e3be1a63f541291277",
+      "weights_sha256": "a561d934f0a1ae43624d872dbb8a63ea7fc2ca470b0a7c52eb54cf91ab92682d",
+      "used_bytes": 28664247,
+      "bit_equal_reference": true
+    },
+    {
+      "step": 2,
+      "state_sha256": "f5bc90d28ca11d9d877c280e7c8cd8263da6127fd8635cbd0337bdeb6f5a13de",
+      "weights_sha256": "c883020d784fccc6e7ab33591dd14862e3aa4e9b9661d35be6f8500ba60277b4",
+      "used_bytes": 28300005,
+      "bit_equal_reference": true
+    },
+    {
+      "step": 16,
+      "state_sha256": "ab56a5896aa8c4ec6fc9119f11da20c61b7b23de72b14c4d2531ef2d1da0362c",
+      "weights_sha256": "014c0536d9a46e46c84ddd3b882ef009aa24a0d169703aace39bc89a67ade97c",
+      "used_bytes": 27238579,
+      "bit_equal_reference": true
+    }
+  ],
+  "script_sha256": "d95232f20132824bda30463ca7584e040182297e97af4f5adb3b9dde94f78660",
+  "limits": "CPU emulation, not GPU/NPU execution. tracemalloc peak resets per optimizer scope: initial step includes storage creation; later steps include newly allocated scratch but not pre-existing resident storage. Compare storage plus max later scratch, not just a single allocator counter. Process RSS includes model/gradient generation; references run separately. No state reads from disk or external backing during updates. Layout mode is synthetic scaling, not training-quality evidence."
+}

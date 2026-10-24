@@ -1,0 +1,15 @@
+kind,serialized_bytes,bytes_object_allocation,python_codec_decode_peak_bytes,decoded_numeric_bytes,header_bytes,indices_bytes,zlib_native_workspace
+fp32,2064,2097,22514,2048,16,0,N/A
+bit_halves,2064,2097,72659,2048,16,0,N/A
+zlib_raw,1832,1865,307131,2048,16,0,not traced; not measured
+zlib_joint,1982,2015,327103,2048,16,0,not traced; not measured
+zlib_spatial,1844,1877,346723,2048,16,0,not traced; not measured
+bf16,1040,1073,20434,2048,16,0,N/A
+bf16_residual,2064,2097,22530,2048,16,0,N/A
+bf16_fp32res,3088,3121,24578,2048,16,0,N/A
+q4,288,321,22498,2048,16,0,N/A
+q4_floor,288,321,22498,2048,16,0,N/A
+q4_fallback,2068,2101,24930,2048,16,0,N/A
+m_only,1040,1073,16687,2048,16,0,N/A
+u_only,1040,1073,16660,2048,16,0,N/A
+u_logv,2064,2097,39775,2048,16,0,N/A

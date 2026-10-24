@@ -1,0 +1,66 @@
+[
+  {
+    "argv": [
+      "2",
+      "1",
+      "1",
+      "256",
+      "16",
+      "968",
+      "170000",
+      "-",
+      "1"
+    ],
+    "returncode": 0,
+    "stdout": "{\"status\":\"budget_rejected_after_allocation\"}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "2",
+      "1",
+      "1",
+      "1",
+      "1",
+      "968",
+      "11752",
+      "-",
+      "1"
+    ],
+    "returncode": 0,
+    "stdout": "{\"status\":\"budget_rejected\",\"optimizer_preflight_bytes\":11764,\"budget\":11752}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "2",
+      "1",
+      "1",
+      "1",
+      "1",
+      "968",
+      "11764",
+      "-",
+      "1"
+    ],
+    "returncode": 0,
+    "stdout": "{\"status\":\"complete\",\"mode\":2,\"seed\":1,\"requested_steps\":1,\"completed_steps\":1,\"rejected_step\":0,\"block\":1,\"capacity_steps\":1,\"parameters\":6288,\"record_bytes\":10320,\"factor_float_bytes\":4,\"bias_vector_bytes_per_step\":576,\"history_reserved_bytes\":10320,\"history_used_bytes\":10320,\"unused_history_bytes_charged\":0,\"workspace_bytes\":12,\"header_bytes\":136,\"current_weight_bytes\":25152,\"raw_FP32_m_v_bytes\":50304,\"request_bytes\":35620,\"malloc_usable_bytes\":35624,\"constant_reserve_bytes\":296,\"static_stack_reserve\":968,\"charged_algorithm_bytes\":36904,\"optimizer_replacement_bytes\":11752,\"nanoseconds_mean\":645478.000,\"nanoseconds_min\":645478,\"nanoseconds_max\":645478,\"capture_calls\":1,\"rebuild_calls\":6288,\"reconstructed_coordinates\":6288,\"gradient_products\":49152,\"moment_transitions\":6288,\"gradient_digest\":\"6d92e38fca072ca0\",\"state_digest\":\"14914693bf00df94\",\"factor_digest\":\"ec3bba0a9e50c40e\",\"atomic_weights_unchanged\":true,\"atomic_history_unchanged\":true,\"last_preupdate_halfMSE\":0.0252099690857}",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "2",
+      "1",
+      "1",
+      "1",
+      "1",
+      "0",
+      "11000",
+      "-",
+      "1"
+    ],
+    "returncode": 0,
+    "stdout": "{\"status\":\"complete\",\"mode\":2,\"seed\":1,\"requested_steps\":1,\"completed_steps\":1,\"rejected_step\":0,\"block\":1,\"capacity_steps\":1,\"parameters\":6288,\"record_bytes\":10320,\"factor_float_bytes\":4,\"bias_vector_bytes_per_step\":576,\"history_reserved_bytes\":10320,\"history_used_bytes\":10320,\"unused_history_bytes_charged\":0,\"workspace_bytes\":12,\"header_bytes\":136,\"current_weight_bytes\":25152,\"raw_FP32_m_v_bytes\":50304,\"request_bytes\":35620,\"malloc_usable_bytes\":35624,\"constant_reserve_bytes\":296,\"static_stack_reserve\":0,\"charged_algorithm_bytes\":35936,\"optimizer_replacement_bytes\":10784,\"nanoseconds_mean\":516617.000,\"nanoseconds_min\":516617,\"nanoseconds_max\":516617,\"capture_calls\":1,\"rebuild_calls\":6288,\"reconstructed_coordinates\":6288,\"gradient_products\":49152,\"moment_transitions\":6288,\"gradient_digest\":\"6d92e38fca072ca0\",\"state_digest\":\"14914693bf00df94\",\"factor_digest\":\"ec3bba0a9e50c40e\",\"atomic_weights_unchanged\":true,\"atomic_history_unchanged\":true,\"last_preupdate_halfMSE\":0.0252099690857}",
+    "stderr": ""
+  }
+]

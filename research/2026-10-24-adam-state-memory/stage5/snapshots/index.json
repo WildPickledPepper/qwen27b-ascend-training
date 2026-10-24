@@ -1,0 +1,569 @@
+[
+  {
+    "seed": 101,
+    "step": 1,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed101_step0001.bin",
+    "sha256": "075b9be2054617735efb94fe118e2756060df2c24403d670aacd220d23ddb023",
+    "validation_loss": 1.3951480587857077,
+    "validation_accuracy": 0.32666015625,
+    "lr": 1.5625000742147677e-05,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 101,
+    "step": 2,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed101_step0002.bin",
+    "sha256": "6b0fb43f80e886128c2568e44e3dbb1ff879db80612edabb78c13f63c3d3aaf0",
+    "validation_loss": 1.3909921275117085,
+    "validation_accuracy": 0.3291015625,
+    "lr": 3.125000148429535e-05,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 101,
+    "step": 128,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed101_step0128.bin",
+    "sha256": "5f73992512b5fc132c65aef945ac1b894575925dac257a0c4e1492dddd5ddc62",
+    "validation_loss": 0.3663812624292546,
+    "validation_accuracy": 0.8544921875,
+    "lr": 0.0009993846761062741,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 101,
+    "step": 1024,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed101_step1024.bin",
+    "sha256": "7ed06ad36f5d204a46c8c7c940e0b31a540c4d02f177f14ed7d1ffdcb1beec86",
+    "validation_loss": 0.309304893187735,
+    "validation_accuracy": 0.87353515625,
+    "lr": 0.0008678606827743351,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 101,
+    "step": 2048,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed101_step2048.bin",
+    "sha256": "f67a745e20cd26fb9e0c68e220dd122b1c340f397aee1217ac0125c1827c06c2",
+    "validation_loss": 0.2763610263234219,
+    "validation_accuracy": 0.884765625,
+    "lr": 0.0005173406680114567,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 101,
+    "step": 4095,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed101_step4095.bin",
+    "sha256": "5678b8a5f9bd6912143bbf89a97653a7a9a016d92a01aa3b9ba80bcbd1363e60",
+    "validation_loss": 0.26613354139771833,
+    "validation_accuracy": 0.88916015625,
+    "lr": 1.0000149814004544e-05,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 101,
+    "step": 4096,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed101_step4096.bin",
+    "sha256": "4792b0f3142a9635aeea3aa71a093b2eb06a2c842f41aafd7bb3ebc3106ce9b0",
+    "validation_loss": 0.26613518371952694,
+    "validation_accuracy": 0.88916015625,
+    "lr": 9.999999747378752e-06,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 202,
+    "step": 1,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed202_step0001.bin",
+    "sha256": "f343dd5d14129278ad3f43154017c827553fadc92c3e82702590affe4b6be130",
+    "validation_loss": 1.5674713236294338,
+    "validation_accuracy": 0.2099609375,
+    "lr": 1.5625000742147677e-05,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 202,
+    "step": 2,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed202_step0002.bin",
+    "sha256": "b35eafbbb58d5c570de2794e6c3507289695269684879c02f0a8092934690470",
+    "validation_loss": 1.5626222291466547,
+    "validation_accuracy": 0.21142578125,
+    "lr": 3.125000148429535e-05,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 202,
+    "step": 128,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed202_step0128.bin",
+    "sha256": "75552fde3c5de9a29025e6f76258ea6d899a7fc9bfc352e85178f79470f93ccb",
+    "validation_loss": 0.3710493066468201,
+    "validation_accuracy": 0.8525390625,
+    "lr": 0.0009993846761062741,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 202,
+    "step": 1024,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed202_step1024.bin",
+    "sha256": "6d95e499f6dd59a5ca07e470331df0bef85ea9efc04ce9dcb05860b3cc6941cd",
+    "validation_loss": 0.3074447597438942,
+    "validation_accuracy": 0.875,
+    "lr": 0.0008678606827743351,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 202,
+    "step": 2048,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed202_step2048.bin",
+    "sha256": "0167368eefb5dccb0531580e144b259420e199a7ddbf12e7b8a206ce21a6ef4f",
+    "validation_loss": 0.28103185973630623,
+    "validation_accuracy": 0.890625,
+    "lr": 0.0005173406680114567,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 202,
+    "step": 4095,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed202_step4095.bin",
+    "sha256": "cb5d8149af2fee404fef53172b8fbfb90dd86cdd209c11f1b8cbeaea7460a07c",
+    "validation_loss": 0.27769318871988874,
+    "validation_accuracy": 0.8935546875,
+    "lr": 1.0000149814004544e-05,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 202,
+    "step": 4096,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed202_step4096.bin",
+    "sha256": "5b1390e07c4ac9d6808b823bb6f3ce43773d13b95175d1897b08ae072ece3789",
+    "validation_loss": 0.277690361679492,
+    "validation_accuracy": 0.8935546875,
+    "lr": 9.999999747378752e-06,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 303,
+    "step": 1,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed303_step0001.bin",
+    "sha256": "9a4b681c5f31bc106a8d1397f582ce86782ba0e20b0f9d33251cd5a0feca2624",
+    "validation_loss": 1.4548322024202207,
+    "validation_accuracy": 0.26611328125,
+    "lr": 1.5625000742147677e-05,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 303,
+    "step": 2,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed303_step0002.bin",
+    "sha256": "c3c2e206f75dcdc7f9fdb617d3dddb5a96ad8c0db8ebcfda34dff4680fe4d614",
+    "validation_loss": 1.450270750632626,
+    "validation_accuracy": 0.26806640625,
+    "lr": 3.125000148429535e-05,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 303,
+    "step": 128,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed303_step0128.bin",
+    "sha256": "af259cef92071d38b4d9e493a4fd1548a64f3fcfb40f00b1ceeb4407f884b0a4",
+    "validation_loss": 0.3302546205238221,
+    "validation_accuracy": 0.88134765625,
+    "lr": 0.0009993846761062741,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 303,
+    "step": 1024,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed303_step1024.bin",
+    "sha256": "ba468c07bfca29cb6983ad8ca9a6d825a19b5426de587eec344fa927a55f6587",
+    "validation_loss": 0.26342936820430873,
+    "validation_accuracy": 0.8955078125,
+    "lr": 0.0008678606827743351,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 303,
+    "step": 2048,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed303_step2048.bin",
+    "sha256": "4035840849d211ec1e04558a0b339606137dba44235dbb35243694ed7a703053",
+    "validation_loss": 0.2506592364705745,
+    "validation_accuracy": 0.89697265625,
+    "lr": 0.0005173406680114567,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 303,
+    "step": 4095,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed303_step4095.bin",
+    "sha256": "55c1312f54eb5aafcf482cb5840f9d736879e322eba90152e7c1079b628c2c23",
+    "validation_loss": 0.24778022025707486,
+    "validation_accuracy": 0.89990234375,
+    "lr": 1.0000149814004544e-05,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "seed": 303,
+    "step": 4096,
+    "active_parameters": 21508,
+    "raw_state_bytes": 172064,
+    "filename": "seed303_step4096.bin",
+    "sha256": "c2eb00d65499c249d4539dbcaefb788309680c4967657002e5f3f301eabdf52a",
+    "validation_loss": 0.24779757398596897,
+    "validation_accuracy": 0.89990234375,
+    "lr": 9.999999747378752e-06,
+    "shapes": [
+      [
+        16,
+        1024
+      ],
+      [
+        1024
+      ],
+      [
+        1024,
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  }
+]

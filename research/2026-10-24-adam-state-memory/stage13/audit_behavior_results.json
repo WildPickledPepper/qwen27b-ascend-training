@@ -1,0 +1,31 @@
+{
+  "main_order_matches_independent_word_cases": 655360,
+  "varint_roundtrip_values": 10012,
+  "special_frame_independent_roundtrips": 6,
+  "nonfinite_vector_payloads_preserved": true,
+  "main_code_sha256": "b152f92f0a000b4efd723bbe3921fb8794abe749cc9e789fd6c4d296770ce5ea",
+  "rejections": {
+    "incomplete_varint": "Residual count/truncation",
+    "too_wide_varint": "Oversized residual varint",
+    "too_large_varint": "Ordered delta exceeds 33-bit signed range",
+    "wrong_count": "Residual count/truncation",
+    "nonfinite_matrix_svd": "SVD predictor rejects nonfinite matrix",
+    "zero_xor32_truncate": "ValueError",
+    "zero_xor32_append": "ValueError",
+    "zero_xor32_magic": "ValueError",
+    "zero_xor32_payload": "error",
+    "zero_ordered_delta_truncate": "ValueError",
+    "zero_ordered_delta_append": "ValueError",
+    "zero_ordered_delta_magic": "ValueError",
+    "zero_ordered_delta_payload": "error",
+    "bf16_trunc_xor32_truncate": "ValueError",
+    "bf16_trunc_xor32_append": "ValueError",
+    "bf16_trunc_xor32_magic": "ValueError",
+    "bf16_trunc_xor32_payload": "error",
+    "bf16_trunc_ordered_delta_truncate": "ValueError",
+    "bf16_trunc_ordered_delta_append": "ValueError",
+    "bf16_trunc_ordered_delta_magic": "ValueError",
+    "bf16_trunc_ordered_delta_payload": "error"
+  },
+  "scope": "Dynamic checks only; main experiment artifacts unchanged. Not a security audit or a cross-platform FP32 guarantee."
+}

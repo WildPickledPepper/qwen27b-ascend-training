@@ -1,0 +1,65 @@
+{
+  "solo42_zero": {
+    "finite": true,
+    "min": 0.0,
+    "max": 0.0,
+    "exact": true,
+    "bytes": 132
+  },
+  "solo42_constant": {
+    "finite": true,
+    "min": 1.0,
+    "max": 1.0,
+    "exact": true,
+    "bytes": 132
+  },
+  "solo42_mixed_zero": {
+    "finite": true,
+    "min": 1.0000000031710769e-30,
+    "max": 1.0,
+    "exact": false,
+    "bytes": 132
+  },
+  "zip_sr_zero": {
+    "finite": true,
+    "min": 0.0,
+    "max": 0.0,
+    "exact": true,
+    "bytes": 160
+  },
+  "zip_sr_constant": {
+    "finite": true,
+    "min": 1.0,
+    "max": 1.0,
+    "exact": true,
+    "bytes": 160
+  },
+  "zip_sr_mixed_zero": {
+    "finite": true,
+    "min": 0.0,
+    "max": 1.0,
+    "exact": true,
+    "bytes": 160
+  },
+  "ze_eden_zero": {
+    "finite": true,
+    "min": 0.0,
+    "max": 0.0,
+    "exact": true,
+    "bytes": 160
+  },
+  "ze_eden_constant": {
+    "finite": true,
+    "min": 1.0,
+    "max": 1.0,
+    "exact": true,
+    "bytes": 160
+  },
+  "ze_eden_mixed_zero": {
+    "finite": true,
+    "min": 0.0032500000670552254,
+    "max": 1.0,
+    "exact": false,
+    "bytes": 160
+  }
+}

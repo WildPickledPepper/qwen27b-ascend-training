@@ -1,0 +1,182 @@
+{
+  "checks": {
+    "finite_difference_coordinates": 32,
+    "finite_difference_max_abs_error": 1.734707516520828e-11,
+    "gradient_check_passed": true,
+    "train_val_test_rows_disjoint": true,
+    "teacher": "Fixed random 16-48-4 tanh network with hard argmax labels per seed",
+    "student": "16-64-4 tanh network with biases; 1348 active parameters, 1408 stored padded coordinates"
+  },
+  "codec_checks": {
+    "reference_bit_parity_4_cases_32_steps": true,
+    "edge_cases": {
+      "mv_nf4_zeros": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_nf4_constant": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_nf4_mixed_zero": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_nf4_subnormal": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_u15_zeros": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_u15_constant": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_u15_mixed_zero": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "mv_u15_subnormal": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_nf4_zeros": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_nf4_constant": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_nf4_mixed_zero": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_nf4_subnormal": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_u15_zeros": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_u15_constant": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_u15_mixed_zero": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      },
+      "qv_u15_subnormal": {
+        "finite": true,
+        "zeros_preserved": true,
+        "serialized_bytes": 312
+      }
+    },
+    "nf4_source": "https://raw.githubusercontent.com/bitsandbytes-foundation/bitsandbytes/main/bitsandbytes/functional.py (lookup values only, no downloaded code executed)"
+  },
+  "input_hashes": {
+    "101": {
+      "train": "58b3248872aba11ea857a696e94c46037638fc52734e7357818e665f782f3267",
+      "validation": "2a14ce27a49c172bc8e5b22c65f4bfd2558c0c557f1601c37129361e90c3c916",
+      "test": "53af181aa3d84469e3e661df0501780c72ad3d7dc8f59a3998d3e012ef59b904",
+      "initial_weights": "8dacc224a53e195554b6f27606d3472be28f8abde92f92d417366a919b3c0e11",
+      "batches": "400b1c321f02a9d51f1fe83658d8fde9f0a79bdc40fda16b00f78b29c8b14555"
+    },
+    "202": {
+      "train": "64ca66b3d51084e5345bdb07730c3a9c81bf9c23ad156a23fb4f7655b22df2d0",
+      "validation": "42a922020c3cae70a23f15e2b2150d540a877df80c043ea3392736a0026a9126",
+      "test": "a167ee5211d94e8f5d5d0488ab01b08537d96c798b09b79c8595d6b6b74d57ad",
+      "initial_weights": "ec6cdaf068c607236fe186a78aaa4b1f7af1adc154492012fbfc4850012c6b86",
+      "batches": "9d17824ea32a52dc9380dd6275ad9cc9bab6da619e0fff0339d306e525a201e4"
+    },
+    "303": {
+      "train": "e9c056d2c7d09cc619804db645c650bc4963f54ace4dc46e7cb632eb4940839c",
+      "validation": "39628524375e6cb527dca9f1b58358300389455b88e61d9ac28593fed959a91f",
+      "test": "073ab7851eefdc462a07275690139dc2ec9fbd2f71cfcd83444f2a58fb4d2fc1",
+      "initial_weights": "23ff1e46620fdf76db01d4aa85e965bea7bb272b52682f4c442b4bc920d5003e",
+      "batches": "b9dd5a0150971e3dd30f83ee8c290b537457eee0ee68543c09c211d4376b061e"
+    }
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "script_sha256": "7eeaa62d3cd5e6df94e7afc6c3260775500c996d9da91e3ec1ac55383195d50d",
+  "codec_sha256": "814d0ef53d30d7e578d7cc4f5f7ad86d9404efefb2f47c2c7521b424311e0d01",
+  "elapsed_seconds": 64.90164935299981,
+  "configs": [
+    {
+      "name": "fp32",
+      "form": "fp32",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 128
+    },
+    {
+      "name": "mv_nf4_sr_b64",
+      "form": "mv",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 64
+    },
+    {
+      "name": "mv_nf4_sr_b128",
+      "form": "mv",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 128
+    },
+    {
+      "name": "qv_nf4_sr_b64",
+      "form": "qv",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 64
+    },
+    {
+      "name": "qv_nf4_sr_b128",
+      "form": "qv",
+      "book": "nf4",
+      "rounding": "sr",
+      "block": 128
+    }
+  ],
+  "protocol": {
+    "train": 4096,
+    "validation": 2048,
+    "test": 2048,
+    "batch": 64,
+    "steps": 4096,
+    "peaks": [
+      0.001,
+      0.003
+    ],
+    "schedule": "64-step linear warmup then cosine decay to 1% peak",
+    "seeds": [
+      101,
+      202,
+      303
+    ],
+    "optimizer": "same beta=.9/.999 epsilon=1e-8 decoupled weight decay=.01 and FP32 master weights",
+    "test_policy": "final checkpoint only; no selection or hyperparameter tuning based on test",
+    "scope": "Small CPU supervised synthetic teacher/student, not 27B evidence. Metadata/workspace design projections are unchanged stage3 assumptions; measured CPU working buffers reported separately."
+  }
+}

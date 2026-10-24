@@ -1,0 +1,21 @@
+{
+  "all20_control_frame_roundtrips_exact": true,
+  "constructed_cases": 3,
+  "edge_raw_words": 32,
+  "nonfinite_lowrank_rejection": "SVD predictor rejects nonfinite matrix",
+  "max_abs_ordered_delta": 4294967295,
+  "max_zigzag": 8589934590,
+  "signed_zero_distinct_adjacent": true,
+  "corruptions_rejected": {
+    "truncated": "ValueError: Bad frame magic/size",
+    "corrupt_payload": "error: Error -3 while decompressing data: incorrect data check",
+    "bad_magic": "ValueError: Bad frame magic/size"
+  },
+  "known_factor_provenance_sha256": "6222f60b77dd97dd855c9c61913442fb05e2de1c346c73ab387460bba3895b5a",
+  "notes": [
+    "Known factors are entirely embedded and charged in each control frame. No external predictor oracle.",
+    "The sparse control changes exactly floor(5%*word_count) entries by +/-1 in ordered-float rank.",
+    "The dense low16 control replaces all lower16 bits randomly, demonstrating a harder correction stream.",
+    "Ordered ranks are reversible for NaN/infinite words, but are not numerical ULP distances for nonfinite values."
+  ]
+}

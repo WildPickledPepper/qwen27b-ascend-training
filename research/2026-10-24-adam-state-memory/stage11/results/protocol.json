@@ -1,0 +1,128 @@
+{
+  "grid": [
+    [
+      32,
+      1
+    ],
+    [
+      32,
+      4
+    ],
+    [
+      32,
+      16
+    ],
+    [
+      64,
+      1
+    ],
+    [
+      64,
+      4
+    ],
+    [
+      64,
+      16
+    ],
+    [
+      128,
+      1
+    ],
+    [
+      128,
+      4
+    ],
+    [
+      128,
+      16
+    ],
+    [
+      256,
+      1
+    ]
+  ],
+  "cases": [
+    [
+      32,
+      1,
+      42
+    ],
+    [
+      32,
+      4,
+      42
+    ],
+    [
+      32,
+      16,
+      42
+    ],
+    [
+      64,
+      1,
+      42
+    ],
+    [
+      64,
+      4,
+      42
+    ],
+    [
+      64,
+      16,
+      42
+    ],
+    [
+      128,
+      1,
+      42
+    ],
+    [
+      128,
+      4,
+      42
+    ],
+    [
+      128,
+      16,
+      42
+    ],
+    [
+      256,
+      1,
+      42
+    ],
+    [
+      128,
+      4,
+      7
+    ]
+  ],
+  "horizons": [
+    1,
+    4,
+    8
+  ],
+  "storage_modes": {
+    "0": "native BF16 inputs lifted losslessly to FP32 storage; all other factors FP32",
+    "1": "native BF16 inputs stored as uint16; all originally FP32 factors remain FP32"
+  },
+  "effective_tokens": "2*microbatch",
+  "tile_size": 128,
+  "repeats": 3,
+  "source_sha256": "12ce4b3dd10a703e4cce76fc7c294bfa89dd59e91de661bc43ae4a6630436c79",
+  "compiler_flags": [
+    "-std=c11",
+    "-O2",
+    "-fno-fast-math",
+    "-ffp-contract=off",
+    "-fno-math-errno",
+    "-mno-red-zone",
+    "-fstack-usage",
+    "-Wall",
+    "-Wextra",
+    "-frecord-gcc-switches"
+  ],
+  "scope": "Finite capacity/horizon, explicit FP32 scalar K order. Reversed inner-MB K order is a deliberate negative control. Native input data is identical under the two storage choices; no FP32 factor quantization.",
+  "raw_output_policy": "All raw outputs retained; identical byte sequences are hard-linked after SHA256+byte equality to avoid redundant archive payload."
+}

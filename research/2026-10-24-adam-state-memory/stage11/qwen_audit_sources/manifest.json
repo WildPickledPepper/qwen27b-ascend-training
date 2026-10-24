@@ -1,0 +1,46 @@
+[
+  {
+    "file": "qwen3_5_27b_config.json",
+    "url": "https://huggingface.co/Qwen/Qwen3.5-27B/raw/af65380/config.json",
+    "final_url": "https://huggingface.co/Qwen/Qwen3.5-27B/raw/af65380/config.json",
+    "sha256": "f8d190c5b89c1521220f935d2567a587d6e291ed69066a45a106560b05a2174c",
+    "bytes": 4134,
+    "retrieved_utc": "2026-10-23T19:01:38.502518+00:00",
+    "evidence_headers": {
+      "content-type": "text/plain; charset=utf-8",
+      "content-length": "4134",
+      "date": "Fri, 23 Oct 2026 19:01:38 GMT",
+      "etag": "\"bde2be7f34a16fcdf78b9050319cdb330a15fecd\"",
+      "x-repo-commit": "af65380a20d418eeb0a2bcb784dd43e9b76c4a2e"
+    },
+    "immutable_url": "https://huggingface.co/Qwen/Qwen3.5-27B/raw/af65380a20d418eeb0a2bcb784dd43e9b76c4a2e/config.json"
+  },
+  {
+    "file": "modeling_qwen3_5_v5_14_1.py",
+    "url": "https://raw.githubusercontent.com/huggingface/transformers/v5.14.1/src/transformers/models/qwen3_5/modeling_qwen3_5.py",
+    "final_url": "https://raw.githubusercontent.com/huggingface/transformers/v5.14.1/src/transformers/models/qwen3_5/modeling_qwen3_5.py",
+    "sha256": "0e2cd8dc50885b2701d26b116c585eedcdc62a24080ec34345af55b963126ded",
+    "bytes": 93139,
+    "retrieved_utc": "2026-10-23T19:01:42.428310+00:00",
+    "evidence_headers": {
+      "content-type": "text/plain; charset=utf-8",
+      "etag": "\"afb525e1139fd9c865df98ffa73866d271125427adeb4c7390aebed5eb4317dd\"",
+      "date": "Fri, 23 Oct 2026 19:01:42 GMT",
+      "content-length": "93139"
+    }
+  },
+  {
+    "file": "LICENSE_transformers",
+    "url": "https://raw.githubusercontent.com/huggingface/transformers/v5.14.1/LICENSE",
+    "final_url": "https://raw.githubusercontent.com/huggingface/transformers/v5.14.1/LICENSE",
+    "sha256": "77fd4710def9ec3c0f6225800e0235f15a425abd4a8b03559127fcd782612049",
+    "bytes": 11418,
+    "retrieved_utc": "2026-10-23T19:01:45.352350+00:00",
+    "evidence_headers": {
+      "content-type": "text/plain; charset=utf-8",
+      "etag": "\"6e4c3de0419a89cf020d76f4c2f95eda1c23f25765dc2e7772f82a46ae6fc095\"",
+      "date": "Fri, 23 Oct 2026 19:01:45 GMT",
+      "content-length": "11418"
+    }
+  }
+]

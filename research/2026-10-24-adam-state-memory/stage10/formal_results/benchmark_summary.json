@@ -1,0 +1,227 @@
+[
+  {
+    "steps": 1,
+    "mode": 0,
+    "block": 128,
+    "mean_ms_median": 0.361174571,
+    "time_ratio_median": 1.0,
+    "time_ratio_min": 1.0,
+    "time_ratio_max": 1.0,
+    "optimizer_bytes": [
+      87192
+    ],
+    "algorithm_bytes": [
+      112344
+    ]
+  },
+  {
+    "steps": 1,
+    "mode": 2,
+    "block": 128,
+    "mean_ms_median": 0.33506171399999995,
+    "time_ratio_median": 0.8718682636431105,
+    "time_ratio_min": 0.7849981743212062,
+    "time_ratio_max": 1.0819572040136791,
+    "optimizer_bytes": [
+      13272
+    ],
+    "algorithm_bytes": [
+      38424
+    ]
+  },
+  {
+    "steps": 1,
+    "mode": 1,
+    "block": 128,
+    "mean_ms_median": 3.662534,
+    "time_ratio_median": 9.96293197375281,
+    "time_ratio_min": 9.530325386904265,
+    "time_ratio_max": 10.672336145724945,
+    "optimizer_bytes": [
+      37912
+    ],
+    "algorithm_bytes": [
+      63064
+    ]
+  },
+  {
+    "steps": 2,
+    "mode": 0,
+    "block": 128,
+    "mean_ms_median": 0.7514941430000001,
+    "time_ratio_median": 1.0,
+    "time_ratio_min": 1.0,
+    "time_ratio_max": 1.0,
+    "optimizer_bytes": [
+      87192
+    ],
+    "algorithm_bytes": [
+      112344
+    ]
+  },
+  {
+    "steps": 2,
+    "mode": 2,
+    "block": 128,
+    "mean_ms_median": 0.772394857,
+    "time_ratio_median": 1.072033828213083,
+    "time_ratio_min": 0.9555968299539229,
+    "time_ratio_max": 1.1508059531938204,
+    "optimizer_bytes": [
+      23592
+    ],
+    "algorithm_bytes": [
+      48744
+    ]
+  },
+  {
+    "steps": 2,
+    "mode": 1,
+    "block": 128,
+    "mean_ms_median": 10.549939143,
+    "time_ratio_median": 14.66717019639029,
+    "time_ratio_min": 13.702193029249074,
+    "time_ratio_max": 16.17129398438971,
+    "optimizer_bytes": [
+      48232
+    ],
+    "algorithm_bytes": [
+      73384
+    ]
+  },
+  {
+    "steps": 4,
+    "mode": 0,
+    "block": 128,
+    "mean_ms_median": 1.486080286,
+    "time_ratio_median": 1.0,
+    "time_ratio_min": 1.0,
+    "time_ratio_max": 1.0,
+    "optimizer_bytes": [
+      87192
+    ],
+    "algorithm_bytes": [
+      112344
+    ]
+  },
+  {
+    "steps": 4,
+    "mode": 2,
+    "block": 128,
+    "mean_ms_median": 1.928286,
+    "time_ratio_median": 1.266741404710351,
+    "time_ratio_min": 1.0381003001862592,
+    "time_ratio_max": 1.7293733745669848,
+    "optimizer_bytes": [
+      44232
+    ],
+    "algorithm_bytes": [
+      69384
+    ]
+  },
+  {
+    "steps": 4,
+    "mode": 1,
+    "block": 128,
+    "mean_ms_median": 38.724424143,
+    "time_ratio_median": 25.56932943659685,
+    "time_ratio_min": 24.56827007944888,
+    "time_ratio_max": 29.853870951984348,
+    "optimizer_bytes": [
+      68872
+    ],
+    "algorithm_bytes": [
+      94024
+    ]
+  },
+  {
+    "steps": 8,
+    "mode": 0,
+    "block": 128,
+    "mean_ms_median": 2.881759286,
+    "time_ratio_median": 1.0,
+    "time_ratio_min": 1.0,
+    "time_ratio_max": 1.0,
+    "optimizer_bytes": [
+      87192
+    ],
+    "algorithm_bytes": [
+      112344
+    ]
+  },
+  {
+    "steps": 8,
+    "mode": 2,
+    "block": 128,
+    "mean_ms_median": 5.316705286,
+    "time_ratio_median": 1.7309730308128124,
+    "time_ratio_min": 1.5808940079969123,
+    "time_ratio_max": 1.9159336806841178,
+    "optimizer_bytes": [
+      85512
+    ],
+    "algorithm_bytes": [
+      110664
+    ]
+  },
+  {
+    "steps": 8,
+    "mode": 1,
+    "block": 128,
+    "mean_ms_median": 137.248550286,
+    "time_ratio_median": 43.81362832178652,
+    "time_ratio_min": 41.12078018406705,
+    "time_ratio_max": 51.919430731156545,
+    "optimizer_bytes": [
+      110152
+    ],
+    "algorithm_bytes": [
+      135304
+    ]
+  },
+  {
+    "steps": 16,
+    "mode": 0,
+    "block": 128,
+    "mean_ms_median": 5.8646381430000005,
+    "time_ratio_median": 1.0,
+    "time_ratio_min": 1.0,
+    "time_ratio_max": 1.0,
+    "optimizer_bytes": [
+      87192
+    ],
+    "algorithm_bytes": [
+      112344
+    ]
+  },
+  {
+    "steps": 16,
+    "mode": 2,
+    "block": 128,
+    "mean_ms_median": 16.705208714,
+    "time_ratio_median": 2.6063936182055416,
+    "time_ratio_min": 1.8643067177216681,
+    "time_ratio_max": 3.1381513795378835,
+    "optimizer_bytes": [
+      168624
+    ],
+    "algorithm_bytes": [
+      193776
+    ]
+  },
+  {
+    "steps": 16,
+    "mode": 1,
+    "block": 128,
+    "mean_ms_median": 570.575827143,
+    "time_ratio_median": 95.3123032997673,
+    "time_ratio_min": 70.04563475818708,
+    "time_ratio_max": 113.1478728822869,
+    "optimizer_bytes": [
+      193200
+    ],
+    "algorithm_bytes": [
+      218352
+    ]
+  }
+]

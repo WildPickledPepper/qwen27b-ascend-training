@@ -1,0 +1,228 @@
+{
+  "history": [
+    {
+      "step": 1,
+      "raw_u32": [
+        [
+          3199917150,
+          3177604711,
+          967172948
+        ],
+        [
+          3195386881,
+          3174249267,
+          961066042
+        ],
+        [
+          3186327185,
+          3170893824,
+          952945869
+        ],
+        [
+          1008981769,
+          3164182938,
+          940799165
+        ]
+      ],
+      "objective": 0.1650530704032659
+    },
+    {
+      "step": 2,
+      "raw_u32": [
+        [
+          3199580753,
+          3184969154,
+          975175398
+        ],
+        [
+          3194715186,
+          3181781650,
+          968859266
+        ],
+        [
+          3184986514,
+          3177905862,
+          960495004
+        ],
+        [
+          1017345564,
+          3171530855,
+          948206261
+        ]
+      ],
+      "objective": 0.15124757855960788
+    },
+    {
+      "step": 3,
+      "raw_u32": [
+        [
+          3199245031,
+          3189122260,
+          979853764
+        ],
+        [
+          3194045301,
+          3186027390,
+          973676502
+        ],
+        [
+          3183651381,
+          3181481356,
+          965137330
+        ],
+        [
+          1022643637,
+          3174588606,
+          951189082
+        ]
+      ],
+      "objective": 0.13828277390665156
+    },
+    {
+      "step": 4,
+      "raw_u32": [
+        [
+          3198910263,
+          3191510283,
+          982821604
+        ],
+        [
+          3193378019,
+          3188626031,
+          976116015
+        ],
+        [
+          3182324402,
+          3183812774,
+          967320659
+        ],
+        [
+          1025640278,
+          3176808563,
+          953419164
+        ]
+      ],
+      "objective": 0.12616621187703872
+    },
+    {
+      "step": 5,
+      "raw_u32": [
+        [
+          3198576745,
+          3193526209,
+          984812526
+        ],
+        [
+          3192714185,
+          3190092096,
+          978302633
+        ],
+        [
+          3181008470,
+          3185645669,
+          969172035
+        ],
+        [
+          1028202612,
+          3178279821,
+          955011112
+        ]
+      ],
+      "objective": 0.11490048081327534
+    },
+    {
+      "step": 6,
+      "raw_u32": [
+        [
+          3198244783,
+          3195208102,
+          986641178
+        ],
+        [
+          3192054698,
+          3191279435,
+          980251762
+        ],
+        [
+          3179706771,
+          3187032210,
+          970721183
+        ],
+        [
+          1030695564,
+          3179084778,
+          956078220
+        ]
+      ],
+      "objective": 0.10448214479584281
+    }
+  ],
+  "benchmarks": [
+    {
+      "step": 1,
+      "hash": "a05cecc0a057d0463ff7f9083299936fc99eb2fdbaf65feda57630a068f80419",
+      "moment_transitions": 4,
+      "reference_w_m_v_array_numeric_bytes": 48,
+      "seconds_median": 4.5387000682239886e-05,
+      "seconds_min": 4.3324999751348514e-05,
+      "seconds_max": 6.972400024096714e-05,
+      "tracemalloc_peak_bytes": 1274,
+      "tracemalloc_live_return_bytes": 505
+    },
+    {
+      "step": 2,
+      "hash": "c05ea683b093f81d08aa42a94fbdc73452f8f0fc3bdbe1eacc298f5470504171",
+      "moment_transitions": 8,
+      "reference_w_m_v_array_numeric_bytes": 48,
+      "seconds_median": 7.604300026287092e-05,
+      "seconds_min": 7.415100026264554e-05,
+      "seconds_max": 0.00011468000047898386,
+      "tracemalloc_peak_bytes": 1274,
+      "tracemalloc_live_return_bytes": 505
+    },
+    {
+      "step": 3,
+      "hash": "7db9f314dcbff3ac31d85e586000c536ae93b7bac64a1a7b6b8da0a1f1532076",
+      "moment_transitions": 12,
+      "reference_w_m_v_array_numeric_bytes": 48,
+      "seconds_median": 0.00010700900020310655,
+      "seconds_min": 0.00010550699971645372,
+      "seconds_max": 0.00012329299988778075,
+      "tracemalloc_peak_bytes": 1274,
+      "tracemalloc_live_return_bytes": 505
+    },
+    {
+      "step": 4,
+      "hash": "b0c1a454c45835918847c0e5bb8b23bde155741c25bf96c6fd007c9fba30045b",
+      "moment_transitions": 16,
+      "reference_w_m_v_array_numeric_bytes": 48,
+      "seconds_median": 0.0001368630000797566,
+      "seconds_min": 0.00013510999997379258,
+      "seconds_max": 0.00013987700003781356,
+      "tracemalloc_peak_bytes": 1274,
+      "tracemalloc_live_return_bytes": 505
+    },
+    {
+      "step": 5,
+      "hash": "d6134cdde66e3978dab50303055eafbaf449bd536d390ef686c372ca0c7117aa",
+      "moment_transitions": 20,
+      "reference_w_m_v_array_numeric_bytes": 48,
+      "seconds_median": 0.0001661870001044008,
+      "seconds_min": 0.0001652549999562325,
+      "seconds_max": 0.0001683390000835061,
+      "tracemalloc_peak_bytes": 1274,
+      "tracemalloc_live_return_bytes": 505
+    },
+    {
+      "step": 6,
+      "hash": "68b51510a085aaee3ccbb4dfbe60e7ed93ceee966c7b7c919d322bf93d5fee44",
+      "moment_transitions": 24,
+      "reference_w_m_v_array_numeric_bytes": 48,
+      "seconds_median": 0.00019893500029866118,
+      "seconds_min": 0.0001982140001928201,
+      "seconds_max": 0.000393814999370079,
+      "tracemalloc_peak_bytes": 1274,
+      "tracemalloc_live_return_bytes": 505
+    }
+  ]
+}

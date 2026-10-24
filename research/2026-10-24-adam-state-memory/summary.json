@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "record_date": "2026-10-24",
+  "timezone": "Asia/Shanghai",
+  "stage_range": [
+    1,
+    13
+  ],
+  "scope": "Previously completed CPU studies, synthetic small networks and source-derived budgets; no target full-parameter Qwen/NPU experiment.",
+  "publication_reran_experiments": false,
+  "strict_long_run_fp32_bitwise_under_30_gib": {
+    "achieved": false,
+    "impossibility_proven": false
+  },
+  "budget": {
+    "applies_to": "m/v replacement, not whole training peak",
+    "target_gib": 30,
+    "source_derived_text_parameters": 26895998464,
+    "raw_fp32_m_v_gib": 200.39080429077148,
+    "target_fraction_of_raw_m_v": 0.14970746839495358,
+    "single_bf16_text_weights_gib": 50.09770107269287,
+    "actual_target_checkpoint_verified": false
+  },
+  "approximate_candidate": {
+    "format": "4-bit NF4 m + zero-preserving 4-bit log-v, stochastic rounding",
+    "preferred_block": 128,
+    "conditional_gib_b128": 27.406,
+    "conditional_gib_b64": 29.754,
+    "target_quality_noninferiority_proven": false,
+    "target_device_peak_proven": false,
+    "original_strict_precision_requirement_satisfied": false
+  },
+  "finite_factor_replay": {
+    "reference": "Same explicit scalar FP32 reduction/update arithmetic",
+    "n256_tokens2_steps8_fraction_raw_m_v": 0.081,
+    "same_native_bf16_x_stored_16bit_fraction_raw_m_v": 0.0732,
+    "current_weights_accounted_separately": true,
+    "history_grows_with_steps_and_tokens": true,
+    "long_run_fixed_memory_solution": false,
+    "target_gemm_or_npu_equivalence_proven": false,
+    "optimistic_512_token_factor_gib_per_step": 6.03223,
+    "optimistic_512_token_factor_gib_4steps": 24.128922,
+    "optimistic_512_token_factor_gib_5steps": 30.161152
+  },
+  "stage13": {
+    "actual_mlp_state_frames": 132,
+    "all_frames_including_controls": 152,
+    "all_saved_frames_roundtrip_exact": true,
+    "mature_stage5_full_frame_fraction_range": [
+      0.829436,
+      0.830772
+    ],
+    "mature_stage5_bf16_xor_fraction_range": [
+      0.8336839780546773,
+      0.8348056537102474
+    ],
+    "actual_residual_frames_larger_than_raw": 71,
+    "actual_residual_frames": 120,
+    "actual_states_at_target_fraction": 0,
+    "constructed_rank2_best_fraction": 0.032959,
+    "constructed_sparse_delta_best_fraction": 0.048164,
+    "online_peak_proven": false
+  },
+  "key_corrections": [
+    "S2 protected-format budget omitted actual selector cost; corrected in S3 to 30.108 GiB.",
+    "S6 target-capacity rejection completed zero steps, not successful training.",
+    "S7 2180 declared coordinates, 1940 data-active, 2304 stored including padding; prototype loop peak exceeds FP32 reference.",
+    "S11 only native BF16 input X is stored at 16 bits; other factors remain FP32.",
+    "S13 approximate 83% real-state frame ratio is not the approximate 15% target; constructed controls do not establish real-training compression.",
+    "Publication checked S13 BF16-XOR mature-state upper bound against CSV: 143640/172064 = 83.4805653710%, not 83.4813% in the original prose."
+  ],
+  "next_benchmark_status": "Protocol only; not executed or authorized by this Git publication.",
+  "sources": [
+    "DECISION_MEMO.txt",
+    "EVIDENCE_MAP.txt",
+    "NEXT_BENCHMARK.txt",
+    "stage11/qwen_audit.json",
+    "stage13/results/summary.json"
+  ]
+}

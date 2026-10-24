@@ -1,0 +1,29 @@
+{
+  "stage": "Stage12 bounded algebraic history consolidation experiment",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "python_implementation": "CPython",
+  "numpy_version": "2.3.5",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "source_origin": "Own authored experiment and independent reviewer implementations; baseline own Stage10 C source copied for constant/operation provenance only, not recompiled or rerun for Stage12.",
+  "new_installs": false,
+  "device": "CPU",
+  "hardware_gemm_or_npu_validation": false,
+  "commands": [
+    "python3 consolidation.py",
+    "python3 controls.py",
+    "python3 independent_algebra_checks.py",
+    "python3 independent_grid_review.py",
+    "python3 independent_fixed_power2_review.py"
+  ],
+  "source_sha256": {
+    "consolidation.py": "04240501d182f0f1490a15fb4f3afe53d79aa5833e8f629ec3ea50b054735cdc",
+    "controls.py": "7b71809ec8c150185d7beb5afded7394a38d1dbf55db3262ccef1ea4956f8ed0",
+    "independent_algebra_checks.py": "b2fd989b24ac9bc242c4be648cacd0bf403998c44d9aa8c8062f449679dc52ab",
+    "independent_fixed_power2_review.py": "69ef756389c7deb8f7752fa146129b969a9311ea91b6012d95b1a87900e9c0c5",
+    "independent_grid_review.py": "97dfaed1ddc0b6458c2bde02373cab0b8fa79a9b6c99af045509dcf1be1fe2ee",
+    "package_stage.py": "1f14e0be0193745253058907b66286b9237f6e752a93d18e9719b8e4220b68d4",
+    "provenance/stage10_factor_replay.c": "0766be5147383ee650af391fc3a2483cc82f89702d05097f8e1353f0ba62df2b",
+    "verify_manifest.py": "791def62d8bf19f6514d6434aec03cf655b9dc526c7b9207b0ab303a844261ca"
+  },
+  "packaged_utc": "2026-10-23T19:30:21.790369+00:00"
+}

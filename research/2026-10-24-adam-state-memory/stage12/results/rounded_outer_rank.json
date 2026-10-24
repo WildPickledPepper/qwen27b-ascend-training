@@ -1,0 +1,10 @@
+{
+  "shape": [
+    6,
+    6
+  ],
+  "rank_real_product": 1,
+  "rank_fp32_product_over_exact_rationals": 6,
+  "all_products_equal_once_rounded_real": true,
+  "note": "Full exact matrix rank does NOT imply incompressible data: these same A/B plus the rounded-product decoder still encode it compactly. It obstructs plain exact-real low-rank UV equality, not all nonlinear encodings."
+}

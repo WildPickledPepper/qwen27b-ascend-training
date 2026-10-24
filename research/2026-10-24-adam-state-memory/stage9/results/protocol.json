@@ -1,0 +1,1109 @@
+{
+  "cases": [
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      32,
+      2
+    ],
+    [
+      32,
+      3
+    ],
+    [
+      64,
+      2
+    ],
+    [
+      64,
+      3
+    ],
+    [
+      124,
+      2
+    ]
+  ],
+  "configs": [
+    {
+      "P": 4,
+      "T": 6,
+      "mode": 1,
+      "policy": "uncached",
+      "Q": 0,
+      "tau": 0
+    },
+    {
+      "P": 4,
+      "T": 6,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 1,
+      "tau": 0
+    },
+    {
+      "P": 4,
+      "T": 6,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 2,
+      "tau": 0
+    },
+    {
+      "P": 4,
+      "T": 6,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 3,
+      "tau": 0
+    },
+    {
+      "P": 4,
+      "T": 6,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 4,
+      "tau": 0
+    },
+    {
+      "P": 4,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 1
+    },
+    {
+      "P": 4,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 3
+    },
+    {
+      "P": 4,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 2,
+      "tau": 1
+    },
+    {
+      "P": 4,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 2,
+      "tau": 3
+    },
+    {
+      "P": 4,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 3,
+      "tau": 1
+    },
+    {
+      "P": 4,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 3,
+      "tau": 3
+    },
+    {
+      "P": 4,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 4,
+      "tau": 1
+    },
+    {
+      "P": 4,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 4,
+      "tau": 3
+    },
+    {
+      "P": 4,
+      "T": 8,
+      "mode": 1,
+      "policy": "uncached",
+      "Q": 0,
+      "tau": 0
+    },
+    {
+      "P": 4,
+      "T": 8,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 1,
+      "tau": 0
+    },
+    {
+      "P": 4,
+      "T": 8,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 2,
+      "tau": 0
+    },
+    {
+      "P": 4,
+      "T": 8,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 3,
+      "tau": 0
+    },
+    {
+      "P": 4,
+      "T": 8,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 4,
+      "tau": 0
+    },
+    {
+      "P": 4,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 1
+    },
+    {
+      "P": 4,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 4
+    },
+    {
+      "P": 4,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 2,
+      "tau": 1
+    },
+    {
+      "P": 4,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 2,
+      "tau": 4
+    },
+    {
+      "P": 4,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 3,
+      "tau": 1
+    },
+    {
+      "P": 4,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 3,
+      "tau": 4
+    },
+    {
+      "P": 4,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 4,
+      "tau": 1
+    },
+    {
+      "P": 4,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 4,
+      "tau": 4
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 1,
+      "policy": "uncached",
+      "Q": 0,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 1,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 2,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 4,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 7,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 8,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 1
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 2
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 2,
+      "tau": 1
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 2,
+      "tau": 2
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 4,
+      "tau": 1
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 4,
+      "tau": 2
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 7,
+      "tau": 1
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 7,
+      "tau": 2
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 8,
+      "tau": 1
+    },
+    {
+      "P": 8,
+      "T": 4,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 8,
+      "tau": 2
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 1,
+      "policy": "uncached",
+      "Q": 0,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 1,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 2,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 4,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 7,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 8,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 1
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 3
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 2,
+      "tau": 1
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 2,
+      "tau": 3
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 4,
+      "tau": 1
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 4,
+      "tau": 3
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 7,
+      "tau": 1
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 7,
+      "tau": 3
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 8,
+      "tau": 1
+    },
+    {
+      "P": 8,
+      "T": 6,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 8,
+      "tau": 3
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 1,
+      "policy": "uncached",
+      "Q": 0,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 1,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 2,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 4,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 7,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 8,
+      "tau": 0
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 1
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 4
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 2,
+      "tau": 1
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 2,
+      "tau": 4
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 4,
+      "tau": 1
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 4,
+      "tau": 4
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 7,
+      "tau": 1
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 7,
+      "tau": 4
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 8,
+      "tau": 1
+    },
+    {
+      "P": 8,
+      "T": 8,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 8,
+      "tau": 4
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "mode": 1,
+      "policy": "uncached",
+      "Q": 0,
+      "tau": 0
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 1,
+      "tau": 0
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 8,
+      "tau": 0
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 16,
+      "tau": 0
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 31,
+      "tau": 0
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 32,
+      "tau": 0
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 1
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 8,
+      "tau": 1
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 16,
+      "tau": 1
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 31,
+      "tau": 1
+    },
+    {
+      "P": 32,
+      "T": 2,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 32,
+      "tau": 1
+    },
+    {
+      "P": 32,
+      "T": 3,
+      "mode": 1,
+      "policy": "uncached",
+      "Q": 0,
+      "tau": 0
+    },
+    {
+      "P": 32,
+      "T": 3,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 1,
+      "tau": 0
+    },
+    {
+      "P": 32,
+      "T": 3,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 8,
+      "tau": 0
+    },
+    {
+      "P": 32,
+      "T": 3,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 16,
+      "tau": 0
+    },
+    {
+      "P": 32,
+      "T": 3,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 31,
+      "tau": 0
+    },
+    {
+      "P": 32,
+      "T": 3,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 32,
+      "tau": 0
+    },
+    {
+      "P": 32,
+      "T": 3,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 1
+    },
+    {
+      "P": 32,
+      "T": 3,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 8,
+      "tau": 1
+    },
+    {
+      "P": 32,
+      "T": 3,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 16,
+      "tau": 1
+    },
+    {
+      "P": 32,
+      "T": 3,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 31,
+      "tau": 1
+    },
+    {
+      "P": 32,
+      "T": 3,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 32,
+      "tau": 1
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "mode": 1,
+      "policy": "uncached",
+      "Q": 0,
+      "tau": 0
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 1,
+      "tau": 0
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 16,
+      "tau": 0
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 32,
+      "tau": 0
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 63,
+      "tau": 0
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 64,
+      "tau": 0
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 1
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 16,
+      "tau": 1
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 32,
+      "tau": 1
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 63,
+      "tau": 1
+    },
+    {
+      "P": 64,
+      "T": 2,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 64,
+      "tau": 1
+    },
+    {
+      "P": 64,
+      "T": 3,
+      "mode": 1,
+      "policy": "uncached",
+      "Q": 0,
+      "tau": 0
+    },
+    {
+      "P": 64,
+      "T": 3,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 1,
+      "tau": 0
+    },
+    {
+      "P": 64,
+      "T": 3,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 16,
+      "tau": 0
+    },
+    {
+      "P": 64,
+      "T": 3,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 32,
+      "tau": 0
+    },
+    {
+      "P": 64,
+      "T": 3,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 63,
+      "tau": 0
+    },
+    {
+      "P": 64,
+      "T": 3,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 64,
+      "tau": 0
+    },
+    {
+      "P": 64,
+      "T": 3,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 1
+    },
+    {
+      "P": 64,
+      "T": 3,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 16,
+      "tau": 1
+    },
+    {
+      "P": 64,
+      "T": 3,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 32,
+      "tau": 1
+    },
+    {
+      "P": 64,
+      "T": 3,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 63,
+      "tau": 1
+    },
+    {
+      "P": 64,
+      "T": 3,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 64,
+      "tau": 1
+    },
+    {
+      "P": 124,
+      "T": 2,
+      "mode": 1,
+      "policy": "uncached",
+      "Q": 0,
+      "tau": 0
+    },
+    {
+      "P": 124,
+      "T": 2,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 1,
+      "tau": 0
+    },
+    {
+      "P": 124,
+      "T": 2,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 31,
+      "tau": 0
+    },
+    {
+      "P": 124,
+      "T": 2,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 62,
+      "tau": 0
+    },
+    {
+      "P": 124,
+      "T": 2,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 123,
+      "tau": 0
+    },
+    {
+      "P": 124,
+      "T": 2,
+      "mode": 2,
+      "policy": "LRU",
+      "Q": 124,
+      "tau": 0
+    },
+    {
+      "P": 124,
+      "T": 2,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 1,
+      "tau": 1
+    },
+    {
+      "P": 124,
+      "T": 2,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 31,
+      "tau": 1
+    },
+    {
+      "P": 124,
+      "T": 2,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 62,
+      "tau": 1
+    },
+    {
+      "P": 124,
+      "T": 2,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 123,
+      "tau": 1
+    },
+    {
+      "P": 124,
+      "T": 2,
+      "mode": 3,
+      "policy": "pinned_slice",
+      "Q": 124,
+      "tau": 1
+    }
+  ],
+  "call_cap": 2000000,
+  "budget_fractions_of_raw_dense_w_m_v": [
+    0.25,
+    0.5,
+    0.75,
+    0.9,
+    0.99
+  ],
+  "repeats_reference": 31,
+  "repeats_candidate": 5,
+  "static_stack_frames": {
+    "transition": 128,
+    "query": 64,
+    "algorithm": 96,
+    "dump_validation": 96,
+    "main": 384
+  },
+  "charged_call_chain_bytes": {
+    "0": 608,
+    "1": 672
+  },
+  "constant_pool_extra_reserve": 64,
+  "all_final_weights_retained": true,
+  "full_checkpoint_is_over_raw_state_budget": true,
+  "context": "Fresh zeroed arena per experiment and repetition; P and immutable fixed H/init/optimizer versions define context; no cache reuse across context; no RNG",
+  "source_sha256": "9f562e396a04e054099e7b884ece6cb83e984bf0ae1148ce682663a1859b74c2",
+  "binary_sha256": "9e877728d8afed6044e603b58702448cafc1ffefdce034966cd66f9e247d1c2b",
+  "scope": "CPU native mechanism experiment, not Qwen/NPU feasibility. Hardware runtime/code/stdio/timer/validation infrastructure not optimizer arena. Core and caller static stack included.",
+  "compile_command": "cc -std=c11 -O2 -fno-fast-math -ffp-contract=off -fno-math-errno -mno-red-zone -fstack-usage -Wall -Wextra frontier.c -lm -o frontier",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41"
+}

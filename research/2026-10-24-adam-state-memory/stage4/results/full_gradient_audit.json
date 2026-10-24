@@ -1,0 +1,106 @@
+{
+  "all_parameter_coordinates_checked": 1348,
+  "finite_difference_max_absolute_error": 5.907530020721197e-11,
+  "passed": true,
+  "padded_coordinates_gradient_zero": true,
+  "every_epoch_training_permutation_verified": true,
+  "splits": {
+    "101": {
+      "train": {
+        "n": 4096,
+        "class_counts": [
+          744,
+          1035,
+          1389,
+          928
+        ],
+        "sha256": "58b3248872aba11ea857a696e94c46037638fc52734e7357818e665f782f3267"
+      },
+      "validation": {
+        "n": 2048,
+        "class_counts": [
+          373,
+          479,
+          717,
+          479
+        ],
+        "sha256": "2a14ce27a49c172bc8e5b22c65f4bfd2558c0c557f1601c37129361e90c3c916"
+      },
+      "test": {
+        "n": 2048,
+        "class_counts": [
+          377,
+          515,
+          724,
+          432
+        ],
+        "sha256": "53af181aa3d84469e3e661df0501780c72ad3d7dc8f59a3998d3e012ef59b904"
+      }
+    },
+    "202": {
+      "train": {
+        "n": 4096,
+        "class_counts": [
+          1122,
+          1244,
+          934,
+          796
+        ],
+        "sha256": "64ca66b3d51084e5345bdb07730c3a9c81bf9c23ad156a23fb4f7655b22df2d0"
+      },
+      "validation": {
+        "n": 2048,
+        "class_counts": [
+          561,
+          658,
+          440,
+          389
+        ],
+        "sha256": "42a922020c3cae70a23f15e2b2150d540a877df80c043ea3392736a0026a9126"
+      },
+      "test": {
+        "n": 2048,
+        "class_counts": [
+          538,
+          611,
+          480,
+          419
+        ],
+        "sha256": "a167ee5211d94e8f5d5d0488ab01b08537d96c798b09b79c8595d6b6b74d57ad"
+      }
+    },
+    "303": {
+      "train": {
+        "n": 4096,
+        "class_counts": [
+          1093,
+          761,
+          1522,
+          720
+        ],
+        "sha256": "e9c056d2c7d09cc619804db645c650bc4963f54ace4dc46e7cb632eb4940839c"
+      },
+      "validation": {
+        "n": 2048,
+        "class_counts": [
+          537,
+          402,
+          772,
+          337
+        ],
+        "sha256": "39628524375e6cb527dca9f1b58358300389455b88e61d9ac28593fed959a91f"
+      },
+      "test": {
+        "n": 2048,
+        "class_counts": [
+          543,
+          388,
+          746,
+          371
+        ],
+        "sha256": "073ab7851eefdc462a07275690139dc2ec9fbd2f71cfcd83444f2a58fb4d2fc1"
+      }
+    }
+  },
+  "script_sha256": "bceb53072a31e9cf20d663e97e5df555ba98055e39dfde4a1a03b858c2250615"
+}

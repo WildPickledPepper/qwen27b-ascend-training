@@ -1,0 +1,12 @@
+{
+  "cases": 36,
+  "real_factor_identity_all_exact": true,
+  "m_mismatch_cases": 27,
+  "v_mismatch_cases": 27,
+  "update_mismatch_cases": 27,
+  "m_different_words": 2048,
+  "v_different_words": 1477,
+  "total_words_per_moment_compared": 5184,
+  "fp64_consolidation_matches_direct_rational_rounding": true,
+  "seconds": 1.215377967000677
+}

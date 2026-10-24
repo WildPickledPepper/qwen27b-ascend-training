@@ -1,0 +1,52 @@
+[
+  {
+    "seed": 0,
+    "steps": 16,
+    "parameters": 6288,
+    "last_preupdate_halfMSE": 0.02035499067308115,
+    "numpy": "2.3.5",
+    "scope": "Independent elementwise ordered FP32 implementation; same prescribed operation order, not hardware GEMM or PyTorch parity.",
+    "all_raw_bytes_equal": true,
+    "uint32_compared": 443712
+  },
+  {
+    "seed": 1,
+    "steps": 16,
+    "parameters": 6288,
+    "last_preupdate_halfMSE": 0.016473337464995436,
+    "numpy": "2.3.5",
+    "scope": "Independent elementwise ordered FP32 implementation; same prescribed operation order, not hardware GEMM or PyTorch parity.",
+    "all_raw_bytes_equal": true,
+    "uint32_compared": 443712
+  },
+  {
+    "seed": 42,
+    "steps": 16,
+    "parameters": 6288,
+    "last_preupdate_halfMSE": 0.014353560826049251,
+    "numpy": "2.3.5",
+    "scope": "Independent elementwise ordered FP32 implementation; same prescribed operation order, not hardware GEMM or PyTorch parity.",
+    "all_raw_bytes_equal": true,
+    "uint32_compared": 443712
+  },
+  {
+    "seed": 2026,
+    "steps": 16,
+    "parameters": 6288,
+    "last_preupdate_halfMSE": 0.018157102199790026,
+    "numpy": "2.3.5",
+    "scope": "Independent elementwise ordered FP32 implementation; same prescribed operation order, not hardware GEMM or PyTorch parity.",
+    "all_raw_bytes_equal": true,
+    "uint32_compared": 443712
+  },
+  {
+    "seed": 2147483647,
+    "steps": 16,
+    "parameters": 6288,
+    "last_preupdate_halfMSE": 0.020827978582416015,
+    "numpy": "2.3.5",
+    "scope": "Independent elementwise ordered FP32 implementation; same prescribed operation order, not hardware GEMM or PyTorch parity.",
+    "all_raw_bytes_equal": true,
+    "uint32_compared": 443712
+  }
+]

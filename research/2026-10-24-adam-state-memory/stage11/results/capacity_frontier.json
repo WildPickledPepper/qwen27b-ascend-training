@@ -1,0 +1,742 @@
+[
+  {
+    "width": 32,
+    "microbatch": 1,
+    "tokens": 2,
+    "mixed_x": 0,
+    "parameters": 2112,
+    "record_bytes": 1296,
+    "raw_FP32_m_v_bytes": 16896,
+    "static_stack_reserve": 992,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 2976,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 0,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 0,
+    "optimistic_max_capacity_below_1_raw_m_v": 10,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 4272,
+        "optimizer_fraction_raw_m_v": 0.2528409090909091,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 8160,
+        "optimizer_fraction_raw_m_v": 0.48295454545454547,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 13344,
+        "optimizer_fraction_raw_m_v": 0.7897727272727273,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      }
+    ]
+  },
+  {
+    "width": 32,
+    "microbatch": 1,
+    "tokens": 2,
+    "mixed_x": 1,
+    "parameters": 2112,
+    "record_bytes": 1168,
+    "raw_FP32_m_v_bytes": 16896,
+    "static_stack_reserve": 1024,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 3008,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 0,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 0,
+    "optimistic_max_capacity_below_1_raw_m_v": 11,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 4176,
+        "optimizer_fraction_raw_m_v": 0.2471590909090909,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 7680,
+        "optimizer_fraction_raw_m_v": 0.45454545454545453,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 12352,
+        "optimizer_fraction_raw_m_v": 0.7310606060606061,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      }
+    ]
+  },
+  {
+    "width": 32,
+    "microbatch": 4,
+    "tokens": 8,
+    "mixed_x": 0,
+    "parameters": 2112,
+    "record_bytes": 4368,
+    "raw_FP32_m_v_bytes": 16896,
+    "static_stack_reserve": 992,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 2976,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 0,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 0,
+    "optimistic_max_capacity_below_1_raw_m_v": 3,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 7344,
+        "optimizer_fraction_raw_m_v": 0.4346590909090909,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 20448,
+        "optimizer_fraction_raw_m_v": 1.2102272727272727,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 37920,
+        "optimizer_fraction_raw_m_v": 2.2443181818181817,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      }
+    ]
+  },
+  {
+    "width": 32,
+    "microbatch": 4,
+    "tokens": 8,
+    "mixed_x": 1,
+    "parameters": 2112,
+    "record_bytes": 3856,
+    "raw_FP32_m_v_bytes": 16896,
+    "static_stack_reserve": 1040,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 3024,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 0,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 0,
+    "optimistic_max_capacity_below_1_raw_m_v": 3,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 6880,
+        "optimizer_fraction_raw_m_v": 0.4071969696969697,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 18448,
+        "optimizer_fraction_raw_m_v": 1.0918560606060606,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 33872,
+        "optimizer_fraction_raw_m_v": 2.0047348484848486,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      }
+    ]
+  },
+  {
+    "width": 32,
+    "microbatch": 16,
+    "tokens": 32,
+    "mixed_x": 0,
+    "parameters": 2112,
+    "record_bytes": 16656,
+    "raw_FP32_m_v_bytes": 16896,
+    "static_stack_reserve": 1008,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 2992,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 0,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 0,
+    "optimistic_max_capacity_below_1_raw_m_v": 0,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 19648,
+        "optimizer_fraction_raw_m_v": 1.1628787878787878,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 69616,
+        "optimizer_fraction_raw_m_v": 4.120265151515151,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 140312,
+        "optimizer_fraction_raw_m_v": 8.304450757575758,
+        "all_bits_equal": true,
+        "malloc_slack": 4072
+      }
+    ]
+  },
+  {
+    "width": 32,
+    "microbatch": 16,
+    "tokens": 32,
+    "mixed_x": 1,
+    "parameters": 2112,
+    "record_bytes": 14608,
+    "raw_FP32_m_v_bytes": 16896,
+    "static_stack_reserve": 1040,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 3024,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 0,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 0,
+    "optimistic_max_capacity_below_1_raw_m_v": 0,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 17632,
+        "optimizer_fraction_raw_m_v": 1.043560606060606,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 61456,
+        "optimizer_fraction_raw_m_v": 3.637310606060606,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 119888,
+        "optimizer_fraction_raw_m_v": 7.0956439393939394,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      }
+    ]
+  },
+  {
+    "width": 64,
+    "microbatch": 1,
+    "tokens": 2,
+    "mixed_x": 0,
+    "parameters": 8320,
+    "record_bytes": 2576,
+    "raw_FP32_m_v_bytes": 66560,
+    "static_stack_reserve": 992,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 2976,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 1,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 2,
+    "optimistic_max_capacity_below_1_raw_m_v": 24,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 5552,
+        "optimizer_fraction_raw_m_v": 0.08341346153846153,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 13280,
+        "optimizer_fraction_raw_m_v": 0.19951923076923078,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 23584,
+        "optimizer_fraction_raw_m_v": 0.3543269230769231,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      }
+    ]
+  },
+  {
+    "width": 64,
+    "microbatch": 1,
+    "tokens": 2,
+    "mixed_x": 1,
+    "parameters": 8320,
+    "record_bytes": 2320,
+    "raw_FP32_m_v_bytes": 66560,
+    "static_stack_reserve": 1040,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 3024,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 1,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 2,
+    "optimistic_max_capacity_below_1_raw_m_v": 27,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 5344,
+        "optimizer_fraction_raw_m_v": 0.08028846153846154,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 12304,
+        "optimizer_fraction_raw_m_v": 0.18485576923076924,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 21584,
+        "optimizer_fraction_raw_m_v": 0.32427884615384617,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      }
+    ]
+  },
+  {
+    "width": 64,
+    "microbatch": 4,
+    "tokens": 8,
+    "mixed_x": 0,
+    "parameters": 8320,
+    "record_bytes": 8720,
+    "raw_FP32_m_v_bytes": 66560,
+    "static_stack_reserve": 992,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 2976,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 0,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 0,
+    "optimistic_max_capacity_below_1_raw_m_v": 7,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 11696,
+        "optimizer_fraction_raw_m_v": 0.17572115384615383,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 37856,
+        "optimizer_fraction_raw_m_v": 0.56875,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 72736,
+        "optimizer_fraction_raw_m_v": 1.0927884615384615,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      }
+    ]
+  },
+  {
+    "width": 64,
+    "microbatch": 4,
+    "tokens": 8,
+    "mixed_x": 1,
+    "parameters": 8320,
+    "record_bytes": 7696,
+    "raw_FP32_m_v_bytes": 66560,
+    "static_stack_reserve": 1056,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 3040,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 0,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 0,
+    "optimistic_max_capacity_below_1_raw_m_v": 8,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 10736,
+        "optimizer_fraction_raw_m_v": 0.16129807692307693,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 33824,
+        "optimizer_fraction_raw_m_v": 0.5081730769230769,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 64608,
+        "optimizer_fraction_raw_m_v": 0.9706730769230769,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      }
+    ]
+  },
+  {
+    "width": 64,
+    "microbatch": 16,
+    "tokens": 32,
+    "mixed_x": 0,
+    "parameters": 8320,
+    "record_bytes": 33296,
+    "raw_FP32_m_v_bytes": 66560,
+    "static_stack_reserve": 992,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 2976,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 0,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 0,
+    "optimistic_max_capacity_below_1_raw_m_v": 1,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 36272,
+        "optimizer_fraction_raw_m_v": 0.5449519230769231,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 140040,
+        "optimizer_fraction_raw_m_v": 2.1039663461538463,
+        "all_bits_equal": true,
+        "malloc_slack": 3880
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 271112,
+        "optimizer_fraction_raw_m_v": 4.073197115384615,
+        "all_bits_equal": true,
+        "malloc_slack": 1768
+      }
+    ]
+  },
+  {
+    "width": 64,
+    "microbatch": 16,
+    "tokens": 32,
+    "mixed_x": 1,
+    "parameters": 8320,
+    "record_bytes": 29200,
+    "raw_FP32_m_v_bytes": 66560,
+    "static_stack_reserve": 1040,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 3024,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 0,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 0,
+    "optimistic_max_capacity_below_1_raw_m_v": 2,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 32224,
+        "optimizer_fraction_raw_m_v": 0.4841346153846154,
+        "all_bits_equal": true,
+        "malloc_slack": 0
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 123704,
+        "optimizer_fraction_raw_m_v": 1.8585336538461539,
+        "all_bits_equal": true,
+        "malloc_slack": 3880
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 238392,
+        "optimizer_fraction_raw_m_v": 3.581610576923077,
+        "all_bits_equal": true,
+        "malloc_slack": 1768
+      }
+    ]
+  },
+  {
+    "width": 128,
+    "microbatch": 1,
+    "tokens": 2,
+    "mixed_x": 0,
+    "parameters": 33024,
+    "record_bytes": 5136,
+    "raw_FP32_m_v_bytes": 264192,
+    "static_stack_reserve": 992,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 2976,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 4,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 7,
+    "optimistic_max_capacity_below_1_raw_m_v": 50,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 8456,
+        "optimizer_fraction_raw_m_v": 0.03200702519379845,
+        "all_bits_equal": true,
+        "malloc_slack": 344
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 24840,
+        "optimizer_fraction_raw_m_v": 0.09402252906976744,
+        "all_bits_equal": true,
+        "malloc_slack": 1320
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 45320,
+        "optimizer_fraction_raw_m_v": 0.17154190891472867,
+        "all_bits_equal": true,
+        "malloc_slack": 1256
+      }
+    ]
+  },
+  {
+    "width": 128,
+    "microbatch": 1,
+    "tokens": 2,
+    "mixed_x": 1,
+    "parameters": 33024,
+    "record_bytes": 4624,
+    "raw_FP32_m_v_bytes": 264192,
+    "static_stack_reserve": 1040,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 3024,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 5,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 7,
+    "optimistic_max_capacity_below_1_raw_m_v": 56,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 8504,
+        "optimizer_fraction_raw_m_v": 0.03218871124031008,
+        "all_bits_equal": true,
+        "malloc_slack": 856
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 24888,
+        "optimizer_fraction_raw_m_v": 0.09420421511627906,
+        "all_bits_equal": true,
+        "malloc_slack": 3368
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 41272,
+        "optimizer_fraction_raw_m_v": 0.15621971899224807,
+        "all_bits_equal": true,
+        "malloc_slack": 1256
+      }
+    ]
+  },
+  {
+    "width": 128,
+    "microbatch": 4,
+    "tokens": 8,
+    "mixed_x": 0,
+    "parameters": 33024,
+    "record_bytes": 17424,
+    "raw_FP32_m_v_bytes": 264192,
+    "static_stack_reserve": 992,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 2976,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 1,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 2,
+    "optimistic_max_capacity_below_1_raw_m_v": 14,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 20744,
+        "optimizer_fraction_raw_m_v": 0.07851865310077519,
+        "all_bits_equal": true,
+        "malloc_slack": 344
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 73992,
+        "optimizer_fraction_raw_m_v": 0.2800690406976744,
+        "all_bits_equal": true,
+        "malloc_slack": 1320
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 143624,
+        "optimizer_fraction_raw_m_v": 0.5436349321705426,
+        "all_bits_equal": true,
+        "malloc_slack": 1256
+      }
+    ]
+  },
+  {
+    "width": 128,
+    "microbatch": 4,
+    "tokens": 8,
+    "mixed_x": 1,
+    "parameters": 33024,
+    "record_bytes": 15376,
+    "raw_FP32_m_v_bytes": 264192,
+    "static_stack_reserve": 1040,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 3024,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 1,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 2,
+    "optimistic_max_capacity_below_1_raw_m_v": 16,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 20792,
+        "optimizer_fraction_raw_m_v": 0.07870033914728682,
+        "all_bits_equal": true,
+        "malloc_slack": 2392
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 65848,
+        "optimizer_fraction_raw_m_v": 0.24924297480620156,
+        "all_bits_equal": true,
+        "malloc_slack": 1320
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 127288,
+        "optimizer_fraction_raw_m_v": 0.48180111434108525,
+        "all_bits_equal": true,
+        "malloc_slack": 1256
+      }
+    ]
+  },
+  {
+    "width": 128,
+    "microbatch": 16,
+    "tokens": 32,
+    "mixed_x": 0,
+    "parameters": 33024,
+    "record_bytes": 66576,
+    "raw_FP32_m_v_bytes": 264192,
+    "static_stack_reserve": 992,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 2976,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 0,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 0,
+    "optimistic_max_capacity_below_1_raw_m_v": 3,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 69896,
+        "optimizer_fraction_raw_m_v": 0.2645651647286822,
+        "all_bits_equal": true,
+        "malloc_slack": 344
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 270600,
+        "optimizer_fraction_raw_m_v": 1.0242550872093024,
+        "all_bits_equal": true,
+        "malloc_slack": 1320
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 536840,
+        "optimizer_fraction_raw_m_v": 2.0320070251937983,
+        "all_bits_equal": true,
+        "malloc_slack": 1256
+      }
+    ]
+  },
+  {
+    "width": 128,
+    "microbatch": 16,
+    "tokens": 32,
+    "mixed_x": 1,
+    "parameters": 33024,
+    "record_bytes": 58384,
+    "raw_FP32_m_v_bytes": 264192,
+    "static_stack_reserve": 1040,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 3024,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 0,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 0,
+    "optimistic_max_capacity_below_1_raw_m_v": 4,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 61752,
+        "optimizer_fraction_raw_m_v": 0.2337390988372093,
+        "all_bits_equal": true,
+        "malloc_slack": 344
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 237880,
+        "optimizer_fraction_raw_m_v": 0.900405765503876,
+        "all_bits_equal": true,
+        "malloc_slack": 1320
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 471352,
+        "optimizer_fraction_raw_m_v": 1.7841266957364341,
+        "all_bits_equal": true,
+        "malloc_slack": 1256
+      }
+    ]
+  },
+  {
+    "width": 256,
+    "microbatch": 1,
+    "tokens": 2,
+    "mixed_x": 0,
+    "parameters": 131584,
+    "record_bytes": 10256,
+    "raw_FP32_m_v_bytes": 1052672,
+    "static_stack_reserve": 992,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 2976,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 9,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 15,
+    "optimistic_max_capacity_below_1_raw_m_v": 102,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 15624,
+        "optimizer_fraction_raw_m_v": 0.014842230058365758,
+        "all_bits_equal": true,
+        "malloc_slack": 2392
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 44296,
+        "optimizer_fraction_raw_m_v": 0.042079584143968875,
+        "all_bits_equal": true,
+        "malloc_slack": 296
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 85256,
+        "optimizer_fraction_raw_m_v": 0.08099008998054474,
+        "all_bits_equal": true,
+        "malloc_slack": 232
+      }
+    ]
+  },
+  {
+    "width": 256,
+    "microbatch": 1,
+    "tokens": 2,
+    "mixed_x": 1,
+    "parameters": 131584,
+    "record_bytes": 9232,
+    "raw_FP32_m_v_bytes": 1052672,
+    "static_stack_reserve": 1024,
+    "nonhistory_nonweight_bytes_before_allocator_slack": 3008,
+    "optimistic_max_capacity_below_0.1_raw_m_v": 11,
+    "optimistic_max_capacity_below_0.15_raw_m_v": 16,
+    "optimistic_max_capacity_below_1_raw_m_v": 113,
+    "tested_horizons": [
+      {
+        "steps": 1,
+        "optimizer_bytes": 15656,
+        "optimizer_fraction_raw_m_v": 0.014872628891050583,
+        "all_bits_equal": true,
+        "malloc_slack": 3416
+      },
+      {
+        "steps": 4,
+        "optimizer_bytes": 40232,
+        "optimizer_fraction_raw_m_v": 0.03821893239299611,
+        "all_bits_equal": true,
+        "malloc_slack": 296
+      },
+      {
+        "steps": 8,
+        "optimizer_bytes": 77096,
+        "optimizer_fraction_raw_m_v": 0.0732383876459144,
+        "all_bits_equal": true,
+        "malloc_slack": 232
+      }
+    ]
+  }
+]

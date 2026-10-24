@@ -1,0 +1,8 @@
+{
+  "seed": 1,
+  "steps": 16,
+  "parameters": 6288,
+  "last_preupdate_halfMSE": 0.016473337464995436,
+  "numpy": "2.3.5",
+  "scope": "Independent elementwise ordered FP32 implementation; same prescribed operation order, not hardware GEMM or PyTorch parity."
+}

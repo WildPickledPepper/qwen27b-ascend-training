@@ -1,0 +1,9 @@
+{
+  "part": "protect",
+  "elapsed_seconds": 31.56280879996484,
+  "reference": "experiment.py fixed lr=1e-4, betas=.9/.999, eps=1e-8, wd=.01; FP32 master weights",
+  "units": "vector step is one small N-dimensional CPU optimizer update, NOT a 27B training step; p99 over coordinates then max over steps; cosine over full vector then min over steps",
+  "toy": "closed-loop exact diagonal convex quadratic gradient, distinct from fixed-gradient replay; same data/init/Adam hyperparameters for each paired configuration",
+  "protection": "budget projected using exact serialized payload and uint32 index + FP32 exception pair; 1 MiB fixed allowance is a declared reserve, not measured NPU scratch. Audit implementation decodes full toy vector and scores all blocks; not a production streaming kernel. No claim of total model fit.",
+  "script_sha256": "cc98c662dbfa8c473fda979a030fd19bb56f13aebd617911cf8fed30d12bac7f"
+}

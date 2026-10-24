@@ -1,0 +1,104 @@
+{
+  "master_recovery_all": true,
+  "master_forward_mismatches": 4,
+  "v_zero_marker": {
+    "positive_zero_bits": "0x0",
+    "negative_zero_bits": "0x80000000",
+    "negative_zero_less_than_zero": false,
+    "abs_negative_zero_bits": "0x0",
+    "unsigned_v_drops_sign_marker": true
+  },
+  "ratio": {
+    "beta0.5_quantFalse": {
+      "v_mismatch_steps": 662,
+      "max_update_abs_error": 1.1920928955078125e-07,
+      "fallback_steps": 0
+    },
+    "beta0.5_quantTrue": {
+      "v_mismatch_steps": 1023,
+      "max_update_abs_error": 0.44541768729686737,
+      "fallback_steps": 0
+    },
+    "beta0.9_quantFalse": {
+      "v_mismatch_steps": 855,
+      "max_update_abs_error": 8.940696716308594e-08,
+      "fallback_steps": 0
+    },
+    "beta0.9_quantTrue": {
+      "v_mismatch_steps": 1023,
+      "max_update_abs_error": 0.381222665309906,
+      "fallback_steps": 0
+    },
+    "beta0.999_quantFalse": {
+      "v_mismatch_steps": 961,
+      "max_update_abs_error": 1.1920928955078125e-07,
+      "fallback_steps": 0
+    },
+    "beta0.999_quantTrue": {
+      "v_mismatch_steps": 1023,
+      "max_update_abs_error": 0.17016053199768066,
+      "fallback_steps": 0
+    },
+    "singularity_exact": {
+      "v_mismatch_steps": 0,
+      "max_update_abs_error": 0.0,
+      "fallback_steps": 1
+    }
+  },
+  "streaming": [
+    {
+      "kind": "q4",
+      "n": 8192,
+      "window": 128,
+      "persistent_bytes": 8720,
+      "metadata_bytes": 16,
+      "indices_bytes": 0,
+      "scale_bytes": 512,
+      "codes_bytes": 8192,
+      "extra_residual_bytes": 0,
+      "decode_pair_numeric_bytes": 1024,
+      "two_old_new_pair_buffers_bytes": 2048,
+      "python_peak_including_audit_reference_changes": 45567,
+      "inplace_size_unchanged": true,
+      "window_matches_block_reference": true,
+      "projected_state_GiB": 26.61440370976925,
+      "seconds": 11.27144079998834
+    },
+    {
+      "kind": "q4_floor",
+      "n": 8192,
+      "window": 128,
+      "persistent_bytes": 8720,
+      "metadata_bytes": 16,
+      "indices_bytes": 0,
+      "scale_bytes": 512,
+      "codes_bytes": 8192,
+      "extra_residual_bytes": 0,
+      "decode_pair_numeric_bytes": 1024,
+      "two_old_new_pair_buffers_bytes": 2048,
+      "python_peak_including_audit_reference_changes": 45004,
+      "inplace_size_unchanged": true,
+      "window_matches_block_reference": true,
+      "projected_state_GiB": 26.61440370976925,
+      "seconds": 11.266381299996283
+    },
+    {
+      "kind": "q4_log",
+      "n": 8192,
+      "window": 128,
+      "persistent_bytes": 8976,
+      "metadata_bytes": 16,
+      "indices_bytes": 0,
+      "scale_bytes": 768,
+      "codes_bytes": 8192,
+      "extra_residual_bytes": 0,
+      "decode_pair_numeric_bytes": 1024,
+      "two_old_new_pair_buffers_bytes": 2048,
+      "python_peak_including_audit_reference_changes": 45461,
+      "inplace_size_unchanged": true,
+      "window_matches_block_reference": true,
+      "projected_state_GiB": 27.397180289030075,
+      "seconds": 8.30828840000322
+    }
+  ]
+}

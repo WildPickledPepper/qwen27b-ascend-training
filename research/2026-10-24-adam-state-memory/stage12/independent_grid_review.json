@@ -1,0 +1,270 @@
+{
+  "all_checks_passed": true,
+  "cases": 36,
+  "counts": {
+    "raw_factor_gradient_words_verified": 10368,
+    "sequential_moment_words_verified": 20736,
+    "once_rounded_moment_words_verified": 10368,
+    "rational_codec_files_verified": 36,
+    "exact_rational_rank_values_verified": 216,
+    "modular_rank_lower_bounds_matched": 216
+  },
+  "main_source_sha256": "04240501d182f0f1490a15fb4f3afe53d79aa5833e8f629ec3ea50b054735cdc",
+  "arithmetic": "Independent integer RN-even binary32 operations; exact Fraction recurrence and Gaussian elimination; modular rank p=2147483647",
+  "codec": "Independent unsigned-varint/zigzag numerator and positive-denominator decoder; exact reconstructed moments and full byte consumption checked",
+  "scope": "Verifies archived synthetic factor/gradient/moment data and rank/codec claims; not full training, NPU parity, or runtime memory peak",
+  "case_results": [
+    {
+      "seed": 1,
+      "r": 1,
+      "steps": 1,
+      "codec_bytes": 286,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "r": 1,
+      "steps": 2,
+      "codec_bytes": 898,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "r": 1,
+      "steps": 4,
+      "codec_bytes": 3287,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "r": 1,
+      "steps": 8,
+      "codec_bytes": 11613,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "r": 2,
+      "steps": 1,
+      "codec_bytes": 801,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "r": 2,
+      "steps": 2,
+      "codec_bytes": 2577,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "r": 2,
+      "steps": 4,
+      "codec_bytes": 8117,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "r": 2,
+      "steps": 8,
+      "codec_bytes": 17191,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "r": 4,
+      "steps": 1,
+      "codec_bytes": 2495,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "r": 4,
+      "steps": 2,
+      "codec_bytes": 4878,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "r": 4,
+      "steps": 4,
+      "codec_bytes": 9509,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "r": 4,
+      "steps": 8,
+      "codec_bytes": 17279,
+      "passed": true
+    },
+    {
+      "seed": 7,
+      "r": 1,
+      "steps": 1,
+      "codec_bytes": 287,
+      "passed": true
+    },
+    {
+      "seed": 7,
+      "r": 1,
+      "steps": 2,
+      "codec_bytes": 767,
+      "passed": true
+    },
+    {
+      "seed": 7,
+      "r": 1,
+      "steps": 4,
+      "codec_bytes": 3107,
+      "passed": true
+    },
+    {
+      "seed": 7,
+      "r": 1,
+      "steps": 8,
+      "codec_bytes": 11757,
+      "passed": true
+    },
+    {
+      "seed": 7,
+      "r": 2,
+      "steps": 1,
+      "codec_bytes": 773,
+      "passed": true
+    },
+    {
+      "seed": 7,
+      "r": 2,
+      "steps": 2,
+      "codec_bytes": 2631,
+      "passed": true
+    },
+    {
+      "seed": 7,
+      "r": 2,
+      "steps": 4,
+      "codec_bytes": 8154,
+      "passed": true
+    },
+    {
+      "seed": 7,
+      "r": 2,
+      "steps": 8,
+      "codec_bytes": 17232,
+      "passed": true
+    },
+    {
+      "seed": 7,
+      "r": 4,
+      "steps": 1,
+      "codec_bytes": 2432,
+      "passed": true
+    },
+    {
+      "seed": 7,
+      "r": 4,
+      "steps": 2,
+      "codec_bytes": 4851,
+      "passed": true
+    },
+    {
+      "seed": 7,
+      "r": 4,
+      "steps": 4,
+      "codec_bytes": 9487,
+      "passed": true
+    },
+    {
+      "seed": 7,
+      "r": 4,
+      "steps": 8,
+      "codec_bytes": 17255,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "r": 1,
+      "steps": 1,
+      "codec_bytes": 278,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "r": 1,
+      "steps": 2,
+      "codec_bytes": 881,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "r": 1,
+      "steps": 4,
+      "codec_bytes": 3190,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "r": 1,
+      "steps": 8,
+      "codec_bytes": 11695,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "r": 2,
+      "steps": 1,
+      "codec_bytes": 749,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "r": 2,
+      "steps": 2,
+      "codec_bytes": 2462,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "r": 2,
+      "steps": 4,
+      "codec_bytes": 8119,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "r": 2,
+      "steps": 8,
+      "codec_bytes": 17308,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "r": 4,
+      "steps": 1,
+      "codec_bytes": 2451,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "r": 4,
+      "steps": 2,
+      "codec_bytes": 4901,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "r": 4,
+      "steps": 4,
+      "codec_bytes": 9526,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "r": 4,
+      "steps": 8,
+      "codec_bytes": 17311,
+      "passed": true
+    }
+  ]
+}

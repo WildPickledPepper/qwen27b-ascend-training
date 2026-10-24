@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "experiments_rerun": false,
+  "checks": [
+    "UTF-8/no binary payload",
+    "JSON parsing",
+    "Python AST syntax",
+    "C syntax only",
+    "entrypoint relative links",
+    "private path/secret-pattern/internal-coordination scan",
+    "source provenance hashes"
+  ],
+  "json_files": 98,
+  "python_files": 50,
+  "c_syntax_checks": [
+    {
+      "path": "stage9/frontier.c",
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "frontier.c"
+      ],
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "path": "stage10/factor_replay.c",
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "factor_replay.c"
+      ],
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "path": "stage10/capacity_harness.c",
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "capacity_harness.c"
+      ],
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "path": "stage11/width_replay.c",
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-fsyntax-only",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "width_replay.c"
+      ],
+      "returncode": 0,
+      "stderr": ""
+    }
+  ],
+  "scope_limit": "No numerical experiment rerun, NPU test, target training, runtime/peak/quality validation, or external dependency installation."
+}

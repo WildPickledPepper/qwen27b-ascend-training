@@ -1,0 +1,76 @@
+{
+  "seeds": [
+    0,
+    1,
+    42,
+    2026,
+    2147483647
+  ],
+  "steps": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "blocks_by_mode": {
+    "1": [
+      128,
+      511
+    ],
+    "2": [
+      1,
+      32,
+      128,
+      511,
+      6288
+    ]
+  },
+  "capacity_rejection": [
+    0,
+    1,
+    2,
+    4,
+    8,
+    15
+  ],
+  "capacity_seeds": [
+    0,
+    42
+  ],
+  "oracle_seeds": [
+    0,
+    1,
+    42,
+    2026,
+    2147483647
+  ],
+  "repeats_reference": 15,
+  "repeats_candidates": 3,
+  "static_stack_frames": {
+    "capture": 184,
+    "reconstruct": 80,
+    "update_weight": 56,
+    "algorithm": 272,
+    "validate_dump": 944,
+    "main": 512
+  },
+  "charged_live_call_chain": 968,
+  "core_source_unchanged": true,
+  "source_sha256": "0766be5147383ee650af391fc3a2483cc82f89702d05097f8e1353f0ba62df2b",
+  "binary_sha256": "7925d6d791ee45d4d64a00132c2ee2db3694ad4e2f0838b272c5e98340b93fa5",
+  "compile_command": "gcc -std=c11 -O2 -fno-fast-math -ffp-contract=off -fno-math-errno -mno-red-zone -fstack-usage -Wall -Wextra -frecord-gcc-switches factor_replay.c -lm -o factor_replay",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "scope": "CPU finite-horizon scalar-FP32 mechanism; no hardware GEMM/NPU/Qwen equivalence claim. All memory includes capacity reserved, not just used. Current weights separated but not omitted. Validation buffers excluded from measured algorithm.",
+  "budget_fractions_of_raw_m_v": [
+    0.1,
+    0.15,
+    0.25,
+    0.5,
+    0.75,
+    0.99
+  ],
+  "budget_edge": "Every complete candidate preflight-1 rejects; preflight+65536 accepts. Actual malloc capacity checked after allocation."
+}

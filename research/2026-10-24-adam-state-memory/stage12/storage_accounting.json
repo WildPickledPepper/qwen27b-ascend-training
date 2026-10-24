@@ -1,0 +1,50 @@
+{
+  "scope": "Representation payload accounting, not certified runtime memory peak or end-to-end training budget.",
+  "variables": {
+    "n": "output matrix rows",
+    "m": "output matrix columns",
+    "R": "sum of step factor ranks r_s",
+    "Q": "sum r_s*(r_s+1)/2",
+    "k_m": "exact-real consolidated first moment rank",
+    "k_v": "exact-real consolidated second moment rank"
+  },
+  "fp32_assuming_each_factor_representable": {
+    "original_shared_gradient_history_payload": "4*(n+m)*R bytes",
+    "separately_materialized_m_and_v_lift_payload": "4*(n+m)*(R+Q) bytes",
+    "exact_rank_uv_payload_optimistic": "4*(n+m)*(k_m+k_v) bytes",
+    "dense_fp32_m_v_payload": "8*n*m bytes",
+    "current_fp32_weights_if_present": "4*n*m bytes",
+    "current_fp32_gradient_if_materialized": "4*n*m bytes",
+    "core_U_C_V_payload": "4*(n*k_u+m*k_v+k_u*k_v) bytes"
+  },
+  "rational_codec": "Actual reported bytes include a 16-byte dimension/rank header followed by every exact numerator and denominator in unsigned-varint encoding (numerators zigzag signed). No assumption of 4 bytes per rational; files independently decoded. Codec represents ideal exact-real moments, not original sequential FP32 moments.",
+  "fixed_power2_constructive_exception": {
+    "moment_scalars_bytes": 8,
+    "int8_row_and_column_exponents_bytes": 16,
+    "shape_step_format_metadata_bytes": 16,
+    "fp32_coefficients_bytes": 16,
+    "representation_total_bytes": 56,
+    "dense_moments_payload_only_bytes": 512,
+    "scope": "Synthetic 8x8 pattern, 64 finite tested steps. Metadata is an explicit representation budget, not a measured native codec/runtime allocation.",
+    "ratio_to_dense_moments_payload": 0.109375,
+    "below_ten_percent": false,
+    "restrictions": "Zero initial moments; every gradient has the same fixed positive separable power-of-two pattern; all relevant intermediate operations remain normal finite in this tested sequence."
+  },
+  "must_add_for_any_actual_runtime": [
+    "Current weights and any master weights; dtype explicit",
+    "Current gradients and input/backprop factors",
+    "Bias and other nonmatrix states",
+    "Step count, dimensions, ranks, pointer/offset metadata, beta and bias-correction constants",
+    "Reserved history/merge buffers; no counting only used prefix",
+    "Old and new factors simultaneously during merge",
+    "Exact-rank/elimination/Gram workspaces",
+    "Tile reconstruction and dequantization/decoder scratch",
+    "Runtime allocator/interpreter overhead when relevant"
+  ],
+  "not_claimed": [
+    "A low-memory runtime or full training memory budget",
+    "All exact compression impossible",
+    "A lower bound on the size of arbitrary codecs",
+    "Full exact matrix rank implies incompressibility"
+  ]
+}
