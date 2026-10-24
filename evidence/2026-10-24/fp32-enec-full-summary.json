@@ -1,0 +1,63 @@
+{
+  "scope": "Offline lossless FP32 text-weight archive; no online training integration",
+  "parameters": 26895998464,
+  "tensors": 851,
+  "chunks": 2265,
+  "raw_fp32_bytes": 107583993856,
+  "stored_frame_bytes": 93527087136,
+  "mapping_json_bytes": 2457090,
+  "archive_and_mapping_bytes": 93529544226,
+  "raw_fp32_gib": 100.19540214538574,
+  "archive_and_mapping_gib": 87.10617593117058,
+  "saved_percent": 13.063699465193423,
+  "compression_ratio": 1.1502674876297863,
+  "author_mismatch_raw_fallback_chunks": 26,
+  "raw_small_tensor_chunks": 305,
+  "all_stored_chunks_lossless": true,
+  "cross_card_tensor_coverage_passed": true,
+  "all_saved_frames_reloaded_and_sha_verified": true,
+  "device_checks": [
+    {
+      "device": 2,
+      "frames_verified": 1123,
+      "total_frames": 1123,
+      "passed": true,
+      "seconds": 135.37819933891296,
+      "original_weights_loaded": false
+    },
+    {
+      "device": 3,
+      "frames_verified": 1142,
+      "total_frames": 1142,
+      "passed": true,
+      "seconds": 140.04402875900269,
+      "original_weights_loaded": false
+    }
+  ],
+  "max_explicit_codec_device_allocation_bytes": 386189248.0,
+  "codec": "ENEC-FP32-122-6-3-16",
+  "author_build": {
+    "author_commit": "3026adde1ed97f8ae528515ae9de9de60e89176a",
+    "variant": "ENEC-FP32-122-6-3-16",
+    "author_kernels_unchanged": true,
+    "sha256": {
+      "snec_compress.cpp": "7c715932d7abd12d4612c97f866a69ce9387c094a2c44f70a38c37d44a052816",
+      "snec_decompress.cpp": "ced57720221e888491d1db8dafbf4102cfd50f5af2970464103a7505785a9a07",
+      "snec_merge.cpp": "615880c51ec8985e63f05832099c60e234f00a918dff7eabd1120b7eebc2dd7a",
+      "snec_utils.h": "d58ff2ab790d953c6f68a2247932c3b180f5a620bf7b91531ec6150ae4ffc64b",
+      "snec_device.h": "2da81d8da069ceb9eb5d12905fabe9f6285bbeb03ef1ae7ca78b17c688138ac8"
+    }
+  },
+  "original_checkpoint_unchanged": true,
+  "initial_source": "Actual checkpoint tensors lifted exactly to FP32; mostly BF16-origin values",
+  "excludes": [
+    "vision",
+    "MTP",
+    "optimizer states",
+    "gradients",
+    "activations",
+    "online training memory proof"
+  ],
+  "no_bf16_forward_copy": true,
+  "model_training_started": false
+}

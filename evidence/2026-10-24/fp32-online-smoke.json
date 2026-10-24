@@ -1,0 +1,53 @@
+{
+  "tests": [
+    {
+      "case": "codec",
+      "device": "npu:0",
+      "raw_bytes": 262144,
+      "stored_bytes": 226144,
+      "kind": "enec"
+    },
+    {
+      "case": "linear_backward",
+      "device": "npu:0",
+      "forward_max_abs": 0.0,
+      "input_gradient_max_abs": 0.0
+    },
+    {
+      "case": "first_adam_update",
+      "device": "npu:0",
+      "max_abs_vs_fp32": 1.862645149230957e-09,
+      "moment_bytes": 71744,
+      "parameters": 65536
+    },
+    {
+      "case": "codec",
+      "device": "npu:1",
+      "raw_bytes": 262144,
+      "stored_bytes": 226144,
+      "kind": "enec"
+    },
+    {
+      "case": "linear_backward",
+      "device": "npu:1",
+      "forward_max_abs": 0.0,
+      "input_gradient_max_abs": 0.0
+    },
+    {
+      "case": "first_adam_update",
+      "device": "npu:1",
+      "max_abs_vs_fp32": 4.656612873077393e-10,
+      "moment_bytes": 71744,
+      "parameters": 65536
+    },
+    {
+      "case": "embedding_backward",
+      "all_coordinates_updated": true,
+      "repeat_token": true
+    }
+  ],
+  "passed": true,
+  "no_bf16": true,
+  "seconds": 2.1168458461761475,
+  "codec_fallbacks": 0
+}
