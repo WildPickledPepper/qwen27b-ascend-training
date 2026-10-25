@@ -1,0 +1,56 @@
+{
+  "adopted": false,
+  "kept_reference": "experiments/sql-boundary-overlap-20261025/selected-profile.json",
+  "kept_seconds_per_256": 95.74024082010146,
+  "candidate_seconds_per_256": 96.97532381489873,
+  "candidate_time_increase_percent": 1.2900353960024313,
+  "same_hccl_count_dtype_frequency_distribution_verified": true,
+  "same_compute_and_collective_counts_verified": true,
+  "unchanged_reference_source_and_configuration_hashes_verified": true,
+  "reference_phase_wall_rank0": {
+    "forward_wall": 16.909911695169285,
+    "backward_wall": 64.21147318498697,
+    "step_wall": 14.609887675032951
+  },
+  "candidate_phase_wall_rank0": {
+    "forward_wall": 18.955096325138584,
+    "backward_wall": 63.375091684632935,
+    "step_wall": 14.62832795502618
+  },
+  "reference_overlap": {
+    "allgather": {
+      "union_seconds": 26.001395533,
+      "without_compute_seconds": 9.10403949,
+      "with_compute_seconds": 16.897356043
+    },
+    "reduce_scatter": {
+      "union_seconds": 24.956496324,
+      "without_compute_seconds": 13.361874859,
+      "with_compute_seconds": 11.594621465
+    },
+    "other_communication": {
+      "union_seconds": 0.000832763,
+      "without_compute_seconds": 0.000832763,
+      "with_compute_seconds": 0
+    }
+  },
+  "candidate_overlap": {
+    "allgather": {
+      "union_seconds": 26.055511973,
+      "without_compute_seconds": 9.327769232,
+      "with_compute_seconds": 16.727742741
+    },
+    "reduce_scatter": {
+      "union_seconds": 25.148145291,
+      "without_compute_seconds": 15.277731336,
+      "with_compute_seconds": 9.870413955
+    },
+    "other_communication": {
+      "union_seconds": 0.000843476,
+      "without_compute_seconds": 0.000843476,
+      "with_compute_seconds": 0
+    }
+  },
+  "reason": "Earlier host submission did not improve measured whole-model time; reduction without compute increased in the matched profile.",
+  "limits": "The unprofiled third-update forward regression is observed but not hardware-attributed by the fourth-update profile. No claim that all regression is causally explained."
+}

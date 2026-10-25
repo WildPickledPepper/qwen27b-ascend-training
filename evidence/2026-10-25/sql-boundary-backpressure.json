@@ -1,0 +1,16 @@
+{
+  "schema_reference": "Official CANN_API schema; PYTORCH_API absent, PRAGMA fallback used",
+  "queries": {
+    "scoped_event_waits": "WITH scopes AS (\n SELECT CAST(p.startNs AS INTEGER) AS s,CAST(p.endNs AS INTEGER) AS e,p.globalTid,n.value AS scope\n FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name\n WHERE n.value IN ('zero/reduce_and_partition','zero/partition_gradients','zero/deferred_boundary','zero/average_scatter')\n), events AS (\n SELECT c.startNs AS s,c.endNs AS e,c.globalTid FROM CANN_API c JOIN STRING_IDS n ON n.id=c.name WHERE n.value='aclrtSynchronizeEvent'\n)\nSELECT p.scope,COUNT(*) AS event_calls,SUM(t.e-t.s)/1e9 AS event_host_seconds FROM events t JOIN scopes p\n ON t.globalTid=p.globalTid AND t.s>=p.s AND t.e<=p.e GROUP BY p.scope ORDER BY event_host_seconds DESC LIMIT 20",
+    "physical_memory": "SELECT n.value AS name,COUNT(*) AS calls,SUM(c.endNs-c.startNs)/1e9 AS host_seconds FROM CANN_API c JOIN STRING_IDS n ON n.id=c.name WHERE n.value IN ('aclrtMallocPhysical','aclrtFreePhysical') GROUP BY n.value ORDER BY host_seconds DESC LIMIT 20"
+  },
+  "scoped_event_waits": [
+    {
+      "scope": "zero/reduce_and_partition",
+      "event_calls": 14,
+      "event_host_seconds": 0.34576012
+    }
+  ],
+  "physical_memory": [],
+  "limits": "Scopes may nest. SynchronizeEvent within reducer is consistent with inspected event-backpressure code, but must distinguish nested partition waits. Background thread waits are excluded by globalTid."
+}

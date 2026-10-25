@@ -1,0 +1,740 @@
+{
+  "valid": true,
+  "type": "PyTorch framework profiler",
+  "rank_sample": "rank0 only",
+  "db_basename": "ascend_pytorch_profiler_0.db",
+  "normal_stop_metadata": true,
+  "db_export_present": true,
+  "tables": [
+    "AICORE_FREQ",
+    "CANN_API",
+    "COMMUNICATION_OP",
+    "COMMUNICATION_TASK_INFO",
+    "COMPUTE_TASK_INFO",
+    "CONNECTION_IDS",
+    "ENUM_API_TYPE",
+    "ENUM_HCCL_DATA_TYPE",
+    "ENUM_HCCL_LINK_TYPE",
+    "ENUM_HCCL_RDMA_TYPE",
+    "ENUM_HCCL_TRANSPORT_TYPE",
+    "ENUM_MEMCPY_OPERATION",
+    "ENUM_MODULE",
+    "ENUM_MSTX_EVENT_TYPE",
+    "ENUM_OVERLAP_ANALYSIS_TYPE",
+    "HOST_INFO",
+    "META_DATA",
+    "NPU_INFO",
+    "OVERLAP_ANALYSIS",
+    "PYTORCH_API",
+    "RANK_DEVICE_MAP",
+    "SESSION_TIME_INFO",
+    "STEP_TIME",
+    "STRING_IDS",
+    "TASK",
+    "TASK_PMU_INFO"
+  ],
+  "requested_capture_config": {
+    "profiler_level": "Level1",
+    "record_shapes": false,
+    "profile_memory": false,
+    "with_stack": false,
+    "export_type": "Db"
+  },
+  "capture_metadata_flags": {
+    "record_shapes": false,
+    "profile_memory": false,
+    "with_stack": false,
+    "with_modules": false
+  },
+  "queries": {
+    "compute_top20": {
+      "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_type, COUNT(*) AS calls, SUM(duration_ns)/1e9 AS summed_seconds FROM compute_view GROUP BY op_type ORDER BY summed_seconds DESC LIMIT 20",
+      "parameters": []
+    },
+    "compute_total": {
+      "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT COUNT(*) AS calls, SUM(duration_ns)/1e9 AS summed_seconds FROM compute_view",
+      "parameters": []
+    },
+    "compute_interval_union": {
+      "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\n, intervals AS (\n SELECT t.startNs AS s,t.endNs AS e FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId\n), ordered AS (\n SELECT s,e,MAX(e) OVER (ORDER BY s,e ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS previous_end FROM intervals\n), marked AS (\n SELECT s,e,CASE WHEN previous_end IS NULL OR s>previous_end THEN 1 ELSE 0 END AS new_group FROM ordered\n), grouped AS (\n SELECT s,e,SUM(new_group) OVER (ORDER BY s,e ROWS UNBOUNDED PRECEDING) AS group_id FROM marked\n), merged AS (\n SELECT MIN(s) AS s,MAX(e) AS e FROM grouped GROUP BY group_id\n)\n SELECT COUNT(*) AS compute_islands,SUM(e-s)/1e9 AS nonoverlapping_compute_seconds FROM merged",
+      "parameters": []
+    },
+    "communication_top20": {
+      "sql": "WITH comm_view AS (\n    SELECT ROUND(c.endNs - c.startNs) AS duration_ns, n.value AS op_name, t.value AS op_type, g.value AS group_name\n    FROM COMMUNICATION_OP c\n    LEFT JOIN STRING_IDS n ON n.id = c.opName\n    LEFT JOIN STRING_IDS t ON t.id = c.opType\n    LEFT JOIN STRING_IDS g ON g.id = c.groupName\n)\nSELECT op_type,COUNT(*) AS calls,SUM(duration_ns)/1e9 AS summed_seconds FROM comm_view GROUP BY op_type ORDER BY summed_seconds DESC LIMIT 20",
+      "parameters": []
+    },
+    "device_window": {
+      "sql": "SELECT COUNT(*) AS tasks,MIN(startNs) AS start_ns,MAX(endNs) AS end_ns,(MAX(endNs)-MIN(startNs))/1e9 AS window_seconds FROM TASK",
+      "parameters": []
+    },
+    "cpu_adam_ranges": {
+      "sql": "SELECT COUNT(*) AS calls,SUM(p.endNs-p.startNs)/1e9 AS summed_seconds FROM PYTORCH_API p LEFT JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+      "parameters": [
+        "optimizer/CPUAdam"
+      ]
+    },
+    "host_api_top20": {
+      "sql": "SELECT n.value AS name,COUNT(*) AS calls,SUM(p.endNs-p.startNs)/1e9 AS summed_seconds FROM PYTORCH_API p LEFT JOIN STRING_IDS n ON n.id=p.name GROUP BY n.value ORDER BY summed_seconds DESC LIMIT 20",
+      "parameters": []
+    },
+    "host_clock_windows": {
+      "sql": "SELECT n.value AS name,MIN(p.startNs) AS start_ns,MAX(p.endNs) AS end_ns FROM PYTORCH_API p LEFT JOIN STRING_IDS n ON n.id=p.name WHERE n.value IN ('optimizer/CPUAdam','ProfilerStep#0') GROUP BY n.value ORDER BY start_ns LIMIT 20",
+      "parameters": []
+    },
+    "gradient_host_scopes": {
+      "sql": "SELECT n.value AS name,COUNT(*) AS calls,SUM(p.endNs-p.startNs)/1e9 AS inclusive_seconds FROM PYTORCH_API p LEFT JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'zero/%' OR n.value LIKE 'gradient_transfer/%' GROUP BY n.value ORDER BY inclusive_seconds DESC LIMIT 20",
+      "parameters": []
+    },
+    "partition_host_union": {
+      "sql": "WITH dummy AS (SELECT 1), intervals AS (SELECT CAST(p.startNs AS INTEGER) AS s,CAST(p.endNs AS INTEGER) AS e FROM PYTORCH_API p LEFT JOIN STRING_IDS n ON n.id=p.name WHERE n.value='zero/partition_gradients'), ordered AS (\n SELECT s,e,MAX(e) OVER (ORDER BY s,e ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS pe FROM intervals\n ), marked AS (SELECT s,e,CASE WHEN pe IS NULL OR s>pe THEN 1 ELSE 0 END AS ng FROM ordered),\n grouped AS (SELECT s,e,SUM(ng) OVER (ORDER BY s,e ROWS UNBOUNDED PRECEDING) AS gid FROM marked),\n merged AS (SELECT MIN(s) AS s,MAX(e) AS e FROM grouped GROUP BY gid)\n SELECT COUNT(*) AS islands,SUM(e-s)/1e9 AS union_seconds FROM merged",
+      "parameters": []
+    },
+    "transfer_host_union": {
+      "sql": "WITH dummy AS (SELECT 1), intervals AS (SELECT CAST(p.startNs AS INTEGER) AS s,CAST(p.endNs AS INTEGER) AS e FROM PYTORCH_API p LEFT JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'gradient_transfer/%'), ordered AS (\n SELECT s,e,MAX(e) OVER (ORDER BY s,e ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS pe FROM intervals\n ), marked AS (SELECT s,e,CASE WHEN pe IS NULL OR s>pe THEN 1 ELSE 0 END AS ng FROM ordered),\n grouped AS (SELECT s,e,SUM(ng) OVER (ORDER BY s,e ROWS UNBOUNDED PRECEDING) AS gid FROM marked),\n merged AS (SELECT MIN(s) AS s,MAX(e) AS e FROM grouped GROUP BY gid)\n SELECT COUNT(*) AS islands,SUM(e-s)/1e9 AS union_seconds FROM merged",
+      "parameters": []
+    },
+    "reduce_host_union": {
+      "sql": "WITH dummy AS (SELECT 1), intervals AS (SELECT CAST(p.startNs AS INTEGER) AS s,CAST(p.endNs AS INTEGER) AS e FROM PYTORCH_API p LEFT JOIN STRING_IDS n ON n.id=p.name WHERE n.value='zero/reduce_and_partition'), ordered AS (\n SELECT s,e,MAX(e) OVER (ORDER BY s,e ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS pe FROM intervals\n ), marked AS (SELECT s,e,CASE WHEN pe IS NULL OR s>pe THEN 1 ELSE 0 END AS ng FROM ordered),\n grouped AS (SELECT s,e,SUM(ng) OVER (ORDER BY s,e ROWS UNBOUNDED PRECEDING) AS gid FROM marked),\n merged AS (SELECT MIN(s) AS s,MAX(e) AS e FROM grouped GROUP BY gid)\n SELECT COUNT(*) AS islands,SUM(e-s)/1e9 AS union_seconds FROM merged",
+      "parameters": []
+    },
+    "adam_host_union": {
+      "sql": "WITH dummy AS (SELECT 1), intervals AS (SELECT CAST(p.startNs AS INTEGER) AS s,CAST(p.endNs AS INTEGER) AS e FROM PYTORCH_API p LEFT JOIN STRING_IDS n ON n.id=p.name WHERE n.value='optimizer/CPUAdam'), ordered AS (\n SELECT s,e,MAX(e) OVER (ORDER BY s,e ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS pe FROM intervals\n ), marked AS (SELECT s,e,CASE WHEN pe IS NULL OR s>pe THEN 1 ELSE 0 END AS ng FROM ordered),\n grouped AS (SELECT s,e,SUM(ng) OVER (ORDER BY s,e ROWS UNBOUNDED PRECEDING) AS gid FROM marked),\n merged AS (SELECT MIN(s) AS s,MAX(e) AS e FROM grouped GROUP BY gid)\n SELECT COUNT(*) AS islands,SUM(e-s)/1e9 AS union_seconds FROM merged",
+      "parameters": []
+    },
+    "communication_union": {
+      "sql": "WITH comm_view AS (\n    SELECT ROUND(c.endNs - c.startNs) AS duration_ns, n.value AS op_name, t.value AS op_type, g.value AS group_name\n    FROM COMMUNICATION_OP c\n    LEFT JOIN STRING_IDS n ON n.id = c.opName\n    LEFT JOIN STRING_IDS t ON t.id = c.opType\n    LEFT JOIN STRING_IDS g ON g.id = c.groupName\n)\n, intervals AS (SELECT startNs AS s,endNs AS e FROM COMMUNICATION_OP), ordered AS (\n SELECT s,e,MAX(e) OVER (ORDER BY s,e ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS pe FROM intervals\n ), marked AS (SELECT s,e,CASE WHEN pe IS NULL OR s>pe THEN 1 ELSE 0 END AS ng FROM ordered),\n grouped AS (SELECT s,e,SUM(ng) OVER (ORDER BY s,e ROWS UNBOUNDED PRECEDING) AS gid FROM marked),\n merged AS (SELECT MIN(s) AS s,MAX(e) AS e FROM grouped GROUP BY gid)\n SELECT COUNT(*) AS islands,SUM(e-s)/1e9 AS union_seconds FROM merged",
+      "parameters": []
+    },
+    "compute_or_communication_union": {
+      "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\n, intervals AS (SELECT t.startNs AS s,t.endNs AS e FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId UNION ALL SELECT startNs,endNs FROM COMMUNICATION_OP), ordered AS (\n SELECT s,e,MAX(e) OVER (ORDER BY s,e ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS pe FROM intervals\n ), marked AS (SELECT s,e,CASE WHEN pe IS NULL OR s>pe THEN 1 ELSE 0 END AS ng FROM ordered),\n grouped AS (SELECT s,e,SUM(ng) OVER (ORDER BY s,e ROWS UNBOUNDED PRECEDING) AS gid FROM marked),\n merged AS (SELECT MIN(s) AS s,MAX(e) AS e FROM grouped GROUP BY gid)\n SELECT COUNT(*) AS islands,SUM(e-s)/1e9 AS union_seconds FROM merged",
+      "parameters": []
+    },
+    "cann_host_top20": {
+      "sql": "SELECT n.value AS name,COUNT(*) AS calls,SUM(c.endNs-c.startNs)/1e9 AS host_seconds FROM CANN_API c LEFT JOIN STRING_IDS n ON n.id=c.name GROUP BY n.value ORDER BY host_seconds DESC LIMIT 20",
+      "parameters": []
+    },
+    "device_task_types": {
+      "sql": "SELECT n.value AS type,COUNT(*) AS calls,SUM(t.endNs-t.startNs)/1e9 AS summed_seconds FROM TASK t LEFT JOIN STRING_IDS n ON n.id=t.taskType GROUP BY n.value ORDER BY summed_seconds DESC LIMIT 20",
+      "parameters": []
+    },
+    "exclusive_timeline": {
+      "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\n, intervals AS (\n SELECT t.startNs AS s,t.endNs AS e,1 AS mask FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId\n UNION ALL SELECT startNs,endNs,2 FROM COMMUNICATION_OP\n UNION ALL SELECT t.startNs,t.endNs,4 FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE n.value='MEMCPY_ASYNC'\n UNION ALL SELECT CAST(p.startNs AS INTEGER),CAST(p.endNs AS INTEGER),8 FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value='optimizer/CPUAdam'\n UNION ALL SELECT MIN(startNs),MAX(endNs),0 FROM TASK\n), events AS (\n SELECT s AS ts,mask,1 AS delta FROM intervals UNION ALL SELECT e,mask,-1 FROM intervals\n), points AS (\n SELECT ts,SUM(CASE WHEN mask=1 THEN delta ELSE 0 END) AS dc,SUM(CASE WHEN mask=2 THEN delta ELSE 0 END) AS dh,\n SUM(CASE WHEN mask=4 THEN delta ELSE 0 END) AS dm,SUM(CASE WHEN mask=8 THEN delta ELSE 0 END) AS da FROM events GROUP BY ts\n), states AS (\n SELECT ts,LEAD(ts) OVER (ORDER BY ts) AS te,SUM(dc) OVER (ORDER BY ts) AS c,SUM(dh) OVER (ORDER BY ts) AS h,\n SUM(dm) OVER (ORDER BY ts) AS m,SUM(da) OVER (ORDER BY ts) AS a FROM points\n), segments AS (\n SELECT ts,te,(CASE WHEN c>0 THEN 1 ELSE 0 END)+(CASE WHEN h>0 THEN 2 ELSE 0 END)+(CASE WHEN m>0 THEN 4 ELSE 0 END)+(CASE WHEN a>0 THEN 8 ELSE 0 END) AS mask FROM states\n)\nSELECT mask,COUNT(*) AS pieces,SUM(te-ts)/1e9 AS seconds FROM segments WHERE te>ts GROUP BY mask ORDER BY seconds DESC LIMIT 20",
+      "parameters": []
+    },
+    "boundary_finalize_host": {
+      "sql": "SELECT n.value AS name,COUNT(*) AS calls,SUM(CAST(p.endNs AS INTEGER)-CAST(p.startNs AS INTEGER))/1e9 AS host_seconds FROM PYTORCH_API p LEFT JOIN STRING_IDS n ON n.id=p.name WHERE n.value IN ('zero/deferred_boundary','zero/partition_gradients','zero/boundary_gradient_offload','zero/flush_oversized_ready') GROUP BY n.value ORDER BY host_seconds DESC LIMIT 20",
+      "parameters": []
+    }
+  },
+  "results": {
+    "compute_top20": [
+      {
+        "op_type": "MatMulV3",
+        "calls": 12824,
+        "summed_seconds": 24.835779311
+      },
+      {
+        "op_type": "prepare_wy_repr_bwd_kernel",
+        "calls": 384,
+        "summed_seconds": 5.075312235
+      },
+      {
+        "op_type": "Mul",
+        "calls": 34576,
+        "summed_seconds": 3.969451176
+      },
+      {
+        "op_type": "Cast",
+        "calls": 37492,
+        "summed_seconds": 3.429821711
+      },
+      {
+        "op_type": "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+        "calls": 1152,
+        "summed_seconds": 1.978958089
+      },
+      {
+        "op_type": "chunk_fwd_kernel_o",
+        "calls": 768,
+        "summed_seconds": 1.957838802
+      },
+      {
+        "op_type": "Transpose",
+        "calls": 24992,
+        "summed_seconds": 1.709719882
+      },
+      {
+        "op_type": "RealDiv",
+        "calls": 6208,
+        "summed_seconds": 1.709481577
+      },
+      {
+        "op_type": "ConcatD",
+        "calls": 8562,
+        "summed_seconds": 1.415919525
+      },
+      {
+        "op_type": "chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64",
+        "calls": 384,
+        "summed_seconds": 1.356132328
+      },
+      {
+        "op_type": "chunk_bwd_kernel_dqkwg",
+        "calls": 384,
+        "summed_seconds": 1.057655302
+      },
+      {
+        "op_type": "solve_tril_64x64_kernel",
+        "calls": 768,
+        "summed_seconds": 0.966213811
+      },
+      {
+        "op_type": "Add",
+        "calls": 17543,
+        "summed_seconds": 0.846692245
+      },
+      {
+        "op_type": "TransData",
+        "calls": 5776,
+        "summed_seconds": 0.689764498
+      },
+      {
+        "op_type": "recompute_w_u_fwd_kernel",
+        "calls": 1152,
+        "summed_seconds": 0.624805821
+      },
+      {
+        "op_type": "ReduceSum",
+        "calls": 7832,
+        "summed_seconds": 0.593826696
+      },
+      {
+        "op_type": "ViewCopy",
+        "calls": 1424,
+        "summed_seconds": 0.530132495
+      },
+      {
+        "op_type": "Slice",
+        "calls": 6672,
+        "summed_seconds": 0.421575698
+      },
+      {
+        "op_type": "SiluGrad",
+        "calls": 1280,
+        "summed_seconds": 0.415105416
+      },
+      {
+        "op_type": "Swish",
+        "calls": 2560,
+        "summed_seconds": 0.280721079
+      }
+    ],
+    "compute_total": [
+      {
+        "calls": 219114,
+        "summed_seconds": 56.513224716
+      }
+    ],
+    "compute_interval_union": [
+      {
+        "compute_islands": 200265,
+        "nonoverlapping_compute_seconds": 53.047405187
+      }
+    ],
+    "communication_top20": [
+      {
+        "op_type": "hcom_allGather_",
+        "calls": 4721,
+        "summed_seconds": 26.055511973
+      },
+      {
+        "op_type": "hcom_reduceScatter_",
+        "calls": 4504,
+        "summed_seconds": 25.148145291
+      },
+      {
+        "op_type": "hcom_allReduce_",
+        "calls": 46,
+        "summed_seconds": 0.000843476
+      }
+    ],
+    "device_window": [
+      {
+        "tasks": 481677,
+        "start_ns": 1792928349387352247,
+        "end_ns": 1792928462988235133,
+        "window_seconds": 113.600882886
+      }
+    ],
+    "cpu_adam_ranges": [
+      {
+        "calls": 44,
+        "summed_seconds": 10.36053925
+      }
+    ],
+    "host_api_top20": [
+      {
+        "name": "ProfilerStep#0",
+        "calls": 1,
+        "summed_seconds": 113.57552974
+      },
+      {
+        "name": "autograd::engine::evaluate_function: torch::autograd::AccumulateGrad",
+        "calls": 6808,
+        "summed_seconds": 25.14704374
+      },
+      {
+        "name": "torch::autograd::AccumulateGrad",
+        "calls": 6808,
+        "summed_seconds": 25.0514283
+      },
+      {
+        "name": "autograd::engine::evaluate_function: LinearFunctionForZeroStage3Backward",
+        "calls": 3976,
+        "summed_seconds": 21.47142058
+      },
+      {
+        "name": "LinearFunctionForZeroStage3Backward",
+        "calls": 3976,
+        "summed_seconds": 21.35367678
+      },
+      {
+        "name": "zero/reduce_and_partition",
+        "calls": 4512,
+        "summed_seconds": 19.48250062
+      },
+      {
+        "name": "zero/flush_oversized_ready",
+        "calls": 2960,
+        "summed_seconds": 10.81423058
+      },
+      {
+        "name": "aten::copy_",
+        "calls": 75000,
+        "summed_seconds": 10.38104811
+      },
+      {
+        "name": "Optimizer.step#DeepSpeedCPUAdam.step",
+        "calls": 44,
+        "summed_seconds": 10.3737882
+      },
+      {
+        "name": "optimizer/CPUAdam",
+        "calls": 44,
+        "summed_seconds": 10.36053925
+      },
+      {
+        "name": "zero/partition_gradients",
+        "calls": 4504,
+        "summed_seconds": 8.32234727
+      },
+      {
+        "name": "zero/average_scatter",
+        "calls": 4504,
+        "summed_seconds": 7.965889
+      },
+      {
+        "name": "autograd::engine::evaluate_function: PreBackwardFunctionForModuleBackward",
+        "calls": 8104,
+        "summed_seconds": 7.21872309
+      },
+      {
+        "name": "PreBackwardFunctionForModuleBackward",
+        "calls": 8104,
+        "summed_seconds": 7.0268044
+      },
+      {
+        "name": "Event::record",
+        "calls": 50329,
+        "summed_seconds": 6.84419317
+      },
+      {
+        "name": "aten::_to_copy",
+        "calls": 36380,
+        "summed_seconds": 6.60099664
+      },
+      {
+        "name": "PythonDispatchMode",
+        "calls": 58270,
+        "summed_seconds": 6.43019189
+      },
+      {
+        "name": "aten::to",
+        "calls": 75522,
+        "summed_seconds": 6.20629021
+      },
+      {
+        "name": "autograd::engine::evaluate_function: GDNBackward",
+        "calls": 384,
+        "summed_seconds": 5.67571219
+      },
+      {
+        "name": "GDNBackward",
+        "calls": 384,
+        "summed_seconds": 5.64916199
+      }
+    ],
+    "host_clock_windows": [
+      {
+        "name": "ProfilerStep#0",
+        "start_ns": "1792928349404395240",
+        "end_ns": "1792928462979924980"
+      },
+      {
+        "name": "optimizer/CPUAdam",
+        "start_ns": "1792928448607865020",
+        "end_ns": "1792928462639792750"
+      }
+    ],
+    "gradient_host_scopes": [
+      {
+        "name": "zero/reduce_and_partition",
+        "calls": 4512,
+        "inclusive_seconds": 19.48250062
+      },
+      {
+        "name": "zero/flush_oversized_ready",
+        "calls": 2960,
+        "inclusive_seconds": 10.81423058
+      },
+      {
+        "name": "zero/partition_gradients",
+        "calls": 4504,
+        "inclusive_seconds": 8.32234727
+      },
+      {
+        "name": "zero/average_scatter",
+        "calls": 4504,
+        "inclusive_seconds": 7.965889
+      },
+      {
+        "name": "zero/deferred_boundary",
+        "calls": 8,
+        "inclusive_seconds": 4.49321587
+      },
+      {
+        "name": "zero/boundary_gradient_offload",
+        "calls": 851,
+        "inclusive_seconds": 2.48555688
+      },
+      {
+        "name": "gradient_transfer/d2h",
+        "calls": 8181,
+        "inclusive_seconds": 1.26933277
+      },
+      {
+        "name": "gradient_transfer/h2d",
+        "calls": 851,
+        "inclusive_seconds": 0.24601494
+      },
+      {
+        "name": "zero/global_gradient_norm",
+        "calls": 44,
+        "inclusive_seconds": 0.16280785
+      }
+    ],
+    "partition_host_union": [
+      {
+        "islands": 4504,
+        "union_seconds": 8.32234727
+      }
+    ],
+    "transfer_host_union": [
+      {
+        "islands": 9032,
+        "union_seconds": 1.51534771
+      }
+    ],
+    "reduce_host_union": [
+      {
+        "islands": 4512,
+        "union_seconds": 19.48250062
+      }
+    ],
+    "adam_host_union": [
+      {
+        "islands": 44,
+        "union_seconds": 10.36053925
+      }
+    ],
+    "communication_union": [
+      {
+        "islands": 9271,
+        "union_seconds": 51.20450074
+      }
+    ],
+    "compute_or_communication_union": [
+      {
+        "islands": 124477,
+        "union_seconds": 77.653749231
+      }
+    ],
+    "cann_host_top20": [
+      {
+        "name": "aclrtSynchronizeEvent",
+        "calls": 6039,
+        "host_seconds": 19.53365757
+      },
+      {
+        "name": "launch",
+        "calls": 228385,
+        "host_seconds": 7.93279763
+      },
+      {
+        "name": "aclrtLaunchKernelWithHostArgs",
+        "calls": 211818,
+        "host_seconds": 3.47886562
+      },
+      {
+        "name": "aclrtSynchronizeStreamWithTimeout",
+        "calls": 69,
+        "host_seconds": 3.45657055
+      },
+      {
+        "name": "aclrtRecordEvent",
+        "calls": 95135,
+        "host_seconds": 2.02620619
+      },
+      {
+        "name": "hcom_reduceScatter_",
+        "calls": 4504,
+        "host_seconds": 2.00669711
+      },
+      {
+        "name": "aclrtSynchronizeStream",
+        "calls": 549,
+        "host_seconds": 1.93933827
+      },
+      {
+        "name": "aclnnInplaceCopy",
+        "calls": 56924,
+        "host_seconds": 1.900364
+      },
+      {
+        "name": "hcom_allGather_",
+        "calls": 4721,
+        "host_seconds": 1.55954101
+      },
+      {
+        "name": "aclnnMul",
+        "calls": 30800,
+        "host_seconds": 0.74077339
+      },
+      {
+        "name": "aclrtStreamWaitEvent",
+        "calls": 49649,
+        "host_seconds": 0.73580882
+      },
+      {
+        "name": "aclrtQueryEventStatus",
+        "calls": 168827,
+        "host_seconds": 0.7191232
+      },
+      {
+        "name": "aclnnMatmul",
+        "calls": 16928,
+        "host_seconds": 0.57494826
+      },
+      {
+        "name": "aclnnPowTensorScalar",
+        "calls": 9281,
+        "host_seconds": 0.45135708
+      },
+      {
+        "name": "aclrtMemcpyAsyncWithCondition",
+        "calls": 8181,
+        "host_seconds": 0.39595415
+      },
+      {
+        "name": "aclrtCreateEventExWithFlag",
+        "calls": 68871,
+        "host_seconds": 0.38933472
+      },
+      {
+        "name": "Launch_Ffts",
+        "calls": 9655,
+        "host_seconds": 0.33870209
+      },
+      {
+        "name": "aclnnCat",
+        "calls": 8562,
+        "host_seconds": 0.28797638
+      },
+      {
+        "name": "aclnnReduceSum",
+        "calls": 7832,
+        "host_seconds": 0.25737352
+      },
+      {
+        "name": "aclrtGetStreamAttribute",
+        "calls": 184882,
+        "host_seconds": 0.25138907
+      }
+    ],
+    "device_task_types": [
+      {
+        "type": "SDMA",
+        "calls": 48234,
+        "summed_seconds": 66.311658132
+      },
+      {
+        "type": "AI_CORE",
+        "calls": 9655,
+        "summed_seconds": 51.235335985
+      },
+      {
+        "type": "EVENT_WAIT",
+        "calls": 41956,
+        "summed_seconds": 47.382520076
+      },
+      {
+        "type": "KERNEL_AICORE",
+        "calls": 18448,
+        "summed_seconds": 25.394318866
+      },
+      {
+        "type": "KERNEL_MIX_AIC",
+        "calls": 10768,
+        "summed_seconds": 25.194754886
+      },
+      {
+        "type": "KERNEL_AIVEC",
+        "calls": 183195,
+        "summed_seconds": 17.701450569
+      },
+      {
+        "type": "MEMCPY_ASYNC",
+        "calls": 11506,
+        "summed_seconds": 13.920426536
+      },
+      {
+        "type": "KERNEL_MIX_AIV",
+        "calls": 24110,
+        "summed_seconds": 1.665621846
+      },
+      {
+        "type": "Notify Wait",
+        "calls": 19314,
+        "summed_seconds": 1.125881377
+      },
+      {
+        "type": "Write Value",
+        "calls": 19314,
+        "summed_seconds": 0.014617967
+      },
+      {
+        "type": "KERNEL_AICPU",
+        "calls": 32,
+        "summed_seconds": 0.008120403
+      },
+      {
+        "type": "EVENT_RECORD",
+        "calls": 95135,
+        "summed_seconds": 0.001587151
+      },
+      {
+        "type": "AIV",
+        "calls": 1,
+        "summed_seconds": 5.16e-06
+      },
+      {
+        "type": "PLACE_HOLDER_SQE",
+        "calls": 7,
+        "summed_seconds": 1e-07
+      },
+      {
+        "type": "PROFILING_DISABLE",
+        "calls": 1,
+        "summed_seconds": 2e-08
+      },
+      {
+        "type": "PROFILING_ENABLE",
+        "calls": 1,
+        "summed_seconds": 0.0
+      }
+    ],
+    "exclusive_timeline": [
+      {
+        "mask": 1,
+        "pieces": 150783,
+        "seconds": 25.060232243
+      },
+      {
+        "mask": 3,
+        "pieces": 87124,
+        "seconds": 23.641336368
+      },
+      {
+        "mask": 2,
+        "pieces": 72618,
+        "seconds": 22.268790985
+      },
+      {
+        "mask": 0,
+        "pieces": 124785,
+        "seconds": 18.349557504
+      },
+      {
+        "mask": 8,
+        "pieces": 44,
+        "seconds": 10.36053925
+      },
+      {
+        "mask": 4,
+        "pieces": 11298,
+        "seconds": 7.237036901
+      },
+      {
+        "mask": 7,
+        "pieces": 12772,
+        "seconds": 2.956820328
+      },
+      {
+        "mask": 6,
+        "pieces": 12231,
+        "seconds": 2.337553059
+      },
+      {
+        "mask": 5,
+        "pieces": 8204,
+        "seconds": 1.389016248
+      }
+    ],
+    "boundary_finalize_host": [
+      {
+        "name": "zero/flush_oversized_ready",
+        "calls": 2960,
+        "host_seconds": 10.81423058
+      },
+      {
+        "name": "zero/partition_gradients",
+        "calls": 4504,
+        "host_seconds": 8.32234727
+      },
+      {
+        "name": "zero/deferred_boundary",
+        "calls": 8,
+        "host_seconds": 4.49321587
+      },
+      {
+        "name": "zero/boundary_gradient_offload",
+        "calls": 851,
+        "host_seconds": 2.48555688
+      }
+    ]
+  },
+  "schema_reference": "Skill get_schema.py TASK; PYTORCH_API absent in reference, PRAGMA fallback used",
+  "execution": "Read-only SQLite fallback; msprof_mcp tools not configured",
+  "wall_window_check": {
+    "recorded_step_seconds": 113.57522329990752,
+    "device_window_seconds": 113.600882886,
+    "difference_seconds": 0.02565958609247332
+  },
+  "capture_note": "Single active RECORD_AND_SAVE schedule; verify stop metadata, DB export and update time window",
+  "limits": [
+    "Summed kernel/API/communication durations may overlap; do not add them as critical-path time",
+    "CPUAdam is a user record_function range around unmodified library math",
+    "Profiling run excluded from unprofiled throughput ranking",
+    "Gradient transfer host ranges measure API elapsed time, not isolated DMA time; logical bytes are tracked separately."
+  ]
+}

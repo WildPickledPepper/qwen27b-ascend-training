@@ -1,0 +1,27 @@
+"""Derive reporting from the prior measured boundary-overlap experiment."""
+from pathlib import Path
+r=Path(__file__).resolve().parent;b=r.parent/'sql-boundary-overlap-20261025'
+s=(b/'collect_result.py').read_text()
+s=s.replace('sql-reduce-schedule-results.json','sql-boundary-overlap-results.json').replace("prior['scheduled_seconds_per_256']","prior['candidate_seconds_per_256']")
+s=s.replace('sql-boundary-overlap-results.json\').write_text','sql-reduce-bucket-results.json\').write_text')
+s=s.replace("assert result['completed']", "assert result['ready_reduce']['native_packet_grouping_preserved']\n assert result['completed']")
+s=s.replace("probe=json.loads((r/'probe-comparison.json').read_text());assert probe['passed']", "probe=json.loads((r/'probe-comparison.json').read_text());assert probe['passed']\nfor rank in [0,1]:\n native=json.loads((r/'tiny-native'/f'rank{rank}-result.json').read_text())\n candidate=json.loads((r/'tiny-cache'/f'rank{rank}-result.json').read_text())\n assert candidate['ready_reduce']['reduce_bucket_elements']==4096\n for a,b in zip(native['steps'],candidate['steps']):\n  assert b['ready_reduce_stats']['immediate_singleton_flush_calls']==16\n  assert a['gradient_observer_stats']['average_scatter_calls']==b['gradient_observer_stats']['average_scatter_calls']==16")
+s=s.replace("assert a['cpu_gradient_accumulation_stats']['deferred_boundary_parameters']==851", "assert a['cpu_gradient_accumulation_stats']['deferred_boundary_parameters']==851\n  assert a['ready_reduce_stats']['immediate_singleton_flush_calls']==2960")
+s=s.replace("'cpu_accumulation_plan':x['cpu_gradient_accumulation']", "'cpu_accumulation_plan':x['cpu_gradient_accumulation'],'ready_reduce':x['ready_reduce']")
+(r/'collect_result.py').write_text(s,encoding='utf-8',newline='\n')
+s=(b/'postprocess.py').read_text().replace('qwen-sql-reduce-schedule-20261025','qwen-sql-boundary-overlap-20261025')
+s=s.replace("'analyze_boundary.py'","'analyze_ready.py'")
+s=s.replace("assert result['completed']", "assert result['ready_reduce']['native_packet_grouping_preserved']\n assert result['completed']")
+s=s.replace("assert row['cpu_gradient_accumulation_stats']['deferred_boundary_parameters']==851", "assert row['cpu_gradient_accumulation_stats']['deferred_boundary_parameters']==851\n  assert row['ready_reduce_stats']['immediate_singleton_flush_calls']==2960")
+start=s.index(" 'guard_failure':");end=s.index(" 'limits':",start)
+s=s[:start]+" 'ready_singleton_path_exercised_all_full_steps':True,\n"+s[end:]
+(r/'postprocess.py').write_text(s,encoding='utf-8',newline='\n')
+s=(b/'analyze_boundary.py').read_text().replace("'zero/deferred_boundary','zero/partition_gradients','zero/boundary_gradient_offload'", "'zero/deferred_boundary','zero/partition_gradients','zero/boundary_gradient_offload','zero/flush_oversized_ready'")
+(r/'analyze_ready.py').write_text(s,encoding='utf-8',newline='\n')
+s=(b/'create_selected.py').read_text().replace('sql-boundary-overlap-results.json','sql-reduce-bucket-results.json').replace("'sql-reduce-schedule-20261025'","'sql-boundary-overlap-20261025'")
+s=s.replace("e['time_reduction_percent']>0", "e['time_reduction_percent']>=1")
+s=s.replace("name='sql-fixed256-deferred-boundary'", "name='sql-fixed256-ready-singleton'")
+s=s.replace("names=['train_boundary.py' if n=='train_reduce.py' else n for n in v['files_sha256']]", "names=['train_ready.py' if n=='train_boundary.py' else n for n in v['files_sha256']]+['ready_reduce.py']\nv['ready_reduce']=raw['ready_reduce']")
+s=s.replace(".replace('train_reduce.py','train_boundary.py')", ".replace('train_boundary.py','train_ready.py').replace(\"'--cpu-gradient-accum']\",\"'--cpu-gradient-accum','--ready-reduce']\")")
+(r/'create_selected.py').write_text(s,encoding='utf-8',newline='\n')
+print('Generated bounded evidence collection and selected-run replay gates')

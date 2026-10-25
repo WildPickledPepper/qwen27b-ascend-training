@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "both_ranks_complete": true,
+  "tiny_full_gradient_master_m_v_bitwise": true,
+  "same_boundary_parameter_count_all_steps": true,
+  "native_reduce_event_limit_4_preserved": true,
+  "cpu_receive_slots_32_preserved": true,
+  "cpu_fp32_master_m_v_preserved": true,
+  "same_data_hashes_order_lengths_validation_split": true,
+  "same_deepspeed_configuration": true,
+  "same_768_sample_validation_metrics": true,
+  "same_logical_gradient_transfer_bytes": true,
+  "profile_valid": true,
+  "resource_release": {
+    "unix": 1792928674.4925814,
+    "devices": {
+      "2": {
+        "no_running_processes": true,
+        "hbm_mib": 3415
+      },
+      "3": {
+        "no_running_processes": true,
+        "hbm_mib": 3415
+      }
+    },
+    "other_known_service_still_present": true
+  },
+  "ready_singleton_path_exercised_all_full_steps": true,
+  "limits": "Tiny bitwise checks and eight heldout samples do not establish full-model long-term identity."
+}
