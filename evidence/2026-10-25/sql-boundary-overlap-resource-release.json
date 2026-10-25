@@ -1,0 +1,14 @@
+{
+  "unix": 1792925839.848774,
+  "devices": {
+    "2": {
+      "no_running_processes": true,
+      "hbm_mib": 3418
+    },
+    "3": {
+      "no_running_processes": true,
+      "hbm_mib": 3416
+    }
+  },
+  "other_known_service_still_present": true
+}
