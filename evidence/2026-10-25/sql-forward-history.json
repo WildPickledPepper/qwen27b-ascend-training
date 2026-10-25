@@ -1,0 +1,1184 @@
+{
+  "reference": [
+    {
+      "rank": 0,
+      "steps": [
+        {
+          "step": 2,
+          "micro_wall_seconds": [
+            8.60485315322876,
+            9.67054295539856,
+            9.597844362258911,
+            9.605193614959717,
+            9.615893363952637,
+            9.608488321304321,
+            10.056432723999023,
+            28.821929216384888
+          ],
+          "phase_wall_seconds": {
+            "forward_wall": 16.745925140334293,
+            "backward_wall": 64.06836763978936,
+            "step_wall": 14.759191299788654
+          },
+          "peak_reserved": 62516101120,
+          "peak_allocated": 42738942976
+        },
+        {
+          "step": 3,
+          "micro_wall_seconds": [
+            8.956557750701904,
+            9.678049325942993,
+            9.634654998779297,
+            9.775899887084961,
+            9.640288591384888,
+            9.729297876358032,
+            9.953660249710083,
+            28.5283260345459
+          ],
+          "phase_wall_seconds": {
+            "forward_wall": 17.073898250004277,
+            "backward_wall": 64.35457873018458,
+            "step_wall": 14.460584050277248
+          },
+          "peak_reserved": 62516101120,
+          "peak_allocated": 46034246656
+        }
+      ],
+      "shape_history": [
+        {
+          "step": 1,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 192,
+              "first_training_occurrence": true
+            },
+            {
+              "micro": 2,
+              "padded_length": 256,
+              "first_training_occurrence": true
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 256,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 2,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 256,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 2,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            }
+          ]
+        }
+      ],
+      "numa_placement": [
+        {
+          "rank": 0,
+          "anonymous_resident_gib": {
+            "4": 74.14774322509766,
+            "6": 87.19887161254883,
+            "5": 0.003917694091796875,
+            "1": 0.000118255615234375,
+            "3": 0.003742218017578125,
+            "7": 2.6702880859375e-05,
+            "2": 2.6702880859375e-05
+          }
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "steps": [
+        {
+          "step": 2,
+          "micro_wall_seconds": [
+            8.605029106140137,
+            9.674330472946167,
+            9.59761667251587,
+            9.605674266815186,
+            9.615086793899536,
+            9.608538150787354,
+            10.057394981384277,
+            28.81281280517578
+          ],
+          "phase_wall_seconds": {
+            "forward_wall": 16.97598804999143,
+            "backward_wall": 63.83642584993504,
+            "step_wall": 14.756080260500312
+          },
+          "peak_reserved": 61526245376,
+          "peak_allocated": 42738942976
+        },
+        {
+          "step": 3,
+          "micro_wall_seconds": [
+            8.956786394119263,
+            9.682295799255371,
+            9.63390564918518,
+            9.77614974975586,
+            9.64117956161499,
+            9.714102983474731,
+            9.967307090759277,
+            28.521146774291992
+          ],
+          "phase_wall_seconds": {
+            "forward_wall": 16.956250599352643,
+            "backward_wall": 64.48084103991278,
+            "step_wall": 14.447707020211965
+          },
+          "peak_reserved": 61631102976,
+          "peak_allocated": 42738942976
+        }
+      ],
+      "shape_history": [
+        {
+          "step": 1,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 192,
+              "first_training_occurrence": true
+            },
+            {
+              "micro": 2,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 256,
+              "first_training_occurrence": true
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 256,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 256,
+              "first_training_occurrence": false
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 2,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 2,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            }
+          ]
+        }
+      ],
+      "numa_placement": [
+        {
+          "rank": 1,
+          "anonymous_resident_gib": {
+            "5": 69.89387130737305,
+            "6": 87.73249053955078,
+            "4": 3.6054725646972656,
+            "1": 0.000118255615234375,
+            "3": 0.003742218017578125,
+            "7": 2.6702880859375e-05,
+            "2": 2.6702880859375e-05
+          }
+        }
+      ]
+    }
+  ],
+  "eager_reduce": [
+    {
+      "rank": 0,
+      "steps": [
+        {
+          "step": 2,
+          "micro_wall_seconds": [
+            8.436387777328491,
+            9.750224351882935,
+            9.527228832244873,
+            9.605309963226318,
+            9.486488342285156,
+            9.645987749099731,
+            9.980174779891968,
+            28.42632222175598
+          ],
+          "phase_wall_seconds": {
+            "forward_wall": 17.050766210071743,
+            "backward_wall": 63.423164889449254,
+            "step_wall": 14.368736080126837
+          },
+          "peak_reserved": 62453186560,
+          "peak_allocated": 44546681856
+        },
+        {
+          "step": 3,
+          "micro_wall_seconds": [
+            12.585691690444946,
+            9.4920973777771,
+            9.54150104522705,
+            9.500312328338623,
+            9.457207918167114,
+            9.65991759300232,
+            9.879410743713379,
+            28.97401189804077
+          ],
+          "phase_wall_seconds": {
+            "forward_wall": 20.859426440205425,
+            "backward_wall": 63.327018479816616,
+            "step_wall": 14.887919829925522
+          },
+          "peak_reserved": 62453186560,
+          "peak_allocated": 46034246656
+        }
+      ],
+      "shape_history": [
+        {
+          "step": 1,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 192,
+              "first_training_occurrence": true
+            },
+            {
+              "micro": 2,
+              "padded_length": 256,
+              "first_training_occurrence": true
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 256,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 2,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 256,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 2,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            }
+          ]
+        }
+      ],
+      "numa_placement": [
+        {
+          "rank": 0,
+          "anonymous_resident_gib": {
+            "4": 74.15328216552734,
+            "6": 87.19730377197266,
+            "1": 0.000118255615234375,
+            "3": 0.003726959228515625,
+            "5": 1.52587890625e-05,
+            "7": 2.288818359375e-05,
+            "2": 2.6702880859375e-05
+          }
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "steps": [
+        {
+          "step": 2,
+          "micro_wall_seconds": [
+            8.436599969863892,
+            9.752999782562256,
+            9.528255939483643,
+            9.604748249053955,
+            9.486593008041382,
+            9.646474838256836,
+            9.979822397232056,
+            28.417300939559937
+          ],
+          "phase_wall_seconds": {
+            "forward_wall": 16.882152550155297,
+            "backward_wall": 63.58944122027606,
+            "step_wall": 14.359344659605995
+          },
+          "peak_reserved": 63162023936,
+          "peak_allocated": 44546681856
+        },
+        {
+          "step": 3,
+          "micro_wall_seconds": [
+            12.585861444473267,
+            9.496517181396484,
+            9.541505098342896,
+            9.499777793884277,
+            9.456685781478882,
+            9.656083345413208,
+            9.884296894073486,
+            28.964182138442993
+          ],
+          "phase_wall_seconds": {
+            "forward_wall": 20.094056300120428,
+            "backward_wall": 64.09267529007047,
+            "step_wall": 14.87560985982418
+          },
+          "peak_reserved": 63162023936,
+          "peak_allocated": 44546681856
+        }
+      ],
+      "shape_history": [
+        {
+          "step": 1,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 192,
+              "first_training_occurrence": true
+            },
+            {
+              "micro": 2,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 256,
+              "first_training_occurrence": true
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 256,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 256,
+              "first_training_occurrence": false
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 2,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 2,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            }
+          ]
+        }
+      ],
+      "numa_placement": [
+        {
+          "rank": 1,
+          "anonymous_resident_gib": {
+            "5": 69.90765380859375,
+            "4": 4.171913146972656,
+            "6": 87.15238189697266,
+            "1": 0.000118255615234375,
+            "3": 0.003726959228515625,
+            "7": 2.288818359375e-05,
+            "2": 2.6702880859375e-05
+          }
+        }
+      ]
+    }
+  ],
+  "cpu_fused": [
+    {
+      "rank": 0,
+      "steps": [
+        {
+          "step": 2,
+          "micro_wall_seconds": [
+            8.559492349624634,
+            9.619771242141724,
+            9.53532338142395,
+            9.56570291519165,
+            9.613047122955322,
+            9.604416131973267,
+            10.102012872695923,
+            27.141842126846313
+          ],
+          "phase_wall_seconds": {
+            "forward_wall": 17.119179779663682,
+            "backward_wall": 63.80302487965673,
+            "step_wall": 12.811546660028398
+          },
+          "peak_reserved": 62304288768,
+          "peak_allocated": 42738942976
+        },
+        {
+          "step": 3,
+          "micro_wall_seconds": [
+            12.810874938964844,
+            9.547623872756958,
+            9.636837720870972,
+            9.67426085472107,
+            9.664828777313232,
+            9.574211597442627,
+            9.935146570205688,
+            26.824263095855713
+          ],
+          "phase_wall_seconds": {
+            "forward_wall": 21.096971129998565,
+            "backward_wall": 63.82713746000081,
+            "step_wall": 12.736333669861779
+          },
+          "peak_reserved": 62977474560,
+          "peak_allocated": 46034246656
+        }
+      ],
+      "shape_history": [
+        {
+          "step": 1,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 192,
+              "first_training_occurrence": true
+            },
+            {
+              "micro": 2,
+              "padded_length": 256,
+              "first_training_occurrence": true
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 256,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 2,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 256,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 2,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            }
+          ]
+        }
+      ],
+      "numa_placement": [
+        {
+          "rank": 0,
+          "anonymous_resident_gib": {
+            "4": 73.34504318237305,
+            "7": 0.007472991943359375,
+            "6": 87.99808502197266,
+            "1": 0.000118255615234375,
+            "3": 0.003742218017578125,
+            "5": 1.9073486328125e-05,
+            "2": 2.6702880859375e-05
+          }
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "steps": [
+        {
+          "step": 2,
+          "micro_wall_seconds": [
+            8.5598726272583,
+            9.623753309249878,
+            9.53404450416565,
+            9.56682538986206,
+            9.612465381622314,
+            9.604844331741333,
+            10.102643489837646,
+            27.132378339767456
+          ],
+          "phase_wall_seconds": {
+            "forward_wall": 16.812678680289537,
+            "backward_wall": 64.11060616001487,
+            "step_wall": 12.805308049777523
+          },
+          "peak_reserved": 63984107520,
+          "peak_allocated": 42738942976
+        },
+        {
+          "step": 3,
+          "micro_wall_seconds": [
+            12.811219930648804,
+            9.550518989562988,
+            9.6378014087677,
+            9.673725366592407,
+            9.665486812591553,
+            9.572547435760498,
+            9.936517715454102,
+            26.81583333015442
+          ],
+          "phase_wall_seconds": {
+            "forward_wall": 20.2128226198256,
+            "backward_wall": 64.70687276031822,
+            "step_wall": 12.735713680274785
+          },
+          "peak_reserved": 63984107520,
+          "peak_allocated": 42738942976
+        }
+      ],
+      "shape_history": [
+        {
+          "step": 1,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 192,
+              "first_training_occurrence": true
+            },
+            {
+              "micro": 2,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 256,
+              "first_training_occurrence": true
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 256,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 256,
+              "first_training_occurrence": false
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 2,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "shapes": [
+            {
+              "micro": 1,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 2,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 3,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 4,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 5,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 6,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 7,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            },
+            {
+              "micro": 8,
+              "padded_length": 192,
+              "first_training_occurrence": false
+            }
+          ]
+        }
+      ],
+      "numa_placement": [
+        {
+          "rank": 1,
+          "anonymous_resident_gib": {
+            "5": 69.7474479675293,
+            "7": 0.00788116455078125,
+            "4": 3.244140625,
+            "6": 88.23246002197266,
+            "1": 0.000118255615234375,
+            "3": 0.003742218017578125,
+            "2": 2.6702880859375e-05
+          }
+        }
+      ]
+    }
+  ]
+}
