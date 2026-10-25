@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "selected_runtime_config_exact_match": true,
+  "selected_global_batch": 128,
+  "selected_micro_batch_per_rank": 16,
+  "selected_accumulation": 4,
+  "three_fixed_data_runs_completed": true,
+  "samples_per_case": 768,
+  "steady_measured_samples_per_case": 512,
+  "input_and_padding_work_equal_in_steady_window": true,
+  "all_source_and_data_checks_passed_in_collector": true,
+  "fp32_master_and_adam_states": true,
+  "selection_scope": "eight-example short validation, checkpoints every256 examples"
+}

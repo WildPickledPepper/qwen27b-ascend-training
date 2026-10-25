@@ -1,0 +1,246 @@
+{
+  "records": [
+    {
+      "step": 1,
+      "samples": 256,
+      "effective_input_tokens": 28426,
+      "assistant_tokens": 7693,
+      "native_pair_sequence_lengths": [
+        [
+          192,
+          192
+        ],
+        [
+          256,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          256
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          256,
+          256
+        ],
+        [
+          192,
+          256
+        ]
+      ],
+      "scheduled_pair_sequence_lengths": [
+        [
+          256,
+          256
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "native_padded_tokens": 54272,
+      "scheduled_padded_tokens": 38912,
+      "native_sum_of_microbatch_max_padded_tokens_per_rank": 28672,
+      "scheduled_sum_of_microbatch_max_padded_tokens_per_rank": 19456,
+      "native_shape_mismatch_microbatches": 3,
+      "unchanged_sample_multiset_sha256": "3672cac29484fb26c66089e37a6f57952c17c2e96ba3de82f63837ce2560b06b"
+    },
+    {
+      "step": 2,
+      "samples": 256,
+      "effective_input_tokens": 28549,
+      "assistant_tokens": 7562,
+      "native_pair_sequence_lengths": [
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          192
+        ]
+      ],
+      "scheduled_pair_sequence_lengths": [
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "native_padded_tokens": 49152,
+      "scheduled_padded_tokens": 36864,
+      "native_sum_of_microbatch_max_padded_tokens_per_rank": 24576,
+      "scheduled_sum_of_microbatch_max_padded_tokens_per_rank": 18432,
+      "native_shape_mismatch_microbatches": 0,
+      "unchanged_sample_multiset_sha256": "79e798833c97ce970a428a1569e22a1044295e642b1eb1d23868cc23e338be79"
+    },
+    {
+      "step": 3,
+      "samples": 256,
+      "effective_input_tokens": 28564,
+      "assistant_tokens": 7814,
+      "native_pair_sequence_lengths": [
+        [
+          256,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          192
+        ]
+      ],
+      "scheduled_pair_sequence_lengths": [
+        [
+          256,
+          256
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "native_padded_tokens": 50176,
+      "scheduled_padded_tokens": 38912,
+      "native_sum_of_microbatch_max_padded_tokens_per_rank": 25600,
+      "scheduled_sum_of_microbatch_max_padded_tokens_per_rank": 19456,
+      "native_shape_mismatch_microbatches": 1,
+      "unchanged_sample_multiset_sha256": "1dbb0e8f681e1f3495b26914af023fa6e80a801ae895b6f3303c83bba0212051"
+    }
+  ],
+  "padding_reduction_percent": 25.33333333333333,
+  "limits": "CPU metadata audit, not measured speedup. Reordering microbatches changes BF16 accumulation grouping; dtype/master/m/v and update frequency need not change."
+}

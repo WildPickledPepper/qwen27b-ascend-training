@@ -1,0 +1,38 @@
+{
+  "name": "sql-fixed256-reduce-lookahead4",
+  "global_batch": 256,
+  "micro_batch_per_rank": 16,
+  "accumulation": 8,
+  "physical_devices": [
+    2,
+    3
+  ],
+  "cpu_threads_per_rank": 24,
+  "numa_spread": true,
+  "cpu_update_mode": "pipeline",
+  "cpu_gradient_receive_slots": 32,
+  "cpu_gradient_pinned_bytes_per_rank": 6569328640,
+  "native_reduce_event_limit": 4,
+  "max_queued_reduce_events": 5,
+  "max_sequence_length_cap": 512,
+  "padding": "dynamic64, minimum128; unchanged",
+  "training_sample_order": "unchanged",
+  "compute_dtype": "BF16",
+  "master_m_v_dtype": "FP32 on CPU; unchanged",
+  "seconds_per_256": 101.28312914993148,
+  "reference_seconds_per_256": 107.97092516999692,
+  "time_reduction_percent": 6.194071236803522,
+  "config": "zero3-selected.json",
+  "source_hash_normalization": "LF newlines",
+  "files_sha256": {
+    "train_reduce.py": "c10a88782d96dc387df13c62c1d03302366d6cfda8d1235b9ac98b2f1ee26c02",
+    "cpu_accumulation.py": "4170bf54bad9af445d27b5a7355f887c6c0283881f67198aab17a07f02e4056e",
+    "cpu_update.py": "7ea5907c9b24a6492283414e2edd1c37bdb2014fbc9fdd24fb7bbe0cb76b05bf",
+    "bounded_grad_copy.py": "33ca729bbec3d332e0aa0ad7726d25b2f9c19fc819f1e04012b035c9db913d21",
+    "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b",
+    "gradient_cache.py": "4c1cda4c05579ea8b82dc0e118fed9ad74863a6d07042f50d1d63064467898a4",
+    "gradient_scopes.py": "dfa4a63f956a2dc3ca7d8096651ce6ff1f0ddb998e8919aa38a05b82328a30a1",
+    "zero3-selected.json": "d288a72e59cdcdf326fa8397be343d9d082acc9becc49ed711c9a4fefe902c3d"
+  },
+  "scope": "Measured on the current SQL short corpus; not a capacity or convergence claim for arbitrary data."
+}

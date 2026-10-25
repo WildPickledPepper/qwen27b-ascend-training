@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "unix": 1792923032.8229196,
+  "both_ranks_complete": true,
+  "same_deepspeed_config_as_native_reference": true,
+  "selected_source_and_config_hashes_match": true,
+  "full_tiny_gradient_master_m_v_bitwise_comparison": true,
+  "normal_stop_metadata_present": true,
+  "parsed_db_present": true,
+  "physical_memory_api_query": "SELECT n.value AS name,COUNT(*) AS calls,SUM(c.endNs-c.startNs)/1e9 AS host_seconds FROM CANN_API c LEFT JOIN STRING_IDS n ON n.id=c.name WHERE n.value IN ('aclrtMallocPhysical','aclrtFreePhysical') GROUP BY n.value ORDER BY host_seconds DESC LIMIT 20",
+  "physical_memory_api_rows": [],
+  "physical_devices_2_3_released": true,
+  "other_known_service_still_present": true,
+  "experiment_states": {
+    "qwen-sql-reduce-schedule-20261025": "complete",
+    "qwen-sql-layer-gather-20261025": "complete",
+    "qwen-sql-gradient-pipeline-20261025": "complete",
+    "qwen-sql-gradient-cpu-20261025": "complete",
+    "qwen-sql-gradient-cache-20261025": "complete",
+    "qwen-sql-ffn-gather-20261025": "cancelled_before_gpu_use"
+  },
+  "limits": "Short validation and tiny bitwise comparison do not establish full-model long-run bitwise identity or convergence."
+}

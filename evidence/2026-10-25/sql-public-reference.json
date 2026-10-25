@@ -1,0 +1,68 @@
+{
+  "datasets": [
+    {
+      "repository": "b-mc2/sql-create-context",
+      "revision": "9d80a6a118b838d9defc3798d659a54a2ac2ff37",
+      "file": "sql_create_context_v4.json",
+      "bytes": 21752418,
+      "sha256": "280961458ccb74731104ae9af715797a0332327a33a210120a6884085a5c03f0"
+    },
+    {
+      "repository": "gretelai/synthetic_text_to_sql",
+      "revision": "740ab236e64503fba51be1101df7a1be83bf455d",
+      "file": "synthetic_text_to_sql_train.snappy.parquet",
+      "bytes": 32363736,
+      "sha256": "2bee9ac07cf5057d36b5ea30fb47d948697e882f42bd1cc661185396287c0180"
+    },
+    {
+      "repository": "gretelai/synthetic_text_to_sql",
+      "revision": "740ab236e64503fba51be1101df7a1be83bf455d",
+      "file": "synthetic_text_to_sql_test.snappy.parquet",
+      "bytes": 1901018,
+      "sha256": "f2056edcd897db59c89d12bde149a36d4e242ac0d2c6d4d42b1f2bc764318993"
+    }
+  ],
+  "reference": {
+    "source_model": "mahernaija/Qwen3.5-27B-Text2SQL",
+    "revision": "a2133f4fe43695dc5d1cf9f8636c485f6cb758b1",
+    "training_args_sha256": "bac996115f252ffd276ca5d0ff9fadf215f59ab46f9e6fcf21c28f054aecca9b",
+    "training_args_read_method": "pickletools opcode inspection only; no torch.load/pickle execution",
+    "settings": {
+      "per_device_train_batch_size": 2,
+      "num_train_epochs": 1,
+      "learning_rate": 2e-05,
+      "weight_decay": 0.01,
+      "adam_beta1": 0.9,
+      "adam_beta2": 0.999,
+      "adam_epsilon": 1e-08,
+      "gradient_accumulation_steps": 8,
+      "average_tokens_across_devices": true,
+      "max_grad_norm": 1.0,
+      "bf16": true,
+      "fp16": false,
+      "gradient_checkpointing": false,
+      "seed": 42,
+      "data_seed": null,
+      "dataloader_drop_last": true,
+      "warmup_ratio": 0.05
+    },
+    "completed_steps": 698,
+    "author_reported_total_seconds": 11160,
+    "author_reported_samples": 178000,
+    "author_reported_cards": 16,
+    "author_reported_sequence_limit": 512,
+    "author_has_per_step_wall_times": false,
+    "author_eval_final": {
+      "epoch": 1.0,
+      "eval_loss": 0.17584605515003204,
+      "eval_runtime": 49.4161,
+      "eval_samples_per_second": 118.403,
+      "eval_steps_per_second": 0.243,
+      "step": 698
+    },
+    "limitations": [
+      "No public preprocessing/training script found in model file listing.",
+      "Public model card gives total wall time, not isolated steady-state step times."
+    ]
+  }
+}

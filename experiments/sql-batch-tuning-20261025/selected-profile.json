@@ -1,0 +1,24 @@
+{
+  "model_family": "Qwen3.5-27B text-only SQL",
+  "physical_cards": [
+    2,
+    3
+  ],
+  "global_batch": 128,
+  "micro_batch_per_rank": 16,
+  "gradient_accumulation_steps": 4,
+  "max_sequence_length": 512,
+  "checkpoint": "on",
+  "cpu_threads_per_rank": 24,
+  "numa_spread": true,
+  "cpu_mode": "pipeline",
+  "fuse_gdn": true,
+  "pad_mode": "dynamic64",
+  "config": "zero3-selected.json",
+  "compute_dtype": "BF16",
+  "master_and_adam_states": "CPU FP32",
+  "lr_schedule_basis": "processed samples, reference batch256, warmup8960 samples, total178688 samples",
+  "short_validation_target": 0.86,
+  "selection_reason": "Shortest observed training time to validation loss <=0.86; within 5% prefer higher steady throughput.",
+  "selection_scope": "Fixed 768 SQL samples and eight validation examples; not long-run optimality."
+}

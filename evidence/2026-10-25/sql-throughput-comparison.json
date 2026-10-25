@@ -1,0 +1,415 @@
+{
+  "completed": true,
+  "cards": 2,
+  "hardware": "Ascend 910B2 64 GiB",
+  "model": "Qwen3.5-27B text backbone",
+  "parameters_updated": 26895998464,
+  "compute": "BF16",
+  "master_and_adam_states": "CPU FP32",
+  "global_batch": 256,
+  "micro_batch_per_rank": 8,
+  "gradient_accumulation": 16,
+  "max_length": 512,
+  "padding": "per microbatch rounded up to 64, minimum 128",
+  "activation_checkpointing": "all 64 layers",
+  "steps": [
+    {
+      "step": 1,
+      "global_samples": 256,
+      "seconds": 246.79431122005917,
+      "samples_per_second": 1.0373010574450898,
+      "input_tokens": 28426,
+      "input_tokens_per_second": 115.18093694896143,
+      "padded_tokens": 48640,
+      "padded_tokens_per_second": 197.0872009145671,
+      "peak_allocated_gib_per_rank": [
+        39.13928747177124,
+        39.13928747177124
+      ],
+      "weighted_loss": 1.1435424461960793,
+      "fp32_m_v_total_bytes": 215167987712,
+      "cpu_update_stats": [
+        {
+          "prepare_group_seconds": 0.0002730803098529577,
+          "prepare_group_calls": 44.0,
+          "gradient_unscale_seconds": 1.687203719979152,
+          "gradient_unscale_calls": 44.0,
+          "cpu_adam_step_seconds": 37.001740790205076,
+          "cpu_adam_step_calls": 44.0,
+          "cpu_bf16_cast_seconds": 1.1759171693120152,
+          "async_copy_submit_seconds": 0.02489754999987781,
+          "async_copy_bytes": 26895998464.0,
+          "master_to_compute_copy_seconds": 1.2264415500685573,
+          "master_to_compute_copy_calls": 44.0,
+          "release_group_seconds": 0.00124914082698524,
+          "release_group_calls": 44.0,
+          "staging_reuse_wait_seconds": 0.0022463693749159575,
+          "staging_final_wait_seconds": 0.08285968005657196
+        },
+        {
+          "prepare_group_seconds": 0.0002857106737792492,
+          "prepare_group_calls": 44.0,
+          "gradient_unscale_seconds": 2.0435522799380124,
+          "gradient_unscale_calls": 44.0,
+          "cpu_adam_step_seconds": 36.44756234018132,
+          "cpu_adam_step_calls": 44.0,
+          "cpu_bf16_cast_seconds": 1.843631979310885,
+          "async_copy_submit_seconds": 0.026989310514181852,
+          "async_copy_bytes": 26895998464.0,
+          "master_to_compute_copy_seconds": 1.897051949519664,
+          "master_to_compute_copy_calls": 44.0,
+          "release_group_seconds": 0.0013539993669837713,
+          "release_group_calls": 44.0,
+          "staging_reuse_wait_seconds": 0.002206249861046672,
+          "staging_final_wait_seconds": 0.07084894995205104
+        }
+      ],
+      "phase_wall_seconds": [
+        {
+          "forward_wall": 37.09871661057696,
+          "backward_wall": 168.86527956975624,
+          "step_wall": 40.80880206939764
+        },
+        {
+          "forward_wall": 36.94398584985174,
+          "backward_wall": 169.02838088013232,
+          "step_wall": 40.80686966027133
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "global_samples": 256,
+      "seconds": 191.92385735013522,
+      "samples_per_second": 1.333862311515383,
+      "input_tokens": 28549,
+      "input_tokens_per_second": 148.751699732237,
+      "padded_tokens": 47104,
+      "padded_tokens_per_second": 245.43066531883048,
+      "peak_allocated_gib_per_rank": [
+        38.8066930770874,
+        38.8066930770874
+      ],
+      "weighted_loss": 1.143628928810358,
+      "fp32_m_v_total_bytes": 215167987712,
+      "cpu_update_stats": [
+        {
+          "prepare_group_seconds": 0.00025357003323733807,
+          "prepare_group_calls": 44.0,
+          "gradient_unscale_seconds": 1.7794138104654849,
+          "gradient_unscale_calls": 44.0,
+          "cpu_adam_step_seconds": 9.492682229960337,
+          "cpu_adam_step_calls": 44.0,
+          "staging_reuse_wait_seconds": 0.002124559599906206,
+          "cpu_bf16_cast_seconds": 1.1952631890308112,
+          "async_copy_submit_seconds": 0.022166069829836488,
+          "async_copy_bytes": 26895998464.0,
+          "master_to_compute_copy_seconds": 1.2414192794822156,
+          "master_to_compute_copy_calls": 44.0,
+          "release_group_seconds": 0.0011959208641201258,
+          "release_group_calls": 44.0,
+          "staging_final_wait_seconds": 0.08699541003443301
+        },
+        {
+          "prepare_group_seconds": 0.00025889999233186245,
+          "prepare_group_calls": 44.0,
+          "gradient_unscale_seconds": 2.082970710005611,
+          "gradient_unscale_calls": 44.0,
+          "cpu_adam_step_seconds": 9.91518258000724,
+          "cpu_adam_step_calls": 44.0,
+          "staging_reuse_wait_seconds": 0.002173609798774123,
+          "cpu_bf16_cast_seconds": 1.8993072910234332,
+          "async_copy_submit_seconds": 0.024038029368966818,
+          "async_copy_bytes": 26895998464.0,
+          "master_to_compute_copy_seconds": 1.9485108004882932,
+          "master_to_compute_copy_calls": 44.0,
+          "release_group_seconds": 0.0013041787315160036,
+          "release_group_calls": 44.0,
+          "staging_final_wait_seconds": 0.0702269698958844
+        }
+      ],
+      "phase_wall_seconds": [
+        {
+          "forward_wall": 33.244803530396894,
+          "backward_wall": 144.32426703977399,
+          "step_wall": 14.339718770235777
+        },
+        {
+          "forward_wall": 32.584352230420336,
+          "backward_wall": 144.99132017046213,
+          "step_wall": 14.336593240033835
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "global_samples": 256,
+      "seconds": 191.0217706200201,
+      "samples_per_second": 1.3401613814439737,
+      "input_tokens": 28564,
+      "input_tokens_per_second": 149.53269413892838,
+      "padded_tokens": 47616,
+      "padded_tokens_per_second": 249.2700169485791,
+      "peak_allocated_gib_per_rank": [
+        39.13928747177124,
+        38.8066930770874
+      ],
+      "weighted_loss": 1.108925700187683,
+      "fp32_m_v_total_bytes": 215167987712,
+      "cpu_update_stats": [
+        {
+          "prepare_group_seconds": 0.00024744984693825245,
+          "prepare_group_calls": 44.0,
+          "gradient_unscale_seconds": 1.7495351212564856,
+          "gradient_unscale_calls": 44.0,
+          "cpu_adam_step_seconds": 9.55116664012894,
+          "cpu_adam_step_calls": 44.0,
+          "staging_reuse_wait_seconds": 0.002258349908515811,
+          "cpu_bf16_cast_seconds": 1.2360726797487587,
+          "async_copy_submit_seconds": 0.022167020943015814,
+          "async_copy_bytes": 26895998464.0,
+          "master_to_compute_copy_seconds": 1.2822727099992335,
+          "master_to_compute_copy_calls": 44.0,
+          "release_group_seconds": 0.0011679104063659906,
+          "release_group_calls": 44.0,
+          "staging_final_wait_seconds": 0.09260480012744665
+        },
+        {
+          "prepare_group_seconds": 0.00025934958830475807,
+          "prepare_group_calls": 44.0,
+          "gradient_unscale_seconds": 2.091090080095455,
+          "gradient_unscale_calls": 44.0,
+          "cpu_adam_step_seconds": 10.095632459968328,
+          "cpu_adam_step_calls": 44.0,
+          "staging_reuse_wait_seconds": 0.002211660146713257,
+          "cpu_bf16_cast_seconds": 1.8498412799090147,
+          "async_copy_submit_seconds": 0.023692019982263446,
+          "async_copy_bytes": 26895998464.0,
+          "master_to_compute_copy_seconds": 1.8987416406162083,
+          "master_to_compute_copy_calls": 44.0,
+          "release_group_seconds": 0.0012791487388312817,
+          "release_group_calls": 44.0,
+          "staging_final_wait_seconds": 0.07023355993442237
+        }
+      ],
+      "phase_wall_seconds": [
+        {
+          "forward_wall": 32.556678540073335,
+          "backward_wall": 143.96450967062265,
+          "step_wall": 14.485036239726469
+        },
+        {
+          "forward_wall": 32.47319932980463,
+          "backward_wall": 144.05561469029635,
+          "step_wall": 14.481483799871057
+        }
+      ]
+    }
+  ],
+  "steady_mean_seconds_excluding_first": 191.47281398507766,
+  "steady_samples_per_second": 1.3370044272705535,
+  "author_samples_per_second_from_reported_total": 15.949820788530467,
+  "author_equivalent_256_sample_seconds": 16.050337078651683,
+  "author_whole_machine_throughput_divided_by_ours": 11.929519800537575,
+  "author_per_card_throughput_divided_by_ours": 1.4911899750671969,
+  "estimated_seconds_for_178000_samples_training_only": 133133.44097399933,
+  "validation_before": {
+    "loss": 1.0108281373977661,
+    "assistant_tokens": 224,
+    "correct": 202,
+    "execution": "native BF16 model"
+  },
+  "validation_after": {
+    "loss": 0.850936233997345,
+    "assistant_tokens": 224,
+    "correct": 204,
+    "execution": "native BF16 model"
+  },
+  "data": {
+    "seed": 42,
+    "max_length": 512,
+    "training_samples": 768,
+    "validation_samples": 8,
+    "unique_training_before_length_filter": 178576,
+    "raw_length_percentiles": {
+      "p50": 106.0,
+      "p90": 145.0,
+      "p99": 200.0,
+      "max": 470.0
+    },
+    "duplicates_removed": 1,
+    "validation_overlap_removed": 0,
+    "prompt_too_long_skipped": 0,
+    "answer_truncated": 0,
+    "selected_source_counts": {
+      "bmc": 343,
+      "gretel": 425
+    },
+    "selected_mean_length": 111.37890625,
+    "manual_chat_template": true,
+    "loss_on_sql_only": true,
+    "source_manifest": {
+      "datasets": [
+        {
+          "repository": "b-mc2/sql-create-context",
+          "revision": "9d80a6a118b838d9defc3798d659a54a2ac2ff37",
+          "file": "sql_create_context_v4.json",
+          "bytes": 21752418,
+          "sha256": "280961458ccb74731104ae9af715797a0332327a33a210120a6884085a5c03f0"
+        },
+        {
+          "repository": "gretelai/synthetic_text_to_sql",
+          "revision": "740ab236e64503fba51be1101df7a1be83bf455d",
+          "file": "synthetic_text_to_sql_train.snappy.parquet",
+          "bytes": 32363736,
+          "sha256": "2bee9ac07cf5057d36b5ea30fb47d948697e882f42bd1cc661185396287c0180"
+        },
+        {
+          "repository": "gretelai/synthetic_text_to_sql",
+          "revision": "740ab236e64503fba51be1101df7a1be83bf455d",
+          "file": "synthetic_text_to_sql_test.snappy.parquet",
+          "bytes": 1901018,
+          "sha256": "f2056edcd897db59c89d12bde149a36d4e242ac0d2c6d4d42b1f2bc764318993"
+        }
+      ],
+      "reference": {
+        "source_model": "mahernaija/Qwen3.5-27B-Text2SQL",
+        "revision": "a2133f4fe43695dc5d1cf9f8636c485f6cb758b1",
+        "training_args_sha256": "bac996115f252ffd276ca5d0ff9fadf215f59ab46f9e6fcf21c28f054aecca9b",
+        "training_args_read_method": "pickletools opcode inspection only; no torch.load/pickle execution",
+        "settings": {
+          "per_device_train_batch_size": 2,
+          "num_train_epochs": 1,
+          "learning_rate": 2e-05,
+          "weight_decay": 0.01,
+          "adam_beta1": 0.9,
+          "adam_beta2": 0.999,
+          "adam_epsilon": 1e-08,
+          "gradient_accumulation_steps": 8,
+          "average_tokens_across_devices": true,
+          "max_grad_norm": 1.0,
+          "bf16": true,
+          "fp16": false,
+          "gradient_checkpointing": false,
+          "seed": 42,
+          "data_seed": null,
+          "dataloader_drop_last": true,
+          "warmup_ratio": 0.05
+        },
+        "completed_steps": 698,
+        "author_reported_total_seconds": 11160,
+        "author_reported_samples": 178000,
+        "author_reported_cards": 16,
+        "author_reported_sequence_limit": 512,
+        "author_has_per_step_wall_times": false,
+        "author_eval_final": {
+          "epoch": 1.0,
+          "eval_loss": 0.17584605515003204,
+          "eval_runtime": 49.4161,
+          "eval_samples_per_second": 118.403,
+          "eval_steps_per_second": 0.243,
+          "step": 698
+        },
+        "limitations": [
+          "No public preprocessing/training script found in model file listing.",
+          "Public model card gives total wall time, not isolated steady-state step times."
+        ]
+      }
+    }
+  },
+  "source_sha256": {
+    "train_sql.py": "d96dfcb29f8e18839bbd45e54be342a894d4d3f8d7b668634a8a330fac4bef79",
+    "prepare_data.py": "08dab4a4103def31c7695006b1c61981c361d3d35be7c62b477b7a358e0198d2",
+    "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b",
+    "cpu_update.py": "7ea5907c9b24a6492283414e2edd1c37bdb2014fbc9fdd24fb7bbe0cb76b05bf",
+    "bounded_grad_copy.py": "33ca729bbec3d332e0aa0ad7726d25b2f9c19fc819f1e04012b035c9db913d21",
+    "zero3-sql.json": "486ff21eb5f4515c3a024b526b185f9704cd518af4b49f705302b01c81364146"
+  },
+  "capacity_check_micro4_first_step": [
+    {
+      "event": "step_complete",
+      "rank": 0,
+      "unix": 1792911205.0288687,
+      "step": 1,
+      "seconds": 400.6251822100021,
+      "weighted_local_loss": 1.119787771254778,
+      "input_tokens": 14106,
+      "peak_allocated": 41311643136,
+      "peak_reserved": 48962207744,
+      "fp32_m_v_bytes": 107583993856,
+      "global_batch_size": 256,
+      "micro_batch_size": 4,
+      "accumulation": 32,
+      "phase_wall_seconds": {
+        "forward_wall": 67.31930952938274,
+        "backward_wall": 293.5527166298125,
+        "step_wall": 39.72280663950369
+      },
+      "padded_input_tokens": 21504,
+      "profiled": false,
+      "cpu_update_stats": {
+        "prepare_group_seconds": 0.00026756059378385544,
+        "prepare_group_calls": 44.0,
+        "gradient_unscale_seconds": 1.7212600810453296,
+        "gradient_unscale_calls": 44.0,
+        "cpu_adam_step_seconds": 35.89367001899518,
+        "cpu_adam_step_calls": 44.0,
+        "cpu_bf16_cast_seconds": 1.382123259594664,
+        "async_copy_submit_seconds": 0.024388210847973824,
+        "async_copy_bytes": 26895998464.0,
+        "master_to_compute_copy_seconds": 1.4321137198712677,
+        "master_to_compute_copy_calls": 44.0,
+        "release_group_seconds": 0.0012449503410607576,
+        "release_group_calls": 44.0,
+        "staging_reuse_wait_seconds": 0.0022900609765201807,
+        "staging_final_wait_seconds": 0.0831581698730588
+      }
+    },
+    {
+      "event": "step_complete",
+      "rank": 1,
+      "unix": 1792911205.0289614,
+      "step": 1,
+      "seconds": 400.6253868001513,
+      "weighted_local_loss": 1.1649311129003763,
+      "input_tokens": 14320,
+      "peak_allocated": 41311643136,
+      "peak_reserved": 48962207744,
+      "fp32_m_v_bytes": 107583993856,
+      "global_batch_size": 256,
+      "micro_batch_size": 4,
+      "accumulation": 32,
+      "phase_wall_seconds": {
+        "forward_wall": 66.23542613093741,
+        "backward_wall": 294.6428091598209,
+        "step_wall": 39.7217411797028
+      },
+      "padded_input_tokens": 22016,
+      "profiled": false,
+      "cpu_update_stats": {
+        "prepare_group_seconds": 0.00027569057419896126,
+        "prepare_group_calls": 44.0,
+        "gradient_unscale_seconds": 2.014467480359599,
+        "gradient_unscale_calls": 44.0,
+        "cpu_adam_step_seconds": 35.35177915007807,
+        "cpu_adam_step_calls": 44.0,
+        "cpu_bf16_cast_seconds": 1.8840152404736727,
+        "async_copy_submit_seconds": 0.027134750969707966,
+        "async_copy_bytes": 26895998464.0,
+        "master_to_compute_copy_seconds": 1.9377033503260463,
+        "master_to_compute_copy_calls": 44.0,
+        "release_group_seconds": 0.001344440970569849,
+        "release_group_calls": 44.0,
+        "staging_reuse_wait_seconds": 0.0022507901303470135,
+        "staging_final_wait_seconds": 0.07107016001828015
+      }
+    }
+  ],
+  "capacity_run_disposition": "Intentional stop after complete first update; not a successful three-step performance result.",
+  "limitations": [
+    "Author total wall time versus our short steady-state training time; validation, checkpoints, startup are not equal.",
+    "Same original Qwen3.5 checkpoint family, data sources, global batch, length cap, and reported optimizer hyperparameters; exact author preprocessing and examples unavailable.",
+    "Our padding, sharding, fused implementation, microbatch, activation recomputation, and CPU offload differ.",
+    "Eight held-out SQL examples and three updates do not measure full-epoch quality. No complete trained checkpoint saved."
+  ]
+}

@@ -1,0 +1,812 @@
+{
+  "completed": true,
+  "same_training_examples": 768,
+  "warmup_samples": 256,
+  "measured_samples_per_case": 512,
+  "validation_target_preregistered": 0.86,
+  "runs": [
+    {
+      "name": "g256-m16",
+      "global_batch": 256,
+      "micro_batch_per_rank": 16,
+      "accumulation": 8,
+      "steps": [
+        {
+          "step": 1,
+          "samples_complete": 256,
+          "seconds": 152.555542540038,
+          "input_tokens": 28426,
+          "padded_tokens": 54272,
+          "peak_allocated_gib_per_rank": [
+            42.8727331161499,
+            42.8727331161499
+          ],
+          "cpu_adam_seconds_per_rank": [
+            37.16556404065341,
+            36.911626810906455
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 21.48410767968744,
+              "backward_wall": 89.77219620998949,
+              "step_wall": 41.282939460128546
+            },
+            {
+              "forward_wall": 21.935731849633157,
+              "backward_wall": 89.32815808034502,
+              "step_wall": 41.28077102964744
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "samples_complete": 512,
+          "seconds": 107.6976491198875,
+          "input_tokens": 28549,
+          "padded_tokens": 49152,
+          "peak_allocated_gib_per_rank": [
+            39.80374240875244,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.460967238759622,
+            10.135861169546843
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 16.690929340198636,
+              "backward_wall": 76.54237002041191,
+              "step_wall": 14.451380440499634
+            },
+            {
+              "forward_wall": 16.958984039723873,
+              "backward_wall": 76.27531774970703,
+              "step_wall": 14.455004799878225
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "samples_complete": 768,
+          "seconds": 108.24420122010633,
+          "input_tokens": 28564,
+          "padded_tokens": 50176,
+          "peak_allocated_gib_per_rank": [
+            42.8727331161499,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.487697890494019,
+            10.19453330943361
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 16.867544719483703,
+              "backward_wall": 76.7662773700431,
+              "step_wall": 14.598043219884858
+            },
+            {
+              "forward_wall": 17.09187875990756,
+              "backward_wall": 76.54850521008484,
+              "step_wall": 14.59597826958634
+            }
+          ]
+        }
+      ],
+      "validation_checkpoints": [
+        {
+          "samples": 256,
+          "training_seconds": 152.555542540038,
+          "metrics": {
+            "loss": 1.0108281373977661,
+            "assistant_tokens": 224,
+            "correct": 202,
+            "execution": "native BF16 model"
+          }
+        },
+        {
+          "samples": 512,
+          "training_seconds": 260.2531916599255,
+          "metrics": {
+            "loss": 0.982580840587616,
+            "assistant_tokens": 224,
+            "correct": 203,
+            "execution": "native BF16 model"
+          }
+        },
+        {
+          "samples": 768,
+          "training_seconds": 368.49739288003184,
+          "metrics": {
+            "loss": 0.8581519722938538,
+            "assistant_tokens": 224,
+            "correct": 204,
+            "execution": "native BF16 model"
+          }
+        }
+      ],
+      "initial_validation": {
+        "loss": 1.0108281373977661,
+        "assistant_tokens": 224,
+        "correct": 202,
+        "execution": "native BF16 model"
+      },
+      "steady_512_sample_seconds": 215.94185033999383,
+      "steady_samples_per_second": 2.3710086729083395,
+      "steady_mean_step_seconds": 107.97092516999692,
+      "short_validation_target": 0.86,
+      "first_target_checkpoint": {
+        "samples": 768,
+        "training_seconds": 368.49739288003184,
+        "metrics": {
+          "loss": 0.8581519722938538,
+          "assistant_tokens": 224,
+          "correct": 204,
+          "execution": "native BF16 model"
+        }
+      },
+      "peak_allocated_gib": 42.8727331161499,
+      "source_sha256": {
+        "train_batch.py": "8638f7a9237cdc44fa00bb6372316bdfb2bff036392fea860b924a25c1c640df",
+        "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b",
+        "cpu_update.py": "7ea5907c9b24a6492283414e2edd1c37bdb2014fbc9fdd24fb7bbe0cb76b05bf",
+        "bounded_grad_copy.py": "33ca729bbec3d332e0aa0ad7726d25b2f9c19fc819f1e04012b035c9db913d21",
+        "zero3-sql.json": "8c36c503529d67c10cf1e94d38b103274e723d9a69ebec11064654b7e3464a28"
+      }
+    },
+    {
+      "name": "g128-m16",
+      "global_batch": 128,
+      "micro_batch_per_rank": 16,
+      "accumulation": 4,
+      "steps": [
+        {
+          "step": 1,
+          "samples_complete": 128,
+          "seconds": 98.31203339993954,
+          "input_tokens": 14069,
+          "padded_tokens": 25600,
+          "peak_allocated_gib_per_rank": [
+            39.80374240875244,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            36.85002276906744,
+            36.3152880796697
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 9.402919240063056,
+              "backward_wall": 48.14549640985206,
+              "step_wall": 40.74968229001388
+            },
+            {
+              "forward_wall": 9.398682739585638,
+              "backward_wall": 48.15708306012675,
+              "step_wall": 40.747901800088584
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "samples_complete": 256,
+          "seconds": 65.8876544800587,
+          "input_tokens": 14357,
+          "padded_tokens": 28672,
+          "peak_allocated_gib_per_rank": [
+            42.8727331161499,
+            42.8727331161499
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.363819740479812,
+            9.726642050314695
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 8.816694980021566,
+              "backward_wall": 43.02665121969767,
+              "step_wall": 14.033701889915392
+            },
+            {
+              "forward_wall": 9.272640690207481,
+              "backward_wall": 42.57946684979834,
+              "step_wall": 14.030456329928711
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "samples_complete": 384,
+          "seconds": 60.77669037994929,
+          "input_tokens": 14182,
+          "padded_tokens": 24576,
+          "peak_allocated_gib_per_rank": [
+            39.80374240875244,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.40109908953309,
+            9.77021429920569
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 8.303380529861897,
+              "backward_wall": 38.47339504980482,
+              "step_wall": 13.989512889878824
+            },
+            {
+              "forward_wall": 8.203046120004728,
+              "backward_wall": 38.58123635989614,
+              "step_wall": 13.987202030140907
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "samples_complete": 512,
+          "seconds": 61.39857836998999,
+          "input_tokens": 14367,
+          "padded_tokens": 24576,
+          "peak_allocated_gib_per_rank": [
+            39.80374240875244,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.35243907989934,
+            9.705944439629093
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 8.87811737996526,
+              "backward_wall": 38.52825743006542,
+              "step_wall": 13.979255539830774
+            },
+            {
+              "forward_wall": 8.51942778006196,
+              "backward_wall": 38.89487349009141,
+              "step_wall": 13.979757899884135
+            }
+          ]
+        },
+        {
+          "step": 5,
+          "samples_complete": 640,
+          "seconds": 61.11242797994055,
+          "input_tokens": 13965,
+          "padded_tokens": 25600,
+          "peak_allocated_gib_per_rank": [
+            42.8727331161499,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.352870309259742,
+            9.713133569341153
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 8.496668780222535,
+              "backward_wall": 38.59489573002793,
+              "step_wall": 14.014048209879547
+            },
+            {
+              "forward_wall": 8.297756919870153,
+              "backward_wall": 38.801628260174766,
+              "step_wall": 14.007800619816408
+            }
+          ]
+        },
+        {
+          "step": 6,
+          "samples_complete": 768,
+          "seconds": 61.3347438799683,
+          "input_tokens": 14599,
+          "padded_tokens": 24576,
+          "peak_allocated_gib_per_rank": [
+            39.80374240875244,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.47844046074897,
+            9.791708149947226
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 8.505324279656634,
+              "backward_wall": 38.78564888006076,
+              "step_wall": 14.033170000184327
+            },
+            {
+              "forward_wall": 8.72730873990804,
+              "backward_wall": 38.5725109402556,
+              "step_wall": 14.029654649784788
+            }
+          ]
+        }
+      ],
+      "validation_checkpoints": [
+        {
+          "samples": 256,
+          "training_seconds": 164.19968787999824,
+          "metrics": {
+            "loss": 1.0059230327606201,
+            "assistant_tokens": 224,
+            "correct": 202,
+            "execution": "native BF16 model"
+          }
+        },
+        {
+          "samples": 512,
+          "training_seconds": 286.3749566299375,
+          "metrics": {
+            "loss": 0.8551784157752991,
+            "assistant_tokens": 224,
+            "correct": 204,
+            "execution": "native BF16 model"
+          }
+        },
+        {
+          "samples": 768,
+          "training_seconds": 408.82212848984636,
+          "metrics": {
+            "loss": 0.16913938522338867,
+            "assistant_tokens": 224,
+            "correct": 215,
+            "execution": "native BF16 model"
+          }
+        }
+      ],
+      "initial_validation": {
+        "loss": 1.0108281373977661,
+        "assistant_tokens": 224,
+        "correct": 202,
+        "execution": "native BF16 model"
+      },
+      "steady_512_sample_seconds": 244.62244060984813,
+      "steady_samples_per_second": 2.0930213872593817,
+      "steady_mean_step_seconds": 61.15561015246203,
+      "short_validation_target": 0.86,
+      "first_target_checkpoint": {
+        "samples": 512,
+        "training_seconds": 286.3749566299375,
+        "metrics": {
+          "loss": 0.8551784157752991,
+          "assistant_tokens": 224,
+          "correct": 204,
+          "execution": "native BF16 model"
+        }
+      },
+      "peak_allocated_gib": 42.8727331161499,
+      "source_sha256": {
+        "train_batch.py": "8638f7a9237cdc44fa00bb6372316bdfb2bff036392fea860b924a25c1c640df",
+        "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b",
+        "cpu_update.py": "7ea5907c9b24a6492283414e2edd1c37bdb2014fbc9fdd24fb7bbe0cb76b05bf",
+        "bounded_grad_copy.py": "33ca729bbec3d332e0aa0ad7726d25b2f9c19fc819f1e04012b035c9db913d21",
+        "zero3-sql.json": "8c36c503529d67c10cf1e94d38b103274e723d9a69ebec11064654b7e3464a28"
+      }
+    },
+    {
+      "name": "g64-m16",
+      "global_batch": 64,
+      "micro_batch_per_rank": 16,
+      "accumulation": 2,
+      "steps": [
+        {
+          "step": 1,
+          "samples_complete": 64,
+          "seconds": 73.44110202998854,
+          "input_tokens": 6822,
+          "padded_tokens": 13312,
+          "peak_allocated_gib_per_rank": [
+            39.17695093154907,
+            35.768616676330566
+          ],
+          "cpu_adam_seconds_per_rank": [
+            36.67077213875018,
+            36.336492280010134
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 4.955553169827908,
+              "backward_wall": 27.973133750259876,
+              "step_wall": 40.498365780105814
+            },
+            {
+              "forward_wall": 4.996131740044802,
+              "backward_wall": 27.941501280060038,
+              "step_wall": 40.49677901994437
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "samples_complete": 128,
+          "seconds": 40.20175432995893,
+          "input_tokens": 7247,
+          "padded_tokens": 12288,
+          "peak_allocated_gib_per_rank": [
+            39.80374240875244,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.156639269087464,
+            9.27764383982867
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 4.286840369924903,
+              "backward_wall": 22.63768253987655,
+              "step_wall": 13.267889459850267
+            },
+            {
+              "forward_wall": 4.248375839786604,
+              "backward_wall": 22.68549479986541,
+              "step_wall": 13.264789559878409
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "samples_complete": 192,
+          "seconds": 39.05996025004424,
+          "input_tokens": 6968,
+          "padded_tokens": 13312,
+          "peak_allocated_gib_per_rank": [
+            39.80374240875244,
+            42.8727331161499
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.363087609875947,
+            9.39081647968851
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 4.457235879963264,
+              "backward_wall": 21.197388109983876,
+              "step_wall": 13.396322639891878
+            },
+            {
+              "forward_wall": 4.5038251099176705,
+              "backward_wall": 21.158337579807267,
+              "step_wall": 13.394695420050994
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "samples_complete": 256,
+          "seconds": 42.67994110006839,
+          "input_tokens": 7389,
+          "padded_tokens": 15360,
+          "peak_allocated_gib_per_rank": [
+            42.8727331161499,
+            42.8727331161499
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.309400919359177,
+            9.388073991052806
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 7.211519439937547,
+              "backward_wall": 22.077428709948435,
+              "step_wall": 13.38166256994009
+            },
+            {
+              "forward_wall": 7.814062379999086,
+              "backward_wall": 21.48195217992179,
+              "step_wall": 13.380780359962955
+            }
+          ]
+        },
+        {
+          "step": 5,
+          "samples_complete": 320,
+          "seconds": 38.240735549945384,
+          "input_tokens": 6953,
+          "padded_tokens": 12288,
+          "peak_allocated_gib_per_rank": [
+            39.80374240875244,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.159251089440659,
+            9.348522898508236
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 4.133676400175318,
+              "backward_wall": 20.782916249940172,
+              "step_wall": 13.314675719942898
+            },
+            {
+              "forward_wall": 4.163315969984978,
+              "backward_wall": 20.761820579878986,
+              "step_wall": 13.312574399868026
+            }
+          ]
+        },
+        {
+          "step": 6,
+          "samples_complete": 384,
+          "seconds": 38.178600520128384,
+          "input_tokens": 7229,
+          "padded_tokens": 12288,
+          "peak_allocated_gib_per_rank": [
+            39.80374240875244,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.100902380188927,
+            9.246983678080142
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 4.07286566006951,
+              "backward_wall": 20.871969680069014,
+              "step_wall": 13.224303550086915
+            },
+            {
+              "forward_wall": 4.211206579813734,
+              "backward_wall": 20.74246267019771,
+              "step_wall": 13.2217772398144
+            }
+          ]
+        },
+        {
+          "step": 7,
+          "samples_complete": 448,
+          "seconds": 38.61268233996816,
+          "input_tokens": 7458,
+          "padded_tokens": 12288,
+          "peak_allocated_gib_per_rank": [
+            39.80374240875244,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.669552049366757,
+            9.694341990631074
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 4.109622980002314,
+              "backward_wall": 20.771694000111893,
+              "step_wall": 13.723530129995197
+            },
+            {
+              "forward_wall": 4.1968923199456185,
+              "backward_wall": 20.69166956981644,
+              "step_wall": 13.720996459946036
+            }
+          ]
+        },
+        {
+          "step": 8,
+          "samples_complete": 512,
+          "seconds": 38.68285514996387,
+          "input_tokens": 6909,
+          "padded_tokens": 12288,
+          "peak_allocated_gib_per_rank": [
+            39.80374240875244,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.122371168807149,
+            9.2982844193466
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 4.612913549877703,
+              "backward_wall": 20.796405680011958,
+              "step_wall": 13.263462519971654
+            },
+            {
+              "forward_wall": 4.543712450191379,
+              "backward_wall": 20.873715670080855,
+              "step_wall": 13.262346159899607
+            }
+          ]
+        },
+        {
+          "step": 9,
+          "samples_complete": 576,
+          "seconds": 41.51580285001546,
+          "input_tokens": 7162,
+          "padded_tokens": 13312,
+          "peak_allocated_gib_per_rank": [
+            42.8727331161499,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.197125169448555,
+            9.228601440321654
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 7.205717829987407,
+              "backward_wall": 21.0501555101946,
+              "step_wall": 13.25031095999293
+            },
+            {
+              "forward_wall": 6.8419807001482695,
+              "backward_wall": 21.42278823000379,
+              "step_wall": 13.247967190109193
+            }
+          ]
+        },
+        {
+          "step": 10,
+          "samples_complete": 640,
+          "seconds": 38.764653080143034,
+          "input_tokens": 6803,
+          "padded_tokens": 12288,
+          "peak_allocated_gib_per_rank": [
+            39.80374240875244,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.639196050120518,
+            9.639616059837863
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 4.1298887801822275,
+              "backward_wall": 20.935408079996705,
+              "step_wall": 13.686693859985098
+            },
+            {
+              "forward_wall": 4.278841340215877,
+              "backward_wall": 20.794109999900684,
+              "step_wall": 13.687870709924027
+            }
+          ]
+        },
+        {
+          "step": 11,
+          "samples_complete": 704,
+          "seconds": 38.0672654400114,
+          "input_tokens": 7212,
+          "padded_tokens": 12288,
+          "peak_allocated_gib_per_rank": [
+            39.80374240875244,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.007313320413232,
+            9.09785288036801
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 4.1623417099472135,
+              "backward_wall": 20.80674790008925,
+              "step_wall": 13.089548179879785
+            },
+            {
+              "forward_wall": 4.248371459776536,
+              "backward_wall": 20.727329100016505,
+              "step_wall": 13.08758890023455
+            }
+          ]
+        },
+        {
+          "step": 12,
+          "samples_complete": 768,
+          "seconds": 39.047686429927126,
+          "input_tokens": 7387,
+          "padded_tokens": 12288,
+          "peak_allocated_gib_per_rank": [
+            39.80374240875244,
+            39.80374240875244
+          ],
+          "cpu_adam_seconds_per_rank": [
+            9.344340919982642,
+            9.391469350084662
+          ],
+          "phase_wall_seconds_per_rank": [
+            {
+              "forward_wall": 4.421186360064894,
+              "backward_wall": 21.231731940060854,
+              "step_wall": 13.384386660065502
+            },
+            {
+              "forward_wall": 4.732134620193392,
+              "backward_wall": 20.927873889915645,
+              "step_wall": 13.38382795988582
+            }
+          ]
+        }
+      ],
+      "validation_checkpoints": [
+        {
+          "samples": 256,
+          "training_seconds": 195.3827577100601,
+          "metrics": {
+            "loss": 0.9765231013298035,
+            "assistant_tokens": 224,
+            "correct": 203,
+            "execution": "native BF16 model"
+          }
+        },
+        {
+          "samples": 512,
+          "training_seconds": 349.0976312700659,
+          "metrics": {
+            "loss": 0.1615232527256012,
+            "assistant_tokens": 224,
+            "correct": 214,
+            "execution": "native BF16 model"
+          }
+        },
+        {
+          "samples": 768,
+          "training_seconds": 506.4930390701629,
+          "metrics": {
+            "loss": 0.12050540000200272,
+            "assistant_tokens": 224,
+            "correct": 214,
+            "execution": "native BF16 model"
+          }
+        }
+      ],
+      "initial_validation": {
+        "loss": 1.0108281373977661,
+        "assistant_tokens": 224,
+        "correct": 202,
+        "execution": "native BF16 model"
+      },
+      "steady_512_sample_seconds": 311.1102813601028,
+      "steady_samples_per_second": 1.645718674939489,
+      "steady_mean_step_seconds": 38.88878517001285,
+      "short_validation_target": 0.86,
+      "first_target_checkpoint": {
+        "samples": 512,
+        "training_seconds": 349.0976312700659,
+        "metrics": {
+          "loss": 0.1615232527256012,
+          "assistant_tokens": 224,
+          "correct": 214,
+          "execution": "native BF16 model"
+        }
+      },
+      "peak_allocated_gib": 42.8727331161499,
+      "source_sha256": {
+        "train_batch.py": "8638f7a9237cdc44fa00bb6372316bdfb2bff036392fea860b924a25c1c640df",
+        "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b",
+        "cpu_update.py": "7ea5907c9b24a6492283414e2edd1c37bdb2014fbc9fdd24fb7bbe0cb76b05bf",
+        "bounded_grad_copy.py": "33ca729bbec3d332e0aa0ad7726d25b2f9c19fc819f1e04012b035c9db913d21",
+        "zero3-sql.json": "8c36c503529d67c10cf1e94d38b103274e723d9a69ebec11064654b7e3464a28"
+      }
+    }
+  ],
+  "selected": {
+    "model_family": "Qwen3.5-27B text-only SQL",
+    "physical_cards": [
+      2,
+      3
+    ],
+    "global_batch": 128,
+    "micro_batch_per_rank": 16,
+    "gradient_accumulation_steps": 4,
+    "max_sequence_length": 512,
+    "checkpoint": "on",
+    "cpu_threads_per_rank": 24,
+    "numa_spread": true,
+    "cpu_mode": "pipeline",
+    "fuse_gdn": true,
+    "pad_mode": "dynamic64",
+    "config": "zero3-selected.json",
+    "compute_dtype": "BF16",
+    "master_and_adam_states": "CPU FP32",
+    "lr_schedule_basis": "processed samples, reference batch256, warmup8960 samples, total178688 samples",
+    "short_validation_target": 0.86,
+    "selection_reason": "Shortest observed training time to validation loss <=0.86; within 5% prefer higher steady throughput.",
+    "selection_scope": "Fixed 768 SQL samples and eight validation examples; not long-run optimality."
+  },
+  "failures": [],
+  "limitations": [
+    "Eight validation examples provide an operational short-run target, not general model quality.",
+    "Validation checkpoints every256 examples bound the target crossing; intermediate crossing times were not measured.",
+    "Time-to-target includes first-update cold execution and optimizer initialization, excludes model loading and validation wall time.",
+    "Global batch changes optimization trajectories and update count; the sample-based LR progress is held constant.",
+    "Only the recorded batch/microbatch choices were measured; no hardware or long-run global optimum is claimed."
+  ]
+}

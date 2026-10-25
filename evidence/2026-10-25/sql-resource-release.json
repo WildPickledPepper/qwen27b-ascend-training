@@ -1,0 +1,16 @@
+{
+  "observed_at_local": "2026-10-25T15:06:15.949254+08:00",
+  "authorized_physical_cards": [
+    2,
+    3
+  ],
+  "no_running_processes_on_authorized_cards": true,
+  "end_hbm_mib": {
+    "2": 3415,
+    "3": 3415
+  },
+  "other_cards_not_modified": true,
+  "original_checkpoint_modified": false,
+  "new_full_checkpoint_saved": false,
+  "formal_training_process_returncode": 0
+}

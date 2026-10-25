@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "source_hashes_match": true,
+  "distinct_training_examples": 768,
+  "validation_disjoint": true,
+  "global_batch": 256,
+  "max_length": 512,
+  "nonzero_learning_rate_updates": 2,
+  "fp32_m_v_total_bytes_per_update": 215167987712,
+  "author_optimizer_scalar_settings_matched": true,
+  "author_preprocessing_exactly_reproduced": false,
+  "parameter_groups_exactly_reproduced": false,
+  "full_epoch_completed": false
+}
