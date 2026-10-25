@@ -1,0 +1,86 @@
+{
+  "original_profile_exposed_reduction_seconds": 13.361874859,
+  "original_transport_breakdown": {
+    "Memcpy": {
+      "task_union_seconds": 1.415347875,
+      "seconds_inside_exposed_reduction": 0.649105509
+    },
+    "Notify_Record": {
+      "task_union_seconds": 0.006499909,
+      "seconds_inside_exposed_reduction": 0.002741703
+    },
+    "Notify_Wait": {
+      "task_union_seconds": 0.416087163,
+      "seconds_inside_exposed_reduction": 0.249596744
+    },
+    "Reduce_Inline": {
+      "task_union_seconds": 23.067867763,
+      "seconds_inside_exposed_reduction": 12.439785746
+    }
+  },
+  "original_next_compute_submission_state_seconds": {
+    "next_compute_not_yet_submitted": 7.89398649,
+    "next_compute_submit_in_progress": 0.090322396,
+    "next_compute_already_submitted": 5.377565973
+  },
+  "original_largest_ffn_bucket_queue": {
+    "count": 44564480,
+    "calls": 1536,
+    "lead_mean_ms": 16.304279927734374,
+    "prior_ag_mean_ms": 6.624613102213542,
+    "prior_rs_mean_ms": 7.728521203125,
+    "stream_event_wait_mean_ms": 1.8974705950520832,
+    "other_mean_ms": 0.05367502734375
+  },
+  "original_ag_pending_evidence": {
+    "rank": 0,
+    "matched_allgathers": 4721,
+    "allgather_mean_submit_to_device_ms": 13.07513522982419,
+    "mean_prior_rs_during_ag_queue_ms": 4.139998933276848,
+    "mean_prior_ag_during_ag_queue_ms": 7.504408341029443,
+    "rs_exposure_with_parameter_gather_already_pending_seconds": 5.614186906,
+    "queued_main_exposure_with_parameter_gather_pending_seconds": 2.437845557,
+    "queued_main_no_task_seconds": 4.161608807,
+    "queued_main_no_task_with_gather_pending_seconds": 1.229202949
+  },
+  "new_capture_parameter_and_collective_sequence_verified": true,
+  "new_event_edges": [
+    {
+      "rank": 0,
+      "main_waits_prefetch_edge": "1066<-1069",
+      "matched_device_wait_calls": 16732,
+      "record_markers_matched": 50329,
+      "wait_markers_with_device": 21538,
+      "wait_markers_total": 31088,
+      "validation_exact_at_768": true
+    },
+    {
+      "rank": 1,
+      "main_waits_prefetch_edge": "1084<-1087",
+      "matched_device_wait_calls": 19866,
+      "record_markers_matched": 50329,
+      "wait_markers_with_device": 25324,
+      "wait_markers_total": 31088,
+      "validation_exact_at_768": true
+    }
+  ],
+  "confirmed_mechanisms": [
+    "Large gradient transfer/reduction occupies the shared HCCL execution stream.",
+    "Parameter AllGather and gradient ReduceScatter are serialized on that stream in the selected profile.",
+    "Many exposed intervals occur before the next main-stream compute has been submitted, within host autograd/ZeRO/event processing.",
+    "Labeled event producers confirm main-stream waits on the parameter-prefetch processing stream in both ranks."
+  ],
+  "not_fully_attributed": "The original 4.161608807 seconds without a recorded main-stream task have not all been assigned to exact event or resource causes. 1.229202949 seconds coincide with pending parameter gathers; coincidence is not a complete parameter-to-kernel dependency map.",
+  "next_optimization_targets": [
+    "Reduce per-parameter host dispatch/event/observer overhead without changing the update workload.",
+    "Prioritize or separate parameter prefetch versus large gradient traffic only after verifying native HCCL support and measuring whole-step behavior."
+  ],
+  "default_configuration_changed": false,
+  "speedup_claim": null,
+  "devices_2_3_released": true,
+  "limits": [
+    "Extra-labeled dual-rank capture changed timing and produced much larger rank0 Notify_Wait; never substitute it for the original profile or unprofiled throughput.",
+    "Event pending intervals derived from stream semantics are not direct hardware wait-counter measurements.",
+    "Background CPU-worker synchronize labels are not all present in framework API traces; do not treat main-thread marker counts as all-thread totals."
+  ]
+}

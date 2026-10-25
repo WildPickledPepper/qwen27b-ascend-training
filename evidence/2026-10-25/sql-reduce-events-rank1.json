@@ -1,0 +1,159 @@
+{
+  "rank": 1,
+  "exposed_reduction_seconds": 15.83251008,
+  "main_compute_stream": 1084,
+  "coverage": {
+    "record_markers": 50329,
+    "record_matched_api": 50329,
+    "wait_markers": 31088,
+    "wait_matched_api": 25324,
+    "synchronize_markers": 79,
+    "synchronize_matched_api": 79,
+    "wait_without_unique_device": 5764,
+    "wait_with_captured_record": 25324
+  },
+  "unlinked_wait_classification": {
+    "device_types:": 5764,
+    "edge:1084<-1087": 4414,
+    "producer_complete_before_wait_api": 5763,
+    "edge:1088<-1084": 1350,
+    "different_stream_producer_not_yet_complete": 1
+  },
+  "framework_stream_tokens": {
+    "1": [
+      1087
+    ],
+    "2": [
+      1084
+    ],
+    "3": [
+      1088
+    ]
+  },
+  "edges": [
+    {
+      "edge": "1084<-1087",
+      "wait_calls": 19866,
+      "reported_wait_inside_rs_exposure_seconds": 1.17907462,
+      "dependency_pending_inside_rs_exposure_seconds": 1.17904777
+    },
+    {
+      "edge": "1088<-1084",
+      "wait_calls": 5458,
+      "reported_wait_inside_rs_exposure_seconds": 0.0,
+      "dependency_pending_inside_rs_exposure_seconds": 0.0
+    }
+  ],
+  "main_stream_dependency_pending_inside_exposed_seconds": 1.17904777,
+  "all_event_api_constraint_results": {
+    "1084<-1087": {
+      "pending_inside_exposed_seconds": 1.17904777,
+      "pending_with_next_main_compute_already_queued_seconds": 1.172669
+    }
+  },
+  "exposed_with_next_main_compute_already_queued_seconds": 1.4197774,
+  "queued_exposed_with_labeled_unfulfilled_event_seconds": 1.172669,
+  "top20_dependencies": [
+    {
+      "edge": "1084<-1087",
+      "exposed_dependency_seconds": 0.16260872,
+      "pending_interval_seconds": 0.19529616,
+      "reported_event_wait_seconds": 0.1952966,
+      "event_token": "7114",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1084<-1087",
+      "exposed_dependency_seconds": 0.14345216,
+      "pending_interval_seconds": 0.17679318,
+      "reported_event_wait_seconds": 0.17679364,
+      "event_token": "32682",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1084<-1087",
+      "exposed_dependency_seconds": 0.14341034,
+      "pending_interval_seconds": 0.17680266,
+      "reported_event_wait_seconds": 0.1768031,
+      "event_token": "1572",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1084<-1087",
+      "exposed_dependency_seconds": 0.14333886,
+      "pending_interval_seconds": 0.1759625,
+      "reported_event_wait_seconds": 0.17596292,
+      "event_token": "13506",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1084<-1087",
+      "exposed_dependency_seconds": 0.1432492,
+      "pending_interval_seconds": 0.17603896,
+      "reported_event_wait_seconds": 0.17603942,
+      "event_token": "26290",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1084<-1087",
+      "exposed_dependency_seconds": 0.14324666,
+      "pending_interval_seconds": 0.17603034,
+      "reported_event_wait_seconds": 0.1760308,
+      "event_token": "45466",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1084<-1087",
+      "exposed_dependency_seconds": 0.14323848,
+      "pending_interval_seconds": 0.17584396,
+      "reported_event_wait_seconds": 0.17584446,
+      "event_token": "19898",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1084<-1087",
+      "exposed_dependency_seconds": 0.14323712,
+      "pending_interval_seconds": 0.17603016,
+      "reported_event_wait_seconds": 0.17603062,
+      "event_token": "39074",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1084<-1087",
+      "exposed_dependency_seconds": 0.00591755,
+      "pending_interval_seconds": 0.01080415,
+      "reported_event_wait_seconds": 0.01080808,
+      "event_token": "1628",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1084<-1087",
+      "exposed_dependency_seconds": 0.00463873,
+      "pending_interval_seconds": 0.01001307,
+      "reported_event_wait_seconds": 0.01001438,
+      "event_token": "1756",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1084<-1087",
+      "exposed_dependency_seconds": 0.00270995,
+      "pending_interval_seconds": 0.00878885,
+      "reported_event_wait_seconds": 0.00879,
+      "event_token": "1692",
+      "record_sequence": "1"
+    }
+  ],
+  "queries": {
+    "compute": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(t.startNs,t.endNs,t.streamId)) FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId",
+    "rs": "SELECT json_group_array(json_array(o.startNs,o.endNs)) FROM COMMUNICATION_OP o JOIN STRING_IDS n ON n.id=o.opType WHERE n.value='hcom_reduceScatter_'",
+    "event_markers": "SELECT json_group_array(json_array(CAST(p.startNs AS INTEGER),CAST(p.endNs AS INTEGER),p.globalTid,n.value)) FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'dep/E%'",
+    "event_apis": "SELECT json_group_array(json_array(a.startNs,a.endNs,a.globalTid,a.connectionId,n.value)) FROM CANN_API a JOIN STRING_IDS n ON n.id=a.name WHERE n.value IN ('aclrtRecordEvent','aclrtStreamWaitEvent','aclrtSynchronizeEvent')",
+    "all_tasks": "SELECT json_group_array(json_array(t.startNs,t.endNs,t.streamId,t.connectionId,n.value,t.taskId)) FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType",
+    "main_compute_launches": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(t.startNs,t.endNs,h.startNs,h.endNs)) FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId LEFT JOIN CANN_API h ON h.connectionId=t.connectionId AND h.name IN (SELECT id FROM STRING_IDS WHERE value='launch') WHERE t.streamId=1084"
+  },
+  "limits": [
+    "Capture has extra labels and two profiled ranks; do not use as unprofiled throughput.",
+    "Dependency-derived pending ranges are inferred from labeled in-order stream semantics and recorded command boundaries, not measured task durations.",
+    "No captured producer for pre-capture or internal C++ events is not proof of no dependency."
+  ]
+}

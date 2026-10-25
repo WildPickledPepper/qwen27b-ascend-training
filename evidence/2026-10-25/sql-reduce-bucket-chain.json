@@ -1,0 +1,159 @@
+{
+  "matched_parameter_ids_and_count_sequence_both_ranks": true,
+  "ranks": [
+    {
+      "rank": 0,
+      "matched_buckets": 4504,
+      "host_gradient_hooks": 6808,
+      "queries": {
+        "markers": "SELECT json_group_array(json_array(CAST(p.startNs AS INTEGER),CAST(p.endNs AS INTEGER),p.globalTid,n.value)) FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'dep/bucket/%' OR n.value LIKE 'dep/host_grad_hook/%'",
+        "ops": "SELECT json_group_array(json_array(o.startNs,o.endNs,o.count,h.startNs,h.endNs,h.globalTid)) FROM COMMUNICATION_OP o JOIN STRING_IDS n ON n.id=o.opType JOIN CANN_API h ON h.connectionId=o.connectionId JOIN STRING_IDS a ON a.id=h.name WHERE n.value='hcom_reduceScatter_' AND a.value='launch'"
+      },
+      "groups": [
+        {
+          "count": 635699200,
+          "calls": 16,
+          "host_hook_to_bucket_ms": 16.64300125,
+          "bucket_to_submit_ms": 1.151413125,
+          "submit_to_device_ms": 87.455389125,
+          "communication_ms": 148.9603161875
+        },
+        {
+          "count": 44564480,
+          "calls": 1536,
+          "host_hook_to_bucket_ms": 7.584898821614583,
+          "bucket_to_submit_ms": 0.6155075911458333,
+          "submit_to_device_ms": 37.42925241471354,
+          "communication_ms": 10.612181486979166
+        },
+        {
+          "count": 31457280,
+          "calls": 128,
+          "host_hook_to_bucket_ms": 23.271459609375,
+          "bucket_to_submit_ms": 1.08962828125,
+          "submit_to_device_ms": 34.6738471015625,
+          "communication_ms": 7.6712132734375
+        },
+        {
+          "count": 26214400,
+          "calls": 384,
+          "host_hook_to_bucket_ms": 11.343340182291668,
+          "bucket_to_submit_ms": 0.9765446875,
+          "submit_to_device_ms": 30.2823130234375,
+          "communication_ms": 6.3594938567708335
+        },
+        {
+          "count": 15728640,
+          "calls": 896,
+          "host_hook_to_bucket_ms": 11.519022901785714,
+          "bucket_to_submit_ms": 0.7817386941964286,
+          "submit_to_device_ms": 36.48019843303572,
+          "communication_ms": 8.2491361953125
+        },
+        {
+          "count": 5243136,
+          "calls": 128,
+          "host_hook_to_bucket_ms": 11.486557578125,
+          "bucket_to_submit_ms": 1.317281875,
+          "submit_to_device_ms": 27.0698114765625,
+          "communication_ms": 10.250940921875
+        },
+        {
+          "count": 266352,
+          "calls": 384,
+          "host_hook_to_bucket_ms": 4.020158958333333,
+          "bucket_to_submit_ms": 1.2100663802083333,
+          "submit_to_device_ms": 19.568017763020833,
+          "communication_ms": 15.036308658854166
+        },
+        {
+          "count": 2560,
+          "calls": 1032,
+          "host_hook_to_bucket_ms": 32.9428860755814,
+          "bucket_to_submit_ms": 0.6275509302325581,
+          "submit_to_device_ms": 28.275431063953487,
+          "communication_ms": 11.655818138565891
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "matched_buckets": 4504,
+      "host_gradient_hooks": 6808,
+      "queries": {
+        "markers": "SELECT json_group_array(json_array(CAST(p.startNs AS INTEGER),CAST(p.endNs AS INTEGER),p.globalTid,n.value)) FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'dep/bucket/%' OR n.value LIKE 'dep/host_grad_hook/%'",
+        "ops": "SELECT json_group_array(json_array(o.startNs,o.endNs,o.count,h.startNs,h.endNs,h.globalTid)) FROM COMMUNICATION_OP o JOIN STRING_IDS n ON n.id=o.opType JOIN CANN_API h ON h.connectionId=o.connectionId JOIN STRING_IDS a ON a.id=h.name WHERE n.value='hcom_reduceScatter_' AND a.value='launch'"
+      },
+      "groups": [
+        {
+          "count": 635699200,
+          "calls": 16,
+          "host_hook_to_bucket_ms": 17.61801875,
+          "bucket_to_submit_ms": 1.154003125,
+          "submit_to_device_ms": 95.958365,
+          "communication_ms": 144.99708125
+        },
+        {
+          "count": 44564480,
+          "calls": 1536,
+          "host_hook_to_bucket_ms": 7.02158462890625,
+          "bucket_to_submit_ms": 0.57528578125,
+          "submit_to_device_ms": 15.1332988671875,
+          "communication_ms": 10.445171705729166
+        },
+        {
+          "count": 31457280,
+          "calls": 128,
+          "host_hook_to_bucket_ms": 17.40529328125,
+          "bucket_to_submit_ms": 0.805297265625,
+          "submit_to_device_ms": 5.1845896875,
+          "communication_ms": 7.361196875
+        },
+        {
+          "count": 26214400,
+          "calls": 384,
+          "host_hook_to_bucket_ms": 8.346572291666666,
+          "bucket_to_submit_ms": 1.1161818229166667,
+          "submit_to_device_ms": 1.9966968229166666,
+          "communication_ms": 6.16579484375
+        },
+        {
+          "count": 15728640,
+          "calls": 896,
+          "host_hook_to_bucket_ms": 12.41472916294643,
+          "bucket_to_submit_ms": 0.9622289285714286,
+          "submit_to_device_ms": 11.042198214285714,
+          "communication_ms": 3.923222700892857
+        },
+        {
+          "count": 5243136,
+          "calls": 128,
+          "host_hook_to_bucket_ms": 7.58131765625,
+          "bucket_to_submit_ms": 1.29446953125,
+          "submit_to_device_ms": 3.756620546875,
+          "communication_ms": 1.86328546875
+        },
+        {
+          "count": 266352,
+          "calls": 384,
+          "host_hook_to_bucket_ms": 3.305738984375,
+          "bucket_to_submit_ms": 1.0180299739583334,
+          "submit_to_device_ms": 0.38068286458333334,
+          "communication_ms": 1.01287
+        },
+        {
+          "count": 2560,
+          "calls": 1032,
+          "host_hook_to_bucket_ms": 31.979780523255815,
+          "bucket_to_submit_ms": 0.8677192248062016,
+          "submit_to_device_ms": 14.47757687984496,
+          "communication_ms": 0.4844938953488372
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Gradient hook means host autograd callback reached; it does not mean asynchronous device gradient production finished.",
+    "This is the extra-labeled dual-profile capture, not the original 13.36-second profile or unprofiled throughput."
+  ]
+}

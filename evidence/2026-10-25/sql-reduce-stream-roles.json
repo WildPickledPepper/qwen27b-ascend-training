@@ -1,0 +1,33 @@
+{
+  "ranks": [
+    {
+      "rank": 0,
+      "main_compute_stream": 1066,
+      "reduction_prepare_stream": 1070,
+      "bucket_cast_launches": {
+        "1070": 9768
+      },
+      "parameter_prefetch_stream": 1069,
+      "role_assignment": "Reduction stream directly from bucket Cast launches; remaining Python stream from native offload/coordinator allgather-stream creation and wait_stream source.",
+      "queries": {
+        "buckets": "SELECT json_group_array(json_array(CAST(p.startNs AS INTEGER),CAST(p.endNs AS INTEGER),p.globalTid)) FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'dep/bucket/%'",
+        "casts": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(h.startNs,h.endNs,h.globalTid,t.streamId)) FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId JOIN CANN_API h ON h.connectionId=t.connectionId WHERE c.op_type='Cast' AND h.name IN (SELECT id FROM STRING_IDS WHERE value='launch')"
+      }
+    },
+    {
+      "rank": 1,
+      "main_compute_stream": 1084,
+      "reduction_prepare_stream": 1088,
+      "bucket_cast_launches": {
+        "1088": 9768
+      },
+      "parameter_prefetch_stream": 1087,
+      "role_assignment": "Reduction stream directly from bucket Cast launches; remaining Python stream from native offload/coordinator allgather-stream creation and wait_stream source.",
+      "queries": {
+        "buckets": "SELECT json_group_array(json_array(CAST(p.startNs AS INTEGER),CAST(p.endNs AS INTEGER),p.globalTid)) FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'dep/bucket/%'",
+        "casts": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(h.startNs,h.endNs,h.globalTid,t.streamId)) FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId JOIN CANN_API h ON h.connectionId=t.connectionId WHERE c.op_type='Cast' AND h.name IN (SELECT id FROM STRING_IDS WHERE value='launch')"
+      }
+    }
+  ],
+  "limits": "Prefetch role combines native source and unique remaining Python stream; no claim that it is the HCCL worker stream."
+}

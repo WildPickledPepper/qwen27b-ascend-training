@@ -1,0 +1,191 @@
+{
+  "ranks": [
+    {
+      "rank": 0,
+      "queries": {
+        "compute_count": "SELECT COUNT(*) AS calls FROM COMPUTE_TASK_INFO",
+        "reduction_transport": "SELECT n.value AS type,COUNT(*) AS calls,SUM(t.endNs-t.startNs)/1e9 AS seconds FROM COMMUNICATION_TASK_INFO k JOIN COMMUNICATION_OP o ON o.opId=k.opId JOIN TASK t ON t.globalTaskId=k.globalTaskId JOIN STRING_IDS n ON n.id=k.taskType JOIN STRING_IDS a ON a.id=o.opType WHERE a.value='hcom_reduceScatter_' GROUP BY n.value ORDER BY seconds DESC LIMIT 20",
+        "bucket_count": "SELECT COUNT(*) AS calls FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'dep/bucket/%'",
+        "event_task_count": "SELECT t.streamId,n.value AS type,COUNT(*) AS calls FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE n.value IN ('EVENT_RECORD','EVENT_WAIT') GROUP BY t.streamId,n.value ORDER BY t.streamId,n.value LIMIT 20"
+      },
+      "results": {
+        "compute_count": [
+          {
+            "calls": 219114
+          }
+        ],
+        "reduction_transport": [
+          {
+            "type": "Notify_Wait",
+            "calls": 9392,
+            "seconds": 23.983622724
+          },
+          {
+            "type": "Reduce_Inline",
+            "calls": 14088,
+            "seconds": 23.173917661
+          },
+          {
+            "type": "Memcpy",
+            "calls": 9392,
+            "seconds": 1.400584842
+          },
+          {
+            "type": "Notify_Record",
+            "calls": 9392,
+            "seconds": 0.006495594
+          }
+        ],
+        "bucket_count": [
+          {
+            "calls": 4504
+          }
+        ],
+        "event_task_count": [
+          {
+            "streamId": 1066,
+            "type": "EVENT_RECORD",
+            "calls": 16289
+          },
+          {
+            "streamId": 1066,
+            "type": "EVENT_WAIT",
+            "calls": 16781
+          },
+          {
+            "streamId": 1068,
+            "type": "EVENT_RECORD",
+            "calls": 18561
+          },
+          {
+            "streamId": 1068,
+            "type": "EVENT_WAIT",
+            "calls": 9269
+          },
+          {
+            "streamId": 1069,
+            "type": "EVENT_RECORD",
+            "calls": 38512
+          },
+          {
+            "streamId": 1069,
+            "type": "EVENT_WAIT",
+            "calls": 291
+          },
+          {
+            "streamId": 1070,
+            "type": "EVENT_RECORD",
+            "calls": 21773
+          },
+          {
+            "streamId": 1070,
+            "type": "EVENT_WAIT",
+            "calls": 9310
+          }
+        ]
+      }
+    },
+    {
+      "rank": 1,
+      "queries": {
+        "compute_count": "SELECT COUNT(*) AS calls FROM COMPUTE_TASK_INFO",
+        "reduction_transport": "SELECT n.value AS type,COUNT(*) AS calls,SUM(t.endNs-t.startNs)/1e9 AS seconds FROM COMMUNICATION_TASK_INFO k JOIN COMMUNICATION_OP o ON o.opId=k.opId JOIN TASK t ON t.globalTaskId=k.globalTaskId JOIN STRING_IDS n ON n.id=k.taskType JOIN STRING_IDS a ON a.id=o.opType WHERE a.value='hcom_reduceScatter_' GROUP BY n.value ORDER BY seconds DESC LIMIT 20",
+        "bucket_count": "SELECT COUNT(*) AS calls FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'dep/bucket/%'",
+        "event_task_count": "SELECT t.streamId,n.value AS type,COUNT(*) AS calls FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE n.value IN ('EVENT_RECORD','EVENT_WAIT') GROUP BY t.streamId,n.value ORDER BY t.streamId,n.value LIMIT 20"
+      },
+      "results": {
+        "compute_count": [
+          {
+            "calls": 219114
+          }
+        ],
+        "reduction_transport": [
+          {
+            "type": "Reduce_Inline",
+            "calls": 14088,
+            "seconds": 23.08606584
+          },
+          {
+            "type": "Notify_Wait",
+            "calls": 9392,
+            "seconds": 1.76359454
+          },
+          {
+            "type": "Memcpy",
+            "calls": 9392,
+            "seconds": 1.41039236
+          },
+          {
+            "type": "Notify_Record",
+            "calls": 9392,
+            "seconds": 0.00651048
+          }
+        ],
+        "bucket_count": [
+          {
+            "calls": 4504
+          }
+        ],
+        "event_task_count": [
+          {
+            "streamId": 1084,
+            "type": "EVENT_RECORD",
+            "calls": 16289
+          },
+          {
+            "streamId": 1084,
+            "type": "EVENT_WAIT",
+            "calls": 20217
+          },
+          {
+            "streamId": 1086,
+            "type": "EVENT_RECORD",
+            "calls": 18561
+          },
+          {
+            "streamId": 1086,
+            "type": "EVENT_WAIT",
+            "calls": 9271
+          },
+          {
+            "streamId": 1087,
+            "type": "EVENT_RECORD",
+            "calls": 38512
+          },
+          {
+            "streamId": 1087,
+            "type": "EVENT_WAIT",
+            "calls": 318
+          },
+          {
+            "streamId": 1088,
+            "type": "EVENT_RECORD",
+            "calls": 21773
+          },
+          {
+            "streamId": 1088,
+            "type": "EVENT_WAIT",
+            "calls": 9962
+          }
+        ]
+      }
+    }
+  ],
+  "native_source_sha256": {
+    "offload": "7fec7e04a5d00a56ff88029242ea12c3dcd1a48d1c08aa868137d24f01efe340",
+    "coordinator": "a43fd966c88dc3699f5b18e2bfe51fac222e79365664addce9ed485d617a78d0"
+  },
+  "native_stream_role_source_lines": {
+    "offload": [
+      "self.__allgather_stream = None if get_accelerator().is_synchronized_device() else get_accelerator().Stream(",
+      "allgather_stream=self.__allgather_stream,"
+    ],
+    "coordinator": [
+      "allgather_stream: get_accelerator().Stream,",
+      "self.__allgather_stream: get_accelerator().Stream = allgather_stream",
+      "with get_accelerator().stream(self.__allgather_stream):",
+      "get_accelerator().current_stream().wait_stream(self.__allgather_stream)",
+      "with get_accelerator().stream(self.__allgather_stream):"
+    ]
+  }
+}

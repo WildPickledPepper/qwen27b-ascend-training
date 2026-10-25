@@ -2,7 +2,7 @@ import json,sqlite3
 from pathlib import Path
 r=Path(__file__).resolve().parent;root=r/'raw-export.private'
 p=next(root.rglob('api_event.db'));c=sqlite3.connect(f'file:{p}?mode=ro',uri=True);c.row_factory=sqlite3.Row
-v={'api_sample':[dict(x) for x in c.execute('SELECT * FROM ApiData WHERE connection_id=957163 ORDER BY start LIMIT 5')]}
+v={'api_sample':[dict(x) for x in c.execute('SELECT * FROM ApiData WHERE connection_id IN (957163,957076,957150,1009739,1009740) ORDER BY start LIMIT 20')]}
 times=[]
 for p in root.rglob('time.db'):
  c=sqlite3.connect(f'file:{p}?mode=ro',uri=True);c.row_factory=sqlite3.Row

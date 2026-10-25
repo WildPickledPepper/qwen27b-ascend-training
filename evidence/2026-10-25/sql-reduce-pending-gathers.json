@@ -1,0 +1,26 @@
+{
+  "rank": 0,
+  "matched_allgathers": 4721,
+  "queries": {
+    "compute_intervals": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(t.startNs,t.endNs,t.streamId)) FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId",
+    "reduce_ops": "SELECT json_group_array(json_array(o.opId,o.startNs,o.endNs,o.count,o.connectionId)) FROM COMMUNICATION_OP o JOIN STRING_IDS n ON n.id=o.opType WHERE n.value='hcom_reduceScatter_'",
+    "reduce_transport": "SELECT json_group_array(json_array(t.startNs,t.endNs,n.value,k.size,t.streamId,k.opId)) FROM COMMUNICATION_TASK_INFO k JOIN COMMUNICATION_OP o ON o.opId=k.opId JOIN TASK t ON t.globalTaskId=k.globalTaskId JOIN STRING_IDS n ON n.id=k.taskType JOIN STRING_IDS a ON a.id=o.opType WHERE a.value='hcom_reduceScatter_'",
+    "verified_launches": "SELECT json_group_array(json_array(o.opId,h.startNs,h.endNs,h.globalTid)) FROM COMMUNICATION_OP o JOIN STRING_IDS k ON k.id=o.opType JOIN CANN_API h ON h.connectionId=o.connectionId JOIN STRING_IDS n ON n.id=h.name WHERE k.value='hcom_reduceScatter_' AND n.value='launch'",
+    "host_scopes": "SELECT json_group_array(json_array(CAST(p.startNs AS INTEGER),CAST(p.endNs AS INTEGER),n.value,p.globalTid)) FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'zero/%' OR n.value LIKE 'gradient_transfer/%'",
+    "device_waits": "SELECT json_group_array(json_array(t.startNs,t.endNs,t.streamId)) FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE n.value='EVENT_WAIT'",
+    "compute_launches": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(t.startNs,t.endNs,t.streamId,c.globalTaskId,t.connectionId,h.startNs,h.endNs,c.op_type)) FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId LEFT JOIN CANN_API h ON h.connectionId=t.connectionId AND h.name IN (SELECT id FROM STRING_IDS WHERE value='launch')",
+    "main_sync_apis": "SELECT json_group_array(json_array(a.startNs,a.endNs,n.value)) FROM CANN_API a JOIN STRING_IDS n ON n.id=a.name WHERE a.globalTid=2228525386431359 AND n.value LIKE 'aclrtSynchronize%'",
+    "main_host_events": "SELECT json_group_array(json_array(CAST(p.startNs AS INTEGER),CAST(p.endNs AS INTEGER),n.value)) FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE p.globalTid=2228525386431359 AND n.value NOT LIKE 'ProfilerStep%' AND CAST(p.endNs AS INTEGER)>CAST(p.startNs AS INTEGER)",
+    "main_stream_tasks": "SELECT json_group_array(json_array(t.startNs,t.endNs,n.value)) FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE t.streamId=466",
+    "ag_launches": "SELECT json_group_array(json_array(o.startNs,o.endNs,h.startNs,h.endNs,o.count)) FROM COMMUNICATION_OP o JOIN STRING_IDS n ON n.id=o.opType JOIN CANN_API h ON h.connectionId=o.connectionId JOIN STRING_IDS a ON a.id=h.name WHERE n.value='hcom_allGather_' AND a.value='launch'",
+    "all_ops_for_ag_queue": "SELECT json_group_array(json_array(o.startNs,o.endNs,n.value)) FROM COMMUNICATION_OP o JOIN STRING_IDS n ON n.id=o.opType"
+  },
+  "allgather_mean_submit_to_device_ms": 13.07513522982419,
+  "mean_prior_rs_during_ag_queue_ms": 4.139998933276848,
+  "mean_prior_ag_during_ag_queue_ms": 7.504408341029443,
+  "rs_exposure_with_parameter_gather_already_pending_seconds": 5.614186906,
+  "queued_main_exposure_with_parameter_gather_pending_seconds": 2.437845557,
+  "queued_main_no_task_seconds": 4.161608807,
+  "queued_main_no_task_with_gather_pending_seconds": 1.229202949,
+  "limits": "Pending gather plus queued compute is temporal evidence of queue contention; exact parameter-to-kernel dependency in the original capture has no parameter IDs."
+}

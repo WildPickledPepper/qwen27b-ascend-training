@@ -1,0 +1,231 @@
+{
+  "rank": 0,
+  "exposed_reduction_seconds": 28.52172159,
+  "main_compute_stream": 1066,
+  "coverage": {
+    "record_markers": 50329,
+    "record_matched_api": 50329,
+    "wait_markers": 31088,
+    "wait_matched_api": 21538,
+    "synchronize_markers": 311,
+    "synchronize_matched_api": 311,
+    "wait_without_unique_device": 9550,
+    "wait_with_captured_record": 21538
+  },
+  "unlinked_wait_classification": {
+    "device_types:": 9550,
+    "edge:1066<-1069": 7548,
+    "producer_complete_before_wait_api": 29,
+    "different_stream_producer_not_yet_complete": 9521,
+    "edge:1070<-1066": 2002
+  },
+  "framework_stream_tokens": {
+    "1": [
+      1069
+    ],
+    "2": [
+      1066
+    ],
+    "3": [
+      1070
+    ]
+  },
+  "edges": [
+    {
+      "edge": "1066<-1069",
+      "wait_calls": 16732,
+      "reported_wait_inside_rs_exposure_seconds": 1.293520045,
+      "dependency_pending_inside_rs_exposure_seconds": 2.837846409
+    },
+    {
+      "edge": "1070<-1066",
+      "wait_calls": 4806,
+      "reported_wait_inside_rs_exposure_seconds": 0.0,
+      "dependency_pending_inside_rs_exposure_seconds": 0.0
+    }
+  ],
+  "main_stream_dependency_pending_inside_exposed_seconds": 2.837846409,
+  "all_event_api_constraint_results": {
+    "1066<-1069": {
+      "pending_inside_exposed_seconds": 5.560491513,
+      "pending_with_next_main_compute_already_queued_seconds": 2.970955009
+    }
+  },
+  "exposed_with_next_main_compute_already_queued_seconds": 11.790065758,
+  "queued_exposed_with_labeled_unfulfilled_event_seconds": 2.970955009,
+  "top20_dependencies": [
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.161626609,
+      "pending_interval_seconds": 0.194264501,
+      "reported_event_wait_seconds": 0.194264941,
+      "event_token": "26290",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.161389184,
+      "pending_interval_seconds": 0.194751292,
+      "reported_event_wait_seconds": 0.194751732,
+      "event_token": "45466",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.143598189,
+      "pending_interval_seconds": 0.175426805,
+      "reported_event_wait_seconds": 0.175427245,
+      "event_token": "39074",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.143509547,
+      "pending_interval_seconds": 0.176863433,
+      "reported_event_wait_seconds": 0.176863873,
+      "event_token": "19898",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.143258522,
+      "pending_interval_seconds": 0.175073538,
+      "reported_event_wait_seconds": 0.175073978,
+      "event_token": "7114",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.143252962,
+      "pending_interval_seconds": 0.176025397,
+      "reported_event_wait_seconds": 0.176025997,
+      "event_token": "32682",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.143249542,
+      "pending_interval_seconds": 0.176612968,
+      "reported_event_wait_seconds": 0.176613408,
+      "event_token": "1572",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.143244862,
+      "pending_interval_seconds": 0.175975056,
+      "reported_event_wait_seconds": 0.175975496,
+      "event_token": "13506",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.016363463,
+      "pending_interval_seconds": 0.02777271,
+      "reported_event_wait_seconds": 0.025872197,
+      "event_token": "45611",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.012073396,
+      "pending_interval_seconds": 0.037099976,
+      "reported_event_wait_seconds": 0.03652433,
+      "event_token": "13573",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.011483075,
+      "pending_interval_seconds": 0.022665239,
+      "reported_event_wait_seconds": 0.021574612,
+      "event_token": "26435",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.010867638,
+      "pending_interval_seconds": 0.020811056,
+      "reported_event_wait_seconds": 0.018924658,
+      "event_token": "45689",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.00797834,
+      "pending_interval_seconds": 0.017580311,
+      "reported_event_wait_seconds": 0.016491769,
+      "event_token": "26513",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.007892738,
+      "pending_interval_seconds": 0.016494924,
+      "reported_event_wait_seconds": 0.015670073,
+      "event_token": "20121",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.007885958,
+      "pending_interval_seconds": 0.02361165,
+      "reported_event_wait_seconds": 0.021922638,
+      "event_token": "39141",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.007600051,
+      "pending_interval_seconds": 0.025779333,
+      "reported_event_wait_seconds": 0.023886357,
+      "event_token": "45533",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.007439709,
+      "pending_interval_seconds": 0.01803541,
+      "reported_event_wait_seconds": 0.017469229,
+      "event_token": "13651",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.007310546,
+      "pending_interval_seconds": 0.017013717,
+      "reported_event_wait_seconds": 0.015920018,
+      "event_token": "26357",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.00675068,
+      "pending_interval_seconds": 0.01525635,
+      "reported_event_wait_seconds": 0.014686714,
+      "event_token": "13729",
+      "record_sequence": "1"
+    },
+    {
+      "edge": "1066<-1069",
+      "exposed_dependency_seconds": 0.005919222,
+      "pending_interval_seconds": 0.014576595,
+      "reported_event_wait_seconds": 0.012955499,
+      "event_token": "39219",
+      "record_sequence": "1"
+    }
+  ],
+  "queries": {
+    "compute": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(t.startNs,t.endNs,t.streamId)) FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId",
+    "rs": "SELECT json_group_array(json_array(o.startNs,o.endNs)) FROM COMMUNICATION_OP o JOIN STRING_IDS n ON n.id=o.opType WHERE n.value='hcom_reduceScatter_'",
+    "event_markers": "SELECT json_group_array(json_array(CAST(p.startNs AS INTEGER),CAST(p.endNs AS INTEGER),p.globalTid,n.value)) FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'dep/E%'",
+    "event_apis": "SELECT json_group_array(json_array(a.startNs,a.endNs,a.globalTid,a.connectionId,n.value)) FROM CANN_API a JOIN STRING_IDS n ON n.id=a.name WHERE n.value IN ('aclrtRecordEvent','aclrtStreamWaitEvent','aclrtSynchronizeEvent')",
+    "all_tasks": "SELECT json_group_array(json_array(t.startNs,t.endNs,t.streamId,t.connectionId,n.value,t.taskId)) FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType",
+    "main_compute_launches": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(t.startNs,t.endNs,h.startNs,h.endNs)) FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId LEFT JOIN CANN_API h ON h.connectionId=t.connectionId AND h.name IN (SELECT id FROM STRING_IDS WHERE value='launch') WHERE t.streamId=1066"
+  },
+  "limits": [
+    "Capture has extra labels and two profiled ranks; do not use as unprofiled throughput.",
+    "Dependency-derived pending ranges are inferred from labeled in-order stream semantics and recorded command boundaries, not measured task durations.",
+    "No captured producer for pre-capture or internal C++ events is not proof of no dependency."
+  ]
+}

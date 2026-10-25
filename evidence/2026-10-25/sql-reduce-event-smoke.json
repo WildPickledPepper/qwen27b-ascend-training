@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "both_ranks": [
+    {
+      "db_basename": "ascend_pytorch_profiler_1.db",
+      "rows": [
+        {
+          "kind": "record",
+          "labels": 121,
+          "device_events": 121
+        },
+        {
+          "kind": "sync",
+          "labels": 1,
+          "device_events": 0
+        },
+        {
+          "kind": "wait",
+          "labels": 80,
+          "device_events": 80
+        }
+      ]
+    },
+    {
+      "db_basename": "ascend_pytorch_profiler_0.db",
+      "rows": [
+        {
+          "kind": "record",
+          "labels": 121,
+          "device_events": 121
+        },
+        {
+          "kind": "sync",
+          "labels": 1,
+          "device_events": 0
+        },
+        {
+          "kind": "wait",
+          "labels": 80,
+          "device_events": 80
+        }
+      ]
+    }
+  ],
+  "sql": "WITH scopes AS (SELECT CAST(p.startNs AS INTEGER) AS s,CAST(p.endNs AS INTEGER) AS e,p.globalTid,n.value AS name FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'dep/E%') SELECT CASE WHEN p.name LIKE '%/record/%' THEN 'record' WHEN p.name LIKE '%/wait/%' THEN 'wait' ELSE 'sync' END AS kind,COUNT(DISTINCT p.name) AS labels,COUNT(t.globalTaskId) AS device_events FROM scopes p LEFT JOIN CANN_API a ON a.globalTid=p.globalTid AND a.startNs>=p.s AND a.endNs<=p.e AND a.name IN (SELECT id FROM STRING_IDS WHERE value IN ('aclrtRecordEvent','aclrtStreamWaitEvent')) LEFT JOIN TASK t ON t.connectionId=a.connectionId GROUP BY kind ORDER BY kind LIMIT 20"
+}
