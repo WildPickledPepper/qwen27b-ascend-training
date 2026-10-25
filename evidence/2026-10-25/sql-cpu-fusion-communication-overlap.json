@@ -1,0 +1,59 @@
+{
+  "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n), intervals AS (\n SELECT t.startNs AS s,t.endNs AS e,1 AS mask FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId\n UNION ALL SELECT startNs,endNs,CASE WHEN opType IN (SELECT id FROM STRING_IDS WHERE value='hcom_allGather_') THEN 2 WHEN opType IN (SELECT id FROM STRING_IDS WHERE value='hcom_reduceScatter_') THEN 4 ELSE 8 END FROM COMMUNICATION_OP\n UNION ALL SELECT MIN(startNs),MAX(endNs),0 FROM TASK\n), events AS (SELECT s AS ts,mask,1 AS d FROM intervals UNION ALL SELECT e,mask,-1 FROM intervals),\npoints AS (SELECT ts,SUM(CASE WHEN mask=1 THEN d ELSE 0 END) AS dc,SUM(CASE WHEN mask=2 THEN d ELSE 0 END) AS dg,SUM(CASE WHEN mask=4 THEN d ELSE 0 END) AS dr,SUM(CASE WHEN mask=8 THEN d ELSE 0 END) AS da FROM events GROUP BY ts),\nstates AS (SELECT ts,LEAD(ts) OVER (ORDER BY ts) AS te,SUM(dc) OVER (ORDER BY ts) AS c,SUM(dg) OVER (ORDER BY ts) AS g,SUM(dr) OVER (ORDER BY ts) AS r,SUM(da) OVER (ORDER BY ts) AS a FROM points),\nsegments AS (SELECT ts,te,(CASE WHEN c>0 THEN 1 ELSE 0 END)+(CASE WHEN g>0 THEN 2 ELSE 0 END)+(CASE WHEN r>0 THEN 4 ELSE 0 END)+(CASE WHEN a>0 THEN 8 ELSE 0 END) AS mask FROM states)\nSELECT mask,COUNT(*) AS pieces,SUM(te-ts)/1e9 AS seconds FROM segments WHERE te>ts GROUP BY mask ORDER BY seconds DESC LIMIT 20",
+  "rank": "rank0",
+  "rows": [
+    {
+      "mask": 0,
+      "pieces": 123997,
+      "seconds": 35.691984519
+    },
+    {
+      "mask": 1,
+      "pieces": 151644,
+      "seconds": 24.594913425
+    },
+    {
+      "mask": 3,
+      "pieces": 54462,
+      "seconds": 16.966180103
+    },
+    {
+      "mask": 4,
+      "pieces": 40917,
+      "seconds": 13.424151926
+    },
+    {
+      "mask": 5,
+      "pieces": 42630,
+      "seconds": 11.580781082
+    },
+    {
+      "mask": 2,
+      "pieces": 43068,
+      "seconds": 9.060090422
+    },
+    {
+      "mask": 8,
+      "pieces": 46,
+      "seconds": 0.000843375
+    }
+  ],
+  "summary": {
+    "allgather": {
+      "union_seconds": 26.026270525,
+      "without_compute_seconds": 9.060090422,
+      "with_compute_seconds": 16.966180103
+    },
+    "reduce_scatter": {
+      "union_seconds": 25.004933008000002,
+      "without_compute_seconds": 13.424151926,
+      "with_compute_seconds": 11.580781082
+    },
+    "other_communication": {
+      "union_seconds": 0.000843375,
+      "without_compute_seconds": 0.000843375,
+      "with_compute_seconds": 0
+    }
+  },
+  "limit": "Communication ranges include waits; without compute does not prove physical link saturation or freely removable time."
+}

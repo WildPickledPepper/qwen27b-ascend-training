@@ -1,0 +1,61 @@
+{
+  "adopted": false,
+  "reference": "experiments/sql-boundary-overlap-20261025/selected-profile.json",
+  "reference_seconds_per_256": 95.74024082010146,
+  "candidate_seconds_per_256": 95.70609489502385,
+  "candidate_time_reduction_percent": 0.03566517567233918,
+  "promotion_threshold_percent": 1,
+  "unchanged_reference_source_and_config_hashes_verified": true,
+  "same_compute_and_collective_counts_verified": true,
+  "reference_phase_wall_rank0": {
+    "forward_wall": 16.909911695169285,
+    "backward_wall": 64.21147318498697,
+    "step_wall": 14.609887675032951
+  },
+  "candidate_phase_wall_rank0": {
+    "forward_wall": 19.108075454831123,
+    "backward_wall": 63.81508116982877,
+    "step_wall": 12.773940164945088
+  },
+  "cpu_step_seconds_saved_rank0": 1.8359475100878626,
+  "cpu_step_time_reduction_percent_rank0": 12.566472452935695,
+  "reference_overlap": {
+    "allgather": {
+      "union_seconds": 26.001395533,
+      "without_compute_seconds": 9.10403949,
+      "with_compute_seconds": 16.897356043
+    },
+    "reduce_scatter": {
+      "union_seconds": 24.956496324,
+      "without_compute_seconds": 13.361874859,
+      "with_compute_seconds": 11.594621465
+    },
+    "other_communication": {
+      "union_seconds": 0.000832763,
+      "without_compute_seconds": 0.000832763,
+      "with_compute_seconds": 0
+    }
+  },
+  "candidate_overlap": {
+    "allgather": {
+      "union_seconds": 26.026270525,
+      "without_compute_seconds": 9.060090422,
+      "with_compute_seconds": 16.966180103
+    },
+    "reduce_scatter": {
+      "union_seconds": 25.004933008000002,
+      "without_compute_seconds": 13.424151926,
+      "with_compute_seconds": 11.580781082
+    },
+    "other_communication": {
+      "union_seconds": 0.000843375,
+      "without_compute_seconds": 0.000843375,
+      "with_compute_seconds": 0
+    }
+  },
+  "limits": [
+    "The fourth profiling update does not identify the cause of the unprofiled third-update forward increase.",
+    "The fused CPUAdam range also includes scaling and BF16 output; compare whole step, not native CPUAdam range alone.",
+    "Two post-warmup updates do not establish a statistically significant whole-model speed improvement."
+  ]
+}

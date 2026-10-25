@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "comparisons": [
+    {
+      "rank": 0,
+      "step": 1,
+      "kind": "gradient",
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0,
+      "coordinates": 32768
+    },
+    {
+      "rank": 0,
+      "step": 1,
+      "kind": "state",
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0,
+      "coordinates": 98304
+    },
+    {
+      "rank": 0,
+      "step": 2,
+      "kind": "gradient",
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0,
+      "coordinates": 32768
+    },
+    {
+      "rank": 0,
+      "step": 2,
+      "kind": "state",
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0,
+      "coordinates": 98304
+    },
+    {
+      "rank": 0,
+      "step": 3,
+      "kind": "gradient",
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0,
+      "coordinates": 32768
+    },
+    {
+      "rank": 0,
+      "step": 3,
+      "kind": "state",
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0,
+      "coordinates": 98304
+    },
+    {
+      "rank": 1,
+      "step": 1,
+      "kind": "gradient",
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0,
+      "coordinates": 32768
+    },
+    {
+      "rank": 1,
+      "step": 1,
+      "kind": "state",
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0,
+      "coordinates": 98304
+    },
+    {
+      "rank": 1,
+      "step": 2,
+      "kind": "gradient",
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0,
+      "coordinates": 32768
+    },
+    {
+      "rank": 1,
+      "step": 2,
+      "kind": "state",
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0,
+      "coordinates": 98304
+    },
+    {
+      "rank": 1,
+      "step": 3,
+      "kind": "gradient",
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0,
+      "coordinates": 32768
+    },
+    {
+      "rank": 1,
+      "step": 3,
+      "kind": "state",
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0,
+      "coordinates": 98304
+    }
+  ],
+  "scope": "All tiny-model FP32 gradients/master/m/v; 3 updates, 8 microbatches each; not a full-model bitwise proof."
+}
