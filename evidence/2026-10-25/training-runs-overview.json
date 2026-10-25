@@ -1,0 +1,396 @@
+{
+  "batch1_first4": [
+    {
+      "name": "FP32：早期CPU更新对照",
+      "cards": 2,
+      "global_batch_size": 1,
+      "comparison_steps": [
+        2,
+        3,
+        4
+      ],
+      "seconds_per_step": 530.7017402333828,
+      "peak_allocated_gib": [
+        50.92766761779785,
+        50.82723951339722
+      ],
+      "validation_loss_after_first4": 1.5349630557912601,
+      "evidence": "2026-10-24/precision-compare-results.json"
+    },
+    {
+      "name": "FP32：初始NPU更新＋CPU状态卸载",
+      "cards": 2,
+      "global_batch_size": 1,
+      "comparison_steps": [
+        2,
+        3,
+        4
+      ],
+      "seconds_per_step": 161.75588149329027,
+      "peak_allocated_gib": [
+        50.92766761779785,
+        50.82723951339722
+      ],
+      "validation_loss_after_first4": 1.5349637019441529,
+      "evidence": "2026-10-24/precision-compare-results.json"
+    },
+    {
+      "name": "FP32计算：ENEC权重＋4-bit m/v，全部驻留NPU",
+      "cards": 2,
+      "global_batch_size": 1,
+      "comparison_steps": [
+        2,
+        3,
+        4
+      ],
+      "seconds_per_step": 321.8809538166194,
+      "peak_allocated_gib": [
+        58.606921672821045,
+        58.45382070541382
+      ],
+      "validation_loss_after_first4": 1.5332539003110097,
+      "evidence": "2026-10-24/precision-compare-results.json"
+    },
+    {
+      "name": "FP32：64 MiB窗口＋CPU亲和",
+      "cards": 2,
+      "global_batch_size": 1,
+      "comparison_steps": [
+        2,
+        3,
+        4
+      ],
+      "seconds_per_step": 76.34661954664625,
+      "peak_allocated_gib": [
+        51.17767000198364,
+        51.07724189758301
+      ],
+      "validation_loss_after_first4": 1.5349637115800079,
+      "evidence": "2026-10-24/fp32-cpu-master-pipeline-results.json"
+    },
+    {
+      "name": "FP32：CPU主权重＋同步CPUAdam",
+      "cards": 2,
+      "global_batch_size": 1,
+      "comparison_steps": [
+        2,
+        3,
+        4
+      ],
+      "seconds_per_step": 70.53144911342922,
+      "peak_allocated_gib": [
+        50.92766761779785,
+        50.82723951339722
+      ],
+      "validation_loss_after_first4": 1.5349619775391066,
+      "evidence": "2026-10-24/fp32-cpu-master-pipeline-results.json"
+    },
+    {
+      "name": "FP32：CPU主权重＋更新流水",
+      "cards": 2,
+      "global_batch_size": 1,
+      "comparison_steps": [
+        2,
+        3,
+        4
+      ],
+      "seconds_per_step": 44.51471650988484,
+      "peak_allocated_gib": [
+        50.91204595565796,
+        50.811617851257324
+      ],
+      "validation_loss_after_first4": 1.5349619439512698,
+      "evidence": "2026-10-24/fp32-cpu-master-pipeline-results.json"
+    },
+    {
+      "name": "BF16混合：单卡计算＋CPU FP32主权重/m/v",
+      "cards": 1,
+      "global_batch_size": 1,
+      "comparison_steps": [
+        2,
+        3,
+        4
+      ],
+      "seconds_per_step": 42.433163913354896,
+      "peak_allocated_gib": [
+        57.314453125
+      ],
+      "validation_loss_after_first4": 1.497234370636885,
+      "evidence": "2026-10-24/bf16-master-training-results.json"
+    },
+    {
+      "name": "BF16混合：双卡单进程模型分布",
+      "cards": 2,
+      "global_batch_size": 1,
+      "comparison_steps": [
+        2,
+        3,
+        4
+      ],
+      "seconds_per_step": 50.30764363341344,
+      "peak_allocated_gib": [
+        29.89962911605835,
+        27.75881052017212
+      ],
+      "validation_loss_after_first4": 1.4944796942122813,
+      "evidence": "2026-10-24/bf16-dual-results.json"
+    }
+  ],
+  "batch1_twenty_steps": [
+    {
+      "cards": 1,
+      "steps": 20,
+      "global_batch_size": 1,
+      "mean_all20_seconds": 46.03978807050735,
+      "mean_steps2_20_seconds": 45.76256256947588,
+      "final_fp32_validation_loss": 1.5383795926532349
+    },
+    {
+      "cards": 2,
+      "steps": 20,
+      "global_batch_size": 1,
+      "mean_all20_seconds": 56.78141549752327,
+      "mean_steps2_20_seconds": 53.880998096869966,
+      "final_fp32_validation_loss": 1.5357943722337277
+    }
+  ],
+  "batch2_zero3": {
+    "single": {
+      "world_size": 1,
+      "parameters": 26895998464,
+      "global_batch_size": 2,
+      "gradient_accumulation_steps": 2,
+      "step_seconds": [
+        105.68918301002122,
+        62.74378041992895,
+        63.25609966996126,
+        61.47031224006787
+      ],
+      "global_input_tokens": [
+        59,
+        63,
+        73,
+        81
+      ],
+      "global_training_loss": [
+        2.521539330482483,
+        1.4764251112937927,
+        1.6305862963199615,
+        2.2108997106552124
+      ],
+      "steps2_4_mean_seconds": 62.49006410998603,
+      "steps2_4_input_tokens_per_second": 1.1575173487744004,
+      "training_seconds": 293.1593753399793,
+      "peak_allocated_gib": [
+        59.66145706176758
+      ],
+      "peak_reserved_gib": [
+        60.26171875
+      ],
+      "fp32_m_v_bytes_by_rank": [
+        215167987712
+      ],
+      "validation_before": {
+        "loss": 2.048570156097412,
+        "assistant_tokens": 433,
+        "correct": 229,
+        "execution": "native BF16 model"
+      },
+      "validation_after": {
+        "loss": 1.5044201612472534,
+        "assistant_tokens": 433,
+        "correct": 263,
+        "execution": "native BF16 model"
+      },
+      "training_hashes": [
+        "6261d8d1dc1e4f8690367186c716d0be96cec8a26d18b6f66f70a553f2ffe314",
+        "3b6210998a0c7624c43c3c174ad369644f1d47a0984f9c9bb8bd9f7bb5c9537d",
+        "7242cb3846af9e62e9000c9e09e076b6dd6696f11f7582252fa7f7994ae1afa8",
+        "c5558c6e47daa8b66e9fdabcac9c4780d32fa975a916aefbee1b02c23f1ab75d",
+        "3fd2c19a1928ffc225174aad0bc9834aa1a928c0c9d3e367d61dd04a8d2eb869",
+        "f2c387f9c876990f6f7a2de2b36455d10d0868d84426d77c4d22bee9ae8015e9",
+        "fca96a2d7136ee74b9dfd9fac758614280ca2b25335e5362700e40b47bacf6b1",
+        "f5dac26fab616fc7e759756c3a7d214d38043cb95b310cabf6f785ab6bdb0f45"
+      ],
+      "validation_hashes": [
+        "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+        "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+        "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+        "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+        "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+        "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+        "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+        "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da"
+      ],
+      "cpu_affinities": [
+        [
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119
+        ]
+      ]
+    },
+    "dual": {
+      "world_size": 2,
+      "parameters": 26895998464,
+      "global_batch_size": 2,
+      "gradient_accumulation_steps": 1,
+      "step_seconds": [
+        77.55120782018639,
+        42.55686763999984,
+        41.56196711002849,
+        40.787948849843815
+      ],
+      "global_input_tokens": [
+        59,
+        63,
+        73,
+        81
+      ],
+      "global_training_loss": [
+        2.5215393900871277,
+        1.4764251708984375,
+        1.6305862963199615,
+        2.2108999490737915
+      ],
+      "steps2_4_mean_seconds": 41.635594533290714,
+      "steps2_4_input_tokens_per_second": 1.7372955555011356,
+      "training_seconds": 202.45799142005853,
+      "peak_allocated_gib": [
+        35.769893169403076,
+        35.769893169403076
+      ],
+      "peak_reserved_gib": [
+        43.326171875,
+        43.798828125
+      ],
+      "fp32_m_v_bytes_by_rank": [
+        107583993856,
+        107583993856
+      ],
+      "validation_before": {
+        "loss": 2.048569917678833,
+        "assistant_tokens": 433,
+        "correct": 229,
+        "execution": "native BF16 model"
+      },
+      "validation_after": {
+        "loss": 1.5044201612472534,
+        "assistant_tokens": 433,
+        "correct": 263,
+        "execution": "native BF16 model"
+      },
+      "training_hashes": [
+        "6261d8d1dc1e4f8690367186c716d0be96cec8a26d18b6f66f70a553f2ffe314",
+        "3b6210998a0c7624c43c3c174ad369644f1d47a0984f9c9bb8bd9f7bb5c9537d",
+        "7242cb3846af9e62e9000c9e09e076b6dd6696f11f7582252fa7f7994ae1afa8",
+        "c5558c6e47daa8b66e9fdabcac9c4780d32fa975a916aefbee1b02c23f1ab75d",
+        "3fd2c19a1928ffc225174aad0bc9834aa1a928c0c9d3e367d61dd04a8d2eb869",
+        "f2c387f9c876990f6f7a2de2b36455d10d0868d84426d77c4d22bee9ae8015e9",
+        "fca96a2d7136ee74b9dfd9fac758614280ca2b25335e5362700e40b47bacf6b1",
+        "f5dac26fab616fc7e759756c3a7d214d38043cb95b310cabf6f785ab6bdb0f45"
+      ],
+      "validation_hashes": [
+        "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+        "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+        "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+        "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+        "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+        "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+        "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+        "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da"
+      ],
+      "cpu_affinities": [
+        [
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107
+        ],
+        [
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119
+        ]
+      ]
+    },
+    "throughput_speedup": 1.5008807922754803
+  },
+  "notes": [
+    "batch1 first4 uses same 28/31/31/32-token examples; exclude first-step warmup",
+    "mixed BF16 memory peak is over entire 20-step run; four-step loss is separate",
+    "batch2 ZeRO-3 uses 8 examples over 4 updates; native BF16 execution validation",
+    "LoRA and failed attempts are separate; no quality ranking across different protocols"
+  ],
+  "followup_verifications": {
+    "dual-throughput-verification.json": {
+      "completed": true,
+      "successful_cases_checked": 10,
+      "same_batch32_data_and_update_count": true,
+      "batch2_matches_historical_data_and_updates": true,
+      "fp32_m_v_bytes_all_updates": 215167987712,
+      "matched_batch2_optimized_seconds": 30.134889330094058,
+      "matched_batch2_speedup_vs_previous_dual": 1.3816408640901008,
+      "matched_batch2_speedup_vs_previous_single": 2.07367823473573,
+      "matched_validation_loss_delta": -2.384185791015625e-07,
+      "batch32_speedup_micro4_to_best": 2.671179031747855
+    },
+    "training-fusion-verification.json": {
+      "completed": true,
+      "successful_cases": 5,
+      "same_data_and_update_counts": true,
+      "master_and_m_v_fp32": true,
+      "m_v_bytes_total": 215167987712,
+      "copy_and_identity_probes_bit_exact": true,
+      "fused_gdn_fp64_metric_recheck_passed": true,
+      "batch2_before_seconds": 30.134889330094058,
+      "batch2_after_seconds": 25.49624455999583,
+      "batch2_throughput_speedup": 1.181934431919294,
+      "batch32_before_seconds": 34.877661775099114,
+      "batch32_after_seconds": 27.57555951992981,
+      "batch32_throughput_speedup": 1.2648034122350924,
+      "limits": [
+        "Numerical gates are short-run checks, not long-term convergence proof",
+        "Fused GDN BF16 intermediate math is not bit-identical to FP32 decomposition"
+      ]
+    }
+  }
+}

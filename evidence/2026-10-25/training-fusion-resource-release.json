@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-25",
+  "source": "npu-smi info after research2-job completed and FP64 numerical recheck exited normally",
+  "authorized_cards": [2, 3],
+  "cards": [
+    {"physical_id": 2, "running_processes": 0, "hbm_used_mib": 3416},
+    {"physical_id": 3, "running_processes": 0, "hbm_used_mib": 3415}
+  ],
+  "other_services_stopped": false,
+  "original_checkpoint_modified": false,
+  "new_full_model_checkpoint_saved": false,
+  "shared_installations_modified": false,
+  "git_commit_or_push_performed": false
+}

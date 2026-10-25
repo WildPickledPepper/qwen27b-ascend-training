@@ -1,0 +1,12 @@
+{
+  "completed": true,
+  "single_thread_backward": false,
+  "non_reentrant": false,
+  "tiny_gradient_finite": true,
+  "input_gradient_l2": 0.011914996430277824,
+  "changed_steps": {
+    "gate": 1,
+    "up": 1,
+    "down": 1
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "reviewed": "2026-10-25",
+  "community_training_kernels": {
+    "repository": "https://github.com/ByteDance-Seed/VeOmni",
+    "revision": "eba362dd4ca43b6cba53dc69c1d378cf3eda57b6",
+    "guide": "https://veomni.readthedocs.io/en/latest/examples/qwen3_5.html",
+    "raw_pair": "veomni/ops/kernels/gated_delta_rule/chunk_gated_delta_rule/standard/triton.py",
+    "kernel_directory": "veomni/ops/kernels/gated_delta_rule/vendor/triton",
+    "source_changes": false,
+    "integration": "External pinned checkout, process-local namespace and autograd adapter; trainer stack not installed"
+  },
+  "other_reviewed_sources": [
+    "https://deepspeed.readthedocs.io/en/latest/zero3.html",
+    "https://github.com/flashserve/flash-linear-attention-npu",
+    "https://github.com/InternLM/xtuner/issues/2118",
+    "https://github.com/deepspeedai/DeepSpeed/issues/8697",
+    "https://github.com/deepspeedai/DeepSpeed/blob/master/blogs/deepspeed-offloadpp/README.md"
+  ],
+  "tested_stack": {
+    "hardware": "2 x Ascend910B2",
+    "torch": "2.10.0+cpu",
+    "torch_npu": "2.10.0.post4",
+    "deepspeed": "0.19.8",
+    "transformers": "5.14.1",
+    "triton_ascend": "3.2.2",
+    "triton": "3.5.0",
+    "CANN": "9.1"
+  },
+  "scope": "Only the VeOmni training kernel pair was integrated; other sources are research references, not deployed components"
+}

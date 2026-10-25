@@ -1,0 +1,666 @@
+{
+  "all": {
+    "coordinates": 52928,
+    "reference_grad_l2": 1.480410536648245,
+    "bf16_grad_l2": 1.4836506090698707,
+    "gradient_relative_l2": 0.011711825826961612,
+    "gradient_max_abs_difference": 0.006576694548130035,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "other": {
+    "coordinates": 8384,
+    "reference_grad_l2": 0.07500563210305546,
+    "bf16_grad_l2": 0.07503217231915696,
+    "gradient_relative_l2": 0.01831263863482352,
+    "gradient_max_abs_difference": 0.00014182878658175468,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:lm_head.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 3.1979134521415983e-07,
+    "bf16_grad_l2": 3.3568231244646786e-07,
+    "gradient_relative_l2": 0.05313568175876019,
+    "gradient_max_abs_difference": 1.666438720349106e-08,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.norm.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.013200967256556652,
+    "bf16_grad_l2": 0.01320017008835402,
+    "gradient_relative_l2": 0.007496658001314446,
+    "gradient_max_abs_difference": 4.598568193614483e-05,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "ffn": {
+    "coordinates": 12288,
+    "reference_grad_l2": 0.04985808573882586,
+    "bf16_grad_l2": 0.049824458110562124,
+    "gradient_relative_l2": 0.019809904232794873,
+    "gradient_max_abs_difference": 0.00014827633276581764,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_63": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.019850993354415293,
+    "bf16_grad_l2": 0.019721942767963345,
+    "gradient_relative_l2": 0.012930744419655835,
+    "gradient_max_abs_difference": 0.00013848207890987396,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.mlp.down_proj.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.0037257456053089765,
+    "bf16_grad_l2": 0.0037202173953968633,
+    "gradient_relative_l2": 0.007437616129557979,
+    "gradient_max_abs_difference": 1.6840494936332107e-05,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.mlp.up_proj.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.0008526837491573362,
+    "bf16_grad_l2": 0.0008534859578842444,
+    "gradient_relative_l2": 0.011964903127469504,
+    "gradient_max_abs_difference": 5.946814781054854e-06,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.mlp.gate_proj.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.0010616677415983102,
+    "bf16_grad_l2": 0.001070983789106008,
+    "gradient_relative_l2": 0.01233494968691599,
+    "gradient_max_abs_difference": 9.006820619106293e-06,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.post_attention_layernorm.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.014523256856776683,
+    "bf16_grad_l2": 0.014395638505263098,
+    "gradient_relative_l2": 0.011964815035475515,
+    "gradient_max_abs_difference": 0.00013848207890987396,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "attention": {
+    "coordinates": 6144,
+    "reference_grad_l2": 0.07227439208371368,
+    "bf16_grad_l2": 0.07215376030278267,
+    "gradient_relative_l2": 0.016795792163314904,
+    "gradient_max_abs_difference": 0.0003009834326803684,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.self_attn.k_norm.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.006790461240621836,
+    "bf16_grad_l2": 0.006759608411509678,
+    "gradient_relative_l2": 0.01597606575663694,
+    "gradient_max_abs_difference": 4.614365752786398e-05,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.self_attn.q_norm.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.006618446372116738,
+    "bf16_grad_l2": 0.006582324802146408,
+    "gradient_relative_l2": 0.015606950771356562,
+    "gradient_max_abs_difference": 4.601525142788887e-05,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.self_attn.o_proj.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.0029001546862697553,
+    "bf16_grad_l2": 0.0029035640149234244,
+    "gradient_relative_l2": 0.008343520074295263,
+    "gradient_max_abs_difference": 8.994684321805835e-06,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.self_attn.v_proj.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.004978570814735866,
+    "bf16_grad_l2": 0.004959128107738723,
+    "gradient_relative_l2": 0.009093632976405551,
+    "gradient_max_abs_difference": 2.1635787561535835e-05,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.self_attn.k_proj.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.0021867903315319565,
+    "bf16_grad_l2": 0.002199208849907118,
+    "gradient_relative_l2": 0.02184176064382223,
+    "gradient_max_abs_difference": 1.908640842884779e-05,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.input_layernorm.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.005817015848510809,
+    "bf16_grad_l2": 0.005798740145590789,
+    "gradient_relative_l2": 0.010343548415142314,
+    "gradient_max_abs_difference": 2.7326284907758236e-05,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.self_attn.q_proj.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.0023812964967659814,
+    "bf16_grad_l2": 0.0023452736397995234,
+    "gradient_relative_l2": 0.025456186226901496,
+    "gradient_max_abs_difference": 5.2570016123354435e-05,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_62": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.22628437629444415,
+    "bf16_grad_l2": 0.22023874617183234,
+    "gradient_relative_l2": 0.029282904573002904,
+    "gradient_max_abs_difference": 0.006435364484786987,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "linear_attention": {
+    "coordinates": 26112,
+    "reference_grad_l2": 1.4758997580145385,
+    "bf16_grad_l2": 1.4791553877664902,
+    "gradient_relative_l2": 0.011662596291179375,
+    "gradient_max_abs_difference": 0.006576694548130035,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_61": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.030454883581736245,
+    "bf16_grad_l2": 0.03052289902707708,
+    "gradient_relative_l2": 0.009601043866756313,
+    "gradient_max_abs_difference": 0.0001290112268179655,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_60": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.06129719974586779,
+    "bf16_grad_l2": 0.06139998367077391,
+    "gradient_relative_l2": 0.014407431277732717,
+    "gradient_max_abs_difference": 0.0007140478119254112,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_59": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.01320307716509035,
+    "bf16_grad_l2": 0.013199484741868888,
+    "gradient_relative_l2": 0.01538701678542727,
+    "gradient_max_abs_difference": 0.00013252301141619682,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_58": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.01639566885719557,
+    "bf16_grad_l2": 0.01639240457691369,
+    "gradient_relative_l2": 0.015002524613023318,
+    "gradient_max_abs_difference": 0.00012460164725780487,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_57": {
+    "coordinates": 864,
+    "reference_grad_l2": 1.1979004890452132,
+    "bf16_grad_l2": 1.2035263662913185,
+    "gradient_relative_l2": 0.004705761753212887,
+    "gradient_max_abs_difference": 0.005629301071166992,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_56": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.09387770652828034,
+    "bf16_grad_l2": 0.09448001673348276,
+    "gradient_relative_l2": 0.010162340934474323,
+    "gradient_max_abs_difference": 0.0006925687193870544,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_55": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.009006621361407527,
+    "bf16_grad_l2": 0.009009691563714261,
+    "gradient_relative_l2": 0.013095451684731418,
+    "gradient_max_abs_difference": 2.8194626793265343e-05,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_54": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.035059362655058955,
+    "bf16_grad_l2": 0.03497656918700805,
+    "gradient_relative_l2": 0.016625022590213725,
+    "gradient_max_abs_difference": 0.00041145551949739456,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_53": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.07239764569258125,
+    "bf16_grad_l2": 0.07269516724830086,
+    "gradient_relative_l2": 0.011761394091149287,
+    "gradient_max_abs_difference": 0.0004558805376291275,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_52": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.045316728281103225,
+    "bf16_grad_l2": 0.045238149549798067,
+    "gradient_relative_l2": 0.013944980319576375,
+    "gradient_max_abs_difference": 0.00031503220088779926,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_51": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.017558730955009313,
+    "bf16_grad_l2": 0.017540675113979724,
+    "gradient_relative_l2": 0.01094415189480099,
+    "gradient_max_abs_difference": 5.525071173906326e-05,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_50": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.15497361421052983,
+    "bf16_grad_l2": 0.15423266911093436,
+    "gradient_relative_l2": 0.0076983486157172825,
+    "gradient_max_abs_difference": 0.0007647424936294556,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_49": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.22020422743381463,
+    "bf16_grad_l2": 0.22062885352080114,
+    "gradient_relative_l2": 0.010854080432531278,
+    "gradient_max_abs_difference": 0.001615632325410843,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_48": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.1394084210888997,
+    "bf16_grad_l2": 0.13860613324491533,
+    "gradient_relative_l2": 0.016702614329293767,
+    "gradient_max_abs_difference": 0.0018427446484565735,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_47": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.02127733780179357,
+    "bf16_grad_l2": 0.021053812848728717,
+    "gradient_relative_l2": 0.01868916421639288,
+    "gradient_max_abs_difference": 0.00026354100555181503,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_46": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.09402039651028725,
+    "bf16_grad_l2": 0.09393923678016473,
+    "gradient_relative_l2": 0.015003707328893381,
+    "gradient_max_abs_difference": 0.0006428658962249756,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_45": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.1462279337414707,
+    "bf16_grad_l2": 0.14718869015524483,
+    "gradient_relative_l2": 0.012179556125140031,
+    "gradient_max_abs_difference": 0.0010333508253097534,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_44": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.10651159832285279,
+    "bf16_grad_l2": 0.1064392280614796,
+    "gradient_relative_l2": 0.011861586354122695,
+    "gradient_max_abs_difference": 0.0005746446549892426,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_43": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.023830172999586563,
+    "bf16_grad_l2": 0.023814193013875922,
+    "gradient_relative_l2": 0.01582553255603159,
+    "gradient_max_abs_difference": 0.00016267807222902775,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_42": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.08353513415041877,
+    "bf16_grad_l2": 0.08362326147045257,
+    "gradient_relative_l2": 0.015077353138833897,
+    "gradient_max_abs_difference": 0.0004641767591238022,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_41": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.2527052440555588,
+    "bf16_grad_l2": 0.2496112453953299,
+    "gradient_relative_l2": 0.014147025456990335,
+    "gradient_max_abs_difference": 0.0033544152975082397,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_40": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.23486269215671027,
+    "bf16_grad_l2": 0.23305294320075348,
+    "gradient_relative_l2": 0.019023300420879546,
+    "gradient_max_abs_difference": 0.0028114020824432373,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_39": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.019216009853017618,
+    "bf16_grad_l2": 0.019220485115121033,
+    "gradient_relative_l2": 0.018916281736228585,
+    "gradient_max_abs_difference": 0.00012314273044466972,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_38": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.06663062099606791,
+    "bf16_grad_l2": 0.06602251047255708,
+    "gradient_relative_l2": 0.018418940354019253,
+    "gradient_max_abs_difference": 0.0009188763797283173,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_37": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.05923444968563485,
+    "bf16_grad_l2": 0.0589792632013704,
+    "gradient_relative_l2": 0.021726758015270478,
+    "gradient_max_abs_difference": 0.0006181593053042889,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_36": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.07047885517759794,
+    "bf16_grad_l2": 0.07039510248482475,
+    "gradient_relative_l2": 0.0241723687623321,
+    "gradient_max_abs_difference": 0.0009079035371541977,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_35": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.0342468974092788,
+    "bf16_grad_l2": 0.03439288425510507,
+    "gradient_relative_l2": 0.018980543425254463,
+    "gradient_max_abs_difference": 0.0003009834326803684,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_34": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.18102037617097466,
+    "bf16_grad_l2": 0.1803761362725189,
+    "gradient_relative_l2": 0.011913226351081536,
+    "gradient_max_abs_difference": 0.001387961208820343,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_33": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.2368787932364344,
+    "bf16_grad_l2": 0.2366182261367396,
+    "gradient_relative_l2": 0.01474219496991176,
+    "gradient_max_abs_difference": 0.0020667463541030884,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_32": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.10761843268843065,
+    "bf16_grad_l2": 0.10778448421020832,
+    "gradient_relative_l2": 0.025441664676131123,
+    "gradient_max_abs_difference": 0.0018267026171088219,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_31": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.03098288734712976,
+    "bf16_grad_l2": 0.030926242078376243,
+    "gradient_relative_l2": 0.013733623541055404,
+    "gradient_max_abs_difference": 0.00010645153815858066,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_30": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.10150794621204419,
+    "bf16_grad_l2": 0.10137497421692335,
+    "gradient_relative_l2": 0.035922336040245466,
+    "gradient_max_abs_difference": 0.0033176965080201626,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_29": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.0818062171781988,
+    "bf16_grad_l2": 0.08154102153587796,
+    "gradient_relative_l2": 0.016627905833189977,
+    "gradient_max_abs_difference": 0.0004825890064239502,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_28": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.10604624982541497,
+    "bf16_grad_l2": 0.10584556210260423,
+    "gradient_relative_l2": 0.019453698029803877,
+    "gradient_max_abs_difference": 0.0009341612458229065,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_27": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.02845574276450315,
+    "bf16_grad_l2": 0.02862837487829731,
+    "gradient_relative_l2": 0.017634166648154637,
+    "gradient_max_abs_difference": 0.00014827633276581764,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_26": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.11123936724912649,
+    "bf16_grad_l2": 0.1118382918068356,
+    "gradient_relative_l2": 0.016945211111699884,
+    "gradient_max_abs_difference": 0.0010815784335136414,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_25": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.13039166990770745,
+    "bf16_grad_l2": 0.13075134392016935,
+    "gradient_relative_l2": 0.013646967818501875,
+    "gradient_max_abs_difference": 0.0011874586343765259,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_24": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.19386163408351856,
+    "bf16_grad_l2": 0.193370767391485,
+    "gradient_relative_l2": 0.010219086157186292,
+    "gradient_max_abs_difference": 0.0010013319551944733,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_23": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.03195585842871462,
+    "bf16_grad_l2": 0.03178304179272964,
+    "gradient_relative_l2": 0.016201457836192222,
+    "gradient_max_abs_difference": 0.00027755554765462875,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_22": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.08591024005341645,
+    "bf16_grad_l2": 0.08693221033611685,
+    "gradient_relative_l2": 0.026333121011131423,
+    "gradient_max_abs_difference": 0.0017051994800567627,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_21": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.08962659154929191,
+    "bf16_grad_l2": 0.09165495312204129,
+    "gradient_relative_l2": 0.0329963367667162,
+    "gradient_max_abs_difference": 0.002340935170650482,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_20": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.07238932460934677,
+    "bf16_grad_l2": 0.07190814001521918,
+    "gradient_relative_l2": 0.03353399531865114,
+    "gradient_max_abs_difference": 0.0016437210142612457,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_19": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.02238749726544326,
+    "bf16_grad_l2": 0.022084685664568022,
+    "gradient_relative_l2": 0.02356643867526019,
+    "gradient_max_abs_difference": 0.0002905363216996193,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_18": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.09580099018215694,
+    "bf16_grad_l2": 0.09603941623331867,
+    "gradient_relative_l2": 0.011812783200235549,
+    "gradient_max_abs_difference": 0.0004262235015630722,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_17": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.13018332995365917,
+    "bf16_grad_l2": 0.13084180064126663,
+    "gradient_relative_l2": 0.01592344812120158,
+    "gradient_max_abs_difference": 0.000709892250597477,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_16": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.0827171637245871,
+    "bf16_grad_l2": 0.08325975798489879,
+    "gradient_relative_l2": 0.015605390352777254,
+    "gradient_max_abs_difference": 0.0006606429815292358,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_15": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.011681413678466285,
+    "bf16_grad_l2": 0.011539614867112009,
+    "gradient_relative_l2": 0.027879844318824235,
+    "gradient_max_abs_difference": 0.0001930934377014637,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_14": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.13052768590161098,
+    "bf16_grad_l2": 0.1319639874450659,
+    "gradient_relative_l2": 0.017583866070304592,
+    "gradient_max_abs_difference": 0.001442931592464447,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_13": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.06373256186393274,
+    "bf16_grad_l2": 0.06369206101957024,
+    "gradient_relative_l2": 0.013468638897234398,
+    "gradient_max_abs_difference": 0.0003615971654653549,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_12": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.14808948236990632,
+    "bf16_grad_l2": 0.14895808803043845,
+    "gradient_relative_l2": 0.011456482859482175,
+    "gradient_max_abs_difference": 0.0010416209697723389,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_11": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.00982382878817857,
+    "bf16_grad_l2": 0.009887340096574335,
+    "gradient_relative_l2": 0.01950385280200788,
+    "gradient_max_abs_difference": 5.464116111397743e-05,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_10": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.07449970824891063,
+    "bf16_grad_l2": 0.0746716446874464,
+    "gradient_relative_l2": 0.014116921210523508,
+    "gradient_max_abs_difference": 0.0004504220560193062,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_9": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.07687160656287041,
+    "bf16_grad_l2": 0.07221974683648859,
+    "gradient_relative_l2": 0.08787764864814561,
+    "gradient_max_abs_difference": 0.006576694548130035,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_8": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.06537455616344039,
+    "bf16_grad_l2": 0.06495757058065962,
+    "gradient_relative_l2": 0.03424195104652021,
+    "gradient_max_abs_difference": 0.0019483156502246857,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_7": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.01754276718512872,
+    "bf16_grad_l2": 0.01773076743250697,
+    "gradient_relative_l2": 0.014341731751773392,
+    "gradient_max_abs_difference": 0.00013825483620166779,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_6": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.06551210624731611,
+    "bf16_grad_l2": 0.06615456792025405,
+    "gradient_relative_l2": 0.017459202452338774,
+    "gradient_max_abs_difference": 0.0007490813732147217,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_5": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.060628480173032157,
+    "bf16_grad_l2": 0.060934561905266894,
+    "gradient_relative_l2": 0.01501549848577943,
+    "gradient_max_abs_difference": 0.00053015211597085,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_4": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.056931991924353074,
+    "bf16_grad_l2": 0.05772316784044584,
+    "gradient_relative_l2": 0.023245446461524964,
+    "gradient_max_abs_difference": 0.0009474940598011017,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_3": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.00554009931369046,
+    "bf16_grad_l2": 0.00558770014707507,
+    "gradient_relative_l2": 0.026560855804327654,
+    "gradient_max_abs_difference": 3.7113786675035954e-05,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_2": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.0960278054316265,
+    "bf16_grad_l2": 0.09713167229472876,
+    "gradient_relative_l2": 0.015238214493520525,
+    "gradient_max_abs_difference": 0.0010375343263149261,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_1": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.08327281907563672,
+    "bf16_grad_l2": 0.08420635655635864,
+    "gradient_relative_l2": 0.01795335322577114,
+    "gradient_max_abs_difference": 0.0010662786662578583,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_0": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.2603115590469183,
+    "bf16_grad_l2": 0.26088286624544815,
+    "gradient_relative_l2": 0.011781133687731458,
+    "gradient_max_abs_difference": 0.0013075765455141664,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.embed_tokens.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.0,
+    "bf16_grad_l2": 0.0,
+    "gradient_relative_l2": 0.0,
+    "gradient_max_abs_difference": 0.0,
+    "weight_before_max_abs_difference": 0.0
+  }
+}

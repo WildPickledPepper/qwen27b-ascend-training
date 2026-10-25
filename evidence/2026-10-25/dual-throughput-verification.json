@@ -1,0 +1,12 @@
+{
+  "completed": true,
+  "successful_cases_checked": 10,
+  "same_batch32_data_and_update_count": true,
+  "batch2_matches_historical_data_and_updates": true,
+  "fp32_m_v_bytes_all_updates": 215167987712,
+  "matched_batch2_optimized_seconds": 30.134889330094058,
+  "matched_batch2_speedup_vs_previous_dual": 1.3816408640901008,
+  "matched_batch2_speedup_vs_previous_single": 2.07367823473573,
+  "matched_validation_loss_delta": -2.384185791015625e-07,
+  "batch32_speedup_micro4_to_best": 2.671179031747855
+}

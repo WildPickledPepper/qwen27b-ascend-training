@@ -1,0 +1,119 @@
+{
+  "same_protocol": "Global batch32, three updates, same data, rank0 final-update profile, 48/64 checkpointed layers",
+  "metrics": {
+    "compute_total": {
+      "before": [
+        {
+          "calls": 144031,
+          "summed_seconds": 6.51922927
+        }
+      ],
+      "after": [
+        {
+          "calls": 33199,
+          "summed_seconds": 5.48126098
+        }
+      ]
+    },
+    "compute_interval_union": {
+      "before": [
+        {
+          "compute_islands": 141742,
+          "nonoverlapping_compute_seconds": 6.268483334
+        }
+      ],
+      "after": [
+        {
+          "compute_islands": 31334,
+          "nonoverlapping_compute_seconds": 4.728208606
+        }
+      ]
+    },
+    "cpu_adam_ranges": {
+      "before": [
+        {
+          "calls": 44,
+          "summed_seconds": 9.72856264
+        }
+      ],
+      "after": [
+        {
+          "calls": 44,
+          "summed_seconds": 10.70166127
+        }
+      ]
+    },
+    "communication_top20": {
+      "before": [
+        {
+          "op_type": "hcom_allGather_",
+          "calls": 857,
+          "summed_seconds": 3.349198801
+        },
+        {
+          "op_type": "hcom_reduceScatter_",
+          "calls": 563,
+          "summed_seconds": 3.144719944
+        },
+        {
+          "op_type": "hcom_allReduce_",
+          "calls": 46,
+          "summed_seconds": 0.013230645
+        }
+      ],
+      "after": [
+        {
+          "op_type": "hcom_allGather_",
+          "calls": 857,
+          "summed_seconds": 3.194317434
+        },
+        {
+          "op_type": "hcom_reduceScatter_",
+          "calls": 563,
+          "summed_seconds": 3.128782955
+        },
+        {
+          "op_type": "hcom_allReduce_",
+          "calls": 46,
+          "summed_seconds": 0.000827862
+        }
+      ]
+    },
+    "device_window": {
+      "before": [
+        {
+          "tasks": 192753,
+          "start_ns": 1792903773548641772,
+          "end_ns": 1792903812687298342,
+          "window_seconds": 39.13865657
+        }
+      ],
+      "after": [
+        {
+          "tasks": 73558,
+          "start_ns": 1792908305472339085,
+          "end_ns": 1792908334065369994,
+          "window_seconds": 28.593030909
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Summed API/kernel/communication durations overlap; not a critical-path partition",
+    "Unprofiled 34.8777 vs 27.5756 seconds are used for speed, not profile-window ratios",
+    "aten::copy_ includes multiple purposes and is not pure PCIe time"
+  ],
+  "compute_call_reduction_fraction": 0.7695010101991933,
+  "matmul_v3": {
+    "before": {
+      "op_type": "MatMulV3",
+      "calls": 1443,
+      "summed_seconds": 1.775028343
+    },
+    "after": {
+      "op_type": "MatMulV3",
+      "calls": 1443,
+      "summed_seconds": 1.80076003
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "completed": true,
+  "successful_cases": 5,
+  "same_data_and_update_counts": true,
+  "master_and_m_v_fp32": true,
+  "m_v_bytes_total": 215167987712,
+  "copy_and_identity_probes_bit_exact": true,
+  "fused_gdn_fp64_metric_recheck_passed": true,
+  "batch2_before_seconds": 30.134889330094058,
+  "batch2_after_seconds": 25.49624455999583,
+  "batch2_throughput_speedup": 1.181934431919294,
+  "batch32_before_seconds": 34.877661775099114,
+  "batch32_after_seconds": 27.57555951992981,
+  "batch32_throughput_speedup": 1.2648034122350924,
+  "limits": [
+    "Numerical gates are short-run checks, not long-term convergence proof",
+    "Fused GDN BF16 intermediate math is not bit-identical to FP32 decomposition"
+  ]
+}

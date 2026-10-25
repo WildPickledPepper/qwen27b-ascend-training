@@ -1,0 +1,411 @@
+{
+  "completed": true,
+  "scope": "27B text full-parameter training; native BF16 model; CPU FP32 master and Adam m/v; ZeRO-3",
+  "framework": {
+    "deepspeed": "0.19.8",
+    "torch": "2.10.0+cpu",
+    "torch_npu": "2.10.0.post4",
+    "transformers": "5.14.1"
+  },
+  "dual": {
+    "world_size": 2,
+    "parameters": 26895998464,
+    "global_batch_size": 2,
+    "gradient_accumulation_steps": 1,
+    "step_seconds": [
+      77.55120782018639,
+      42.55686763999984,
+      41.56196711002849,
+      40.787948849843815
+    ],
+    "global_input_tokens": [
+      59,
+      63,
+      73,
+      81
+    ],
+    "global_training_loss": [
+      2.5215393900871277,
+      1.4764251708984375,
+      1.6305862963199615,
+      2.2108999490737915
+    ],
+    "steps2_4_mean_seconds": 41.635594533290714,
+    "steps2_4_input_tokens_per_second": 1.7372955555011356,
+    "training_seconds": 202.45799142005853,
+    "peak_allocated_gib": [
+      35.769893169403076,
+      35.769893169403076
+    ],
+    "peak_reserved_gib": [
+      43.326171875,
+      43.798828125
+    ],
+    "fp32_m_v_bytes_by_rank": [
+      107583993856,
+      107583993856
+    ],
+    "validation_before": {
+      "loss": 2.048569917678833,
+      "assistant_tokens": 433,
+      "correct": 229,
+      "execution": "native BF16 model"
+    },
+    "validation_after": {
+      "loss": 1.5044201612472534,
+      "assistant_tokens": 433,
+      "correct": 263,
+      "execution": "native BF16 model"
+    },
+    "training_hashes": [
+      "6261d8d1dc1e4f8690367186c716d0be96cec8a26d18b6f66f70a553f2ffe314",
+      "3b6210998a0c7624c43c3c174ad369644f1d47a0984f9c9bb8bd9f7bb5c9537d",
+      "7242cb3846af9e62e9000c9e09e076b6dd6696f11f7582252fa7f7994ae1afa8",
+      "c5558c6e47daa8b66e9fdabcac9c4780d32fa975a916aefbee1b02c23f1ab75d",
+      "3fd2c19a1928ffc225174aad0bc9834aa1a928c0c9d3e367d61dd04a8d2eb869",
+      "f2c387f9c876990f6f7a2de2b36455d10d0868d84426d77c4d22bee9ae8015e9",
+      "fca96a2d7136ee74b9dfd9fac758614280ca2b25335e5362700e40b47bacf6b1",
+      "f5dac26fab616fc7e759756c3a7d214d38043cb95b310cabf6f785ab6bdb0f45"
+    ],
+    "validation_hashes": [
+      "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+      "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+      "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+      "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+      "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+      "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+      "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+      "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da"
+    ],
+    "cpu_affinities": [
+      [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107
+      ],
+      [
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ]
+    ]
+  },
+  "single": {
+    "world_size": 1,
+    "parameters": 26895998464,
+    "global_batch_size": 2,
+    "gradient_accumulation_steps": 2,
+    "step_seconds": [
+      105.68918301002122,
+      62.74378041992895,
+      63.25609966996126,
+      61.47031224006787
+    ],
+    "global_input_tokens": [
+      59,
+      63,
+      73,
+      81
+    ],
+    "global_training_loss": [
+      2.521539330482483,
+      1.4764251112937927,
+      1.6305862963199615,
+      2.2108997106552124
+    ],
+    "steps2_4_mean_seconds": 62.49006410998603,
+    "steps2_4_input_tokens_per_second": 1.1575173487744004,
+    "training_seconds": 293.1593753399793,
+    "peak_allocated_gib": [
+      59.66145706176758
+    ],
+    "peak_reserved_gib": [
+      60.26171875
+    ],
+    "fp32_m_v_bytes_by_rank": [
+      215167987712
+    ],
+    "validation_before": {
+      "loss": 2.048570156097412,
+      "assistant_tokens": 433,
+      "correct": 229,
+      "execution": "native BF16 model"
+    },
+    "validation_after": {
+      "loss": 1.5044201612472534,
+      "assistant_tokens": 433,
+      "correct": 263,
+      "execution": "native BF16 model"
+    },
+    "training_hashes": [
+      "6261d8d1dc1e4f8690367186c716d0be96cec8a26d18b6f66f70a553f2ffe314",
+      "3b6210998a0c7624c43c3c174ad369644f1d47a0984f9c9bb8bd9f7bb5c9537d",
+      "7242cb3846af9e62e9000c9e09e076b6dd6696f11f7582252fa7f7994ae1afa8",
+      "c5558c6e47daa8b66e9fdabcac9c4780d32fa975a916aefbee1b02c23f1ab75d",
+      "3fd2c19a1928ffc225174aad0bc9834aa1a928c0c9d3e367d61dd04a8d2eb869",
+      "f2c387f9c876990f6f7a2de2b36455d10d0868d84426d77c4d22bee9ae8015e9",
+      "fca96a2d7136ee74b9dfd9fac758614280ca2b25335e5362700e40b47bacf6b1",
+      "f5dac26fab616fc7e759756c3a7d214d38043cb95b310cabf6f785ab6bdb0f45"
+    ],
+    "validation_hashes": [
+      "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+      "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+      "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+      "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+      "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+      "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+      "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+      "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da"
+    ],
+    "cpu_affinities": [
+      [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ]
+    ]
+  },
+  "throughput_speedup": 1.5008807922754803,
+  "same_global_batch_and_examples": true,
+  "task_queue_enable": "0",
+  "checkpoint_saved": false,
+  "bounded_grad_copy_probe": {
+    "completed": true,
+    "rows": [
+      {
+        "dtype": "torch.bfloat16",
+        "coordinates": 16777473,
+        "fp32_output_bits_equal": true
+      },
+      {
+        "dtype": "torch.float32",
+        "coordinates": 16777473,
+        "fp32_output_bits_equal": true
+      }
+    ]
+  },
+  "original_dual_without_adapter": {
+    "world_size": 2,
+    "parameters": 26895998464,
+    "global_batch_size": 2,
+    "gradient_accumulation_steps": 1,
+    "step_seconds": [
+      74.29112567007542,
+      43.13662480004132,
+      41.989579339977354,
+      40.91128038009629
+    ],
+    "global_input_tokens": [
+      59,
+      63,
+      73,
+      81
+    ],
+    "global_training_loss": [
+      2.5215392112731934,
+      1.4764251708984375,
+      1.6305862665176392,
+      2.210899829864502
+    ],
+    "steps2_4_mean_seconds": 42.01249484003832,
+    "steps2_4_input_tokens_per_second": 1.7217100200485822,
+    "training_seconds": 200.32861019019037,
+    "peak_allocated_gib": [
+      35.769893169403076,
+      35.769893169403076
+    ],
+    "peak_reserved_gib": [
+      43.326171875,
+      43.330078125
+    ],
+    "fp32_m_v_bytes_by_rank": [
+      107583993856,
+      107583993856
+    ],
+    "validation_before": {
+      "loss": 2.048569917678833,
+      "assistant_tokens": 433,
+      "correct": 229,
+      "execution": "native BF16 model"
+    },
+    "validation_after": {
+      "loss": 1.5044199228286743,
+      "assistant_tokens": 433,
+      "correct": 263,
+      "execution": "native BF16 model"
+    },
+    "training_hashes": [
+      "6261d8d1dc1e4f8690367186c716d0be96cec8a26d18b6f66f70a553f2ffe314",
+      "3b6210998a0c7624c43c3c174ad369644f1d47a0984f9c9bb8bd9f7bb5c9537d",
+      "7242cb3846af9e62e9000c9e09e076b6dd6696f11f7582252fa7f7994ae1afa8",
+      "c5558c6e47daa8b66e9fdabcac9c4780d32fa975a916aefbee1b02c23f1ab75d",
+      "3fd2c19a1928ffc225174aad0bc9834aa1a928c0c9d3e367d61dd04a8d2eb869",
+      "f2c387f9c876990f6f7a2de2b36455d10d0868d84426d77c4d22bee9ae8015e9",
+      "fca96a2d7136ee74b9dfd9fac758614280ca2b25335e5362700e40b47bacf6b1",
+      "f5dac26fab616fc7e759756c3a7d214d38043cb95b310cabf6f785ab6bdb0f45"
+    ],
+    "validation_hashes": [
+      "6bbd8b22704360b245d9b3df223df325e7e1b6cc69a8012b28e843ca4909515c",
+      "e48299c219bf48c923bdfd08446335634b3c2b06768b4484ff2a76123219be06",
+      "c92b5cbde9161537004fa58c86bae177947db091e69e0d47a6fef68e0e64c02e",
+      "e3e7d2b2599ee291819ac5d9ee38b88f8553fc971fae22a5be92fae79df68d8e",
+      "4faff40c93ad1de619ca478548f3b8744a3e3a562548329b354bb99669cf17df",
+      "19c5e29ce14cf2093885d1b325d5630d239dd249cd136d6196c49c7d88d8df00",
+      "864bd17235bf3b0fff3a5bfdf9878d3bc2c7f26629c86fbaaa3a8bb2f6f5d148",
+      "ffceef7c3776c2e714d369443b50ce2a257bd73ee6c9f45130e0c37c017347da"
+    ],
+    "cpu_affinities": [
+      [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107
+      ],
+      [
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ]
+    ]
+  },
+  "original_single_failure": "First backward OOM: 4.74 GiB full-parameter FP32 gradient cast with 3.16 GiB free; no full update completed",
+  "single_allocator_pressure": "Training log reports four allocator cache flushes per update; capacity effects are part of the observed speed difference",
+  "source_sha256_lf": {
+    "zero3.json": "dea8170ba434460e80485d272fe8a853ec31c789d62784ed5731050d9d093a5f",
+    "train_zero3.py": "39084f045fc528aa910ad6d05b56755bbe35095ea3bd9dfb78d3374f55ad9e4b",
+    "train_zero3_compare.py": "16e2288768e7a62682f17ad13fdb76a255311a4ca313fd3d56de3b362010d508",
+    "train_zero3_bounded.py": "7557756e9f295b9149ff5a33269faee6b9402657e2a1fa2e569d8fc9fb89c1ce",
+    "bounded_grad_copy.py": "33ca729bbec3d332e0aa0ad7726d25b2f9c19fc819f1e04012b035c9db913d21",
+    "launch.sh": "2d81917b082f0cc114e76fbb70dcfead083ec71b1ce3082b2488ffaf11d9c973",
+    "run_single_after_dual.py": "5cb7034ae1f9f563b4a203bde5867207e69ab2cef8649683e23ab8665c6cb1a5",
+    "run_bounded_sequence.py": "31e3ad7186dbac92eb6f5d6b378b0e45c1c0053f784ef4048e6a2277151f258c"
+  },
+  "tiny_two_rank_probe": [
+    {
+      "completed": true,
+      "rank": 0,
+      "steps": [
+        {
+          "step": 1,
+          "seconds": 0.3433535201475024,
+          "weighted_local_loss": 0.039690352976322174,
+          "input_tokens": 16,
+          "peak_allocated": 67577344,
+          "peak_reserved": 90177536,
+          "fp32_m_v_bytes": 262144,
+          "global_batch_size": 2
+        },
+        {
+          "step": 2,
+          "seconds": 0.030481130117550492,
+          "weighted_local_loss": 0.04358788579702377,
+          "input_tokens": 16,
+          "peak_allocated": 67577344,
+          "peak_reserved": 90177536,
+          "fp32_m_v_bytes": 262144,
+          "global_batch_size": 2
+        }
+      ],
+      "parameters": 65536,
+      "fp32_master": true,
+      "fp32_m_v": true,
+      "state_cpu_offload": true,
+      "checkpoint_saved": false,
+      "tiny": true
+    },
+    {
+      "completed": true,
+      "rank": 1,
+      "steps": [
+        {
+          "step": 1,
+          "seconds": 0.3434470798820257,
+          "weighted_local_loss": 0.04164460301399231,
+          "input_tokens": 16,
+          "peak_allocated": 67577344,
+          "peak_reserved": 90177536,
+          "fp32_m_v_bytes": 262144,
+          "global_batch_size": 2
+        },
+        {
+          "step": 2,
+          "seconds": 0.030398309929296374,
+          "weighted_local_loss": 0.039331093430519104,
+          "input_tokens": 16,
+          "peak_allocated": 67577344,
+          "peak_reserved": 90177536,
+          "fp32_m_v_bytes": 262144,
+          "global_batch_size": 2
+        }
+      ],
+      "parameters": 65536,
+      "fp32_master": true,
+      "fp32_m_v": true,
+      "state_cpu_offload": true,
+      "checkpoint_saved": false,
+      "tiny": true
+    }
+  ],
+  "limits": [
+    "four updates, short sequences only",
+    "native BF16 operation path differs from previous custom mixed harness",
+    "no complete new checkpoint saved",
+    "not a long-term quality or maximum throughput claim"
+  ]
+}

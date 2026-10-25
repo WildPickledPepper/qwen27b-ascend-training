@@ -1,0 +1,666 @@
+{
+  "all": {
+    "coordinates": 52928,
+    "reference_grad_l2": 1.480410536648245,
+    "bf16_grad_l2": 754504.962015776,
+    "gradient_relative_l2": 509658.49749891757,
+    "gradient_max_abs_difference": 735786.1776133776,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "other": {
+    "coordinates": 8384,
+    "reference_grad_l2": 0.07500563210305546,
+    "bf16_grad_l2": 4896.437276921144,
+    "gradient_relative_l2": 65280.91242575811,
+    "gradient_max_abs_difference": 1180.9396562406328,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:lm_head.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 3.1979134521415983e-07,
+    "bf16_grad_l2": 2.9796121326326674e-07,
+    "gradient_relative_l2": 0.07084418416384972,
+    "gradient_max_abs_difference": 2.2451160930359038e-08,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.norm.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.013200967256556652,
+    "bf16_grad_l2": 0.013520731146210713,
+    "gradient_relative_l2": 0.12252187518821878,
+    "gradient_max_abs_difference": 0.0005873768241144717,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "ffn": {
+    "coordinates": 12288,
+    "reference_grad_l2": 0.04985808573882588,
+    "bf16_grad_l2": 130332.73692844885,
+    "gradient_relative_l2": 2614074.2248128704,
+    "gradient_max_abs_difference": 53248.00021223404,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_63": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.019850993354415293,
+    "bf16_grad_l2": 3426.17010551795,
+    "gradient_relative_l2": 172594.24100034707,
+    "gradient_max_abs_difference": 1655.998647228931,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.mlp.down_proj.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.0037257456053089765,
+    "bf16_grad_l2": 0.0039052930784765527,
+    "gradient_relative_l2": 0.16411100144412924,
+    "gradient_max_abs_difference": 0.0003395024687051773,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.mlp.up_proj.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.0008526837491573362,
+    "bf16_grad_l2": 0.0008039910583189165,
+    "gradient_relative_l2": 0.18450744309543304,
+    "gradient_max_abs_difference": 0.00012086215429008007,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.mlp.gate_proj.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.0010616677415983102,
+    "bf16_grad_l2": 44.73558331402282,
+    "gradient_relative_l2": 42137.33176219645,
+    "gradient_max_abs_difference": 28.62500379491803,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.post_attention_layernorm.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.014523256856776683,
+    "bf16_grad_l2": 1924.838920219766,
+    "gradient_relative_l2": 132534.89772024556,
+    "gradient_max_abs_difference": 974.4887344579911,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "attention": {
+    "coordinates": 6144,
+    "reference_grad_l2": 0.07227439208371368,
+    "bf16_grad_l2": 8907.60209944076,
+    "gradient_relative_l2": 123246.93020578226,
+    "gradient_max_abs_difference": 3315.5366895087063,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.self_attn.k_norm.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.006790461240621836,
+    "bf16_grad_l2": 553.4670300497589,
+    "gradient_relative_l2": 81506.1355410986,
+    "gradient_max_abs_difference": 373.25039474247023,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.self_attn.q_norm.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.006618446372116738,
+    "bf16_grad_l2": 557.528079101851,
+    "gradient_relative_l2": 84238.16726798566,
+    "gradient_max_abs_difference": 372.9560247613117,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.self_attn.o_proj.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.0029001546862697553,
+    "bf16_grad_l2": 580.7798371124118,
+    "gradient_relative_l2": 200258.34481250952,
+    "gradient_max_abs_difference": 264.0004892947618,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.self_attn.k_proj.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.0021867903315319565,
+    "bf16_grad_l2": 268.7277638378318,
+    "gradient_relative_l2": 122886.97111310832,
+    "gradient_max_abs_difference": 107.00048109760974,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.self_attn.q_proj.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.0023812964967659814,
+    "bf16_grad_l2": 643.0860730526799,
+    "gradient_relative_l2": 270056.6434760189,
+    "gradient_max_abs_difference": 611.9988793147495,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.input_layernorm.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.005817015848510809,
+    "bf16_grad_l2": 1883.2501488262883,
+    "gradient_relative_l2": 323748.18180327606,
+    "gradient_max_abs_difference": 1180.9396562406328,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.layers.63.self_attn.v_proj.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.004978570814735866,
+    "bf16_grad_l2": 1744.9244934152564,
+    "gradient_relative_l2": 350486.75429113535,
+    "gradient_max_abs_difference": 1655.998647228931,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_62": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.22628437629444417,
+    "bf16_grad_l2": 70460.47067895379,
+    "gradient_relative_l2": 311380.5080987588,
+    "gradient_max_abs_difference": 54425.108125248924,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "linear_attention": {
+    "coordinates": 26112,
+    "reference_grad_l2": 1.4758997580145385,
+    "bf16_grad_l2": 743093.39582452,
+    "gradient_relative_l2": 503484.2115500209,
+    "gradient_max_abs_difference": 735786.1776133776,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_61": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.030454883581736245,
+    "bf16_grad_l2": 4080.0389973234624,
+    "gradient_relative_l2": 133969.57258615887,
+    "gradient_max_abs_difference": 1317.5579552724957,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_60": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.061297199745867795,
+    "bf16_grad_l2": 28873.102550617186,
+    "gradient_relative_l2": 471034.01481887524,
+    "gradient_max_abs_difference": 25589.636917063966,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_59": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.01320307716509035,
+    "bf16_grad_l2": 2148.6981455854984,
+    "gradient_relative_l2": 162741.7643322137,
+    "gradient_max_abs_difference": 799.3994761010399,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_58": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.01639566885719557,
+    "bf16_grad_l2": 10815.992218032146,
+    "gradient_relative_l2": 659685.5656349949,
+    "gradient_max_abs_difference": 9524.765366833657,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_57": {
+    "coordinates": 864,
+    "reference_grad_l2": 1.197900489045213,
+    "bf16_grad_l2": 735796.8977654226,
+    "gradient_relative_l2": 614237.749409749,
+    "gradient_max_abs_difference": 735786.1776133776,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_56": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.09387770652828034,
+    "bf16_grad_l2": 5691.4517651863225,
+    "gradient_relative_l2": 60626.092323492245,
+    "gradient_max_abs_difference": 2448.4580881423317,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_55": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.009006621361407527,
+    "bf16_grad_l2": 920.0033763200444,
+    "gradient_relative_l2": 102147.68941373866,
+    "gradient_max_abs_difference": 270.0682560922869,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_54": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.035059362655058955,
+    "bf16_grad_l2": 2811.0779197169304,
+    "gradient_relative_l2": 80180.41120575926,
+    "gradient_max_abs_difference": 877.8347527195001,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_53": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.07239764569258125,
+    "bf16_grad_l2": 5428.474753992123,
+    "gradient_relative_l2": 74981.35041573066,
+    "gradient_max_abs_difference": 2241.112487219274,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_52": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.04531672828110322,
+    "bf16_grad_l2": 4905.577174990828,
+    "gradient_relative_l2": 108250.80933045951,
+    "gradient_max_abs_difference": 2775.2926301974803,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_51": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.01755873095500931,
+    "bf16_grad_l2": 2256.2989548865585,
+    "gradient_relative_l2": 128500.71970026394,
+    "gradient_max_abs_difference": 1050.8376368233003,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_50": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.1549736142105298,
+    "bf16_grad_l2": 13456.823884766072,
+    "gradient_relative_l2": 86833.65716457335,
+    "gradient_max_abs_difference": 9495.47293035686,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_49": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.2202042274338146,
+    "bf16_grad_l2": 5955.850650326095,
+    "gradient_relative_l2": 27047.1260122851,
+    "gradient_max_abs_difference": 2603.416947822552,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_48": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.1394084210888997,
+    "bf16_grad_l2": 8455.237678574453,
+    "gradient_relative_l2": 60651.121136190144,
+    "gradient_max_abs_difference": 5359.484375171363,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_47": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.021277337801793566,
+    "bf16_grad_l2": 2425.778527783612,
+    "gradient_relative_l2": 114007.18136755873,
+    "gradient_max_abs_difference": 1814.7699460946023,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_46": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.09402039651028725,
+    "bf16_grad_l2": 18300.324060042905,
+    "gradient_relative_l2": 194642.0973788845,
+    "gradient_max_abs_difference": 13520.779575372115,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_45": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.1462279337414707,
+    "bf16_grad_l2": 5696.04358483915,
+    "gradient_relative_l2": 38953.92646224134,
+    "gradient_max_abs_difference": 5060.632986873388,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_44": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.1065115983228528,
+    "bf16_grad_l2": 7051.0487074654875,
+    "gradient_relative_l2": 66200.21026360353,
+    "gradient_max_abs_difference": 6065.889883115888,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_43": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.023830172999586566,
+    "bf16_grad_l2": 1270.0963205837438,
+    "gradient_relative_l2": 53297.779902124355,
+    "gradient_max_abs_difference": 915.815570884617,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_42": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.08353513415041877,
+    "bf16_grad_l2": 5874.962329528834,
+    "gradient_relative_l2": 70329.18478867672,
+    "gradient_max_abs_difference": 3085.8651602398604,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_41": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.25270524405555883,
+    "bf16_grad_l2": 4105.565841498049,
+    "gradient_relative_l2": 16247.029522918878,
+    "gradient_max_abs_difference": 2506.4848386496305,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_40": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.2348626921567103,
+    "bf16_grad_l2": 16001.82892654902,
+    "gradient_relative_l2": 68133.50471788427,
+    "gradient_max_abs_difference": 15302.077733159065,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_39": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.019216009853017618,
+    "bf16_grad_l2": 1165.9849155829504,
+    "gradient_relative_l2": 60677.68360137882,
+    "gradient_max_abs_difference": 289.9986985423602,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_38": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.06663062099606791,
+    "bf16_grad_l2": 3531.311625098243,
+    "gradient_relative_l2": 52998.185289424815,
+    "gradient_max_abs_difference": 1701.088961649686,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_37": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.059234449685634856,
+    "bf16_grad_l2": 5203.813411445104,
+    "gradient_relative_l2": 87851.07278903625,
+    "gradient_max_abs_difference": 3300.63321461156,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_36": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.07047885517759794,
+    "bf16_grad_l2": 3519.144405836057,
+    "gradient_relative_l2": 49931.95444864603,
+    "gradient_max_abs_difference": 1410.5693334965035,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_35": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.034246897409278804,
+    "bf16_grad_l2": 3643.685926807341,
+    "gradient_relative_l2": 106394.99963857343,
+    "gradient_max_abs_difference": 2094.459340495756,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_34": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.1810203761709747,
+    "bf16_grad_l2": 6631.498840407375,
+    "gradient_relative_l2": 36634.147948111095,
+    "gradient_max_abs_difference": 3374.659840762615,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_33": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.23687879323643446,
+    "bf16_grad_l2": 6155.504051111173,
+    "gradient_relative_l2": 25985.705638303298,
+    "gradient_max_abs_difference": 2685.1422051806003,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_32": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.10761843268843066,
+    "bf16_grad_l2": 4768.42945644296,
+    "gradient_relative_l2": 44308.780642450816,
+    "gradient_max_abs_difference": 2292.168817039579,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_31": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.030982887347129756,
+    "bf16_grad_l2": 4906.958159593616,
+    "gradient_relative_l2": 158375.84220601965,
+    "gradient_max_abs_difference": 3315.5366895087063,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_30": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.10150794621204418,
+    "bf16_grad_l2": 6797.54357727667,
+    "gradient_relative_l2": 66965.33285556542,
+    "gradient_max_abs_difference": 4245.272006422281,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_29": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.08180621717819879,
+    "bf16_grad_l2": 4627.21163443931,
+    "gradient_relative_l2": 56563.29969624513,
+    "gradient_max_abs_difference": 1990.2773909457028,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_28": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.10604624982541497,
+    "bf16_grad_l2": 10814.473999926448,
+    "gradient_relative_l2": 101978.69232952042,
+    "gradient_max_abs_difference": 8378.619072664529,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_27": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.028455742764503154,
+    "bf16_grad_l2": 2097.428524806167,
+    "gradient_relative_l2": 73708.43521562045,
+    "gradient_max_abs_difference": 1100.3419920725282,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_26": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.1112393672491265,
+    "bf16_grad_l2": 45593.38324900739,
+    "gradient_relative_l2": 409867.6440307444,
+    "gradient_max_abs_difference": 32656.522488527,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_25": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.13039166990770745,
+    "bf16_grad_l2": 7398.4029537777515,
+    "gradient_relative_l2": 56739.74426684401,
+    "gradient_max_abs_difference": 4271.998872175813,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_24": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.19386163408351856,
+    "bf16_grad_l2": 9311.57315070611,
+    "gradient_relative_l2": 48032.628566219035,
+    "gradient_max_abs_difference": 6037.086655218154,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_23": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.03195585842871462,
+    "bf16_grad_l2": 1154.0158451472823,
+    "gradient_relative_l2": 36113.13908132502,
+    "gradient_max_abs_difference": 363.5575533634983,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_22": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.08591024005341645,
+    "bf16_grad_l2": 5623.990993481813,
+    "gradient_relative_l2": 65464.15104901907,
+    "gradient_max_abs_difference": 4217.458041697741,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_21": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.08962659154929191,
+    "bf16_grad_l2": 8585.807463192017,
+    "gradient_relative_l2": 95795.52334724851,
+    "gradient_max_abs_difference": 7454.631757128984,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_20": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.07238932460934677,
+    "bf16_grad_l2": 3979.3834329691526,
+    "gradient_relative_l2": 54972.05685381323,
+    "gradient_max_abs_difference": 1694.5119627155364,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_19": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.022387497265443257,
+    "bf16_grad_l2": 2607.9768000133777,
+    "gradient_relative_l2": 116493.36051747848,
+    "gradient_max_abs_difference": 1787.6501422962174,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_18": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.09580099018215693,
+    "bf16_grad_l2": 5747.056582340501,
+    "gradient_relative_l2": 59989.01754723977,
+    "gradient_max_abs_difference": 4586.384347051382,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_17": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.13018332995365917,
+    "bf16_grad_l2": 2632.2796647092305,
+    "gradient_relative_l2": 20219.766290491894,
+    "gradient_max_abs_difference": 1136.8295412306907,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_16": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.0827171637245871,
+    "bf16_grad_l2": 7129.295694137658,
+    "gradient_relative_l2": 86188.60638623137,
+    "gradient_max_abs_difference": 5879.547374998219,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_15": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.011681413678466283,
+    "bf16_grad_l2": 829.9011825000869,
+    "gradient_relative_l2": 71045.03743681534,
+    "gradient_max_abs_difference": 482.8116251635365,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_14": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.13052768590161098,
+    "bf16_grad_l2": 9257.81201112602,
+    "gradient_relative_l2": 70925.6245208652,
+    "gradient_max_abs_difference": 7834.451433874667,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_13": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.06373256186393274,
+    "bf16_grad_l2": 2790.7376176112653,
+    "gradient_relative_l2": 43787.871366724015,
+    "gradient_max_abs_difference": 1176.0679507628083,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_12": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.14808948236990632,
+    "bf16_grad_l2": 3077.533317814924,
+    "gradient_relative_l2": 20781.23619837683,
+    "gradient_max_abs_difference": 1845.541296236217,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_11": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.00982382878817857,
+    "bf16_grad_l2": 791.7165949131972,
+    "gradient_relative_l2": 80591.4442109683,
+    "gradient_max_abs_difference": 262.7634752439917,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_10": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.07449970824891063,
+    "bf16_grad_l2": 3262.7641831678225,
+    "gradient_relative_l2": 43795.481907585156,
+    "gradient_max_abs_difference": 1828.2013635151088,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_9": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.07687160656287041,
+    "bf16_grad_l2": 23845.02156444333,
+    "gradient_relative_l2": 310193.05520556524,
+    "gradient_max_abs_difference": 19259.805217120796,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_8": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.06537455616344039,
+    "bf16_grad_l2": 7685.889372599922,
+    "gradient_relative_l2": 117566.9210356513,
+    "gradient_max_abs_difference": 5915.20454360079,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_7": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.017542767185128722,
+    "bf16_grad_l2": 3059.7323146302356,
+    "gradient_relative_l2": 174414.68423076943,
+    "gradient_max_abs_difference": 2119.9525893563405,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_6": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.06551210624731613,
+    "bf16_grad_l2": 2973.0805015237424,
+    "gradient_relative_l2": 45381.919884565716,
+    "gradient_max_abs_difference": 1026.3265231400728,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_5": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.060628480173032157,
+    "bf16_grad_l2": 130384.61479362295,
+    "gradient_relative_l2": 2150550.610818627,
+    "gradient_max_abs_difference": 53248.00021223404,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_4": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.05693199192435306,
+    "bf16_grad_l2": 3327.4850175612314,
+    "gradient_relative_l2": 58447.26588469553,
+    "gradient_max_abs_difference": 2721.325876146555,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_3": {
+    "coordinates": 704,
+    "reference_grad_l2": 0.0055400993136904605,
+    "bf16_grad_l2": 456.73471089144357,
+    "gradient_relative_l2": 82441.3879739487,
+    "gradient_max_abs_difference": 163.32743608078454,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_2": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.09602780543162652,
+    "bf16_grad_l2": 7115.54738708081,
+    "gradient_relative_l2": 74098.61520346928,
+    "gradient_max_abs_difference": 5488.049173889682,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_1": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.08327281907563672,
+    "bf16_grad_l2": 11097.314509895095,
+    "gradient_relative_l2": 133264.77113529292,
+    "gradient_max_abs_difference": 10281.39190768078,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "layer_0": {
+    "coordinates": 864,
+    "reference_grad_l2": 0.26031155904691833,
+    "bf16_grad_l2": 6482.195222484111,
+    "gradient_relative_l2": 24901.292928029732,
+    "gradient_max_abs_difference": 2418.301935851574,
+    "weight_before_max_abs_difference": 0.0
+  },
+  "tensor:model.embed_tokens.weight": {
+    "coordinates": 64,
+    "reference_grad_l2": 0.0,
+    "bf16_grad_l2": 0.0,
+    "gradient_relative_l2": 0.0,
+    "gradient_max_abs_difference": 0.0,
+    "weight_before_max_abs_difference": 0.0
+  }
+}
