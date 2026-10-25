@@ -1,0 +1,34 @@
+{
+  "basis": "Same rank0 profile only, not unprofiled seconds/256 conversion",
+  "window_seconds": 113.481024151,
+  "compute_union_seconds": 53.185868785,
+  "cpu_adam_without_compute_seconds": 10.4739975,
+  "scenarios": {
+    "hide_reduce_only": {
+      "seconds": 100.119149292,
+      "time_reduction_percent": 11.774545532141511,
+      "speedup": 1.1334597322639024
+    },
+    "hide_all_collectives": {
+      "seconds": 91.015109802,
+      "time_reduction_percent": 19.797066969634002,
+      "speedup": 1.2468371943721628
+    },
+    "fixed_compute_and_serial_adam": {
+      "seconds": 63.65986628499999,
+      "time_reduction_percent": 43.90263327171513,
+      "speedup": 1.7826148682586729
+    },
+    "fixed_compute_with_perfect_cross_step_update_overlap": {
+      "seconds": 53.185868785,
+      "time_reduction_percent": 53.13236800345591,
+      "speedup": 2.133668712073479
+    }
+  },
+  "assumptions": [
+    "Observed compute execution time treated as fixed.",
+    "Perfect hiding of chosen ranges without new contention is hypothetical.",
+    "Serial-Adam scenario retains current optimizer boundary; cross-step overlap is a separate unproven scenario."
+  ],
+  "limits": "Conditional scheduling estimates, not physical hardware bounds or achieved speedups. No new training."
+}
