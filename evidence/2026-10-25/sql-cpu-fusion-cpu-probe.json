@@ -1,0 +1,338 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "elements": 1,
+      "step": 1,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 1,
+      "step": 2,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 1,
+      "step": 3,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 1,
+      "step": 4,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 1,
+      "step": 5,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 3,
+      "step": 1,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 3,
+      "step": 2,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 3,
+      "step": 3,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 3,
+      "step": 4,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 3,
+      "step": 5,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 4,
+      "step": 1,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 4,
+      "step": 2,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 4,
+      "step": 3,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 4,
+      "step": 4,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 4,
+      "step": 5,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 15,
+      "step": 1,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 15,
+      "step": 2,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 15,
+      "step": 3,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 15,
+      "step": 4,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 15,
+      "step": 5,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 16,
+      "step": 1,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 16,
+      "step": 2,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 16,
+      "step": 3,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 16,
+      "step": 4,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 16,
+      "step": 5,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 31,
+      "step": 1,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 31,
+      "step": 2,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 31,
+      "step": 3,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 31,
+      "step": 4,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 31,
+      "step": 5,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 32,
+      "step": 1,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 32,
+      "step": 2,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 32,
+      "step": 3,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 32,
+      "step": 4,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 32,
+      "step": 5,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 33,
+      "step": 1,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 33,
+      "step": 2,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 33,
+      "step": 3,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 33,
+      "step": 4,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 33,
+      "step": 5,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 127,
+      "step": 1,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 127,
+      "step": 2,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 127,
+      "step": 3,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 127,
+      "step": 4,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 127,
+      "step": 5,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 1025,
+      "step": 1,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 1025,
+      "step": 2,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 1025,
+      "step": 3,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 1025,
+      "step": 4,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 1025,
+      "step": 5,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 1000003,
+      "step": 1,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 1000003,
+      "step": 2,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 1000003,
+      "step": 3,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 1000003,
+      "step": 4,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    },
+    {
+      "elements": 1000003,
+      "step": 5,
+      "fp32_master_m_v_bits_equal": true,
+      "bf16_output_bits_equal": true
+    }
+  ],
+  "finite_raw_fp32_cast_coordinates": 996172,
+  "bit_comparison": "torch.uint8 view; distinguishes signed zero",
+  "scope": "CPU operator, not whole-model training"
+}

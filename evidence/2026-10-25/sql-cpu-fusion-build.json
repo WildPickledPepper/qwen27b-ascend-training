@@ -1,0 +1,27 @@
+{
+  "built": true,
+  "native_sources_sha256": {
+    "cpu_adam.h": "d269bd3a7adcd2b6cd1c897efdf3ba31e3b2890d5944f6bfb9cc368ab0b3b345",
+    "cpu_adam_impl.cpp": "b9f44e950995ad056d998c068b35de6d15b7aa9a60b61149f179316131d608b5",
+    "simd.h": "525321614f3f817db98d612711b95705937ecb93264b7d345cce9fdb6c5e02be"
+  },
+  "modified_sources_sha256": {
+    "cpu_adam.h": "d9dec42a89b22537bda9d2a013990e7ef610cda2e559fb512cef0f132739bbea",
+    "cpu_adam_impl.cpp": "0ef28c15940cda3e8a7145bb141e8591d3789482e806e3a6866d951ea1dbe1ec",
+    "binding.cpp": "9091ffb74d5f6bd014327cb1f8e3ab70a65cc130efc6cf6dc870d37edbcf297b"
+  },
+  "compiler_flags": [
+    "-O3",
+    "-std=c++17",
+    "-g",
+    "-Wno-reorder",
+    "-fopenmp",
+    "-fstack-protector-all",
+    "-march=native",
+    "-D__NEON__",
+    "-fvisibility=hidden",
+    "-UC10_USE_GLOG"
+  ],
+  "backend": "NEON, FP32 master/m/v; native SIMD expressions retained",
+  "scope": "CPU-only fusion of gradient scale and BF16 output; no installed/shared files changed"
+}

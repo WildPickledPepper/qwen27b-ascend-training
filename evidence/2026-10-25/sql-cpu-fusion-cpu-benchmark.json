@@ -1,0 +1,70 @@
+{
+  "timings": [
+    {
+      "repeat": 0,
+      "mode": "native",
+      "elements": 134217728,
+      "seconds": 0.09568205988034606,
+      "scale_seconds": 0.015006199944764376,
+      "adam_seconds": 0.06456379988230765,
+      "bf16_cast_seconds": 0.016070069978013635
+    },
+    {
+      "repeat": 0,
+      "mode": "fused",
+      "elements": 134217728,
+      "seconds": 0.07461963989771903
+    },
+    {
+      "repeat": 1,
+      "mode": "fused",
+      "elements": 134217728,
+      "seconds": 0.07455969997681677
+    },
+    {
+      "repeat": 1,
+      "mode": "native",
+      "elements": 134217728,
+      "seconds": 0.09463727008551359,
+      "scale_seconds": 0.014771110145375133,
+      "adam_seconds": 0.06449284008704126,
+      "bf16_cast_seconds": 0.01533031021244824
+    },
+    {
+      "repeat": 2,
+      "mode": "native",
+      "elements": 134217728,
+      "seconds": 0.09509351011365652,
+      "scale_seconds": 0.014845740050077438,
+      "adam_seconds": 0.06480076001025736,
+      "bf16_cast_seconds": 0.015414780005812645
+    },
+    {
+      "repeat": 2,
+      "mode": "fused",
+      "elements": 134217728,
+      "seconds": 0.07451193989254534
+    },
+    {
+      "repeat": 3,
+      "mode": "fused",
+      "elements": 134217728,
+      "seconds": 0.07464027008973062
+    },
+    {
+      "repeat": 3,
+      "mode": "native",
+      "elements": 134217728,
+      "seconds": 0.0945334997959435,
+      "scale_seconds": 0.01484262989833951,
+      "adam_seconds": 0.06439330009743571,
+      "bf16_cast_seconds": 0.015267119975760579
+    }
+  ],
+  "steady_mean_seconds": {
+    "native": 0.0947547599983712,
+    "fused": 0.07457063665303092
+  },
+  "time_reduction_percent": 21.301434720205336,
+  "limits": "Single-node CPU operator; not full-model wall-time speedup. First pair excluded."
+}
