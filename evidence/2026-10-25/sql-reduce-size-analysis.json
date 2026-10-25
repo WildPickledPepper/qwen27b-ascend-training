@@ -1,0 +1,143 @@
+{
+  "rank": "rank0",
+  "schema_reference": "Skill get_schema.py COMMUNICATION_OP and COMMUNICATION_TASK_INFO; original comm CTE retained",
+  "queries": {
+    "reduce_duration_histogram": "WITH comm_view AS (\n    SELECT ROUND(c.endNs - c.startNs) AS duration_ns, n.value AS op_name, t.value AS op_type, g.value AS group_name\n    FROM COMMUNICATION_OP c\n    LEFT JOIN STRING_IDS n ON n.id = c.opName\n    LEFT JOIN STRING_IDS t ON t.id = c.opType\n    LEFT JOIN STRING_IDS g ON g.id = c.groupName\n)\nSELECT CASE WHEN duration_ns<100000 THEN '<100us' WHEN duration_ns<1000000 THEN '100us-1ms' WHEN duration_ns<10000000 THEN '1-10ms' ELSE '>=10ms' END AS duration_class,COUNT(*) AS calls,SUM(duration_ns)/1e9 AS summed_seconds FROM comm_view WHERE op_type='hcom_reduceScatter_' GROUP BY duration_class ORDER BY summed_seconds DESC LIMIT 20",
+    "reduce_count_distribution": "SELECT c.count AS hccl_count,c.dataType AS dtype_id,COUNT(*) AS calls,SUM(c.endNs-c.startNs)/1e9 AS summed_seconds,AVG(c.endNs-c.startNs)/1e6 AS mean_ms FROM COMMUNICATION_OP c JOIN STRING_IDS n ON n.id=c.opType WHERE n.value='hcom_reduceScatter_' GROUP BY c.count,c.dataType ORDER BY summed_seconds DESC LIMIT 20",
+    "reduce_count_classes": "SELECT CASE WHEN c.count<262144 THEN '<256K elements' WHEN c.count<4194304 THEN '256K-4M' WHEN c.count<16777216 THEN '4M-16M' ELSE '>=16M' END AS count_class,COUNT(*) AS calls,SUM(c.endNs-c.startNs)/1e9 AS summed_seconds FROM COMMUNICATION_OP c JOIN STRING_IDS n ON n.id=c.opType WHERE n.value='hcom_reduceScatter_' GROUP BY count_class ORDER BY summed_seconds DESC LIMIT 20",
+    "reduce_transport_tasks": "SELECT t.value AS task_type,COUNT(*) AS calls,SUM(k.size) AS task_size_sum_bytes,SUM(s.endNs-s.startNs)/1e9 AS task_summed_seconds FROM COMMUNICATION_TASK_INFO k JOIN COMMUNICATION_OP o ON o.opId=k.opId JOIN STRING_IDS n ON n.id=o.opType JOIN STRING_IDS t ON t.id=k.taskType LEFT JOIN TASK s ON s.globalTaskId=k.globalTaskId WHERE n.value='hcom_reduceScatter_' GROUP BY t.value ORDER BY task_summed_seconds DESC LIMIT 20"
+  },
+  "results": {
+    "reduce_duration_histogram": [
+      {
+        "duration_class": ">=10ms",
+        "calls": 1552,
+        "summed_seconds": 18.183990438
+      },
+      {
+        "duration_class": "1-10ms",
+        "calls": 1548,
+        "summed_seconds": 6.69362493
+      },
+      {
+        "duration_class": "<100us",
+        "calls": 1271,
+        "summed_seconds": 0.04658043
+      },
+      {
+        "duration_class": "100us-1ms",
+        "calls": 133,
+        "summed_seconds": 0.032300526
+      }
+    ],
+    "reduce_count_distribution": [
+      {
+        "hccl_count": 44564480,
+        "dtype_id": 4,
+        "calls": 1536,
+        "summed_seconds": 15.855271868,
+        "mean_ms": 10.322442622395833
+      },
+      {
+        "hccl_count": 15728640,
+        "dtype_id": 4,
+        "calls": 896,
+        "summed_seconds": 3.2337498,
+        "mean_ms": 3.6090957589285715
+      },
+      {
+        "hccl_count": 26214400,
+        "dtype_id": 4,
+        "calls": 384,
+        "summed_seconds": 2.349727316,
+        "mean_ms": 6.119081552083333
+      },
+      {
+        "hccl_count": 635699200,
+        "dtype_id": 4,
+        "calls": 16,
+        "summed_seconds": 2.32871857,
+        "mean_ms": 145.544910625
+      },
+      {
+        "hccl_count": 31457280,
+        "dtype_id": 4,
+        "calls": 128,
+        "summed_seconds": 0.938935088,
+        "mean_ms": 7.335430375
+      },
+      {
+        "hccl_count": 5243136,
+        "dtype_id": 4,
+        "calls": 128,
+        "summed_seconds": 0.156291008,
+        "mean_ms": 1.2210235
+      },
+      {
+        "hccl_count": 2560,
+        "dtype_id": 4,
+        "calls": 1032,
+        "summed_seconds": 0.051598169,
+        "mean_ms": 0.0499982257751938
+      },
+      {
+        "hccl_count": 266352,
+        "dtype_id": 4,
+        "calls": 384,
+        "summed_seconds": 0.042204505,
+        "mean_ms": 0.10990756510416667
+      }
+    ],
+    "reduce_count_classes": [
+      {
+        "count_class": ">=16M",
+        "calls": 2064,
+        "summed_seconds": 21.472652842
+      },
+      {
+        "count_class": "4M-16M",
+        "calls": 1024,
+        "summed_seconds": 3.390040808
+      },
+      {
+        "count_class": "<256K elements",
+        "calls": 1032,
+        "summed_seconds": 0.051598169
+      },
+      {
+        "count_class": "256K-4M",
+        "calls": 384,
+        "summed_seconds": 0.042204505
+      }
+    ],
+    "reduce_transport_tasks": [
+      {
+        "task_type": "Reduce_Inline",
+        "calls": 14088,
+        "task_size_sum_bytes": 430336012992,
+        "task_summed_seconds": 23.067867763
+      },
+      {
+        "task_type": "Memcpy",
+        "calls": 9392,
+        "task_size_sum_bytes": 860671950848,
+        "task_summed_seconds": 1.415347875
+      },
+      {
+        "task_type": "Notify_Wait",
+        "calls": 9392,
+        "task_size_sum_bytes": 0,
+        "task_summed_seconds": 0.416087163
+      },
+      {
+        "task_type": "Notify_Record",
+        "calls": 9392,
+        "task_size_sum_bytes": 0,
+        "task_summed_seconds": 0.006499909
+      }
+    ]
+  },
+  "limits": [
+    "Communication ranges include waits. HCCL count is not automatically the full input-gradient size. Transport-task size sums include multiple tasks/stages and are not unique physical-link bytes."
+  ]
+}
