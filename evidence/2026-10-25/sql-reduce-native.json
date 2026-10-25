@@ -1,0 +1,250 @@
+{
+  "no_model_loaded": true,
+  "checkpoint_headers_only": true,
+  "trained_text_parameters": 26895998464,
+  "source_sha256": {
+    "_DeepSpeedZeroOptimizer_Stage3__reduce_and_partition_ipg_grads": "24d09d54e4e6c38d9a4773f1fdd7c620c11b4b23fc58defadbec5be47efeb845",
+    "_DeepSpeedZeroOptimizer_Stage3__avg_scatter_grads": "f392cb14952e5019ad97f5538a41f902e0e26dc278b6c7e1587c22835d892590",
+    "partition_grads": "93119b25314ec6d345ce60cb66ed87ba3519141e52885daa70b6c67839f7bbeb",
+    "reduce_scatter_coalesced": "d05c7b944514f710d32f74ef474522992b1dc9d334de78e511af810b5e4e6cc5"
+  },
+  "matching_parameter_groups": {
+    "89128960": {
+      "parameter_count": 192,
+      "examples": [
+        {
+          "name": "model.language_model.layers.8.mlp.down_proj.weight",
+          "shape": [
+            5120,
+            17408
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.12.mlp.down_proj.weight",
+          "shape": [
+            5120,
+            17408
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.12.mlp.gate_proj.weight",
+          "shape": [
+            17408,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.12.mlp.up_proj.weight",
+          "shape": [
+            17408,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.13.mlp.down_proj.weight",
+          "shape": [
+            5120,
+            17408
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.13.mlp.gate_proj.weight",
+          "shape": [
+            17408,
+            5120
+          ],
+          "dtype": "BF16"
+        }
+      ]
+    },
+    "1271398400": {
+      "parameter_count": 2,
+      "examples": [
+        {
+          "name": "lm_head.weight",
+          "shape": [
+            248320,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.embed_tokens.weight",
+          "shape": [
+            248320,
+            5120
+          ],
+          "dtype": "BF16"
+        }
+      ]
+    },
+    "52428800": {
+      "parameter_count": 48,
+      "examples": [
+        {
+          "name": "model.language_model.layers.12.linear_attn.in_proj_qkv.weight",
+          "shape": [
+            10240,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.13.linear_attn.in_proj_qkv.weight",
+          "shape": [
+            10240,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.28.linear_attn.in_proj_qkv.weight",
+          "shape": [
+            10240,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.29.linear_attn.in_proj_qkv.weight",
+          "shape": [
+            10240,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.8.linear_attn.in_proj_qkv.weight",
+          "shape": [
+            10240,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.9.linear_attn.in_proj_qkv.weight",
+          "shape": [
+            10240,
+            5120
+          ],
+          "dtype": "BF16"
+        }
+      ]
+    },
+    "31457280": {
+      "parameter_count": 112,
+      "examples": [
+        {
+          "name": "model.language_model.layers.12.linear_attn.in_proj_z.weight",
+          "shape": [
+            6144,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.12.linear_attn.out_proj.weight",
+          "shape": [
+            5120,
+            6144
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.13.linear_attn.in_proj_z.weight",
+          "shape": [
+            6144,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.27.self_attn.o_proj.weight",
+          "shape": [
+            5120,
+            6144
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.28.linear_attn.in_proj_z.weight",
+          "shape": [
+            6144,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.28.linear_attn.out_proj.weight",
+          "shape": [
+            5120,
+            6144
+          ],
+          "dtype": "BF16"
+        }
+      ]
+    },
+    "62914560": {
+      "parameter_count": 16,
+      "examples": [
+        {
+          "name": "model.language_model.layers.11.self_attn.q_proj.weight",
+          "shape": [
+            12288,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.15.self_attn.q_proj.weight",
+          "shape": [
+            12288,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.19.self_attn.q_proj.weight",
+          "shape": [
+            12288,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.23.self_attn.q_proj.weight",
+          "shape": [
+            12288,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.27.self_attn.q_proj.weight",
+          "shape": [
+            12288,
+            5120
+          ],
+          "dtype": "BF16"
+        },
+        {
+          "name": "model.language_model.layers.3.self_attn.q_proj.weight",
+          "shape": [
+            12288,
+            5120
+          ],
+          "dtype": "BF16"
+        }
+      ]
+    },
+    "10486272": {
+      "parameter_count": 0,
+      "examples": []
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "query": "SELECT n.value AS collective,h.stream_id AS runtime_parent_stream,h.task_type AS parent_task_type,COUNT(*) AS matches,COUNT(DISTINCT o.opId) AS distinct_ops FROM COMMUNICATION_OP o JOIN STRING_IDS n ON n.id=o.opType JOIN runtime.HostTask h ON h.connection_id=o.connectionId GROUP BY n.value,h.stream_id,h.task_type ORDER BY matches DESC LIMIT 20",
+  "results": [
+    {
+      "collective": "hcom_allGather_",
+      "runtime_parent_stream": 468,
+      "parent_task_type": "FFTS_PLUS",
+      "matches": 58956,
+      "distinct_ops": 4721
+    },
+    {
+      "collective": "hcom_reduceScatter_",
+      "runtime_parent_stream": 468,
+      "parent_task_type": "FFTS_PLUS",
+      "matches": 51656,
+      "distinct_ops": 4504
+    },
+    {
+      "collective": "hcom_allReduce_",
+      "runtime_parent_stream": 468,
+      "parent_task_type": "FFTS_PLUS",
+      "matches": 434,
+      "distinct_ops": 46
+    }
+  ]
+}

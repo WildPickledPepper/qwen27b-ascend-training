@@ -1,0 +1,100 @@
+{
+  "read_only": true,
+  "queries": {
+    "compute_intervals": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(t.startNs,t.endNs,t.streamId)) FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId",
+    "reduce_ops": "SELECT json_group_array(json_array(o.opId,o.startNs,o.endNs,o.count,o.connectionId)) FROM COMMUNICATION_OP o JOIN STRING_IDS n ON n.id=o.opType WHERE n.value='hcom_reduceScatter_'",
+    "reduce_transport": "SELECT json_group_array(json_array(t.startNs,t.endNs,n.value,k.size,t.streamId,k.opId)) FROM COMMUNICATION_TASK_INFO k JOIN COMMUNICATION_OP o ON o.opId=k.opId JOIN TASK t ON t.globalTaskId=k.globalTaskId JOIN STRING_IDS n ON n.id=k.taskType JOIN STRING_IDS a ON a.id=o.opType WHERE a.value='hcom_reduceScatter_'",
+    "verified_launches": "SELECT json_group_array(json_array(o.opId,h.startNs,h.endNs,h.globalTid)) FROM COMMUNICATION_OP o JOIN STRING_IDS k ON k.id=o.opType JOIN CANN_API h ON h.connectionId=o.connectionId JOIN STRING_IDS n ON n.id=h.name WHERE k.value='hcom_reduceScatter_' AND n.value='launch'",
+    "host_scopes": "SELECT json_group_array(json_array(CAST(p.startNs AS INTEGER),CAST(p.endNs AS INTEGER),n.value,p.globalTid)) FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'zero/%' OR n.value LIKE 'gradient_transfer/%'",
+    "device_waits": "SELECT json_group_array(json_array(t.startNs,t.endNs,t.streamId)) FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE n.value='EVENT_WAIT'",
+    "all_collectives": "SELECT json_group_array(json_array(o.opId,o.startNs,o.endNs,n.value)) FROM COMMUNICATION_OP o JOIN STRING_IDS n ON n.id=o.opType",
+    "communication_stream_tasks": "SELECT json_group_array(json_array(t.startNs,t.endNs,t.streamId,n.value,k.opId)) FROM COMMUNICATION_TASK_INFO k JOIN TASK t ON t.globalTaskId=k.globalTaskId JOIN STRING_IDS n ON n.id=k.taskType"
+  },
+  "all_hccl_transport_tasks_on_stream": 468,
+  "allgather_reduce_device_overlap_seconds": 0.0,
+  "queue_lead_split": [
+    {
+      "count": 635699200,
+      "calls": 16,
+      "lead_mean_ms": 74.4703931875,
+      "prior_ag_mean_ms": 35.7139204375,
+      "prior_rs_mean_ms": 0.2407710625,
+      "stream_event_wait_mean_ms": 38.5095914375,
+      "other_mean_ms": 0.00611025
+    },
+    {
+      "count": 44564480,
+      "calls": 1536,
+      "lead_mean_ms": 16.304279927734374,
+      "prior_ag_mean_ms": 6.624613102213542,
+      "prior_rs_mean_ms": 7.728521203125,
+      "stream_event_wait_mean_ms": 1.8974705950520832,
+      "other_mean_ms": 0.05367502734375
+    },
+    {
+      "count": 31457280,
+      "calls": 128,
+      "lead_mean_ms": 6.0047362890625,
+      "prior_ag_mean_ms": 3.2012355703125,
+      "prior_rs_mean_ms": 1.64637253125,
+      "stream_event_wait_mean_ms": 1.096722,
+      "other_mean_ms": 0.0604061875
+    },
+    {
+      "count": 26214400,
+      "calls": 384,
+      "lead_mean_ms": 3.2194820026041664,
+      "prior_ag_mean_ms": 2.6872311223958336,
+      "prior_rs_mean_ms": 0.24542536458333333,
+      "stream_event_wait_mean_ms": 0.1286351640625,
+      "other_mean_ms": 0.1581903515625
+    },
+    {
+      "count": 15728640,
+      "calls": 896,
+      "lead_mean_ms": 14.458650296875,
+      "prior_ag_mean_ms": 3.7068484040178573,
+      "prior_rs_mean_ms": 7.415473171875,
+      "stream_event_wait_mean_ms": 2.9400756026785713,
+      "other_mean_ms": 0.3962531183035714
+    },
+    {
+      "count": 5243136,
+      "calls": 128,
+      "lead_mean_ms": 6.2244137890625,
+      "prior_ag_mean_ms": 0.0,
+      "prior_rs_mean_ms": 3.682705,
+      "stream_event_wait_mean_ms": 2.1001166875,
+      "other_mean_ms": 0.4415921015625
+    },
+    {
+      "count": 266352,
+      "calls": 384,
+      "lead_mean_ms": 2.2955073385416664,
+      "prior_ag_mean_ms": 0.0,
+      "prior_rs_mean_ms": 0.6090704791666667,
+      "stream_event_wait_mean_ms": 0.8956998229166666,
+      "other_mean_ms": 0.7907370364583334
+    },
+    {
+      "count": 2560,
+      "calls": 1032,
+      "lead_mean_ms": 17.122333074612403,
+      "prior_ag_mean_ms": 4.1084124874031005,
+      "prior_rs_mean_ms": 9.824934915697675,
+      "stream_event_wait_mean_ms": 2.747815652131783,
+      "other_mean_ms": 0.44117001937984496
+    }
+  ],
+  "exposed_seconds_by_exclusive_host_phase": {
+    "average_scatter": 1.071952567,
+    "partition_gradients": 1.6679347,
+    "other_inside_reducer": 0.654740791,
+    "outside_reducer": 9.967246801
+  },
+  "limits": [
+    "Per-op queue leads overlap across operations; their sums are not elapsed wall time.",
+    "EVENT_WAIT indicates a stream dependency but this DB lacks event IDs for its exact producer.",
+    "Shared HCCL execution stream and no overlap are observed, not a proof that changing process groups improves training."
+  ]
+}

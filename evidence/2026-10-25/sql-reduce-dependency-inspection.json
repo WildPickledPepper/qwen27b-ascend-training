@@ -1,0 +1,176 @@
+{
+  "queries": {
+    "transport": "SELECT n.value AS task_type,k.isMaster,k.transportType,k.linkType,COUNT(*) AS calls,SUM(t.endNs-t.startNs)/1e9 AS seconds,SUM(k.size) AS task_bytes FROM COMMUNICATION_TASK_INFO k JOIN COMMUNICATION_OP o ON o.opId=k.opId JOIN TASK t ON t.globalTaskId=k.globalTaskId JOIN STRING_IDS n ON n.id=k.taskType JOIN STRING_IDS a ON a.id=o.opType WHERE a.value='hcom_reduceScatter_' GROUP BY n.value,k.isMaster,k.transportType,k.linkType ORDER BY seconds DESC LIMIT 20",
+    "comm_ids": "SELECT COUNT(*) AS calls,COUNT(DISTINCT connectionId) AS unique_ids,MIN(connectionId) AS min_id,MAX(connectionId) AS max_id FROM COMMUNICATION_OP",
+    "cann_ids": "SELECT n.value AS name,COUNT(*) AS calls,COUNT(DISTINCT a.connectionId) AS unique_ids,MIN(a.connectionId) AS min_id,MAX(a.connectionId) AS max_id FROM CANN_API a JOIN STRING_IDS n ON n.id=a.name WHERE n.value LIKE '%reduceScatter%' GROUP BY n.value ORDER BY calls DESC LIMIT 20",
+    "connection_ids_schema": "SELECT sql FROM sqlite_master WHERE name='CONNECTION_IDS' ORDER BY name LIMIT 1",
+    "host_schema": "SELECT sql FROM sqlite_master WHERE name='PYTORCH_API' ORDER BY name LIMIT 1",
+    "op_samples": "SELECT o.opId,n.value AS op_name,o.connectionId,o.startNs,o.endNs,o.count FROM COMMUNICATION_OP o JOIN STRING_IDS n ON n.id=o.opName JOIN STRING_IDS a ON a.id=o.opType WHERE a.value='hcom_reduceScatter_' ORDER BY o.startNs LIMIT 6",
+    "cann_samples": "SELECT a.connectionId,a.startNs,a.endNs,a.globalTid FROM CANN_API a JOIN STRING_IDS n ON n.id=a.name WHERE n.value='hcom_reduceScatter_' ORDER BY a.startNs LIMIT 6"
+  },
+  "results": {
+    "transport": [
+      {
+        "task_type": "Reduce_Inline",
+        "isMaster": 1,
+        "transportType": 0,
+        "linkType": 1,
+        "calls": 4696,
+        "seconds": 23.059590221,
+        "task_bytes": 430335975424
+      },
+      {
+        "task_type": "Memcpy",
+        "isMaster": 1,
+        "transportType": 0,
+        "linkType": 0,
+        "calls": 9392,
+        "seconds": 1.415347875,
+        "task_bytes": 860671950848
+      },
+      {
+        "task_type": "Notify_Wait",
+        "isMaster": 1,
+        "transportType": 2,
+        "linkType": 65535,
+        "calls": 9392,
+        "seconds": 0.416087163,
+        "task_bytes": 0
+      },
+      {
+        "task_type": "Reduce_Inline",
+        "isMaster": 1,
+        "transportType": 0,
+        "linkType": 0,
+        "calls": 9392,
+        "seconds": 0.008277542,
+        "task_bytes": 37568
+      },
+      {
+        "task_type": "Notify_Record",
+        "isMaster": 1,
+        "transportType": 0,
+        "linkType": 65535,
+        "calls": 9392,
+        "seconds": 0.006499909,
+        "task_bytes": 0
+      }
+    ],
+    "comm_ids": [
+      {
+        "calls": 9271,
+        "unique_ids": 9271,
+        "min_id": 957080,
+        "max_id": 2670399
+      }
+    ],
+    "cann_ids": [
+      {
+        "name": "hcom_reduceScatter_",
+        "calls": 4504,
+        "unique_ids": 4504,
+        "min_id": 1009742,
+        "max_id": 2623296
+      }
+    ],
+    "connection_ids_schema": [
+      {
+        "sql": "CREATE TABLE CONNECTION_IDS (id INTEGER, connectionId INTEGER)"
+      }
+    ],
+    "host_schema": [
+      {
+        "sql": "CREATE TABLE PYTORCH_API (startNs TEXT, endNs TEXT, globalTid INTEGER, connectionId INTEGER, name INTEGER, sequenceNumber INTEGER, fwdThreadId INTEGER, inputDtypes INTEGER, inputShapes INTEGER, callchainId INTEGER, type INTEGER)"
+      }
+    ],
+    "op_samples": [
+      {
+        "opId": 4254,
+        "op_name": "hcom_reduceScatter__612_306_1",
+        "connectionId": 1009743,
+        "startNs": 1792925539819140705,
+        "endNs": 1792925539962396728,
+        "count": 635699200
+      },
+      {
+        "opId": 4232,
+        "op_name": "hcom_reduceScatter__612_317_1",
+        "connectionId": 1011407,
+        "startNs": 1792925540020021199,
+        "endNs": 1792925540020039359,
+        "count": 2560
+      },
+      {
+        "opId": 4228,
+        "op_name": "hcom_reduceScatter__612_318_1",
+        "connectionId": 1011508,
+        "startNs": 1792925540028152742,
+        "endNs": 1792925540038589130,
+        "count": 44564480
+      },
+      {
+        "opId": 3892,
+        "op_name": "hcom_reduceScatter__612_319_1",
+        "connectionId": 1011611,
+        "startNs": 1792925540043177802,
+        "endNs": 1792925540053607350,
+        "count": 44564480
+      },
+      {
+        "opId": 3292,
+        "op_name": "hcom_reduceScatter__612_320_1",
+        "connectionId": 1011725,
+        "startNs": 1792925540058369325,
+        "endNs": 1792925540068601810,
+        "count": 44564480
+      },
+      {
+        "opId": 6449,
+        "op_name": "hcom_reduceScatter__612_321_1",
+        "connectionId": 1011904,
+        "startNs": 1792925540072193501,
+        "endNs": 1792925540072211762,
+        "count": 2560
+      }
+    ],
+    "cann_samples": [
+      {
+        "connectionId": 1009742,
+        "startNs": 1792925539688834500,
+        "endNs": 1792925539690435130,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1011406,
+        "startNs": 1792925540016667370,
+        "endNs": 1792925540017019380,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1011507,
+        "startNs": 1792925540021352030,
+        "endNs": 1792925540021611270,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1011610,
+        "startNs": 1792925540026239730,
+        "endNs": 1792925540026509520,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1011724,
+        "startNs": 1792925540030845010,
+        "endNs": 1792925540031148790,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1011903,
+        "startNs": 1792925540036713500,
+        "endNs": 1792925540036974350,
+        "globalTid": 2228525386431359
+      }
+    ]
+  },
+  "limits": "Host/device linkage must be verified; task byte sums are not unique physical traffic."
+}

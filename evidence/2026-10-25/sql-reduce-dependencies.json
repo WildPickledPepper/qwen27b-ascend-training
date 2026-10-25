@@ -1,0 +1,340 @@
+{
+  "read_only": true,
+  "queries": {
+    "compute_intervals": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(t.startNs,t.endNs,t.streamId)) FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId",
+    "reduce_ops": "SELECT json_group_array(json_array(o.opId,o.startNs,o.endNs,o.count,o.connectionId)) FROM COMMUNICATION_OP o JOIN STRING_IDS n ON n.id=o.opType WHERE n.value='hcom_reduceScatter_'",
+    "reduce_transport": "SELECT json_group_array(json_array(t.startNs,t.endNs,n.value,k.size,t.streamId,k.opId)) FROM COMMUNICATION_TASK_INFO k JOIN COMMUNICATION_OP o ON o.opId=k.opId JOIN TASK t ON t.globalTaskId=k.globalTaskId JOIN STRING_IDS n ON n.id=k.taskType JOIN STRING_IDS a ON a.id=o.opType WHERE a.value='hcom_reduceScatter_'",
+    "verified_launches": "SELECT json_group_array(json_array(o.opId,h.startNs,h.endNs,h.globalTid)) FROM COMMUNICATION_OP o JOIN STRING_IDS k ON k.id=o.opType JOIN CANN_API h ON h.connectionId=o.connectionId JOIN STRING_IDS n ON n.id=h.name WHERE k.value='hcom_reduceScatter_' AND n.value='launch'",
+    "host_scopes": "SELECT json_group_array(json_array(CAST(p.startNs AS INTEGER),CAST(p.endNs AS INTEGER),n.value,p.globalTid)) FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'zero/%' OR n.value LIKE 'gradient_transfer/%'",
+    "device_waits": "SELECT json_group_array(json_array(t.startNs,t.endNs,t.streamId)) FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE n.value='EVENT_WAIT'"
+  },
+  "matched_reduce_calls": 4504,
+  "verified_launch_name": "launch",
+  "exposed_reduction_seconds": 13.361874859,
+  "compute_main_stream": 466,
+  "exposed_inside_transport": {
+    "Memcpy": {
+      "task_union_seconds": 1.415347875,
+      "seconds_inside_exposed_reduction": 0.649105509
+    },
+    "Notify_Record": {
+      "task_union_seconds": 0.006499909,
+      "seconds_inside_exposed_reduction": 0.002741703
+    },
+    "Notify_Wait": {
+      "task_union_seconds": 0.416087163,
+      "seconds_inside_exposed_reduction": 0.249596744
+    },
+    "Reduce_Inline": {
+      "task_union_seconds": 23.067867763,
+      "seconds_inside_exposed_reduction": 12.439785746
+    }
+  },
+  "exposed_not_in_transport_seconds": 0.020645157,
+  "exposed_intersect_host_scope_seconds": {
+    "gradient_transfer/d2h": 0.205436152,
+    "gradient_transfer/h2d": 0.0,
+    "zero/average_scatter": 1.071952567,
+    "zero/boundary_gradient_offload": 0.0,
+    "zero/deferred_boundary": 0.0,
+    "zero/global_gradient_norm": 0.0,
+    "zero/partition_gradients": 1.6679347,
+    "zero/reduce_and_partition": 3.394628058
+  },
+  "exposed_intersect_device_event_wait_by_stream_seconds": {
+    "466": 1.219443828,
+    "468": 0.0,
+    "469": 1.223126699,
+    "470": 13.306872739
+  },
+  "reduce_count_classes": [
+    {
+      "count": 44564480,
+      "calls": 1536,
+      "summed_seconds": 15.855271868,
+      "exposed_seconds": 7.080077931,
+      "mean_submit_to_device_ms": 16.304279927734374,
+      "p50_submit_to_device_ms": 14.659897,
+      "max_submit_to_device_ms": 89.08019,
+      "submitted_over_1ms_early_calls": 1528
+    },
+    {
+      "count": 635699200,
+      "calls": 16,
+      "summed_seconds": 2.32871857,
+      "exposed_seconds": 2.32871857,
+      "mean_submit_to_device_ms": 74.4703931875,
+      "p50_submit_to_device_ms": 128.354975,
+      "max_submit_to_device_ms": 154.081018,
+      "submitted_over_1ms_early_calls": 16
+    },
+    {
+      "count": 26214400,
+      "calls": 384,
+      "summed_seconds": 2.349727316,
+      "exposed_seconds": 1.865014998,
+      "mean_submit_to_device_ms": 3.2194820026041664,
+      "p50_submit_to_device_ms": 3.017809,
+      "max_submit_to_device_ms": 13.907497,
+      "submitted_over_1ms_early_calls": 348
+    },
+    {
+      "count": 15728640,
+      "calls": 896,
+      "summed_seconds": 3.2337498,
+      "exposed_seconds": 1.212714002,
+      "mean_submit_to_device_ms": 14.458650296875,
+      "p50_submit_to_device_ms": 18.118999,
+      "max_submit_to_device_ms": 89.654317,
+      "submitted_over_1ms_early_calls": 715
+    },
+    {
+      "count": 31457280,
+      "calls": 128,
+      "summed_seconds": 0.938935088,
+      "exposed_seconds": 0.718004694,
+      "mean_submit_to_device_ms": 6.0047362890625,
+      "p50_submit_to_device_ms": 3.494288,
+      "max_submit_to_device_ms": 23.162213,
+      "submitted_over_1ms_early_calls": 125
+    },
+    {
+      "count": 5243136,
+      "calls": 128,
+      "summed_seconds": 0.156291008,
+      "exposed_seconds": 0.13155699,
+      "mean_submit_to_device_ms": 6.2244137890625,
+      "p50_submit_to_device_ms": 1.828911,
+      "max_submit_to_device_ms": 36.949389,
+      "submitted_over_1ms_early_calls": 93
+    },
+    {
+      "count": 266352,
+      "calls": 384,
+      "summed_seconds": 0.042204505,
+      "exposed_seconds": 0.018600428,
+      "mean_submit_to_device_ms": 2.2955073385416664,
+      "p50_submit_to_device_ms": 1.232626,
+      "max_submit_to_device_ms": 15.77569,
+      "submitted_over_1ms_early_calls": 238
+    },
+    {
+      "count": 2560,
+      "calls": 1032,
+      "summed_seconds": 0.051598169,
+      "exposed_seconds": 0.007187246,
+      "mean_submit_to_device_ms": 17.122333074612403,
+      "p50_submit_to_device_ms": 3.576761,
+      "max_submit_to_device_ms": 97.860242,
+      "submitted_over_1ms_early_calls": 754
+    }
+  ],
+  "top20_exposed_ops": [
+    {
+      "op_id": 9058,
+      "count": 635699200,
+      "start_relative_seconds": 48.760931564,
+      "duration_ms": 161.628709,
+      "exposed_ms": 161.628709,
+      "submit_to_device_ms": 131.948918,
+      "host_submit_ms": 1.63956,
+      "prior_reduction_end_to_start_ms": 3051.173083
+    },
+    {
+      "op_id": 7820,
+      "count": 635699200,
+      "start_relative_seconds": 85.185801712,
+      "duration_ms": 161.508227,
+      "exposed_ms": 161.508227,
+      "submit_to_device_ms": 133.716446,
+      "host_submit_ms": 1.62431,
+      "prior_reduction_end_to_start_ms": 3184.750611
+    },
+    {
+      "op_id": 8067,
+      "count": 635699200,
+      "start_relative_seconds": 36.584310575,
+      "duration_ms": 143.268482,
+      "exposed_ms": 143.268482,
+      "submit_to_device_ms": 132.662409,
+      "host_submit_ms": 1.64693,
+      "prior_reduction_end_to_start_ms": 2866.269448
+    },
+    {
+      "op_id": 5183,
+      "count": 635699200,
+      "start_relative_seconds": 24.74675554,
+      "duration_ms": 143.265703,
+      "exposed_ms": 143.265703,
+      "submit_to_device_ms": 129.786824,
+      "host_submit_ms": 1.59537,
+      "prior_reduction_end_to_start_ms": 2873.861939
+    },
+    {
+      "op_id": 3859,
+      "count": 635699200,
+      "start_relative_seconds": 9.716059527,
+      "duration_ms": 143.257782,
+      "exposed_ms": 143.257782,
+      "submit_to_device_ms": 21.604571,
+      "host_submit_ms": 2.11341,
+      "prior_reduction_end_to_start_ms": 14.219164
+    },
+    {
+      "op_id": 3350,
+      "count": 635699200,
+      "start_relative_seconds": 12.788150707,
+      "duration_ms": 143.257563,
+      "exposed_ms": 143.257563,
+      "submit_to_device_ms": 150.429821,
+      "host_submit_ms": 1.62674,
+      "prior_reduction_end_to_start_ms": 2928.833398
+    },
+    {
+      "op_id": 4430,
+      "count": 635699200,
+      "start_relative_seconds": 21.729637258,
+      "duration_ms": 143.256343,
+      "exposed_ms": 143.256343,
+      "submit_to_device_ms": 11.008592,
+      "host_submit_ms": 2.58075,
+      "prior_reduction_end_to_start_ms": 22.797835
+    },
+    {
+      "op_id": 4182,
+      "count": 635699200,
+      "start_relative_seconds": 81.857794879,
+      "duration_ms": 143.256222,
+      "exposed_ms": 143.256222,
+      "submit_to_device_ms": 11.165293,
+      "host_submit_ms": 3.42224,
+      "prior_reduction_end_to_start_ms": 21.790476
+    },
+    {
+      "op_id": 4254,
+      "count": 635699200,
+      "start_relative_seconds": 2.747815881,
+      "duration_ms": 143.256023,
+      "exposed_ms": 143.256023,
+      "submit_to_device_ms": 128.705575,
+      "host_submit_ms": 1.60063,
+      "prior_reduction_end_to_start_ms": null
+    },
+    {
+      "op_id": 7715,
+      "count": 635699200,
+      "start_relative_seconds": 33.574786384,
+      "duration_ms": 143.254743,
+      "exposed_ms": 143.254743,
+      "submit_to_device_ms": 11.376118,
+      "host_submit_ms": 2.33362,
+      "prior_reduction_end_to_start_ms": 21.976439
+    },
+    {
+      "op_id": 2267,
+      "count": 635699200,
+      "start_relative_seconds": 69.698440275,
+      "duration_ms": 143.252502,
+      "exposed_ms": 143.252502,
+      "submit_to_device_ms": 11.343799,
+      "host_submit_ms": 3.10131,
+      "prior_reduction_end_to_start_ms": 21.955899
+    },
+    {
+      "op_id": 8281,
+      "count": 635699200,
+      "start_relative_seconds": 45.566506019,
+      "duration_ms": 143.252462,
+      "exposed_ms": 143.252462,
+      "submit_to_device_ms": 11.349203,
+      "host_submit_ms": 2.60587,
+      "prior_reduction_end_to_start_ms": 22.390667
+    },
+    {
+      "op_id": 2113,
+      "count": 635699200,
+      "start_relative_seconds": 57.602039009,
+      "duration_ms": 143.252202,
+      "exposed_ms": 143.252202,
+      "submit_to_device_ms": 11.534623,
+      "host_submit_ms": 2.54951,
+      "prior_reduction_end_to_start_ms": 22.196564
+    },
+    {
+      "op_id": 4323,
+      "count": 635699200,
+      "start_relative_seconds": 72.930625994,
+      "duration_ms": 143.251922,
+      "exposed_ms": 143.251922,
+      "submit_to_device_ms": 154.081018,
+      "host_submit_ms": 1.67041,
+      "prior_reduction_end_to_start_ms": 3088.933217
+    },
+    {
+      "op_id": 2525,
+      "count": 635699200,
+      "start_relative_seconds": 94.020137902,
+      "duration_ms": 143.250083,
+      "exposed_ms": 143.250083,
+      "submit_to_device_ms": 12.458106,
+      "host_submit_ms": 2.5108,
+      "prior_reduction_end_to_start_ms": 22.56651
+    },
+    {
+      "op_id": 5808,
+      "count": 635699200,
+      "start_relative_seconds": 60.845378771,
+      "duration_ms": 143.249602,
+      "exposed_ms": 143.249602,
+      "submit_to_device_ms": 128.354975,
+      "host_submit_ms": 1.6237,
+      "prior_reduction_end_to_start_ms": 3100.08756
+    },
+    {
+      "op_id": 699,
+      "count": 44564480,
+      "start_relative_seconds": 80.933401349,
+      "duration_ms": 12.524151,
+      "exposed_ms": 10.95266,
+      "submit_to_device_ms": 15.211033,
+      "host_submit_ms": 0.26852,
+      "prior_reduction_end_to_start_ms": 4.469309
+    },
+    {
+      "op_id": 3789,
+      "count": 44564480,
+      "start_relative_seconds": 57.366323039,
+      "duration_ms": 11.698494,
+      "exposed_ms": 10.576072,
+      "submit_to_device_ms": 11.087273,
+      "host_submit_ms": 0.67444,
+      "prior_reduction_end_to_start_ms": 4.382787
+    },
+    {
+      "op_id": 8687,
+      "count": 44564480,
+      "start_relative_seconds": 37.003764135,
+      "duration_ms": 11.889758,
+      "exposed_ms": 10.269365,
+      "submit_to_device_ms": 15.599889,
+      "host_submit_ms": 0.25645,
+      "prior_reduction_end_to_start_ms": 4.433248
+    },
+    {
+      "op_id": 2744,
+      "count": 44564480,
+      "start_relative_seconds": 68.815518154,
+      "duration_ms": 12.442929,
+      "exposed_ms": 10.089483,
+      "submit_to_device_ms": 11.851958,
+      "host_submit_ms": 0.26661,
+      "prior_reduction_end_to_start_ms": 4.437789
+    }
+  ],
+  "limits": [
+    "Exposed means no COMPUTE_TASK_INFO interval, not proven critical-path wait.",
+    "Host scopes and different streams can overlap; do not add them.",
+    "Submit-to-device includes producer dependencies and preceding queued work; it is not pure launch overhead.",
+    "No event IDs are present in this DB schema to prove every wait producer."
+  ]
+}

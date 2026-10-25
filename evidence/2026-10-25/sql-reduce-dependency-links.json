@@ -1,0 +1,264 @@
+{
+  "queries": {
+    "actual_comm_host_link": "SELECT n.value AS host_name,COUNT(*) AS matches,COUNT(DISTINCT o.opId) AS distinct_ops FROM COMMUNICATION_OP o JOIN STRING_IDS k ON k.id=o.opType JOIN CANN_API h ON h.connectionId=o.connectionId JOIN STRING_IDS n ON n.id=h.name WHERE k.value='hcom_reduceScatter_' GROUP BY n.value ORDER BY matches DESC LIMIT 20",
+    "first_launch_context": "SELECT h.connectionId,n.value AS name,h.startNs,h.endNs,h.globalTid FROM CANN_API h JOIN STRING_IDS n ON n.id=h.name WHERE h.connectionId BETWEEN 1009735 AND 1009746 ORDER BY h.startNs LIMIT 20",
+    "first_connections": "SELECT id,COUNT(*) AS ids,MIN(connectionId) AS min_connection,MAX(connectionId) AS max_connection FROM CONNECTION_IDS WHERE id IN (SELECT id FROM CONNECTION_IDS WHERE connectionId=1009743) GROUP BY id ORDER BY id LIMIT 20",
+    "compute_streams": "SELECT t.streamId,COUNT(*) AS calls,SUM(t.endNs-t.startNs)/1e9 AS seconds FROM COMPUTE_TASK_INFO k JOIN TASK t ON t.globalTaskId=k.globalTaskId GROUP BY t.streamId ORDER BY seconds DESC LIMIT 20",
+    "event_streams": "SELECT t.streamId,COUNT(*) AS calls,SUM(t.endNs-t.startNs)/1e9 AS seconds FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE n.value='EVENT_WAIT' GROUP BY t.streamId ORDER BY seconds DESC LIMIT 20",
+    "hccl_streams": "SELECT t.streamId,n.value AS task_type,COUNT(*) AS calls,SUM(t.endNs-t.startNs)/1e9 AS seconds FROM COMMUNICATION_TASK_INFO k JOIN COMMUNICATION_OP o ON o.opId=k.opId JOIN TASK t ON t.globalTaskId=k.globalTaskId JOIN STRING_IDS n ON n.id=k.taskType JOIN STRING_IDS a ON a.id=o.opType WHERE a.value='hcom_reduceScatter_' GROUP BY t.streamId,n.value ORDER BY seconds DESC LIMIT 20",
+    "link_types": "SELECT * FROM ENUM_HCCL_LINK_TYPE ORDER BY 1 LIMIT 20",
+    "transport_types": "SELECT * FROM ENUM_HCCL_TRANSPORT_TYPE ORDER BY 1 LIMIT 20"
+  },
+  "results": {
+    "actual_comm_host_link": [
+      {
+        "host_name": "launch",
+        "matches": 4504,
+        "distinct_ops": 4504
+      }
+    ],
+    "first_launch_context": [
+      {
+        "connectionId": 1009735,
+        "name": "aclrtGetStreamAttribute",
+        "startNs": 1792925539688556980,
+        "endNs": 1792925539688558860,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1009736,
+        "name": "launch",
+        "startNs": 1792925539688560650,
+        "endNs": 1792925539688583500,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1009737,
+        "name": "aclrtLaunchKernelWithHostArgs",
+        "startNs": 1792925539688563370,
+        "endNs": 1792925539688582790,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1009738,
+        "name": "aclmdlRICaptureGetInfo",
+        "startNs": 1792925539688754060,
+        "endNs": 1792925539688755750,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1009739,
+        "name": "aclrtRecordEvent",
+        "startNs": 1792925539688770590,
+        "endNs": 1792925539688791000,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1009740,
+        "name": "aclrtStreamWaitEvent",
+        "startNs": 1792925539688796390,
+        "endNs": 1792925539688805410,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1009741,
+        "name": "aclmdlRICaptureGetInfo",
+        "startNs": 1792925539688831460,
+        "endNs": 1792925539688832320,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1009742,
+        "name": "hcom_reduceScatter_",
+        "startNs": 1792925539688834500,
+        "endNs": 1792925539690435130,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1009743,
+        "name": "launch",
+        "startNs": 1792925539688834500,
+        "endNs": 1792925539690435130,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1009744,
+        "name": "aclmdlRICaptureGetInfo",
+        "startNs": 1792925539688856380,
+        "endNs": 1792925539688856960,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1009745,
+        "name": "aclrtStreamGetId",
+        "startNs": 1792925539688859040,
+        "endNs": 1792925539688859870,
+        "globalTid": 2228525386431359
+      },
+      {
+        "connectionId": 1009746,
+        "name": "aclrtGetCurrentContext",
+        "startNs": 1792925539688861990,
+        "endNs": 1792925539688862830,
+        "globalTid": 2228525386431359
+      }
+    ],
+    "first_connections": [
+      {
+        "id": 6278,
+        "ids": 1,
+        "min_connection": 1009743,
+        "max_connection": 1009743
+      }
+    ],
+    "compute_streams": [
+      {
+        "streamId": 466,
+        "calls": 189209,
+        "seconds": 51.016824035
+      },
+      {
+        "streamId": 470,
+        "calls": 23425,
+        "seconds": 4.476262318
+      },
+      {
+        "streamId": 469,
+        "calls": 6480,
+        "seconds": 1.327113281
+      }
+    ],
+    "event_streams": [
+      {
+        "streamId": 470,
+        "calls": 10286,
+        "seconds": 34.41720599
+      },
+      {
+        "streamId": 468,
+        "calls": 9269,
+        "seconds": 5.009958758
+      },
+      {
+        "streamId": 469,
+        "calls": 286,
+        "seconds": 3.614798842
+      },
+      {
+        "streamId": 466,
+        "calls": 19651,
+        "seconds": 2.940665182
+      }
+    ],
+    "hccl_streams": [
+      {
+        "streamId": 468,
+        "task_type": "Reduce_Inline",
+        "calls": 14088,
+        "seconds": 23.067867763
+      },
+      {
+        "streamId": 468,
+        "task_type": "Memcpy",
+        "calls": 9392,
+        "seconds": 1.415347875
+      },
+      {
+        "streamId": 468,
+        "task_type": "Notify_Wait",
+        "calls": 9392,
+        "seconds": 0.416087163
+      },
+      {
+        "streamId": 468,
+        "task_type": "Notify_Record",
+        "calls": 9392,
+        "seconds": 0.006499909
+      }
+    ],
+    "link_types": [
+      {
+        "id": 0,
+        "name": "ON_CHIP"
+      },
+      {
+        "id": 1,
+        "name": "HCCS"
+      },
+      {
+        "id": 2,
+        "name": "PCIE"
+      },
+      {
+        "id": 3,
+        "name": "ROCE"
+      },
+      {
+        "id": 4,
+        "name": "SIO"
+      },
+      {
+        "id": 5,
+        "name": "HCCS_SW"
+      },
+      {
+        "id": 6,
+        "name": "STANDARD_ROCE"
+      },
+      {
+        "id": 7,
+        "name": "UB"
+      },
+      {
+        "id": 8,
+        "name": "UBoE"
+      },
+      {
+        "id": 255,
+        "name": "RESERVED"
+      },
+      {
+        "id": 65534,
+        "name": "N/A"
+      },
+      {
+        "id": 65535,
+        "name": "INVALID_TYPE"
+      }
+    ],
+    "transport_types": [
+      {
+        "id": 0,
+        "name": "SDMA"
+      },
+      {
+        "id": 1,
+        "name": "RDMA"
+      },
+      {
+        "id": 2,
+        "name": "LOCAL"
+      },
+      {
+        "id": 3,
+        "name": "UB"
+      },
+      {
+        "id": 4,
+        "name": "ROCE"
+      },
+      {
+        "id": 255,
+        "name": "RESERVED"
+      },
+      {
+        "id": 65534,
+        "name": "N/A"
+      },
+      {
+        "id": 65535,
+        "name": "INVALID_TYPE"
+      }
+    ]
+  }
+}

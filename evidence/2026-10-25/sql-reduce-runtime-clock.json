@@ -1,0 +1,36 @@
+{
+  "query": "SELECT h.task_type,COUNT(*) AS matches,SUM(CASE WHEN h.timestamp BETWEEN a.start AND a.end THEN 1 ELSE 0 END) AS task_stamp_inside_launch_api,SUM(CASE WHEN h.timestamp>a.end THEN 1 ELSE 0 END) AS stamp_after_api FROM HostTask h JOIN api.ApiData a ON h.connection_id=a.connection_id WHERE h.stream_id=466 AND a.struct_type='launch' GROUP BY h.task_type ORDER BY matches DESC LIMIT 20",
+  "results": [
+    {
+      "task_type": "KERNEL_AIVEC",
+      "matches": 154145,
+      "task_stamp_inside_launch_api": 154145,
+      "stamp_after_api": 0
+    },
+    {
+      "task_type": "KERNEL_MIX_AIV",
+      "matches": 22400,
+      "task_stamp_inside_launch_api": 22400,
+      "stamp_after_api": 0
+    },
+    {
+      "task_type": "KERNEL_AICORE",
+      "matches": 18448,
+      "task_stamp_inside_launch_api": 18448,
+      "stamp_after_api": 0
+    },
+    {
+      "task_type": "KERNEL_MIX_AIC",
+      "matches": 10768,
+      "task_stamp_inside_launch_api": 10768,
+      "stamp_after_api": 0
+    },
+    {
+      "task_type": "KERNEL_AICPU",
+      "matches": 32,
+      "task_stamp_inside_launch_api": 32,
+      "stamp_after_api": 0
+    }
+  ],
+  "limits": "Raw timestamps are compared in their own CPU counter domain, not guessed as nanoseconds."
+}

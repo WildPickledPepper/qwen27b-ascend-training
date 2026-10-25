@@ -1,0 +1,117 @@
+{
+  "stage": "complete",
+  "source_bytes": 372624480,
+  "npu_application_started": false,
+  "pid": 1367159,
+  "returncode": 0,
+  "exports": [
+    {
+      "name": "msprof_20261025162239.db",
+      "bytes": 254693376
+    },
+    {
+      "name": "sample.json",
+      "bytes": 3181
+    },
+    {
+      "name": "info.json",
+      "bytes": 820
+    },
+    {
+      "name": "sample.json",
+      "bytes": 3190
+    },
+    {
+      "name": "msprof_20261025162239.json",
+      "bytes": 737515401
+    },
+    {
+      "name": "communication_statistic_20261025162336.csv",
+      "bytes": 282
+    },
+    {
+      "name": "op_statistic_20261025162336.csv",
+      "bytes": 5152
+    },
+    {
+      "name": "api_statistic_20261025162336.csv",
+      "bytes": 6124
+    },
+    {
+      "name": "task_time_20261025162336.csv",
+      "bytes": 42934383
+    },
+    {
+      "name": "op_summary_20261025162336.csv",
+      "bytes": 75366624
+    },
+    {
+      "name": "time.db",
+      "bytes": 8192
+    },
+    {
+      "name": "ge_hash.db",
+      "bytes": 73728
+    },
+    {
+      "name": "rts_track.db",
+      "bytes": 8192
+    },
+    {
+      "name": "api_event.db",
+      "bytes": 115384320
+    },
+    {
+      "name": "hccl.db",
+      "bytes": 15695872
+    },
+    {
+      "name": "ge_info.db",
+      "bytes": 41246720
+    },
+    {
+      "name": "runtime.db",
+      "bytes": 47673344
+    },
+    {
+      "name": "time.db",
+      "bytes": 8192
+    },
+    {
+      "name": "freq.db",
+      "bytes": 8192
+    },
+    {
+      "name": "voltage.db",
+      "bytes": 8192
+    },
+    {
+      "name": "step_trace.db",
+      "bytes": 8192
+    },
+    {
+      "name": "metric_summary.db",
+      "bytes": 30453760
+    },
+    {
+      "name": "hccl_single_device.db",
+      "bytes": 20844544
+    },
+    {
+      "name": "ascend_task.db",
+      "bytes": 35233792
+    },
+    {
+      "name": "biu_perf.db",
+      "bytes": 0
+    },
+    {
+      "name": "ai_core_op_summary.db",
+      "bytes": 97083392
+    },
+    {
+      "name": "op_counter.db",
+      "bytes": 45674496
+    }
+  ]
+}

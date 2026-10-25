@@ -1,0 +1,467 @@
+{
+  "read_only": true,
+  "queries": {
+    "compute_intervals": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(t.startNs,t.endNs,t.streamId)) FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId",
+    "reduce_ops": "SELECT json_group_array(json_array(o.opId,o.startNs,o.endNs,o.count,o.connectionId)) FROM COMMUNICATION_OP o JOIN STRING_IDS n ON n.id=o.opType WHERE n.value='hcom_reduceScatter_'",
+    "reduce_transport": "SELECT json_group_array(json_array(t.startNs,t.endNs,n.value,k.size,t.streamId,k.opId)) FROM COMMUNICATION_TASK_INFO k JOIN COMMUNICATION_OP o ON o.opId=k.opId JOIN TASK t ON t.globalTaskId=k.globalTaskId JOIN STRING_IDS n ON n.id=k.taskType JOIN STRING_IDS a ON a.id=o.opType WHERE a.value='hcom_reduceScatter_'",
+    "verified_launches": "SELECT json_group_array(json_array(o.opId,h.startNs,h.endNs,h.globalTid)) FROM COMMUNICATION_OP o JOIN STRING_IDS k ON k.id=o.opType JOIN CANN_API h ON h.connectionId=o.connectionId JOIN STRING_IDS n ON n.id=h.name WHERE k.value='hcom_reduceScatter_' AND n.value='launch'",
+    "host_scopes": "SELECT json_group_array(json_array(CAST(p.startNs AS INTEGER),CAST(p.endNs AS INTEGER),n.value,p.globalTid)) FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'zero/%' OR n.value LIKE 'gradient_transfer/%'",
+    "device_waits": "SELECT json_group_array(json_array(t.startNs,t.endNs,t.streamId)) FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE n.value='EVENT_WAIT'",
+    "compute_launches": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(t.startNs,t.endNs,t.streamId,c.globalTaskId,t.connectionId,h.startNs,h.endNs,c.op_type)) FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId LEFT JOIN CANN_API h ON h.connectionId=t.connectionId AND h.name IN (SELECT id FROM STRING_IDS WHERE value='launch')",
+    "main_sync_apis": "SELECT json_group_array(json_array(a.startNs,a.endNs,n.value)) FROM CANN_API a JOIN STRING_IDS n ON n.id=a.name WHERE a.globalTid=2228525386431359 AND n.value LIKE 'aclrtSynchronize%'",
+    "main_host_events": "SELECT json_group_array(json_array(CAST(p.startNs AS INTEGER),CAST(p.endNs AS INTEGER),n.value)) FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE p.globalTid=2228525386431359 AND n.value NOT LIKE 'ProfilerStep%' AND CAST(p.endNs AS INTEGER)>CAST(p.startNs AS INTEGER)",
+    "main_stream_tasks": "SELECT json_group_array(json_array(t.startNs,t.endNs,n.value)) FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE t.streamId=466"
+  },
+  "main_stream": 466,
+  "main_compute_tasks": 189209,
+  "main_compute_with_launch_match": 189209,
+  "exposed_seconds_by_next_main_compute_submission": {
+    "next_compute_not_yet_submitted": 7.89398649,
+    "next_compute_submit_in_progress": 0.090322396,
+    "next_compute_already_submitted": 5.377565973
+  },
+  "exposed_inside_main_host_sync_seconds": {
+    "aclrtSynchronizeEvent": 1.274160366,
+    "aclrtSynchronizeStream": 0.012793058
+  },
+  "queued_compute_seconds_by_main_device_task_type": {
+    "EVENT_RECORD": 5.2963e-05,
+    "EVENT_WAIT": 1.206179703,
+    "KERNEL_MIX_AIC": 0.003677392,
+    "KERNEL_MIX_AIV": 0.006047108,
+    "no_recorded_main_stream_task": 4.161608807
+  },
+  "exposed_host_scope_top20_by_submission_state": {
+    "next_compute_already_submitted": [
+      {
+        "name": "Event::synchronize",
+        "seconds": 1.189766452
+      },
+      {
+        "name": "GDNBackward",
+        "seconds": 0.358296728
+      },
+      {
+        "name": "empty_tensor",
+        "seconds": 0.316361554
+      },
+      {
+        "name": "PreBackwardFunctionForModuleBackward",
+        "seconds": 0.296520183
+      },
+      {
+        "name": "unmarked",
+        "seconds": 0.239477714
+      },
+      {
+        "name": "LinearFunctionForZeroStage3Backward",
+        "seconds": 0.164390055
+      },
+      {
+        "name": "aten::mul",
+        "seconds": 0.158939857
+      },
+      {
+        "name": "aclnnInplaceCopy",
+        "seconds": 0.156379452
+      },
+      {
+        "name": "PostBackwardFunctionModuleBackward",
+        "seconds": 0.148887818
+      },
+      {
+        "name": "aclnnMul",
+        "seconds": 0.141795152
+      },
+      {
+        "name": "torch::autograd::AccumulateGrad",
+        "seconds": 0.139563636
+      },
+      {
+        "name": "aten::copy_",
+        "seconds": 0.139402915
+      },
+      {
+        "name": "Event::record",
+        "seconds": 0.105857305
+      },
+      {
+        "name": "MulBackward0",
+        "seconds": 0.101560863
+      },
+      {
+        "name": "zero/reduce_and_partition",
+        "seconds": 0.093633075
+      },
+      {
+        "name": "autograd::engine::evaluate_function: MulBackward0",
+        "seconds": 0.077046599
+      },
+      {
+        "name": "aten::empty_strided",
+        "seconds": 0.064491929
+      },
+      {
+        "name": "aclnnReduceSum",
+        "seconds": 0.062152841
+      },
+      {
+        "name": "zero/average_scatter",
+        "seconds": 0.062038913
+      },
+      {
+        "name": "aten::pow",
+        "seconds": 0.058082028
+      }
+    ],
+    "next_compute_not_yet_submitted": [
+      {
+        "name": "unmarked",
+        "seconds": 1.170883057
+      },
+      {
+        "name": "zero/partition_gradients",
+        "seconds": 0.665674725
+      },
+      {
+        "name": "Event::record",
+        "seconds": 0.621001271
+      },
+      {
+        "name": "LinearFunctionForZeroStage3Backward",
+        "seconds": 0.546658308
+      },
+      {
+        "name": "PythonDispatchMode",
+        "seconds": 0.458548377
+      },
+      {
+        "name": "PreBackwardFunctionForModuleBackward",
+        "seconds": 0.453777997
+      },
+      {
+        "name": "torch::autograd::AccumulateGrad",
+        "seconds": 0.429558212
+      },
+      {
+        "name": "PostBackwardFunctionModuleBackward",
+        "seconds": 0.393072434
+      },
+      {
+        "name": "zero/average_scatter",
+        "seconds": 0.307976896
+      },
+      {
+        "name": "record_event",
+        "seconds": 0.284621919
+      },
+      {
+        "name": "HcclReduceScatter",
+        "seconds": 0.252574212
+      },
+      {
+        "name": "zero/reduce_and_partition",
+        "seconds": 0.228450547
+      },
+      {
+        "name": "Event::wait",
+        "seconds": 0.199347228
+      },
+      {
+        "name": "aten::copy_",
+        "seconds": 0.151878734
+      },
+      {
+        "name": "aclnnInplaceCopy",
+        "seconds": 0.122700026
+      },
+      {
+        "name": "gradient_transfer/d2h",
+        "seconds": 0.113126825
+      },
+      {
+        "name": "empty_tensor",
+        "seconds": 0.098625206
+      },
+      {
+        "name": "aten::empty_strided",
+        "seconds": 0.091937246
+      },
+      {
+        "name": "wait_event",
+        "seconds": 0.0897431
+      },
+      {
+        "name": "aten::slice",
+        "seconds": 0.087481542
+      }
+    ],
+    "next_compute_submit_in_progress": [
+      {
+        "name": "aclnnInplaceCopy",
+        "seconds": 0.037928602
+      },
+      {
+        "name": "aclnnMul",
+        "seconds": 0.019869968
+      },
+      {
+        "name": "aclnnMatmul",
+        "seconds": 0.011179637
+      },
+      {
+        "name": "aclnnInplaceAdd",
+        "seconds": 0.008538564
+      },
+      {
+        "name": "chunk_bwd_kernel_dqkwg",
+        "seconds": 0.003615165
+      },
+      {
+        "name": "recompute_w_u_fwd_kernel",
+        "seconds": 0.002845238
+      },
+      {
+        "name": "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+        "seconds": 0.001636515
+      },
+      {
+        "name": "aclnnInplaceMul",
+        "seconds": 0.001432001
+      },
+      {
+        "name": "aclnnSiluBackward",
+        "seconds": 0.00052782
+      },
+      {
+        "name": "aclnnDivs",
+        "seconds": 0.000366288
+      },
+      {
+        "name": "prepare_wy_repr_bwd_kernel",
+        "seconds": 0.00034916
+      },
+      {
+        "name": "chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64",
+        "seconds": 0.00033278
+      },
+      {
+        "name": "aclnnConvolution",
+        "seconds": 0.00031602
+      },
+      {
+        "name": "aclnnCat",
+        "seconds": 0.000309299
+      },
+      {
+        "name": "aclnnNeg",
+        "seconds": 0.000214898
+      },
+      {
+        "name": "aclnnPowTensorScalar",
+        "seconds": 0.000189708
+      },
+      {
+        "name": "chunk_local_cumsum_scalar_kernel",
+        "seconds": 0.00018629
+      },
+      {
+        "name": "chunk_scaled_dot_kkt_fwd_kernel",
+        "seconds": 0.00015346
+      },
+      {
+        "name": "solve_tril_64x64_kernel",
+        "seconds": 0.0001319
+      },
+      {
+        "name": "aclnnReduceSum",
+        "seconds": 6.8233e-05
+      }
+    ]
+  },
+  "exposed_by_innermost_main_host_record_top20": [
+    {
+      "name": "unmarked",
+      "seconds": 1.410360771
+    },
+    {
+      "name": "Event::synchronize",
+      "seconds": 1.274176466
+    },
+    {
+      "name": "PreBackwardFunctionForModuleBackward",
+      "seconds": 0.75029818
+    },
+    {
+      "name": "Event::record",
+      "seconds": 0.726858576
+    },
+    {
+      "name": "LinearFunctionForZeroStage3Backward",
+      "seconds": 0.711048363
+    },
+    {
+      "name": "zero/partition_gradients",
+      "seconds": 0.666194553
+    },
+    {
+      "name": "torch::autograd::AccumulateGrad",
+      "seconds": 0.569121848
+    },
+    {
+      "name": "PostBackwardFunctionModuleBackward",
+      "seconds": 0.541960252
+    },
+    {
+      "name": "PythonDispatchMode",
+      "seconds": 0.458772076
+    },
+    {
+      "name": "GDNBackward",
+      "seconds": 0.420644932
+    },
+    {
+      "name": "empty_tensor",
+      "seconds": 0.41498676
+    },
+    {
+      "name": "zero/average_scatter",
+      "seconds": 0.370015809
+    },
+    {
+      "name": "record_event",
+      "seconds": 0.327626227
+    },
+    {
+      "name": "zero/reduce_and_partition",
+      "seconds": 0.322083622
+    },
+    {
+      "name": "aclnnInplaceCopy",
+      "seconds": 0.31700808
+    },
+    {
+      "name": "aten::copy_",
+      "seconds": 0.291281649
+    },
+    {
+      "name": "HcclReduceScatter",
+      "seconds": 0.265971601
+    },
+    {
+      "name": "Event::wait",
+      "seconds": 0.247365694
+    },
+    {
+      "name": "aten::mul",
+      "seconds": 0.187580003
+    },
+    {
+      "name": "aclnnMul",
+      "seconds": 0.172805941
+    }
+  ],
+  "long_gap_examples": [
+    {
+      "exposed_gap_ms": 161.628709,
+      "next_compute_type": "Cast",
+      "next_compute_host_submit_relative_to_gap_ms": -120.561798,
+      "next_compute_device_start_relative_to_gap_ms": 187.353983
+    },
+    {
+      "exposed_gap_ms": 161.508227,
+      "next_compute_type": "Cast",
+      "next_compute_host_submit_relative_to_gap_ms": -121.963266,
+      "next_compute_device_start_relative_to_gap_ms": 187.221361
+    },
+    {
+      "exposed_gap_ms": 143.268482,
+      "next_compute_type": "Cast",
+      "next_compute_host_submit_relative_to_gap_ms": -120.915599,
+      "next_compute_device_start_relative_to_gap_ms": 168.980976
+    },
+    {
+      "exposed_gap_ms": 143.265703,
+      "next_compute_type": "Cast",
+      "next_compute_host_submit_relative_to_gap_ms": -118.002784,
+      "next_compute_device_start_relative_to_gap_ms": 168.972076
+    },
+    {
+      "exposed_gap_ms": 143.257782,
+      "next_compute_type": "GatherV2",
+      "next_compute_host_submit_relative_to_gap_ms": 248.393989,
+      "next_compute_device_start_relative_to_gap_ms": 310.664727
+    },
+    {
+      "exposed_gap_ms": 143.257563,
+      "next_compute_type": "Cast",
+      "next_compute_host_submit_relative_to_gap_ms": -138.260751,
+      "next_compute_device_start_relative_to_gap_ms": 168.967916
+    },
+    {
+      "exposed_gap_ms": 143.256343,
+      "next_compute_type": "GatherV2",
+      "next_compute_host_submit_relative_to_gap_ms": 236.305458,
+      "next_compute_device_start_relative_to_gap_ms": 299.663648
+    },
+    {
+      "exposed_gap_ms": 143.256222,
+      "next_compute_type": "GatherV2",
+      "next_compute_host_submit_relative_to_gap_ms": 235.910907,
+      "next_compute_device_start_relative_to_gap_ms": 302.017114
+    },
+    {
+      "exposed_gap_ms": 143.256023,
+      "next_compute_type": "Cast",
+      "next_compute_host_submit_relative_to_gap_ms": -117.613355,
+      "next_compute_device_start_relative_to_gap_ms": 168.948156
+    },
+    {
+      "exposed_gap_ms": 143.254743,
+      "next_compute_type": "GatherV2",
+      "next_compute_host_submit_relative_to_gap_ms": 239.777422,
+      "next_compute_device_start_relative_to_gap_ms": 303.012495
+    },
+    {
+      "exposed_gap_ms": 143.252502,
+      "next_compute_type": "GatherV2",
+      "next_compute_host_submit_relative_to_gap_ms": 238.405811,
+      "next_compute_device_start_relative_to_gap_ms": 302.696888
+    },
+    {
+      "exposed_gap_ms": 143.252462,
+      "next_compute_type": "GatherV2",
+      "next_compute_host_submit_relative_to_gap_ms": 234.550897,
+      "next_compute_device_start_relative_to_gap_ms": 299.415802
+    },
+    {
+      "exposed_gap_ms": 143.252202,
+      "next_compute_type": "GatherV2",
+      "next_compute_host_submit_relative_to_gap_ms": 233.020197,
+      "next_compute_device_start_relative_to_gap_ms": 296.625526
+    },
+    {
+      "exposed_gap_ms": 143.251922,
+      "next_compute_type": "Cast",
+      "next_compute_host_submit_relative_to_gap_ms": -142.264908,
+      "next_compute_device_start_relative_to_gap_ms": 168.973796
+    },
+    {
+      "exposed_gap_ms": 143.250083,
+      "next_compute_type": "Pows",
+      "next_compute_host_submit_relative_to_gap_ms": 4767.168564,
+      "next_compute_device_start_relative_to_gap_ms": 4769.23741
+    },
+    {
+      "exposed_gap_ms": 143.249602,
+      "next_compute_type": "Cast",
+      "next_compute_host_submit_relative_to_gap_ms": -116.347455,
+      "next_compute_device_start_relative_to_gap_ms": 168.988676
+    }
+  ],
+  "limits": [
+    "Host not-yet-submitted indicates no future main-stream kernel command submitted yet; it does not alone identify why the host cannot advance.",
+    "Innermost recorded host scope identifies execution context, not isolated CPU usage or mathematical causality.",
+    "Queued compute may await communication, copy or other dependencies; exact event producer IDs are absent."
+  ]
+}
