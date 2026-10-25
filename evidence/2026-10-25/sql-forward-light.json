@@ -1,0 +1,2284 @@
+{
+  "completed": true,
+  "same_768_data_order_lengths_and_validation_split": true,
+  "same_validation_at_768": false,
+  "validation_comparisons": [
+    {
+      "rank": 0,
+      "actual": {
+        "loss": 0.858151912689209,
+        "assistant_tokens": 224,
+        "correct": 204,
+        "execution": "native BF16 model"
+      },
+      "reference": {
+        "loss": 0.8581519722938538,
+        "assistant_tokens": 224,
+        "correct": 204,
+        "execution": "native BF16 model"
+      },
+      "exactly_equal": false,
+      "loss_difference": -5.960464477539063e-08
+    },
+    {
+      "rank": 1,
+      "actual": {
+        "loss": 0.858151912689209,
+        "assistant_tokens": 224,
+        "correct": 204,
+        "execution": "native BF16 model"
+      },
+      "reference": {
+        "loss": 0.8581519722938538,
+        "assistant_tokens": 224,
+        "correct": 204,
+        "execution": "native BF16 model"
+      },
+      "exactly_equal": false,
+      "loss_difference": -5.960464477539063e-08
+    }
+  ],
+  "same_config_and_fp32_state": true,
+  "same_cpu_fusion_extension_and_plan": true,
+  "devices_2_3_released": true,
+  "other_known_service_present": true,
+  "ranks": [
+    {
+      "rank": 0,
+      "events": [
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 1,
+          "micro": 1,
+          "seconds": 2.322218129877001,
+          "parts": {
+            "batch_seconds": 0.005815319949761033,
+            "engine_forward_seconds": 2.310650219907984,
+            "loss_scale_and_read_seconds": 0.005744880065321922
+          },
+          "before_memory": {
+            "allocated": 26964603904,
+            "reserved": 38432407552
+          },
+          "after_memory": {
+            "allocated": 32188653056,
+            "reserved": 46296727552
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.004690359113737941,
+            "1": 0.0038429000414907932
+          },
+          "long_gc_seen": []
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 1,
+          "micro": 2,
+          "seconds": 2.7388597200624645,
+          "parts": {
+            "batch_seconds": 0.00566456001251936,
+            "engine_forward_seconds": 2.6355601898394525,
+            "loss_scale_and_read_seconds": 0.09762339992448688
+          },
+          "before_memory": {
+            "allocated": 26963235840,
+            "reserved": 55694065664
+          },
+          "after_memory": {
+            "allocated": 33929012736,
+            "reserved": 55966695424
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.004852480487897992,
+            "1": 0.0054235500283539295
+          },
+          "long_gc_seen": []
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 1,
+          "micro": 3,
+          "seconds": 2.3471511900424957,
+          "parts": {
+            "batch_seconds": 0.005900750169530511,
+            "engine_forward_seconds": 2.3124380600638688,
+            "loss_scale_and_read_seconds": 0.02879971987567842
+          },
+          "before_memory": {
+            "allocated": 26963260416,
+            "reserved": 59974352896
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62469963776
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.008063819259405136,
+            "1": 0.005662619834765792
+          },
+          "long_gc_seen": []
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 1,
+          "micro": 4,
+          "seconds": 2.0846292700152844,
+          "parts": {
+            "batch_seconds": 0.005851770052686334,
+            "engine_forward_seconds": 2.0449172598309815,
+            "loss_scale_and_read_seconds": 0.033848159946501255
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62469963776
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62469963776
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.00586081063374877,
+            "1": 0.006229679798707366
+          },
+          "long_gc_seen": []
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 1,
+          "micro": 5,
+          "seconds": 2.077578199794516,
+          "parts": {
+            "batch_seconds": 0.0059323899913579226,
+            "engine_forward_seconds": 2.031672509852797,
+            "loss_scale_and_read_seconds": 0.039959369925782084
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62469963776
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62469963776
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005152398720383644,
+            "1": 0.004220730159431696
+          },
+          "long_gc_seen": []
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 1,
+          "micro": 6,
+          "seconds": 2.4875721600838006,
+          "parts": {
+            "batch_seconds": 0.005846580024808645,
+            "engine_forward_seconds": 2.44815896009095,
+            "loss_scale_and_read_seconds": 0.03355381009168923
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62469963776
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62469963776
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005082479910925031,
+            "1": 0.00448697991669178,
+            "2": 0.3564474100712687
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 1,
+          "micro": 7,
+          "seconds": 2.345295230159536,
+          "parts": {
+            "batch_seconds": 0.007264740066602826,
+            "engine_forward_seconds": 2.233538340078667,
+            "loss_scale_and_read_seconds": 0.104477470042184
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62469963776
+          },
+          "after_memory": {
+            "allocated": 37540812288,
+            "reserved": 62472060928
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005176799139007926,
+            "1": 0.005373049760237336,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 1,
+          "micro": 8,
+          "seconds": 2.073396350024268,
+          "parts": {
+            "batch_seconds": 0.005908790044486523,
+            "engine_forward_seconds": 2.024080320028588,
+            "loss_scale_and_read_seconds": 0.043395240092650056
+          },
+          "before_memory": {
+            "allocated": 26964704768,
+            "reserved": 62472060928
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62472060928
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005166961345821619,
+            "1": 0.00571523979306221,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "rank": 0,
+          "step": 1,
+          "seconds": 138.95662931003608,
+          "weighted_local_loss": 1.121381752192974,
+          "input_tokens": 14106,
+          "peak_allocated": 46034246656,
+          "peak_reserved": 62472060928,
+          "fp32_m_v_bytes": 107583993856,
+          "global_batch_size": 256,
+          "micro_batch_size": 16,
+          "accumulation": 8,
+          "phase_wall_seconds": {
+            "forward_wall": 18.476700250059366,
+            "backward_wall": 78.662785399938,
+            "step_wall": 41.72310142987408
+          },
+          "padded_input_tokens": 26624,
+          "profiled": false,
+          "cpu_update_stats": {
+            "prepare_group_seconds": 0.0002840489614754915,
+            "prepare_group_calls": 44.0,
+            "gradient_unscale_seconds": 0.014310130616649985,
+            "gradient_unscale_calls": 44.0,
+            "fused_scale_adam_bf16_calls": 44.0,
+            "cpu_adam_step_seconds": 41.2510153807234,
+            "cpu_adam_step_calls": 44.0,
+            "async_copy_submit_seconds": 0.0195170093793422,
+            "async_copy_bytes": 26895998464.0,
+            "bf16_output_fused_calls": 44.0,
+            "master_to_compute_copy_seconds": 0.03621588018722832,
+            "master_to_compute_copy_calls": 44.0,
+            "release_group_seconds": 0.001278330571949482,
+            "release_group_calls": 44.0,
+            "staging_reuse_wait_seconds": 0.0017763592768460512,
+            "staging_final_wait_seconds": 0.06825542007572949
+          },
+          "gradient_observer_stats": {
+            "reduce_and_partition_calls": 4504.0,
+            "average_scatter_calls": 4504.0,
+            "average_scatter_host_seconds": 6.815580668859184,
+            "partition_gradients_calls": 4504.0,
+            "d2h_calls": 8181.0,
+            "d2h_source_bytes": 268959984640.0,
+            "d2h_destination_bytes": 268959984640.0,
+            "d2h_host_call_seconds": 1.5535022194962949,
+            "partition_gradients_host_seconds": 6.809371270472184,
+            "reduce_and_partition_host_seconds": 16.825031102169305,
+            "deferred_boundary_calls": 8.0,
+            "deferred_boundary_host_seconds": 4.47118942020461,
+            "h2d_calls": 851.0,
+            "h2d_source_bytes": 26895998464.0,
+            "h2d_destination_bytes": 26895998464.0,
+            "h2d_host_call_seconds": 0.2512990450486541,
+            "boundary_gradient_offload_calls": 851.0,
+            "boundary_gradient_offload_host_seconds": 2.562198099680245,
+            "global_gradient_norm_calls": 44.0,
+            "global_gradient_norm_host_seconds": 0.14323885994963348
+          },
+          "cpu_gradient_accumulation_stats": {
+            "cpu_add_calls": 5957.0,
+            "incoming_bytes": 188271989248.0,
+            "worker_copy_wait_seconds": 25.90829288843088,
+            "cpu_add_seconds": 27.718179166549817,
+            "slot_wait_seconds": 0.0271152900531888,
+            "deferred_tail_wait_seconds": 0.11648313980549574,
+            "deferred_boundary_parameters": 851.0,
+            "deferred_native_finalize_seconds": 4.3514492500107735
+          }
+        },
+        {
+          "event": "sample_checkpoint",
+          "rank": 0,
+          "samples": 256,
+          "training_seconds": 138.95662931003608,
+          "metrics": {
+            "loss": 1.0108281373977661,
+            "assistant_tokens": 224,
+            "correct": 202,
+            "execution": "native BF16 model"
+          }
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 2,
+          "micro": 1,
+          "seconds": 2.0843776201363653,
+          "parts": {
+            "batch_seconds": 0.004376620054244995,
+            "engine_forward_seconds": 2.0479444300290197,
+            "loss_scale_and_read_seconds": 0.03204711014404893
+          },
+          "before_memory": {
+            "allocated": 30574986240,
+            "reserved": 62472060928
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62472060928
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005230399314314127,
+            "1": 0.004151639994233847,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 2,
+          "micro": 2,
+          "seconds": 2.072644940111786,
+          "parts": {
+            "batch_seconds": 0.0045127300545573235,
+            "engine_forward_seconds": 2.0353982700034976,
+            "loss_scale_and_read_seconds": 0.032724829856306314
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62472060928
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62472060928
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005223660031333566,
+            "1": 0.004605740075930953,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 2,
+          "micro": 3,
+          "seconds": 2.1262239499483258,
+          "parts": {
+            "batch_seconds": 0.00592779996804893,
+            "engine_forward_seconds": 2.0907747000455856,
+            "loss_scale_and_read_seconds": 0.029508889885619283
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62472060928
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62472060928
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005101520335301757,
+            "1": 0.0052820597775280476,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 2,
+          "micro": 4,
+          "seconds": 2.055874280165881,
+          "parts": {
+            "batch_seconds": 0.005948350066319108,
+            "engine_forward_seconds": 2.009394629858434,
+            "loss_scale_and_read_seconds": 0.04051780002191663
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62472060928
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62472060928
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005119439447298646,
+            "1": 0.005633929744362831,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 2,
+          "micro": 5,
+          "seconds": 2.0859110299497843,
+          "parts": {
+            "batch_seconds": 0.0057710399851202965,
+            "engine_forward_seconds": 2.036462980089709,
+            "loss_scale_and_read_seconds": 0.04366282979026437
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62472060928
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62472060928
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.0052397907711565495,
+            "1": 0.0043681899551302195,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 2,
+          "micro": 6,
+          "seconds": 2.0743822501972318,
+          "parts": {
+            "batch_seconds": 0.0058830901980400085,
+            "engine_forward_seconds": 2.0380875000264496,
+            "loss_scale_and_read_seconds": 0.030398239847272635
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62472060928
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62472060928
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005261220736429095,
+            "1": 0.004646959947422147,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 2,
+          "micro": 7,
+          "seconds": 2.4045897498726845,
+          "parts": {
+            "batch_seconds": 0.005788249894976616,
+            "engine_forward_seconds": 2.3792537299450487,
+            "loss_scale_and_read_seconds": 0.019534159917384386
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62472060928
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62472060928
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005019758595153689,
+            "1": 0.005341110052540898,
+            "2": 0.3498215500731021
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            },
+            {
+              "generation": 2,
+              "seconds": 0.3498215500731021
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 2,
+          "micro": 8,
+          "seconds": 2.1011869001667947,
+          "parts": {
+            "batch_seconds": 0.005856289993971586,
+            "engine_forward_seconds": 2.063625209964812,
+            "loss_scale_and_read_seconds": 0.031692210119217634
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62472060928
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62472060928
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005058530485257506,
+            "1": 0.005648879799991846,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            },
+            {
+              "generation": 2,
+              "seconds": 0.3498215500731021
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "rank": 0,
+          "step": 2,
+          "seconds": 93.62389248004183,
+          "weighted_local_loss": 1.137459248304367,
+          "input_tokens": 14308,
+          "peak_allocated": 42738942976,
+          "peak_reserved": 62472060928,
+          "fp32_m_v_bytes": 107583993856,
+          "global_batch_size": 256,
+          "micro_batch_size": 16,
+          "accumulation": 8,
+          "phase_wall_seconds": {
+            "forward_wall": 17.005190720548853,
+            "backward_wall": 63.83123583975248,
+            "step_wall": 12.690022520255297
+          },
+          "padded_input_tokens": 24576,
+          "profiled": false,
+          "cpu_update_stats": {
+            "prepare_group_seconds": 0.0002643798943608999,
+            "prepare_group_calls": 44.0,
+            "gradient_unscale_seconds": 0.014213610207661986,
+            "gradient_unscale_calls": 44.0,
+            "staging_reuse_wait_seconds": 0.0016648494638502598,
+            "fused_scale_adam_bf16_calls": 44.0,
+            "cpu_adam_step_seconds": 12.231556179467589,
+            "cpu_adam_step_calls": 44.0,
+            "async_copy_submit_seconds": 0.018493990879505873,
+            "async_copy_bytes": 26895998464.0,
+            "bf16_output_fused_calls": 44.0,
+            "master_to_compute_copy_seconds": 0.03500781976617873,
+            "master_to_compute_copy_calls": 44.0,
+            "release_group_seconds": 0.0011768494732677937,
+            "release_group_calls": 44.0,
+            "staging_final_wait_seconds": 0.06676737987436354
+          },
+          "gradient_observer_stats": {
+            "reduce_and_partition_calls": 4504.0,
+            "average_scatter_calls": 4504.0,
+            "average_scatter_host_seconds": 6.784081034362316,
+            "partition_gradients_calls": 4504.0,
+            "d2h_calls": 8181.0,
+            "d2h_source_bytes": 268959984640.0,
+            "d2h_destination_bytes": 268959984640.0,
+            "d2h_host_call_seconds": 1.6149977496825159,
+            "partition_gradients_host_seconds": 6.998604546999559,
+            "reduce_and_partition_host_seconds": 17.207111195195466,
+            "deferred_boundary_calls": 8.0,
+            "deferred_boundary_host_seconds": 4.449754160363227,
+            "h2d_calls": 851.0,
+            "h2d_source_bytes": 26895998464.0,
+            "h2d_destination_bytes": 26895998464.0,
+            "h2d_host_call_seconds": 0.2599684891756624,
+            "boundary_gradient_offload_calls": 851.0,
+            "boundary_gradient_offload_host_seconds": 2.559642360312864,
+            "global_gradient_norm_calls": 44.0,
+            "global_gradient_norm_host_seconds": 0.12635903037153184
+          },
+          "cpu_gradient_accumulation_stats": {
+            "slot_wait_seconds": 0.026640900410711765,
+            "cpu_add_calls": 5957.0,
+            "incoming_bytes": 188271989248.0,
+            "worker_copy_wait_seconds": 19.618705181172118,
+            "cpu_add_seconds": 27.640933357179165,
+            "deferred_tail_wait_seconds": 0.1192341900896281,
+            "deferred_boundary_parameters": 851.0,
+            "deferred_native_finalize_seconds": 4.327247900189832
+          }
+        },
+        {
+          "event": "sample_checkpoint",
+          "rank": 0,
+          "samples": 512,
+          "training_seconds": 232.5805217900779,
+          "metrics": {
+            "loss": 0.982580840587616,
+            "assistant_tokens": 224,
+            "correct": 203,
+            "execution": "native BF16 model"
+          }
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 3,
+          "micro": 1,
+          "seconds": 2.2610849698539823,
+          "parts": {
+            "batch_seconds": 0.0056078999768942595,
+            "engine_forward_seconds": 2.1278343298472464,
+            "loss_scale_and_read_seconds": 0.12763327010907233
+          },
+          "before_memory": {
+            "allocated": 30574986240,
+            "reserved": 62472060928
+          },
+          "after_memory": {
+            "allocated": 37540812288,
+            "reserved": 62723719168
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005314500303938985,
+            "1": 0.004281259840354323,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            },
+            {
+              "generation": 2,
+              "seconds": 0.3498215500731021
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 3,
+          "micro": 2,
+          "seconds": 2.141262570163235,
+          "parts": {
+            "batch_seconds": 0.004496650071814656,
+            "engine_forward_seconds": 2.1045889100059867,
+            "loss_scale_and_read_seconds": 0.0321678698528558
+          },
+          "before_memory": {
+            "allocated": 26964704768,
+            "reserved": 62725816320
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62725816320
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.0051987492479383945,
+            "1": 0.004576670005917549,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            },
+            {
+              "generation": 2,
+              "seconds": 0.3498215500731021
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 3,
+          "micro": 3,
+          "seconds": 2.1439376999624074,
+          "parts": {
+            "batch_seconds": 0.005837499862536788,
+            "engine_forward_seconds": 2.1054604300297797,
+            "loss_scale_and_read_seconds": 0.03262667008675635
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62725816320
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62725816320
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005198140628635883,
+            "1": 0.005324299680069089,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            },
+            {
+              "generation": 2,
+              "seconds": 0.3498215500731021
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 3,
+          "micro": 4,
+          "seconds": 2.072808359982446,
+          "parts": {
+            "batch_seconds": 0.005729479948058724,
+            "engine_forward_seconds": 2.033851530170068,
+            "loss_scale_and_read_seconds": 0.03321432997472584
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62725816320
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62725816320
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005184340290725231,
+            "1": 0.005610970081761479,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            },
+            {
+              "generation": 2,
+              "seconds": 0.3498215500731021
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 3,
+          "micro": 5,
+          "seconds": 2.1125903599895537,
+          "parts": {
+            "batch_seconds": 0.0058577400632202625,
+            "engine_forward_seconds": 2.075902770040557,
+            "loss_scale_and_read_seconds": 0.0308165499009192
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62725816320
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62725816320
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005293479887768626,
+            "1": 0.004365529865026474,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            },
+            {
+              "generation": 2,
+              "seconds": 0.3498215500731021
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 3,
+          "micro": 6,
+          "seconds": 2.1142347999848425,
+          "parts": {
+            "batch_seconds": 0.005791040137410164,
+            "engine_forward_seconds": 2.077269420027733,
+            "loss_scale_and_read_seconds": 0.031161039834842086
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62725816320
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62725816320
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005255169468000531,
+            "1": 0.004635009681805968,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            },
+            {
+              "generation": 2,
+              "seconds": 0.3498215500731021
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 3,
+          "micro": 7,
+          "seconds": 2.399289440130815,
+          "parts": {
+            "batch_seconds": 0.005770290037617087,
+            "engine_forward_seconds": 2.3610193899367005,
+            "loss_scale_and_read_seconds": 0.03248740010894835
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62725816320
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62725816320
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.0049487503711134195,
+            "1": 0.005305140046402812,
+            "2": 0.3488511999603361
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            },
+            {
+              "generation": 2,
+              "seconds": 0.3498215500731021
+            },
+            {
+              "generation": 2,
+              "seconds": 0.3488511999603361
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 0,
+          "step": 3,
+          "micro": 8,
+          "seconds": 2.24586987006478,
+          "parts": {
+            "batch_seconds": 0.0060120499692857265,
+            "engine_forward_seconds": 2.155441439943388,
+            "loss_scale_and_read_seconds": 0.0844027001876384
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62725816320
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62725816320
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005132207879796624,
+            "1": 0.005757779814302921,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.3564474100712687
+            },
+            {
+              "generation": 2,
+              "seconds": 0.3498215500731021
+            },
+            {
+              "generation": 2,
+              "seconds": 0.3488511999603361
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "rank": 0,
+          "step": 3,
+          "seconds": 94.6490011101123,
+          "weighted_local_loss": 1.1423401534557343,
+          "input_tokens": 14397,
+          "peak_allocated": 46034246656,
+          "peak_reserved": 62725816320,
+          "fp32_m_v_bytes": 107583993856,
+          "global_batch_size": 256,
+          "micro_batch_size": 16,
+          "accumulation": 8,
+          "phase_wall_seconds": {
+            "forward_wall": 17.491078070132062,
+            "backward_wall": 64.3007806702517,
+            "step_wall": 12.761429749894887
+          },
+          "padded_input_tokens": 25600,
+          "profiled": false,
+          "cpu_update_stats": {
+            "prepare_group_seconds": 0.00027660001069307327,
+            "prepare_group_calls": 44.0,
+            "gradient_unscale_seconds": 0.013803410343825817,
+            "gradient_unscale_calls": 44.0,
+            "staging_reuse_wait_seconds": 0.001646049553528428,
+            "fused_scale_adam_bf16_calls": 44.0,
+            "cpu_adam_step_seconds": 12.30930843949318,
+            "cpu_adam_step_calls": 44.0,
+            "async_copy_submit_seconds": 0.01830250001512468,
+            "async_copy_bytes": 26895998464.0,
+            "bf16_output_fused_calls": 44.0,
+            "master_to_compute_copy_seconds": 0.03662052936851978,
+            "master_to_compute_copy_calls": 44.0,
+            "release_group_seconds": 0.0012093593832105398,
+            "release_group_calls": 44.0,
+            "staging_final_wait_seconds": 0.0679992800578475
+          },
+          "gradient_observer_stats": {
+            "reduce_and_partition_calls": 4504.0,
+            "average_scatter_calls": 4504.0,
+            "average_scatter_host_seconds": 6.888350758003071,
+            "partition_gradients_calls": 4504.0,
+            "d2h_calls": 8181.0,
+            "d2h_source_bytes": 268959984640.0,
+            "d2h_destination_bytes": 268959984640.0,
+            "d2h_host_call_seconds": 1.618182119447738,
+            "partition_gradients_host_seconds": 7.068937781499699,
+            "reduce_and_partition_host_seconds": 16.911313128191978,
+            "deferred_boundary_calls": 8.0,
+            "deferred_boundary_host_seconds": 4.437996969791129,
+            "h2d_calls": 851.0,
+            "h2d_source_bytes": 26895998464.0,
+            "h2d_destination_bytes": 26895998464.0,
+            "h2d_host_call_seconds": 0.2762192392256111,
+            "boundary_gradient_offload_calls": 851.0,
+            "boundary_gradient_offload_host_seconds": 2.546249959152192,
+            "global_gradient_norm_calls": 44.0,
+            "global_gradient_norm_host_seconds": 0.12167805898934603
+          },
+          "cpu_gradient_accumulation_stats": {
+            "slot_wait_seconds": 0.0276967145036906,
+            "cpu_add_calls": 5957.0,
+            "incoming_bytes": 188271989248.0,
+            "worker_copy_wait_seconds": 19.914259885437787,
+            "cpu_add_seconds": 27.538604692555964,
+            "deferred_tail_wait_seconds": 0.1229648101143539,
+            "deferred_boundary_parameters": 851.0,
+            "deferred_native_finalize_seconds": 4.311853760154918
+          }
+        },
+        {
+          "event": "sample_checkpoint",
+          "rank": 0,
+          "samples": 768,
+          "training_seconds": 327.2295229001902,
+          "metrics": {
+            "loss": 0.858151912689209,
+            "assistant_tokens": 224,
+            "correct": 204,
+            "execution": "native BF16 model"
+          }
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "events": [
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 1,
+          "micro": 1,
+          "seconds": 2.2795357001014054,
+          "parts": {
+            "batch_seconds": 0.005938810063526034,
+            "engine_forward_seconds": 2.26813065004535,
+            "loss_scale_and_read_seconds": 0.0054585200268775225
+          },
+          "before_memory": {
+            "allocated": 26964603904,
+            "reserved": 38430310400
+          },
+          "after_memory": {
+            "allocated": 32188653056,
+            "reserved": 46567260160
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.004701860016211867,
+            "1": 0.0038675398100167513
+          },
+          "long_gc_seen": []
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 1,
+          "micro": 2,
+          "seconds": 2.7277085999958217,
+          "parts": {
+            "batch_seconds": 0.004500500159338117,
+            "engine_forward_seconds": 2.633701429935172,
+            "loss_scale_and_read_seconds": 0.08949171984568238
+          },
+          "before_memory": {
+            "allocated": 26963235840,
+            "reserved": 55966695424
+          },
+          "after_memory": {
+            "allocated": 32187159552,
+            "reserved": 55966695424
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005209730006754398,
+            "1": 0.0057979796547442675
+          },
+          "long_gc_seen": []
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 1,
+          "micro": 3,
+          "seconds": 2.3044873201288283,
+          "parts": {
+            "batch_seconds": 0.006515090120956302,
+            "engine_forward_seconds": 2.2664137901738286,
+            "loss_scale_and_read_seconds": 0.03154448000714183
+          },
+          "before_memory": {
+            "allocated": 26963235840,
+            "reserved": 55966695424
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 58231619584
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.010084041394293308,
+            "1": 0.005652600200846791
+          },
+          "long_gc_seen": []
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 1,
+          "micro": 4,
+          "seconds": 2.049687860067934,
+          "parts": {
+            "batch_seconds": 0.006416549906134605,
+            "engine_forward_seconds": 1.9990078799892217,
+            "loss_scale_and_read_seconds": 0.0442488300614059
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 58231619584
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 58231619584
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005792070180177689,
+            "1": 0.006419609999284148
+          },
+          "long_gc_seen": []
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 1,
+          "micro": 5,
+          "seconds": 2.27018322981894,
+          "parts": {
+            "batch_seconds": 0.007890749955549836,
+            "engine_forward_seconds": 2.099708780180663,
+            "loss_scale_and_read_seconds": 0.16256640013307333
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 58231619584
+          },
+          "after_memory": {
+            "allocated": 37540812288,
+            "reserved": 60670607360
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005102669587358832,
+            "1": 0.004245470045134425
+          },
+          "long_gc_seen": []
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 1,
+          "micro": 6,
+          "seconds": 2.3303461698815227,
+          "parts": {
+            "batch_seconds": 0.006396770011633635,
+            "engine_forward_seconds": 2.2350714900530875,
+            "loss_scale_and_read_seconds": 0.0888637900352478
+          },
+          "before_memory": {
+            "allocated": 26964704768,
+            "reserved": 58737033216
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 58925776896
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.004722949583083391,
+            "1": 0.005202250089496374
+          },
+          "long_gc_seen": []
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 1,
+          "micro": 7,
+          "seconds": 2.54957187990658,
+          "parts": {
+            "batch_seconds": 0.007790539879351854,
+            "engine_forward_seconds": 2.4310878799296916,
+            "loss_scale_and_read_seconds": 0.11067715007811785
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 59303264256
+          },
+          "after_memory": {
+            "allocated": 37540812288,
+            "reserved": 61087940608
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.004992119735106826,
+            "1": 0.005318890325725079,
+            "2": 0.35070507996715605
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 1,
+          "micro": 8,
+          "seconds": 2.2442232200410217,
+          "parts": {
+            "batch_seconds": 0.007838469929993153,
+            "engine_forward_seconds": 2.1105810198932886,
+            "loss_scale_and_read_seconds": 0.12578697013668716
+          },
+          "before_memory": {
+            "allocated": 26964704768,
+            "reserved": 61129883648
+          },
+          "after_memory": {
+            "allocated": 37540812288,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.0051847894210368395,
+            "1": 0.005762570071965456,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "rank": 1,
+          "step": 1,
+          "seconds": 138.95662137004547,
+          "weighted_local_loss": 1.1661403477191925,
+          "input_tokens": 14320,
+          "peak_allocated": 46034246656,
+          "peak_reserved": 61381541888,
+          "fp32_m_v_bytes": 107583993856,
+          "global_batch_size": 256,
+          "micro_batch_size": 16,
+          "accumulation": 8,
+          "phase_wall_seconds": {
+            "forward_wall": 18.755743979942054,
+            "backward_wall": 78.38100932002999,
+            "step_wall": 41.740257639903575
+          },
+          "padded_input_tokens": 27648,
+          "profiled": false,
+          "cpu_update_stats": {
+            "prepare_group_seconds": 0.00027145002968609333,
+            "prepare_group_calls": 44.0,
+            "gradient_unscale_seconds": 0.014325111173093319,
+            "gradient_unscale_calls": 44.0,
+            "fused_scale_adam_bf16_calls": 44.0,
+            "cpu_adam_step_seconds": 39.57425370020792,
+            "cpu_adam_step_calls": 44.0,
+            "async_copy_submit_seconds": 0.019986330531537533,
+            "async_copy_bytes": 26895998464.0,
+            "bf16_output_fused_calls": 44.0,
+            "master_to_compute_copy_seconds": 0.03656630031764507,
+            "master_to_compute_copy_calls": 44.0,
+            "release_group_seconds": 0.0012477408163249493,
+            "release_group_calls": 44.0,
+            "staging_reuse_wait_seconds": 0.0017415301408618689,
+            "staging_final_wait_seconds": 0.09545448003336787
+          },
+          "gradient_observer_stats": {
+            "reduce_and_partition_calls": 4504.0,
+            "average_scatter_calls": 4504.0,
+            "average_scatter_host_seconds": 6.9068159682210535,
+            "partition_gradients_calls": 4504.0,
+            "d2h_calls": 8181.0,
+            "d2h_source_bytes": 268959984640.0,
+            "d2h_destination_bytes": 268959984640.0,
+            "d2h_host_call_seconds": 1.5949036253150553,
+            "partition_gradients_host_seconds": 6.989667224930599,
+            "reduce_and_partition_host_seconds": 16.250280688051134,
+            "deferred_boundary_calls": 8.0,
+            "deferred_boundary_host_seconds": 4.4456161295529455,
+            "h2d_calls": 851.0,
+            "h2d_source_bytes": 26895998464.0,
+            "h2d_destination_bytes": 26895998464.0,
+            "h2d_host_call_seconds": 0.24766398034989834,
+            "boundary_gradient_offload_calls": 851.0,
+            "boundary_gradient_offload_host_seconds": 2.5382831490132958,
+            "global_gradient_norm_calls": 44.0,
+            "global_gradient_norm_host_seconds": 0.1672392508480698
+          },
+          "cpu_gradient_accumulation_stats": {
+            "cpu_add_calls": 5957.0,
+            "incoming_bytes": 188271989248.0,
+            "worker_copy_wait_seconds": 24.652636953862384,
+            "cpu_add_seconds": 24.71301714424044,
+            "slot_wait_seconds": 0.028547127498313785,
+            "deferred_tail_wait_seconds": 0.11185784009285271,
+            "deferred_boundary_parameters": 851.0,
+            "deferred_native_finalize_seconds": 4.330040680011734
+          }
+        },
+        {
+          "event": "sample_checkpoint",
+          "rank": 1,
+          "samples": 256,
+          "training_seconds": 138.95662137004547,
+          "metrics": {
+            "loss": 1.0108281373977661,
+            "assistant_tokens": 224,
+            "correct": 202,
+            "execution": "native BF16 model"
+          }
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 2,
+          "micro": 1,
+          "seconds": 2.061599039938301,
+          "parts": {
+            "batch_seconds": 0.0044881501235067844,
+            "engine_forward_seconds": 2.0138728900346905,
+            "loss_scale_and_read_seconds": 0.04322840995155275
+          },
+          "before_memory": {
+            "allocated": 30575010816,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005194608122110367,
+            "1": 0.004225199809297919,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 2,
+          "micro": 2,
+          "seconds": 2.0626446399837732,
+          "parts": {
+            "batch_seconds": 0.00456769997254014,
+            "engine_forward_seconds": 2.0237495799083263,
+            "loss_scale_and_read_seconds": 0.03431816981174052
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.004849209450185299,
+            "1": 0.005307219922542572,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 2,
+          "micro": 3,
+          "seconds": 2.053297830047086,
+          "parts": {
+            "batch_seconds": 0.006433680187910795,
+            "engine_forward_seconds": 2.0073837898671627,
+            "loss_scale_and_read_seconds": 0.039465320063754916
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.00515703996643424,
+            "1": 0.005374769913032651,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 2,
+          "micro": 4,
+          "seconds": 2.1234789800364524,
+          "parts": {
+            "batch_seconds": 0.006466330029070377,
+            "engine_forward_seconds": 2.0855738800019026,
+            "loss_scale_and_read_seconds": 0.031424610177055
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.0051217011641711,
+            "1": 0.005582199664786458,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 2,
+          "micro": 5,
+          "seconds": 2.1082508601248264,
+          "parts": {
+            "batch_seconds": 0.006292680045589805,
+            "engine_forward_seconds": 2.070719320094213,
+            "loss_scale_and_read_seconds": 0.03122402005828917
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005300038494169712,
+            "1": 0.004356050165370107,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 2,
+          "micro": 6,
+          "seconds": 2.033958970103413,
+          "parts": {
+            "batch_seconds": 0.006389349931851029,
+            "engine_forward_seconds": 1.9856908300425857,
+            "loss_scale_and_read_seconds": 0.041865590028464794
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.004881539847701788,
+            "1": 0.005378959933295846,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 2,
+          "micro": 7,
+          "seconds": 2.5700353500433266,
+          "parts": {
+            "batch_seconds": 0.0064001199789345264,
+            "engine_forward_seconds": 2.532462229952216,
+            "loss_scale_and_read_seconds": 0.031157289864495397
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.00503889936953783,
+            "1": 0.005397300003096461,
+            "2": 0.35719132982194424
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            },
+            {
+              "generation": 2,
+              "seconds": 0.35719132982194424
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 2,
+          "micro": 8,
+          "seconds": 2.0424150000326335,
+          "parts": {
+            "batch_seconds": 0.006478119874373078,
+            "engine_forward_seconds": 1.9917996500153095,
+            "loss_scale_and_read_seconds": 0.04412286006845534
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005200239364057779,
+            "1": 0.005699759814888239,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            },
+            {
+              "generation": 2,
+              "seconds": 0.35719132982194424
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "rank": 1,
+          "step": 2,
+          "seconds": 93.6238847898785,
+          "weighted_local_loss": 1.1510489732027054,
+          "input_tokens": 14241,
+          "peak_allocated": 42738942976,
+          "peak_reserved": 61381541888,
+          "fp32_m_v_bytes": 107583993856,
+          "global_batch_size": 256,
+          "micro_batch_size": 16,
+          "accumulation": 8,
+          "phase_wall_seconds": {
+            "forward_wall": 17.055680670309812,
+            "backward_wall": 63.731004959205166,
+            "step_wall": 12.73687369050458
+          },
+          "padded_input_tokens": 24576,
+          "profiled": false,
+          "cpu_update_stats": {
+            "prepare_group_seconds": 0.0002523609437048435,
+            "prepare_group_calls": 44.0,
+            "gradient_unscale_seconds": 0.01415948010981083,
+            "gradient_unscale_calls": 44.0,
+            "staging_reuse_wait_seconds": 0.0016621502581983805,
+            "fused_scale_adam_bf16_calls": 44.0,
+            "cpu_adam_step_seconds": 11.7070429304149,
+            "cpu_adam_step_calls": 44.0,
+            "async_copy_submit_seconds": 0.018734749406576157,
+            "async_copy_bytes": 26895998464.0,
+            "bf16_output_fused_calls": 44.0,
+            "master_to_compute_copy_seconds": 0.03508429974317551,
+            "master_to_compute_copy_calls": 44.0,
+            "release_group_seconds": 0.001188010210171342,
+            "release_group_calls": 44.0,
+            "staging_final_wait_seconds": 0.08122877986170352
+          },
+          "gradient_observer_stats": {
+            "reduce_and_partition_calls": 4504.0,
+            "average_scatter_calls": 4504.0,
+            "average_scatter_host_seconds": 6.91106882551685,
+            "partition_gradients_calls": 4504.0,
+            "d2h_calls": 8181.0,
+            "d2h_source_bytes": 268959984640.0,
+            "d2h_destination_bytes": 268959984640.0,
+            "d2h_host_call_seconds": 1.5540400077588856,
+            "partition_gradients_host_seconds": 6.75326857320033,
+            "reduce_and_partition_host_seconds": 16.58073827601038,
+            "deferred_boundary_calls": 8.0,
+            "deferred_boundary_host_seconds": 4.396165940212086,
+            "h2d_calls": 851.0,
+            "h2d_source_bytes": 26895998464.0,
+            "h2d_destination_bytes": 26895998464.0,
+            "h2d_host_call_seconds": 0.2555220059584826,
+            "boundary_gradient_offload_calls": 851.0,
+            "boundary_gradient_offload_host_seconds": 2.5290768516715616,
+            "global_gradient_norm_calls": 44.0,
+            "global_gradient_norm_host_seconds": 0.1803087501320988
+          },
+          "cpu_gradient_accumulation_stats": {
+            "slot_wait_seconds": 0.02721614483743906,
+            "cpu_add_calls": 5957.0,
+            "incoming_bytes": 188271989248.0,
+            "worker_copy_wait_seconds": 20.843792769825086,
+            "cpu_add_seconds": 24.704279309604317,
+            "deferred_tail_wait_seconds": 0.10723836999386549,
+            "deferred_boundary_parameters": 851.0,
+            "deferred_native_finalize_seconds": 4.285312599968165
+          }
+        },
+        {
+          "event": "sample_checkpoint",
+          "rank": 1,
+          "samples": 512,
+          "training_seconds": 232.58050615992397,
+          "metrics": {
+            "loss": 0.982580840587616,
+            "assistant_tokens": 224,
+            "correct": 203,
+            "execution": "native BF16 model"
+          }
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 3,
+          "micro": 1,
+          "seconds": 2.092341240029782,
+          "parts": {
+            "batch_seconds": 0.004350380040705204,
+            "engine_forward_seconds": 2.0505868799518794,
+            "loss_scale_and_read_seconds": 0.03739407006651163
+          },
+          "before_memory": {
+            "allocated": 30574986240,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005259590223431587,
+            "1": 0.004279549932107329,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            },
+            {
+              "generation": 2,
+              "seconds": 0.35719132982194424
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 3,
+          "micro": 2,
+          "seconds": 2.0747281298972666,
+          "parts": {
+            "batch_seconds": 0.004537990083917975,
+            "engine_forward_seconds": 2.0324110297951847,
+            "loss_scale_and_read_seconds": 0.03776982007548213
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.0049024890176951885,
+            "1": 0.005444559967145324,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            },
+            {
+              "generation": 2,
+              "seconds": 0.35719132982194424
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 3,
+          "micro": 3,
+          "seconds": 2.0348481400869787,
+          "parts": {
+            "batch_seconds": 0.006318100029602647,
+            "engine_forward_seconds": 1.985863609937951,
+            "loss_scale_and_read_seconds": 0.0426522099878639
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.00507097109220922,
+            "1": 0.00541211012750864,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            },
+            {
+              "generation": 2,
+              "seconds": 0.35719132982194424
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 3,
+          "micro": 4,
+          "seconds": 2.06050669006072,
+          "parts": {
+            "batch_seconds": 0.006261390168219805,
+            "engine_forward_seconds": 2.022101059788838,
+            "loss_scale_and_read_seconds": 0.032129559898748994
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.0050855998415499926,
+            "1": 0.005687040043994784,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            },
+            {
+              "generation": 2,
+              "seconds": 0.35719132982194424
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 3,
+          "micro": 5,
+          "seconds": 2.0382722800131887,
+          "parts": {
+            "batch_seconds": 0.006349849980324507,
+            "engine_forward_seconds": 1.9937855801545084,
+            "loss_scale_and_read_seconds": 0.03812327980995178
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.0052051900420337915,
+            "1": 0.004404909908771515,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            },
+            {
+              "generation": 2,
+              "seconds": 0.35719132982194424
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 3,
+          "micro": 6,
+          "seconds": 2.035098470048979,
+          "parts": {
+            "batch_seconds": 0.006267990218475461,
+            "engine_forward_seconds": 1.9844838599674404,
+            "loss_scale_and_read_seconds": 0.04432799993082881
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.004824359668418765,
+            "1": 0.005345130106434226,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            },
+            {
+              "generation": 2,
+              "seconds": 0.35719132982194424
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 3,
+          "micro": 7,
+          "seconds": 2.2353030301164836,
+          "parts": {
+            "batch_seconds": 0.006354460027068853,
+            "engine_forward_seconds": 2.1883276000153273,
+            "loss_scale_and_read_seconds": 0.04060542001388967
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.00519807985983789,
+            "1": 0.0054259400349110365,
+            "2": 0.0
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            },
+            {
+              "generation": 2,
+              "seconds": 0.35719132982194424
+            }
+          ]
+        },
+        {
+          "event": "forward_light",
+          "rank": 1,
+          "step": 3,
+          "micro": 8,
+          "seconds": 2.39640585007146,
+          "parts": {
+            "batch_seconds": 0.00640096003189683,
+            "engine_forward_seconds": 2.3583049699664116,
+            "loss_scale_and_read_seconds": 0.03168612997978926
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 61381541888
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 61381541888
+          },
+          "allocator_delta": {
+            "num_alloc_retries": 0,
+            "num_ooms": 0
+          },
+          "gc_seconds_by_generation": {
+            "0": 0.005056340945884585,
+            "1": 0.00575506966561079,
+            "2": 0.35198322986252606
+          },
+          "long_gc_seen": [
+            {
+              "generation": 2,
+              "seconds": 0.35070507996715605
+            },
+            {
+              "generation": 2,
+              "seconds": 0.35719132982194424
+            },
+            {
+              "generation": 2,
+              "seconds": 0.35198322986252606
+            }
+          ]
+        },
+        {
+          "event": "step_complete",
+          "rank": 1,
+          "step": 3,
+          "seconds": 94.64900959003717,
+          "weighted_local_loss": 1.0777539014816284,
+          "input_tokens": 14167,
+          "peak_allocated": 42738942976,
+          "peak_reserved": 61381541888,
+          "fp32_m_v_bytes": 107583993856,
+          "global_batch_size": 256,
+          "micro_batch_size": 16,
+          "accumulation": 8,
+          "phase_wall_seconds": {
+            "forward_wall": 16.96750383032486,
+            "backward_wall": 64.77156009990722,
+            "step_wall": 12.80791310989298
+          },
+          "padded_input_tokens": 24576,
+          "profiled": false,
+          "cpu_update_stats": {
+            "prepare_group_seconds": 0.0002534599043428898,
+            "prepare_group_calls": 44.0,
+            "gradient_unscale_seconds": 0.01450655865482986,
+            "gradient_unscale_calls": 44.0,
+            "staging_reuse_wait_seconds": 0.0017799499910324812,
+            "fused_scale_adam_bf16_calls": 44.0,
+            "cpu_adam_step_seconds": 11.64556405087933,
+            "cpu_adam_step_calls": 44.0,
+            "async_copy_submit_seconds": 0.0191708707716316,
+            "async_copy_bytes": 26895998464.0,
+            "bf16_output_fused_calls": 44.0,
+            "master_to_compute_copy_seconds": 0.035523790400475264,
+            "master_to_compute_copy_calls": 44.0,
+            "release_group_seconds": 0.0012948305811733007,
+            "release_group_calls": 44.0,
+            "staging_final_wait_seconds": 0.07849156996235251
+          },
+          "gradient_observer_stats": {
+            "reduce_and_partition_calls": 4504.0,
+            "average_scatter_calls": 4504.0,
+            "average_scatter_host_seconds": 7.03988101077266,
+            "partition_gradients_calls": 4504.0,
+            "d2h_calls": 8181.0,
+            "d2h_source_bytes": 268959984640.0,
+            "d2h_destination_bytes": 268959984640.0,
+            "d2h_host_call_seconds": 1.5699210981838405,
+            "partition_gradients_host_seconds": 6.935663305688649,
+            "reduce_and_partition_host_seconds": 17.264838405884802,
+            "deferred_boundary_calls": 8.0,
+            "deferred_boundary_host_seconds": 4.384730000514537,
+            "h2d_calls": 851.0,
+            "h2d_source_bytes": 26895998464.0,
+            "h2d_destination_bytes": 26895998464.0,
+            "h2d_host_call_seconds": 0.2744227214716375,
+            "boundary_gradient_offload_calls": 851.0,
+            "boundary_gradient_offload_host_seconds": 2.5104515480343252,
+            "global_gradient_norm_calls": 44.0,
+            "global_gradient_norm_host_seconds": 0.1727316298056394
+          },
+          "cpu_gradient_accumulation_stats": {
+            "slot_wait_seconds": 0.027511219726875424,
+            "cpu_add_calls": 5957.0,
+            "incoming_bytes": 188271989248.0,
+            "worker_copy_wait_seconds": 21.862562833121046,
+            "cpu_add_seconds": 24.757701130816713,
+            "deferred_tail_wait_seconds": 0.11203450988978148,
+            "deferred_boundary_parameters": 851.0,
+            "deferred_native_finalize_seconds": 4.269043029984459
+          }
+        },
+        {
+          "event": "sample_checkpoint",
+          "rank": 1,
+          "samples": 768,
+          "training_seconds": 327.22951574996114,
+          "metrics": {
+            "loss": 0.858151912689209,
+            "assistant_tokens": 224,
+            "correct": 204,
+            "execution": "native BF16 model"
+          }
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "analyze_boundary.py": "e0751bee249fe0271d7efe016bfa55ac54309d12b31127f41ae0f88f615a3a83",
+    "analyze_gradient.py": "406a7b26c0ce8ed9e56d8bd0b2952e4b346175b1f957cc9204c79a4a85e6bca6",
+    "analyze_profile.py": "7a0522a276397e4194efb756690bbc77769900dc9ee7b9032ffdb46594a8ddbc",
+    "bounded_grad_copy.py": "33ca729bbec3d332e0aa0ad7726d25b2f9c19fc819f1e04012b035c9db913d21",
+    "build_entry.py": "d14c1cdc53f32000cd642afa6528d7407ccdee28df4f7af9ce18bbfce9fa2b85",
+    "communication_overlap.py": "3c7fe6ca5212636851e120447299aa074cddcf654b1fb65763ee22587fc1d1ea",
+    "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b",
+    "cpu_accumulation.py": "50676528a8b53a7ca2fbaec0769af303dd1f622be18a73a592c347a6e9a7dd47",
+    "cpu_update_fused.py": "cdff031248b4c48a330883907b659b5fef9b5fd4c2bad0cd8e9d6c5d87f093c8",
+    "cpu_update_reference.py": "7ea5907c9b24a6492283414e2edd1c37bdb2014fbc9fdd24fb7bbe0cb76b05bf",
+    "gradient_cache.py": "4c1cda4c05579ea8b82dc0e118fed9ad74863a6d07042f50d1d63064467898a4",
+    "gradient_scopes.py": "86116a7f0e28d6deb1ced42e34e2cb42cd2bf15a7b25ed364672e8fbb5530ee6",
+    "run_diagnosis.py": "d4f4ed723f5f680adaeeeceeb8f1bcac6b688523485dec85a3f9ff74221dfcf0",
+    "train_diagnosis.py": "641498216d7216105dec64a44322bad93ca99e329f96aa40ba8b5da9d9d153d8",
+    "progress.py": "e7d31e1e1da87108cc536d75fcb5205e0e6d63ea892c64d9c00606b8c0031499",
+    "analyze_forward.py": "55c66beb119cb65e446680c366accb59277da1571633cf8228e371ba8781b8b3",
+    "export_diagnosis.py": "57fcec9377bbf43177893fab65457ac460df8e51083baa5505b7e0c78d0e718d",
+    "train_light.py": "bd73b62aef042be9b80e4d8abbf8a1356c813c07fb57e909360f2f3a431026dd",
+    "run_light.py": "146d7d6e2f701da9d1c1ae37d11493d04052948cbea846198e7f2eaf82ab31b7",
+    "export_light.py": "624cc95f46c1e05a75c80e3f2bf074f1d8b9bb0c36ad62656d18a8af7efd6f22"
+  },
+  "limits": "Light counters perturb Python allocation/GC timing; cannot retroactively attribute older untraced stalls."
+}

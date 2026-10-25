@@ -1,0 +1,339 @@
+{
+  "historical_rank0_third_update": {
+    "reference": {
+      "first_micro_wall_seconds": 8.956557750701904,
+      "all_forward_wall_seconds": 17.073898250004277
+    },
+    "eager_reduce": {
+      "first_micro_wall_seconds": 12.585691690444946,
+      "all_forward_wall_seconds": 20.859426440205425
+    },
+    "cpu_fused": {
+      "first_micro_wall_seconds": 12.810874938964844,
+      "all_forward_wall_seconds": 21.096971129998565
+    }
+  },
+  "detailed_third_first_per_rank": [
+    {
+      "event": "forward_parts",
+      "rank": 0,
+      "step": 3,
+      "micro": 1,
+      "parts": {
+        "batch_seconds": 0.006050739903002977,
+        "engine_forward_seconds": 3.7162549598142505,
+        "loss_scale_and_read_seconds": 0.031887779943645
+      },
+      "before_memory": {
+        "allocated": 30574986240,
+        "reserved": 62157488128
+      },
+      "after_memory": {
+        "allocated": 37540812288,
+        "reserved": 62157488128
+      },
+      "host_usage_delta": {
+        "ru_utime": 4.103673999999955,
+        "ru_stime": 0.554079999999999,
+        "ru_minflt": 1392,
+        "ru_majflt": 0,
+        "ru_nvcsw": 41365,
+        "ru_nivcsw": 111
+      }
+    },
+    {
+      "event": "forward_parts",
+      "rank": 1,
+      "step": 3,
+      "micro": 1,
+      "parts": {
+        "batch_seconds": 0.13108891993761063,
+        "engine_forward_seconds": 3.3012726299930364,
+        "loss_scale_and_read_seconds": 0.07965171989053488
+      },
+      "before_memory": {
+        "allocated": 30574986240,
+        "reserved": 64195919872
+      },
+      "after_memory": {
+        "allocated": 35798959104,
+        "reserved": 64195919872
+      },
+      "host_usage_delta": {
+        "ru_utime": 3.627383000000009,
+        "ru_stime": 0.15932899999995698,
+        "ru_minflt": 238,
+        "ru_majflt": 0,
+        "ru_nvcsw": 38668,
+        "ru_nivcsw": 208
+      }
+    }
+  ],
+  "light_per_rank": [
+    {
+      "rank": 0,
+      "third_first": {
+        "event": "forward_light",
+        "rank": 0,
+        "step": 3,
+        "micro": 1,
+        "seconds": 2.2610849698539823,
+        "parts": {
+          "batch_seconds": 0.0056078999768942595,
+          "engine_forward_seconds": 2.1278343298472464,
+          "loss_scale_and_read_seconds": 0.12763327010907233
+        },
+        "before_memory": {
+          "allocated": 30574986240,
+          "reserved": 62472060928
+        },
+        "after_memory": {
+          "allocated": 37540812288,
+          "reserved": 62723719168
+        },
+        "allocator_delta": {
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        },
+        "gc_seconds_by_generation": {
+          "0": 0.005314500303938985,
+          "1": 0.004281259840354323,
+          "2": 0.0
+        },
+        "long_gc_seen": [
+          {
+            "generation": 2,
+            "seconds": 0.3564474100712687
+          },
+          {
+            "generation": 2,
+            "seconds": 0.3498215500731021
+          }
+        ]
+      },
+      "steps": [
+        {
+          "step": 1,
+          "seconds": 138.95662931003608,
+          "phase_wall_seconds": {
+            "forward_wall": 18.476700250059366,
+            "backward_wall": 78.662785399938,
+            "step_wall": 41.72310142987408
+          },
+          "profiled": false
+        },
+        {
+          "step": 2,
+          "seconds": 93.62389248004183,
+          "phase_wall_seconds": {
+            "forward_wall": 17.005190720548853,
+            "backward_wall": 63.83123583975248,
+            "step_wall": 12.690022520255297
+          },
+          "profiled": false
+        },
+        {
+          "step": 3,
+          "seconds": 94.6490011101123,
+          "phase_wall_seconds": {
+            "forward_wall": 17.491078070132062,
+            "backward_wall": 64.3007806702517,
+            "step_wall": 12.761429749894887
+          },
+          "profiled": false
+        }
+      ],
+      "total_forward_alloc_retries": 0,
+      "total_forward_ooms": 0,
+      "long_gc_seen": [
+        {
+          "generation": 2,
+          "seconds": 0.3564474100712687
+        },
+        {
+          "generation": 2,
+          "seconds": 0.3498215500731021
+        },
+        {
+          "generation": 2,
+          "seconds": 0.3488511999603361
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "third_first": {
+        "event": "forward_light",
+        "rank": 1,
+        "step": 3,
+        "micro": 1,
+        "seconds": 2.092341240029782,
+        "parts": {
+          "batch_seconds": 0.004350380040705204,
+          "engine_forward_seconds": 2.0505868799518794,
+          "loss_scale_and_read_seconds": 0.03739407006651163
+        },
+        "before_memory": {
+          "allocated": 30574986240,
+          "reserved": 61381541888
+        },
+        "after_memory": {
+          "allocated": 35798959104,
+          "reserved": 61381541888
+        },
+        "allocator_delta": {
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        },
+        "gc_seconds_by_generation": {
+          "0": 0.005259590223431587,
+          "1": 0.004279549932107329,
+          "2": 0.0
+        },
+        "long_gc_seen": [
+          {
+            "generation": 2,
+            "seconds": 0.35070507996715605
+          },
+          {
+            "generation": 2,
+            "seconds": 0.35719132982194424
+          }
+        ]
+      },
+      "steps": [
+        {
+          "step": 1,
+          "seconds": 138.95662137004547,
+          "phase_wall_seconds": {
+            "forward_wall": 18.755743979942054,
+            "backward_wall": 78.38100932002999,
+            "step_wall": 41.740257639903575
+          },
+          "profiled": false
+        },
+        {
+          "step": 2,
+          "seconds": 93.6238847898785,
+          "phase_wall_seconds": {
+            "forward_wall": 17.055680670309812,
+            "backward_wall": 63.731004959205166,
+            "step_wall": 12.73687369050458
+          },
+          "profiled": false
+        },
+        {
+          "step": 3,
+          "seconds": 94.64900959003717,
+          "phase_wall_seconds": {
+            "forward_wall": 16.96750383032486,
+            "backward_wall": 64.77156009990722,
+            "step_wall": 12.80791310989298
+          },
+          "profiled": false
+        }
+      ],
+      "total_forward_alloc_retries": 0,
+      "total_forward_ooms": 0,
+      "long_gc_seen": [
+        {
+          "generation": 2,
+          "seconds": 0.35070507996715605
+        },
+        {
+          "generation": 2,
+          "seconds": 0.35719132982194424
+        },
+        {
+          "generation": 2,
+          "seconds": 0.35198322986252606
+        }
+      ]
+    }
+  ],
+  "detailed_first_forward_cann_top": [
+    {
+      "name": "launch",
+      "calls": 7229,
+      "clipped_host_seconds": 0.18399213,
+      "longest_full_call_seconds": 0.00110803
+    },
+    {
+      "name": "aclrtLaunchKernelWithHostArgs",
+      "calls": 6640,
+      "clipped_host_seconds": 0.08082204,
+      "longest_full_call_seconds": 8.692e-05
+    },
+    {
+      "name": "hcom_allGather_",
+      "calls": 301,
+      "clipped_host_seconds": 0.08005028,
+      "longest_full_call_seconds": 0.00110803
+    },
+    {
+      "name": "aclrtSynchronizeStream",
+      "calls": 1,
+      "clipped_host_seconds": 0.05857764,
+      "longest_full_call_seconds": 0.05857764
+    },
+    {
+      "name": "aclrtRecordEvent",
+      "calls": 3145,
+      "clipped_host_seconds": 0.05635259,
+      "longest_full_call_seconds": 5.219e-05
+    }
+  ],
+  "detailed_third_allocator_calls": [
+    {
+      "name": "aclrtMallocPhysical",
+      "calls": 1,
+      "host_seconds": 0.0001187,
+      "longest_seconds": 0.0001187
+    }
+  ],
+  "detailed_validation_exact": true,
+  "light_validation_exact": false,
+  "light_validation_comparisons": [
+    {
+      "rank": 0,
+      "actual": {
+        "loss": 0.858151912689209,
+        "assistant_tokens": 224,
+        "correct": 204,
+        "execution": "native BF16 model"
+      },
+      "reference": {
+        "loss": 0.8581519722938538,
+        "assistant_tokens": 224,
+        "correct": 204,
+        "execution": "native BF16 model"
+      },
+      "exactly_equal": false,
+      "loss_difference": -5.960464477539063e-08
+    },
+    {
+      "rank": 1,
+      "actual": {
+        "loss": 0.858151912689209,
+        "assistant_tokens": 224,
+        "correct": 204,
+        "execution": "native BF16 model"
+      },
+      "reference": {
+        "loss": 0.8581519722938538,
+        "assistant_tokens": 224,
+        "correct": 204,
+        "execution": "native BF16 model"
+      },
+      "exactly_equal": false,
+      "loss_difference": -5.960464477539063e-08
+    }
+  ],
+  "both_runs_devices_released": true,
+  "conclusion": "Historical extra delay is concentrated in first microbatch of update3. Neither detailed nor lightweight reproduction reproduced the extra ~4 seconds. A persistent forward regression from CPU fusion is not established; the historical root cause remains unobserved.",
+  "limits": [
+    "Detailed Level1+cProfile and light counters perturb timing and allocation patterns.",
+    "No old anomalous third-update DB exists, so healthy repeat traces cannot retroactively exclude an allocator, compiler, GC, or scheduling stall in the historical run.",
+    "Do not replace the selected throughput configuration using these diagnostic repetitions."
+  ]
+}

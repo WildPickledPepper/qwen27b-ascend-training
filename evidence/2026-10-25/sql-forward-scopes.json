@@ -1,0 +1,331 @@
+{
+  "read_only": true,
+  "schema_reference": "CANN_API official schema; PYTORCH_API absent, PRAGMA fallback",
+  "queries": {
+    "scopes": "WITH scopes AS (\n SELECT n.value AS scope,CAST(p.startNs AS INTEGER) AS s,CAST(p.endNs AS INTEGER) AS e\n FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name\n WHERE n.value LIKE 'diagnosis/%/3/%'\n)\nSELECT scope,COUNT(*) AS calls,SUM(e-s)/1e9 AS host_seconds FROM scopes GROUP BY scope ORDER BY scope LIMIT 20",
+    "first_engine_cann": "WITH scopes AS (\n SELECT n.value AS scope,CAST(p.startNs AS INTEGER) AS s,CAST(p.endNs AS INTEGER) AS e\n FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name\n WHERE n.value LIKE 'diagnosis/%/3/%'\n)\nSELECT n.value AS name,COUNT(*) AS calls,SUM(MIN(a.endNs,s.e)-MAX(a.startNs,s.s))/1e9 AS clipped_host_seconds,MAX(a.endNs-a.startNs)/1e9 AS longest_full_call_seconds FROM scopes s JOIN CANN_API a ON a.startNs<s.e AND a.endNs>s.s JOIN STRING_IDS n ON n.id=a.name WHERE s.scope='diagnosis/engine_forward/3/1' GROUP BY n.value ORDER BY clipped_host_seconds DESC LIMIT 20",
+    "allocator_calls": "SELECT n.value AS name,COUNT(*) AS calls,SUM(a.endNs-a.startNs)/1e9 AS host_seconds,MAX(a.endNs-a.startNs)/1e9 AS longest_seconds FROM CANN_API a JOIN STRING_IDS n ON n.id=a.name WHERE n.value LIKE '%Malloc%' OR n.value LIKE '%Free%' OR n.value LIKE '%MemMap%' OR n.value LIKE '%MemUnmap%' GROUP BY n.value ORDER BY host_seconds DESC LIMIT 20",
+    "first_engine_pytorch": "WITH scopes AS (\n SELECT n.value AS scope,CAST(p.startNs AS INTEGER) AS s,CAST(p.endNs AS INTEGER) AS e\n FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name\n WHERE n.value LIKE 'diagnosis/%/3/%'\n)\nSELECT n.value AS name,COUNT(*) AS calls,SUM(MIN(CAST(a.endNs AS INTEGER),s.e)-MAX(CAST(a.startNs AS INTEGER),s.s))/1e9 AS clipped_inclusive_host_seconds FROM scopes s JOIN PYTORCH_API a ON CAST(a.startNs AS INTEGER)<s.e AND CAST(a.endNs AS INTEGER)>s.s JOIN STRING_IDS n ON n.id=a.name WHERE s.scope='diagnosis/engine_forward/3/1' AND n.value NOT LIKE 'diagnosis/%' GROUP BY n.value ORDER BY clipped_inclusive_host_seconds DESC LIMIT 20"
+  },
+  "results": {
+    "scopes": [
+      {
+        "scope": "diagnosis/batch/3/1",
+        "calls": 1,
+        "host_seconds": 0.00596052
+      },
+      {
+        "scope": "diagnosis/batch/3/2",
+        "calls": 1,
+        "host_seconds": 0.0046491
+      },
+      {
+        "scope": "diagnosis/batch/3/3",
+        "calls": 1,
+        "host_seconds": 0.00614532
+      },
+      {
+        "scope": "diagnosis/batch/3/4",
+        "calls": 1,
+        "host_seconds": 0.0060315
+      },
+      {
+        "scope": "diagnosis/batch/3/5",
+        "calls": 1,
+        "host_seconds": 0.00605002
+      },
+      {
+        "scope": "diagnosis/batch/3/6",
+        "calls": 1,
+        "host_seconds": 0.00622188
+      },
+      {
+        "scope": "diagnosis/batch/3/7",
+        "calls": 1,
+        "host_seconds": 0.0060634
+      },
+      {
+        "scope": "diagnosis/batch/3/8",
+        "calls": 1,
+        "host_seconds": 0.00623429
+      },
+      {
+        "scope": "diagnosis/engine_forward/3/1",
+        "calls": 1,
+        "host_seconds": 3.71620976
+      },
+      {
+        "scope": "diagnosis/engine_forward/3/2",
+        "calls": 1,
+        "host_seconds": 2.61155342
+      },
+      {
+        "scope": "diagnosis/engine_forward/3/3",
+        "calls": 1,
+        "host_seconds": 2.60771107
+      },
+      {
+        "scope": "diagnosis/engine_forward/3/4",
+        "calls": 1,
+        "host_seconds": 2.57410942
+      },
+      {
+        "scope": "diagnosis/engine_forward/3/5",
+        "calls": 1,
+        "host_seconds": 2.65191983
+      },
+      {
+        "scope": "diagnosis/engine_forward/3/6",
+        "calls": 1,
+        "host_seconds": 2.9794434
+      },
+      {
+        "scope": "diagnosis/engine_forward/3/7",
+        "calls": 1,
+        "host_seconds": 2.58242137
+      },
+      {
+        "scope": "diagnosis/engine_forward/3/8",
+        "calls": 1,
+        "host_seconds": 2.62654232
+      }
+    ],
+    "first_engine_cann": [
+      {
+        "name": "launch",
+        "calls": 7229,
+        "clipped_host_seconds": 0.18399213,
+        "longest_full_call_seconds": 0.00110803
+      },
+      {
+        "name": "aclrtLaunchKernelWithHostArgs",
+        "calls": 6640,
+        "clipped_host_seconds": 0.08082204,
+        "longest_full_call_seconds": 8.692e-05
+      },
+      {
+        "name": "hcom_allGather_",
+        "calls": 301,
+        "clipped_host_seconds": 0.08005028,
+        "longest_full_call_seconds": 0.00110803
+      },
+      {
+        "name": "aclrtSynchronizeStream",
+        "calls": 1,
+        "clipped_host_seconds": 0.05857764,
+        "longest_full_call_seconds": 0.05857764
+      },
+      {
+        "name": "aclrtRecordEvent",
+        "calls": 3145,
+        "clipped_host_seconds": 0.05635259,
+        "longest_full_call_seconds": 5.219e-05
+      },
+      {
+        "name": "aclnnInplaceCopy",
+        "calls": 1531,
+        "clipped_host_seconds": 0.03867937,
+        "longest_full_call_seconds": 0.00014051
+      },
+      {
+        "name": "aclnnMul",
+        "calls": 898,
+        "clipped_host_seconds": 0.02113245,
+        "longest_full_call_seconds": 5.291e-05
+      },
+      {
+        "name": "aclrtStreamWaitEvent",
+        "calls": 1616,
+        "clipped_host_seconds": 0.02112764,
+        "longest_full_call_seconds": 4.474e-05
+      },
+      {
+        "name": "aclnnMatmul",
+        "calls": 530,
+        "clipped_host_seconds": 0.017318,
+        "longest_full_call_seconds": 4.533e-05
+      },
+      {
+        "name": "aclnnCat",
+        "calls": 504,
+        "clipped_host_seconds": 0.01514989,
+        "longest_full_call_seconds": 9.27e-05
+      },
+      {
+        "name": "aclrtQueryEventStatus",
+        "calls": 2561,
+        "clipped_host_seconds": 0.01099933,
+        "longest_full_call_seconds": 1.726e-05
+      },
+      {
+        "name": "aclrtCreateEventExWithFlag",
+        "calls": 2162,
+        "clipped_host_seconds": 0.00979152,
+        "longest_full_call_seconds": 3.013e-05
+      },
+      {
+        "name": "aclnnAdds",
+        "calls": 469,
+        "clipped_host_seconds": 0.00967796,
+        "longest_full_call_seconds": 5.621e-05
+      },
+      {
+        "name": "Launch_Ffts",
+        "calls": 313,
+        "clipped_host_seconds": 0.00841841,
+        "longest_full_call_seconds": 6.616e-05
+      },
+      {
+        "name": "aclrtGetStreamAttribute",
+        "calls": 5638,
+        "clipped_host_seconds": 0.00693869,
+        "longest_full_call_seconds": 1.3e-05
+      },
+      {
+        "name": "aclnnMean",
+        "calls": 209,
+        "clipped_host_seconds": 0.00579714,
+        "longest_full_call_seconds": 3.966e-05
+      },
+      {
+        "name": "aclnnAdd",
+        "calls": 224,
+        "clipped_host_seconds": 0.00569166,
+        "longest_full_call_seconds": 4.451e-05
+      },
+      {
+        "name": "aclnnRsqrt",
+        "calls": 305,
+        "clipped_host_seconds": 0.00545244,
+        "longest_full_call_seconds": 3.225e-05
+      },
+      {
+        "name": "aclnnPowTensorScalar",
+        "calls": 209,
+        "clipped_host_seconds": 0.00540575,
+        "longest_full_call_seconds": 3.971e-05
+      },
+      {
+        "name": "aclrtDestroyEvent",
+        "calls": 2189,
+        "clipped_host_seconds": 0.00527364,
+        "longest_full_call_seconds": 1.429e-05
+      }
+    ],
+    "allocator_calls": [
+      {
+        "name": "aclrtMallocPhysical",
+        "calls": 1,
+        "host_seconds": 0.0001187,
+        "longest_seconds": 0.0001187
+      }
+    ],
+    "first_engine_pytorch": [
+      {
+        "name": "ProfilerStep#0",
+        "calls": 1,
+        "clipped_inclusive_host_seconds": 3.71620976
+      },
+      {
+        "name": "GDN",
+        "calls": 48,
+        "clipped_inclusive_host_seconds": 0.2867893
+      },
+      {
+        "name": "Event::record",
+        "calls": 1560,
+        "clipped_inclusive_host_seconds": 0.27074899
+      },
+      {
+        "name": "aten::copy_",
+        "calls": 1532,
+        "clipped_inclusive_host_seconds": 0.13675344
+      },
+      {
+        "name": "c10d::_allgather_base_",
+        "calls": 301,
+        "clipped_inclusive_host_seconds": 0.13203912
+      },
+      {
+        "name": "LinearFunctionForZeroStage3",
+        "calls": 497,
+        "clipped_inclusive_host_seconds": 0.12972635
+      },
+      {
+        "name": "aten::to",
+        "calls": 2752,
+        "clipped_inclusive_host_seconds": 0.12722259
+      },
+      {
+        "name": "aten::_to_copy",
+        "calls": 793,
+        "clipped_inclusive_host_seconds": 0.12245018
+      },
+      {
+        "name": "Event::wait",
+        "calls": 1014,
+        "clipped_inclusive_host_seconds": 0.11249232
+      },
+      {
+        "name": "aten::mul",
+        "calls": 916,
+        "clipped_inclusive_host_seconds": 0.10481898
+      },
+      {
+        "name": "HcclAllgatherBase",
+        "calls": 301,
+        "clipped_inclusive_host_seconds": 0.08805492
+      },
+      {
+        "name": "empty_tensor",
+        "calls": 7121,
+        "clipped_inclusive_host_seconds": 0.08760997
+      },
+      {
+        "name": "HcclAllGather",
+        "calls": 301,
+        "clipped_inclusive_host_seconds": 0.08632261
+      },
+      {
+        "name": "PreBackwardFunctionForModule",
+        "calls": 1032,
+        "clipped_inclusive_host_seconds": 0.07239085
+      },
+      {
+        "name": "PostBackwardFunctionModule",
+        "calls": 997,
+        "clipped_inclusive_host_seconds": 0.06875442
+      },
+      {
+        "name": "record_event",
+        "calls": 3145,
+        "clipped_inclusive_host_seconds": 0.06576388
+      },
+      {
+        "name": "Event::query",
+        "calls": 546,
+        "clipped_inclusive_host_seconds": 0.0620193
+      },
+      {
+        "name": "aten::matmul",
+        "calls": 530,
+        "clipped_inclusive_host_seconds": 0.05269319
+      },
+      {
+        "name": "aten::clone",
+        "calls": 737,
+        "clipped_inclusive_host_seconds": 0.05244659
+      },
+      {
+        "name": "aten::contiguous",
+        "calls": 689,
+        "clipped_inclusive_host_seconds": 0.0502285
+      }
+    ]
+  },
+  "limits": [
+    "Temporal API overlap is not a proven task dependency mapping.",
+    "Nested inclusive PyTorch/API ranges may overlap; do not add them as elapsed time.",
+    "This targeted run has Level1 plus first-micro cProfile overhead and is not a throughput ranking."
+  ]
+}

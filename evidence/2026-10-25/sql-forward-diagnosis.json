@@ -1,0 +1,3138 @@
+{
+  "completed": true,
+  "same_768_data_order_lengths_and_validation_split": true,
+  "same_validation_at_768": true,
+  "same_config_and_fp32_state": true,
+  "same_cpu_fusion_extension_and_plan": true,
+  "devices_2_3_released": true,
+  "other_known_service_present": true,
+  "ranks": [
+    {
+      "rank": 0,
+      "events": [
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 1,
+          "micro": 1,
+          "parts": {
+            "batch_seconds": 0.005700960056856275,
+            "engine_forward_seconds": 2.2458624499849975,
+            "loss_scale_and_read_seconds": 0.005566020030528307
+          },
+          "before_memory": {
+            "allocated": 26964603904,
+            "reserved": 38432407552
+          },
+          "after_memory": {
+            "allocated": 32188653056,
+            "reserved": 46233812992
+          },
+          "host_usage_delta": {
+            "ru_utime": 2.1996039999999937,
+            "ru_stime": 0.09469899999999143,
+            "ru_minflt": 10365,
+            "ru_majflt": 0,
+            "ru_nvcsw": 26018,
+            "ru_nivcsw": 144
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 1,
+          "micro": 2,
+          "parts": {
+            "batch_seconds": 0.005901669850572944,
+            "engine_forward_seconds": 2.659323599888012,
+            "loss_scale_and_read_seconds": 0.09926134999841452
+          },
+          "before_memory": {
+            "allocated": 26963235840,
+            "reserved": 55633248256
+          },
+          "after_memory": {
+            "allocated": 33929012736,
+            "reserved": 55905878016
+          },
+          "host_usage_delta": {
+            "ru_utime": 2.799976000000015,
+            "ru_stime": 0.07137000000000171,
+            "ru_minflt": 1677,
+            "ru_majflt": 0,
+            "ru_nvcsw": 20839,
+            "ru_nivcsw": 166
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 1,
+          "micro": 3,
+          "parts": {
+            "batch_seconds": 0.0062713599763810635,
+            "engine_forward_seconds": 2.280915030045435,
+            "loss_scale_and_read_seconds": 0.02899665990844369
+          },
+          "before_memory": {
+            "allocated": 26963260416,
+            "reserved": 59911438336
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62155390976
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.768631000000028,
+            "ru_stime": 0.031786999999980026,
+            "ru_minflt": 295,
+            "ru_majflt": 0,
+            "ru_nvcsw": 7287,
+            "ru_nivcsw": 415
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 1,
+          "micro": 4,
+          "parts": {
+            "batch_seconds": 0.006418360164389014,
+            "engine_forward_seconds": 2.072859870037064,
+            "loss_scale_and_read_seconds": 0.031532529974356294
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62155390976
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62155390976
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.520476000000031,
+            "ru_stime": 0.035708999999997104,
+            "ru_minflt": 239,
+            "ru_majflt": 0,
+            "ru_nvcsw": 1794,
+            "ru_nivcsw": 564
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 1,
+          "micro": 5,
+          "parts": {
+            "batch_seconds": 0.006306900177150965,
+            "engine_forward_seconds": 2.037125090137124,
+            "loss_scale_and_read_seconds": 0.03495737002231181
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62155390976
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62155390976
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.468683999999996,
+            "ru_stime": 0.04520600000000741,
+            "ru_minflt": 109,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2388,
+            "ru_nivcsw": 728
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 1,
+          "micro": 6,
+          "parts": {
+            "batch_seconds": 0.006097509991377592,
+            "engine_forward_seconds": 2.375026720110327,
+            "loss_scale_and_read_seconds": 0.03471926995553076
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62155390976
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62155390976
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.7607380000000035,
+            "ru_stime": 0.04313200000001416,
+            "ru_minflt": 95,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2468,
+            "ru_nivcsw": 930
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 1,
+          "micro": 7,
+          "parts": {
+            "batch_seconds": 0.0074787798803299665,
+            "engine_forward_seconds": 2.20267260982655,
+            "loss_scale_and_read_seconds": 0.1666542999446392
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62155390976
+          },
+          "after_memory": {
+            "allocated": 37540812288,
+            "reserved": 62157488128
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.757811999999944,
+            "ru_stime": 0.056255999999990536,
+            "ru_minflt": 87,
+            "ru_majflt": 0,
+            "ru_nvcsw": 15162,
+            "ru_nivcsw": 739
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 1,
+          "micro": 8,
+          "parts": {
+            "batch_seconds": 0.006241300143301487,
+            "engine_forward_seconds": 2.078019900014624,
+            "loss_scale_and_read_seconds": 0.03284375020302832
+          },
+          "before_memory": {
+            "allocated": 26964704768,
+            "reserved": 62157488128
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62157488128
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.526971000000003,
+            "ru_stime": 0.03211400000000708,
+            "ru_minflt": 99,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2489,
+            "ru_nivcsw": 871
+          }
+        },
+        {
+          "event": "step_complete",
+          "rank": 0,
+          "step": 1,
+          "seconds": 138.8936591099482,
+          "weighted_local_loss": 1.121381737291813,
+          "input_tokens": 14106,
+          "peak_allocated": 46034246656,
+          "peak_reserved": 62157488128,
+          "fp32_m_v_bytes": 107583993856,
+          "global_batch_size": 256,
+          "micro_batch_size": 16,
+          "accumulation": 8,
+          "phase_wall_seconds": {
+            "forward_wall": 18.442990159848705,
+            "backward_wall": 78.55709067964926,
+            "step_wall": 41.82242828980088
+          },
+          "padded_input_tokens": 26624,
+          "profiled": false,
+          "cpu_update_stats": {
+            "prepare_group_seconds": 0.00025947089307010174,
+            "prepare_group_calls": 44.0,
+            "gradient_unscale_seconds": 0.01403446914628148,
+            "gradient_unscale_calls": 44.0,
+            "fused_scale_adam_bf16_calls": 44.0,
+            "cpu_adam_step_seconds": 41.35179580980912,
+            "cpu_adam_step_calls": 44.0,
+            "async_copy_submit_seconds": 0.018907080171629786,
+            "async_copy_bytes": 26895998464.0,
+            "bf16_output_fused_calls": 44.0,
+            "master_to_compute_copy_seconds": 0.03542475099675357,
+            "master_to_compute_copy_calls": 44.0,
+            "release_group_seconds": 0.0012828593607991934,
+            "release_group_calls": 44.0,
+            "staging_reuse_wait_seconds": 0.001670529367402196,
+            "staging_final_wait_seconds": 0.06786095001734793
+          },
+          "gradient_observer_stats": {
+            "reduce_and_partition_calls": 4504.0,
+            "average_scatter_calls": 4504.0,
+            "average_scatter_host_seconds": 6.833744983188808,
+            "partition_gradients_calls": 4504.0,
+            "d2h_calls": 8181.0,
+            "d2h_source_bytes": 268959984640.0,
+            "d2h_destination_bytes": 268959984640.0,
+            "d2h_host_call_seconds": 1.5357393801677972,
+            "partition_gradients_host_seconds": 6.686215467751026,
+            "reduce_and_partition_host_seconds": 17.084633060963824,
+            "deferred_boundary_calls": 8.0,
+            "deferred_boundary_host_seconds": 4.448763540014625,
+            "h2d_calls": 851.0,
+            "h2d_source_bytes": 26895998464.0,
+            "h2d_destination_bytes": 26895998464.0,
+            "h2d_host_call_seconds": 0.25154911959543824,
+            "boundary_gradient_offload_calls": 851.0,
+            "boundary_gradient_offload_host_seconds": 2.562468304298818,
+            "global_gradient_norm_calls": 44.0,
+            "global_gradient_norm_host_seconds": 0.1328813494183123
+          },
+          "cpu_gradient_accumulation_stats": {
+            "cpu_add_calls": 5957.0,
+            "incoming_bytes": 188271989248.0,
+            "worker_copy_wait_seconds": 27.44345740089193,
+            "cpu_add_seconds": 27.51341232145205,
+            "slot_wait_seconds": 0.026532677002251148,
+            "deferred_tail_wait_seconds": 0.1170624599326402,
+            "deferred_boundary_parameters": 851.0,
+            "deferred_native_finalize_seconds": 4.32851815992035
+          }
+        },
+        {
+          "event": "sample_checkpoint",
+          "rank": 0,
+          "samples": 256,
+          "training_seconds": 138.8936591099482,
+          "metrics": {
+            "loss": 1.0108281373977661,
+            "assistant_tokens": 224,
+            "correct": 202,
+            "execution": "native BF16 model"
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 2,
+          "micro": 1,
+          "parts": {
+            "batch_seconds": 0.0045442599803209305,
+            "engine_forward_seconds": 2.210783679969609,
+            "loss_scale_and_read_seconds": 0.030363820027559996
+          },
+          "before_memory": {
+            "allocated": 30574986240,
+            "reserved": 62157488128
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62157488128
+          },
+          "host_usage_delta": {
+            "ru_utime": 2.17919599999982,
+            "ru_stime": 0.030060000000048603,
+            "ru_minflt": 991,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2231,
+            "ru_nivcsw": 147
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 2,
+          "micro": 2,
+          "parts": {
+            "batch_seconds": 0.004658289952203631,
+            "engine_forward_seconds": 2.183102030074224,
+            "loss_scale_and_read_seconds": 0.031490320106968284
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62157488128
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62157488128
+          },
+          "host_usage_delta": {
+            "ru_utime": 2.151779000000033,
+            "ru_stime": 0.03083800000001702,
+            "ru_minflt": 134,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2213,
+            "ru_nivcsw": 118
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 2,
+          "micro": 3,
+          "parts": {
+            "batch_seconds": 0.006335289916023612,
+            "engine_forward_seconds": 1.9764243599493057,
+            "loss_scale_and_read_seconds": 0.04671034007333219
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62157488128
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62157488128
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.364642999999887,
+            "ru_stime": 0.052822999999989406,
+            "ru_minflt": 101,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2559,
+            "ru_nivcsw": 675
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 2,
+          "micro": 4,
+          "parts": {
+            "batch_seconds": 0.006148390006273985,
+            "engine_forward_seconds": 2.0189807899296284,
+            "loss_scale_and_read_seconds": 0.03724645986221731
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62157488128
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62157488128
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.4090799999999035,
+            "ru_stime": 0.035025000000018736,
+            "ru_minflt": 82,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2234,
+            "ru_nivcsw": 669
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 2,
+          "micro": 5,
+          "parts": {
+            "batch_seconds": 0.006193849956616759,
+            "engine_forward_seconds": 2.0676192198880017,
+            "loss_scale_and_read_seconds": 0.029954500030726194
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62157488128
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62157488128
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.513781000000108,
+            "ru_stime": 0.03834400000005189,
+            "ru_minflt": 65,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2053,
+            "ru_nivcsw": 886
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 2,
+          "micro": 6,
+          "parts": {
+            "batch_seconds": 0.0061969400849193335,
+            "engine_forward_seconds": 2.0279514798894525,
+            "loss_scale_and_read_seconds": 0.045713030034676194
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62157488128
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62157488128
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.487961999999925,
+            "ru_stime": 0.044425000000046566,
+            "ru_minflt": 84,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2308,
+            "ru_nivcsw": 1043
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 2,
+          "micro": 7,
+          "parts": {
+            "batch_seconds": 0.006249099969863892,
+            "engine_forward_seconds": 2.339159019989893,
+            "loss_scale_and_read_seconds": 0.019539569970220327
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62157488128
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62157488128
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.787926000000198,
+            "ru_stime": 0.022225000000048567,
+            "ru_minflt": 81,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2041,
+            "ru_nivcsw": 756
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 2,
+          "micro": 8,
+          "parts": {
+            "batch_seconds": 0.006232829997316003,
+            "engine_forward_seconds": 2.016131969867274,
+            "loss_scale_and_read_seconds": 0.03222592989914119
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62157488128
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62157488128
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.44415499999991,
+            "ru_stime": 0.03259500000001481,
+            "ru_minflt": 97,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2243,
+            "ru_nivcsw": 841
+          }
+        },
+        {
+          "event": "step_complete",
+          "rank": 0,
+          "step": 2,
+          "seconds": 93.73464703001082,
+          "weighted_local_loss": 1.1374592930078506,
+          "input_tokens": 14308,
+          "peak_allocated": 42738942976,
+          "peak_reserved": 62157488128,
+          "fp32_m_v_bytes": 107583993856,
+          "global_batch_size": 256,
+          "micro_batch_size": 16,
+          "accumulation": 8,
+          "phase_wall_seconds": {
+            "forward_wall": 17.166125969728455,
+            "backward_wall": 63.80301466002129,
+            "step_wall": 12.68335964018479
+          },
+          "padded_input_tokens": 24576,
+          "profiled": false,
+          "cpu_update_stats": {
+            "prepare_group_seconds": 0.0002547609619796276,
+            "prepare_group_calls": 44.0,
+            "gradient_unscale_seconds": 0.01353383855894208,
+            "gradient_unscale_calls": 44.0,
+            "staging_reuse_wait_seconds": 0.0016614408232271671,
+            "fused_scale_adam_bf16_calls": 44.0,
+            "cpu_adam_step_seconds": 12.239269530167803,
+            "cpu_adam_step_calls": 44.0,
+            "async_copy_submit_seconds": 0.019221609691157937,
+            "async_copy_bytes": 26895998464.0,
+            "bf16_output_fused_calls": 44.0,
+            "master_to_compute_copy_seconds": 0.03565038042142987,
+            "master_to_compute_copy_calls": 44.0,
+            "release_group_seconds": 0.001153010642156005,
+            "release_group_calls": 44.0,
+            "staging_final_wait_seconds": 0.06818336993455887
+          },
+          "gradient_observer_stats": {
+            "reduce_and_partition_calls": 4504.0,
+            "average_scatter_calls": 4504.0,
+            "average_scatter_host_seconds": 6.733121339930221,
+            "partition_gradients_calls": 4504.0,
+            "d2h_calls": 8181.0,
+            "d2h_source_bytes": 268959984640.0,
+            "d2h_destination_bytes": 268959984640.0,
+            "d2h_host_call_seconds": 1.6097552629653364,
+            "partition_gradients_host_seconds": 6.924427134217694,
+            "reduce_and_partition_host_seconds": 17.213780847378075,
+            "deferred_boundary_calls": 8.0,
+            "deferred_boundary_host_seconds": 4.453488890081644,
+            "h2d_calls": 851.0,
+            "h2d_source_bytes": 26895998464.0,
+            "h2d_destination_bytes": 26895998464.0,
+            "h2d_host_call_seconds": 0.2578599522821605,
+            "boundary_gradient_offload_calls": 851.0,
+            "boundary_gradient_offload_host_seconds": 2.55093943933025,
+            "global_gradient_norm_calls": 44.0,
+            "global_gradient_norm_host_seconds": 0.11946687079034746
+          },
+          "cpu_gradient_accumulation_stats": {
+            "slot_wait_seconds": 0.027738184202462435,
+            "cpu_add_calls": 5957.0,
+            "incoming_bytes": 188271989248.0,
+            "worker_copy_wait_seconds": 20.154840382980183,
+            "cpu_add_seconds": 27.309890670934692,
+            "deferred_tail_wait_seconds": 0.11401928006671369,
+            "deferred_boundary_parameters": 851.0,
+            "deferred_native_finalize_seconds": 4.336190740112215
+          }
+        },
+        {
+          "event": "sample_checkpoint",
+          "rank": 0,
+          "samples": 512,
+          "training_seconds": 232.62830613995902,
+          "metrics": {
+            "loss": 0.982580840587616,
+            "assistant_tokens": 224,
+            "correct": 203,
+            "execution": "native BF16 model"
+          }
+        },
+        {
+          "event": "forward_cpu_profile",
+          "rank": 0,
+          "step": 3,
+          "micro": 1,
+          "top_cumulative": [
+            {
+              "file": "partitioned_param_coordinator.py",
+              "line": 307,
+              "function": "fetch_sub_module",
+              "calls": 1014,
+              "self_seconds": 0.003981790000000001,
+              "cumulative_seconds": 1.46964388
+            },
+            {
+              "file": "partitioned_param_coordinator.py",
+              "line": 353,
+              "function": "_fetch_sub_module_impl",
+              "calls": 1014,
+              "self_seconds": 0.0496737,
+              "cumulative_seconds": 1.45858475
+            },
+            {
+              "file": "function.py",
+              "line": 567,
+              "function": "apply",
+              "calls": 2638,
+              "self_seconds": 0.03104167,
+              "cumulative_seconds": 0.96664667
+            },
+            {
+              "file": "partitioned_param_coordinator.py",
+              "line": 568,
+              "function": "__all_gather_params",
+              "calls": 301,
+              "self_seconds": 0.00113378,
+              "cumulative_seconds": 0.63427297
+            },
+            {
+              "file": "partitioned_param_coordinator.py",
+              "line": 582,
+              "function": "__all_gather_params_",
+              "calls": 301,
+              "self_seconds": 0.0034327600000000004,
+              "cumulative_seconds": 0.62998341
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method apply>",
+              "calls": 2638,
+              "self_seconds": 0.10902954000000001,
+              "cumulative_seconds": 0.5904684800000001
+            },
+            {
+              "file": "profiler_interface.py",
+              "line": 49,
+              "function": "wrapper",
+              "calls": 3120,
+              "self_seconds": 0.03489715,
+              "cumulative_seconds": 0.54647044
+            },
+            {
+              "file": "utils.py",
+              "line": 156,
+              "function": "apply_to_tensors_only",
+              "calls": 3062,
+              "self_seconds": 0.014375400000000002,
+              "cumulative_seconds": 0.47529043000000004
+            },
+            {
+              "file": "partitioned_param_coordinator.py",
+              "line": 492,
+              "function": "release_sub_module",
+              "calls": 1014,
+              "self_seconds": 0.01094986,
+              "cumulative_seconds": 0.36703184
+            },
+            {
+              "file": "utils.py",
+              "line": 260,
+              "function": "current_stream",
+              "calls": 3717,
+              "self_seconds": 0.026015260000000002,
+              "cumulative_seconds": 0.35919338
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 1539,
+              "function": "all_gather_coalesced",
+              "calls": 301,
+              "self_seconds": 0.00148429,
+              "cumulative_seconds": 0.34208140000000004
+            },
+            {
+              "file": "streams.py",
+              "line": 42,
+              "function": "wait_stream",
+              "calls": 1014,
+              "self_seconds": 0.01108921,
+              "cumulative_seconds": 0.33472252
+            },
+            {
+              "file": "function.py",
+              "line": 569,
+              "function": "bind_default_args",
+              "calls": 2590,
+              "self_seconds": 0.01435657,
+              "cumulative_seconds": 0.31005314
+            },
+            {
+              "file": "utils.py",
+              "line": 129,
+              "function": "_get_device_index",
+              "calls": 8442,
+              "self_seconds": 0.02500157,
+              "cumulative_seconds": 0.29954174
+            },
+            {
+              "file": "community_gdn.py",
+              "line": 44,
+              "function": "chunk_gated_delta_rule",
+              "calls": 48,
+              "self_seconds": 0.0019391900000000001,
+              "cumulative_seconds": 0.29153604
+            },
+            {
+              "file": "community_gdn.py",
+              "line": 32,
+              "function": "forward",
+              "calls": 48,
+              "self_seconds": 0.00040679,
+              "cumulative_seconds": 0.27225445000000004
+            },
+            {
+              "file": "triton.py",
+              "line": 193,
+              "function": "forward",
+              "calls": 48,
+              "self_seconds": 0.0021637,
+              "cumulative_seconds": 0.27179176
+            },
+            {
+              "file": "parameter_offload.py",
+              "line": 436,
+              "function": "_post_backward_module_hook",
+              "calls": 1014,
+              "self_seconds": 0.005996120000000001,
+              "cumulative_seconds": 0.26470726
+            },
+            {
+              "file": "_utils.py",
+              "line": 837,
+              "function": "_get_device_index",
+              "calls": 8282,
+              "self_seconds": 0.01934403,
+              "cumulative_seconds": 0.26157409000000004
+            },
+            {
+              "file": "parameter_offload.py",
+              "line": 410,
+              "function": "_pre_backward_module_hook",
+              "calls": 1014,
+              "self_seconds": 0.0034841200000000003,
+              "cumulative_seconds": 0.24196365
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 1373,
+              "function": "_all_gather_sequential",
+              "calls": 224,
+              "self_seconds": 0.007740080000000001,
+              "cumulative_seconds": 0.23855343
+            },
+            {
+              "file": "npu_accelerator.py",
+              "line": 129,
+              "function": "current_stream",
+              "calls": 2324,
+              "self_seconds": 0.0035445900000000002,
+              "cumulative_seconds": 0.23427464
+            },
+            {
+              "file": "profiler.py",
+              "line": 806,
+              "function": "__exit__",
+              "calls": 3122,
+              "self_seconds": 0.02660892,
+              "cumulative_seconds": 0.23423519
+            },
+            {
+              "file": "_utils.py",
+              "line": 811,
+              "function": "_get_current_device_index",
+              "calls": 8282,
+              "self_seconds": 0.009590280000000001,
+              "cumulative_seconds": 0.23406924
+            },
+            {
+              "file": "utils.py",
+              "line": 213,
+              "function": "wrapper",
+              "calls": 96,
+              "self_seconds": 0.0027702,
+              "cumulative_seconds": 0.23095442000000002
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 122,
+              "function": "_dist_allgather_fn",
+              "calls": 301,
+              "self_seconds": 0.00683701,
+              "cumulative_seconds": 0.23010573
+            },
+            {
+              "file": "linear.py",
+              "line": 130,
+              "function": "forward",
+              "calls": 497,
+              "self_seconds": 0.0018368500000000001,
+              "cumulative_seconds": 0.22985083
+            },
+            {
+              "file": "_utils.py",
+              "line": 795,
+              "function": "_get_device_attr",
+              "calls": 8282,
+              "self_seconds": 0.03747289,
+              "cumulative_seconds": 0.22447896
+            },
+            {
+              "file": "triton.py",
+              "line": 53,
+              "function": "_chunk_fwd",
+              "calls": 48,
+              "self_seconds": 0.004203200000000001,
+              "cumulative_seconds": 0.22284516000000001
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 1604,
+              "function": "partition",
+              "calls": 586,
+              "self_seconds": 0.00145946,
+              "cumulative_seconds": 0.22272754
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 1765,
+              "function": "_partition",
+              "calls": 586,
+              "self_seconds": 0.0033013900000000004,
+              "cumulative_seconds": 0.22090702
+            },
+            {
+              "file": "linear.py",
+              "line": 148,
+              "function": "zero3_linear_wrap",
+              "calls": 497,
+              "self_seconds": 0.0014330100000000002,
+              "cumulative_seconds": 0.21916906000000003
+            },
+            {
+              "file": "inspect.py",
+              "line": 3346,
+              "function": "signature",
+              "calls": 2590,
+              "self_seconds": 0.0042767000000000005,
+              "cumulative_seconds": 0.21348459
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 1777,
+              "function": "_partition_param",
+              "calls": 586,
+              "self_seconds": 0.013756490000000001,
+              "cumulative_seconds": 0.20952267000000002
+            },
+            {
+              "file": "inspect.py",
+              "line": 3081,
+              "function": "from_callable",
+              "calls": 2590,
+              "self_seconds": 0.00575452,
+              "cumulative_seconds": 0.20920789
+            },
+            {
+              "file": "_ops.py",
+              "line": 1031,
+              "function": "__call__",
+              "calls": 3122,
+              "self_seconds": 0.006250960000000001,
+              "cumulative_seconds": 0.20495553000000002
+            },
+            {
+              "file": "inspect.py",
+              "line": 2501,
+              "function": "_signature_from_callable",
+              "calls": 2590,
+              "self_seconds": 0.0451299,
+              "cumulative_seconds": 0.20345337000000002
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 818,
+              "function": "wait",
+              "calls": 586,
+              "self_seconds": 0.00132788,
+              "cumulative_seconds": 0.18418357000000002
+            },
+            {
+              "file": "modeling_qwen3_5.py",
+              "line": 749,
+              "function": "forward",
+              "calls": 161,
+              "self_seconds": 0.031799770000000005,
+              "cumulative_seconds": 0.18399121000000002
+            },
+            {
+              "file": "streams.py",
+              "line": 56,
+              "function": "record_event",
+              "calls": 1014,
+              "self_seconds": 0.00310163,
+              "cumulative_seconds": 0.18247533000000002
+            }
+          ],
+          "top_self": [
+            {
+              "file": "distributed_c10d.py",
+              "line": 4029,
+              "function": "all_gather_into_tensor",
+              "calls": 301,
+              "self_seconds": 0.14545459000000002,
+              "cumulative_seconds": 0.14545459000000002
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method apply>",
+              "calls": 2638,
+              "self_seconds": 0.10902954000000001,
+              "cumulative_seconds": 0.5904684800000001
+            },
+            {
+              "file": "nvtx.py",
+              "line": 30,
+              "function": "wrapped_fn",
+              "calls": 9027,
+              "self_seconds": 0.10346808,
+              "cumulative_seconds": 0.0
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method torch._ops.profiler._record_function_enter_new>",
+              "calls": 3122,
+              "self_seconds": 0.08915085,
+              "cumulative_seconds": 0.08915085
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method torch.tensor>",
+              "calls": 4,
+              "self_seconds": 0.06421198,
+              "cumulative_seconds": 0.06421198
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method builtins.isinstance>",
+              "calls": 172121,
+              "self_seconds": 0.06363482000000001,
+              "cumulative_seconds": 0.08060336
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<function Event.record at 0xfffe2c3e6f20>",
+              "calls": 1560,
+              "self_seconds": 0.060798750000000006,
+              "cumulative_seconds": 0.060798750000000006
+            },
+            {
+              "file": "inspect.py",
+              "line": 2397,
+              "function": "_signature_from_function",
+              "calls": 2590,
+              "self_seconds": 0.059543620000000005,
+              "cumulative_seconds": 0.133356
+            },
+            {
+              "file": "_utils.py",
+              "line": 778,
+              "function": "_get_available_device_type",
+              "calls": 8282,
+              "self_seconds": 0.055998030000000004,
+              "cumulative_seconds": 0.13643077
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<method 'contiguous' of 'torch._C.TensorBase' objects>",
+              "calls": 994,
+              "self_seconds": 0.054499700000000005,
+              "cumulative_seconds": 0.054499700000000005
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<method 'matmul' of 'torch._C.TensorBase' objects>",
+              "calls": 497,
+              "self_seconds": 0.052812590000000006,
+              "cumulative_seconds": 0.052812590000000006
+            },
+            {
+              "file": "partitioned_param_coordinator.py",
+              "line": 353,
+              "function": "_fetch_sub_module_impl",
+              "calls": 1014,
+              "self_seconds": 0.0496737,
+              "cumulative_seconds": 1.45858475
+            },
+            {
+              "file": "inspect.py",
+              "line": 2501,
+              "function": "_signature_from_callable",
+              "calls": 2590,
+              "self_seconds": 0.0451299,
+              "cumulative_seconds": 0.20345337000000002
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method torch.cat>",
+              "calls": 504,
+              "self_seconds": 0.04486132,
+              "cumulative_seconds": 0.04486132
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method torch._ops.profiler.>",
+              "calls": 3122,
+              "self_seconds": 0.043070630000000006,
+              "cumulative_seconds": 0.043070630000000006
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method builtins.id>",
+              "calls": 18828,
+              "self_seconds": 0.04271239,
+              "cumulative_seconds": 0.04271239
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 313,
+              "function": "free_param",
+              "calls": 586,
+              "self_seconds": 0.04091418,
+              "cumulative_seconds": 0.13143616
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<method 'float' of 'torch._C.TensorBase' objects>",
+              "calls": 423,
+              "self_seconds": 0.040442290000000006,
+              "cumulative_seconds": 0.040442290000000006
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<method 'to' of 'torch._C.TensorBase' objects>",
+              "calls": 2165,
+              "self_seconds": 0.040160270000000005,
+              "cumulative_seconds": 0.040160270000000005
+            },
+            {
+              "file": "_pytree.py",
+              "line": 1462,
+              "function": "tree_iter",
+              "calls": 21854,
+              "self_seconds": 0.04001823,
+              "cumulative_seconds": 0.12738406000000002
+            },
+            {
+              "file": "checkpoint.py",
+              "line": 1144,
+              "function": "pack_hook",
+              "calls": 3776,
+              "self_seconds": 0.037726350000000006,
+              "cumulative_seconds": 0.10893443000000001
+            },
+            {
+              "file": "_utils.py",
+              "line": 795,
+              "function": "_get_device_attr",
+              "calls": 8282,
+              "self_seconds": 0.03747289,
+              "cumulative_seconds": 0.22447896
+            },
+            {
+              "file": "profiler_interface.py",
+              "line": 49,
+              "function": "wrapper",
+              "calls": 3120,
+              "self_seconds": 0.03489715,
+              "cumulative_seconds": 0.54647044
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method torch.empty>",
+              "calls": 1063,
+              "self_seconds": 0.032508050000000004,
+              "cumulative_seconds": 0.032508050000000004
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method builtins.hasattr>",
+              "calls": 56261,
+              "self_seconds": 0.032345950000000005,
+              "cumulative_seconds": 0.052142640000000004
+            },
+            {
+              "file": "modeling_qwen3_5.py",
+              "line": 746,
+              "function": "_norm",
+              "calls": 161,
+              "self_seconds": 0.03204779,
+              "cumulative_seconds": 0.09415914
+            },
+            {
+              "file": "modeling_qwen3_5.py",
+              "line": 749,
+              "function": "forward",
+              "calls": 161,
+              "self_seconds": 0.031799770000000005,
+              "cumulative_seconds": 0.18399121000000002
+            },
+            {
+              "file": "inspect.py",
+              "line": 3133,
+              "function": "_bind",
+              "calls": 2590,
+              "self_seconds": 0.03170184,
+              "cumulative_seconds": 0.0478685
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method builtins.getattr>",
+              "calls": 61327,
+              "self_seconds": 0.031132530000000002,
+              "cumulative_seconds": 0.03166415
+            },
+            {
+              "file": "function.py",
+              "line": 567,
+              "function": "apply",
+              "calls": 2638,
+              "self_seconds": 0.03104167,
+              "cumulative_seconds": 0.96664667
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<method 'detach' of 'torch._C.TensorBase' objects>",
+              "calls": 2030,
+              "self_seconds": 0.030306390000000002,
+              "cumulative_seconds": 0.030306390000000002
+            },
+            {
+              "file": "distributed_c10d.py",
+              "line": 2403,
+              "function": "get_rank",
+              "calls": 3659,
+              "self_seconds": 0.029710780000000003,
+              "cumulative_seconds": 0.029710780000000003
+            },
+            {
+              "file": "streams.py",
+              "line": 24,
+              "function": "__new__",
+              "calls": 3717,
+              "self_seconds": 0.02930798,
+              "cumulative_seconds": 0.17855391
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<method 'narrow' of 'torch._C.TensorBase' objects>",
+              "calls": 1102,
+              "self_seconds": 0.028816980000000002,
+              "cumulative_seconds": 0.028816980000000002
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<function Event.wait at 0xfffd8de937e0>",
+              "calls": 1014,
+              "self_seconds": 0.02731777,
+              "cumulative_seconds": 0.02731777
+            },
+            {
+              "file": "profiler.py",
+              "line": 806,
+              "function": "__exit__",
+              "calls": 3122,
+              "self_seconds": 0.02660892,
+              "cumulative_seconds": 0.23423519
+            },
+            {
+              "file": "_contextlib.py",
+              "line": 120,
+              "function": "decorate_context",
+              "calls": 3943,
+              "self_seconds": 0.02646561,
+              "cumulative_seconds": 0.0
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method __new__ of type object at 0xffffa9dd4858>",
+              "calls": 13110,
+              "self_seconds": 0.02604379,
+              "cumulative_seconds": 0.02604379
+            },
+            {
+              "file": "utils.py",
+              "line": 260,
+              "function": "current_stream",
+              "calls": 3717,
+              "self_seconds": 0.026015260000000002,
+              "cumulative_seconds": 0.35919338
+            },
+            {
+              "file": "module.py",
+              "line": 1969,
+              "function": "__setattr__",
+              "calls": 3041,
+              "self_seconds": 0.025562770000000002,
+              "cumulative_seconds": 0.061949580000000004
+            }
+          ]
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 3,
+          "micro": 1,
+          "parts": {
+            "batch_seconds": 0.006050739903002977,
+            "engine_forward_seconds": 3.7162549598142505,
+            "loss_scale_and_read_seconds": 0.031887779943645
+          },
+          "before_memory": {
+            "allocated": 30574986240,
+            "reserved": 62157488128
+          },
+          "after_memory": {
+            "allocated": 37540812288,
+            "reserved": 62157488128
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.103673999999955,
+            "ru_stime": 0.554079999999999,
+            "ru_minflt": 1392,
+            "ru_majflt": 0,
+            "ru_nvcsw": 41365,
+            "ru_nivcsw": 111
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 3,
+          "micro": 2,
+          "parts": {
+            "batch_seconds": 0.004715240094810724,
+            "engine_forward_seconds": 2.6115941901225597,
+            "loss_scale_and_read_seconds": 0.029083749977871776
+          },
+          "before_memory": {
+            "allocated": 26964704768,
+            "reserved": 62159585280
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62159585280
+          },
+          "host_usage_delta": {
+            "ru_utime": 2.9101590000000215,
+            "ru_stime": 0.4457150000000638,
+            "ru_minflt": 111,
+            "ru_majflt": 0,
+            "ru_nvcsw": 30171,
+            "ru_nivcsw": 61
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 3,
+          "micro": 3,
+          "parts": {
+            "batch_seconds": 0.00630295998416841,
+            "engine_forward_seconds": 2.607804389903322,
+            "loss_scale_and_read_seconds": 0.028059280011802912
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62159585280
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62159585280
+          },
+          "host_usage_delta": {
+            "ru_utime": 5.333676999999852,
+            "ru_stime": 0.46358999999995376,
+            "ru_minflt": 94,
+            "ru_majflt": 0,
+            "ru_nvcsw": 29915,
+            "ru_nivcsw": 890
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 3,
+          "micro": 4,
+          "parts": {
+            "batch_seconds": 0.0061921600718051195,
+            "engine_forward_seconds": 2.5741822700947523,
+            "loss_scale_and_read_seconds": 0.028916300041601062
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62159585280
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62159585280
+          },
+          "host_usage_delta": {
+            "ru_utime": 5.336274000000003,
+            "ru_stime": 0.4351120000000037,
+            "ru_minflt": 72,
+            "ru_majflt": 0,
+            "ru_nvcsw": 29479,
+            "ru_nivcsw": 701
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 3,
+          "micro": 5,
+          "parts": {
+            "batch_seconds": 0.006215420085936785,
+            "engine_forward_seconds": 2.6519922099541873,
+            "loss_scale_and_read_seconds": 0.028020740021020174
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62159585280
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62159585280
+          },
+          "host_usage_delta": {
+            "ru_utime": 5.47875299999987,
+            "ru_stime": 0.406460999999922,
+            "ru_minflt": 62,
+            "ru_majflt": 0,
+            "ru_nvcsw": 30709,
+            "ru_nivcsw": 997
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 3,
+          "micro": 6,
+          "parts": {
+            "batch_seconds": 0.006388969952240586,
+            "engine_forward_seconds": 2.9795197900384665,
+            "loss_scale_and_read_seconds": 0.028045260114595294
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62159585280
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62159585280
+          },
+          "host_usage_delta": {
+            "ru_utime": 5.808528999999908,
+            "ru_stime": 0.39086699999995744,
+            "ru_minflt": 87,
+            "ru_majflt": 0,
+            "ru_nvcsw": 33085,
+            "ru_nivcsw": 975
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 3,
+          "micro": 7,
+          "parts": {
+            "batch_seconds": 0.006233799969777465,
+            "engine_forward_seconds": 2.5824905200861394,
+            "loss_scale_and_read_seconds": 0.02811701991595328
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62159585280
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62159585280
+          },
+          "host_usage_delta": {
+            "ru_utime": 5.333876000000146,
+            "ru_stime": 0.468864999999937,
+            "ru_minflt": 79,
+            "ru_majflt": 0,
+            "ru_nvcsw": 29814,
+            "ru_nivcsw": 925
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 0,
+          "step": 3,
+          "micro": 8,
+          "parts": {
+            "batch_seconds": 0.006407570093870163,
+            "engine_forward_seconds": 2.6266387500800192,
+            "loss_scale_and_read_seconds": 0.028718949994072318
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 62159585280
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 62159585280
+          },
+          "host_usage_delta": {
+            "ru_utime": 5.417469999999867,
+            "ru_stime": 0.44130199999995057,
+            "ru_minflt": 92,
+            "ru_majflt": 0,
+            "ru_nvcsw": 31184,
+            "ru_nivcsw": 1495
+          }
+        },
+        {
+          "event": "step_complete",
+          "rank": 0,
+          "step": 3,
+          "seconds": 112.64192288997583,
+          "weighted_local_loss": 1.142340138554573,
+          "input_tokens": 14397,
+          "peak_allocated": 46034246656,
+          "peak_reserved": 62159585280,
+          "fp32_m_v_bytes": 107583993856,
+          "global_batch_size": 256,
+          "micro_batch_size": 16,
+          "accumulation": 8,
+          "phase_wall_seconds": {
+            "forward_wall": 22.63637016993016,
+            "backward_wall": 77.07457546982914,
+            "step_wall": 12.82961536035873
+          },
+          "padded_input_tokens": 25600,
+          "profiled": true,
+          "cpu_update_stats": {
+            "prepare_group_seconds": 0.0002593195531517267,
+            "prepare_group_calls": 44.0,
+            "gradient_unscale_seconds": 0.01585580944083631,
+            "gradient_unscale_calls": 44.0,
+            "staging_reuse_wait_seconds": 0.006096739787608385,
+            "fused_scale_adam_bf16_calls": 44.0,
+            "cpu_adam_step_seconds": 12.264837119728327,
+            "cpu_adam_step_calls": 44.0,
+            "async_copy_submit_seconds": 0.026589719811454415,
+            "async_copy_bytes": 26895998464.0,
+            "bf16_output_fused_calls": 44.0,
+            "master_to_compute_copy_seconds": 0.04938968038186431,
+            "master_to_compute_copy_calls": 44.0,
+            "release_group_seconds": 0.0010485497768968344,
+            "release_group_calls": 44.0,
+            "staging_final_wait_seconds": 0.066813999786973
+          },
+          "gradient_observer_stats": {
+            "reduce_and_partition_calls": 4504.0,
+            "average_scatter_calls": 4504.0,
+            "average_scatter_host_seconds": 8.726324045332149,
+            "partition_gradients_calls": 4504.0,
+            "d2h_calls": 8181.0,
+            "d2h_source_bytes": 268959984640.0,
+            "d2h_destination_bytes": 268959984640.0,
+            "d2h_host_call_seconds": 1.5426044068299234,
+            "partition_gradients_host_seconds": 8.755653044208884,
+            "reduce_and_partition_host_seconds": 20.841241966933012,
+            "deferred_boundary_calls": 8.0,
+            "deferred_boundary_host_seconds": 4.395175109850243,
+            "h2d_calls": 851.0,
+            "h2d_source_bytes": 26895998464.0,
+            "h2d_destination_bytes": 26895998464.0,
+            "h2d_host_call_seconds": 0.2796259222086519,
+            "boundary_gradient_offload_calls": 851.0,
+            "boundary_gradient_offload_host_seconds": 2.5281325760297477,
+            "global_gradient_norm_calls": 44.0,
+            "global_gradient_norm_host_seconds": 0.15564828063361347
+          },
+          "cpu_gradient_accumulation_stats": {
+            "slot_wait_seconds": 0.025886242277920246,
+            "cpu_add_calls": 5957.0,
+            "incoming_bytes": 188271989248.0,
+            "worker_copy_wait_seconds": 19.88302122009918,
+            "cpu_add_seconds": 27.920047546504065,
+            "deferred_tail_wait_seconds": 0.12612200994044542,
+            "deferred_boundary_parameters": 851.0,
+            "deferred_native_finalize_seconds": 4.266130340052769
+          }
+        },
+        {
+          "event": "sample_checkpoint",
+          "rank": 0,
+          "samples": 768,
+          "training_seconds": 345.27022902993485,
+          "metrics": {
+            "loss": 0.8581519722938538,
+            "assistant_tokens": 224,
+            "correct": 204,
+            "execution": "native BF16 model"
+          }
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "events": [
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 1,
+          "micro": 1,
+          "parts": {
+            "batch_seconds": 0.0059814301785081625,
+            "engine_forward_seconds": 2.275502460077405,
+            "loss_scale_and_read_seconds": 0.005482439883053303
+          },
+          "before_memory": {
+            "allocated": 26964603904,
+            "reserved": 38430310400
+          },
+          "after_memory": {
+            "allocated": 32188653056,
+            "reserved": 46525317120
+          },
+          "host_usage_delta": {
+            "ru_utime": 2.2442060000000197,
+            "ru_stime": 0.07635999999999399,
+            "ru_minflt": 10391,
+            "ru_majflt": 0,
+            "ru_nvcsw": 28356,
+            "ru_nivcsw": 125
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 1,
+          "micro": 2,
+          "parts": {
+            "batch_seconds": 0.004680850077420473,
+            "engine_forward_seconds": 2.659378840122372,
+            "loss_scale_and_read_seconds": 0.08920038002543151
+          },
+          "before_memory": {
+            "allocated": 26963235840,
+            "reserved": 55924752384
+          },
+          "after_memory": {
+            "allocated": 32187159552,
+            "reserved": 55924752384
+          },
+          "host_usage_delta": {
+            "ru_utime": 2.693173999999999,
+            "ru_stime": 0.08475400000000377,
+            "ru_minflt": 1574,
+            "ru_majflt": 0,
+            "ru_nvcsw": 14007,
+            "ru_nivcsw": 78
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 1,
+          "micro": 3,
+          "parts": {
+            "batch_seconds": 0.0069874299224466085,
+            "engine_forward_seconds": 2.277793139917776,
+            "loss_scale_and_read_seconds": 0.027797999791800976
+          },
+          "before_memory": {
+            "allocated": 26963235840,
+            "reserved": 55924752384
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 57896075264
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.644905999999992,
+            "ru_stime": 0.05057500000000914,
+            "ru_minflt": 296,
+            "ru_majflt": 0,
+            "ru_nvcsw": 5403,
+            "ru_nivcsw": 190
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 1,
+          "micro": 4,
+          "parts": {
+            "batch_seconds": 0.006811480037868023,
+            "engine_forward_seconds": 1.986540500074625,
+            "loss_scale_and_read_seconds": 0.04100463981740177
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 57896075264
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 57896075264
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.3593890000000215,
+            "ru_stime": 0.027811999999983072,
+            "ru_minflt": 244,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2205,
+            "ru_nivcsw": 616
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 1,
+          "micro": 5,
+          "parts": {
+            "batch_seconds": 0.008240360068157315,
+            "engine_forward_seconds": 2.044962659943849,
+            "loss_scale_and_read_seconds": 0.20774841005913913
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 57896075264
+          },
+          "after_memory": {
+            "allocated": 37540812288,
+            "reserved": 62012784640
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.399176000000011,
+            "ru_stime": 0.06801300000000765,
+            "ru_minflt": 159,
+            "ru_majflt": 0,
+            "ru_nvcsw": 12706,
+            "ru_nivcsw": 889
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 1,
+          "micro": 6,
+          "parts": {
+            "batch_seconds": 0.006699240067973733,
+            "engine_forward_seconds": 2.1633971501141787,
+            "loss_scale_and_read_seconds": 0.09166761999949813
+          },
+          "before_memory": {
+            "allocated": 26964704768,
+            "reserved": 58653147136
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 60582526976
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.56561899999997,
+            "ru_stime": 0.08943599999997787,
+            "ru_minflt": 129,
+            "ru_majflt": 0,
+            "ru_nvcsw": 19106,
+            "ru_nivcsw": 605
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 1,
+          "micro": 7,
+          "parts": {
+            "batch_seconds": 0.008094379911199212,
+            "engine_forward_seconds": 2.3784095200244337,
+            "loss_scale_and_read_seconds": 0.13571604015305638
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 60582526976
+          },
+          "after_memory": {
+            "allocated": 37540812288,
+            "reserved": 61591257088
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.740323999999987,
+            "ru_stime": 0.0706649999999911,
+            "ru_minflt": 89,
+            "ru_majflt": 0,
+            "ru_nvcsw": 5574,
+            "ru_nivcsw": 872
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 1,
+          "micro": 8,
+          "parts": {
+            "batch_seconds": 0.008398320060223341,
+            "engine_forward_seconds": 2.024060979951173,
+            "loss_scale_and_read_seconds": 0.21460106992162764
+          },
+          "before_memory": {
+            "allocated": 26964704768,
+            "reserved": 61633200128
+          },
+          "after_memory": {
+            "allocated": 37540812288,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.424739999999929,
+            "ru_stime": 0.07034400000000574,
+            "ru_minflt": 105,
+            "ru_majflt": 0,
+            "ru_nvcsw": 9413,
+            "ru_nivcsw": 958
+          }
+        },
+        {
+          "event": "step_complete",
+          "rank": 1,
+          "step": 1,
+          "seconds": 138.89363192999735,
+          "weighted_local_loss": 1.166140303015709,
+          "input_tokens": 14320,
+          "peak_allocated": 46034246656,
+          "peak_reserved": 64195919872,
+          "fp32_m_v_bytes": 107583993856,
+          "global_batch_size": 256,
+          "micro_batch_size": 16,
+          "accumulation": 8,
+          "phase_wall_seconds": {
+            "forward_wall": 18.686888379976153,
+            "backward_wall": 78.28900502994657,
+            "step_wall": 41.845254430081695
+          },
+          "padded_input_tokens": 27648,
+          "profiled": false,
+          "cpu_update_stats": {
+            "prepare_group_seconds": 0.00026661017909646034,
+            "prepare_group_calls": 44.0,
+            "gradient_unscale_seconds": 0.014300480019301176,
+            "gradient_unscale_calls": 44.0,
+            "fused_scale_adam_bf16_calls": 44.0,
+            "cpu_adam_step_seconds": 39.50155501975678,
+            "cpu_adam_step_calls": 44.0,
+            "async_copy_submit_seconds": 0.01973099121823907,
+            "async_copy_bytes": 26895998464.0,
+            "bf16_output_fused_calls": 44.0,
+            "master_to_compute_copy_seconds": 0.036325789988040924,
+            "master_to_compute_copy_calls": 44.0,
+            "release_group_seconds": 0.0012608796823769808,
+            "release_group_calls": 44.0,
+            "staging_reuse_wait_seconds": 0.0017120696138590574,
+            "staging_final_wait_seconds": 0.07664979016408324
+          },
+          "gradient_observer_stats": {
+            "reduce_and_partition_calls": 4504.0,
+            "average_scatter_calls": 4504.0,
+            "average_scatter_host_seconds": 6.942143499152735,
+            "partition_gradients_calls": 4504.0,
+            "d2h_calls": 8181.0,
+            "d2h_source_bytes": 268959984640.0,
+            "d2h_destination_bytes": 268959984640.0,
+            "d2h_host_call_seconds": 1.5836238756310195,
+            "partition_gradients_host_seconds": 6.982138766208664,
+            "reduce_and_partition_host_seconds": 16.352281287079677,
+            "deferred_boundary_calls": 8.0,
+            "deferred_boundary_host_seconds": 4.418432129779831,
+            "h2d_calls": 851.0,
+            "h2d_source_bytes": 26895998464.0,
+            "h2d_destination_bytes": 26895998464.0,
+            "h2d_host_call_seconds": 0.25216271937824786,
+            "boundary_gradient_offload_calls": 851.0,
+            "boundary_gradient_offload_host_seconds": 2.533706749789417,
+            "global_gradient_norm_calls": 44.0,
+            "global_gradient_norm_host_seconds": 0.16071595065295696
+          },
+          "cpu_gradient_accumulation_stats": {
+            "cpu_add_calls": 5957.0,
+            "incoming_bytes": 188271989248.0,
+            "worker_copy_wait_seconds": 23.22466216632165,
+            "cpu_add_seconds": 25.010253829415888,
+            "slot_wait_seconds": 0.02827946818433702,
+            "deferred_tail_wait_seconds": 0.11382945999503136,
+            "deferred_boundary_parameters": 851.0,
+            "deferred_native_finalize_seconds": 4.300934919854626
+          }
+        },
+        {
+          "event": "sample_checkpoint",
+          "rank": 1,
+          "samples": 256,
+          "training_seconds": 138.89363192999735,
+          "metrics": {
+            "loss": 1.0108281373977661,
+            "assistant_tokens": 224,
+            "correct": 202,
+            "execution": "native BF16 model"
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 2,
+          "micro": 1,
+          "parts": {
+            "batch_seconds": 0.0045016000512987375,
+            "engine_forward_seconds": 2.0149104602169245,
+            "loss_scale_and_read_seconds": 0.04258604999631643
+          },
+          "before_memory": {
+            "allocated": 30575010816,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 1.9847749999998996,
+            "ru_stime": 0.029069000000049527,
+            "ru_minflt": 1005,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2490,
+            "ru_nivcsw": 79
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 2,
+          "micro": 2,
+          "parts": {
+            "batch_seconds": 0.004651549970731139,
+            "engine_forward_seconds": 2.0090299998410046,
+            "loss_scale_and_read_seconds": 0.030633720103651285
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 1.9692800000000261,
+            "ru_stime": 0.03706399999998666,
+            "ru_minflt": 98,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2202,
+            "ru_nivcsw": 184
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 2,
+          "micro": 3,
+          "parts": {
+            "batch_seconds": 0.006876059807837009,
+            "engine_forward_seconds": 2.0667179299052805,
+            "loss_scale_and_read_seconds": 0.029929789947345853
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.358915999999908,
+            "ru_stime": 0.06925999999998567,
+            "ru_minflt": 100,
+            "ru_majflt": 0,
+            "ru_nvcsw": 1946,
+            "ru_nivcsw": 570
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 2,
+          "micro": 4,
+          "parts": {
+            "batch_seconds": 0.006925530033186078,
+            "engine_forward_seconds": 2.0668430200312287,
+            "loss_scale_and_read_seconds": 0.031574780121445656
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.358176000000185,
+            "ru_stime": 0.05228799999997591,
+            "ru_minflt": 86,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2030,
+            "ru_nivcsw": 618
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 2,
+          "micro": 5,
+          "parts": {
+            "batch_seconds": 0.006942189997062087,
+            "engine_forward_seconds": 1.980673700105399,
+            "loss_scale_and_read_seconds": 0.040224049938842654
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.227000999999973,
+            "ru_stime": 0.07109300000001895,
+            "ru_minflt": 60,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2170,
+            "ru_nivcsw": 638
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 2,
+          "micro": 6,
+          "parts": {
+            "batch_seconds": 0.006800619885325432,
+            "engine_forward_seconds": 2.0887921100948006,
+            "loss_scale_and_read_seconds": 0.03120987000875175
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.462756000000127,
+            "ru_stime": 0.0422720000000254,
+            "ru_minflt": 87,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2041,
+            "ru_nivcsw": 641
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 2,
+          "micro": 7,
+          "parts": {
+            "batch_seconds": 0.006924869958311319,
+            "engine_forward_seconds": 2.5380337501410395,
+            "loss_scale_and_read_seconds": 0.03100126003846526
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.979084999999941,
+            "ru_stime": 0.06209799999999177,
+            "ru_minflt": 76,
+            "ru_majflt": 0,
+            "ru_nvcsw": 11403,
+            "ru_nivcsw": 680
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 2,
+          "micro": 8,
+          "parts": {
+            "batch_seconds": 0.006938240025192499,
+            "engine_forward_seconds": 1.98913031979464,
+            "loss_scale_and_read_seconds": 0.0389066799543798
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.34733899999992,
+            "ru_stime": 0.037807000000043445,
+            "ru_minflt": 95,
+            "ru_majflt": 0,
+            "ru_nvcsw": 1928,
+            "ru_nivcsw": 834
+          }
+        },
+        {
+          "event": "step_complete",
+          "rank": 1,
+          "step": 2,
+          "seconds": 93.73467487003654,
+          "weighted_local_loss": 1.151048943400383,
+          "input_tokens": 14241,
+          "peak_allocated": 42738942976,
+          "peak_reserved": 64195919872,
+          "fp32_m_v_bytes": 107583993856,
+          "global_batch_size": 256,
+          "micro_batch_size": 16,
+          "accumulation": 8,
+          "phase_wall_seconds": {
+            "forward_wall": 17.088383929803967,
+            "backward_wall": 63.84919588989578,
+            "step_wall": 12.708841670537367
+          },
+          "padded_input_tokens": 24576,
+          "profiled": false,
+          "cpu_update_stats": {
+            "prepare_group_seconds": 0.00025195907801389694,
+            "prepare_group_calls": 44.0,
+            "gradient_unscale_seconds": 0.014650509459897876,
+            "gradient_unscale_calls": 44.0,
+            "staging_reuse_wait_seconds": 0.0016636389773339033,
+            "fused_scale_adam_bf16_calls": 44.0,
+            "cpu_adam_step_seconds": 11.677744639571756,
+            "cpu_adam_step_calls": 44.0,
+            "async_copy_submit_seconds": 0.018815420102328062,
+            "async_copy_bytes": 26895998464.0,
+            "bf16_output_fused_calls": 44.0,
+            "master_to_compute_copy_seconds": 0.03538095997646451,
+            "master_to_compute_copy_calls": 44.0,
+            "release_group_seconds": 0.0011870891321450472,
+            "release_group_calls": 44.0,
+            "staging_final_wait_seconds": 0.0766338799148798
+          },
+          "gradient_observer_stats": {
+            "reduce_and_partition_calls": 4504.0,
+            "average_scatter_calls": 4504.0,
+            "average_scatter_host_seconds": 6.915503695374355,
+            "partition_gradients_calls": 4504.0,
+            "d2h_calls": 8181.0,
+            "d2h_source_bytes": 268959984640.0,
+            "d2h_destination_bytes": 268959984640.0,
+            "d2h_host_call_seconds": 1.5461901775561273,
+            "partition_gradients_host_seconds": 6.72446983656846,
+            "reduce_and_partition_host_seconds": 16.534994022687897,
+            "deferred_boundary_calls": 8.0,
+            "deferred_boundary_host_seconds": 4.422320079756901,
+            "h2d_calls": 851.0,
+            "h2d_source_bytes": 26895998464.0,
+            "h2d_destination_bytes": 26895998464.0,
+            "h2d_host_call_seconds": 0.25732467928901315,
+            "boundary_gradient_offload_calls": 851.0,
+            "boundary_gradient_offload_host_seconds": 2.5279037724249065,
+            "global_gradient_norm_calls": 44.0,
+            "global_gradient_norm_host_seconds": 0.14847898040898144
+          },
+          "cpu_gradient_accumulation_stats": {
+            "slot_wait_seconds": 0.027355683268979192,
+            "cpu_add_calls": 5957.0,
+            "incoming_bytes": 188271989248.0,
+            "worker_copy_wait_seconds": 20.36641455674544,
+            "cpu_add_seconds": 25.16877170978114,
+            "deferred_tail_wait_seconds": 0.11038603982888162,
+            "deferred_boundary_parameters": 851.0,
+            "deferred_native_finalize_seconds": 4.308200859930366
+          }
+        },
+        {
+          "event": "sample_checkpoint",
+          "rank": 1,
+          "samples": 512,
+          "training_seconds": 232.6283068000339,
+          "metrics": {
+            "loss": 0.982580840587616,
+            "assistant_tokens": 224,
+            "correct": 203,
+            "execution": "native BF16 model"
+          }
+        },
+        {
+          "event": "forward_cpu_profile",
+          "rank": 1,
+          "step": 3,
+          "micro": 1,
+          "top_cumulative": [
+            {
+              "file": "partitioned_param_coordinator.py",
+              "line": 307,
+              "function": "fetch_sub_module",
+              "calls": 1014,
+              "self_seconds": 0.00426582,
+              "cumulative_seconds": 1.22432334
+            },
+            {
+              "file": "partitioned_param_coordinator.py",
+              "line": 353,
+              "function": "_fetch_sub_module_impl",
+              "calls": 1014,
+              "self_seconds": 0.04580646,
+              "cumulative_seconds": 1.21325192
+            },
+            {
+              "file": "function.py",
+              "line": 567,
+              "function": "apply",
+              "calls": 2638,
+              "self_seconds": 0.030840500000000003,
+              "cumulative_seconds": 0.8804271400000001
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method apply>",
+              "calls": 2638,
+              "self_seconds": 0.09523300000000001,
+              "cumulative_seconds": 0.50779403
+            },
+            {
+              "file": "utils.py",
+              "line": 156,
+              "function": "apply_to_tensors_only",
+              "calls": 3062,
+              "self_seconds": 0.015030700000000001,
+              "cumulative_seconds": 0.45271015000000003
+            },
+            {
+              "file": "partitioned_param_coordinator.py",
+              "line": 568,
+              "function": "__all_gather_params",
+              "calls": 301,
+              "self_seconds": 0.0011893700000000001,
+              "cumulative_seconds": 0.45148692
+            },
+            {
+              "file": "partitioned_param_coordinator.py",
+              "line": 582,
+              "function": "__all_gather_params_",
+              "calls": 301,
+              "self_seconds": 0.0035566200000000004,
+              "cumulative_seconds": 0.44710955
+            },
+            {
+              "file": "partitioned_param_coordinator.py",
+              "line": 492,
+              "function": "release_sub_module",
+              "calls": 1014,
+              "self_seconds": 0.01085489,
+              "cumulative_seconds": 0.35660823
+            },
+            {
+              "file": "utils.py",
+              "line": 260,
+              "function": "current_stream",
+              "calls": 3717,
+              "self_seconds": 0.02439095,
+              "cumulative_seconds": 0.34746436
+            },
+            {
+              "file": "function.py",
+              "line": 569,
+              "function": "bind_default_args",
+              "calls": 2590,
+              "self_seconds": 0.013620330000000002,
+              "cumulative_seconds": 0.30564136000000003
+            },
+            {
+              "file": "utils.py",
+              "line": 129,
+              "function": "_get_device_index",
+              "calls": 8442,
+              "self_seconds": 0.024884800000000002,
+              "cumulative_seconds": 0.29120772
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 1539,
+              "function": "all_gather_coalesced",
+              "calls": 301,
+              "self_seconds": 0.0014582500000000001,
+              "cumulative_seconds": 0.27931807000000003
+            },
+            {
+              "file": "streams.py",
+              "line": 183,
+              "function": "synchronize",
+              "calls": 45,
+              "self_seconds": 0.00010190000000000001,
+              "cumulative_seconds": 0.27597501
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<function Event.synchronize at 0xffff178f4e00>",
+              "calls": 45,
+              "self_seconds": 0.27587311000000003,
+              "cumulative_seconds": 0.27587311000000003
+            },
+            {
+              "file": "parameter_offload.py",
+              "line": 436,
+              "function": "_post_backward_module_hook",
+              "calls": 1014,
+              "self_seconds": 0.00581976,
+              "cumulative_seconds": 0.25421859
+            },
+            {
+              "file": "_utils.py",
+              "line": 837,
+              "function": "_get_device_index",
+              "calls": 8282,
+              "self_seconds": 0.01897304,
+              "cumulative_seconds": 0.25313456
+            },
+            {
+              "file": "community_gdn.py",
+              "line": 44,
+              "function": "chunk_gated_delta_rule",
+              "calls": 48,
+              "self_seconds": 0.00180309,
+              "cumulative_seconds": 0.24399559
+            },
+            {
+              "file": "parameter_offload.py",
+              "line": 410,
+              "function": "_pre_backward_module_hook",
+              "calls": 1014,
+              "self_seconds": 0.0035211,
+              "cumulative_seconds": 0.22991527
+            },
+            {
+              "file": "npu_accelerator.py",
+              "line": 129,
+              "function": "current_stream",
+              "calls": 2324,
+              "self_seconds": 0.0036105300000000002,
+              "cumulative_seconds": 0.22916824000000002
+            },
+            {
+              "file": "_utils.py",
+              "line": 811,
+              "function": "_get_current_device_index",
+              "calls": 8282,
+              "self_seconds": 0.009253840000000001,
+              "cumulative_seconds": 0.22594215
+            },
+            {
+              "file": "community_gdn.py",
+              "line": 32,
+              "function": "forward",
+              "calls": 48,
+              "self_seconds": 0.00041024000000000003,
+              "cumulative_seconds": 0.22474749000000002
+            },
+            {
+              "file": "triton.py",
+              "line": 193,
+              "function": "forward",
+              "calls": 48,
+              "self_seconds": 0.00203548,
+              "cumulative_seconds": 0.22423758000000002
+            },
+            {
+              "file": "_utils.py",
+              "line": 795,
+              "function": "_get_device_attr",
+              "calls": 8282,
+              "self_seconds": 0.03552868,
+              "cumulative_seconds": 0.21668831000000002
+            },
+            {
+              "file": "linear.py",
+              "line": 130,
+              "function": "forward",
+              "calls": 497,
+              "self_seconds": 0.00190006,
+              "cumulative_seconds": 0.21550422000000002
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 1604,
+              "function": "partition",
+              "calls": 586,
+              "self_seconds": 0.00147542,
+              "cumulative_seconds": 0.21257809000000003
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 1765,
+              "function": "_partition",
+              "calls": 586,
+              "self_seconds": 0.0034752600000000004,
+              "cumulative_seconds": 0.21072348000000002
+            },
+            {
+              "file": "inspect.py",
+              "line": 3346,
+              "function": "signature",
+              "calls": 2590,
+              "self_seconds": 0.004052350000000001,
+              "cumulative_seconds": 0.21062934000000003
+            },
+            {
+              "file": "inspect.py",
+              "line": 3081,
+              "function": "from_callable",
+              "calls": 2590,
+              "self_seconds": 0.00562376,
+              "cumulative_seconds": 0.20657699000000002
+            },
+            {
+              "file": "linear.py",
+              "line": 148,
+              "function": "zero3_linear_wrap",
+              "calls": 497,
+              "self_seconds": 0.00140915,
+              "cumulative_seconds": 0.20417376
+            },
+            {
+              "file": "inspect.py",
+              "line": 2501,
+              "function": "_signature_from_callable",
+              "calls": 2590,
+              "self_seconds": 0.044241960000000004,
+              "cumulative_seconds": 0.20095323
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 1777,
+              "function": "_partition_param",
+              "calls": 586,
+              "self_seconds": 0.01346925,
+              "cumulative_seconds": 0.19927923
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method torch.tensor>",
+              "calls": 4,
+              "self_seconds": 0.19908802,
+              "cumulative_seconds": 0.19908802
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 1373,
+              "function": "_all_gather_sequential",
+              "calls": 224,
+              "self_seconds": 0.0072910200000000005,
+              "cumulative_seconds": 0.19300239000000002
+            },
+            {
+              "file": "utils.py",
+              "line": 213,
+              "function": "wrapper",
+              "calls": 96,
+              "self_seconds": 0.0026726000000000002,
+              "cumulative_seconds": 0.19188806
+            },
+            {
+              "file": "triton.py",
+              "line": 53,
+              "function": "_chunk_fwd",
+              "calls": 48,
+              "self_seconds": 0.00391913,
+              "cumulative_seconds": 0.18517384
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 122,
+              "function": "_dist_allgather_fn",
+              "calls": 301,
+              "self_seconds": 0.006962680000000001,
+              "cumulative_seconds": 0.17456412000000002
+            },
+            {
+              "file": "streams.py",
+              "line": 24,
+              "function": "__new__",
+              "calls": 3717,
+              "self_seconds": 0.027925690000000003,
+              "cumulative_seconds": 0.17370745
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 818,
+              "function": "wait",
+              "calls": 586,
+              "self_seconds": 0.00141099,
+              "cumulative_seconds": 0.16811668000000002
+            },
+            {
+              "file": "modeling_qwen3_5.py",
+              "line": 749,
+              "function": "forward",
+              "calls": 161,
+              "self_seconds": 0.02554686,
+              "cumulative_seconds": 0.1503024
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 760,
+              "function": "wait",
+              "calls": 362,
+              "self_seconds": 0.014124320000000001,
+              "cumulative_seconds": 0.15021395
+            }
+          ],
+          "top_self": [
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<function Event.synchronize at 0xffff178f4e00>",
+              "calls": 45,
+              "self_seconds": 0.27587311000000003,
+              "cumulative_seconds": 0.27587311000000003
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method torch.tensor>",
+              "calls": 4,
+              "self_seconds": 0.19908802,
+              "cumulative_seconds": 0.19908802
+            },
+            {
+              "file": "nvtx.py",
+              "line": 30,
+              "function": "wrapped_fn",
+              "calls": 9027,
+              "self_seconds": 0.10187903000000001,
+              "cumulative_seconds": 0.0
+            },
+            {
+              "file": "distributed_c10d.py",
+              "line": 4029,
+              "function": "all_gather_into_tensor",
+              "calls": 301,
+              "self_seconds": 0.09660164,
+              "cumulative_seconds": 0.09660164
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method apply>",
+              "calls": 2638,
+              "self_seconds": 0.09523300000000001,
+              "cumulative_seconds": 0.50779403
+            },
+            {
+              "file": "inspect.py",
+              "line": 2397,
+              "function": "_signature_from_function",
+              "calls": 2590,
+              "self_seconds": 0.05883664,
+              "cumulative_seconds": 0.13185502000000002
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method builtins.isinstance>",
+              "calls": 134681,
+              "self_seconds": 0.054016220000000004,
+              "cumulative_seconds": 0.07019755
+            },
+            {
+              "file": "_utils.py",
+              "line": 778,
+              "function": "_get_available_device_type",
+              "calls": 8282,
+              "self_seconds": 0.05335237,
+              "cumulative_seconds": 0.13109199000000002
+            },
+            {
+              "file": "partitioned_param_coordinator.py",
+              "line": 353,
+              "function": "_fetch_sub_module_impl",
+              "calls": 1014,
+              "self_seconds": 0.04580646,
+              "cumulative_seconds": 1.21325192
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<method 'matmul' of 'torch._C.TensorBase' objects>",
+              "calls": 497,
+              "self_seconds": 0.044253610000000006,
+              "cumulative_seconds": 0.044253610000000006
+            },
+            {
+              "file": "inspect.py",
+              "line": 2501,
+              "function": "_signature_from_callable",
+              "calls": 2590,
+              "self_seconds": 0.044241960000000004,
+              "cumulative_seconds": 0.20095323
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<function Event.record at 0xffff178f4ae0>",
+              "calls": 1560,
+              "self_seconds": 0.042725610000000004,
+              "cumulative_seconds": 0.042725610000000004
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method builtins.id>",
+              "calls": 18828,
+              "self_seconds": 0.04135553,
+              "cumulative_seconds": 0.04135553
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<method 'contiguous' of 'torch._C.TensorBase' objects>",
+              "calls": 994,
+              "self_seconds": 0.039655710000000004,
+              "cumulative_seconds": 0.039655710000000004
+            },
+            {
+              "file": "checkpoint.py",
+              "line": 1144,
+              "function": "pack_hook",
+              "calls": 3776,
+              "self_seconds": 0.037091980000000004,
+              "cumulative_seconds": 0.10812745
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method torch.cat>",
+              "calls": 504,
+              "self_seconds": 0.03621192,
+              "cumulative_seconds": 0.03621192
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 313,
+              "function": "free_param",
+              "calls": 586,
+              "self_seconds": 0.03564651,
+              "cumulative_seconds": 0.12220621000000001
+            },
+            {
+              "file": "_utils.py",
+              "line": 795,
+              "function": "_get_device_attr",
+              "calls": 8282,
+              "self_seconds": 0.03552868,
+              "cumulative_seconds": 0.21668831000000002
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<method 'to' of 'torch._C.TensorBase' objects>",
+              "calls": 2165,
+              "self_seconds": 0.03168096,
+              "cumulative_seconds": 0.03168096
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method builtins.hasattr>",
+              "calls": 56261,
+              "self_seconds": 0.03151793,
+              "cumulative_seconds": 0.05087242
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<method 'float' of 'torch._C.TensorBase' objects>",
+              "calls": 423,
+              "self_seconds": 0.031163740000000002,
+              "cumulative_seconds": 0.031163740000000002
+            },
+            {
+              "file": "inspect.py",
+              "line": 3133,
+              "function": "_bind",
+              "calls": 2590,
+              "self_seconds": 0.03096114,
+              "cumulative_seconds": 0.04703779
+            },
+            {
+              "file": "function.py",
+              "line": 567,
+              "function": "apply",
+              "calls": 2638,
+              "self_seconds": 0.030840500000000003,
+              "cumulative_seconds": 0.8804271400000001
+            },
+            {
+              "file": "distributed_c10d.py",
+              "line": 2403,
+              "function": "get_rank",
+              "calls": 3659,
+              "self_seconds": 0.02884083,
+              "cumulative_seconds": 0.02884083
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method torch.empty>",
+              "calls": 1063,
+              "self_seconds": 0.0288025,
+              "cumulative_seconds": 0.0288025
+            },
+            {
+              "file": "streams.py",
+              "line": 24,
+              "function": "__new__",
+              "calls": 3717,
+              "self_seconds": 0.027925690000000003,
+              "cumulative_seconds": 0.17370745
+            },
+            {
+              "file": "_contextlib.py",
+              "line": 120,
+              "function": "decorate_context",
+              "calls": 3943,
+              "self_seconds": 0.02668834,
+              "cumulative_seconds": 0.0
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method builtins.getattr>",
+              "calls": 48847,
+              "self_seconds": 0.02608475,
+              "cumulative_seconds": 0.026582360000000003
+            },
+            {
+              "file": "module.py",
+              "line": 1969,
+              "function": "__setattr__",
+              "calls": 3041,
+              "self_seconds": 0.025566520000000002,
+              "cumulative_seconds": 0.061863940000000006
+            },
+            {
+              "file": "modeling_qwen3_5.py",
+              "line": 749,
+              "function": "forward",
+              "calls": 161,
+              "self_seconds": 0.02554686,
+              "cumulative_seconds": 0.1503024
+            },
+            {
+              "file": "modeling_qwen3_5.py",
+              "line": 746,
+              "function": "_norm",
+              "calls": 161,
+              "self_seconds": 0.02510625,
+              "cumulative_seconds": 0.07731682000000001
+            },
+            {
+              "file": "utils.py",
+              "line": 129,
+              "function": "_get_device_index",
+              "calls": 8442,
+              "self_seconds": 0.024884800000000002,
+              "cumulative_seconds": 0.29120772
+            },
+            {
+              "file": "utils.py",
+              "line": 260,
+              "function": "current_stream",
+              "calls": 3717,
+              "self_seconds": 0.02439095,
+              "cumulative_seconds": 0.34746436
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<built-in method __new__ of type object at 0xffff97fa4858>",
+              "calls": 13110,
+              "self_seconds": 0.02432029,
+              "cumulative_seconds": 0.02432029
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<method 'narrow' of 'torch._C.TensorBase' objects>",
+              "calls": 1102,
+              "self_seconds": 0.02383017,
+              "cumulative_seconds": 0.02383017
+            },
+            {
+              "file": "module.py",
+              "line": 1952,
+              "function": "__getattr__",
+              "calls": 5552,
+              "self_seconds": 0.02316276,
+              "cumulative_seconds": 0.03681472
+            },
+            {
+              "file": "eval_frame.py",
+              "line": 1165,
+              "function": "_fn",
+              "calls": 3412,
+              "self_seconds": 0.022088240000000002,
+              "cumulative_seconds": 0.0
+            },
+            {
+              "file": "__init__.py",
+              "line": 439,
+              "function": "is_compiling",
+              "calls": 21568,
+              "self_seconds": 0.02167677,
+              "cumulative_seconds": 0.025885940000000003
+            },
+            {
+              "file": "~",
+              "line": 0,
+              "function": "<method 'detach' of 'torch._C.TensorBase' objects>",
+              "calls": 2030,
+              "self_seconds": 0.0214985,
+              "cumulative_seconds": 0.0214985
+            },
+            {
+              "file": "partition_parameters.py",
+              "line": 126,
+              "function": "print_rank_0",
+              "calls": 3358,
+              "self_seconds": 0.01962343,
+              "cumulative_seconds": 0.1083051
+            }
+          ]
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 3,
+          "micro": 1,
+          "parts": {
+            "batch_seconds": 0.13108891993761063,
+            "engine_forward_seconds": 3.3012726299930364,
+            "loss_scale_and_read_seconds": 0.07965171989053488
+          },
+          "before_memory": {
+            "allocated": 30574986240,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 3.627383000000009,
+            "ru_stime": 0.15932899999995698,
+            "ru_minflt": 238,
+            "ru_majflt": 0,
+            "ru_nvcsw": 38668,
+            "ru_nivcsw": 208
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 3,
+          "micro": 2,
+          "parts": {
+            "batch_seconds": 0.004655279917642474,
+            "engine_forward_seconds": 2.3189869299530983,
+            "loss_scale_and_read_seconds": 0.08674862002953887
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 2.456805999999915,
+            "ru_stime": 0.10847100000000864,
+            "ru_minflt": 106,
+            "ru_majflt": 0,
+            "ru_nvcsw": 26967,
+            "ru_nivcsw": 135
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 3,
+          "micro": 3,
+          "parts": {
+            "batch_seconds": 0.006743300007656217,
+            "engine_forward_seconds": 2.312984769931063,
+            "loss_scale_and_read_seconds": 0.08580877003259957
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.800484000000097,
+            "ru_stime": 0.07523000000003321,
+            "ru_minflt": 88,
+            "ru_majflt": 0,
+            "ru_nvcsw": 20780,
+            "ru_nivcsw": 608
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 3,
+          "micro": 4,
+          "parts": {
+            "batch_seconds": 0.00672670011408627,
+            "engine_forward_seconds": 2.285625870106742,
+            "loss_scale_and_read_seconds": 0.0865489300340414
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.804295999999795,
+            "ru_stime": 0.11628300000006675,
+            "ru_minflt": 69,
+            "ru_majflt": 0,
+            "ru_nvcsw": 26710,
+            "ru_nivcsw": 809
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 3,
+          "micro": 5,
+          "parts": {
+            "batch_seconds": 0.006755420006811619,
+            "engine_forward_seconds": 2.3538993399124593,
+            "loss_scale_and_read_seconds": 0.08623856003396213
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.932634000000007,
+            "ru_stime": 0.11937999999997828,
+            "ru_minflt": 96,
+            "ru_majflt": 0,
+            "ru_nvcsw": 32527,
+            "ru_nivcsw": 646
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 3,
+          "micro": 6,
+          "parts": {
+            "batch_seconds": 0.006885109934955835,
+            "engine_forward_seconds": 2.314735029824078,
+            "loss_scale_and_read_seconds": 0.08655699994415045
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.859469999999874,
+            "ru_stime": 0.12127499999996871,
+            "ru_minflt": 86,
+            "ru_majflt": 0,
+            "ru_nvcsw": 30632,
+            "ru_nivcsw": 716
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 3,
+          "micro": 7,
+          "parts": {
+            "batch_seconds": 0.006604169961065054,
+            "engine_forward_seconds": 2.2925983199384063,
+            "loss_scale_and_read_seconds": 0.08576573012396693
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.834865999999693,
+            "ru_stime": 0.12588499999992564,
+            "ru_minflt": 83,
+            "ru_majflt": 0,
+            "ru_nvcsw": 26972,
+            "ru_nivcsw": 629
+          }
+        },
+        {
+          "event": "forward_parts",
+          "rank": 1,
+          "step": 3,
+          "micro": 8,
+          "parts": {
+            "batch_seconds": 0.006983449915423989,
+            "engine_forward_seconds": 2.3559101498685777,
+            "loss_scale_and_read_seconds": 0.06144821015186608
+          },
+          "before_memory": {
+            "allocated": 26964680192,
+            "reserved": 64195919872
+          },
+          "after_memory": {
+            "allocated": 35798959104,
+            "reserved": 64195919872
+          },
+          "host_usage_delta": {
+            "ru_utime": 4.669814999999744,
+            "ru_stime": 0.057813000000010106,
+            "ru_minflt": 90,
+            "ru_majflt": 0,
+            "ru_nvcsw": 2594,
+            "ru_nivcsw": 611
+          }
+        },
+        {
+          "event": "step_complete",
+          "rank": 1,
+          "step": 3,
+          "seconds": 112.76873431005515,
+          "weighted_local_loss": 1.0777539014816284,
+          "input_tokens": 14167,
+          "peak_allocated": 42738942976,
+          "peak_reserved": 64195919872,
+          "fp32_m_v_bytes": 107583993856,
+          "global_batch_size": 256,
+          "micro_batch_size": 16,
+          "accumulation": 8,
+          "phase_wall_seconds": {
+            "forward_wall": 20.378904460463673,
+            "backward_wall": 79.41848435997963,
+            "step_wall": 12.858996819937602
+          },
+          "padded_input_tokens": 24576,
+          "profiled": true,
+          "cpu_update_stats": {
+            "prepare_group_seconds": 0.00025219027884304523,
+            "prepare_group_calls": 44.0,
+            "gradient_unscale_seconds": 0.014061769470572472,
+            "gradient_unscale_calls": 44.0,
+            "staging_reuse_wait_seconds": 0.0016429098322987556,
+            "fused_scale_adam_bf16_calls": 44.0,
+            "cpu_adam_step_seconds": 11.822332860901952,
+            "cpu_adam_step_calls": 44.0,
+            "async_copy_submit_seconds": 0.018522570375353098,
+            "async_copy_bytes": 26895998464.0,
+            "bf16_output_fused_calls": 44.0,
+            "master_to_compute_copy_seconds": 0.03472519130446017,
+            "master_to_compute_copy_calls": 44.0,
+            "release_group_seconds": 0.0011870102025568485,
+            "release_group_calls": 44.0,
+            "staging_final_wait_seconds": 0.07566945999860764
+          },
+          "gradient_observer_stats": {
+            "reduce_and_partition_calls": 4504.0,
+            "average_scatter_calls": 4504.0,
+            "average_scatter_host_seconds": 8.895726739196107,
+            "partition_gradients_calls": 4504.0,
+            "d2h_calls": 8181.0,
+            "d2h_source_bytes": 268959984640.0,
+            "d2h_destination_bytes": 268959984640.0,
+            "d2h_host_call_seconds": 1.7703553864266723,
+            "partition_gradients_host_seconds": 8.017137706512585,
+            "reduce_and_partition_host_seconds": 31.601936508202925,
+            "deferred_boundary_calls": 8.0,
+            "deferred_boundary_host_seconds": 4.353547770064324,
+            "h2d_calls": 851.0,
+            "h2d_source_bytes": 26895998464.0,
+            "h2d_destination_bytes": 26895998464.0,
+            "h2d_host_call_seconds": 0.27554002357646823,
+            "boundary_gradient_offload_calls": 851.0,
+            "boundary_gradient_offload_host_seconds": 2.50754778762348,
+            "global_gradient_norm_calls": 44.0,
+            "global_gradient_norm_host_seconds": 0.20056525082327425
+          },
+          "cpu_gradient_accumulation_stats": {
+            "slot_wait_seconds": 0.032596079632639885,
+            "cpu_add_calls": 5957.0,
+            "incoming_bytes": 188271989248.0,
+            "worker_copy_wait_seconds": 41.72802271321416,
+            "cpu_add_seconds": 25.266964708687738,
+            "deferred_tail_wait_seconds": 0.11269323993474245,
+            "deferred_boundary_parameters": 851.0,
+            "deferred_native_finalize_seconds": 4.237100499914959
+          }
+        },
+        {
+          "event": "sample_checkpoint",
+          "rank": 1,
+          "samples": 768,
+          "training_seconds": 345.39704111008905,
+          "metrics": {
+            "loss": 0.8581519722938538,
+            "assistant_tokens": 224,
+            "correct": 204,
+            "execution": "native BF16 model"
+          }
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "analyze_boundary.py": "e0751bee249fe0271d7efe016bfa55ac54309d12b31127f41ae0f88f615a3a83",
+    "analyze_gradient.py": "406a7b26c0ce8ed9e56d8bd0b2952e4b346175b1f957cc9204c79a4a85e6bca6",
+    "analyze_profile.py": "7a0522a276397e4194efb756690bbc77769900dc9ee7b9032ffdb46594a8ddbc",
+    "bounded_grad_copy.py": "33ca729bbec3d332e0aa0ad7726d25b2f9c19fc819f1e04012b035c9db913d21",
+    "build_entry.py": "d14c1cdc53f32000cd642afa6528d7407ccdee28df4f7af9ce18bbfce9fa2b85",
+    "communication_overlap.py": "3c7fe6ca5212636851e120447299aa074cddcf654b1fb65763ee22587fc1d1ea",
+    "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b",
+    "cpu_accumulation.py": "50676528a8b53a7ca2fbaec0769af303dd1f622be18a73a592c347a6e9a7dd47",
+    "cpu_update_fused.py": "cdff031248b4c48a330883907b659b5fef9b5fd4c2bad0cd8e9d6c5d87f093c8",
+    "cpu_update_reference.py": "7ea5907c9b24a6492283414e2edd1c37bdb2014fbc9fdd24fb7bbe0cb76b05bf",
+    "gradient_cache.py": "4c1cda4c05579ea8b82dc0e118fed9ad74863a6d07042f50d1d63064467898a4",
+    "gradient_scopes.py": "86116a7f0e28d6deb1ced42e34e2cb42cd2bf15a7b25ed364672e8fbb5530ee6",
+    "run_diagnosis.py": "d4f4ed723f5f680adaeeeceeb8f1bcac6b688523485dec85a3f9ff74221dfcf0",
+    "train_diagnosis.py": "641498216d7216105dec64a44322bad93ca99e329f96aa40ba8b5da9d9d153d8",
+    "progress.py": "e7d31e1e1da87108cc536d75fcb5205e0e6d63ea892c64d9c00606b8c0031499",
+    "analyze_forward.py": "55c66beb119cb65e446680c366accb59277da1571633cf8228e371ba8781b8b3",
+    "export_diagnosis.py": "57fcec9377bbf43177893fab65457ac460df8e51083baa5505b7e0c78d0e718d",
+    "train_light.py": "bd73b62aef042be9b80e4d8abbf8a1356c813c07fb57e909360f2f3a431026dd",
+    "run_light.py": "146d7d6e2f701da9d1c1ae37d11493d04052948cbea846198e7f2eaf82ab31b7",
+    "export_light.py": "624cc95f46c1e05a75c80e3f2bf074f1d8b9bb0c36ad62656d18a8af7efd6f22"
+  },
+  "limits": "Instrumentation changes timing; not a replacement for unprofiled throughput."
+}
