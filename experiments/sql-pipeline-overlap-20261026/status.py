@@ -1,10 +1,11 @@
 """Compact progress without raw data, model paths or huge parameter counters."""
-import json
+import argparse,json
 from pathlib import Path
 root=Path(__file__).resolve().parent
-state=root/'job.private.json';print(state.read_text() if state.exists() else 'not started')
+p=argparse.ArgumentParser();p.add_argument('--cache4',action='store_true');a=p.parse_args()
+state=root/('cache4-job.private.json' if a.cache4 else 'job.private.json');print(state.read_text() if state.exists() else 'not started')
 for rank in [0,1]:
-    log=root/'async2-full.private'/f'rank{rank}.jsonl'
+    log=root/('cache4-full.private' if a.cache4 else 'async2-full.private')/f'rank{rank}.jsonl'
     if not log.exists():continue
     rows=[json.loads(x) for x in log.read_text().splitlines()]
     steps=[{k:v for k,v in x.items() if k in ['step','seconds','allocated_peak','worker_cpu_add_seconds',

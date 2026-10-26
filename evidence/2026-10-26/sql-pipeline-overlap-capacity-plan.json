@@ -74,7 +74,7 @@
   "assumptions": [
     "Same input lengths/checkpointing and allocator behavior as recorded four steps.",
     "Projection is a capacity estimate, not a guarantee; actual full-run peaks must be checked.",
-    "6GiB is outside the existing cache hard bound and is not authorized by this plan."
+    "6GiB exceeds the current cache hard bound and the projected rank0 physical budget; not tested."
   ],
   "choice": "If further caching is tested, choose 4GiB; keep source hard bound and avoid 6GiB."
 }

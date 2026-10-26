@@ -1,0 +1,54 @@
+{
+  "reference": {
+    "seconds_per_256": 85.09019123506732,
+    "ranks": [
+      {
+        "rank": 0,
+        "cpu_bf16_add_seconds": 51.22335415915586,
+        "update_return_tail_seconds": 17.34326180513017,
+        "conditional_floor_seconds": 68.56661596428603,
+        "normal_mean_seconds": 85.08997144491877
+      },
+      {
+        "rank": 1,
+        "cpu_bf16_add_seconds": 48.40797926206142,
+        "update_return_tail_seconds": 17.343769225059077,
+        "conditional_floor_seconds": 65.7517484871205,
+        "normal_mean_seconds": 85.09019123506732
+      }
+    ],
+    "conditional_scheduling_floor_seconds": 68.56661596428603,
+    "maximum_remaining_seconds_if_only_other_waits_removed": 16.523575270781294,
+    "maximum_remaining_time_reduction_percent": 19.41889544604949
+  },
+  "candidate": {
+    "seconds_per_256": 81.215990209952,
+    "ranks": [
+      {
+        "rank": 0,
+        "cpu_bf16_add_seconds": 47.22946271614637,
+        "update_return_tail_seconds": 16.42694037500769,
+        "conditional_floor_seconds": 63.65640309115406,
+        "normal_mean_seconds": 81.21588491997682
+      },
+      {
+        "rank": 1,
+        "cpu_bf16_add_seconds": 45.365574343595654,
+        "update_return_tail_seconds": 16.42717688495759,
+        "conditional_floor_seconds": 61.79275122855324,
+        "normal_mean_seconds": 81.215990209952
+      }
+    ],
+    "conditional_scheduling_floor_seconds": 63.65640309115406,
+    "maximum_remaining_seconds_if_only_other_waits_removed": 17.559587118797936,
+    "maximum_remaining_time_reduction_percent": 21.620849629986083
+  },
+  "interpretation": "CPU gradient additions finish before norm/update; these measured add and update durations cannot overlap in the current algorithm.",
+  "conditions": [
+    "Hold the measured CPU-add and update/return durations fixed; hypothetical removal of all other work or waits.",
+    "This is an optimistic scheduling-only envelope, not a hardware bound or promised speed.",
+    "CPU timings include contention/host scheduling and may change after a new optimization.",
+    "Reducing CPU work itself, e.g. more residency or exact fusion, changes this conditional floor.",
+    "Normal updates only; profiled-window seconds are never mixed into the arithmetic."
+  ]
+}

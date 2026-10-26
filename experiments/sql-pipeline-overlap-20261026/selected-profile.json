@@ -1,0 +1,17 @@
+{
+  "name": "sql-two-stage-bf16-resident-gradient-4gib",
+  "global_batch": 256,
+  "micro_batch": 16,
+  "pipeline_microbatches": 16,
+  "resident_bytes_per_rank": 4294967296,
+  "compute": "BF16",
+  "master_m_v": "FP32 CPU",
+  "checkpointed_layers": 48,
+  "seconds_per_256": 81.215990209952,
+  "source_lf_sha256": {
+    "train_resident.py": "82f93b881768daedd9fc534ee53d22db82f4adeba59b342641769ecc80ee2972",
+    "resident_gradients.py": "33de64f76e8990c6aafdc3ae76f616f7e4fd7e57539d3bd93dfc2c55272ece7e",
+    "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b"
+  },
+  "scope": "Measured same-workload SQL short run, not a convergence or hardware-limit claim; original copy path, no async variant"
+}

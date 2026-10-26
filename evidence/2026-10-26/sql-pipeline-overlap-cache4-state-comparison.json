@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "rank": 0,
+      "step": 1,
+      "all_gradient_master_m_v_exact": true,
+      "tensors": {
+        "master": 23,
+        "grad": 23
+      }
+    },
+    {
+      "rank": 0,
+      "step": 2,
+      "all_gradient_master_m_v_exact": true,
+      "tensors": {
+        "master": 23,
+        "grad": 23
+      }
+    },
+    {
+      "rank": 0,
+      "step": 3,
+      "all_gradient_master_m_v_exact": true,
+      "tensors": {
+        "master": 23,
+        "grad": 23
+      }
+    },
+    {
+      "rank": 1,
+      "step": 1,
+      "all_gradient_master_m_v_exact": true,
+      "tensors": {
+        "master": 24,
+        "grad": 24
+      }
+    },
+    {
+      "rank": 1,
+      "step": 2,
+      "all_gradient_master_m_v_exact": true,
+      "tensors": {
+        "master": 24,
+        "grad": 24
+      }
+    },
+    {
+      "rank": 1,
+      "step": 3,
+      "all_gradient_master_m_v_exact": true,
+      "tensors": {
+        "master": 24,
+        "grad": 24
+      }
+    }
+  ],
+  "scope": "All tiny gradients/master/m/v for three updates, resident+CPU paths; not whole-model bitwise proof"
+}

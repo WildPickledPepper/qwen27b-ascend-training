@@ -10,6 +10,7 @@ marker='resident_add_calls=off.resident_add_calls,resident_add_bytes=off.residen
 assert source.count(marker)==1
 source=source.replace(marker,marker+'\n             offload_parameter_stats=off.parameter_stats,')
 (root/'train_overlap.py').write_text(source)
+shutil.copy2(base/'train_cache.py',root/'train_resident.py')
 for name in ['resident_gradients.py','community_gdn.py','compare_states.py','verify_smoke.py']:
     shutil.copy2(base/name,root/name)
 manifest=dict(base_lf_sha256=hashlib.sha256((base/'train_cache.py').read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
