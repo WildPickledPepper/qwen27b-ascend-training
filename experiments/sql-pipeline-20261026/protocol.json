@@ -1,0 +1,20 @@
+{
+  "global_batch": 256,
+  "micro_batch": 16,
+  "pipeline_stages": 2,
+  "pipeline_microbatches": 16,
+  "reference_data_parallel_microbatches_per_rank": 8,
+  "split_layer": 32,
+  "padding": "same original rank-local groups; dynamic64 minimum128",
+  "compute": "BF16",
+  "master_m_v": "FP32 CPU",
+  "gradient_accumulation": "BF16 CPU in microbatch order; different reduction tree from ZeRO-3",
+  "gradient_clipping": 1.0,
+  "adamw": {"betas": [0.9, 0.999], "eps": 1e-8, "weight_decay": 0.01},
+  "learning_rate": "2e-5 times original 35-update warmup / 698-update cosine",
+  "normal_updates": 3,
+  "profile_update": 4,
+  "reference_seconds_per_256": 95.74024082010146,
+  "checkpoint": "same selective layer indices, 48 of 64",
+  "schedule": "two-stage 1F1B; no stale weights; optimizer only after all microbatches"
+}
