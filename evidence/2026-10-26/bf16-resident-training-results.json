@@ -1,0 +1,407 @@
+{
+  "seconds_per_256": 89.0431401799433,
+  "reference_seconds_per_256": 81.215990209952,
+  "normal_seconds": [
+    88.96381161990575,
+    89.12246873998083
+  ],
+  "reference_normal_seconds": [
+    80.20195616991259,
+    82.2300242499914
+  ],
+  "time_change_percent": 9.63744941083311,
+  "selected": false,
+  "checks": [
+    {
+      "rank": 0,
+      "same_data_shapes_padding_checkpoint_and_precision": true,
+      "all_four_gradient_norms_exact": true,
+      "validation_before_and_after_768_exact": true,
+      "saved_logical_d2h_per_update": 48318382080,
+      "resident_bytes": 7516192768,
+      "all_288_updated_ffn_frames_encoded_and_bit_checked_or_raw_each_step": true
+    },
+    {
+      "rank": 1,
+      "same_data_shapes_padding_checkpoint_and_precision": true,
+      "all_four_gradient_norms_exact": true,
+      "validation_before_and_after_768_exact": true,
+      "saved_logical_d2h_per_update": 48318382080,
+      "resident_bytes": 7516192768,
+      "all_288_updated_ffn_frames_encoded_and_bit_checked_or_raw_each_step": true
+    }
+  ],
+  "initial_storage_audits": [
+    {
+      "rank": 0,
+      "selected_parameters": 96,
+      "original_ffn_weight_bytes": 17112760320,
+      "resident_payload_bytes": 12823577408,
+      "all_initial_weights_bit_exact": true,
+      "allocated_before": 26896201728,
+      "allocated_after": 22607050240,
+      "original_weight_storage_released": true,
+      "gradient_leaf_shapes_preserved": true
+    },
+    {
+      "rank": 1,
+      "selected_parameters": 96,
+      "original_ffn_weight_bytes": 17112760320,
+      "resident_payload_bytes": 12776564704,
+      "all_initial_weights_bit_exact": true,
+      "allocated_before": 26896212480,
+      "allocated_after": 22560044032,
+      "original_weight_storage_released": true,
+      "gradient_leaf_shapes_preserved": true
+    }
+  ],
+  "validation_after_768": {
+    "loss": 0.855101466178894,
+    "assistant_tokens": 224,
+    "correct": 205
+  },
+  "rank_results": [
+    {
+      "steps": [
+        {
+          "step": 1,
+          "seconds": 385.8893886799924,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 6.821922109927982,
+            "backward_wall": 62.45951230963692,
+            "p2p_wall": 0.01746299024671316
+          },
+          "forward_backward_and_drain_seconds": 77.03551077982411,
+          "cpu_update_return_seconds": 307.37488499004394,
+          "grad_norm": 40.50292355381584,
+          "norm_device": "npu",
+          "global_norm_seconds": 1.4790019700303674,
+          "gradient_d2h_bytes": 317593001984,
+          "offload_slot_wait": 23.941466072574258,
+          "worker_copy_wait_seconds": 23.096747152740136,
+          "worker_cpu_add_seconds": 42.34497213922441,
+          "resident_add_calls": 752,
+          "resident_add_bytes": 120259084288,
+          "compressed_weight_stats": {
+            "payload_bytes": 12823577408,
+            "decode_calls": 9216,
+            "encode_calls": 288,
+            "encode_raw_fallbacks": 9,
+            "decode_host_enqueue_seconds": 2.324767358833924,
+            "encode_verify_wall_seconds": 6.446130440803245,
+            "saved_weight_packs": 384,
+            "saved_weight_unpacks": 384
+          },
+          "allocated_peak": 60182983168,
+          "reserved_peak": 63531122688,
+          "input_tokens": 28426,
+          "padded_tokens": 54272
+        },
+        {
+          "step": 2,
+          "seconds": 88.96381161990575,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 6.3388367891311646,
+            "backward_wall": 53.7996107598301,
+            "p2p_wall": 0.017443400574848056
+          },
+          "forward_backward_and_drain_seconds": 67.45037267985754,
+          "cpu_update_return_seconds": 20.131294179940596,
+          "grad_norm": 40.57226896279111,
+          "norm_device": "npu",
+          "global_norm_seconds": 1.3821521401405334,
+          "gradient_d2h_bytes": 317593001984,
+          "offload_slot_wait": 17.043561487225816,
+          "worker_copy_wait_seconds": 16.755493512377143,
+          "worker_cpu_add_seconds": 41.94698781892657,
+          "resident_add_calls": 752,
+          "resident_add_bytes": 120259084288,
+          "compressed_weight_stats": {
+            "payload_bytes": 12811543936,
+            "decode_calls": 9216,
+            "encode_calls": 288,
+            "encode_raw_fallbacks": 10,
+            "decode_host_enqueue_seconds": 2.5894368342123926,
+            "encode_verify_wall_seconds": 5.042957048630342,
+            "saved_weight_packs": 384,
+            "saved_weight_unpacks": 384
+          },
+          "allocated_peak": 52722873856,
+          "reserved_peak": 63531122688,
+          "input_tokens": 28549,
+          "padded_tokens": 49152
+        },
+        {
+          "step": 3,
+          "seconds": 89.12246873998083,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 6.356951700290665,
+            "backward_wall": 54.15207289974205,
+            "p2p_wall": 0.018127699615433812
+          },
+          "forward_backward_and_drain_seconds": 67.83205654006451,
+          "cpu_update_return_seconds": 19.834970659809187,
+          "grad_norm": 38.67934902523083,
+          "norm_device": "npu",
+          "global_norm_seconds": 1.455448230030015,
+          "gradient_d2h_bytes": 317593001984,
+          "offload_slot_wait": 18.64952001464553,
+          "worker_copy_wait_seconds": 16.225486231502146,
+          "worker_cpu_add_seconds": 42.64821661822498,
+          "resident_add_calls": 752,
+          "resident_add_bytes": 120259084288,
+          "compressed_weight_stats": {
+            "payload_bytes": 12742079392,
+            "decode_calls": 9184,
+            "encode_calls": 288,
+            "encode_raw_fallbacks": 4,
+            "decode_host_enqueue_seconds": 2.35140843084082,
+            "encode_verify_wall_seconds": 4.823312718421221,
+            "saved_weight_packs": 384,
+            "saved_weight_unpacks": 384
+          },
+          "allocated_peak": 56621111808,
+          "reserved_peak": 63531122688,
+          "input_tokens": 28564,
+          "padded_tokens": 50176
+        },
+        {
+          "step": 4,
+          "seconds": 93.78188211005181,
+          "profiled": true,
+          "phase": {
+            "forward_wall": 7.820112840039656,
+            "backward_wall": 56.54380971984938,
+            "p2p_wall": 0.019806619035080075
+          },
+          "forward_backward_and_drain_seconds": 72.0808390500024,
+          "cpu_update_return_seconds": 20.271363409934565,
+          "grad_norm": 44.591319134866374,
+          "norm_device": "npu",
+          "global_norm_seconds": 1.429686419898644,
+          "gradient_d2h_bytes": 317593001984,
+          "offload_slot_wait": 20.113533038413152,
+          "worker_copy_wait_seconds": 18.143417790997773,
+          "worker_cpu_add_seconds": 43.48384655965492,
+          "resident_add_calls": 752,
+          "resident_add_bytes": 120259084288,
+          "compressed_weight_stats": {
+            "payload_bytes": 12770606208,
+            "decode_calls": 9376,
+            "encode_calls": 288,
+            "encode_raw_fallbacks": 7,
+            "decode_host_enqueue_seconds": 2.617111896863207,
+            "encode_verify_wall_seconds": 5.325660970294848,
+            "saved_weight_packs": 384,
+            "saved_weight_unpacks": 384
+          },
+          "allocated_peak": 60396988928,
+          "reserved_peak": 64139296768,
+          "input_tokens": 28426,
+          "padded_tokens": 54272
+        }
+      ],
+      "validation_before": {
+        "loss": 1.0108281373977661,
+        "assistant_tokens": 224,
+        "correct": 202
+      },
+      "validation_after_768": {
+        "loss": 0.855101466178894,
+        "assistant_tokens": 224,
+        "correct": 205
+      },
+      "parameters": 13447996672,
+      "state_bytes": 107583973376,
+      "normal_mean": 89.0431401799433,
+      "protocol": "global256/micro16/16 pipeline micros; original paired DP groups and padding",
+      "gradient_precision": "BF16 accumulation, FP32 Adam; changed reduction order"
+    },
+    {
+      "steps": [
+        {
+          "step": 1,
+          "seconds": 385.8893902199343,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 7.674816180020571,
+            "backward_wall": 58.95681670028716,
+            "p2p_wall": 0.04151447955518961
+          },
+          "forward_backward_and_drain_seconds": 73.43442632001825,
+          "cpu_update_return_seconds": 307.3747723600827,
+          "grad_norm": 40.50292355381584,
+          "norm_device": "npu",
+          "global_norm_seconds": 5.080213479930535,
+          "gradient_d2h_bytes": 317593165824,
+          "offload_slot_wait": 13.748457080684602,
+          "worker_copy_wait_seconds": 15.230321952840313,
+          "worker_cpu_add_seconds": 41.64252431388013,
+          "resident_add_calls": 752,
+          "resident_add_bytes": 120259084288,
+          "compressed_weight_stats": {
+            "payload_bytes": 12776564704,
+            "decode_calls": 9248,
+            "encode_calls": 288,
+            "encode_raw_fallbacks": 8,
+            "decode_host_enqueue_seconds": 2.3993920765351504,
+            "encode_verify_wall_seconds": 6.328104162355885,
+            "saved_weight_packs": 384,
+            "saved_weight_unpacks": 384
+          },
+          "allocated_peak": 56925345792,
+          "reserved_peak": 59812872192,
+          "input_tokens": 28426,
+          "padded_tokens": 54272
+        },
+        {
+          "step": 2,
+          "seconds": 88.96362135000527,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 6.731349220266566,
+            "backward_wall": 54.03285954007879,
+            "p2p_wall": 0.042126970598474145
+          },
+          "forward_backward_and_drain_seconds": 63.85174434981309,
+          "cpu_update_return_seconds": 20.131319360109046,
+          "grad_norm": 40.57226896279111,
+          "norm_device": "npu",
+          "global_norm_seconds": 4.980579660041258,
+          "gradient_d2h_bytes": 317593165824,
+          "offload_slot_wait": 12.091568848118186,
+          "worker_copy_wait_seconds": 14.489726326661184,
+          "worker_cpu_add_seconds": 40.08546850713901,
+          "resident_add_calls": 752,
+          "resident_add_bytes": 120259084288,
+          "compressed_weight_stats": {
+            "payload_bytes": 12800317440,
+            "decode_calls": 9248,
+            "encode_calls": 288,
+            "encode_raw_fallbacks": 9,
+            "decode_host_enqueue_seconds": 2.7010462037287652,
+            "encode_verify_wall_seconds": 4.790666286367923,
+            "saved_weight_packs": 384,
+            "saved_weight_unpacks": 384
+          },
+          "allocated_peak": 50282213376,
+          "reserved_peak": 59812872192,
+          "input_tokens": 28549,
+          "padded_tokens": 49152
+        },
+        {
+          "step": 3,
+          "seconds": 89.12223785999231,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 6.616146889980882,
+            "backward_wall": 54.26787199033424,
+            "p2p_wall": 0.041708150412887335
+          },
+          "forward_backward_and_drain_seconds": 64.3811371200718,
+          "cpu_update_return_seconds": 19.83496140013449,
+          "grad_norm": 38.67934902523083,
+          "norm_device": "npu",
+          "global_norm_seconds": 4.906160289887339,
+          "gradient_d2h_bytes": 317593165824,
+          "offload_slot_wait": 11.547220834065229,
+          "worker_copy_wait_seconds": 15.275857761967927,
+          "worker_cpu_add_seconds": 39.44336616364308,
+          "resident_add_calls": 752,
+          "resident_add_bytes": 120259084288,
+          "compressed_weight_stats": {
+            "payload_bytes": 12822717888,
+            "decode_calls": 9216,
+            "encode_calls": 288,
+            "encode_raw_fallbacks": 11,
+            "decode_host_enqueue_seconds": 2.3864214066416025,
+            "encode_verify_wall_seconds": 4.790340508567169,
+            "saved_weight_packs": 384,
+            "saved_weight_unpacks": 384
+          },
+          "allocated_peak": 57244600832,
+          "reserved_peak": 60483960832,
+          "input_tokens": 28564,
+          "padded_tokens": 50176
+        },
+        {
+          "step": 4,
+          "seconds": 93.75968798995018,
+          "profiled": true,
+          "phase": {
+            "forward_wall": 8.285364649724215,
+            "backward_wall": 55.686931969830766,
+            "p2p_wall": 0.047804610105231404
+          },
+          "forward_backward_and_drain_seconds": 68.6834316898603,
+          "cpu_update_return_seconds": 20.271362440194935,
+          "grad_norm": 44.591319134866374,
+          "norm_device": "npu",
+          "global_norm_seconds": 4.80491341999732,
+          "gradient_d2h_bytes": 317593165824,
+          "offload_slot_wait": 11.25967527157627,
+          "worker_copy_wait_seconds": 14.303050252376124,
+          "worker_cpu_add_seconds": 41.87340486282483,
+          "resident_add_calls": 752,
+          "resident_add_bytes": 120259084288,
+          "compressed_weight_stats": {
+            "payload_bytes": 12735290272,
+            "decode_calls": 9152,
+            "encode_calls": 288,
+            "encode_raw_fallbacks": 6,
+            "decode_host_enqueue_seconds": 2.7095319002401084,
+            "encode_verify_wall_seconds": 4.63440324109979,
+            "saved_weight_packs": 384,
+            "saved_weight_unpacks": 384
+          },
+          "allocated_peak": 57267006976,
+          "reserved_peak": 60630761472,
+          "input_tokens": 28426,
+          "padded_tokens": 54272
+        }
+      ],
+      "validation_before": {
+        "loss": 1.0108281373977661,
+        "assistant_tokens": 224,
+        "correct": 202
+      },
+      "validation_after_768": {
+        "loss": 0.855101466178894,
+        "assistant_tokens": 224,
+        "correct": 205
+      },
+      "parameters": 13448001792,
+      "state_bytes": 107584014336,
+      "normal_mean": 89.04292960499879,
+      "protocol": "global256/micro16/16 pipeline micros; original paired DP groups and padding",
+      "gradient_precision": "BF16 accumulation, FP32 Adam; changed reduction order"
+    }
+  ],
+  "original_4gib_source_integrity": {
+    "train_resident.py": true,
+    "resident_gradients.py": true,
+    "community_gdn.py": true
+  },
+  "original_zero3_integrity": {
+    "train_boundary.py": true,
+    "cpu_accumulation.py": true,
+    "cpu_update.py": true,
+    "bounded_grad_copy.py": true,
+    "community_gdn.py": true,
+    "gradient_cache.py": true,
+    "gradient_scopes.py": true,
+    "zero3-selected.json": true
+  },
+  "resource_release": {
+    "cards_2_3_no_processes": true
+  },
+  "limits": [
+    "Two steady normal updates after warmup; fourth profile excluded.",
+    "First warmup has a large CPU-update tail; its cause is not isolated and it is not a steady timing.",
+    "Same short validation and gradient norms do not establish long-term full-model bitwise identity.",
+    "Only FFN weight paging tested; not a universal conclusion about all compression implementations."
+  ]
+}

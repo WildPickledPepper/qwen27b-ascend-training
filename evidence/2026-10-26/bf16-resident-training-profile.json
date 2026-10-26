@@ -1,0 +1,919 @@
+{
+  "ranks": [
+    {
+      "rank": 0,
+      "normal_stop": true,
+      "window_seconds": 93.80280646,
+      "phases": {
+        "forward": {
+          "scope_observed": true,
+          "scope_seconds": 7.81845212,
+          "compute_seconds": 7.411219196,
+          "copy_seconds": 0.0,
+          "communication_seconds": 0.0,
+          "no_device_work_seconds": 0.40723292399999966
+        },
+        "backward": {
+          "scope_observed": true,
+          "scope_seconds": 61.17909624,
+          "compute_seconds": 34.092444832,
+          "copy_seconds": 18.646614436,
+          "communication_seconds": 6.796558956,
+          "no_device_work_seconds": 1.643478016000003
+        },
+        "norm": {
+          "scope_observed": true,
+          "scope_seconds": 1.4296217,
+          "compute_seconds": 0.100673269,
+          "copy_seconds": 0.0,
+          "communication_seconds": 0.0,
+          "no_device_work_seconds": 1.328948431
+        },
+        "update": {
+          "scope_observed": true,
+          "scope_seconds": 20.27020153,
+          "compute_seconds": 3.657982769,
+          "copy_seconds": 1.649017745,
+          "communication_seconds": 1.8881e-05,
+          "no_device_work_seconds": 14.963182135
+        },
+        "slot_wait": {
+          "scope_observed": false,
+          "scope_seconds": 0.0,
+          "compute_seconds": 0.0,
+          "copy_seconds": 0.0,
+          "communication_seconds": 0.0,
+          "no_device_work_seconds": 0.0
+        },
+        "cpu_add": {
+          "scope_observed": false,
+          "scope_seconds": 0.0,
+          "compute_seconds": 0.0,
+          "copy_seconds": 0.0,
+          "communication_seconds": 0.0,
+          "no_device_work_seconds": 0.0
+        },
+        "drain": {
+          "scope_observed": true,
+          "scope_seconds": 0.96533681,
+          "compute_seconds": 0.026112464,
+          "copy_seconds": 0.328158821,
+          "communication_seconds": 0.0,
+          "no_device_work_seconds": 0.6110655250000001
+        },
+        "resident_flush": {
+          "scope_observed": true,
+          "scope_seconds": 0.85543046,
+          "compute_seconds": 0.026076554,
+          "copy_seconds": 0.326368345,
+          "communication_seconds": 0.0,
+          "no_device_work_seconds": 0.502985561
+        },
+        "weight_decode": {
+          "scope_observed": true,
+          "scope_seconds": 2.0774385,
+          "compute_seconds": 1.58974407,
+          "copy_seconds": 0.466099632,
+          "communication_seconds": 0.00167043,
+          "no_device_work_seconds": 0.01992436799999986
+        },
+        "weight_encode": {
+          "scope_observed": true,
+          "scope_seconds": 5.30535922,
+          "compute_seconds": 3.406991471,
+          "copy_seconds": 1.026687998,
+          "communication_seconds": 0.0,
+          "no_device_work_seconds": 0.8716797509999994
+        }
+      },
+      "exclusive": {
+        "compute": 45.809020822,
+        "communication_without_compute": 6.798138849,
+        "copy_without_compute_or_comm": 20.745965965,
+        "other": 20.449680823999998
+      },
+      "compute_copy_overlap_seconds": 0.0,
+      "task_streams": [
+        {
+          "streamId": 1806,
+          "task_type": "KERNEL_MIX_AIC",
+          "calls": 10752,
+          "seconds": 22.125708745
+        },
+        {
+          "streamId": 1806,
+          "task_type": "MEMCPY_ASYNC",
+          "calls": 9577,
+          "seconds": 20.745965965
+        },
+        {
+          "streamId": 1806,
+          "task_type": "KERNEL_AICORE",
+          "calls": 16896,
+          "seconds": 17.060013792
+        },
+        {
+          "streamId": 1808,
+          "task_type": "AI_CORE",
+          "calls": 2,
+          "seconds": 4.2382e-05
+        }
+      ],
+      "host_top20": [
+        {
+          "name": "pipeline/stage0/backward",
+          "calls": 16,
+          "summed_seconds": 61.17909624
+        },
+        {
+          "name": "autograd::engine::evaluate_function: torch::autograd::AccumulateGrad",
+          "calls": 6800,
+          "summed_seconds": 24.81943548
+        },
+        {
+          "name": "torch::autograd::AccumulateGrad",
+          "calls": 6800,
+          "summed_seconds": 24.71979874
+        },
+        {
+          "name": "aten::copy_",
+          "calls": 54286,
+          "summed_seconds": 23.7084932
+        },
+        {
+          "name": "optimizer/CPUAdam_and_return",
+          "calls": 1,
+          "summed_seconds": 20.27020153
+        },
+        {
+          "name": "aten::to",
+          "calls": 26748,
+          "summed_seconds": 19.59015038
+        },
+        {
+          "name": "aten::_to_copy",
+          "calls": 20876,
+          "summed_seconds": 19.50903028
+        },
+        {
+          "name": "autograd::engine::evaluate_function: GDNBackward",
+          "calls": 384,
+          "summed_seconds": 18.1802806
+        },
+        {
+          "name": "GDNBackward",
+          "calls": 384,
+          "summed_seconds": 18.15412605
+        },
+        {
+          "name": "autograd::engine::evaluate_function: MatmulBackward0",
+          "calls": 4224,
+          "summed_seconds": 10.58584272
+        },
+        {
+          "name": "MatmulBackward0",
+          "calls": 4224,
+          "summed_seconds": 10.31400621
+        },
+        {
+          "name": "pipeline/stage0/forward",
+          "calls": 16,
+          "summed_seconds": 7.81845212
+        },
+        {
+          "name": "Optimizer.step#DeepSpeedCPUAdam.step",
+          "calls": 539,
+          "summed_seconds": 7.38800214
+        },
+        {
+          "name": "weight/encode_verify",
+          "calls": 288,
+          "summed_seconds": 5.30535922
+        },
+        {
+          "name": "GDN",
+          "calls": 768,
+          "summed_seconds": 4.63982244
+        },
+        {
+          "name": "aten::equal",
+          "calls": 288,
+          "summed_seconds": 3.62162421
+        },
+        {
+          "name": "aten::item",
+          "calls": 7041,
+          "summed_seconds": 3.5811844
+        },
+        {
+          "name": "aten::_local_scalar_dense",
+          "calls": 7041,
+          "summed_seconds": 3.56322911
+        },
+        {
+          "name": "aten::mul",
+          "calls": 32544,
+          "summed_seconds": 2.67801233
+        },
+        {
+          "name": "aten::div_",
+          "calls": 539,
+          "summed_seconds": 2.26544418
+        }
+      ],
+      "compute_top20": [
+        {
+          "op_type": "MatMulV3",
+          "calls": 11520,
+          "summed_seconds": 16.291845598
+        },
+        {
+          "op_type": "prepare_wy_repr_bwd_kernel",
+          "calls": 384,
+          "summed_seconds": 4.934927351
+        },
+        {
+          "op_type": "TensorEqual",
+          "calls": 288,
+          "summed_seconds": 3.522899933
+        },
+        {
+          "op_type": "Mul",
+          "calls": 32688,
+          "summed_seconds": 2.767019454
+        },
+        {
+          "op_type": "Transpose",
+          "calls": 28224,
+          "summed_seconds": 2.544084344
+        },
+        {
+          "op_type": "decompBF16",
+          "calls": 9376,
+          "summed_seconds": 2.535362863
+        },
+        {
+          "op_type": "chunk_fwd_kernel_o",
+          "calls": 768,
+          "summed_seconds": 1.910903932
+        },
+        {
+          "op_type": "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+          "calls": 1152,
+          "summed_seconds": 1.500330508
+        },
+        {
+          "op_type": "chunk_bwd_kernel_dqkwg",
+          "calls": 384,
+          "summed_seconds": 1.004828937
+        },
+        {
+          "op_type": "solve_tril_64x64_kernel",
+          "calls": 768,
+          "summed_seconds": 0.981229
+        },
+        {
+          "op_type": "chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64",
+          "calls": 384,
+          "summed_seconds": 0.902323939
+        },
+        {
+          "op_type": "Add",
+          "calls": 15904,
+          "summed_seconds": 0.884487867
+        },
+        {
+          "op_type": "TransData",
+          "calls": 5760,
+          "summed_seconds": 0.63646544
+        },
+        {
+          "op_type": "Cast",
+          "calls": 20331,
+          "summed_seconds": 0.556770221
+        },
+        {
+          "op_type": "recompute_w_u_fwd_kernel",
+          "calls": 1152,
+          "summed_seconds": 0.556261701
+        },
+        {
+          "op_type": "ViewCopy",
+          "calls": 1440,
+          "summed_seconds": 0.524444851
+        },
+        {
+          "op_type": "ReduceSum",
+          "calls": 7808,
+          "summed_seconds": 0.494162589
+        },
+        {
+          "op_type": "SiluGrad",
+          "calls": 1280,
+          "summed_seconds": 0.370650999
+        },
+        {
+          "op_type": "Slice",
+          "calls": 5888,
+          "summed_seconds": 0.355752324
+        },
+        {
+          "op_type": "Swish",
+          "calls": 2432,
+          "summed_seconds": 0.246483624
+        }
+      ],
+      "codec_compute": [
+        {
+          "op_name": "decompBF16",
+          "op_type": "decompBF16",
+          "calls": 9376,
+          "summed_seconds": 2.535362863
+        },
+        {
+          "op_name": "compBF16",
+          "op_type": "compBF16",
+          "calls": 288,
+          "summed_seconds": 0.046722542
+        },
+        {
+          "op_name": "merge",
+          "op_type": "merge",
+          "calls": 288,
+          "summed_seconds": 0.003412894
+        }
+      ],
+      "weight_host": [
+        {
+          "name": "weight/encode_verify",
+          "calls": 288,
+          "summed_seconds": 5.30535922
+        },
+        {
+          "name": "weight/decode",
+          "calls": 9504,
+          "summed_seconds": 2.0774385
+        }
+      ],
+      "queries": {
+        "compute": {
+          "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(t.startNs,t.endNs)) intervals FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId",
+          "params": []
+        },
+        "comm": {
+          "sql": "SELECT json_group_array(json_array(startNs,endNs)) intervals FROM COMMUNICATION_OP",
+          "params": []
+        },
+        "copy": {
+          "sql": "SELECT json_group_array(json_array(t.startNs,t.endNs)) intervals FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE n.value='MEMCPY_ASYNC'",
+          "params": []
+        },
+        "window": {
+          "sql": "SELECT MIN(startNs) s,MAX(endNs) e,COUNT(*) tasks FROM TASK",
+          "params": []
+        },
+        "forward": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "pipeline/stage0/forward"
+          ]
+        },
+        "backward": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "pipeline/stage0/backward"
+          ]
+        },
+        "norm": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "optimizer/global_norm"
+          ]
+        },
+        "update": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "optimizer/CPUAdam_and_return"
+          ]
+        },
+        "slot_wait": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "gradient/slot_wait"
+          ]
+        },
+        "cpu_add": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "gradient/cpu_add"
+          ]
+        },
+        "drain": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "pipeline/gradient_drain"
+          ]
+        },
+        "resident_flush": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "gradient/resident_flush"
+          ]
+        },
+        "weight_decode": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "weight/decode"
+          ]
+        },
+        "weight_encode": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "weight/encode_verify"
+          ]
+        },
+        "task_streams": {
+          "sql": "SELECT t.streamId,n.value task_type,COUNT(*) calls,SUM(t.endNs-t.startNs)/1e9 seconds FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE n.value IN ('MEMCPY_ASYNC','AI_CORE','KERNEL_MIX_AIC','KERNEL_AICORE') GROUP BY t.streamId,n.value ORDER BY seconds DESC LIMIT 20",
+          "params": []
+        },
+        "host_top": {
+          "sql": "SELECT n.value name,COUNT(*) calls,SUM(p.endNs-p.startNs)/1e9 summed_seconds FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name GROUP BY n.value ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        },
+        "compute_top": {
+          "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_type,COUNT(*) calls,SUM(duration_ns)/1e9 summed_seconds FROM compute_view GROUP BY op_type ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        },
+        "codec_compute": {
+          "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_name,op_type,COUNT(*) calls,SUM(duration_ns)/1e9 summed_seconds FROM compute_view WHERE lower(op_name) LIKE '%decomp%' OR lower(op_name) LIKE '%compbf16%' OR lower(op_name) LIKE '%merge%' GROUP BY op_name,op_type ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        },
+        "weight_host": {
+          "sql": "SELECT n.value name,COUNT(*) calls,SUM(p.endNs-p.startNs)/1e9 summed_seconds FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'weight/%' GROUP BY n.value ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        }
+      }
+    },
+    {
+      "rank": 1,
+      "normal_stop": true,
+      "window_seconds": 93.78364764,
+      "phases": {
+        "forward": {
+          "scope_observed": true,
+          "scope_seconds": 8.25957285,
+          "compute_seconds": 7.55716618,
+          "copy_seconds": 0.0,
+          "communication_seconds": 0.33837437,
+          "no_device_work_seconds": 0.36403229999999986
+        },
+        "backward": {
+          "scope_observed": true,
+          "scope_seconds": 55.68630404,
+          "compute_seconds": 36.18508032,
+          "copy_seconds": 18.25232272,
+          "communication_seconds": 0.0,
+          "no_device_work_seconds": 1.2489010000000036
+        },
+        "norm": {
+          "scope_observed": true,
+          "scope_seconds": 4.80480653,
+          "compute_seconds": 0.09106224,
+          "copy_seconds": 0.0,
+          "communication_seconds": 3.01697824,
+          "no_device_work_seconds": 1.6967660499999995
+        },
+        "update": {
+          "scope_observed": true,
+          "scope_seconds": 19.31425627,
+          "compute_seconds": 3.1100764,
+          "copy_seconds": 1.4941446,
+          "communication_seconds": 0.0,
+          "no_device_work_seconds": 14.710035270000002
+        },
+        "slot_wait": {
+          "scope_observed": false,
+          "scope_seconds": 0.0,
+          "compute_seconds": 0.0,
+          "copy_seconds": 0.0,
+          "communication_seconds": 0.0,
+          "no_device_work_seconds": 0.0
+        },
+        "cpu_add": {
+          "scope_observed": false,
+          "scope_seconds": 0.0,
+          "compute_seconds": 0.0,
+          "copy_seconds": 0.0,
+          "communication_seconds": 0.0,
+          "no_device_work_seconds": 0.0
+        },
+        "drain": {
+          "scope_observed": true,
+          "scope_seconds": 1.03445488,
+          "compute_seconds": 0.0,
+          "copy_seconds": 0.4784131,
+          "communication_seconds": 0.0,
+          "no_device_work_seconds": 0.5560417799999999
+        },
+        "resident_flush": {
+          "scope_observed": true,
+          "scope_seconds": 0.78963636,
+          "compute_seconds": 0.0,
+          "copy_seconds": 0.46581958,
+          "communication_seconds": 0.0,
+          "no_device_work_seconds": 0.32381678
+        },
+        "weight_decode": {
+          "scope_observed": true,
+          "scope_seconds": 2.15420631,
+          "compute_seconds": 1.69142675,
+          "copy_seconds": 0.38999883,
+          "communication_seconds": 0.0,
+          "no_device_work_seconds": 0.0727807300000003
+        },
+        "weight_encode": {
+          "scope_observed": true,
+          "scope_seconds": 4.61271254,
+          "compute_seconds": 3.10877326,
+          "copy_seconds": 0.83141578,
+          "communication_seconds": 0.0,
+          "no_device_work_seconds": 0.6725235000000005
+        }
+      },
+      "exclusive": {
+        "compute": 47.17913718,
+        "communication_without_compute": 5.80665562,
+        "copy_without_compute_or_comm": 20.33899016,
+        "other": 20.458864680000005
+      },
+      "compute_copy_overlap_seconds": 0.0,
+      "task_streams": [
+        {
+          "streamId": 1774,
+          "task_type": "KERNEL_MIX_AIC",
+          "calls": 10784,
+          "seconds": 23.26660852
+        },
+        {
+          "streamId": 1774,
+          "task_type": "MEMCPY_ASYNC",
+          "calls": 9594,
+          "seconds": 20.33899016
+        },
+        {
+          "streamId": 1774,
+          "task_type": "KERNEL_AICORE",
+          "calls": 16928,
+          "seconds": 17.91397738
+        },
+        {
+          "streamId": 1776,
+          "task_type": "AI_CORE",
+          "calls": 2,
+          "seconds": 3.97240452
+        }
+      ],
+      "host_top20": [
+        {
+          "name": "pipeline/stage1/backward",
+          "calls": 16,
+          "summed_seconds": 55.68630404
+        },
+        {
+          "name": "aten::copy_",
+          "calls": 54692,
+          "summed_seconds": 27.62134095
+        },
+        {
+          "name": "aten::to",
+          "calls": 26912,
+          "summed_seconds": 23.61713261
+        },
+        {
+          "name": "aten::_to_copy",
+          "calls": 21008,
+          "summed_seconds": 23.5378008
+        },
+        {
+          "name": "autograd::engine::evaluate_function: GDNBackward",
+          "calls": 384,
+          "summed_seconds": 21.62672774
+        },
+        {
+          "name": "GDNBackward",
+          "calls": 384,
+          "summed_seconds": 21.60061331
+        },
+        {
+          "name": "optimizer/CPUAdam_and_return",
+          "calls": 1,
+          "summed_seconds": 19.31425627
+        },
+        {
+          "name": "autograd::engine::evaluate_function: torch::autograd::AccumulateGrad",
+          "calls": 6832,
+          "summed_seconds": 15.95210172
+        },
+        {
+          "name": "torch::autograd::AccumulateGrad",
+          "calls": 6832,
+          "summed_seconds": 15.85340296
+        },
+        {
+          "name": "autograd::engine::evaluate_function: MatmulBackward0",
+          "calls": 4240,
+          "summed_seconds": 10.71092026
+        },
+        {
+          "name": "MatmulBackward0",
+          "calls": 4240,
+          "summed_seconds": 10.44460576
+        },
+        {
+          "name": "pipeline/stage1/forward",
+          "calls": 16,
+          "summed_seconds": 8.25957285
+        },
+        {
+          "name": "aten::item",
+          "calls": 7105,
+          "summed_seconds": 7.86173071
+        },
+        {
+          "name": "aten::_local_scalar_dense",
+          "calls": 7105,
+          "summed_seconds": 7.84242992
+        },
+        {
+          "name": "Optimizer.step#DeepSpeedCPUAdam.step",
+          "calls": 540,
+          "summed_seconds": 7.03632459
+        },
+        {
+          "name": "GDN",
+          "calls": 768,
+          "summed_seconds": 4.93016928
+        },
+        {
+          "name": "optimizer/global_norm",
+          "calls": 1,
+          "summed_seconds": 4.80480653
+        },
+        {
+          "name": "weight/encode_verify",
+          "calls": 288,
+          "summed_seconds": 4.61271254
+        },
+        {
+          "name": "aten::equal",
+          "calls": 288,
+          "summed_seconds": 3.07997531
+        },
+        {
+          "name": "aten::mul",
+          "calls": 32736,
+          "summed_seconds": 2.62144241
+        }
+      ],
+      "compute_top20": [
+        {
+          "op_type": "MatMulV3",
+          "calls": 11568,
+          "summed_seconds": 17.68131306
+        },
+        {
+          "op_type": "prepare_wy_repr_bwd_kernel",
+          "calls": 384,
+          "summed_seconds": 4.9669645
+        },
+        {
+          "op_type": "TensorEqual",
+          "calls": 288,
+          "summed_seconds": 2.97655
+        },
+        {
+          "op_type": "Mul",
+          "calls": 32880,
+          "summed_seconds": 2.76558224
+        },
+        {
+          "op_type": "Transpose",
+          "calls": 28240,
+          "summed_seconds": 2.68395378
+        },
+        {
+          "op_type": "decompBF16",
+          "calls": 9152,
+          "summed_seconds": 2.46674602
+        },
+        {
+          "op_type": "chunk_fwd_kernel_o",
+          "calls": 768,
+          "summed_seconds": 1.92605398
+        },
+        {
+          "op_type": "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+          "calls": 1152,
+          "summed_seconds": 1.49459964
+        },
+        {
+          "op_type": "chunk_bwd_kernel_dqkwg",
+          "calls": 384,
+          "summed_seconds": 1.0029373
+        },
+        {
+          "op_type": "solve_tril_64x64_kernel",
+          "calls": 768,
+          "summed_seconds": 0.98073722
+        },
+        {
+          "op_type": "chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64",
+          "calls": 384,
+          "summed_seconds": 0.90031988
+        },
+        {
+          "op_type": "Add",
+          "calls": 15952,
+          "summed_seconds": 0.88239366
+        },
+        {
+          "op_type": "TransData",
+          "calls": 5792,
+          "summed_seconds": 0.68539124
+        },
+        {
+          "op_type": "Cast",
+          "calls": 20508,
+          "summed_seconds": 0.65646954
+        },
+        {
+          "op_type": "recompute_w_u_fwd_kernel",
+          "calls": 1152,
+          "summed_seconds": 0.55245342
+        },
+        {
+          "op_type": "ViewCopy",
+          "calls": 1440,
+          "summed_seconds": 0.52241094
+        },
+        {
+          "op_type": "ReduceSum",
+          "calls": 7856,
+          "summed_seconds": 0.49939374
+        },
+        {
+          "op_type": "SiluGrad",
+          "calls": 1280,
+          "summed_seconds": 0.36705486
+        },
+        {
+          "op_type": "Slice",
+          "calls": 5920,
+          "summed_seconds": 0.35367848
+        },
+        {
+          "op_type": "TensorMove",
+          "calls": 2320,
+          "summed_seconds": 0.25650296
+        }
+      ],
+      "codec_compute": [
+        {
+          "op_name": "decompBF16",
+          "op_type": "decompBF16",
+          "calls": 9152,
+          "summed_seconds": 2.46674602
+        },
+        {
+          "op_name": "compBF16",
+          "op_type": "compBF16",
+          "calls": 288,
+          "summed_seconds": 0.04622358
+        },
+        {
+          "op_name": "merge",
+          "op_type": "merge",
+          "calls": 288,
+          "summed_seconds": 0.00378406
+        }
+      ],
+      "weight_host": [
+        {
+          "name": "weight/encode_verify",
+          "calls": 288,
+          "summed_seconds": 4.61271254
+        },
+        {
+          "name": "weight/decode",
+          "calls": 9504,
+          "summed_seconds": 2.15420631
+        }
+      ],
+      "queries": {
+        "compute": {
+          "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(t.startNs,t.endNs)) intervals FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId",
+          "params": []
+        },
+        "comm": {
+          "sql": "SELECT json_group_array(json_array(startNs,endNs)) intervals FROM COMMUNICATION_OP",
+          "params": []
+        },
+        "copy": {
+          "sql": "SELECT json_group_array(json_array(t.startNs,t.endNs)) intervals FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE n.value='MEMCPY_ASYNC'",
+          "params": []
+        },
+        "window": {
+          "sql": "SELECT MIN(startNs) s,MAX(endNs) e,COUNT(*) tasks FROM TASK",
+          "params": []
+        },
+        "forward": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "pipeline/stage1/forward"
+          ]
+        },
+        "backward": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "pipeline/stage1/backward"
+          ]
+        },
+        "norm": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "optimizer/global_norm"
+          ]
+        },
+        "update": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "optimizer/CPUAdam_and_return"
+          ]
+        },
+        "slot_wait": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "gradient/slot_wait"
+          ]
+        },
+        "cpu_add": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "gradient/cpu_add"
+          ]
+        },
+        "drain": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "pipeline/gradient_drain"
+          ]
+        },
+        "resident_flush": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "gradient/resident_flush"
+          ]
+        },
+        "weight_decode": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "weight/decode"
+          ]
+        },
+        "weight_encode": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value=?",
+          "params": [
+            "weight/encode_verify"
+          ]
+        },
+        "task_streams": {
+          "sql": "SELECT t.streamId,n.value task_type,COUNT(*) calls,SUM(t.endNs-t.startNs)/1e9 seconds FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE n.value IN ('MEMCPY_ASYNC','AI_CORE','KERNEL_MIX_AIC','KERNEL_AICORE') GROUP BY t.streamId,n.value ORDER BY seconds DESC LIMIT 20",
+          "params": []
+        },
+        "host_top": {
+          "sql": "SELECT n.value name,COUNT(*) calls,SUM(p.endNs-p.startNs)/1e9 summed_seconds FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name GROUP BY n.value ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        },
+        "compute_top": {
+          "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_type,COUNT(*) calls,SUM(duration_ns)/1e9 summed_seconds FROM compute_view GROUP BY op_type ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        },
+        "codec_compute": {
+          "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_name,op_type,COUNT(*) calls,SUM(duration_ns)/1e9 summed_seconds FROM compute_view WHERE lower(op_name) LIKE '%decomp%' OR lower(op_name) LIKE '%compbf16%' OR lower(op_name) LIKE '%merge%' GROUP BY op_name,op_type ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        },
+        "weight_host": {
+          "sql": "SELECT n.value name,COUNT(*) calls,SUM(p.endNs-p.startNs)/1e9 summed_seconds FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'weight/%' GROUP BY n.value ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        }
+      }
+    }
+  ],
+  "execution": "Read-only SQLite; msprof_mcp unavailable",
+  "limits": [
+    "Device intervals may outlive asynchronous host scopes; phase intersections describe simultaneity only.",
+    "Host phases overlap; do not sum independent rows.",
+    "No missing scope is interpreted as zero cost. No memcpy direction table is inferred.",
+    "Eliminating all uncovered time is an optimistic ceiling, not an achieved speedup."
+  ]
+}
