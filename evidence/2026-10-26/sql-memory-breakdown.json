@@ -1,0 +1,850 @@
+{
+  "ranks": [
+    {
+      "rank": 0,
+      "physical_card": 2,
+      "allocated_peak_bytes": 60730805248,
+      "allocated_peak_gib": 56.559969902038574,
+      "reconstructed_final_exact": true,
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26896200192,
+          "blocks": 425,
+          "gib": 25.049038410186768
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294982144,
+          "blocks": 29,
+          "gib": 4.000013828277588
+        },
+        {
+          "category": "matmul_backward_temporary_gradients",
+          "bytes": 320864256,
+          "blocks": 2,
+          "gib": 0.298828125
+        },
+        {
+          "category": "parameter_gradient_accumulation_temporary",
+          "bytes": 178259456,
+          "blocks": 2,
+          "gib": 0.1660170555114746
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 8556380160,
+          "blocks": 60,
+          "gib": 7.96875
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "bytes": 1683104768,
+          "blocks": 34,
+          "gib": 1.5675134658813477
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 9822689280,
+          "blocks": 270,
+          "gib": 9.148092269897461
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 6794772480,
+          "blocks": 120,
+          "gib": 6.328125
+        },
+        {
+          "category": "hidden_states_checkpoint_boundaries_and_pipeline",
+          "bytes": 2139095040,
+          "blocks": 51,
+          "gib": 1.9921875
+        },
+        {
+          "category": "activation_gradient_merge",
+          "bytes": 41943040,
+          "blocks": 1,
+          "gib": 0.0390625
+        },
+        {
+          "category": "inputs_positions_masks_small_control",
+          "bytes": 2232832,
+          "blocks": 11,
+          "gib": 0.002079486846923828
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 1024,
+          "blocks": 2,
+          "gib": 9.5367431640625e-07
+        },
+        {
+          "category": "allocator_block_reconciliation",
+          "bytes": 280576,
+          "blocks": null,
+          "gib": 0.0002613067626953125
+        }
+      ],
+      "origins": [
+        {
+          "category": "weight",
+          "stack": "",
+          "bytes": 26896200192,
+          "blocks": 425
+        },
+        {
+          "category": "resident_gradient",
+          "stack": "",
+          "bytes": 4294982144,
+          "blocks": 29
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "stack": "linear.py:134:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:736:forward > module.py:1787:_call_impl",
+          "bytes": 4278190080,
+          "blocks": 30
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "stack": "functional.py:2395:silu > activations.py:103:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:736:forward",
+          "bytes": 2139095040,
+          "blocks": 15
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:736:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:810:forward > module.py:1787:_call_impl",
+          "bytes": 2139095040,
+          "blocks": 15
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:747:_norm > modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:692:forward",
+          "bytes": 1515847680,
+          "blocks": 30
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:692:forward > module.py:1787:_call_impl",
+          "bytes": 1509949440,
+          "blocks": 15
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "stack": "functional.py:2159:softmax > modeling_qwen3_5.py:641:eager_attention_forward > modeling_qwen3_5.py:706:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl",
+          "bytes": 1509949440,
+          "blocks": 15
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:718:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:796:forward > module.py:1787:_call_impl",
+          "bytes": 1509949440,
+          "blocks": 30
+        },
+        {
+          "category": "hidden_states_checkpoint_boundaries_and_pipeline",
+          "stack": "modeling_qwen3_5.py:811:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > checkpoint.py:512:checkpoint > eval_frame.py:1181:_fn",
+          "bytes": 1342177280,
+          "blocks": 32
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:747:_norm > modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:784:forward",
+          "bytes": 1258536960,
+          "blocks": 30
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:747:_norm > modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:809:forward",
+          "bytes": 1258536960,
+          "blocks": 30
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:784:forward > module.py:1787:_call_impl",
+          "bytes": 1258291200,
+          "blocks": 15
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:809:forward > module.py:1787:_call_impl",
+          "bytes": 1258291200,
+          "blocks": 15
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:607:apply_rotary_pos_emb > modeling_qwen3_5.py:697:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:796:forward",
+          "bytes": 754974720,
+          "blocks": 15
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:621:repeat_kv > modeling_qwen3_5.py:634:eager_attention_forward > modeling_qwen3_5.py:706:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl",
+          "bytes": 754974720,
+          "blocks": 15
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:621:repeat_kv > modeling_qwen3_5.py:635:eager_attention_forward > modeling_qwen3_5.py:706:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl",
+          "bytes": 754974720,
+          "blocks": 15
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:641:eager_attention_forward > modeling_qwen3_5.py:706:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:796:forward",
+          "bytes": 754974720,
+          "blocks": 15
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:644:eager_attention_forward > modeling_qwen3_5.py:706:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:796:forward",
+          "bytes": 754974720,
+          "blocks": 15
+        },
+        {
+          "category": "hidden_states_checkpoint_boundaries_and_pipeline",
+          "stack": "modeling_qwen3_5.py:811:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_layers.py:110:__call__ > modeling_qwen3_5.py:1212:forward",
+          "bytes": 671088640,
+          "blocks": 16
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:754:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:784:forward > module.py:1787:_call_impl",
+          "bytes": 629145600,
+          "blocks": 15
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:754:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:809:forward > module.py:1787:_call_impl",
+          "bytes": 629145600,
+          "blocks": 15
+        },
+        {
+          "category": "matmul_backward_temporary_gradients",
+          "stack": "at::_ops::matmul_backward::redispatch(c10::DispatchKeySet, at::Tensor const&, at::Tensor const&, at::Tensor const&, std::array<bool, 2ul>) > at::_ops::matmul_backward::call(at::Tensor const&, at::Tensor const&, at::Tensor const&, std::array<bool, 2ul>) > at_npu::autograd::generated::MatmulBackward0::apply(std::vector<at::Tensor, std::allocator<at::Tensor> >&&) > torch::autograd::Engine::evaluate_function(std::shared_ptr<torch::autograd::GraphTask>&, torch::autograd::Node*, torch::autograd::InputBuffer&, std::shared_ptr<torch::autograd::ReadyQueue> const&)",
+          "bytes": 320864256,
+          "blocks": 2
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "linear.py:134:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:736:forward > module.py:1787:_call_impl",
+          "bytes": 285212672,
+          "blocks": 2
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:747:_norm > modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:693:forward",
+          "bytes": 252641280,
+          "blocks": 30
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:693:forward > module.py:1787:_call_impl",
+          "bytes": 251658240,
+          "blocks": 15
+        },
+        {
+          "category": "parameter_gradient_accumulation_temporary",
+          "stack": "at::_ops::empty_strided::redispatch(c10::DispatchKeySet, c10::ArrayRef<c10::SymInt>, c10::ArrayRef<c10::SymInt>, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>) > at::_ops::empty_strided::call(c10::ArrayRef<c10::SymInt>, c10::ArrayRef<c10::SymInt>, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>) > at::_ops::new_empty_strided::redispatch(c10::DispatchKeySet, at::Tensor const&, c10::ArrayRef<c10::SymInt>, c10::ArrayRef<c10::SymInt>, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>) > at::_ops::new_empty_strided::call(at::Tensor const&, c10::ArrayRef<c10::SymInt>, c10::ArrayRef<c10::SymInt>, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>) > torch::autog",
+          "bytes": 178257920,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "functional.py:2395:silu > activations.py:103:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:736:forward",
+          "bytes": 142606336,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "modeling_qwen3_5.py:197:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:559:forward > accelerate.py:941:wrapped",
+          "bytes": 100663296,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "modeling_qwen3_5.py:202:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:559:forward > accelerate.py:941:wrapped",
+          "bytes": 100663296,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "functional.py:2395:silu > modeling_qwen3_5.py:202:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:559:forward",
+          "bytes": 100663296,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "modeling_qwen3_5.py:201:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:559:forward > accelerate.py:941:wrapped",
+          "bytes": 100663296,
+          "blocks": 2
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "conv.py:370:_conv_forward > conv.py:375:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:501:forward",
+          "bytes": 84869120,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "modeling_qwen3_5.py:747:_norm > modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:784:forward",
+          "bytes": 83902464,
+          "blocks": 2
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "modeling_qwen3_5.py:747:_norm > modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:809:forward",
+          "bytes": 83902464,
+          "blocks": 2
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:784:forward > module.py:1787:_call_impl",
+          "bytes": 83886080,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "linear.py:134:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:464:forward > accelerate.py:941:wrapped",
+          "bytes": 83886080,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "functional.py:2395:silu > modeling_qwen3_5.py:501:forward > accelerate.py:941:wrapped > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl",
+          "bytes": 83886080,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:809:forward > module.py:1787:_call_impl",
+          "bytes": 83886080,
+          "blocks": 1
+        },
+        {
+          "category": "hidden_states_checkpoint_boundaries_and_pipeline",
+          "stack": "functional.py:2567:embedding > sparse.py:191:forward > module.py:1830:inner > module.py:1882:_call_impl > module.py:1776:_wrapped_call_impl",
+          "bytes": 83886080,
+          "blocks": 2
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "triton.py:44:_l2norm_fwd > triton.py:255:forward > community_gdn.py:36:forward > function.py:583:apply > community_gdn.py:55:chunk_gated_delta_rule",
+          "bytes": 50331648,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "triton.py:44:_l2norm_fwd > triton.py:256:forward > community_gdn.py:36:forward > function.py:583:apply > community_gdn.py:55:chunk_gated_delta_rule",
+          "bytes": 50331648,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "modeling_qwen3_5.py:204:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:559:forward > accelerate.py:941:wrapped",
+          "bytes": 50331648,
+          "blocks": 1
+        },
+        {
+          "category": "hidden_states_checkpoint_boundaries_and_pipeline",
+          "stack": "train_memory.py:289:<module>",
+          "bytes": 41943040,
+          "blocks": 1
+        },
+        {
+          "category": "activation_gradient_merge",
+          "stack": "at::_ops::add_Tensor::redispatch(c10::DispatchKeySet, at::Tensor const&, at::Tensor const&, c10::Scalar const&) > at::_ops::add_Tensor::call(at::Tensor const&, at::Tensor const&, c10::Scalar const&) > torch::autograd::InputBuffer::add(unsigned long, at::Tensor&&, std::optional<c10::Stream> const&, std::optional<c10::Stream> const&, torch::autograd::Node*) > torch::autograd::Engine::evaluate_function(std::shared_ptr<torch::autograd::GraphTask>&, torch::autograd::Node*, torch::autograd::InputBuffer&, std::shared_ptr<torch::autograd::ReadyQueue> const&)",
+          "bytes": 41943040,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "modeling_qwen3_5.py:214:apply_mask_to_padding_states > modeling_qwen3_5.py:448:forward > accelerate.py:941:wrapped > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl",
+          "bytes": 41943040,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "modeling_qwen3_5.py:754:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:809:forward > module.py:1787:_call_impl",
+          "bytes": 41943040,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "solve_tril.py:249:solve_tril > utils.py:235:wrapper > triton.py:82:_chunk_fwd > utils.py:235:wrapper > triton.py:262:forward",
+          "bytes": 25165824,
+          "blocks": 1
+        },
+        {
+          "category": "inputs_positions_masks_small_control",
+          "stack": "modeling_qwen3_5.py:169:forward > modeling_rope_utils.py:128:wrapper > _contextlib.py:124:decorate_context > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl",
+          "bytes": 2097152,
+          "blocks": 4
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "modeling_qwen3_5.py:522:forward > accelerate.py:941:wrapped > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:788:forward",
+          "bytes": 1573888,
+          "blocks": 4
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "cumsum.py:94:chunk_local_cumsum_scalar > cumsum.py:129:chunk_local_cumsum > triton.py:73:_chunk_fwd > utils.py:235:wrapper > triton.py:262:forward",
+          "bytes": 786432,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "modeling_qwen3_5.py:200:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:559:forward > accelerate.py:941:wrapped",
+          "bytes": 786432,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "modeling_qwen3_5.py:520:forward > accelerate.py:941:wrapped > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:788:forward",
+          "bytes": 393216,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "triton.py:43:_l2norm_fwd > triton.py:255:forward > community_gdn.py:36:forward > function.py:583:apply > community_gdn.py:55:chunk_gated_delta_rule",
+          "bytes": 393216,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "triton.py:43:_l2norm_fwd > triton.py:256:forward > community_gdn.py:36:forward > function.py:583:apply > community_gdn.py:55:chunk_gated_delta_rule",
+          "bytes": 393216,
+          "blocks": 1
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:753:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:784:forward > module.py:1787:_call_impl",
+          "bytes": 307200,
+          "blocks": 15
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:753:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:809:forward > module.py:1787:_call_impl",
+          "bytes": 307200,
+          "blocks": 15
+        },
+        {
+          "category": "inputs_positions_masks_small_control",
+          "stack": "train_memory.py:181:batch > train_memory.py:277:fw > train_memory.py:289:<module>",
+          "bytes": 65536,
+          "blocks": 2
+        },
+        {
+          "category": "inputs_positions_masks_small_control",
+          "stack": "train_memory.py:183:batch > train_memory.py:277:fw > train_memory.py:289:<module>",
+          "bytes": 65536,
+          "blocks": 2
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "modeling_qwen3_5.py:753:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:784:forward > module.py:1787:_call_impl",
+          "bytes": 20480,
+          "blocks": 1
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "stack": "modeling_qwen3_5.py:753:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:809:forward > module.py:1787:_call_impl",
+          "bytes": 20480,
+          "blocks": 1
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:753:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:692:forward > module.py:1787:_call_impl",
+          "bytes": 15360,
+          "blocks": 15
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:753:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:693:forward > module.py:1787:_call_impl",
+          "bytes": 15360,
+          "blocks": 15
+        },
+        {
+          "category": "inputs_positions_masks_small_control",
+          "stack": "modeling_qwen3_5.py:1182:forward > output_capturing.py:262:wrapper > generic.py:1040:wrapper > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl",
+          "bytes": 4096,
+          "blocks": 2
+        },
+        {
+          "category": "parameter_gradient_accumulation_temporary",
+          "stack": "at::_ops::copy_::call(at::Tensor&, at::Tensor const&, bool) > torch::autograd::AccumulateGrad::apply(std::vector<at::Tensor, std::allocator<at::Tensor> >&&) > torch::autograd::Engine::evaluate_function(std::shared_ptr<torch::autograd::GraphTask>&, torch::autograd::Node*, torch::autograd::InputBuffer&, std::shared_ptr<torch::autograd::ReadyQueue> const&)",
+          "bytes": 1536,
+          "blocks": 1
+        },
+        {
+          "category": "model_buffer",
+          "stack": "",
+          "bytes": 1024,
+          "blocks": 2
+        },
+        {
+          "category": "inputs_positions_masks_small_control",
+          "stack": "distributed_c10d.py:4969:barrier > c10d_logger.py:83:wrapper > train_memory.py:263:<module>",
+          "bytes": 512,
+          "blocks": 1
+        }
+      ],
+      "trace_events": {
+        "free_completed": 218230,
+        "alloc": 218770,
+        "free_requested": 218229,
+        "segment_map": 411
+      }
+    },
+    {
+      "rank": 1,
+      "physical_card": 3,
+      "allocated_peak_bytes": 58040279040,
+      "allocated_peak_gib": 54.054222106933594,
+      "reconstructed_final_exact": true,
+      "categories": [
+        {
+          "category": "loss_forward_intermediates",
+          "bytes": 4068474880,
+          "blocks": 1,
+          "gib": 3.7890625
+        },
+        {
+          "category": "loss_temporary_gradients",
+          "bytes": 8136949760,
+          "blocks": 2,
+          "gib": 7.578125
+        },
+        {
+          "category": "weight",
+          "bytes": 26896210944,
+          "blocks": 426,
+          "gib": 25.04904842376709
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294982144,
+          "blocks": 29,
+          "gib": 4.000013828277588
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 4563402752,
+          "blocks": 32,
+          "gib": 4.25
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 5448519680,
+          "blocks": 149,
+          "gib": 5.074329376220703
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 3623878656,
+          "blocks": 64,
+          "gib": 3.375
+        },
+        {
+          "category": "hidden_states_checkpoint_boundaries_and_pipeline",
+          "bytes": 1006632960,
+          "blocks": 24,
+          "gib": 0.9375
+        },
+        {
+          "category": "inputs_positions_masks_small_control",
+          "bytes": 1084928,
+          "blocks": 7,
+          "gib": 0.0010104179382324219
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 1024,
+          "blocks": 2,
+          "gib": 9.5367431640625e-07
+        },
+        {
+          "category": "allocator_block_reconciliation",
+          "bytes": 141312,
+          "blocks": null,
+          "gib": 0.0001316070556640625
+        }
+      ],
+      "origins": [
+        {
+          "category": "weight",
+          "stack": "",
+          "bytes": 26896210944,
+          "blocks": 426
+        },
+        {
+          "category": "resident_gradient",
+          "stack": "",
+          "bytes": 4294982144,
+          "blocks": 29
+        },
+        {
+          "category": "loss_forward_intermediates",
+          "stack": "functional.py:3504:cross_entropy > loss_utils.py:40:fixed_cross_entropy > loss_utils.py:70:ForCausalLMLoss > modeling_qwen3_5.py:1671:forward > generic.py:911:wrapper",
+          "bytes": 4068474880,
+          "blocks": 1
+        },
+        {
+          "category": "loss_temporary_gradients",
+          "stack": "at::_ops::nll_loss_backward::redispatch(c10::DispatchKeySet, at::Tensor const&, at::Tensor const&, at::Tensor const&, std::optional<at::Tensor> const&, long, c10::SymInt, at::Tensor const&) > at::_ops::nll_loss_backward::call(at::Tensor const&, at::Tensor const&, at::Tensor const&, std::optional<at::Tensor> const&, long, c10::SymInt, at::Tensor const&) > torch::autograd::generated::NllLossBackward0::apply(std::vector<at::Tensor, std::allocator<at::Tensor> >&&) > torch::autograd::Engine::evaluate_function(std::shared_ptr<torch::autograd::GraphTask>&, torch::autograd::Node*, torch::autograd::InputBuffer&, std::shared_ptr<torch::autograd::ReadyQueue> const&)",
+          "bytes": 4068474880,
+          "blocks": 1
+        },
+        {
+          "category": "loss_temporary_gradients",
+          "stack": "at::_ops::_log_softmax_backward_data::redispatch(c10::DispatchKeySet, at::Tensor const&, at::Tensor const&, long, c10::ScalarType) > at::_ops::_log_softmax_backward_data::call(at::Tensor const&, at::Tensor const&, long, c10::ScalarType) > torch::autograd::generated::LogSoftmaxBackward0::apply(std::vector<at::Tensor, std::allocator<at::Tensor> >&&) > torch::autograd::Engine::evaluate_function(std::shared_ptr<torch::autograd::GraphTask>&, torch::autograd::Node*, torch::autograd::InputBuffer&, std::shared_ptr<torch::autograd::ReadyQueue> const&)",
+          "bytes": 4068474880,
+          "blocks": 1
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "stack": "linear.py:134:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:736:forward > module.py:1787:_call_impl",
+          "bytes": 2281701376,
+          "blocks": 16
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "stack": "functional.py:2395:silu > activations.py:103:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:736:forward",
+          "bytes": 1140850688,
+          "blocks": 8
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:736:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:810:forward > module.py:1787:_call_impl",
+          "bytes": 1140850688,
+          "blocks": 8
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:747:_norm > modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:692:forward",
+          "bytes": 808452096,
+          "blocks": 16
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:692:forward > module.py:1787:_call_impl",
+          "bytes": 805306368,
+          "blocks": 8
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "stack": "functional.py:2159:softmax > modeling_qwen3_5.py:641:eager_attention_forward > modeling_qwen3_5.py:706:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl",
+          "bytes": 805306368,
+          "blocks": 8
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:718:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:796:forward > module.py:1787:_call_impl",
+          "bytes": 805306368,
+          "blocks": 16
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:747:_norm > modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:784:forward",
+          "bytes": 671219712,
+          "blocks": 16
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:747:_norm > modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:809:forward",
+          "bytes": 671219712,
+          "blocks": 16
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:784:forward > module.py:1787:_call_impl",
+          "bytes": 671088640,
+          "blocks": 8
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:809:forward > module.py:1787:_call_impl",
+          "bytes": 671088640,
+          "blocks": 8
+        },
+        {
+          "category": "hidden_states_checkpoint_boundaries_and_pipeline",
+          "stack": "modeling_qwen3_5.py:811:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > checkpoint.py:512:checkpoint > eval_frame.py:1181:_fn",
+          "bytes": 671088640,
+          "blocks": 16
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:607:apply_rotary_pos_emb > modeling_qwen3_5.py:697:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:796:forward",
+          "bytes": 402653184,
+          "blocks": 8
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:621:repeat_kv > modeling_qwen3_5.py:634:eager_attention_forward > modeling_qwen3_5.py:706:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl",
+          "bytes": 402653184,
+          "blocks": 8
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:621:repeat_kv > modeling_qwen3_5.py:635:eager_attention_forward > modeling_qwen3_5.py:706:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl",
+          "bytes": 402653184,
+          "blocks": 8
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:641:eager_attention_forward > modeling_qwen3_5.py:706:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:796:forward",
+          "bytes": 402653184,
+          "blocks": 8
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:644:eager_attention_forward > modeling_qwen3_5.py:706:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:796:forward",
+          "bytes": 402653184,
+          "blocks": 8
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:754:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:784:forward > module.py:1787:_call_impl",
+          "bytes": 335544320,
+          "blocks": 8
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:754:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:809:forward > module.py:1787:_call_impl",
+          "bytes": 335544320,
+          "blocks": 8
+        },
+        {
+          "category": "hidden_states_checkpoint_boundaries_and_pipeline",
+          "stack": "modeling_qwen3_5.py:811:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_layers.py:110:__call__ > modeling_qwen3_5.py:1212:forward",
+          "bytes": 293601280,
+          "blocks": 7
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:747:_norm > modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:693:forward",
+          "bytes": 134742016,
+          "blocks": 16
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:693:forward > module.py:1787:_call_impl",
+          "bytes": 134217728,
+          "blocks": 8
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:747:_norm > modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:1222:forward",
+          "bytes": 83902464,
+          "blocks": 2
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:750:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:1222:forward > output_capturing.py:262:wrapper",
+          "bytes": 83886080,
+          "blocks": 1
+        },
+        {
+          "category": "hidden_states_checkpoint_boundaries_and_pipeline",
+          "stack": "train_memory.py:280:fw > train_memory.py:301:<module>",
+          "bytes": 41943040,
+          "blocks": 1
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:754:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:1222:forward > output_capturing.py:262:wrapper",
+          "bytes": 41943040,
+          "blocks": 1
+        },
+        {
+          "category": "inputs_positions_masks_small_control",
+          "stack": "modeling_qwen3_5.py:169:forward > modeling_rope_utils.py:128:wrapper > _contextlib.py:124:decorate_context > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl",
+          "bytes": 1048576,
+          "blocks": 2
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:753:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:784:forward > module.py:1787:_call_impl",
+          "bytes": 163840,
+          "blocks": 8
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:753:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:809:forward > module.py:1787:_call_impl",
+          "bytes": 163840,
+          "blocks": 8
+        },
+        {
+          "category": "inputs_positions_masks_small_control",
+          "stack": "train_memory.py:183:batch > train_memory.py:277:fw > train_memory.py:301:<module>",
+          "bytes": 32768,
+          "blocks": 1
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:753:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:1222:forward > output_capturing.py:262:wrapper",
+          "bytes": 20480,
+          "blocks": 1
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:753:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:692:forward > module.py:1787:_call_impl",
+          "bytes": 8192,
+          "blocks": 8
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "stack": "modeling_qwen3_5.py:753:forward > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl > modeling_qwen3_5.py:693:forward > module.py:1787:_call_impl",
+          "bytes": 8192,
+          "blocks": 8
+        },
+        {
+          "category": "inputs_positions_masks_small_control",
+          "stack": "modeling_qwen3_5.py:1182:forward > output_capturing.py:262:wrapper > generic.py:1040:wrapper > module.py:1787:_call_impl > module.py:1776:_wrapped_call_impl",
+          "bytes": 2048,
+          "blocks": 1
+        },
+        {
+          "category": "model_buffer",
+          "stack": "",
+          "bytes": 1024,
+          "blocks": 2
+        },
+        {
+          "category": "inputs_positions_masks_small_control",
+          "stack": "distributed_c10d.py:4969:barrier > c10d_logger.py:83:wrapper > train_memory.py:263:<module>",
+          "bytes": 512,
+          "blocks": 1
+        },
+        {
+          "category": "inputs_positions_masks_small_control",
+          "stack": "train_memory.py:199:forward > train_memory.py:282:fw > train_memory.py:301:<module>",
+          "bytes": 512,
+          "blocks": 1
+        },
+        {
+          "category": "inputs_positions_masks_small_control",
+          "stack": "__init__.py:230:_make_grads > __init__.py:357:backward > _tensor.py:630:backward > train_memory.py:302:<module>",
+          "bytes": 512,
+          "blocks": 1
+        }
+      ],
+      "trace_events": {
+        "free_completed": 219131,
+        "alloc": 219672,
+        "free_requested": 219130,
+        "segment_map": 172
+      }
+    }
+  ],
+  "unit": "GiB = 2**30 bytes",
+  "scope": "Simultaneous allocator peak in first original 256-sample update; standalone instrumentation, no speed claim",
+  "limits": [
+    "Allocator trace sizes are requested bytes; rounding to 512 bytes reconstructs final allocated exactly. A 0.13-0.27 MiB difference at peak is retained explicitly as allocator block reconciliation, not assigned to activations or workspace.",
+    "Forward intermediates mean allocations produced in forward and still live at peak, not independently measured saved-for-backward tensors.",
+    "Operator workspace outside PyTorch allocator and driver/runtime HBM are not measured by this snapshot. No independently identified workspace block exists in the two reconstructed allocated peaks; this is not a claim that all operators use zero workspace over the whole iteration.",
+    "The two ranks reach their peaks at different times; do not sum them as one simultaneous server peak."
+  ]
+}

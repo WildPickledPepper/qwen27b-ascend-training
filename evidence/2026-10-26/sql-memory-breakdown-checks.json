@@ -1,0 +1,37 @@
+{
+  "source_hashes": {
+    "train_resident.py": true,
+    "resident_gradients.py": true,
+    "community_gdn.py": true
+  },
+  "ranks": [
+    {
+      "rank": 0,
+      "first_256_hashes_and_lengths_same": true,
+      "model_manifest_same": true,
+      "resident_plan_same": true,
+      "first_step_norm_exact": true,
+      "initial_validation_exact": true,
+      "input_and_padded_tokens_same": true,
+      "old_first_peak": 60730805248,
+      "new_peak": 60730805248,
+      "gradient_d2h_bytes_same": true
+    },
+    {
+      "rank": 1,
+      "first_256_hashes_and_lengths_same": true,
+      "model_manifest_same": true,
+      "resident_plan_same": true,
+      "first_step_norm_exact": true,
+      "initial_validation_exact": true,
+      "input_and_padded_tokens_same": true,
+      "old_first_peak": 58040279040,
+      "new_peak": 58040279040,
+      "gradient_d2h_bytes_same": true
+    }
+  ],
+  "resource_release": {
+    "2": true,
+    "3": true
+  }
+}
