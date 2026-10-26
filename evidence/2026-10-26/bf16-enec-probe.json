@@ -1,0 +1,139 @@
+{
+  "build": {
+    "author_commit": "3026adde1ed97f8ae528515ae9de9de60e89176a",
+    "variant": "ENEC-BF16-122-6-3-16",
+    "author_kernels_unchanged": true,
+    "sha256": {
+      "snec_compress.cpp": "e5d0c83d76f458aa10f81714bfa26c63bd65d8192d52c5d279d44b419c1e3567",
+      "snec_decompress.cpp": "47a0a61ed4f0fc76c4917fa00764b59724d01df261c6c28966b1d759d51b7eaa",
+      "snec_merge.cpp": "ba1f3178889c0788a18db02eb1ea6f1fd1ddee639c6f89b64722bed690ec78b8",
+      "snec_utils.h": "0e1a683e6230ee6f914af9c84ad203ea70ade7d017c81da0d2627cdacc854e0e",
+      "snec_device.h": "2da81d8da069ceb9eb5d12905fabe9f6285bbeb03ef1ae7ca78b17c688138ac8"
+    }
+  },
+  "dtype": "BF16",
+  "stored_format_lossless": true,
+  "rows": [
+    {
+      "name": "all_uint16_patterns",
+      "raw_bf16_bytes": 131072,
+      "stored_bytes": 131072,
+      "author_encoded_bytes": 115424,
+      "storage_kind": "raw_author_mismatch",
+      "author_roundtrip_bit_exact": false,
+      "stored_lossless": true,
+      "diagnostic": true,
+      "compress_event_ms": 0.8849400281906128,
+      "merge_event_ms": 0.07485999912023544,
+      "decompress_event_ms": 2.3264999389648438
+    },
+    {
+      "name": "zeros",
+      "raw_bf16_bytes": 262144,
+      "stored_bytes": 262144,
+      "author_encoded_bytes": 230624,
+      "storage_kind": "raw_author_mismatch",
+      "author_roundtrip_bit_exact": false,
+      "stored_lossless": true,
+      "diagnostic": true,
+      "compress_event_ms": 0.05270000174641609,
+      "merge_event_ms": 0.04848000034689903,
+      "decompress_event_ms": 0.04837999865412712
+    },
+    {
+      "name": "unaligned_tail",
+      "raw_bf16_bytes": 65570,
+      "stored_bytes": 65570,
+      "author_encoded_bytes": 86624,
+      "storage_kind": "raw_author_mismatch",
+      "author_roundtrip_bit_exact": false,
+      "stored_lossless": true,
+      "diagnostic": true,
+      "compress_event_ms": 0.046379998326301575,
+      "merge_event_ms": 0.047439999878406525,
+      "decompress_event_ms": 0.058240000158548355
+    },
+    {
+      "name": "model.embed_tokens.weight",
+      "raw_bf16_bytes": 4194304,
+      "stored_bytes": 4194304,
+      "author_encoded_bytes": 3148256,
+      "storage_kind": "raw_author_mismatch",
+      "author_roundtrip_bit_exact": false,
+      "stored_lossless": true,
+      "diagnostic": false,
+      "compress_event_ms": 0.06481999903917313,
+      "merge_event_ms": 0.04670000076293945,
+      "decompress_event_ms": 0.06703999638557434
+    },
+    {
+      "name": "model.layers.0.linear_attn.conv1d.weight",
+      "raw_bf16_bytes": 81920,
+      "stored_bytes": 81920,
+      "author_encoded_bytes": 84032,
+      "storage_kind": "raw_expansion",
+      "author_roundtrip_bit_exact": true,
+      "stored_lossless": true,
+      "diagnostic": false,
+      "compress_event_ms": 0.04506000131368637,
+      "merge_event_ms": 0.04479999840259552,
+      "decompress_event_ms": 0.04610000178217888
+    },
+    {
+      "name": "model.layers.0.mlp.gate_proj.weight",
+      "raw_bf16_bytes": 4194304,
+      "stored_bytes": 3117056,
+      "author_encoded_bytes": 3117056,
+      "storage_kind": "enec",
+      "author_roundtrip_bit_exact": true,
+      "stored_lossless": true,
+      "diagnostic": false,
+      "compress_event_ms": 0.05950000137090683,
+      "merge_event_ms": 0.04535999894142151,
+      "decompress_event_ms": 0.06241999939084053
+    },
+    {
+      "name": "model.layers.0.mlp.up_proj.weight",
+      "raw_bf16_bytes": 4194304,
+      "stored_bytes": 3123392,
+      "author_encoded_bytes": 3123392,
+      "storage_kind": "enec",
+      "author_roundtrip_bit_exact": true,
+      "stored_lossless": true,
+      "diagnostic": false,
+      "compress_event_ms": 0.05827999860048294,
+      "merge_event_ms": 0.04374000057578087,
+      "decompress_event_ms": 0.05724000185728073
+    },
+    {
+      "name": "model.layers.0.mlp.down_proj.weight",
+      "raw_bf16_bytes": 4194304,
+      "stored_bytes": 3112640,
+      "author_encoded_bytes": 3112640,
+      "storage_kind": "enec",
+      "author_roundtrip_bit_exact": true,
+      "stored_lossless": true,
+      "diagnostic": false,
+      "compress_event_ms": 0.05682000145316124,
+      "merge_event_ms": 0.038359999656677246,
+      "decompress_event_ms": 0.043960001319646835
+    },
+    {
+      "name": "model.layers.3.self_attn.q_proj.weight",
+      "raw_bf16_bytes": 4194304,
+      "stored_bytes": 3052640,
+      "author_encoded_bytes": 3052640,
+      "storage_kind": "enec",
+      "author_roundtrip_bit_exact": true,
+      "stored_lossless": true,
+      "diagnostic": false,
+      "compress_event_ms": 0.05045999959111214,
+      "merge_event_ms": 0.04698000103235245,
+      "decompress_event_ms": 0.04755999892950058
+    }
+  ],
+  "limits": [
+    "Author codec fails some exact bit-pattern tests; raw fallback is required.",
+    "Samples are a gate, not an estimate of full-model compression or online speed."
+  ]
+}
