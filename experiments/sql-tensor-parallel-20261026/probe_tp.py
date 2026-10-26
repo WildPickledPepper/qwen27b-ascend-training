@@ -6,7 +6,8 @@ CPU FP32 Adam via native ZeRO-1 offload. This is a compatibility probe, not a
 import argparse,copy,ctypes,datetime,hashlib,importlib.util,json,math,os,time
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('--model',required=True);p.add_argument('--output',required=True)
-p.add_argument('--checkpoint',choices=['off','all'],default='off');a=p.parse_args()
+p.add_argument('--checkpoint',choices=['off','all'],default='off')
+p.add_argument('--zero-stage',type=int,choices=[1,2],default=1);a=p.parse_args()
 rank=int(os.environ['LOCAL_RANK']);assert os.environ['ASCEND_RT_VISIBLE_DEVICES']=='2,3'
 os.sched_setaffinity(0,list(range(96+rank*24,120+rank*24)))
 import torch,torch_npu,deepspeed
@@ -64,7 +65,7 @@ original_shapes={name:list(p.shape) for name,p in model.named_parameters()}
 ds=dict(train_batch_size=256,train_micro_batch_size_per_gpu=16,gradient_accumulation_steps=16,
         bf16=dict(enabled=True),gradient_clipping=1.,communication_data_type='fp32',steps_per_print=1000000,
         tensor_parallel=dict(autotp_size=2,vocab_parallel_lm_head=True),
-        zero_optimization=dict(stage=1,offload_optimizer=dict(device='cpu',pin_memory=True),
+        zero_optimization=dict(stage=a.zero_stage,offload_optimizer=dict(device='cpu',pin_memory=True),
                                contiguous_gradients=True,overlap_comm=True,reduce_bucket_size=1048576),
         optimizer=dict(type='AdamW',params=dict(lr=1e-3,betas=[.9,.999],eps=1e-8,weight_decay=.01)))
 engine,opt,_,_=deepspeed.initialize(model=model,model_parameters=model.parameters(),config=ds,mpu=groups)
@@ -103,7 +104,17 @@ with torch.no_grad():
 engine.train()
 for micro in range(16):
     output=engine(**batch(micro));engine.backward(output.loss)
-    if micro<15:engine.step()
+    if micro<15:
+        engine.step()
+        if micro==0:
+            storages={}
+            for param in engine.module.parameters():
+                for attr in ['grad','grad_accum']:
+                    value=getattr(param,attr,None)
+                    if isinstance(value,torch.Tensor) and value.device.type=='npu':
+                        storage=value.untyped_storage();storages[storage.data_ptr()]=storage.nbytes()
+            log('nonboundary_grad_residence',zero_stage=a.zero_stage,npu_gradient_storage_bytes=sum(storages.values()),
+                npu_allocated_bytes=torch.npu.memory_allocated())
 torch.npu.synchronize()  # CPU offload buffers must finish before diagnostic reads.
 from deepspeed.module_inject.layers import GatherReplacedLayerParams
 checks=[]

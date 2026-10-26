@@ -12,8 +12,10 @@
 
 ## 27B首次容量试验
 
-原micro16/global256/48层选择性重算的TP2+ZeRO-1 CPU卸载，完成初始化/验证后在第一个训练micro前向OOM；尚无整步速度。失败日志和原入口保留，不能把未完成任务记作慢或快。
+原micro16/global256/48层选择性重算的TP2+ZeRO-1 CPU卸载，完成初始化/验证及第1个训练micro，在第2个前向OOM；尚无整步速度。失败日志和原入口保留，不能把未完成任务记作慢或快。
 
-下一步保持micro16、global256和原样本/padding/精度，改64层全部激活重算，先tiny验证再27B短跑。该系统设置增加重算量，必须与流水线48层重算分开说明，不宣称所有实现细节相同。
+64层全部重算tiny通过，但27B仍在第2个前向OOM，已正常清理。进一步核对本机`stage_1_and_2.py`的`reduce_ready_partitions_and_remove_grads`：Stage1非累积边界不进入梯度归约/清理分支，CPU优化器卸载不等于每个micro的梯度都已离开NPU。局部模型参数14,085,021,184个，对应约28.17GB BF16梯度；初始allocated30.71GB，额外累计梯度足以耗尽可用空间。
+
+改为原生ZeRO-2 CPU梯度卸载，恢复原48层重算、micro16/global256/原样本与padding。tiny实际检查第1个micro后NPU参数梯度storage为0、全部梯度检查通过；27B随后已连续处理多个micro，批次结束allocated约31–32GB稳定。正式四轮测试仍进行中，尚未给出速度比较；原Stage1/all-recompute失败单列，不混入计时。
 
 官方机制参考：[DeepSpeed AutoTP training](https://raw.githubusercontent.com/deepspeedai/DeepSpeed/master/docs/_tutorials/autotp-training.md)。规则存在不等于该硬件完整训练已验证，以上结论以实际小模型/容量结果为准。

@@ -3,7 +3,8 @@ import argparse,ctypes,datetime,hashlib,importlib.util,json,math,os,time
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('--model',required=True);p.add_argument('--data',required=True)
 p.add_argument('--output',required=True);p.add_argument('--steps',type=int,default=4);p.add_argument('--profile',action='store_true')
-p.add_argument('--checkpoint',choices=['selective','all'],default='selective');a=p.parse_args()
+p.add_argument('--checkpoint',choices=['selective','all'],default='selective')
+p.add_argument('--zero-stage',type=int,choices=[1,2],default=1);a=p.parse_args()
 rank=int(os.environ['LOCAL_RANK']);assert os.environ['ASCEND_RT_VISIBLE_DEVICES']=='2,3'
 os.sched_setaffinity(0,list(range(96+24*rank,120+24*rank)))
 lib=ctypes.CDLL('libnuma.so.1',use_errno=True);lib.set_mempolicy.argtypes=[ctypes.c_int,ctypes.POINTER(ctypes.c_ulong),ctypes.c_ulong]
@@ -53,7 +54,7 @@ groups._init_tp_mesh_device(tensor_model_parallel_size=2)
 ds=dict(train_batch_size=256,train_micro_batch_size_per_gpu=16,gradient_accumulation_steps=16,
         bf16=dict(enabled=True),gradient_clipping=1.,communication_data_type='fp32',steps_per_print=1000000,
         tensor_parallel=dict(autotp_size=2,vocab_parallel_lm_head=True),
-        zero_optimization=dict(stage=1,offload_optimizer=dict(device='cpu',pin_memory=True),
+        zero_optimization=dict(stage=a.zero_stage,offload_optimizer=dict(device='cpu',pin_memory=True),
                                contiguous_gradients=True,overlap_comm=True,reduce_bucket_size=16777216),
         optimizer=dict(type='AdamW',params=dict(lr=0.,betas=[.9,.999],eps=1e-8,weight_decay=.01)))
 engine,opt,_,_=deepspeed.initialize(model=model,model_parameters=model.parameters(),config=ds,mpu=groups)
@@ -117,7 +118,7 @@ for step in range(a.steps):
         phase['forward_wall']+=time.monotonic()-t
         t=time.monotonic();engine.backward(loss);phase['backward_wall']+=time.monotonic()-t
         t=time.monotonic();engine.step();phase['step_wall']+=time.monotonic()-t
-        log('micro',step=step+1,micro=micro+1,loss=value)
+        log('micro',step=step+1,micro=micro+1,loss=value,npu_allocated_bytes=torch.npu.memory_allocated())
         del output,loss,data
     torch.npu.synchronize();dist.barrier();seconds=time.monotonic()-started
     assert all(c==16 for c in hook_calls.values()),hook_calls

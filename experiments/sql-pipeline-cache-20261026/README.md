@@ -32,3 +32,5 @@ rank0 CPU更新/回传宿主范围21.15→16.09秒，次要变化也计入整步
 2/3卡均已无进程，其他服务保持。原默认ZeRO-3源码不改，85.09秒保存为当前更快的流水线候选；随后按用户授权评估TP，再汇总选择。证据为`evidence/2026-10-26/sql-pipeline-cache-{results,profile,state-comparison,smoke}.json`，SQL已保存，原始数据私有。
 
 入口由`build_entry.py`从原匹配初始化流水线派生，原入口不改；`resident_gradients.py`是有界策略，`compare_states.py`检查三步完整状态。原始DB/数据/权重/路径/完整日志和tiny状态不提交，仅过滤证据归档。
+
+已保存`selected-profile.json`及带LF源码哈希检查的`run_selected.py`。进入原独立环境、设置原CPUAdam和VeOmni依赖后，传入模型/数据及全新输出目录即可重放；`--dry-run`只检查源码，不运行NPU训练。原ZeRO-3基线入口保留作对照。
