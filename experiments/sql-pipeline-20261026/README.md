@@ -12,8 +12,16 @@ BF16梯度累积改为16个micro按顺序CPU累积，不再使用旧DP的分片�
 
 ## 当前进度
 
-四层小Qwen两段流水线完成三次更新。对同初始化、同16个micro的未切分模型，两个rank全部47个参数梯度逐位相同；首步完整FP32主权重和Adam m/v逐位相同。完整结果由`verify_smoke.py`导出。27B首次验证loss1.0142586231、203/224，已开始整模型四轮测试，尚无性能结论。
+四层小Qwen两段流水线完成三次更新。对同初始化、同16个micro的未切分模型，两个rank全部47个参数梯度逐位相同；首步完整FP32主权重和Adam m/v逐位相同。完整结果由`verify_smoke.py`导出。修正初始化后27B初始验证loss1.0108281374、202/224，与参考完全相同，正在进行最终四轮测试，尚无最终性能结论。
 
 第一次小测因未切分对照模型的rotary缓冲区被整体`.bfloat16()`转换而出现差异；重建FP32 rotary后通过，失败日志保留在私有实验目录。没有放宽阈值来绕过该失败。
+
+## 已排除的诊断运行
+
+首版CPU范数版本跑完四轮并采样，但初始验证为1.0142586231、203/224，与旧方案1.0108281374、202/224不一致。`cpu-norm-diagnostic`证据明确标记`valid_for_speed_comparison=false`；其训练耗时只作为诊断，不能当同初始化的正式加速比较。随后NPU范数版本发现同样初始差异后，显式校验自身torchrun进程组并停止，没有触碰其他任务。
+
+根因核对：原生zero.Init使rotary频率在NPU上计算，首版在CPU上计算后搬到NPU。两者均为FP32，但频率最大绝对差2.98e-8，BF16计算后初始验证可不同。`probe_rotary.py`在两张卡核对原生zero.Init/CPU/NPU构造：直接NPU构造与原生频率SHA256相同，逐位一致；CPU构造不同。最终入口显式在NPU构造rotary，单条验证也保留旧调用的不传attention_mask方式，并增加正式训练前验证保护；最终实测初始loss和正确token已与旧方案一致。
+
+首版ms数据库还确认CPU范数范围21.95/27.65秒内无设备计算或复制；该实现代价已改为FP32 NPU范数后重新验证，不把它当流水线本身限制。新版本另外记录CPU梯度队列中等待复制与BF16累积的时间。梯度清零纳入整步计时，CPU FP32 Adam不变。
 
 入口`train_pipeline.py`、控制器`run_remote.py`、固定协议`protocol.json`。环境需提供原训练环境、MODEL_DIR、DATA_DIR、CPU_ADAM_EXTENSION、VEOMNI_SOURCE、TRITON_CACHE_DIR。原始DB、权重、数据全文、完整日志和路径仅留服务器，不提交。

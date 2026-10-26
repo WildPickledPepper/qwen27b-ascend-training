@@ -8,6 +8,8 @@
   "padding": "same original rank-local groups; dynamic64 minimum128",
   "compute": "BF16",
   "master_m_v": "FP32 CPU",
+  "global_norm": "FP32 NPU in final candidate; CPU FP64 diagnostic excluded",
+  "rotary_initialization": "NPU FP32, byte-identical to native zero.Init; CPU construction excluded",
   "gradient_accumulation": "BF16 CPU in microbatch order; different reduction tree from ZeRO-3",
   "gradient_clipping": 1.0,
   "adamw": {"betas": [0.9, 0.999], "eps": 1e-8, "weight_decay": 0.01},

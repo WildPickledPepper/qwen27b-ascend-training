@@ -13,6 +13,7 @@ p.add_argument('--model', required=True); p.add_argument('--data', required=True
 p.add_argument('--output', required=True); p.add_argument('--steps', type=int, default=4)
 p.add_argument('--tiny', action='store_true'); p.add_argument('--profile', action='store_true')
 p.add_argument('--slots', type=int, default=16)
+p.add_argument('--norm-device',choices=['cpu','npu'],default='cpu')
 a = p.parse_args()
 rank = int(os.environ['RANK']); assert int(os.environ['WORLD_SIZE']) == 2
 assert os.environ['ASCEND_RT_VISIBLE_DEVICES'] == '2,3'
@@ -62,7 +63,7 @@ config.num_hidden_layers = split
 config.layer_types = config.layer_types[:split] if rank == 0 else config.layer_types[split:]
 # to_empty also empties rotary buffers; reconstruct rotary module afterwards.
 full.to_empty(device='cpu'); full.to(dtype=torch.bfloat16)
-full.model.rotary_emb = qm.Qwen3_5TextRotaryEmbedding(config=config)
+full.model.rotary_emb = qm.Qwen3_5TextRotaryEmbedding(config=config,device=device)
 mapping = json.loads((Path(a.model)/'model.safetensors.index.json').read_text())['weight_map']
 from safetensors import safe_open
 manifest=[]
@@ -100,7 +101,7 @@ class Offload:
         self.accum=[torch.zeros(p.numel(),dtype=torch.bfloat16) for p in params]
         self.slots=[torch.empty(self.chunk,dtype=torch.bfloat16,pin_memory=True) for _ in range(a.slots)]
         for i in range(a.slots): self.free.put(i)
-        self.bytes=0; self.wait=0.
+        self.bytes=0; self.wait=0.; self.copy_wait=0.; self.cpu_add=0.
         self.thread=threading.Thread(target=self.worker,daemon=True); self.thread.start()
         self.hooks=[p.register_post_accumulate_grad_hook(self.hook(i)) for i,p in enumerate(params)]
     def worker(self):
@@ -110,8 +111,10 @@ class Offload:
             if job is None: self.jobs.task_done(); return
             slot,idx,start,n,event=job
             try:
-                event.synchronize()
+                t=time.monotonic(); event.synchronize(); self.copy_wait+=time.monotonic()-t
+                t=time.monotonic()
                 self.accum[idx][start:start+n].add_(self.slots[slot][:n])
+                self.cpu_add+=time.monotonic()-t
             except BaseException:
                 self.error=traceback.format_exc()
             finally: self.free.put(slot); self.jobs.task_done()
@@ -132,7 +135,7 @@ class Offload:
     def reset(self):
         self.drain()
         for buf in self.accum: buf.zero_()
-        self.bytes=0; self.wait=0.
+        self.bytes=0; self.wait=0.; self.copy_wait=0.; self.cpu_add=0.
 
 spec=importlib.util.spec_from_file_location('cpu_adam',os.environ['CPU_ADAM_EXTENSION'])
 ext=importlib.util.module_from_spec(spec); spec.loader.exec_module(ext)
@@ -195,6 +198,7 @@ def evaluate():
     with torch.no_grad():
         for row in val[:8]:
             ids,labels,mask=batch([row],exact=True)
+            mask=None  # Exact original validation call: no padding mask for single rows.
             if rank==0:
                 act=forward(ids,labels,mask); p2p(send=act)
             else:
@@ -209,10 +213,12 @@ def evaluate():
     return metrics
 
 before=evaluate(); steps=[]
+if not a.tiny:
+    assert before['correct']==202 and abs(before['loss']-1.0108281373977661)<=1e-6,before
 if a.tiny:
     if rank==1:
         ref=qm.Qwen3_5ForCausalLM(reference_config).to(dtype=torch.bfloat16)
-        ref.model.rotary_emb=qm.Qwen3_5TextRotaryEmbedding(config=reference_config)
+        ref.model.rotary_emb=qm.Qwen3_5TextRotaryEmbedding(config=reference_config,device=device)
         with torch.no_grad():
             for name,param in ref.named_parameters():
                 gen=torch.Generator().manual_seed(int(hashlib.sha256(name.encode()).hexdigest()[:8],16))
@@ -234,7 +240,7 @@ if a.tiny:
         del ref,refgrads,loss; torch.npu.empty_cache()
     dist.barrier()
 for step in range(a.steps):
-    model.train(); off.reset(); dist.barrier(); torch.npu.synchronize(); torch.npu.reset_peak_memory_stats()
+    model.train(); dist.barrier(); torch.npu.synchronize(); torch.npu.reset_peak_memory_stats()
     prof=None
     if a.profile and step==a.steps-1:
         prof=torch_npu.profiler.profile(activities=[torch_npu.profiler.ProfilerActivity.CPU,torch_npu.profiler.ProfilerActivity.NPU],
@@ -242,7 +248,9 @@ for step in range(a.steps):
              experimental_config=torch_npu.profiler._ExperimentalConfig(profiler_level=torch_npu.profiler.ProfilerLevel.Level1,export_type=[torch_npu.profiler.ExportType.Db]),
              on_trace_ready=torch_npu.profiler.tensorboard_trace_handler(str(out/f'profile-rank{rank}')))
         prof.start()
-    started=time.monotonic(); selected=groups(step)
+    started=time.monotonic()
+    with scope('pipeline/gradient_zero'): off.reset()
+    selected=groups(step)
     denom=sum(sum(y!=-100 for y in row['labels'][1:]) for group in selected for row in group)
     phase=dict(forward_wall=0.,backward_wall=0.,p2p_wall=0.)
     def fw(m):
@@ -280,10 +288,19 @@ for step in range(a.steps):
     torch.npu.synchronize(); fb_end=time.monotonic()
     # Full-model global clipping: sum both stage squared norms before any update.
     with scope('optimizer/global_norm'):
-        square=0.
-        for idx,start,n in layout:
-            square+=float(off.accum[idx][start:start+n].float().double().square().sum())
-        sq=torch.tensor(square,device=device,dtype=torch.float32); dist.all_reduce(sq)
+        if a.norm_device=='cpu':
+            square=0.
+            for idx,start,n in layout:
+                square+=float(off.accum[idx][start:start+n].float().double().square().sum())
+            sq=torch.tensor(square,device=device,dtype=torch.float32)
+        else:
+            norms=[]
+            for idx,start,n in layout:
+                buf=off.accum[idx][start:start+n].to(device)
+                norms.append(torch.linalg.vector_norm(buf.float(),ord=2))
+                del buf
+            sq=torch.linalg.vector_norm(torch.stack(norms),ord=2).square()
+        dist.all_reduce(sq)
         norm=math.sqrt(float(sq)); assert math.isfinite(norm)
         scale=max(1.,(norm+1e-6))
     progress=step; factor=progress/35 if progress<35 else .5*(1+math.cos(math.pi*(progress-35)/(698-35)))
@@ -306,7 +323,9 @@ for step in range(a.steps):
     torch.npu.synchronize(); dist.barrier(); elapsed=time.monotonic()-started
     row=dict(step=step+1,seconds=elapsed,profiled=prof is not None,phase=phase,
              forward_backward_and_drain_seconds=fb_end-started,cpu_update_return_seconds=time.monotonic()-update_start,
-             grad_norm=norm,gradient_d2h_bytes=off.bytes,offload_slot_wait=off.wait,
+             grad_norm=norm,norm_device=a.norm_device,global_norm_seconds=update_start-fb_end,
+             gradient_d2h_bytes=off.bytes,offload_slot_wait=off.wait,
+             worker_copy_wait_seconds=off.copy_wait,worker_cpu_add_seconds=off.cpu_add,
              allocated_peak=torch.npu.max_memory_allocated(),reserved_peak=torch.npu.max_memory_reserved(),
              input_tokens=sum(x['length'] for g in selected for x in g),
              padded_tokens=sum(16*(max(x['length'] for x in g) if a.tiny else max(128,math.ceil(max(x['length'] for x in g)/64)*64)) for g in selected))

@@ -1,0 +1,11 @@
+{
+  "rank": 0,
+  "native_dtype": "torch.float32",
+  "native_sha256": "0c9db70192fc2909c35a8e0f5b9f2de37f820868ae68b24f24e6bbdc459c9e72",
+  "cpu_sha256": "ec4437c15ead01576c3e6c7412c11daba363d17cee8bfce5c5d1c54e2e09d2d0",
+  "npu_sha256": "0c9db70192fc2909c35a8e0f5b9f2de37f820868ae68b24f24e6bbdc459c9e72",
+  "native_cpu_exact": false,
+  "native_npu_exact": true,
+  "cpu_max_abs": 2.9802322387695312e-08,
+  "npu_max_abs": 0.0
+}
