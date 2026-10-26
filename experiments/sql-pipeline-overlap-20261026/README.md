@@ -78,3 +78,26 @@ rank0实际allocated峰值约60.731GB，rank1约58.041GB，与容量预测一致
 最终证据：[4GiB正式结果](../../evidence/2026-10-26/sql-pipeline-overlap-cache4-results.json)、[4GiB ms/SQL](../../evidence/2026-10-26/sql-pipeline-overlap-after-cache4.json)、[三步完整状态](../../evidence/2026-10-26/sql-pipeline-overlap-cache4-state-comparison.json)、[独立首步校验](../../evidence/2026-10-26/sql-pipeline-overlap-cache4-smoke.json)。原始DB/数据/权重/私有路径不入Git。
 
 接口机制参考：[Ascend非阻塞复制实现](https://gitee.com/ascend/pytorch/blob/31caec7cee4857c968566db38ecef32827ad6926/torch_npu/csrc/aten/ops/op_api/CopyKernelOpApi.cpp)。历史源码仅用于理解接口，性能结论来自本机实际流号和ms事件。
+
+## 训练显存模块清单（CPU只读核对）
+
+用户随后要求列出显存模块。按正式4GiB任务实际参数manifest与驻留参数索引计算，未重新启动NPU训练。以下全部GiB，不能与十进制GB混用。
+
+| 持久权重模块 | 物理2卡 | 物理3卡 |
+|---|---:|---:|
+| FFN gate/up | 10.625000 | 10.625000 |
+| FFN down | 5.312500 | 5.312500 |
+| GDN线性注意力 | 5.180064 | 5.180064 |
+| 普通self-attention | 1.562508 | 1.562508 |
+| token embedding | 2.368164 | 0 |
+| lm_head | 0 | 2.368164 |
+| 其他norm | 0.000610 | 0.000620 |
+| BF16权重小计 | **25.048846** | **25.048855** |
+
+此外每卡持久梯度缓存恰为4GiB：embedding或lm_head梯度2.368164GiB，FFN gate/up 0.996094GiB、FFN down 0.498047GiB、普通attention 0.136723GiB，以及GDN/norm约0.000973GiB；这些是权重之外独立的梯度存储。
+
+框架allocated峰值2卡56.560227GiB、3卡54.054480GiB。减去测量期间始终驻留的权重及4GiB缓存，得到同一峰值时其他框架内存合计27.511382GiB、25.005625GiB，包含激活、临时梯度、算子临时张量及模型缓冲区；无逐项内存记录，不能进一步精确拆分。这里减的是持久常量，不是拿多个不同时间的峰值相加减。
+
+框架reserved峰值58.990234/56.269531GiB包含allocated，不能另加；reserved峰值与allocated峰值可能不同时发生，不将二者差值叫精确同时空闲缓存。卡当前无训练进程，约3.34GiB基础占用是退出后的观测，并非精确拆出的训练期驱动/通信占用。
+
+CPU FP32 master每rank约50.0977GiB、m/v合计约100.1954GiB，以及CPU梯度累积与锁页接收槽均在主机内存，不计HBM。过滤清单及计算依据见[显存模块证据](../../evidence/2026-10-26/sql-pipeline-overlap-memory-inventory.json)，可用`memory_inventory.py`只读重算。

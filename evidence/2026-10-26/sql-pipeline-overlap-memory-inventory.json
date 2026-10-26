@@ -1,0 +1,99 @@
+{
+  "ranks": [
+    {
+      "rank": 0,
+      "physical_card": 2,
+      "module_groups": {
+        "token_embedding": {
+          "parameter_tensors": 1,
+          "weight_bytes": 2542796800,
+          "resident_gradient_bytes": 2542796800
+        },
+        "gdn_linear_attention": {
+          "parameter_tensors": 216,
+          "weight_bytes": 5562051072,
+          "resident_gradient_bytes": 983040
+        },
+        "ffn_gate_up": {
+          "parameter_tensors": 64,
+          "weight_bytes": 11408506880,
+          "resident_gradient_bytes": 1069547520
+        },
+        "ffn_down": {
+          "parameter_tensors": 32,
+          "weight_bytes": 5704253440,
+          "resident_gradient_bytes": 534773760
+        },
+        "other_norm": {
+          "parameter_tensors": 64,
+          "weight_bytes": 655360,
+          "resident_gradient_bytes": 61440
+        },
+        "self_attention": {
+          "parameter_tensors": 48,
+          "weight_bytes": 1677729792,
+          "resident_gradient_bytes": 146804736
+        }
+      },
+      "weight_bytes": 26895993344,
+      "resident_gradient_bytes": 4294967296,
+      "framework_peak_allocated_bytes": 60731081728,
+      "framework_peak_reserved_bytes": 63340281856,
+      "residual_at_allocated_peak_bytes": 29540121088,
+      "cpu_fp32_master_bytes": 53791986688,
+      "cpu_fp32_m_v_bytes": 107583973376
+    },
+    {
+      "rank": 1,
+      "physical_card": 3,
+      "module_groups": {
+        "gdn_linear_attention": {
+          "parameter_tensors": 216,
+          "weight_bytes": 5562051072,
+          "resident_gradient_bytes": 983040
+        },
+        "ffn_gate_up": {
+          "parameter_tensors": 64,
+          "weight_bytes": 11408506880,
+          "resident_gradient_bytes": 1069547520
+        },
+        "ffn_down": {
+          "parameter_tensors": 32,
+          "weight_bytes": 5704253440,
+          "resident_gradient_bytes": 534773760
+        },
+        "other_norm": {
+          "parameter_tensors": 65,
+          "weight_bytes": 665600,
+          "resident_gradient_bytes": 61440
+        },
+        "self_attention": {
+          "parameter_tensors": 48,
+          "weight_bytes": 1677729792,
+          "resident_gradient_bytes": 146804736
+        },
+        "output_lm_head": {
+          "parameter_tensors": 1,
+          "weight_bytes": 2542796800,
+          "resident_gradient_bytes": 2542796800
+        }
+      },
+      "weight_bytes": 26896003584,
+      "resident_gradient_bytes": 4294967296,
+      "framework_peak_allocated_bytes": 58040556032,
+      "framework_peak_reserved_bytes": 60418949120,
+      "residual_at_allocated_peak_bytes": 26849585152,
+      "cpu_fp32_master_bytes": 53792007168,
+      "cpu_fp32_m_v_bytes": 107584014336
+    }
+  ],
+  "unit": "All sizes exact bytes; divide by 2**30 for GiB",
+  "interpretation": [
+    "Weights and 4GiB cache are persistent during the measured steps and are included in allocated/reserved.",
+    "Residual subtracts persistent weights/cache from allocated peak; it is one combined amount, not separate module peaks.",
+    "Activations, temporary gradients, operator tensors and model buffers were not individually tracked.",
+    "Max reserved and max allocated can occur at different times; their difference is not an exact simultaneous idle-cache measurement.",
+    "CPU master/m/v and pinned receive slots are host RAM, not HBM.",
+    "These are completed training peaks, not current live usage; no model is launched by this script."
+  ]
+}
