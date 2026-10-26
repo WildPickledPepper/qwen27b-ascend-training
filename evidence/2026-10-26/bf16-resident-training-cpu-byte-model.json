@@ -1,0 +1,31 @@
+{
+  "model": "Constant measured CPU add cost per logical input byte; not a hardware bound or total-step prediction",
+  "microbatches": 16,
+  "additional_resident_bytes_per_rank": 3221225472,
+  "ranks": [
+    {
+      "rank": 0,
+      "old_logical_input_bytes": 365911384064.0,
+      "new_logical_input_bytes": 317593001984.0,
+      "saved_fraction": 0.1320494091857739,
+      "old_cpu_add_seconds": 47.22946271614637,
+      "new_cpu_add_seconds": 42.297602218575776,
+      "estimated_saved_seconds": 6.236622647828664,
+      "measured_saved_seconds": 4.931860497570597,
+      "estimated_seconds_saved_per_additional_resident_GiB": 2.078874215942888,
+      "estimated_seconds_saved_per_logical_GB": 0.12907349913957764
+    },
+    {
+      "rank": 1,
+      "old_logical_input_bytes": 365911547904.0,
+      "new_logical_input_bytes": 317593165824.0,
+      "saved_fraction": 0.1320493500595306,
+      "old_cpu_add_seconds": 45.365574343595654,
+      "new_cpu_add_seconds": 39.764417335391045,
+      "estimated_saved_seconds": 5.990494607149123,
+      "measured_saved_seconds": 5.601157008204609,
+      "estimated_seconds_saved_per_additional_resident_GiB": 1.9968315357163744,
+      "estimated_seconds_saved_per_logical_GB": 0.12397961912778359
+    }
+  ]
+}
