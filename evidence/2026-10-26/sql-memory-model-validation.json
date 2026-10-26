@@ -1,0 +1,148 @@
+{
+  "parameter_manifest_checks": [
+    {
+      "rank": 0,
+      "architecture_parameter_count_exact": true,
+      "formula_categories": {
+        "ffn_forward_intermediates": {
+          "bytes": 8556380160,
+          "reference_exact": true
+        },
+        "rmsnorm_forward_intermediates": {
+          "bytes": 9822689280,
+          "reference_exact": true
+        },
+        "attention_forward_intermediates": {
+          "bytes": 6794772480,
+          "reference_exact": true
+        },
+        "hidden_states_checkpoint_boundaries_and_pipeline": {
+          "bytes": 2139095040,
+          "reference_exact": true
+        }
+      }
+    },
+    {
+      "rank": 1,
+      "architecture_parameter_count_exact": true,
+      "formula_categories": {
+        "ffn_forward_intermediates": {
+          "bytes": 4563402752,
+          "reference_exact": true
+        },
+        "rmsnorm_forward_intermediates": {
+          "bytes": 5448519680,
+          "reference_exact": true
+        },
+        "attention_forward_intermediates": {
+          "bytes": 3623878656,
+          "reference_exact": true
+        },
+        "hidden_states_checkpoint_boundaries_and_pipeline": {
+          "bytes": 1006632960,
+          "reference_exact": true
+        }
+      }
+    }
+  ],
+  "cases": [
+    {
+      "case": "calibrated_reference_not_independent",
+      "micro_batch": 16,
+      "padded_sequence": 256,
+      "rank": 0,
+      "predicted_gib": 56.5595006942749,
+      "observed_gib": 56.559969902038574,
+      "error_mib": -0.48046875,
+      "error_percent": -0.0008295756954689672
+    },
+    {
+      "case": "calibrated_reference_not_independent",
+      "micro_batch": 16,
+      "padded_sequence": 256,
+      "rank": 1,
+      "predicted_gib": 54.05388355255127,
+      "observed_gib": 54.054222106933594,
+      "error_mib": -0.3466796875,
+      "error_percent": -0.0006263236600731546
+    },
+    {
+      "case": "held_out_historical_shape_not_used_for_calibration",
+      "micro_batch": 16,
+      "padded_sequence": 192,
+      "rank": 0,
+      "predicted_gib": 49.369487166404724,
+      "observed_gib": 49.370452880859375,
+      "error_mib": -0.9888916015625,
+      "error_percent": -0.001956057516793168
+    },
+    {
+      "case": "held_out_historical_shape_not_used_for_calibration",
+      "micro_batch": 16,
+      "padded_sequence": 192,
+      "rank": 1,
+      "predicted_gib": 47.59177386760712,
+      "observed_gib": 47.59237098693848,
+      "error_mib": -0.6114501953125,
+      "error_percent": -0.0012546534643624713
+    }
+  ],
+  "what_if": [
+    {
+      "micro_batch": 8,
+      "sequence": 256,
+      "status": "not_run_on_hardware",
+      "predicted_allocated_template_gib": [
+        42.970489263534546,
+        41.551539182662964
+      ]
+    },
+    {
+      "micro_batch": 16,
+      "sequence": 128,
+      "status": "not_run_on_hardware",
+      "predicted_allocated_template_gib": [
+        42.443145513534546,
+        41.270289182662964
+      ]
+    },
+    {
+      "micro_batch": 16,
+      "sequence": 512,
+      "status": "not_run_on_hardware",
+      "predicted_allocated_template_gib": [
+        87.95627355575562,
+        81.30857229232788
+      ]
+    }
+  ],
+  "sequence_evidence": {
+    "source": "original cache4-full logs, groups(step) and dynamic64/min128 padding",
+    "step2_padded_micro_sequences": [
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192
+    ]
+  },
+  "config_sha256": "f8d190c5b89c1521220f935d2567a587d6e291ed69066a45a106560b05a2174c",
+  "calibration_sha256": "0e5402850d437faee3e0054e1185255e181bdadc4ababa6644df6937042b2618",
+  "limits": [
+    "256 reference is calibrated; it is not an independent accuracy test.",
+    "192 held-out case checks only one additional length at unchanged B, implementation and schedule.",
+    "8-batch,128/512 length predictions are unvalidated; 512 may trigger other peak/workspace behavior.",
+    "No NPU job was started; physical HBM prediction requires runtime and allocator slack inputs."
+  ]
+}

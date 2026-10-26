@@ -1,0 +1,25 @@
+{
+  "version": "qwen35-text-two-stage-4gib-v0",
+  "reference_micro_batch": 16,
+  "reference_padded_sequence": 256,
+  "source": "evidence/2026-10-26/sql-memory-breakdown.json",
+  "scope": "Calibrated peak templates, not an independently validated general peak simulator",
+  "ranks": [
+    {
+      "rank": 0,
+      "noncheckpoint_attention_sets": 15,
+      "hidden_vector_count": 51,
+      "recompute_reference_bytes": 1683104768,
+      "small_control_reference_bytes": 2233856,
+      "reference_peak_bytes": 60730805248
+    },
+    {
+      "rank": 1,
+      "noncheckpoint_attention_sets": 8,
+      "hidden_vector_count": 24,
+      "recompute_reference_bytes": 0,
+      "small_control_reference_bytes": 1085952,
+      "reference_peak_bytes": 58040279040
+    }
+  ]
+}

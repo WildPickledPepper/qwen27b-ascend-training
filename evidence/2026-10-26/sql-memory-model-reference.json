@@ -1,0 +1,178 @@
+{
+  "model": "qwen35-two-stage-calibrated-memory-v0",
+  "micro_batch": 16,
+  "padded_sequence": 256,
+  "pipeline_microbatches": 16,
+  "global_batch": 256,
+  "ranks": [
+    {
+      "rank": 0,
+      "physical_card": 2,
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26895993344,
+          "gib": 25.048845767974854,
+          "basis": "architecture_exact",
+          "formula": "2*parameter_elements"
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294967296.0,
+          "gib": 4.0,
+          "basis": "budget_input",
+          "formula": "resident_GiB*2**30"
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 8556380160,
+          "gib": 7.96875,
+          "basis": "shape_formula_with_calibrated_lifetime",
+          "formula": "15 * 8*B*S*I"
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 9822689280,
+          "gib": 9.148092269897461,
+          "basis": "shape_formula_with_calibrated_lifetime",
+          "formula": "15*(2*Norm(H)+QNorm+KNorm) + final_norm_if_rank1"
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 6794772480,
+          "gib": 6.328125,
+          "basis": "shape_formula_with_calibrated_lifetime",
+          "formula": "15*(12*B*S*Q*D+6*B*Q*S**2)"
+        },
+        {
+          "category": "hidden_states_checkpoint_boundaries_and_pipeline",
+          "bytes": 2139095040,
+          "gib": 1.9921875,
+          "basis": "shape_formula_with_calibrated_lifetime",
+          "formula": "51*2*B*S*H"
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "bytes": 1683104768.0,
+          "gib": 1.5675134658813477,
+          "basis": "empirical_BL_scaling_not_derived_kernel_workspace",
+          "formula": "reference_recompute_bytes*(B*S)/(16*256)"
+        },
+        {
+          "category": "temporary_gradients",
+          "bytes": 541065216,
+          "gib": 0.50390625,
+          "basis": "shape_formula_with_calibrated_lifetime",
+          "formula": "two_BF16_HxI_weight_buffers + BF16_BxSxI + BF16_BxSxH"
+        },
+        {
+          "category": "small_controls_and_buffers",
+          "bytes": 2233856.0,
+          "gib": 0.0020804405212402344,
+          "basis": "empirical_small_term",
+          "formula": "reference_small_bytes*(B*S)/(16*256)"
+        },
+        {
+          "category": "extra_workspace_allowance",
+          "bytes": 0.0,
+          "gib": 0.0,
+          "basis": "explicit_user_allowance",
+          "formula": "extra_workspace_GiB*2**30"
+        }
+      ],
+      "estimated_allocated_peak_template_gib": 56.5595006942749,
+      "estimated_physical_with_supplied_overheads_gib": null,
+      "cpu_fp32_master_gib": 50.09769153594971,
+      "cpu_fp32_m_v_gib": 100.19538307189941
+    },
+    {
+      "rank": 1,
+      "physical_card": 3,
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26896003584,
+          "gib": 25.048855304718018,
+          "basis": "architecture_exact",
+          "formula": "2*parameter_elements"
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294967296.0,
+          "gib": 4.0,
+          "basis": "budget_input",
+          "formula": "resident_GiB*2**30"
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 4563402752,
+          "gib": 4.25,
+          "basis": "shape_formula_with_calibrated_lifetime",
+          "formula": "8 * 8*B*S*I"
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 5448519680,
+          "gib": 5.074329376220703,
+          "basis": "shape_formula_with_calibrated_lifetime",
+          "formula": "8*(2*Norm(H)+QNorm+KNorm) + final_norm_if_rank1"
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 3623878656,
+          "gib": 3.375,
+          "basis": "shape_formula_with_calibrated_lifetime",
+          "formula": "8*(12*B*S*Q*D+6*B*Q*S**2)"
+        },
+        {
+          "category": "hidden_states_checkpoint_boundaries_and_pipeline",
+          "bytes": 1006632960,
+          "gib": 0.9375,
+          "basis": "shape_formula_with_calibrated_lifetime",
+          "formula": "24*2*B*S*H"
+        },
+        {
+          "category": "loss_forward_intermediates",
+          "bytes": 4068474880,
+          "gib": 3.7890625,
+          "basis": "shape_formula_with_calibrated_lifetime",
+          "formula": "4*B*S*V"
+        },
+        {
+          "category": "temporary_gradients",
+          "bytes": 8136949760,
+          "gib": 7.578125,
+          "basis": "shape_formula_with_calibrated_lifetime",
+          "formula": "2*4*B*S*V; output gradients, not parameter gradients"
+        },
+        {
+          "category": "small_controls_and_buffers",
+          "bytes": 1085952.0,
+          "gib": 0.0010113716125488281,
+          "basis": "empirical_small_term",
+          "formula": "reference_small_bytes*(B*S)/(16*256)"
+        },
+        {
+          "category": "extra_workspace_allowance",
+          "bytes": 0.0,
+          "gib": 0.0,
+          "basis": "explicit_user_allowance",
+          "formula": "extra_workspace_GiB*2**30"
+        }
+      ],
+      "estimated_allocated_peak_template_gib": 54.05388355255127,
+      "estimated_physical_with_supplied_overheads_gib": null,
+      "cpu_fp32_master_gib": 50.097710609436035,
+      "cpu_fp32_m_v_gib": 100.19542121887207
+    }
+  ],
+  "status": "reference_reconstruction",
+  "constraints": [
+    "Pinned BF16 weights/accumulation, CPU FP32 master/m/v, eager attention, unfused RMSNorm/loss, 48 checkpoint layers, two-stage schedule.",
+    "Lifetime multiplicities 15/8 and hidden-state counts 51/24 are calibrated to the measured peak scenarios; they are not inferred for arbitrary schedules.",
+    "Changing shape, checkpointing, fusion, sequence distribution or schedule can move the peak; extrapolations require later validation.",
+    "Recompute/small terms are empirical BL scaling; unknown backend workspace must be supplied or modeled separately.",
+    "Allocated is not reserved or device total. Missing runtime/allocator overheads leave physical prediction unset.",
+    "Changing resident budget only estimates a storage delta; it does not recompute whole-parameter cache selection or temporary lifetimes."
+  ]
+}
