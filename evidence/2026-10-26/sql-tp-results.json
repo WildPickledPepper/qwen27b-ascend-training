@@ -1,0 +1,592 @@
+{
+  "tp_seconds_per_256": 195.7490101151634,
+  "normal_seconds": [
+    192.36123838019557,
+    199.13678185013123
+  ],
+  "pipeline_seconds_per_256": 85.09019123506732,
+  "tp_time_over_pipeline": 2.300488543672369,
+  "tp_extra_time_percent": 130.0488543672369,
+  "validation_initial": {
+    "tp": {
+      "loss": 1.0148019790649414,
+      "assistant_tokens": 224,
+      "correct": 201
+    },
+    "pipeline": {
+      "loss": 1.0108281373977661,
+      "assistant_tokens": 224,
+      "correct": 202
+    }
+  },
+  "validation_after_768": {
+    "tp": {
+      "loss": 0.855895459651947,
+      "assistant_tokens": 224,
+      "correct": 204
+    },
+    "pipeline": {
+      "loss": 0.855101466178894,
+      "assistant_tokens": 224,
+      "correct": 205
+    }
+  },
+  "workload_checks": [
+    {
+      "rank": 0,
+      "same_data_order_lengths_validation_split": true,
+      "same_input_and_padded_tokens": true,
+      "original_parameters": 26895998464,
+      "original_parameter_tensors": 851,
+      "checkpointed_layers": 48,
+      "tp": 2,
+      "dp": 1,
+      "norm_hook_calls_per_micro": 32
+    },
+    {
+      "rank": 1,
+      "same_data_order_lengths_validation_split": true,
+      "same_input_and_padded_tokens": true,
+      "original_parameters": 26895998464,
+      "original_parameter_tensors": 851,
+      "checkpointed_layers": 48,
+      "tp": 2,
+      "dp": 1,
+      "norm_hook_calls_per_micro": 32
+    }
+  ],
+  "rank_results": [
+    {
+      "steps": [
+        {
+          "step": 1,
+          "seconds": 229.1913090099115,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 36.90779366996139,
+            "backward_wall": 163.63462489959784,
+            "step_wall": 27.40460077067837
+          },
+          "grad_norm": 40.45482635498047,
+          "allocated_peak": 61333069824,
+          "reserved_peak": 64437092352,
+          "input_tokens": 28426,
+          "padded_tokens": 54272,
+          "norm_hook_calls": {
+            "model.layers.3.self_attn.q_norm.weight": 16,
+            "model.layers.3.self_attn.k_norm.weight": 16,
+            "model.layers.7.self_attn.q_norm.weight": 16,
+            "model.layers.7.self_attn.k_norm.weight": 16,
+            "model.layers.11.self_attn.q_norm.weight": 16,
+            "model.layers.11.self_attn.k_norm.weight": 16,
+            "model.layers.15.self_attn.q_norm.weight": 16,
+            "model.layers.15.self_attn.k_norm.weight": 16,
+            "model.layers.19.self_attn.q_norm.weight": 16,
+            "model.layers.19.self_attn.k_norm.weight": 16,
+            "model.layers.23.self_attn.q_norm.weight": 16,
+            "model.layers.23.self_attn.k_norm.weight": 16,
+            "model.layers.27.self_attn.q_norm.weight": 16,
+            "model.layers.27.self_attn.k_norm.weight": 16,
+            "model.layers.31.self_attn.q_norm.weight": 16,
+            "model.layers.31.self_attn.k_norm.weight": 16,
+            "model.layers.35.self_attn.q_norm.weight": 16,
+            "model.layers.35.self_attn.k_norm.weight": 16,
+            "model.layers.39.self_attn.q_norm.weight": 16,
+            "model.layers.39.self_attn.k_norm.weight": 16,
+            "model.layers.43.self_attn.q_norm.weight": 16,
+            "model.layers.43.self_attn.k_norm.weight": 16,
+            "model.layers.47.self_attn.q_norm.weight": 16,
+            "model.layers.47.self_attn.k_norm.weight": 16,
+            "model.layers.51.self_attn.q_norm.weight": 16,
+            "model.layers.51.self_attn.k_norm.weight": 16,
+            "model.layers.55.self_attn.q_norm.weight": 16,
+            "model.layers.55.self_attn.k_norm.weight": 16,
+            "model.layers.59.self_attn.q_norm.weight": 16,
+            "model.layers.59.self_attn.k_norm.weight": 16,
+            "model.layers.63.self_attn.q_norm.weight": 16,
+            "model.layers.63.self_attn.k_norm.weight": 16
+          }
+        },
+        {
+          "step": 2,
+          "seconds": 192.36123838019557,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 26.783043529838324,
+            "backward_wall": 150.1655524102971,
+            "step_wall": 14.173575659980997
+          },
+          "grad_norm": 40.475502014160156,
+          "allocated_peak": 61078765568,
+          "reserved_peak": 64464355328,
+          "input_tokens": 28549,
+          "padded_tokens": 49152,
+          "norm_hook_calls": {
+            "model.layers.3.self_attn.q_norm.weight": 16,
+            "model.layers.3.self_attn.k_norm.weight": 16,
+            "model.layers.7.self_attn.q_norm.weight": 16,
+            "model.layers.7.self_attn.k_norm.weight": 16,
+            "model.layers.11.self_attn.q_norm.weight": 16,
+            "model.layers.11.self_attn.k_norm.weight": 16,
+            "model.layers.15.self_attn.q_norm.weight": 16,
+            "model.layers.15.self_attn.k_norm.weight": 16,
+            "model.layers.19.self_attn.q_norm.weight": 16,
+            "model.layers.19.self_attn.k_norm.weight": 16,
+            "model.layers.23.self_attn.q_norm.weight": 16,
+            "model.layers.23.self_attn.k_norm.weight": 16,
+            "model.layers.27.self_attn.q_norm.weight": 16,
+            "model.layers.27.self_attn.k_norm.weight": 16,
+            "model.layers.31.self_attn.q_norm.weight": 16,
+            "model.layers.31.self_attn.k_norm.weight": 16,
+            "model.layers.35.self_attn.q_norm.weight": 16,
+            "model.layers.35.self_attn.k_norm.weight": 16,
+            "model.layers.39.self_attn.q_norm.weight": 16,
+            "model.layers.39.self_attn.k_norm.weight": 16,
+            "model.layers.43.self_attn.q_norm.weight": 16,
+            "model.layers.43.self_attn.k_norm.weight": 16,
+            "model.layers.47.self_attn.q_norm.weight": 16,
+            "model.layers.47.self_attn.k_norm.weight": 16,
+            "model.layers.51.self_attn.q_norm.weight": 16,
+            "model.layers.51.self_attn.k_norm.weight": 16,
+            "model.layers.55.self_attn.q_norm.weight": 16,
+            "model.layers.55.self_attn.k_norm.weight": 16,
+            "model.layers.59.self_attn.q_norm.weight": 16,
+            "model.layers.59.self_attn.k_norm.weight": 16,
+            "model.layers.63.self_attn.q_norm.weight": 16,
+            "model.layers.63.self_attn.k_norm.weight": 16
+          }
+        },
+        {
+          "step": 3,
+          "seconds": 199.13678185013123,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 23.028213820187375,
+            "backward_wall": 160.82612394960597,
+            "step_wall": 15.150258260546252
+          },
+          "grad_norm": 38.75095748901367,
+          "allocated_peak": 61333069824,
+          "reserved_peak": 64376274944,
+          "input_tokens": 28564,
+          "padded_tokens": 50176,
+          "norm_hook_calls": {
+            "model.layers.3.self_attn.q_norm.weight": 16,
+            "model.layers.3.self_attn.k_norm.weight": 16,
+            "model.layers.7.self_attn.q_norm.weight": 16,
+            "model.layers.7.self_attn.k_norm.weight": 16,
+            "model.layers.11.self_attn.q_norm.weight": 16,
+            "model.layers.11.self_attn.k_norm.weight": 16,
+            "model.layers.15.self_attn.q_norm.weight": 16,
+            "model.layers.15.self_attn.k_norm.weight": 16,
+            "model.layers.19.self_attn.q_norm.weight": 16,
+            "model.layers.19.self_attn.k_norm.weight": 16,
+            "model.layers.23.self_attn.q_norm.weight": 16,
+            "model.layers.23.self_attn.k_norm.weight": 16,
+            "model.layers.27.self_attn.q_norm.weight": 16,
+            "model.layers.27.self_attn.k_norm.weight": 16,
+            "model.layers.31.self_attn.q_norm.weight": 16,
+            "model.layers.31.self_attn.k_norm.weight": 16,
+            "model.layers.35.self_attn.q_norm.weight": 16,
+            "model.layers.35.self_attn.k_norm.weight": 16,
+            "model.layers.39.self_attn.q_norm.weight": 16,
+            "model.layers.39.self_attn.k_norm.weight": 16,
+            "model.layers.43.self_attn.q_norm.weight": 16,
+            "model.layers.43.self_attn.k_norm.weight": 16,
+            "model.layers.47.self_attn.q_norm.weight": 16,
+            "model.layers.47.self_attn.k_norm.weight": 16,
+            "model.layers.51.self_attn.q_norm.weight": 16,
+            "model.layers.51.self_attn.k_norm.weight": 16,
+            "model.layers.55.self_attn.q_norm.weight": 16,
+            "model.layers.55.self_attn.k_norm.weight": 16,
+            "model.layers.59.self_attn.q_norm.weight": 16,
+            "model.layers.59.self_attn.k_norm.weight": 16,
+            "model.layers.63.self_attn.q_norm.weight": 16,
+            "model.layers.63.self_attn.k_norm.weight": 16
+          }
+        },
+        {
+          "step": 4,
+          "seconds": 208.93961319001392,
+          "profiled": true,
+          "phase": {
+            "forward_wall": 40.043886329745874,
+            "backward_wall": 153.65453606005758,
+            "step_wall": 15.114559959853068
+          },
+          "grad_norm": 44.48672866821289,
+          "allocated_peak": 61333069824,
+          "reserved_peak": 64506298368,
+          "input_tokens": 28426,
+          "padded_tokens": 54272,
+          "norm_hook_calls": {
+            "model.layers.3.self_attn.q_norm.weight": 16,
+            "model.layers.3.self_attn.k_norm.weight": 16,
+            "model.layers.7.self_attn.q_norm.weight": 16,
+            "model.layers.7.self_attn.k_norm.weight": 16,
+            "model.layers.11.self_attn.q_norm.weight": 16,
+            "model.layers.11.self_attn.k_norm.weight": 16,
+            "model.layers.15.self_attn.q_norm.weight": 16,
+            "model.layers.15.self_attn.k_norm.weight": 16,
+            "model.layers.19.self_attn.q_norm.weight": 16,
+            "model.layers.19.self_attn.k_norm.weight": 16,
+            "model.layers.23.self_attn.q_norm.weight": 16,
+            "model.layers.23.self_attn.k_norm.weight": 16,
+            "model.layers.27.self_attn.q_norm.weight": 16,
+            "model.layers.27.self_attn.k_norm.weight": 16,
+            "model.layers.31.self_attn.q_norm.weight": 16,
+            "model.layers.31.self_attn.k_norm.weight": 16,
+            "model.layers.35.self_attn.q_norm.weight": 16,
+            "model.layers.35.self_attn.k_norm.weight": 16,
+            "model.layers.39.self_attn.q_norm.weight": 16,
+            "model.layers.39.self_attn.k_norm.weight": 16,
+            "model.layers.43.self_attn.q_norm.weight": 16,
+            "model.layers.43.self_attn.k_norm.weight": 16,
+            "model.layers.47.self_attn.q_norm.weight": 16,
+            "model.layers.47.self_attn.k_norm.weight": 16,
+            "model.layers.51.self_attn.q_norm.weight": 16,
+            "model.layers.51.self_attn.k_norm.weight": 16,
+            "model.layers.55.self_attn.q_norm.weight": 16,
+            "model.layers.55.self_attn.k_norm.weight": 16,
+            "model.layers.59.self_attn.q_norm.weight": 16,
+            "model.layers.59.self_attn.k_norm.weight": 16,
+            "model.layers.63.self_attn.q_norm.weight": 16,
+            "model.layers.63.self_attn.k_norm.weight": 16
+          }
+        }
+      ],
+      "validation_before": {
+        "loss": 1.0148019790649414,
+        "assistant_tokens": 224,
+        "correct": 201
+      },
+      "validation_after_768": {
+        "loss": 0.855895459651947,
+        "assistant_tokens": 224,
+        "correct": 204
+      },
+      "config": {
+        "train_batch_size": 256,
+        "train_micro_batch_size_per_gpu": 16,
+        "gradient_accumulation_steps": 16,
+        "bf16": {
+          "enabled": true
+        },
+        "gradient_clipping": 1.0,
+        "communication_data_type": "fp32",
+        "steps_per_print": 1000000,
+        "tensor_parallel": {
+          "autotp_size": 2,
+          "vocab_parallel_lm_head": true
+        },
+        "zero_optimization": {
+          "stage": 2,
+          "offload_optimizer": {
+            "device": "cpu",
+            "pin_memory": true
+          },
+          "contiguous_gradients": true,
+          "overlap_comm": true,
+          "reduce_bucket_size": 16777216
+        },
+        "optimizer": {
+          "type": "AdamW",
+          "params": {
+            "lr": 0.0,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.01
+          }
+        }
+      },
+      "fp32_cpu_master_m_v": true,
+      "state_bytes": 112680169472,
+      "local_parameters": 14085021184,
+      "checkpoint_policy": "selective",
+      "limits": [
+        "Native AutoTP arithmetic/reduction tree differs from pipeline; no bitwise claim.",
+        "Native ZeRO-1 CPU offload; not using the optimized pipeline FIFO/cache."
+      ]
+    },
+    {
+      "steps": [
+        {
+          "step": 1,
+          "seconds": 229.19119234988466,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 40.47854223009199,
+            "backward_wall": 160.29071264038794,
+            "step_wall": 25.149220769992098
+          },
+          "grad_norm": 40.45482635498047,
+          "allocated_peak": 61333069824,
+          "reserved_peak": 64483229696,
+          "input_tokens": 28426,
+          "padded_tokens": 54272,
+          "norm_hook_calls": {
+            "model.layers.3.self_attn.q_norm.weight": 16,
+            "model.layers.3.self_attn.k_norm.weight": 16,
+            "model.layers.7.self_attn.q_norm.weight": 16,
+            "model.layers.7.self_attn.k_norm.weight": 16,
+            "model.layers.11.self_attn.q_norm.weight": 16,
+            "model.layers.11.self_attn.k_norm.weight": 16,
+            "model.layers.15.self_attn.q_norm.weight": 16,
+            "model.layers.15.self_attn.k_norm.weight": 16,
+            "model.layers.19.self_attn.q_norm.weight": 16,
+            "model.layers.19.self_attn.k_norm.weight": 16,
+            "model.layers.23.self_attn.q_norm.weight": 16,
+            "model.layers.23.self_attn.k_norm.weight": 16,
+            "model.layers.27.self_attn.q_norm.weight": 16,
+            "model.layers.27.self_attn.k_norm.weight": 16,
+            "model.layers.31.self_attn.q_norm.weight": 16,
+            "model.layers.31.self_attn.k_norm.weight": 16,
+            "model.layers.35.self_attn.q_norm.weight": 16,
+            "model.layers.35.self_attn.k_norm.weight": 16,
+            "model.layers.39.self_attn.q_norm.weight": 16,
+            "model.layers.39.self_attn.k_norm.weight": 16,
+            "model.layers.43.self_attn.q_norm.weight": 16,
+            "model.layers.43.self_attn.k_norm.weight": 16,
+            "model.layers.47.self_attn.q_norm.weight": 16,
+            "model.layers.47.self_attn.k_norm.weight": 16,
+            "model.layers.51.self_attn.q_norm.weight": 16,
+            "model.layers.51.self_attn.k_norm.weight": 16,
+            "model.layers.55.self_attn.q_norm.weight": 16,
+            "model.layers.55.self_attn.k_norm.weight": 16,
+            "model.layers.59.self_attn.q_norm.weight": 16,
+            "model.layers.59.self_attn.k_norm.weight": 16,
+            "model.layers.63.self_attn.q_norm.weight": 16,
+            "model.layers.63.self_attn.k_norm.weight": 16
+          }
+        },
+        {
+          "step": 2,
+          "seconds": 192.36089907004498,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 21.927548959851265,
+            "backward_wall": 153.9664189403411,
+            "step_wall": 13.289356639841571
+          },
+          "grad_norm": 40.475502014160156,
+          "allocated_peak": 61078765568,
+          "reserved_peak": 64502104064,
+          "input_tokens": 28549,
+          "padded_tokens": 49152,
+          "norm_hook_calls": {
+            "model.layers.3.self_attn.q_norm.weight": 16,
+            "model.layers.3.self_attn.k_norm.weight": 16,
+            "model.layers.7.self_attn.q_norm.weight": 16,
+            "model.layers.7.self_attn.k_norm.weight": 16,
+            "model.layers.11.self_attn.q_norm.weight": 16,
+            "model.layers.11.self_attn.k_norm.weight": 16,
+            "model.layers.15.self_attn.q_norm.weight": 16,
+            "model.layers.15.self_attn.k_norm.weight": 16,
+            "model.layers.19.self_attn.q_norm.weight": 16,
+            "model.layers.19.self_attn.k_norm.weight": 16,
+            "model.layers.23.self_attn.q_norm.weight": 16,
+            "model.layers.23.self_attn.k_norm.weight": 16,
+            "model.layers.27.self_attn.q_norm.weight": 16,
+            "model.layers.27.self_attn.k_norm.weight": 16,
+            "model.layers.31.self_attn.q_norm.weight": 16,
+            "model.layers.31.self_attn.k_norm.weight": 16,
+            "model.layers.35.self_attn.q_norm.weight": 16,
+            "model.layers.35.self_attn.k_norm.weight": 16,
+            "model.layers.39.self_attn.q_norm.weight": 16,
+            "model.layers.39.self_attn.k_norm.weight": 16,
+            "model.layers.43.self_attn.q_norm.weight": 16,
+            "model.layers.43.self_attn.k_norm.weight": 16,
+            "model.layers.47.self_attn.q_norm.weight": 16,
+            "model.layers.47.self_attn.k_norm.weight": 16,
+            "model.layers.51.self_attn.q_norm.weight": 16,
+            "model.layers.51.self_attn.k_norm.weight": 16,
+            "model.layers.55.self_attn.q_norm.weight": 16,
+            "model.layers.55.self_attn.k_norm.weight": 16,
+            "model.layers.59.self_attn.q_norm.weight": 16,
+            "model.layers.59.self_attn.k_norm.weight": 16,
+            "model.layers.63.self_attn.q_norm.weight": 16,
+            "model.layers.63.self_attn.k_norm.weight": 16
+          }
+        },
+        {
+          "step": 3,
+          "seconds": 199.13649964006618,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 29.11153847933747,
+            "backward_wall": 153.79682159936056,
+            "step_wall": 14.629230150254443
+          },
+          "grad_norm": 38.75095748901367,
+          "allocated_peak": 61333069824,
+          "reserved_peak": 64439189504,
+          "input_tokens": 28564,
+          "padded_tokens": 50176,
+          "norm_hook_calls": {
+            "model.layers.3.self_attn.q_norm.weight": 16,
+            "model.layers.3.self_attn.k_norm.weight": 16,
+            "model.layers.7.self_attn.q_norm.weight": 16,
+            "model.layers.7.self_attn.k_norm.weight": 16,
+            "model.layers.11.self_attn.q_norm.weight": 16,
+            "model.layers.11.self_attn.k_norm.weight": 16,
+            "model.layers.15.self_attn.q_norm.weight": 16,
+            "model.layers.15.self_attn.k_norm.weight": 16,
+            "model.layers.19.self_attn.q_norm.weight": 16,
+            "model.layers.19.self_attn.k_norm.weight": 16,
+            "model.layers.23.self_attn.q_norm.weight": 16,
+            "model.layers.23.self_attn.k_norm.weight": 16,
+            "model.layers.27.self_attn.q_norm.weight": 16,
+            "model.layers.27.self_attn.k_norm.weight": 16,
+            "model.layers.31.self_attn.q_norm.weight": 16,
+            "model.layers.31.self_attn.k_norm.weight": 16,
+            "model.layers.35.self_attn.q_norm.weight": 16,
+            "model.layers.35.self_attn.k_norm.weight": 16,
+            "model.layers.39.self_attn.q_norm.weight": 16,
+            "model.layers.39.self_attn.k_norm.weight": 16,
+            "model.layers.43.self_attn.q_norm.weight": 16,
+            "model.layers.43.self_attn.k_norm.weight": 16,
+            "model.layers.47.self_attn.q_norm.weight": 16,
+            "model.layers.47.self_attn.k_norm.weight": 16,
+            "model.layers.51.self_attn.q_norm.weight": 16,
+            "model.layers.51.self_attn.k_norm.weight": 16,
+            "model.layers.55.self_attn.q_norm.weight": 16,
+            "model.layers.55.self_attn.k_norm.weight": 16,
+            "model.layers.59.self_attn.q_norm.weight": 16,
+            "model.layers.59.self_attn.k_norm.weight": 16,
+            "model.layers.63.self_attn.q_norm.weight": 16,
+            "model.layers.63.self_attn.k_norm.weight": 16
+          }
+        },
+        {
+          "step": 4,
+          "seconds": 208.94727323995903,
+          "profiled": true,
+          "phase": {
+            "forward_wall": 29.681065699784085,
+            "backward_wall": 163.42432401003316,
+            "step_wall": 14.387119160965085
+          },
+          "grad_norm": 44.48672866821289,
+          "allocated_peak": 61333069824,
+          "reserved_peak": 64416120832,
+          "input_tokens": 28426,
+          "padded_tokens": 54272,
+          "norm_hook_calls": {
+            "model.layers.3.self_attn.q_norm.weight": 16,
+            "model.layers.3.self_attn.k_norm.weight": 16,
+            "model.layers.7.self_attn.q_norm.weight": 16,
+            "model.layers.7.self_attn.k_norm.weight": 16,
+            "model.layers.11.self_attn.q_norm.weight": 16,
+            "model.layers.11.self_attn.k_norm.weight": 16,
+            "model.layers.15.self_attn.q_norm.weight": 16,
+            "model.layers.15.self_attn.k_norm.weight": 16,
+            "model.layers.19.self_attn.q_norm.weight": 16,
+            "model.layers.19.self_attn.k_norm.weight": 16,
+            "model.layers.23.self_attn.q_norm.weight": 16,
+            "model.layers.23.self_attn.k_norm.weight": 16,
+            "model.layers.27.self_attn.q_norm.weight": 16,
+            "model.layers.27.self_attn.k_norm.weight": 16,
+            "model.layers.31.self_attn.q_norm.weight": 16,
+            "model.layers.31.self_attn.k_norm.weight": 16,
+            "model.layers.35.self_attn.q_norm.weight": 16,
+            "model.layers.35.self_attn.k_norm.weight": 16,
+            "model.layers.39.self_attn.q_norm.weight": 16,
+            "model.layers.39.self_attn.k_norm.weight": 16,
+            "model.layers.43.self_attn.q_norm.weight": 16,
+            "model.layers.43.self_attn.k_norm.weight": 16,
+            "model.layers.47.self_attn.q_norm.weight": 16,
+            "model.layers.47.self_attn.k_norm.weight": 16,
+            "model.layers.51.self_attn.q_norm.weight": 16,
+            "model.layers.51.self_attn.k_norm.weight": 16,
+            "model.layers.55.self_attn.q_norm.weight": 16,
+            "model.layers.55.self_attn.k_norm.weight": 16,
+            "model.layers.59.self_attn.q_norm.weight": 16,
+            "model.layers.59.self_attn.k_norm.weight": 16,
+            "model.layers.63.self_attn.q_norm.weight": 16,
+            "model.layers.63.self_attn.k_norm.weight": 16
+          }
+        }
+      ],
+      "validation_before": {
+        "loss": 1.0148019790649414,
+        "assistant_tokens": 224,
+        "correct": 201
+      },
+      "validation_after_768": {
+        "loss": 0.855895459651947,
+        "assistant_tokens": 224,
+        "correct": 204
+      },
+      "config": {
+        "train_batch_size": 256,
+        "train_micro_batch_size_per_gpu": 16,
+        "gradient_accumulation_steps": 16,
+        "bf16": {
+          "enabled": true
+        },
+        "gradient_clipping": 1.0,
+        "communication_data_type": "fp32",
+        "steps_per_print": 1000000,
+        "tensor_parallel": {
+          "autotp_size": 2,
+          "vocab_parallel_lm_head": true
+        },
+        "zero_optimization": {
+          "stage": 2,
+          "offload_optimizer": {
+            "device": "cpu",
+            "pin_memory": true
+          },
+          "contiguous_gradients": true,
+          "overlap_comm": true,
+          "reduce_bucket_size": 16777216
+        },
+        "optimizer": {
+          "type": "AdamW",
+          "params": {
+            "lr": 0.0,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.01
+          }
+        }
+      },
+      "fp32_cpu_master_m_v": true,
+      "state_bytes": 112680169472,
+      "local_parameters": 14085021184,
+      "checkpoint_policy": "selective",
+      "limits": [
+        "Native AutoTP arithmetic/reduction tree differs from pipeline; no bitwise claim.",
+        "Native ZeRO-1 CPU offload; not using the optimized pipeline FIFO/cache."
+      ]
+    }
+  ],
+  "fp32_m_v_bytes_total": 225360338944,
+  "original_zero3_integrity": {
+    "train_boundary.py": true,
+    "cpu_accumulation.py": true,
+    "cpu_update.py": true,
+    "bounded_grad_copy.py": true,
+    "community_gdn.py": true,
+    "gradient_cache.py": true,
+    "gradient_scopes.py": true,
+    "zero3-selected.json": true
+  },
+  "resource_release": {
+    "cards_2_3_no_processes": true,
+    "other_service_pid_present": true
+  },
+  "conclusion": "Current optimized pipeline is faster; retain it as selected candidate, not native TP CPU-offload.",
+  "limits": [
+    "Same data/batch/micro/checkpoint count, but BF16 TP reduction tree and distributed CE differ.",
+    "Native TP ZeRO-2 CPU offload does not include the optimized pipeline FIFO or resident cache.",
+    "This implementation comparison does not establish an intrinsic upper bound for tensor parallelism.",
+    "Two timed normal updates and eight validation examples; no long-term convergence claim."
+  ]
+}

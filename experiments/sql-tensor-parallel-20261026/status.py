@@ -12,6 +12,9 @@ for rank in [0,1]:
     if ready:item['model']={k:ready[k] for k in ['local_parameters','checkpoint_policy','checkpointed_layers','allocated_after_init','reserved_after_init'] if k in ready}
     for event in ['validation','micro','step','complete']:
         found=[x for x in rows if x['event']==event]
-        if found:item['last_'+event]=found[-1]
+        if found:
+            last=found[-1]
+            if event=='step':last={k:v for k,v in last.items() if k!='norm_hook_calls'}
+            item['last_'+event]=last
     result[rank]=item
 print(json.dumps(result))

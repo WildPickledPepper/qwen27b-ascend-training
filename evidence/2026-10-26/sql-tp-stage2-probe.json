@@ -1,0 +1,1639 @@
+{
+  "passed": true,
+  "production_path_without_observing_hooks": true,
+  "ranks": [
+    {
+      "rank": 0,
+      "passed": true,
+      "forward": {
+        "event": "forward_check",
+        "rank": 0,
+        "reference_loss": 5.599122047424316,
+        "tp_loss": 5.599133491516113,
+        "max_logit_abs": 0.0078125,
+        "logit_relative_l2": 0.007175855338573456
+      },
+      "gradient_checks": [
+        {
+          "name": "model.embed_tokens.weight",
+          "relative_l2": 0.0065415105782449245,
+          "max_abs": 0.000244140625
+        },
+        {
+          "name": "model.layers.0.linear_attn.dt_bias",
+          "relative_l2": 0.006904301233589649,
+          "max_abs": 4.470348358154297e-08
+        },
+        {
+          "name": "model.layers.0.linear_attn.A_log",
+          "relative_l2": 0.010683945380151272,
+          "max_abs": 7.450580596923828e-08
+        },
+        {
+          "name": "model.layers.0.linear_attn.conv1d.weight",
+          "relative_l2": 0.007109896279871464,
+          "max_abs": 3.814697265625e-06
+        },
+        {
+          "name": "model.layers.0.linear_attn.norm.weight",
+          "relative_l2": 0.007615286391228437,
+          "max_abs": 7.62939453125e-06
+        },
+        {
+          "name": "model.layers.0.linear_attn.out_proj.weight",
+          "relative_l2": 0.006597471423447132,
+          "max_abs": 1.1920928955078125e-06
+        },
+        {
+          "name": "model.layers.0.linear_attn.in_proj_qkv.weight",
+          "relative_l2": 0.007175356149673462,
+          "max_abs": 1.430511474609375e-06
+        },
+        {
+          "name": "model.layers.0.linear_attn.in_proj_z.weight",
+          "relative_l2": 0.0071952673606574535,
+          "max_abs": 9.5367431640625e-07
+        },
+        {
+          "name": "model.layers.0.linear_attn.in_proj_b.weight",
+          "relative_l2": 0.007839370518922806,
+          "max_abs": 2.384185791015625e-07
+        },
+        {
+          "name": "model.layers.0.linear_attn.in_proj_a.weight",
+          "relative_l2": 0.0072566852904856205,
+          "max_abs": 1.1920928955078125e-07
+        },
+        {
+          "name": "model.layers.0.mlp.gate_proj.weight",
+          "relative_l2": 0.006561851594597101,
+          "max_abs": 9.1552734375e-05
+        },
+        {
+          "name": "model.layers.0.mlp.up_proj.weight",
+          "relative_l2": 0.006488470360636711,
+          "max_abs": 9.1552734375e-05
+        },
+        {
+          "name": "model.layers.0.mlp.down_proj.weight",
+          "relative_l2": 0.006474187131971121,
+          "max_abs": 9.1552734375e-05
+        },
+        {
+          "name": "model.layers.0.input_layernorm.weight",
+          "relative_l2": 0.007068509701639414,
+          "max_abs": 1.1920928955078125e-07
+        },
+        {
+          "name": "model.layers.0.post_attention_layernorm.weight",
+          "relative_l2": 0.00758377043530345,
+          "max_abs": 1.52587890625e-05
+        },
+        {
+          "name": "model.layers.1.linear_attn.dt_bias",
+          "relative_l2": 0.00855847168713808,
+          "max_abs": 2.9802322387695312e-08
+        },
+        {
+          "name": "model.layers.1.linear_attn.A_log",
+          "relative_l2": 0.009379427880048752,
+          "max_abs": 5.960464477539063e-08
+        },
+        {
+          "name": "model.layers.1.linear_attn.conv1d.weight",
+          "relative_l2": 0.009970955550670624,
+          "max_abs": 5.7220458984375e-06
+        },
+        {
+          "name": "model.layers.1.linear_attn.norm.weight",
+          "relative_l2": 0.00903061032295227,
+          "max_abs": 5.7220458984375e-06
+        },
+        {
+          "name": "model.layers.1.linear_attn.out_proj.weight",
+          "relative_l2": 0.010376598685979843,
+          "max_abs": 1.9073486328125e-06
+        },
+        {
+          "name": "model.layers.1.linear_attn.in_proj_qkv.weight",
+          "relative_l2": 0.009881307370960712,
+          "max_abs": 1.9073486328125e-06
+        },
+        {
+          "name": "model.layers.1.linear_attn.in_proj_z.weight",
+          "relative_l2": 0.009922745637595654,
+          "max_abs": 1.9073486328125e-06
+        },
+        {
+          "name": "model.layers.1.linear_attn.in_proj_b.weight",
+          "relative_l2": 0.009996509179472923,
+          "max_abs": 3.5762786865234375e-07
+        },
+        {
+          "name": "model.layers.1.linear_attn.in_proj_a.weight",
+          "relative_l2": 0.010223070159554482,
+          "max_abs": 2.086162567138672e-07
+        },
+        {
+          "name": "model.layers.1.mlp.gate_proj.weight",
+          "relative_l2": 0.0072416989132761955,
+          "max_abs": 9.1552734375e-05
+        },
+        {
+          "name": "model.layers.1.mlp.up_proj.weight",
+          "relative_l2": 0.007153088692575693,
+          "max_abs": 7.62939453125e-05
+        },
+        {
+          "name": "model.layers.1.mlp.down_proj.weight",
+          "relative_l2": 0.007509051356464624,
+          "max_abs": 0.0001220703125
+        },
+        {
+          "name": "model.layers.1.input_layernorm.weight",
+          "relative_l2": 0.00885685719549656,
+          "max_abs": 1.7881393432617188e-07
+        },
+        {
+          "name": "model.layers.1.post_attention_layernorm.weight",
+          "relative_l2": 0.006681681610643864,
+          "max_abs": 1.52587890625e-05
+        },
+        {
+          "name": "model.layers.2.linear_attn.dt_bias",
+          "relative_l2": 0.025452611967921257,
+          "max_abs": 5.029141902923584e-08
+        },
+        {
+          "name": "model.layers.2.linear_attn.A_log",
+          "relative_l2": 0.028693119063973427,
+          "max_abs": 7.078051567077637e-08
+        },
+        {
+          "name": "model.layers.2.linear_attn.conv1d.weight",
+          "relative_l2": 0.010176034644246101,
+          "max_abs": 3.933906555175781e-06
+        },
+        {
+          "name": "model.layers.2.linear_attn.norm.weight",
+          "relative_l2": 0.014540662989020348,
+          "max_abs": 7.62939453125e-06
+        },
+        {
+          "name": "model.layers.2.linear_attn.out_proj.weight",
+          "relative_l2": 0.012616057880222797,
+          "max_abs": 2.384185791015625e-06
+        },
+        {
+          "name": "model.layers.2.linear_attn.in_proj_qkv.weight",
+          "relative_l2": 0.011292624287307262,
+          "max_abs": 1.9073486328125e-06
+        },
+        {
+          "name": "model.layers.2.linear_attn.in_proj_z.weight",
+          "relative_l2": 0.01254316046833992,
+          "max_abs": 1.1920928955078125e-06
+        },
+        {
+          "name": "model.layers.2.linear_attn.in_proj_b.weight",
+          "relative_l2": 0.01260727271437645,
+          "max_abs": 3.2782554626464844e-07
+        },
+        {
+          "name": "model.layers.2.linear_attn.in_proj_a.weight",
+          "relative_l2": 0.0119555052369833,
+          "max_abs": 1.564621925354004e-07
+        },
+        {
+          "name": "model.layers.2.mlp.gate_proj.weight",
+          "relative_l2": 0.007930519990622997,
+          "max_abs": 0.0001220703125
+        },
+        {
+          "name": "model.layers.2.mlp.up_proj.weight",
+          "relative_l2": 0.008046315051615238,
+          "max_abs": 6.103515625e-05
+        },
+        {
+          "name": "model.layers.2.mlp.down_proj.weight",
+          "relative_l2": 0.008270223625004292,
+          "max_abs": 9.1552734375e-05
+        },
+        {
+          "name": "model.layers.2.input_layernorm.weight",
+          "relative_l2": 0.012002413161098957,
+          "max_abs": 1.7881393432617188e-07
+        },
+        {
+          "name": "model.layers.2.post_attention_layernorm.weight",
+          "relative_l2": 0.008714883588254452,
+          "max_abs": 2.288818359375e-05
+        },
+        {
+          "name": "model.layers.3.self_attn.q_proj.weight",
+          "relative_l2": 0.011371777392923832,
+          "max_abs": 6.103515625e-05
+        },
+        {
+          "name": "model.layers.3.self_attn.k_proj.weight",
+          "relative_l2": 0.011634113267064095,
+          "max_abs": 6.866455078125e-05
+        },
+        {
+          "name": "model.layers.3.self_attn.v_proj.weight",
+          "relative_l2": 0.009585296735167503,
+          "max_abs": 9.1552734375e-05
+        },
+        {
+          "name": "model.layers.3.self_attn.o_proj.weight",
+          "relative_l2": 0.009561341255903244,
+          "max_abs": 9.1552734375e-05
+        },
+        {
+          "name": "model.layers.3.self_attn.q_norm.weight",
+          "relative_l2": 0.009691308252513409,
+          "max_abs": 1.33514404296875e-05
+        },
+        {
+          "name": "model.layers.3.self_attn.k_norm.weight",
+          "relative_l2": 0.010711245238780975,
+          "max_abs": 1.1444091796875e-05
+        },
+        {
+          "name": "model.layers.3.mlp.gate_proj.weight",
+          "relative_l2": 0.007868346758186817,
+          "max_abs": 6.103515625e-05
+        },
+        {
+          "name": "model.layers.3.mlp.up_proj.weight",
+          "relative_l2": 0.007981731556355953,
+          "max_abs": 6.103515625e-05
+        },
+        {
+          "name": "model.layers.3.mlp.down_proj.weight",
+          "relative_l2": 0.00788160227239132,
+          "max_abs": 7.62939453125e-05
+        },
+        {
+          "name": "model.layers.3.input_layernorm.weight",
+          "relative_l2": 0.008339240215718746,
+          "max_abs": 1.52587890625e-05
+        },
+        {
+          "name": "model.layers.3.post_attention_layernorm.weight",
+          "relative_l2": 0.007583161350339651,
+          "max_abs": 1.52587890625e-05
+        },
+        {
+          "name": "model.norm.weight",
+          "relative_l2": 0.005923478398472071,
+          "max_abs": 3.0517578125e-05
+        },
+        {
+          "name": "lm_head.weight",
+          "relative_l2": 0.006027727387845516,
+          "max_abs": 0.00018310546875
+        }
+      ],
+      "hook_calls": {
+        "model.layers.3.self_attn.q_norm.weight": 16,
+        "model.layers.3.self_attn.k_norm.weight": 16
+      },
+      "fp32_cpu_master_m_v": true,
+      "hybrid_layers": [
+        "linear_attention",
+        "linear_attention",
+        "linear_attention",
+        "full_attention"
+      ],
+      "data_parallel_size": 1,
+      "tensor_parallel_size": 2,
+      "gradient_dtype": "torch.bfloat16",
+      "config": {
+        "train_batch_size": 256,
+        "train_micro_batch_size_per_gpu": 16,
+        "gradient_accumulation_steps": 16,
+        "bf16": {
+          "enabled": true
+        },
+        "gradient_clipping": 1.0,
+        "communication_data_type": "fp32",
+        "steps_per_print": 1000000,
+        "tensor_parallel": {
+          "autotp_size": 2,
+          "vocab_parallel_lm_head": true
+        },
+        "zero_optimization": {
+          "stage": 2,
+          "offload_optimizer": {
+            "device": "cpu",
+            "pin_memory": true
+          },
+          "contiguous_gradients": true,
+          "overlap_comm": true,
+          "reduce_bucket_size": 1048576
+        },
+        "optimizer": {
+          "type": "AdamW",
+          "params": {
+            "lr": 0.001,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.01
+          }
+        }
+      },
+      "nonboundary_gradient_storage": {
+        "event": "nonboundary_grad_residence",
+        "rank": 0,
+        "zero_stage": 2,
+        "npu_gradient_storage_bytes": 0,
+        "npu_allocated_bytes": 1358336
+      },
+      "local_shapes": {
+        "model.embed_tokens.weight": [
+          256,
+          128
+        ],
+        "model.layers.0.linear_attn.dt_bias": [
+          4
+        ],
+        "model.layers.0.linear_attn.A_log": [
+          4
+        ],
+        "model.layers.0.linear_attn.conv1d.weight": [
+          256,
+          1,
+          4
+        ],
+        "model.layers.0.linear_attn.norm.weight": [
+          32
+        ],
+        "model.layers.0.linear_attn.out_proj.weight": [
+          64,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_qkv.weight": [
+          128,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_z.weight": [
+          64,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_b.weight": [
+          2,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_a.weight": [
+          2,
+          128
+        ],
+        "model.layers.0.mlp.gate_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.0.mlp.up_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.0.mlp.down_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.0.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.0.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.layers.1.linear_attn.dt_bias": [
+          4
+        ],
+        "model.layers.1.linear_attn.A_log": [
+          4
+        ],
+        "model.layers.1.linear_attn.conv1d.weight": [
+          256,
+          1,
+          4
+        ],
+        "model.layers.1.linear_attn.norm.weight": [
+          32
+        ],
+        "model.layers.1.linear_attn.out_proj.weight": [
+          64,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_qkv.weight": [
+          128,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_z.weight": [
+          64,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_b.weight": [
+          2,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_a.weight": [
+          2,
+          128
+        ],
+        "model.layers.1.mlp.gate_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.1.mlp.up_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.1.mlp.down_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.1.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.1.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.layers.2.linear_attn.dt_bias": [
+          4
+        ],
+        "model.layers.2.linear_attn.A_log": [
+          4
+        ],
+        "model.layers.2.linear_attn.conv1d.weight": [
+          256,
+          1,
+          4
+        ],
+        "model.layers.2.linear_attn.norm.weight": [
+          32
+        ],
+        "model.layers.2.linear_attn.out_proj.weight": [
+          64,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_qkv.weight": [
+          128,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_z.weight": [
+          64,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_b.weight": [
+          2,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_a.weight": [
+          2,
+          128
+        ],
+        "model.layers.2.mlp.gate_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.2.mlp.up_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.2.mlp.down_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.2.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.2.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.layers.3.self_attn.q_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.3.self_attn.k_proj.weight": [
+          32,
+          128
+        ],
+        "model.layers.3.self_attn.v_proj.weight": [
+          32,
+          128
+        ],
+        "model.layers.3.self_attn.o_proj.weight": [
+          128,
+          64
+        ],
+        "model.layers.3.self_attn.q_norm.weight": [
+          32
+        ],
+        "model.layers.3.self_attn.k_norm.weight": [
+          32
+        ],
+        "model.layers.3.mlp.gate_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.3.mlp.up_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.3.mlp.down_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.3.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.3.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.norm.weight": [
+          128
+        ],
+        "lm_head.weight": [
+          128,
+          128
+        ]
+      },
+      "original_shapes": {
+        "model.embed_tokens.weight": [
+          256,
+          128
+        ],
+        "model.layers.0.linear_attn.dt_bias": [
+          4
+        ],
+        "model.layers.0.linear_attn.A_log": [
+          4
+        ],
+        "model.layers.0.linear_attn.conv1d.weight": [
+          256,
+          1,
+          4
+        ],
+        "model.layers.0.linear_attn.norm.weight": [
+          32
+        ],
+        "model.layers.0.linear_attn.out_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_qkv.weight": [
+          256,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_z.weight": [
+          128,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_b.weight": [
+          4,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_a.weight": [
+          4,
+          128
+        ],
+        "model.layers.0.mlp.gate_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.0.mlp.up_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.0.mlp.down_proj.weight": [
+          128,
+          256
+        ],
+        "model.layers.0.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.0.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.layers.1.linear_attn.dt_bias": [
+          4
+        ],
+        "model.layers.1.linear_attn.A_log": [
+          4
+        ],
+        "model.layers.1.linear_attn.conv1d.weight": [
+          256,
+          1,
+          4
+        ],
+        "model.layers.1.linear_attn.norm.weight": [
+          32
+        ],
+        "model.layers.1.linear_attn.out_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_qkv.weight": [
+          256,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_z.weight": [
+          128,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_b.weight": [
+          4,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_a.weight": [
+          4,
+          128
+        ],
+        "model.layers.1.mlp.gate_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.1.mlp.up_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.1.mlp.down_proj.weight": [
+          128,
+          256
+        ],
+        "model.layers.1.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.1.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.layers.2.linear_attn.dt_bias": [
+          4
+        ],
+        "model.layers.2.linear_attn.A_log": [
+          4
+        ],
+        "model.layers.2.linear_attn.conv1d.weight": [
+          256,
+          1,
+          4
+        ],
+        "model.layers.2.linear_attn.norm.weight": [
+          32
+        ],
+        "model.layers.2.linear_attn.out_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_qkv.weight": [
+          256,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_z.weight": [
+          128,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_b.weight": [
+          4,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_a.weight": [
+          4,
+          128
+        ],
+        "model.layers.2.mlp.gate_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.2.mlp.up_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.2.mlp.down_proj.weight": [
+          128,
+          256
+        ],
+        "model.layers.2.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.2.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.layers.3.self_attn.q_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.3.self_attn.k_proj.weight": [
+          64,
+          128
+        ],
+        "model.layers.3.self_attn.v_proj.weight": [
+          64,
+          128
+        ],
+        "model.layers.3.self_attn.o_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.3.self_attn.q_norm.weight": [
+          32
+        ],
+        "model.layers.3.self_attn.k_norm.weight": [
+          32
+        ],
+        "model.layers.3.mlp.gate_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.3.mlp.up_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.3.mlp.down_proj.weight": [
+          128,
+          256
+        ],
+        "model.layers.3.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.3.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.norm.weight": [
+          128
+        ],
+        "lm_head.weight": [
+          256,
+          128
+        ]
+      }
+    },
+    {
+      "rank": 1,
+      "passed": true,
+      "forward": {
+        "event": "forward_check",
+        "rank": 1,
+        "reference_loss": 5.59912109375,
+        "tp_loss": 5.599133491516113,
+        "max_logit_abs": 0.0078125,
+        "logit_relative_l2": 0.007175855338573456
+      },
+      "gradient_checks": [
+        {
+          "name": "model.embed_tokens.weight",
+          "relative_l2": 0.0065415105782449245,
+          "max_abs": 0.000244140625
+        },
+        {
+          "name": "model.layers.0.linear_attn.dt_bias",
+          "relative_l2": 0.006904301233589649,
+          "max_abs": 4.470348358154297e-08
+        },
+        {
+          "name": "model.layers.0.linear_attn.A_log",
+          "relative_l2": 0.010683945380151272,
+          "max_abs": 7.450580596923828e-08
+        },
+        {
+          "name": "model.layers.0.linear_attn.conv1d.weight",
+          "relative_l2": 0.007109896279871464,
+          "max_abs": 3.814697265625e-06
+        },
+        {
+          "name": "model.layers.0.linear_attn.norm.weight",
+          "relative_l2": 0.007615286391228437,
+          "max_abs": 7.62939453125e-06
+        },
+        {
+          "name": "model.layers.0.linear_attn.out_proj.weight",
+          "relative_l2": 0.006597471423447132,
+          "max_abs": 1.1920928955078125e-06
+        },
+        {
+          "name": "model.layers.0.linear_attn.in_proj_qkv.weight",
+          "relative_l2": 0.007175356149673462,
+          "max_abs": 1.430511474609375e-06
+        },
+        {
+          "name": "model.layers.0.linear_attn.in_proj_z.weight",
+          "relative_l2": 0.0071952673606574535,
+          "max_abs": 9.5367431640625e-07
+        },
+        {
+          "name": "model.layers.0.linear_attn.in_proj_b.weight",
+          "relative_l2": 0.007839370518922806,
+          "max_abs": 2.384185791015625e-07
+        },
+        {
+          "name": "model.layers.0.linear_attn.in_proj_a.weight",
+          "relative_l2": 0.0072566852904856205,
+          "max_abs": 1.1920928955078125e-07
+        },
+        {
+          "name": "model.layers.0.mlp.gate_proj.weight",
+          "relative_l2": 0.006561851594597101,
+          "max_abs": 9.1552734375e-05
+        },
+        {
+          "name": "model.layers.0.mlp.up_proj.weight",
+          "relative_l2": 0.006488470360636711,
+          "max_abs": 9.1552734375e-05
+        },
+        {
+          "name": "model.layers.0.mlp.down_proj.weight",
+          "relative_l2": 0.006474187131971121,
+          "max_abs": 9.1552734375e-05
+        },
+        {
+          "name": "model.layers.0.input_layernorm.weight",
+          "relative_l2": 0.007068509701639414,
+          "max_abs": 1.1920928955078125e-07
+        },
+        {
+          "name": "model.layers.0.post_attention_layernorm.weight",
+          "relative_l2": 0.00758377043530345,
+          "max_abs": 1.52587890625e-05
+        },
+        {
+          "name": "model.layers.1.linear_attn.dt_bias",
+          "relative_l2": 0.00855847168713808,
+          "max_abs": 2.9802322387695312e-08
+        },
+        {
+          "name": "model.layers.1.linear_attn.A_log",
+          "relative_l2": 0.009379427880048752,
+          "max_abs": 5.960464477539063e-08
+        },
+        {
+          "name": "model.layers.1.linear_attn.conv1d.weight",
+          "relative_l2": 0.009970955550670624,
+          "max_abs": 5.7220458984375e-06
+        },
+        {
+          "name": "model.layers.1.linear_attn.norm.weight",
+          "relative_l2": 0.00903061032295227,
+          "max_abs": 5.7220458984375e-06
+        },
+        {
+          "name": "model.layers.1.linear_attn.out_proj.weight",
+          "relative_l2": 0.010376598685979843,
+          "max_abs": 1.9073486328125e-06
+        },
+        {
+          "name": "model.layers.1.linear_attn.in_proj_qkv.weight",
+          "relative_l2": 0.009881307370960712,
+          "max_abs": 1.9073486328125e-06
+        },
+        {
+          "name": "model.layers.1.linear_attn.in_proj_z.weight",
+          "relative_l2": 0.009922745637595654,
+          "max_abs": 1.9073486328125e-06
+        },
+        {
+          "name": "model.layers.1.linear_attn.in_proj_b.weight",
+          "relative_l2": 0.009996509179472923,
+          "max_abs": 3.5762786865234375e-07
+        },
+        {
+          "name": "model.layers.1.linear_attn.in_proj_a.weight",
+          "relative_l2": 0.010223070159554482,
+          "max_abs": 2.086162567138672e-07
+        },
+        {
+          "name": "model.layers.1.mlp.gate_proj.weight",
+          "relative_l2": 0.0072416989132761955,
+          "max_abs": 9.1552734375e-05
+        },
+        {
+          "name": "model.layers.1.mlp.up_proj.weight",
+          "relative_l2": 0.007153088692575693,
+          "max_abs": 7.62939453125e-05
+        },
+        {
+          "name": "model.layers.1.mlp.down_proj.weight",
+          "relative_l2": 0.007509051356464624,
+          "max_abs": 0.0001220703125
+        },
+        {
+          "name": "model.layers.1.input_layernorm.weight",
+          "relative_l2": 0.00885685719549656,
+          "max_abs": 1.7881393432617188e-07
+        },
+        {
+          "name": "model.layers.1.post_attention_layernorm.weight",
+          "relative_l2": 0.006681681610643864,
+          "max_abs": 1.52587890625e-05
+        },
+        {
+          "name": "model.layers.2.linear_attn.dt_bias",
+          "relative_l2": 0.025452611967921257,
+          "max_abs": 5.029141902923584e-08
+        },
+        {
+          "name": "model.layers.2.linear_attn.A_log",
+          "relative_l2": 0.028693119063973427,
+          "max_abs": 7.078051567077637e-08
+        },
+        {
+          "name": "model.layers.2.linear_attn.conv1d.weight",
+          "relative_l2": 0.010176034644246101,
+          "max_abs": 3.933906555175781e-06
+        },
+        {
+          "name": "model.layers.2.linear_attn.norm.weight",
+          "relative_l2": 0.014540662989020348,
+          "max_abs": 7.62939453125e-06
+        },
+        {
+          "name": "model.layers.2.linear_attn.out_proj.weight",
+          "relative_l2": 0.012616057880222797,
+          "max_abs": 2.384185791015625e-06
+        },
+        {
+          "name": "model.layers.2.linear_attn.in_proj_qkv.weight",
+          "relative_l2": 0.011292624287307262,
+          "max_abs": 1.9073486328125e-06
+        },
+        {
+          "name": "model.layers.2.linear_attn.in_proj_z.weight",
+          "relative_l2": 0.01254316046833992,
+          "max_abs": 1.1920928955078125e-06
+        },
+        {
+          "name": "model.layers.2.linear_attn.in_proj_b.weight",
+          "relative_l2": 0.01260727271437645,
+          "max_abs": 3.2782554626464844e-07
+        },
+        {
+          "name": "model.layers.2.linear_attn.in_proj_a.weight",
+          "relative_l2": 0.0119555052369833,
+          "max_abs": 1.564621925354004e-07
+        },
+        {
+          "name": "model.layers.2.mlp.gate_proj.weight",
+          "relative_l2": 0.007930519990622997,
+          "max_abs": 0.0001220703125
+        },
+        {
+          "name": "model.layers.2.mlp.up_proj.weight",
+          "relative_l2": 0.008046315051615238,
+          "max_abs": 6.103515625e-05
+        },
+        {
+          "name": "model.layers.2.mlp.down_proj.weight",
+          "relative_l2": 0.008270223625004292,
+          "max_abs": 9.1552734375e-05
+        },
+        {
+          "name": "model.layers.2.input_layernorm.weight",
+          "relative_l2": 0.012002413161098957,
+          "max_abs": 1.7881393432617188e-07
+        },
+        {
+          "name": "model.layers.2.post_attention_layernorm.weight",
+          "relative_l2": 0.008714883588254452,
+          "max_abs": 2.288818359375e-05
+        },
+        {
+          "name": "model.layers.3.self_attn.q_proj.weight",
+          "relative_l2": 0.011371777392923832,
+          "max_abs": 6.103515625e-05
+        },
+        {
+          "name": "model.layers.3.self_attn.k_proj.weight",
+          "relative_l2": 0.011634113267064095,
+          "max_abs": 6.866455078125e-05
+        },
+        {
+          "name": "model.layers.3.self_attn.v_proj.weight",
+          "relative_l2": 0.009585296735167503,
+          "max_abs": 9.1552734375e-05
+        },
+        {
+          "name": "model.layers.3.self_attn.o_proj.weight",
+          "relative_l2": 0.009561341255903244,
+          "max_abs": 9.1552734375e-05
+        },
+        {
+          "name": "model.layers.3.self_attn.q_norm.weight",
+          "relative_l2": 0.009691308252513409,
+          "max_abs": 1.33514404296875e-05
+        },
+        {
+          "name": "model.layers.3.self_attn.k_norm.weight",
+          "relative_l2": 0.010711245238780975,
+          "max_abs": 1.1444091796875e-05
+        },
+        {
+          "name": "model.layers.3.mlp.gate_proj.weight",
+          "relative_l2": 0.007868346758186817,
+          "max_abs": 6.103515625e-05
+        },
+        {
+          "name": "model.layers.3.mlp.up_proj.weight",
+          "relative_l2": 0.007981731556355953,
+          "max_abs": 6.103515625e-05
+        },
+        {
+          "name": "model.layers.3.mlp.down_proj.weight",
+          "relative_l2": 0.00788160227239132,
+          "max_abs": 7.62939453125e-05
+        },
+        {
+          "name": "model.layers.3.input_layernorm.weight",
+          "relative_l2": 0.008339240215718746,
+          "max_abs": 1.52587890625e-05
+        },
+        {
+          "name": "model.layers.3.post_attention_layernorm.weight",
+          "relative_l2": 0.007583161350339651,
+          "max_abs": 1.52587890625e-05
+        },
+        {
+          "name": "model.norm.weight",
+          "relative_l2": 0.005923478398472071,
+          "max_abs": 3.0517578125e-05
+        },
+        {
+          "name": "lm_head.weight",
+          "relative_l2": 0.006027727387845516,
+          "max_abs": 0.00018310546875
+        }
+      ],
+      "hook_calls": {
+        "model.layers.3.self_attn.q_norm.weight": 16,
+        "model.layers.3.self_attn.k_norm.weight": 16
+      },
+      "fp32_cpu_master_m_v": true,
+      "hybrid_layers": [
+        "linear_attention",
+        "linear_attention",
+        "linear_attention",
+        "full_attention"
+      ],
+      "data_parallel_size": 1,
+      "tensor_parallel_size": 2,
+      "gradient_dtype": "torch.bfloat16",
+      "config": {
+        "train_batch_size": 256,
+        "train_micro_batch_size_per_gpu": 16,
+        "gradient_accumulation_steps": 16,
+        "bf16": {
+          "enabled": true
+        },
+        "gradient_clipping": 1.0,
+        "communication_data_type": "fp32",
+        "steps_per_print": 1000000,
+        "tensor_parallel": {
+          "autotp_size": 2,
+          "vocab_parallel_lm_head": true
+        },
+        "zero_optimization": {
+          "stage": 2,
+          "offload_optimizer": {
+            "device": "cpu",
+            "pin_memory": true
+          },
+          "contiguous_gradients": true,
+          "overlap_comm": true,
+          "reduce_bucket_size": 1048576
+        },
+        "optimizer": {
+          "type": "AdamW",
+          "params": {
+            "lr": 0.001,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "weight_decay": 0.01
+          }
+        }
+      },
+      "nonboundary_gradient_storage": {
+        "event": "nonboundary_grad_residence",
+        "rank": 1,
+        "zero_stage": 2,
+        "npu_gradient_storage_bytes": 0,
+        "npu_allocated_bytes": 1358336
+      },
+      "local_shapes": {
+        "model.embed_tokens.weight": [
+          256,
+          128
+        ],
+        "model.layers.0.linear_attn.dt_bias": [
+          4
+        ],
+        "model.layers.0.linear_attn.A_log": [
+          4
+        ],
+        "model.layers.0.linear_attn.conv1d.weight": [
+          256,
+          1,
+          4
+        ],
+        "model.layers.0.linear_attn.norm.weight": [
+          32
+        ],
+        "model.layers.0.linear_attn.out_proj.weight": [
+          64,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_qkv.weight": [
+          128,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_z.weight": [
+          64,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_b.weight": [
+          2,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_a.weight": [
+          2,
+          128
+        ],
+        "model.layers.0.mlp.gate_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.0.mlp.up_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.0.mlp.down_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.0.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.0.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.layers.1.linear_attn.dt_bias": [
+          4
+        ],
+        "model.layers.1.linear_attn.A_log": [
+          4
+        ],
+        "model.layers.1.linear_attn.conv1d.weight": [
+          256,
+          1,
+          4
+        ],
+        "model.layers.1.linear_attn.norm.weight": [
+          32
+        ],
+        "model.layers.1.linear_attn.out_proj.weight": [
+          64,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_qkv.weight": [
+          128,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_z.weight": [
+          64,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_b.weight": [
+          2,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_a.weight": [
+          2,
+          128
+        ],
+        "model.layers.1.mlp.gate_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.1.mlp.up_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.1.mlp.down_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.1.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.1.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.layers.2.linear_attn.dt_bias": [
+          4
+        ],
+        "model.layers.2.linear_attn.A_log": [
+          4
+        ],
+        "model.layers.2.linear_attn.conv1d.weight": [
+          256,
+          1,
+          4
+        ],
+        "model.layers.2.linear_attn.norm.weight": [
+          32
+        ],
+        "model.layers.2.linear_attn.out_proj.weight": [
+          64,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_qkv.weight": [
+          128,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_z.weight": [
+          64,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_b.weight": [
+          2,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_a.weight": [
+          2,
+          128
+        ],
+        "model.layers.2.mlp.gate_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.2.mlp.up_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.2.mlp.down_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.2.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.2.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.layers.3.self_attn.q_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.3.self_attn.k_proj.weight": [
+          32,
+          128
+        ],
+        "model.layers.3.self_attn.v_proj.weight": [
+          32,
+          128
+        ],
+        "model.layers.3.self_attn.o_proj.weight": [
+          128,
+          64
+        ],
+        "model.layers.3.self_attn.q_norm.weight": [
+          32
+        ],
+        "model.layers.3.self_attn.k_norm.weight": [
+          32
+        ],
+        "model.layers.3.mlp.gate_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.3.mlp.up_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.3.mlp.down_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.3.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.3.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.norm.weight": [
+          128
+        ],
+        "lm_head.weight": [
+          128,
+          128
+        ]
+      },
+      "original_shapes": {
+        "model.embed_tokens.weight": [
+          256,
+          128
+        ],
+        "model.layers.0.linear_attn.dt_bias": [
+          4
+        ],
+        "model.layers.0.linear_attn.A_log": [
+          4
+        ],
+        "model.layers.0.linear_attn.conv1d.weight": [
+          256,
+          1,
+          4
+        ],
+        "model.layers.0.linear_attn.norm.weight": [
+          32
+        ],
+        "model.layers.0.linear_attn.out_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_qkv.weight": [
+          256,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_z.weight": [
+          128,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_b.weight": [
+          4,
+          128
+        ],
+        "model.layers.0.linear_attn.in_proj_a.weight": [
+          4,
+          128
+        ],
+        "model.layers.0.mlp.gate_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.0.mlp.up_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.0.mlp.down_proj.weight": [
+          128,
+          256
+        ],
+        "model.layers.0.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.0.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.layers.1.linear_attn.dt_bias": [
+          4
+        ],
+        "model.layers.1.linear_attn.A_log": [
+          4
+        ],
+        "model.layers.1.linear_attn.conv1d.weight": [
+          256,
+          1,
+          4
+        ],
+        "model.layers.1.linear_attn.norm.weight": [
+          32
+        ],
+        "model.layers.1.linear_attn.out_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_qkv.weight": [
+          256,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_z.weight": [
+          128,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_b.weight": [
+          4,
+          128
+        ],
+        "model.layers.1.linear_attn.in_proj_a.weight": [
+          4,
+          128
+        ],
+        "model.layers.1.mlp.gate_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.1.mlp.up_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.1.mlp.down_proj.weight": [
+          128,
+          256
+        ],
+        "model.layers.1.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.1.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.layers.2.linear_attn.dt_bias": [
+          4
+        ],
+        "model.layers.2.linear_attn.A_log": [
+          4
+        ],
+        "model.layers.2.linear_attn.conv1d.weight": [
+          256,
+          1,
+          4
+        ],
+        "model.layers.2.linear_attn.norm.weight": [
+          32
+        ],
+        "model.layers.2.linear_attn.out_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_qkv.weight": [
+          256,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_z.weight": [
+          128,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_b.weight": [
+          4,
+          128
+        ],
+        "model.layers.2.linear_attn.in_proj_a.weight": [
+          4,
+          128
+        ],
+        "model.layers.2.mlp.gate_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.2.mlp.up_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.2.mlp.down_proj.weight": [
+          128,
+          256
+        ],
+        "model.layers.2.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.2.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.layers.3.self_attn.q_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.3.self_attn.k_proj.weight": [
+          64,
+          128
+        ],
+        "model.layers.3.self_attn.v_proj.weight": [
+          64,
+          128
+        ],
+        "model.layers.3.self_attn.o_proj.weight": [
+          128,
+          128
+        ],
+        "model.layers.3.self_attn.q_norm.weight": [
+          32
+        ],
+        "model.layers.3.self_attn.k_norm.weight": [
+          32
+        ],
+        "model.layers.3.mlp.gate_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.3.mlp.up_proj.weight": [
+          256,
+          128
+        ],
+        "model.layers.3.mlp.down_proj.weight": [
+          128,
+          256
+        ],
+        "model.layers.3.input_layernorm.weight": [
+          128
+        ],
+        "model.layers.3.post_attention_layernorm.weight": [
+          128
+        ],
+        "model.norm.weight": [
+          128
+        ],
+        "lm_head.weight": [
+          256,
+          128
+        ]
+      }
+    }
+  ],
+  "native_failure": {
+    "rows": [
+      {
+        "name": "model.layers.3.self_attn.q_norm.weight",
+        "hook_calls": [
+          0,
+          0
+        ],
+        "rank_difference_relative": 1.2946383953094482,
+        "rank_sum_vs_reference_relative": 0.010269127786159515,
+        "ranks": [
+          {
+            "rank": 0,
+            "actual_vs_reference_relative": 0.7045135498046875
+          },
+          {
+            "rank": 1,
+            "actual_vs_reference_relative": 0.6478084325790405
+          }
+        ]
+      },
+      {
+        "name": "model.layers.3.self_attn.k_norm.weight",
+        "hook_calls": [
+          0,
+          0
+        ],
+        "rank_difference_relative": 1.277101755142212,
+        "rank_sum_vs_reference_relative": 0.009786034934222698,
+        "ranks": [
+          {
+            "rank": 0,
+            "actual_vs_reference_relative": 0.7038649916648865
+          },
+          {
+            "rank": 1,
+            "actual_vs_reference_relative": 0.6387362480163574
+          }
+        ]
+      }
+    ],
+    "scope": "tiny diagnostic only; no raw tensors or paths exported"
+  },
+  "support": {
+    "versions": {
+      "torch": "2.10.0+cpu",
+      "torch-npu": "2.10.0.post4",
+      "transformers": "5.14.1",
+      "deepspeed": "0.19.8"
+    },
+    "architecture": {
+      "hidden_size": 5120,
+      "intermediate_size": 17408,
+      "num_hidden_layers": 64,
+      "num_attention_heads": 24,
+      "num_key_value_heads": 4,
+      "head_dim": 256,
+      "linear_num_key_heads": 16,
+      "linear_num_value_heads": 48,
+      "linear_key_head_dim": 128,
+      "linear_value_head_dim": 128,
+      "vocab_size": 248320
+    },
+    "hf_tensor_parallel_plan": {
+      "layers.*.self_attn.q_proj": "colwise",
+      "layers.*.self_attn.k_proj": "colwise",
+      "layers.*.self_attn.v_proj": "colwise",
+      "layers.*.self_attn.o_proj": "rowwise",
+      "layers.*.self_attn.q_norm": "replicated_with_grad_allreduce",
+      "layers.*.self_attn.k_norm": "replicated_with_grad_allreduce",
+      "layers.*.mlp.gate_proj": "colwise",
+      "layers.*.mlp.up_proj": "colwise",
+      "layers.*.mlp.down_proj": "rowwise",
+      "layers.*.linear_attn.in_proj_qkv": "colwise_gather_output",
+      "layers.*.linear_attn.in_proj_z": "colwise_gather_output",
+      "layers.*.linear_attn.in_proj_b": "colwise_gather_output",
+      "layers.*.linear_attn.in_proj_a": "colwise_gather_output",
+      "layers.*.linear_attn.out_proj": "colwise_gather_output"
+    },
+    "limits": [
+      "TP rules present does not establish correct Ascend training; hardware forward/backward probe required.",
+      "GDN gathered-column rules shard projection weights but retain full GDN activations on each rank."
+    ],
+    "sources": [
+      "https://raw.githubusercontent.com/deepspeedai/DeepSpeed/master/docs/_tutorials/autotp-training.md",
+      "https://github.com/huggingface/transformers/blob/main/src/transformers/models/qwen3_5/configuration_qwen3_5.py"
+    ]
+  },
+  "repair": "Re-register only the two attention-norm SUM hooks on final Parameters after optimizer initialization; process-local",
+  "limits": [
+    "Tiny hybrid-model compatibility test, not a 27B speed or convergence result.",
+    "BF16 TP arithmetic differs; relative-gradient checks are not bitwise equivalence."
+  ]
+}

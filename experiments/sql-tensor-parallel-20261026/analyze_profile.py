@@ -79,10 +79,16 @@ for rank in [0,1]:
                     global_norm_scope_available=bool(norm_intervals),global_norm_scope_seconds=duration(norm_intervals),
                     compute_during_norm_seconds=duration(intersection(compute,norm_intervals)),
                     memcpy_during_norm_seconds=duration(intersection(copies,norm_intervals)))
+    exclusive=dict(compute_seconds=duration(compute),
+        communication_without_compute_seconds=duration(communication)-duration(intersection(communication,compute)),
+        memcpy_without_compute_or_comm_seconds=duration(copies)-duration(intersection(copies,compute+communication)),
+        cpu_adam_without_compute_comm_memcpy_seconds=duration(ui)-duration(intersection(ui,compute+communication+copies)),
+        other_seconds=wall-duration(compute+communication+copies+ui))
+    assert abs(sum(exclusive.values())-wall)<1e-6
     step=json.loads((root/f'rank{rank}-result.json').read_text())['steps'][-1]
     assert abs(wall-step['seconds'])<max(2.,step['seconds']*.12),(wall,step['seconds'])
     results.append(dict(rank=rank,normal_stop_metadata=True,db_basename=db.name,compute_top20=top,
-                        communication=comm,host_ranges=host,coverage=coverage,task_types=task_types,memcpy=memcpy,
+                        communication=comm,host_ranges=host,coverage=coverage,exclusive_timeline=exclusive,task_types=task_types,memcpy=memcpy,
                         profiled_step_seconds=step['seconds'],queries=queries))
 result=dict(ranks=results,execution='read-only SQLite; msprof_mcp unavailable',
             schema_reference='skill get_schema TASK and COMMUNICATION_OP; PYTORCH_API absent, explicit PRAGMA fallback',

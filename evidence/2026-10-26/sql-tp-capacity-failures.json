@@ -1,0 +1,66 @@
+{
+  "capacity_failures": [
+    {
+      "checkpoint": "selective48",
+      "zero_stage": 1,
+      "ranks": [
+        {
+          "rank": 0,
+          "completed_micros": 1,
+          "completed_updates": 0,
+          "local_parameters": 14085021184,
+          "allocated_after_init": null,
+          "reserved_after_init": null
+        },
+        {
+          "rank": 1,
+          "completed_micros": 1,
+          "completed_updates": 0,
+          "local_parameters": 14085021184,
+          "allocated_after_init": null,
+          "reserved_after_init": null
+        }
+      ],
+      "oom_messages": [
+        "NPU out of memory. Tried to allocate 62.00 MiB (NPU 1; 60.96 GiB total capacity; 59.12 GiB already allocated; 59.12 GiB current active; 38.45 MiB free; 60.07 GiB reserved in total by PyTorch).",
+        "NPU out of memory. Tried to allocate 62.00 MiB (NPU 0; 60.96 GiB total capacity; 59.12 GiB already allocated; 59.12 GiB current active; 38.95 MiB free; 60.07 GiB reserved in total by PyTorch)."
+      ]
+    },
+    {
+      "checkpoint": "all64",
+      "zero_stage": 1,
+      "ranks": [
+        {
+          "rank": 0,
+          "completed_micros": 1,
+          "completed_updates": 0,
+          "local_parameters": 14085021184,
+          "allocated_after_init": 30712841216,
+          "reserved_after_init": 56488886272
+        },
+        {
+          "rank": 1,
+          "completed_micros": 1,
+          "completed_updates": 0,
+          "local_parameters": 14085021184,
+          "allocated_after_init": 30712841216,
+          "reserved_after_init": 56488886272
+        }
+      ],
+      "oom_messages": [
+        "NPU out of memory. Tried to allocate 1.41 GiB (NPU 1; 60.96 GiB total capacity; 58.34 GiB already allocated; 58.34 GiB current active; 298.85 MiB free; 59.82 GiB reserved in total by PyTorch).",
+        "NPU out of memory. Tried to allocate 1.41 GiB (NPU 0; 60.96 GiB total capacity; 58.34 GiB already allocated; 58.34 GiB current active; 299.57 MiB free; 59.82 GiB reserved in total by PyTorch)."
+      ]
+    }
+  ],
+  "native_source": {
+    "lf_sha256": "752235af95d0de6f5fe6322b13409c736abe9d0c77be24f85d87489cc41489cb",
+    "function": "reduce_ready_partitions_and_remove_grads",
+    "guard": "if self.partition_gradients or self.is_gradient_accumulation_boundary() or self.zenflow:"
+  },
+  "conclusion": "Stage1 skips per-micro reduction/cleanup outside the accumulation boundary; Stage2 enables it.",
+  "limits": [
+    "OOM trials have no completed updates and no speed result.",
+    "Stage2 success and actual per-micro storage checks are reported separately."
+  ]
+}
