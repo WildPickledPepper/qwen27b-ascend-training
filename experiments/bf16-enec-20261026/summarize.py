@@ -6,7 +6,7 @@ p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argumen
 root=Path(a.root);cards=[];names=set();parameters=0;modules=defaultdict(lambda:dict(raw_bytes=0,stored_frame_bytes=0))
 for d in [2,3]:
     folder=root/f'full-card{d}.private';r=json.loads((folder/'report.json').read_text());v=json.loads((folder/'archive_verification.json').read_text())
-    assert r['complete'] and v['passed'] and v['frames_verified']==v['total_frames']==len(r['rows'])
+    assert r['complete'] and r['close_status']==0 and v['passed'] and v['frames_verified']==v['total_frames']==len(r['rows'])
     assert not names.intersection(r['tensor_index']);names.update(r['tensor_index']);parameters+=r['parameters']
     for row in r['rows']:
         name=row['name'];module='FFN' if '.mlp.' in name else 'GDN' if '.linear_attn.' in name else 'attention' if '.self_attn.' in name else 'embedding_head' if name in ['model.embed_tokens.weight','lm_head.weight'] else 'other'
@@ -15,7 +15,7 @@ for d in [2,3]:
         mapping_bytes=r['mapping_bytes'],archive_and_mapping_bytes=r['archive_and_mapping_bytes'],
         source_dtype_elements=r['source_dtype_elements'],source_index_sha256=r['source_index_sha256'],
         source_file_sizes_and_mtimes_unchanged=r['source_file_sizes_and_mtimes_unchanged'],
-        all_frames_reloaded=v,elapsed_seconds=r['elapsed_seconds'],
+        all_frames_reloaded=v,codec_close_status=r['close_status'],elapsed_seconds=r['elapsed_seconds'],
         explicit_max_codec_device_bytes=max(x['explicit_codec_device_allocation_bytes'] for x in r['rows'])))
 assert len(names)==851 and parameters==26895998464
 raw=sum(c['aggregate']['raw_bf16_bytes'] for c in cards);stored=sum(c['archive_and_mapping_bytes'] for c in cards)

@@ -1,0 +1,197 @@
+{
+  "scope": "Offline actual BF16 computational-weight archive, complete text backbone only",
+  "codec": {
+    "author_commit": "3026adde1ed97f8ae528515ae9de9de60e89176a",
+    "variant": "ENEC-BF16-122-6-3-16",
+    "author_kernels_unchanged": true,
+    "sha256": {
+      "snec_compress.cpp": "e5d0c83d76f458aa10f81714bfa26c63bd65d8192d52c5d279d44b419c1e3567",
+      "snec_decompress.cpp": "47a0a61ed4f0fc76c4917fa00764b59724d01df261c6c28966b1d759d51b7eaa",
+      "snec_merge.cpp": "ba1f3178889c0788a18db02eb1ea6f1fd1ddee639c6f89b64722bed690ec78b8",
+      "snec_utils.h": "0e1a683e6230ee6f914af9c84ad203ea70ade7d017c81da0d2627cdacc854e0e",
+      "snec_device.h": "2da81d8da069ceb9eb5d12905fabe9f6285bbeb03ef1ae7ca78b17c688138ac8"
+    }
+  },
+  "parameters": 26895998464,
+  "tensors": 851,
+  "raw_bf16_bytes": 53791996928,
+  "archive_and_mapping_bytes": 40232099321,
+  "raw_gib": 50.09770107269287,
+  "stored_gib": 37.469062321819365,
+  "saved_gib": 12.628638750873506,
+  "saved_percent": 25.208020488902417,
+  "cards": [
+    {
+      "device": 2,
+      "parameters": 13447996672,
+      "tensors": 425,
+      "aggregate": {
+        "raw_bf16_bytes": 26895993344,
+        "stored_frame_bytes": 20263922624,
+        "frames": 686,
+        "author_mismatch_fallbacks": 28,
+        "expansion_fallbacks": 24,
+        "raw_small_tensors": 152,
+        "all_stored_lossless": true,
+        "compress_event_seconds": 0.10423712009750306,
+        "merge_event_seconds": 0.026663479996845128,
+        "decompress_event_seconds": 0.13393275976739824,
+        "roundtrip_wall_seconds": 52.45064457319677
+      },
+      "mapping_bytes": 596194,
+      "archive_and_mapping_bytes": 20264518818,
+      "source_dtype_elements": {
+        "torch.bfloat16": 13447992448,
+        "torch.float32": 4224
+      },
+      "source_index_sha256": "b3737e9d00bda0e37f0b873629d98bf9b407bef35735b9193c23d9844bcc96a6",
+      "source_file_sizes_and_mtimes_unchanged": true,
+      "all_frames_reloaded": {
+        "passed": true,
+        "device": 2,
+        "frames_verified": 686,
+        "total_frames": 686,
+        "original_weights_loaded": false,
+        "all_tensor_ranges_complete": true,
+        "archive_ranges_complete": true,
+        "seconds": 64.5608506698627
+      },
+      "codec_close_status": 0,
+      "elapsed_seconds": 101.93826516997069,
+      "explicit_max_codec_device_bytes": 362334144
+    },
+    {
+      "device": 3,
+      "parameters": 13448001792,
+      "tensors": 426,
+      "aggregate": {
+        "raw_bf16_bytes": 26896003584,
+        "stored_frame_bytes": 19966984032,
+        "frames": 687,
+        "author_mismatch_fallbacks": 12,
+        "expansion_fallbacks": 24,
+        "raw_small_tensors": 153,
+        "all_stored_lossless": true,
+        "compress_event_seconds": 0.10494899983331561,
+        "merge_event_seconds": 0.02922602004930377,
+        "decompress_event_seconds": 0.1348601399771869,
+        "roundtrip_wall_seconds": 71.40056519024074
+      },
+      "mapping_bytes": 596471,
+      "archive_and_mapping_bytes": 19967580503,
+      "source_dtype_elements": {
+        "torch.bfloat16": 13447997568,
+        "torch.float32": 4224
+      },
+      "source_index_sha256": "b3737e9d00bda0e37f0b873629d98bf9b407bef35735b9193c23d9844bcc96a6",
+      "source_file_sizes_and_mtimes_unchanged": true,
+      "all_frames_reloaded": {
+        "passed": true,
+        "device": 3,
+        "frames_verified": 687,
+        "total_frames": 687,
+        "original_weights_loaded": false,
+        "all_tensor_ranges_complete": true,
+        "archive_ranges_complete": true,
+        "seconds": 58.313320129876956
+      },
+      "codec_close_status": 0,
+      "elapsed_seconds": 148.47697516018525,
+      "explicit_max_codec_device_bytes": 362334144
+    }
+  ],
+  "module_totals": {
+    "embedding_head": {
+      "raw_bytes": 5085593600,
+      "stored_frame_bytes": 3956923392
+    },
+    "GDN": {
+      "raw_bytes": 11124102144,
+      "stored_frame_bytes": 8238877024
+    },
+    "FFN": {
+      "raw_bytes": 34225520640,
+      "stored_frame_bytes": 25563507488
+    },
+    "other": {
+      "raw_bytes": 1320960,
+      "stored_frame_bytes": 1320960
+    },
+    "attention": {
+      "raw_bytes": 3355459584,
+      "stored_frame_bytes": 2470277792
+    }
+  },
+  "diagnostics": [
+    {
+      "name": "all_uint16_patterns",
+      "element_offset": 0,
+      "elements": 65536,
+      "raw_bf16_bytes": 131072,
+      "stored_bytes": 131072,
+      "author_encoded_bytes": 115424,
+      "storage_kind": "raw_author_mismatch",
+      "author_roundtrip_bit_exact": false,
+      "stored_lossless": true,
+      "input_sha256": "68e419472d25e0b85e9917ccf692fd58245c5e95e9a46f07d1df81d2e9da246b",
+      "stored_sha256": "68e419472d25e0b85e9917ccf692fd58245c5e95e9a46f07d1df81d2e9da246b",
+      "diagnostic": true,
+      "compress_event_ms": 0.8849400281906128,
+      "merge_event_ms": 0.07485999912023544,
+      "decompress_event_ms": 2.3264999389648438,
+      "explicit_codec_device_allocation_bytes": 3640256,
+      "roundtrip_wall_seconds": 0.005917279981076717
+    },
+    {
+      "name": "zeros",
+      "element_offset": 0,
+      "elements": 131072,
+      "raw_bf16_bytes": 262144,
+      "stored_bytes": 262144,
+      "author_encoded_bytes": 230624,
+      "storage_kind": "raw_author_mismatch",
+      "author_roundtrip_bit_exact": false,
+      "stored_lossless": true,
+      "input_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+      "stored_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+      "diagnostic": true,
+      "compress_event_ms": 0.05270000174641609,
+      "merge_event_ms": 0.04848000034689903,
+      "decompress_event_ms": 0.04837999865412712,
+      "explicit_codec_device_allocation_bytes": 4083648,
+      "roundtrip_wall_seconds": 0.002085830084979534
+    },
+    {
+      "name": "unaligned_tail",
+      "element_offset": 0,
+      "elements": 32785,
+      "raw_bf16_bytes": 65570,
+      "stored_bytes": 65570,
+      "author_encoded_bytes": 86624,
+      "storage_kind": "raw_author_mismatch",
+      "author_roundtrip_bit_exact": false,
+      "stored_lossless": true,
+      "input_sha256": "863f743cc6c560c5c9e884f1646e72ca8cfbbd2d7d0208147a75db0f6ab45132",
+      "stored_sha256": "863f743cc6c560c5c9e884f1646e72ca8cfbbd2d7d0208147a75db0f6ab45132",
+      "diagnostic": true,
+      "compress_event_ms": 0.046379998326301575,
+      "merge_event_ms": 0.047439999878406525,
+      "decompress_event_ms": 0.058240000158548355,
+      "explicit_codec_device_allocation_bytes": 3529408,
+      "roundtrip_wall_seconds": 0.0015799698885530233
+    }
+  ],
+  "source_checkpoint_read_only": true,
+  "model_training_started": false,
+  "original_bf16_dtype_retained": true,
+  "resource_release": {
+    "cards_2_3_no_processes": true
+  },
+  "limits": [
+    "Source is the original checkpoint cast to the same BF16 computational weights as current training, not an unsaved trained state.",
+    "Mapping/header/raw fallbacks counted; online decoder working set and training integration are not included.",
+    "Offline harness holds source, encoded, scratch and decoded buffers together; not proof of online HBM savings.",
+    "Event totals and offline roundtrip wall include different work and must not be added together.",
+    "No claim of training speedup; unchanged BF16 matmul requires decoding before use."
+  ]
+}
