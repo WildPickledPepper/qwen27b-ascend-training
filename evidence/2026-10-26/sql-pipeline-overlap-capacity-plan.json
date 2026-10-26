@@ -1,0 +1,80 @@
+{
+  "ranks": [
+    {
+      "rank": 0,
+      "plans": [
+        {
+          "gib": 2,
+          "allocated_bytes": 2147483648,
+          "selected_parameters": 36,
+          "extra_bytes": 0,
+          "saved_logical_d2h_per_update": 0,
+          "projected_peak_allocated": 58583601664,
+          "projected_reserved_plus_observed_idle_overhead": 64767393792,
+          "remaining_physical_bytes": 3952082944
+        },
+        {
+          "gib": 4,
+          "allocated_bytes": 4294967296,
+          "selected_parameters": 29,
+          "extra_bytes": 2147483648,
+          "saved_logical_d2h_per_update": 32212254720,
+          "projected_peak_allocated": 60731085312,
+          "projected_reserved_plus_observed_idle_overhead": 66914877440,
+          "remaining_physical_bytes": 1804599296
+        },
+        {
+          "gib": 6,
+          "allocated_bytes": 6442450944,
+          "selected_parameters": 58,
+          "extra_bytes": 4294967296,
+          "saved_logical_d2h_per_update": 64424509440,
+          "projected_peak_allocated": 62878568960,
+          "projected_reserved_plus_observed_idle_overhead": 69062361088,
+          "remaining_physical_bytes": -342884352
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "plans": [
+        {
+          "gib": 2,
+          "allocated_bytes": 2147483648,
+          "selected_parameters": 36,
+          "extra_bytes": 0,
+          "saved_logical_d2h_per_update": 0,
+          "projected_peak_allocated": 55893075968,
+          "projected_reserved_plus_observed_idle_overhead": 61848158208,
+          "remaining_physical_bytes": 6871318528
+        },
+        {
+          "gib": 4,
+          "allocated_bytes": 4294967296,
+          "selected_parameters": 29,
+          "extra_bytes": 2147483648,
+          "saved_logical_d2h_per_update": 32212254720,
+          "projected_peak_allocated": 58040559616,
+          "projected_reserved_plus_observed_idle_overhead": 63995641856,
+          "remaining_physical_bytes": 4723834880
+        },
+        {
+          "gib": 6,
+          "allocated_bytes": 6442450944,
+          "selected_parameters": 58,
+          "extra_bytes": 4294967296,
+          "saved_logical_d2h_per_update": 64424509440,
+          "projected_peak_allocated": 60188043264,
+          "projected_reserved_plus_observed_idle_overhead": 66143125504,
+          "remaining_physical_bytes": 2576351232
+        }
+      ]
+    }
+  ],
+  "assumptions": [
+    "Same input lengths/checkpointing and allocator behavior as recorded four steps.",
+    "Projection is a capacity estimate, not a guarantee; actual full-run peaks must be checked.",
+    "6GiB is outside the existing cache hard bound and is not authorized by this plan."
+  ],
+  "choice": "If further caching is tested, choose 4GiB; keep source hard bound and avoid 6GiB."
+}

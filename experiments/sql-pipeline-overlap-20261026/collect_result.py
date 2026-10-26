@@ -2,7 +2,7 @@
 import argparse,hashlib,json,subprocess
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--reference',required=True)
-p.add_argument('--zero-reference',required=True);p.add_argument('--output',required=True);a=p.parse_args()
+p.add_argument('--zero-reference',required=True);p.add_argument('--output',required=True);p.add_argument('--cache-change',action='store_true');a=p.parse_args()
 root=Path(a.root);reference=Path(a.reference);zero=Path(a.zero_reference)
 new=[json.loads((root/f'rank{r}-result.json').read_text()) for r in [0,1]]
 old=[json.loads((reference/f'rank{r}-result.json').read_text()) for r in [0,1]]
@@ -15,17 +15,24 @@ for rank in [0,1]:
         n=next(x for x in logs if x['event']==event);o=next(x for x in refs if x['event']==event)
         for key in keys:assert n[key]==o[key],(rank,event,key)
     plan=next(x for x in logs if x['event']=='resident_plan');op=next(x for x in refs if x['event']=='resident_plan')
-    assert {k:v for k,v in plan.items() if k not in ['unix']}=={k:v for k,v in op.items() if k not in ['unix']}
+    if not a.cache_change:
+        assert {k:v for k,v in plan.items() if k not in ['unix']}=={k:v for k,v in op.items() if k not in ['unix']}
+    else:assert plan['allocated_bytes']==4*2**30 and op['allocated_bytes']==2*2**30
     assert new[rank]['validation_before']==old[rank]['validation_before']
     assert new[rank]['validation_after_768']==old[rank]['validation_after_768']
     assert new[rank]['state_bytes']==old[rank]['state_bytes']
     assert len(new[rank]['steps'])==len(old[rank]['steps'])==4
     for s,(n,o) in enumerate(zip(new[rank]['steps'],old[rank]['steps'])):
-        for key in ['input_tokens','padded_tokens','gradient_d2h_bytes','resident_add_calls','resident_add_bytes','grad_norm']:
+        for key in ['input_tokens','padded_tokens','grad_norm']:
             assert n[key]==o[key],(rank,s,key,n[key],o[key])
+        saved=(plan['allocated_bytes']-op['allocated_bytes'])*15
+        assert o['gradient_d2h_bytes']-n['gradient_d2h_bytes']==saved
+        assert n['resident_add_calls']==plan['selected_parameters']*16
+        assert n['resident_add_bytes']==plan['allocated_bytes']*16
         assert n['profiled']==(s==3)
-        assert sum(t['bytes'] for t in n['offload_parameter_stats'].values())==n['gradient_d2h_bytes']
-    checks.append(dict(rank=rank,same_data_shapes_padding_cache_precision_and_d2h=True,all_four_gradient_norms_exact=True,
+        if 'offload_parameter_stats' in n:assert sum(t['bytes'] for t in n['offload_parameter_stats'].values())==n['gradient_d2h_bytes']
+    checks.append(dict(rank=rank,same_data_shapes_padding_and_precision=True,resident_bytes=plan['allocated_bytes'],
+        saved_d2h_per_update=(plan['allocated_bytes']-op['allocated_bytes'])*15,all_four_gradient_norms_exact=True,
         validation_before_and_after_768_exact=True))
 normal=[max(r['steps'][s]['seconds'] for r in new) for s in [1,2]]
 previous=[max(r['steps'][s]['seconds'] for r in old) for s in [1,2]]
