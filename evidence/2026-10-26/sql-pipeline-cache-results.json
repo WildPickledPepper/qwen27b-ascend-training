@@ -1,0 +1,439 @@
+{
+  "passed_workload": true,
+  "pipeline_reference_seconds_per_256": 95.30574047006667,
+  "cache_seconds_per_256": 85.09019123506732,
+  "normal_seconds": [
+    85.09480747999623,
+    85.08557499013841
+  ],
+  "reference_normal_seconds": [
+    92.97018444002606,
+    97.64129650010727
+  ],
+  "time_reduction_percent": 10.718713463233431,
+  "versus_zero3_time_reduction_percent": 11.12390097811209,
+  "validation_reference": {
+    "loss": 0.855101466178894,
+    "assistant_tokens": 224,
+    "correct": 205
+  },
+  "validation_candidate": {
+    "loss": 0.855101466178894,
+    "assistant_tokens": 224,
+    "correct": 205
+  },
+  "validation_exact": true,
+  "resident_plans": [
+    {
+      "rank": 0,
+      "budget_bytes": 2147483648,
+      "allocated_bytes": 2147483648,
+      "parameter_indices": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        36,
+        37,
+        38,
+        39,
+        40,
+        47,
+        48,
+        49,
+        50,
+        51,
+        61,
+        62,
+        75,
+        76,
+        89,
+        90,
+        100,
+        101,
+        114,
+        115,
+        128,
+        129,
+        142
+      ],
+      "selected_parameters": 36,
+      "total_parameters": 425,
+      "dtype": "BF16",
+      "order": "same per-parameter 16 microbatch additions",
+      "flush": "once after all microbatches; no early optimizer update"
+    },
+    {
+      "rank": 1,
+      "budget_bytes": 2147483648,
+      "allocated_bytes": 2147483648,
+      "parameter_indices": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        35,
+        36,
+        37,
+        38,
+        39,
+        46,
+        47,
+        48,
+        49,
+        50,
+        60,
+        61,
+        74,
+        75,
+        88,
+        89,
+        99,
+        100,
+        113,
+        114,
+        127,
+        128,
+        141
+      ],
+      "selected_parameters": 36,
+      "total_parameters": 426,
+      "dtype": "BF16",
+      "order": "same per-parameter 16 microbatch additions",
+      "flush": "once after all microbatches; no early optimizer update"
+    }
+  ],
+  "byte_and_norm_checks": [
+    {
+      "rank": 0,
+      "step": 1,
+      "expected_and_actual_saved_d2h_bytes": 32212254720,
+      "grad_norm_exact": true
+    },
+    {
+      "rank": 0,
+      "step": 2,
+      "expected_and_actual_saved_d2h_bytes": 32212254720,
+      "grad_norm_exact": true
+    },
+    {
+      "rank": 0,
+      "step": 3,
+      "expected_and_actual_saved_d2h_bytes": 32212254720,
+      "grad_norm_exact": true
+    },
+    {
+      "rank": 0,
+      "step": 4,
+      "expected_and_actual_saved_d2h_bytes": 32212254720,
+      "grad_norm_exact": true
+    },
+    {
+      "rank": 1,
+      "step": 1,
+      "expected_and_actual_saved_d2h_bytes": 32212254720,
+      "grad_norm_exact": true
+    },
+    {
+      "rank": 1,
+      "step": 2,
+      "expected_and_actual_saved_d2h_bytes": 32212254720,
+      "grad_norm_exact": true
+    },
+    {
+      "rank": 1,
+      "step": 3,
+      "expected_and_actual_saved_d2h_bytes": 32212254720,
+      "grad_norm_exact": true
+    },
+    {
+      "rank": 1,
+      "step": 4,
+      "expected_and_actual_saved_d2h_bytes": 32212254720,
+      "grad_norm_exact": true
+    }
+  ],
+  "rank0_reference_normal_metrics": {
+    "forward_backward_and_drain_seconds": 73.3152056549443,
+    "cpu_update_return_seconds": 20.616378840059042,
+    "worker_cpu_add_seconds": 58.055045689688995,
+    "offload_slot_wait": 43.52806953690015,
+    "worker_copy_wait_seconds": 11.442102721426636,
+    "gradient_d2h_bytes": 430335893504.0
+  },
+  "rank0_candidate_normal_metrics": {
+    "forward_backward_and_drain_seconds": 66.32729314500466,
+    "cpu_update_return_seconds": 17.34326180513017,
+    "worker_cpu_add_seconds": 51.22335415915586,
+    "offload_slot_wait": 34.65035863034427,
+    "worker_copy_wait_seconds": 11.289306874736212,
+    "gradient_d2h_bytes": 398123638784.0
+  },
+  "rank_results": [
+    {
+      "steps": [
+        {
+          "step": 1,
+          "seconds": 126.9448320500087,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 6.57031248928979,
+            "backward_wall": 60.68284341972321,
+            "p2p_wall": 0.021591740660369396
+          },
+          "forward_backward_and_drain_seconds": 72.84793035988696,
+          "cpu_update_return_seconds": 52.60020304983482,
+          "grad_norm": 40.50292355381584,
+          "norm_device": "npu",
+          "global_norm_seconds": 1.4967163801193237,
+          "gradient_d2h_bytes": 398123638784,
+          "offload_slot_wait": 36.166329256724566,
+          "worker_copy_wait_seconds": 14.667799412738532,
+          "worker_cpu_add_seconds": 51.22448369837366,
+          "resident_add_calls": 576,
+          "resident_add_bytes": 34359738368,
+          "allocated_peak": 58583325184,
+          "reserved_peak": 61186506752,
+          "input_tokens": 28426,
+          "padded_tokens": 54272
+        },
+        {
+          "step": 2,
+          "seconds": 85.09464592998847,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 5.655906780157238,
+            "backward_wall": 55.35048758983612,
+            "p2p_wall": 0.020751630188897252
+          },
+          "forward_backward_and_drain_seconds": 66.40443866001442,
+          "cpu_update_return_seconds": 17.271948960144073,
+          "grad_norm": 40.57226896279111,
+          "norm_device": "npu",
+          "global_norm_seconds": 1.4182816799730062,
+          "gradient_d2h_bytes": 398123638784,
+          "offload_slot_wait": 34.89109846483916,
+          "worker_copy_wait_seconds": 11.61520208325237,
+          "worker_cpu_add_seconds": 51.011183734983206,
+          "resident_add_calls": 576,
+          "resident_add_bytes": 34359738368,
+          "allocated_peak": 50863640064,
+          "reserved_peak": 61186506752,
+          "input_tokens": 28549,
+          "padded_tokens": 49152
+        },
+        {
+          "step": 3,
+          "seconds": 85.08529695984907,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 5.86426301044412,
+            "backward_wall": 54.84110249998048,
+            "p2p_wall": 0.021238929824903607
+          },
+          "forward_backward_and_drain_seconds": 66.2501476299949,
+          "cpu_update_return_seconds": 17.414574650116265,
+          "grad_norm": 38.67934902523083,
+          "norm_device": "npu",
+          "global_norm_seconds": 1.420593089889735,
+          "gradient_d2h_bytes": 398123638784,
+          "offload_slot_wait": 34.40961879584938,
+          "worker_copy_wait_seconds": 10.963411666220054,
+          "worker_cpu_add_seconds": 51.435524583328515,
+          "resident_add_calls": 576,
+          "resident_add_bytes": 34359738368,
+          "allocated_peak": 54738259968,
+          "reserved_peak": 61186506752,
+          "input_tokens": 28564,
+          "padded_tokens": 50176
+        },
+        {
+          "step": 4,
+          "seconds": 91.90840535005555,
+          "profiled": true,
+          "phase": {
+            "forward_wall": 7.087636200012639,
+            "backward_wall": 59.73123964993283,
+            "p2p_wall": 0.024849170353263617
+          },
+          "forward_backward_and_drain_seconds": 72.88994719018228,
+          "cpu_update_return_seconds": 17.55159222986549,
+          "grad_norm": 44.591319134866374,
+          "norm_device": "npu",
+          "global_norm_seconds": 1.4668865900021046,
+          "gradient_d2h_bytes": 398123638784,
+          "offload_slot_wait": 32.606578923994675,
+          "worker_copy_wait_seconds": 14.609018811723217,
+          "worker_cpu_add_seconds": 53.05309128621593,
+          "resident_add_calls": 576,
+          "resident_add_bytes": 34359738368,
+          "allocated_peak": 58583601664,
+          "reserved_peak": 61186506752,
+          "input_tokens": 28426,
+          "padded_tokens": 54272
+        }
+      ],
+      "validation_before": {
+        "loss": 1.0108281373977661,
+        "assistant_tokens": 224,
+        "correct": 202
+      },
+      "validation_after_768": {
+        "loss": 0.855101466178894,
+        "assistant_tokens": 224,
+        "correct": 205
+      },
+      "parameters": 13447996672,
+      "state_bytes": 107583973376,
+      "normal_mean": 85.08997144491877,
+      "protocol": "global256/micro16/16 pipeline micros; original paired DP groups and padding",
+      "gradient_precision": "BF16 accumulation, FP32 Adam; changed reduction order"
+    },
+    {
+      "steps": [
+        {
+          "step": 1,
+          "seconds": 126.94438294018619,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 5.6539419600740075,
+            "backward_wall": 59.93436349974945,
+            "p2p_wall": 0.04367900942452252
+          },
+          "forward_backward_and_drain_seconds": 69.41226481017657,
+          "cpu_update_return_seconds": 52.600423889933154,
+          "grad_norm": 40.50292355381584,
+          "norm_device": "npu",
+          "global_norm_seconds": 4.931706459959969,
+          "gradient_d2h_bytes": 398123802624,
+          "offload_slot_wait": 29.903968463651836,
+          "worker_copy_wait_seconds": 8.97636611526832,
+          "worker_cpu_add_seconds": 48.33541701338254,
+          "resident_add_calls": 576,
+          "resident_add_bytes": 34359738368,
+          "allocated_peak": 55892798976,
+          "reserved_peak": 58265174016,
+          "input_tokens": 28426,
+          "padded_tokens": 54272
+        },
+        {
+          "step": 2,
+          "seconds": 85.09480747999623,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 4.984618550399318,
+            "backward_wall": 56.63405152969062,
+            "p2p_wall": 0.04334012954495847
+          },
+          "forward_backward_and_drain_seconds": 63.05346642015502,
+          "cpu_update_return_seconds": 17.27243901998736,
+          "grad_norm": 40.57226896279111,
+          "norm_device": "npu",
+          "global_norm_seconds": 4.768914139829576,
+          "gradient_d2h_bytes": 398123802624,
+          "offload_slot_wait": 32.51661674166098,
+          "worker_copy_wait_seconds": 8.061473503010347,
+          "worker_cpu_add_seconds": 48.572803899878636,
+          "resident_add_calls": 576,
+          "resident_add_bytes": 34359738368,
+          "allocated_peak": 48954439168,
+          "reserved_peak": 58265174016,
+          "input_tokens": 28549,
+          "padded_tokens": 49152
+        },
+        {
+          "step": 3,
+          "seconds": 85.08557499013841,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 4.854087489889935,
+            "backward_wall": 56.575395359657705,
+            "p2p_wall": 0.04299415089190006
+          },
+          "forward_backward_and_drain_seconds": 62.90452579013072,
+          "cpu_update_return_seconds": 17.415099430130795,
+          "grad_norm": 38.67934902523083,
+          "norm_device": "npu",
+          "global_norm_seconds": 4.765960509888828,
+          "gradient_d2h_bytes": 398123802624,
+          "offload_slot_wait": 32.1993684344925,
+          "worker_copy_wait_seconds": 8.281138301361352,
+          "worker_cpu_add_seconds": 48.2431546242442,
+          "resident_add_calls": 576,
+          "resident_add_bytes": 34359738368,
+          "allocated_peak": 55893075968,
+          "reserved_peak": 58267271168,
+          "input_tokens": 28564,
+          "padded_tokens": 50176
+        },
+        {
+          "step": 4,
+          "seconds": 91.90384381986223,
+          "profiled": true,
+          "phase": {
+            "forward_wall": 6.195089190034196,
+            "backward_wall": 61.60306436056271,
+            "p2p_wall": 0.04699652059935033
+          },
+          "forward_backward_and_drain_seconds": 69.27193535980769,
+          "cpu_update_return_seconds": 17.55189437000081,
+          "grad_norm": 44.591319134866374,
+          "norm_device": "npu",
+          "global_norm_seconds": 5.0800258200615644,
+          "gradient_d2h_bytes": 398123802624,
+          "offload_slot_wait": 29.206018541473895,
+          "worker_copy_wait_seconds": 9.639446165645495,
+          "worker_cpu_add_seconds": 51.86885439604521,
+          "resident_add_calls": 576,
+          "resident_add_bytes": 34359738368,
+          "allocated_peak": 55893075968,
+          "reserved_peak": 58267271168,
+          "input_tokens": 28426,
+          "padded_tokens": 54272
+        }
+      ],
+      "validation_before": {
+        "loss": 1.0108281373977661,
+        "assistant_tokens": 224,
+        "correct": 202
+      },
+      "validation_after_768": {
+        "loss": 0.855101466178894,
+        "assistant_tokens": 224,
+        "correct": 205
+      },
+      "parameters": 13448001792,
+      "state_bytes": 107584014336,
+      "normal_mean": 85.09019123506732,
+      "protocol": "global256/micro16/16 pipeline micros; original paired DP groups and padding",
+      "gradient_precision": "BF16 accumulation, FP32 Adam; changed reduction order"
+    }
+  ],
+  "resource_release": {
+    "cards_2_3_no_processes": true,
+    "other_service_pid_present": true
+  },
+  "limits": [
+    "Two normal timed updates after warmup; profiling excluded.",
+    "Nested worker and slot-wait times overlap backward; do not add them.",
+    "Tiny three-update bitwise checks and eight validation rows do not prove long-term quality."
+  ]
+}
