@@ -1,0 +1,145 @@
+{
+  "decision": "Keep original selected ZeRO-3; measured 0.45% is below run-to-run spread, not a robust speedup",
+  "performance": {
+    "reference_seconds_per_256": 95.74024082010146,
+    "pipeline_seconds_per_256": 95.30574047006667,
+    "normal_slow_rank_seconds": [
+      92.97018444002606,
+      97.64129650010727
+    ],
+    "speedup": 1.0045590155209094,
+    "time_reduction_percent": 0.4538325225766138
+  },
+  "phase": {
+    "reference_before_update_seconds": 81.12138488015626,
+    "pipeline_before_update_seconds": 74.68917537492234,
+    "reference_update_seconds": 14.609887675032951,
+    "pipeline_update_seconds": 20.616378840059042,
+    "reference_cpu_bf16_add_seconds": 26.86005518573802,
+    "pipeline_cpu_bf16_add_seconds": 58.055045689688995,
+    "pipeline_main_gradient_slot_wait_seconds": 43.52806953690015,
+    "pipeline_worker_copy_wait_seconds": 11.442102721426636
+  },
+  "validation": {
+    "reference": {
+      "loss": 0.8581519722938538,
+      "assistant_tokens": 224,
+      "correct": 204,
+      "execution": "native BF16 model"
+    },
+    "pipeline": {
+      "loss": 0.855101466178894,
+      "assistant_tokens": 224,
+      "correct": 205
+    },
+    "loss_difference": -0.003050506114959717,
+    "correct_difference": 1
+  },
+  "workload_verified": {
+    "same_training_order": true,
+    "same_lengths": true,
+    "same_validation_split": true,
+    "same_input_and_padded_tokens": true,
+    "unique_parameters": 851,
+    "all_text_parameters": 26895998464,
+    "checkpointed_layers": 48,
+    "cpu_fp32_m_v_bytes": 215167987712
+  },
+  "profile": [
+    {
+      "rank": 0,
+      "coverage": {
+        "device_window_seconds": 102.76022167,
+        "compute_union_seconds": 39.433086082,
+        "communication_union_seconds": 11.640144391,
+        "communication_without_compute_seconds": 11.640144391,
+        "cpu_update_scope_seconds": 21.1540624,
+        "compute_during_cpu_update_seconds": 0.0,
+        "memcpy_union_seconds": 16.408000026,
+        "memcpy_without_compute_seconds": 16.408000026,
+        "no_compute_or_communication_seconds": 51.686991197000005,
+        "global_norm_scope_seconds": 1.73333256,
+        "compute_during_norm_seconds": 0.093270939,
+        "memcpy_during_norm_seconds": 0.0
+      },
+      "communication": [
+        {
+          "op_type": "hcom_batchSendRecv_",
+          "calls": 17,
+          "summed_seconds": 9.691148811
+        },
+        {
+          "op_type": "hcom_allReduce_",
+          "calls": 2,
+          "summed_seconds": 1.94899558
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "coverage": {
+        "device_window_seconds": 102.73717436,
+        "compute_union_seconds": 41.39476498,
+        "communication_union_seconds": 5.12388526,
+        "communication_without_compute_seconds": 5.12388526,
+        "cpu_update_scope_seconds": 23.10355634,
+        "compute_during_cpu_update_seconds": 0.0,
+        "memcpy_union_seconds": 17.44872146,
+        "memcpy_without_compute_seconds": 17.44872146,
+        "no_compute_or_communication_seconds": 56.21852412,
+        "global_norm_scope_seconds": 6.00549354,
+        "compute_during_norm_seconds": 0.09306646,
+        "memcpy_during_norm_seconds": 0.0
+      },
+      "communication": [
+        {
+          "op_type": "hcom_allReduce_",
+          "calls": 2,
+          "summed_seconds": 4.52000498
+        },
+        {
+          "op_type": "hcom_batchSendRecv_",
+          "calls": 32,
+          "summed_seconds": 0.60388028
+        }
+      ]
+    }
+  ],
+  "resource_release": {
+    "physical_cards": [
+      2,
+      3
+    ],
+    "no_running_processes": true,
+    "existing_other_service_pid_present": true
+  },
+  "original_selected_source_integrity": {
+    "train_boundary.py": true,
+    "cpu_accumulation.py": true,
+    "cpu_update.py": true,
+    "bounded_grad_copy.py": true,
+    "community_gdn.py": true,
+    "gradient_cache.py": true,
+    "gradient_scopes.py": true,
+    "zero3-selected.json": true
+  },
+  "source_lf_sha256": {
+    "train_pipeline.py": "603c84f8189fe42ceecec0b9805f9766506a698218ac4f3366f9f4a27d759623",
+    "run_remote.py": "1440cf786f4aa36d8568adffc0db82b3435e4fa49932a423180299a9fe1f3c6e",
+    "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b",
+    "verify_smoke.py": "935fc5998993c4edadc9eb339d50156a308450fa8d0976b7decfaa414d402769",
+    "analyze_profile.py": "47fa1d9ec038148be0519c373f1059bb0746fb60c14d2766ec68c9ec14f18093",
+    "collect_result.py": "3ccf50c141a7f4dd96887494c33864df6bf7af448a6605508669bc9001dedeea",
+    "run_followup.py": "3326fc558d3ddbea9998496fc8502f7682d25debe71ef05c32ab08a4b545c694",
+    "stop_own_attempt.py": "e18f472719388c3123ad6c9d1d61173cde8c041c6025cb96a476eb5ae43b4ffa",
+    "probe_rotary.py": "5713c18b074876ddf6171ecb6232181765662d14cd09b13391f9f6dc8d4535a2",
+    "run_sequence.py": "c334d79946d16fc40253a20f2c9a1edef605b319ae5bf3ff23eadd7f3a6fb7b3",
+    "finalize.py": "671753bbb25e5f0b89543ac98506f20750ccacabb5f6decd9af4358782a7e214"
+  },
+  "notes": [
+    "CPU BF16 add, worker-copy-wait and main slot wait overlap with backward; do not add them.",
+    "Before-update and update are main-thread scopes; update includes FP32 gradient preparation/CPUAdam/BF16 return.",
+    "Only two normal timed updates after warmup; no statistical speedup claim.",
+    "This isolated implementation is not an upper bound for pipeline parallel training."
+  ]
+}

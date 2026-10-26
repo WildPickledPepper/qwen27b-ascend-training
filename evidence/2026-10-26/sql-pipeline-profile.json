@@ -1,0 +1,652 @@
+{
+  "ranks": [
+    {
+      "rank": 0,
+      "normal_stop_metadata": true,
+      "db_basename": "ascend_pytorch_profiler_0.db",
+      "compute_top20": [
+        {
+          "op_type": "MatMulV3",
+          "calls": 11520,
+          "summed_seconds": 16.36856977
+        },
+        {
+          "op_type": "prepare_wy_repr_bwd_kernel",
+          "calls": 384,
+          "summed_seconds": 4.963721271
+        },
+        {
+          "op_type": "Mul",
+          "calls": 32688,
+          "summed_seconds": 2.762404322
+        },
+        {
+          "op_type": "Transpose",
+          "calls": 28224,
+          "summed_seconds": 2.566277113
+        },
+        {
+          "op_type": "chunk_fwd_kernel_o",
+          "calls": 768,
+          "summed_seconds": 1.922769072
+        },
+        {
+          "op_type": "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+          "calls": 1152,
+          "summed_seconds": 1.494433351
+        },
+        {
+          "op_type": "chunk_bwd_kernel_dqkwg",
+          "calls": 384,
+          "summed_seconds": 1.002285279
+        },
+        {
+          "op_type": "solve_tril_64x64_kernel",
+          "calls": 768,
+          "summed_seconds": 0.981045504
+        },
+        {
+          "op_type": "chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64",
+          "calls": 384,
+          "summed_seconds": 0.896803828
+        },
+        {
+          "op_type": "TransData",
+          "calls": 5760,
+          "summed_seconds": 0.635864014
+        },
+        {
+          "op_type": "Add",
+          "calls": 15152,
+          "summed_seconds": 0.570190947
+        },
+        {
+          "op_type": "recompute_w_u_fwd_kernel",
+          "calls": 1152,
+          "summed_seconds": 0.552077115
+        },
+        {
+          "op_type": "ViewCopy",
+          "calls": 1440,
+          "summed_seconds": 0.520277532
+        },
+        {
+          "op_type": "Cast",
+          "calls": 20331,
+          "summed_seconds": 0.516545459
+        },
+        {
+          "op_type": "ReduceSum",
+          "calls": 7808,
+          "summed_seconds": 0.49731351
+        },
+        {
+          "op_type": "SiluGrad",
+          "calls": 1280,
+          "summed_seconds": 0.370845237
+        },
+        {
+          "op_type": "Slice",
+          "calls": 5888,
+          "summed_seconds": 0.348825114
+        },
+        {
+          "op_type": "Swish",
+          "calls": 2432,
+          "summed_seconds": 0.249265672
+        },
+        {
+          "op_type": "Conv2D",
+          "calls": 768,
+          "summed_seconds": 0.237111833
+        },
+        {
+          "op_type": "Conv2DBackpropInput",
+          "calls": 384,
+          "summed_seconds": 0.22465178
+        }
+      ],
+      "communication": [
+        {
+          "op_type": "hcom_batchSendRecv_",
+          "calls": 17,
+          "summed_seconds": 9.691148811
+        },
+        {
+          "op_type": "hcom_allReduce_",
+          "calls": 2,
+          "summed_seconds": 1.94899558
+        }
+      ],
+      "host_ranges": [
+        {
+          "name": "pipeline/stage0/backward",
+          "calls": 16,
+          "summed_seconds": 69.11984919
+        },
+        {
+          "name": "optimizer/CPUAdam_and_return",
+          "calls": 1,
+          "summed_seconds": 21.1540624
+        },
+        {
+          "name": "pipeline/stage0/forward",
+          "calls": 16,
+          "summed_seconds": 6.93391715
+        },
+        {
+          "name": "optimizer/global_norm",
+          "calls": 1,
+          "summed_seconds": 1.73333256
+        },
+        {
+          "name": "pipeline/gradient_zero",
+          "calls": 1,
+          "summed_seconds": 1.13374845
+        },
+        {
+          "name": "pipeline/gradient_drain",
+          "calls": 1,
+          "summed_seconds": 0.30250766
+        },
+        {
+          "name": "pipeline/P2P",
+          "calls": 17,
+          "summed_seconds": 0.02105019
+        }
+      ],
+      "coverage": {
+        "device_window_seconds": 102.76022167,
+        "compute_union_seconds": 39.433086082,
+        "communication_union_seconds": 11.640144391,
+        "communication_without_compute_seconds": 11.640144391,
+        "cpu_update_scope_seconds": 21.1540624,
+        "compute_during_cpu_update_seconds": 0.0,
+        "memcpy_union_seconds": 16.408000026,
+        "memcpy_without_compute_seconds": 16.408000026,
+        "no_compute_or_communication_seconds": 51.686991197000005,
+        "global_norm_scope_seconds": 1.73333256,
+        "compute_during_norm_seconds": 0.093270939,
+        "memcpy_during_norm_seconds": 0.0
+      },
+      "task_types": [
+        {
+          "type": "NOTIFY_WAIT_SQE",
+          "calls": 187,
+          "summed_seconds": 34.739552233
+        },
+        {
+          "type": "KERNEL_MIX_AIC",
+          "calls": 10752,
+          "summed_seconds": 22.17203793
+        },
+        {
+          "type": "KERNEL_AICORE",
+          "calls": 16896,
+          "summed_seconds": 17.136051885
+        },
+        {
+          "type": "MEMCPY_ASYNC",
+          "calls": 11662,
+          "summed_seconds": 16.408000026
+        },
+        {
+          "type": "EVENT_WAIT",
+          "calls": 53,
+          "summed_seconds": 14.022248823
+        },
+        {
+          "type": "KERNEL_AIVEC",
+          "calls": 146831,
+          "summed_seconds": 10.525212209
+        },
+        {
+          "type": "NOTIFY_WAIT",
+          "calls": 51,
+          "summed_seconds": 9.692368994
+        },
+        {
+          "type": "AI_CORE",
+          "calls": 2,
+          "summed_seconds": 1.9490015
+        },
+        {
+          "type": "Notify Wait",
+          "calls": 4,
+          "summed_seconds": 1.94897306
+        },
+        {
+          "type": "KERNEL_MIX_AIV",
+          "calls": 22424,
+          "summed_seconds": 1.37999823
+        },
+        {
+          "type": "SDMA_SQE",
+          "calls": 140,
+          "summed_seconds": 0.02546735
+        },
+        {
+          "type": "KERNEL_AICPU",
+          "calls": 65,
+          "summed_seconds": 0.021474609
+        },
+        {
+          "type": "EVENT_RECORD",
+          "calls": 9250,
+          "summed_seconds": 0.000160523
+        },
+        {
+          "type": "WRITE_VALUE_SQE",
+          "calls": 106,
+          "summed_seconds": 7.0841e-05
+        },
+        {
+          "type": "SDMA",
+          "calls": 8,
+          "summed_seconds": 5.06e-06
+        },
+        {
+          "type": "NOTIFY_RECORD",
+          "calls": 34,
+          "summed_seconds": 3.36e-06
+        },
+        {
+          "type": "Write Value",
+          "calls": 4,
+          "summed_seconds": 2.7e-06
+        },
+        {
+          "type": "NOTIFY_RECORD_SQE",
+          "calls": 98,
+          "summed_seconds": 1.38e-06
+        },
+        {
+          "type": "PLACE_HOLDER_SQE",
+          "calls": 3,
+          "summed_seconds": 6e-08
+        },
+        {
+          "type": "PROFILING_DISABLE",
+          "calls": 1,
+          "summed_seconds": 2e-08
+        }
+      ],
+      "memcpy": [],
+      "profiled_step_seconds": 102.73211724008434,
+      "queries": {
+        "tables": {
+          "sql": "SELECT COUNT(*) count,json_group_array(name) names FROM sqlite_master WHERE type='table'",
+          "params": []
+        },
+        "compute_top": {
+          "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_type,COUNT(*) calls,SUM(duration_ns)/1e9 summed_seconds FROM compute_view GROUP BY op_type ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        },
+        "communication": {
+          "sql": "WITH comm_view AS (\n    SELECT ROUND(c.endNs - c.startNs) AS duration_ns, n.value AS op_name, t.value AS op_type, g.value AS group_name\n    FROM COMMUNICATION_OP c\n    LEFT JOIN STRING_IDS n ON n.id = c.opName\n    LEFT JOIN STRING_IDS t ON t.id = c.opType\n    LEFT JOIN STRING_IDS g ON g.id = c.groupName\n)\nSELECT op_type,COUNT(*) calls,SUM(duration_ns)/1e9 summed_seconds FROM comm_view GROUP BY op_type ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        },
+        "window": {
+          "sql": "SELECT MIN(startNs) s,MAX(endNs) e,COUNT(*) tasks FROM TASK",
+          "params": []
+        },
+        "compute_intervals": {
+          "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(t.startNs,t.endNs)) intervals FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId",
+          "params": []
+        },
+        "comm_intervals": {
+          "sql": "SELECT json_group_array(json_array(startNs,endNs)) intervals FROM COMMUNICATION_OP",
+          "params": []
+        },
+        "device_task_types": {
+          "sql": "SELECT n.value type,COUNT(*) calls,SUM(t.endNs-t.startNs)/1e9 summed_seconds FROM TASK t LEFT JOIN STRING_IDS n ON n.id=t.taskType GROUP BY n.value ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        },
+        "memcpy_intervals": {
+          "sql": "SELECT json_group_array(json_array(t.startNs,t.endNs)) intervals FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE n.value='MEMCPY_ASYNC'",
+          "params": []
+        },
+        "pipeline_host_ranges": {
+          "sql": "SELECT n.value name,COUNT(*) calls,SUM(p.endNs-p.startNs)/1e9 summed_seconds FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'pipeline/%' OR n.value LIKE 'optimizer/%' GROUP BY n.value ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        },
+        "update_intervals": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value='optimizer/CPUAdam_and_return'",
+          "params": []
+        },
+        "norm_intervals": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value='optimizer/global_norm'",
+          "params": []
+        }
+      }
+    },
+    {
+      "rank": 1,
+      "normal_stop_metadata": true,
+      "db_basename": "ascend_pytorch_profiler_1.db",
+      "compute_top20": [
+        {
+          "op_type": "MatMulV3",
+          "calls": 11568,
+          "summed_seconds": 17.76576436
+        },
+        {
+          "op_type": "prepare_wy_repr_bwd_kernel",
+          "calls": 384,
+          "summed_seconds": 4.9698746
+        },
+        {
+          "op_type": "Mul",
+          "calls": 32880,
+          "summed_seconds": 2.74869072
+        },
+        {
+          "op_type": "Transpose",
+          "calls": 28240,
+          "summed_seconds": 2.69347518
+        },
+        {
+          "op_type": "chunk_fwd_kernel_o",
+          "calls": 768,
+          "summed_seconds": 1.92569774
+        },
+        {
+          "op_type": "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+          "calls": 1152,
+          "summed_seconds": 1.49516554
+        },
+        {
+          "op_type": "chunk_bwd_kernel_dqkwg",
+          "calls": 384,
+          "summed_seconds": 1.00596564
+        },
+        {
+          "op_type": "solve_tril_64x64_kernel",
+          "calls": 768,
+          "summed_seconds": 0.98141266
+        },
+        {
+          "op_type": "chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64",
+          "calls": 384,
+          "summed_seconds": 0.90263326
+        },
+        {
+          "op_type": "TransData",
+          "calls": 5792,
+          "summed_seconds": 0.6864672
+        },
+        {
+          "op_type": "Cast",
+          "calls": 20508,
+          "summed_seconds": 0.65653664
+        },
+        {
+          "op_type": "Add",
+          "calls": 15200,
+          "summed_seconds": 0.5628339
+        },
+        {
+          "op_type": "recompute_w_u_fwd_kernel",
+          "calls": 1152,
+          "summed_seconds": 0.55156796
+        },
+        {
+          "op_type": "ViewCopy",
+          "calls": 1440,
+          "summed_seconds": 0.5237563
+        },
+        {
+          "op_type": "ReduceSum",
+          "calls": 7856,
+          "summed_seconds": 0.49213752
+        },
+        {
+          "op_type": "SiluGrad",
+          "calls": 1280,
+          "summed_seconds": 0.37340142
+        },
+        {
+          "op_type": "Slice",
+          "calls": 5920,
+          "summed_seconds": 0.34787862
+        },
+        {
+          "op_type": "Swish",
+          "calls": 2432,
+          "summed_seconds": 0.24992644
+        },
+        {
+          "op_type": "Conv2D",
+          "calls": 768,
+          "summed_seconds": 0.23652682
+        },
+        {
+          "op_type": "Conv2DBackpropInput",
+          "calls": 384,
+          "summed_seconds": 0.22392406
+        }
+      ],
+      "communication": [
+        {
+          "op_type": "hcom_allReduce_",
+          "calls": 2,
+          "summed_seconds": 4.52000498
+        },
+        {
+          "op_type": "hcom_batchSendRecv_",
+          "calls": 32,
+          "summed_seconds": 0.60388028
+        }
+      ],
+      "host_ranges": [
+        {
+          "name": "pipeline/stage1/backward",
+          "calls": 16,
+          "summed_seconds": 65.44705956
+        },
+        {
+          "name": "optimizer/CPUAdam_and_return",
+          "calls": 1,
+          "summed_seconds": 23.10355634
+        },
+        {
+          "name": "pipeline/stage1/forward",
+          "calls": 16,
+          "summed_seconds": 6.60191728
+        },
+        {
+          "name": "optimizer/global_norm",
+          "calls": 1,
+          "summed_seconds": 6.00549354
+        },
+        {
+          "name": "pipeline/gradient_zero",
+          "calls": 1,
+          "summed_seconds": 1.09424436
+        },
+        {
+          "name": "pipeline/P2P",
+          "calls": 32,
+          "summed_seconds": 0.05986962
+        },
+        {
+          "name": "pipeline/gradient_drain",
+          "calls": 1,
+          "summed_seconds": 0.0431579
+        }
+      ],
+      "coverage": {
+        "device_window_seconds": 102.73717436,
+        "compute_union_seconds": 41.39476498,
+        "communication_union_seconds": 5.12388526,
+        "communication_without_compute_seconds": 5.12388526,
+        "cpu_update_scope_seconds": 23.10355634,
+        "compute_during_cpu_update_seconds": 0.0,
+        "memcpy_union_seconds": 17.44872146,
+        "memcpy_without_compute_seconds": 17.44872146,
+        "no_compute_or_communication_seconds": 56.21852412,
+        "global_norm_scope_seconds": 6.00549354,
+        "compute_during_norm_seconds": 0.09306646,
+        "memcpy_during_norm_seconds": 0.0
+      },
+      "task_types": [
+        {
+          "type": "KERNEL_MIX_AIC",
+          "calls": 10784,
+          "summed_seconds": 23.28207024
+        },
+        {
+          "type": "KERNEL_AICORE",
+          "calls": 16928,
+          "summed_seconds": 17.9972535
+        },
+        {
+          "type": "MEMCPY_ASYNC",
+          "calls": 11679,
+          "summed_seconds": 17.44872146
+        },
+        {
+          "type": "KERNEL_AIVEC",
+          "calls": 147520,
+          "summed_seconds": 11.07632164
+        },
+        {
+          "type": "EVENT_WAIT",
+          "calls": 68,
+          "summed_seconds": 5.25508246
+        },
+        {
+          "type": "AI_CORE",
+          "calls": 2,
+          "summed_seconds": 4.5200109
+        },
+        {
+          "type": "Notify Wait",
+          "calls": 4,
+          "summed_seconds": 4.51997996
+        },
+        {
+          "type": "NOTIFY_WAIT_SQE",
+          "calls": 202,
+          "summed_seconds": 1.42065946
+        },
+        {
+          "type": "KERNEL_MIX_AIV",
+          "calls": 22522,
+          "summed_seconds": 1.36588362
+        },
+        {
+          "type": "NOTIFY_WAIT",
+          "calls": 96,
+          "summed_seconds": 0.6033917
+        },
+        {
+          "type": "KERNEL_AICPU",
+          "calls": 96,
+          "summed_seconds": 0.0287932
+        },
+        {
+          "type": "SDMA_SQE",
+          "calls": 170,
+          "summed_seconds": 0.02745594
+        },
+        {
+          "type": "EVENT_RECORD",
+          "calls": 9282,
+          "summed_seconds": 0.00014184
+        },
+        {
+          "type": "WRITE_VALUE_SQE",
+          "calls": 106,
+          "summed_seconds": 7.078e-05
+        },
+        {
+          "type": "SDMA",
+          "calls": 8,
+          "summed_seconds": 7e-06
+        },
+        {
+          "type": "NOTIFY_RECORD",
+          "calls": 64,
+          "summed_seconds": 6.18e-06
+        },
+        {
+          "type": "Write Value",
+          "calls": 4,
+          "summed_seconds": 2.72e-06
+        },
+        {
+          "type": "NOTIFY_RECORD_SQE",
+          "calls": 128,
+          "summed_seconds": 1.92e-06
+        },
+        {
+          "type": "PROFILING_ENABLE",
+          "calls": 1,
+          "summed_seconds": 2e-08
+        },
+        {
+          "type": "PROFILING_DISABLE",
+          "calls": 1,
+          "summed_seconds": 0.0
+        }
+      ],
+      "memcpy": [],
+      "profiled_step_seconds": 102.70574894011952,
+      "queries": {
+        "tables": {
+          "sql": "SELECT COUNT(*) count,json_group_array(name) names FROM sqlite_master WHERE type='table'",
+          "params": []
+        },
+        "compute_top": {
+          "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT op_type,COUNT(*) calls,SUM(duration_ns)/1e9 summed_seconds FROM compute_view GROUP BY op_type ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        },
+        "communication": {
+          "sql": "WITH comm_view AS (\n    SELECT ROUND(c.endNs - c.startNs) AS duration_ns, n.value AS op_name, t.value AS op_type, g.value AS group_name\n    FROM COMMUNICATION_OP c\n    LEFT JOIN STRING_IDS n ON n.id = c.opName\n    LEFT JOIN STRING_IDS t ON t.id = c.opType\n    LEFT JOIN STRING_IDS g ON g.id = c.groupName\n)\nSELECT op_type,COUNT(*) calls,SUM(duration_ns)/1e9 summed_seconds FROM comm_view GROUP BY op_type ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        },
+        "window": {
+          "sql": "SELECT MIN(startNs) s,MAX(endNs) e,COUNT(*) tasks FROM TASK",
+          "params": []
+        },
+        "compute_intervals": {
+          "sql": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)\nSELECT json_group_array(json_array(t.startNs,t.endNs)) intervals FROM compute_view c JOIN TASK t ON t.globalTaskId=c.globalTaskId",
+          "params": []
+        },
+        "comm_intervals": {
+          "sql": "SELECT json_group_array(json_array(startNs,endNs)) intervals FROM COMMUNICATION_OP",
+          "params": []
+        },
+        "device_task_types": {
+          "sql": "SELECT n.value type,COUNT(*) calls,SUM(t.endNs-t.startNs)/1e9 summed_seconds FROM TASK t LEFT JOIN STRING_IDS n ON n.id=t.taskType GROUP BY n.value ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        },
+        "memcpy_intervals": {
+          "sql": "SELECT json_group_array(json_array(t.startNs,t.endNs)) intervals FROM TASK t JOIN STRING_IDS n ON n.id=t.taskType WHERE n.value='MEMCPY_ASYNC'",
+          "params": []
+        },
+        "pipeline_host_ranges": {
+          "sql": "SELECT n.value name,COUNT(*) calls,SUM(p.endNs-p.startNs)/1e9 summed_seconds FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value LIKE 'pipeline/%' OR n.value LIKE 'optimizer/%' GROUP BY n.value ORDER BY summed_seconds DESC LIMIT 20",
+          "params": []
+        },
+        "update_intervals": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value='optimizer/CPUAdam_and_return'",
+          "params": []
+        },
+        "norm_intervals": {
+          "sql": "SELECT json_group_array(json_array(p.startNs,p.endNs)) intervals FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name WHERE n.value='optimizer/global_norm'",
+          "params": []
+        }
+      }
+    }
+  ],
+  "execution": "read-only SQLite; msprof_mcp unavailable",
+  "schema_reference": "skill get_schema TASK and COMMUNICATION_OP; PYTORCH_API absent, explicit PRAGMA fallback",
+  "limits": [
+    "Both-rank profiling perturbs scheduling; use normal updates for ranking.",
+    "Communication duration includes waiting; not pure transfer time.",
+    "Host scopes may nest/overlap; never add them as independent costs.",
+    "No-compute intervals do not by themselves prove a pipeline bubble cause."
+  ]
+}

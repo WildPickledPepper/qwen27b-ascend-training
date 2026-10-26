@@ -7,7 +7,9 @@
       "gradient_all_exact": true,
       "master_m_v_all_exact": true,
       "optimizer_chunks": 23,
-      "normal_updates": 3
+      "normal_updates": 3,
+      "global_norm": 1.504758281369989,
+      "independent_reference_norm": 1.504758301008572
     },
     {
       "rank": 1,
@@ -15,7 +17,9 @@
       "gradient_all_exact": true,
       "master_m_v_all_exact": true,
       "optimizer_chunks": 24,
-      "normal_updates": 3
+      "normal_updates": 3,
+      "global_norm": 1.504758281369989,
+      "independent_reference_norm": 1.504758301008572
     }
   ],
   "scope": "first tiny update full gradient/master/m/v; three pipeline updates completed; not whole-model bitwise proof"

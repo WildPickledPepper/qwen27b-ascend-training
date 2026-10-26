@@ -38,6 +38,7 @@ root=Path(a.root);results=[]
 for rank in [0,1]:
     folder=list((root/f'profile-rank{rank}').glob('*_ascend_pt'))[0]
     info=list(folder.glob('profiler_info*.json'));assert info,'No normal stop metadata'
+    metadata=json.loads(info[0].read_text());assert metadata.get('end_info'),'Profiler did not stop normally'
     db=list(folder.rglob('*pytorch*profiler*.db'))[0]
     c=sqlite3.connect(f'file:{db}?mode=ro',uri=True);queries={}
     def query(name,sql,params=()):
