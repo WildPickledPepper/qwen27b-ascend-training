@@ -69,6 +69,18 @@ GDN沿原`community_gdn.py`调用固定VeOmni的Python前后向分配包装；`l
 
 本轮能给出当前路径的张量级存储峰值及组成，不足以直接断言换一套训练框架后总HBM是否放得下。下一步应先建立逐算子的workspace查询/源码规则与allocator预算，再扩展配置，不能用驱动占用常数回填后宣称全白盒。
 
+## 分配粒度修正（2026-10-27 追加）
+
+`storage_tracker.py` 原先按**申请字节**记账，而实测峰值是**分配字节**。逐块比对实测轨迹的 `requested_bytes` 与 `bytes` 后确认规则分两类：初始化块（权重、buffer、驻留）在申请值之上多一个 512 边界（即使已对齐）；运行时中间块只向上取整到 512（对齐的不变）。峰值、分项和逐块记录都改为分配字节，`peak_requested_bytes` 另存申请值备查。
+
+重算 8 项（`native-alloc.private`、`evidence/2026-10-27/sql-memory-liveness-alloc-comparison.json`）后：最大绝对误差 0.746→0.533 MiB、0.001476%→0.001055%。
+
+残差可拆为三块：实测侧 `allocator_block_reconciliation`（280,576 / 141,312 B）、模型自身 2,048 / 512 B、step2 起的 276,480 / 276,992 B。
+
+早前"全局严格 512 边界、残差 2,560 B"的结论是聚合巧合（全局多算约 503 KB ≈ 未归类差额 280 KB + 真实粒度 223 KB），**已作废**。
+
+step2 起的 270 KiB 尚未定位：原 `train_memory.py` 的跨步状态（Adam/master/梯度累加）都在 CPU，GPU 上没有对应常驻张量，`off.reset()` 每步清累加器，因此不能归因于跨步残留。不影响第一步结论，但多步预测暂不成立。
+
 ## 代码和证据
 
 `run_native_predictions.py`生成修正版8项预测；`compare_sealed.py`先验封存哈希再读观测；`export_predictions.py`剔除逐storage原始轨迹。CPU原始日志/全量轨迹留在私有目录，公开证据不含地址、训练文本、权重或私有路径。
