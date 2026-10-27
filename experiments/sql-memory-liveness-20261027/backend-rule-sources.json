@@ -1,0 +1,22 @@
+{
+  "installed_torch_npu_git": "5dd8ef3f9b375b5ae4a83538d5785754148c3302",
+  "pinned_op_plugin_git": "8b9c8534fa41eff367a41c155843daa530ab3a08",
+  "sources": {
+    "matmul_backward": {
+      "url": "https://raw.githubusercontent.com/Ascend/op-plugin/8b9c8534fa41eff367a41c155843daa530ab3a08/op_plugin/ops/opapi/MatmulBackwardKernelNpuOpApi.cpp",
+      "sha256": "cbf816a672bc377e8af69bea0e2a3cae1df9b6b6cd9c4748381408e00c5577fa"
+    },
+    "matmul_forward": {
+      "url": "https://raw.githubusercontent.com/Ascend/op-plugin/8b9c8534fa41eff367a41c155843daa530ab3a08/op_plugin/ops/opapi/MatmulKernelNpuOpApi.cpp",
+      "sha256": "95d17aff6ea6edaeffdfb5d99695fc26ed5dcba30075c91ae9d3920e4b296080"
+    },
+    "derivatives": {
+      "url": "https://raw.githubusercontent.com/Ascend/op-plugin/8b9c8534fa41eff367a41c155843daa530ab3a08/op_plugin/config/derivatives.yaml",
+      "sha256": "bd45406b0979b30ba4eea86424ffc768c1ec59e3ded8879da727a6709b4312f5"
+    },
+    "pytorch_linear": {
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.10.0/aten/src/ATen/native/Linear.cpp",
+      "sha256": "f6e02f5601928e3268a302a6b444712d84fae8b23b8858a66a2212033fdca260"
+    }
+  }
+}

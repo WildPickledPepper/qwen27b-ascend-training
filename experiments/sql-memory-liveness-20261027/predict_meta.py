@@ -26,6 +26,7 @@ torch.set_num_threads(1)
 import torch_npu
 def deny_device(*args,**kwargs):raise RuntimeError('Device initialization forbidden in metadata prediction')
 assert not torch.npu.is_initialized()
+assert torch_npu.version.git_version=='5dd8ef3f9b375b5ae4a83538d5785754148c3302','Backend rule requires its pinned TorchNPU version'
 torch.npu._lazy_init=deny_device;torch.cuda._lazy_init=deny_device
 from torch.utils import checkpoint as cp
 cp._infer_device_type=lambda *args:'cpu'  # Meta has no RNG/autocast device module.
@@ -38,8 +39,9 @@ from transformers.models.qwen3_5 import modeling_qwen3_5 as qm
 from transformers.models.qwen3_5.configuration_qwen3_5 import Qwen3_5TextConfig
 from storage_tracker import StorageTracker
 from launch_stub import install
+from npu_linear_meta import install as install_npu_linear,OP_PLUGIN_COMMIT
 from community_gdn import chunk_gated_delta_rule
-launches=install();qm.chunk_gated_delta_rule=chunk_gated_delta_rule
+launches=install();install_npu_linear();qm.chunk_gated_delta_rule=chunk_gated_delta_rule
 cdata=json.loads(Path(a.config).read_text());cdata=cdata.get('text_config',cdata)
 c=Qwen3_5TextConfig(**cdata);c.use_cache=False;c._attn_implementation='eager'
 if a.tiny:
@@ -141,8 +143,8 @@ assert not torch.npu.is_initialized()
 result.update(rank=a.rank,micro_batch=b,sequences=sequences,resident_bytes=used,
               counts=counts,seconds=time.monotonic()-started,skipped_kernel_launches=len(launches),
               device_initialized=False,calibration_read=False,weights_loaded=False,
-              parameter_count=sum(t.numel() for t in params),
-              source_hashes={f:hashlib.sha256((root/f).read_bytes()).hexdigest() for f in ['predict_meta.py','storage_tracker.py','launch_stub.py','community_gdn.py']},
+              parameter_count=sum(t.numel() for t in params),parameter_tensors=len(params),resident_tensors=len(resident),op_plugin_rule_commit=OP_PLUGIN_COMMIT,
+              source_hashes={f:hashlib.sha256((root/f).read_bytes()).hexdigest() for f in ['predict_meta.py','storage_tracker.py','launch_stub.py','community_gdn.py','npu_linear_meta.py']},
               config_sha256=hashlib.sha256(Path(a.config).read_bytes()).hexdigest(),
               limitations=['Counts meta/ATen tensor storages, not native CANN workspace or allocator reserve/runtime.',
                            'Uses real model/autograd/checkpoint code with a meta-only device-context adapter.',
