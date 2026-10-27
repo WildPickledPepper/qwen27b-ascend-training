@@ -1,0 +1,97 @@
+{
+  "source": "sql-cache-tail-results.json",
+  "runs": {
+    "cache4-4": {
+      "rank_means": [
+        {
+          "rank": 0,
+          "physical_card": 3,
+          "cpu_gradient_add": 48.14136099314783,
+          "cpu_worker_wait_copy": 11.973011256777681,
+          "main_thread_wait_free_slot": 39.97229249298107,
+          "fb_and_drain_end_relative_step_start": 66.11195588996634,
+          "norm_phase": 1.345898335101083,
+          "norm_phase_end_relative_step_start": 67.45785422506742,
+          "end_barrier": 0.6633428749628365
+        },
+        {
+          "rank": 1,
+          "physical_card": 4,
+          "cpu_gradient_add": 46.20813909871504,
+          "cpu_worker_wait_copy": 10.225250701187178,
+          "main_thread_wait_free_slot": 33.43447353551164,
+          "fb_and_drain_end_relative_step_start": 63.007409370155074,
+          "norm_phase": 4.450505899847485,
+          "norm_phase_end_relative_step_start": 67.45791527000256,
+          "end_barrier": 0.000983320060186088
+        }
+      ],
+      "synchronization": [
+        {
+          "step": 2,
+          "earlier_arriving_card": 3,
+          "barrier_arrival_gap": 0.7972500324249268,
+          "max_measured_barrier_wait": 0.7981639800127596,
+          "norm_completion_skew": 6.7900400608778e-06
+        },
+        {
+          "step": 3,
+          "earlier_arriving_card": 3,
+          "barrier_arrival_gap": 0.5276827812194824,
+          "max_measured_barrier_wait": 0.5285217699129134,
+          "norm_completion_skew": 0.00012887991033494473
+        }
+      ],
+      "card4_fb_lead_seconds": 3.104546519811265
+    },
+    "cache4-8": {
+      "rank_means": [
+        {
+          "rank": 0,
+          "physical_card": 3,
+          "cpu_gradient_add": 47.88311012822669,
+          "cpu_worker_wait_copy": 9.348005531704985,
+          "main_thread_wait_free_slot": 36.616191460052505,
+          "fb_and_drain_end_relative_step_start": 63.24909738008864,
+          "norm_phase": 1.3635739048477262,
+          "norm_phase_end_relative_step_start": 64.61267128493637,
+          "end_barrier": 0.19830875506158918
+        },
+        {
+          "rank": 1,
+          "physical_card": 4,
+          "cpu_gradient_add": 38.278101968811825,
+          "cpu_worker_wait_copy": 14.446226129424758,
+          "main_thread_wait_free_slot": 26.996769917197526,
+          "fb_and_drain_end_relative_step_start": 60.51618042506743,
+          "norm_phase": 4.0963451149873435,
+          "norm_phase_end_relative_step_start": 64.61252554005478,
+          "end_barrier": 0.2063412549905479
+        }
+      ],
+      "synchronization": [
+        {
+          "step": 2,
+          "earlier_arriving_card": 3,
+          "barrier_arrival_gap": 0.3948960304260254,
+          "max_measured_barrier_wait": 0.39568133000284433,
+          "norm_completion_skew": 0.00012937025167047977
+        },
+        {
+          "step": 3,
+          "earlier_arriving_card": 4,
+          "barrier_arrival_gap": 0.4109475612640381,
+          "max_measured_barrier_wait": 0.4117595299612731,
+          "norm_completion_skew": 0.00042086001485586166
+        }
+      ],
+      "card4_fb_lead_seconds": 2.73291695502121
+    }
+  },
+  "interpretation": {
+    "free_slot_wait": "Direct host blocking in free.get; slot released after worker event synchronize and CPU add. Does not imply NPU idle throughout this interval.",
+    "norm_phase": "Includes CPU-to-NPU gradient norm work plus AllReduce and host result retrieval. Earlier FB completion advantage disappears here; pure AllReduce wait was not separately measured.",
+    "barrier": "Direct end barrier host wait and same-host epoch arrival gap identify which rank waits.",
+    "overlap": "Do not add worker CPU work, slot wait and stage wall time; they overlap."
+  }
+}
