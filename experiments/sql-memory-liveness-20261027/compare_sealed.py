@@ -6,6 +6,7 @@ p=argparse.ArgumentParser()
 p.add_argument('--predictions',type=Path,required=True)
 p.add_argument('--observations',type=Path,required=True)
 p.add_argument('--breakdown',type=Path,required=True)
+p.add_argument('--cache2-observations',type=Path)
 p.add_argument('--output',type=Path,required=True)
 a=p.parse_args()
 seal=json.loads((a.predictions/'prediction-seal.json').read_text())
@@ -20,15 +21,18 @@ for key,j in seal['jobs'].items():
     assert hashlib.sha256(file.read_bytes()).hexdigest()==j['prediction_sha256']
     row=json.loads(file.read_text());assert row['sequences']==inputs[case]
     assert not row['device_initialized'] and not row['calibration_read'] and not row['weights_loaded']
-    assert row['counts']['parameter_gradient_hooks']==(425 if row['rank']==0 else 426)*16
-    assert row['counts']['resident_adds']==29*16
+    assert row['counts']['parameter_gradient_hooks']==row.get('parameter_tensors',425 if row['rank']==0 else 426)*16
+    assert row['counts']['resident_adds']==row.get('resident_tensors',29)*16
     pred[key]=row
 observed=json.loads(a.observations.read_text(encoding='utf-8-sig'))
 breakdown=json.loads(a.breakdown.read_text(encoding='utf-8-sig'))
+cache2=json.loads(a.cache2_observations.read_text(encoding='utf-8-sig')) if a.cache2_observations else None
 comparisons=[]
 for key,row in pred.items():
-    case,rank=key.rsplit('-',1);rank=int(rank);step=int(case.removeprefix('step'))
-    actual=observed['rank_results'][rank]['steps'][step-1]['allocated_peak']
+    case,rank=key.rsplit('-',1);rank=int(rank);step=int(case.split('-')[-1].removeprefix('step'))
+    reference=cache2 if case.startswith('cache2-') else observed
+    assert reference is not None,'Need cache2 observations for held-out cache-policy check'
+    actual=reference['rank_results'][rank]['steps'][step-1]['allocated_peak']
     delta=row['peak_bytes']-actual
     comp=dict(case=case,rank=rank,physical_card=rank+2,
               predicted_bytes=row['peak_bytes'],observed_bytes=actual,
@@ -41,7 +45,7 @@ for key,row in pred.items():
               storage_allocations=row['allocations'],alias_results=row['alias_results'],
               skipped_kernel_launches=row['skipped_kernel_launches'],
               prediction_sha256=seal['jobs'][key]['prediction_sha256'])
-    if step==1:
+    if case=='step1':
         pg={r['category']:r['bytes'] for r in row['categories']}
         og={r['category']:r['bytes'] for r in breakdown['ranks'][rank]['categories']}
         comparisons_by_category=[]

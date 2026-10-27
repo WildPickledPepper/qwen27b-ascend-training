@@ -1,0 +1,870 @@
+{
+  "predictions": [
+    {
+      "peak_bytes": 60694647936,
+      "peak_gib": 56.52629578113556,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 12,
+        "op": "aten.mm.default",
+        "event": 245597
+      },
+      "live_end_bytes": 31190960896,
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26895993344,
+          "storages": 425,
+          "gib": 25.048845767974854
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 256,
+          "storages": 2,
+          "gib": 2.384185791015625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.0
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 42074112,
+          "storages": 5,
+          "gib": 0.0391845703125
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 2097152000,
+          "storages": 50,
+          "gib": 1.953125
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 2101248,
+          "storages": 6,
+          "gib": 0.001956939697265625
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 9822689280,
+          "storages": 270,
+          "gib": 9.148092269897461
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 6794772480,
+          "storages": 120,
+          "gib": 6.328125
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 8556380160,
+          "storages": 60,
+          "gib": 7.96875
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 362807296,
+          "storages": 3,
+          "gib": 0.337890625
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "bytes": 1825710464,
+          "storages": 35,
+          "gib": 1.7003253698349
+        }
+      ],
+      "allocations": 153916,
+      "alias_results": 160186,
+      "operation_count": 315822,
+      "rank": 0,
+      "micro_batch": 16,
+      "sequences": [
+        192,
+        192,
+        256,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        256,
+        192,
+        192,
+        256,
+        256,
+        192,
+        256
+      ],
+      "resident_bytes": 4294967296,
+      "counts": {
+        "parameter_gradient_hooks": 6800,
+        "resident_adds": 464,
+        "offloaded_parameters": 6336
+      },
+      "seconds": 228.21432885015383,
+      "skipped_kernel_launches": 7296,
+      "device_initialized": false,
+      "calibration_read": false,
+      "weights_loaded": false,
+      "parameter_count": 13447996672,
+      "source_hashes": {
+        "predict_meta.py": "da75756e17cf1c2054fcb67ed003db51b747b5ec77daaa1cc66f837244c10d7d",
+        "storage_tracker.py": "3ff676367c924fb82c360e84e4eb96a4efb2408b1c9a19dc408e286d52a8fb64",
+        "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+        "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b"
+      },
+      "config_sha256": "f8d190c5b89c1521220f935d2567a587d6e291ed69066a45a106560b05a2174c",
+      "limitations": [
+        "Counts meta/ATen tensor storages, not native CANN workspace or allocator reserve/runtime.",
+        "Uses real model/autograd/checkpoint code with a meta-only device-context adapter.",
+        "Triton host wrappers allocate real meta tensors; launch bodies are skipped, compiler/internal workspace remains unknown.",
+        "NPU-specific backward layouts/copies may differ from meta kernels; discrepancies are not fitted away.",
+        "Explicit mask shapes assume the padded eager-attention branch.",
+        "Copy completion is modeled as same-stream storage reuse; no timing claim for arbitrary asynchronous streams."
+      ],
+      "case": "step1",
+      "prediction_sha256": "427ea93fdf36bb6fb1e63a0cf0895d8f65868769de9a0193021461f30335d76b"
+    },
+    {
+      "peak_bytes": 58039913224,
+      "peak_gib": 54.05388141423464,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 2,
+        "op": "aten._log_softmax_backward_data.default",
+        "event": 44205
+      },
+      "live_end_bytes": 31190971136,
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26896003584,
+          "storages": 426,
+          "gib": 25.048855304718018
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 256,
+          "storages": 2,
+          "gib": 2.384185791015625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.0
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 41975808,
+          "storages": 2,
+          "gib": 0.039093017578125
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 1050628,
+          "storages": 4,
+          "gib": 0.000978473573923111
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 964689920,
+          "storages": 23,
+          "gib": 0.8984375
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 5448519680,
+          "storages": 149,
+          "gib": 5.074329376220703
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 3623878656,
+          "storages": 64,
+          "gib": 3.375
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 4563402752,
+          "storages": 32,
+          "gib": 4.25
+        },
+        {
+          "category": "loss_forward_intermediates",
+          "bytes": 4068474880,
+          "storages": 1,
+          "gib": 3.7890625
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 8136949764,
+          "storages": 3,
+          "gib": 7.57812500372529
+        }
+      ],
+      "allocations": 154608,
+      "alias_results": 160586,
+      "operation_count": 316897,
+      "rank": 1,
+      "micro_batch": 16,
+      "sequences": [
+        192,
+        192,
+        256,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        256,
+        192,
+        192,
+        256,
+        256,
+        192,
+        256
+      ],
+      "resident_bytes": 4294967296,
+      "counts": {
+        "parameter_gradient_hooks": 6816,
+        "resident_adds": 464,
+        "offloaded_parameters": 6352
+      },
+      "seconds": 171.63152068015188,
+      "skipped_kernel_launches": 7296,
+      "device_initialized": false,
+      "calibration_read": false,
+      "weights_loaded": false,
+      "parameter_count": 13448001792,
+      "source_hashes": {
+        "predict_meta.py": "da75756e17cf1c2054fcb67ed003db51b747b5ec77daaa1cc66f837244c10d7d",
+        "storage_tracker.py": "3ff676367c924fb82c360e84e4eb96a4efb2408b1c9a19dc408e286d52a8fb64",
+        "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+        "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b"
+      },
+      "config_sha256": "f8d190c5b89c1521220f935d2567a587d6e291ed69066a45a106560b05a2174c",
+      "limitations": [
+        "Counts meta/ATen tensor storages, not native CANN workspace or allocator reserve/runtime.",
+        "Uses real model/autograd/checkpoint code with a meta-only device-context adapter.",
+        "Triton host wrappers allocate real meta tensors; launch bodies are skipped, compiler/internal workspace remains unknown.",
+        "NPU-specific backward layouts/copies may differ from meta kernels; discrepancies are not fitted away.",
+        "Explicit mask shapes assume the padded eager-attention branch.",
+        "Copy completion is modeled as same-stream storage reuse; no timing claim for arbitrary asynchronous streams."
+      ],
+      "case": "step1",
+      "prediction_sha256": "173b1cf4205925eaa887ab698e0ae90c1c0ed8be29cd7f6c9500d4ccfbd0157d"
+    },
+    {
+      "peak_bytes": 52939034752,
+      "peak_gib": 49.30331814289093,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 0,
+        "op": "aten.mm.default",
+        "event": 9989
+      },
+      "live_end_bytes": 31190960896,
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26895993344,
+          "storages": 425,
+          "gib": 25.048845767974854
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 256,
+          "storages": 2,
+          "gib": 2.384185791015625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.0
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 31555584,
+          "storages": 5,
+          "gib": 0.029388427734375
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 1572864000,
+          "storages": 50,
+          "gib": 1.46484375
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 1575936,
+          "storages": 6,
+          "gib": 0.0014677047729492188
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 7367178240,
+          "storages": 270,
+          "gib": 6.86121940612793
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 4671406080,
+          "storages": 120,
+          "gib": 4.3505859375
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 6417285120,
+          "storages": 60,
+          "gib": 5.9765625
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 316669952,
+          "storages": 3,
+          "gib": 0.294921875
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "bytes": 1369538944,
+          "storages": 35,
+          "gib": 1.2754825353622437
+        }
+      ],
+      "allocations": 153916,
+      "alias_results": 160186,
+      "operation_count": 315822,
+      "rank": 0,
+      "micro_batch": 16,
+      "sequences": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "resident_bytes": 4294967296,
+      "counts": {
+        "parameter_gradient_hooks": 6800,
+        "resident_adds": 464,
+        "offloaded_parameters": 6336
+      },
+      "seconds": 218.5685245799832,
+      "skipped_kernel_launches": 7296,
+      "device_initialized": false,
+      "calibration_read": false,
+      "weights_loaded": false,
+      "parameter_count": 13447996672,
+      "source_hashes": {
+        "predict_meta.py": "da75756e17cf1c2054fcb67ed003db51b747b5ec77daaa1cc66f837244c10d7d",
+        "storage_tracker.py": "3ff676367c924fb82c360e84e4eb96a4efb2408b1c9a19dc408e286d52a8fb64",
+        "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+        "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b"
+      },
+      "config_sha256": "f8d190c5b89c1521220f935d2567a587d6e291ed69066a45a106560b05a2174c",
+      "limitations": [
+        "Counts meta/ATen tensor storages, not native CANN workspace or allocator reserve/runtime.",
+        "Uses real model/autograd/checkpoint code with a meta-only device-context adapter.",
+        "Triton host wrappers allocate real meta tensors; launch bodies are skipped, compiler/internal workspace remains unknown.",
+        "NPU-specific backward layouts/copies may differ from meta kernels; discrepancies are not fitted away.",
+        "Explicit mask shapes assume the padded eager-attention branch.",
+        "Copy completion is modeled as same-stream storage reuse; no timing claim for arbitrary asynchronous streams."
+      ],
+      "case": "step2",
+      "prediction_sha256": "c41ded011068e1212aece9343b6667ce3ffcac4c6e74a841721950f780c3ff8d"
+    },
+    {
+      "peak_bytes": 51101276424,
+      "peak_gib": 47.59177232533693,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 0,
+        "op": "aten._log_softmax_backward_data.default",
+        "event": 4803
+      },
+      "live_end_bytes": 31190971136,
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26896003584,
+          "storages": 426,
+          "gib": 25.048855304718018
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 256,
+          "storages": 2,
+          "gib": 2.384185791015625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.0
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 31481856,
+          "storages": 2,
+          "gib": 0.02931976318359375
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 787972,
+          "storages": 4,
+          "gib": 0.0007338561117649078
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 723517440,
+          "storages": 23,
+          "gib": 0.673828125
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 4086480896,
+          "storages": 149,
+          "gib": 3.8058319091796875
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 2491416576,
+          "storages": 64,
+          "gib": 2.3203125
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 3422552064,
+          "storages": 32,
+          "gib": 3.1875
+        },
+        {
+          "category": "loss_forward_intermediates",
+          "bytes": 3051356160,
+          "storages": 1,
+          "gib": 2.841796875
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 6102712324,
+          "storages": 3,
+          "gib": 5.68359375372529
+        }
+      ],
+      "allocations": 154608,
+      "alias_results": 160586,
+      "operation_count": 316897,
+      "rank": 1,
+      "micro_batch": 16,
+      "sequences": [
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "resident_bytes": 4294967296,
+      "counts": {
+        "parameter_gradient_hooks": 6816,
+        "resident_adds": 464,
+        "offloaded_parameters": 6352
+      },
+      "seconds": 165.06511952006258,
+      "skipped_kernel_launches": 7296,
+      "device_initialized": false,
+      "calibration_read": false,
+      "weights_loaded": false,
+      "parameter_count": 13448001792,
+      "source_hashes": {
+        "predict_meta.py": "da75756e17cf1c2054fcb67ed003db51b747b5ec77daaa1cc66f837244c10d7d",
+        "storage_tracker.py": "3ff676367c924fb82c360e84e4eb96a4efb2408b1c9a19dc408e286d52a8fb64",
+        "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+        "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b"
+      },
+      "config_sha256": "f8d190c5b89c1521220f935d2567a587d6e291ed69066a45a106560b05a2174c",
+      "limitations": [
+        "Counts meta/ATen tensor storages, not native CANN workspace or allocator reserve/runtime.",
+        "Uses real model/autograd/checkpoint code with a meta-only device-context adapter.",
+        "Triton host wrappers allocate real meta tensors; launch bodies are skipped, compiler/internal workspace remains unknown.",
+        "NPU-specific backward layouts/copies may differ from meta kernels; discrepancies are not fitted away.",
+        "Explicit mask shapes assume the padded eager-attention branch.",
+        "Copy completion is modeled as same-stream storage reuse; no timing claim for arbitrary asynchronous streams."
+      ],
+      "case": "step2",
+      "prediction_sha256": "f2e2d70364ecfeb774d8cb249adcd6a50941b7b70f151320d4ee4bf03e615605"
+    },
+    {
+      "peak_bytes": 56849306240,
+      "peak_gib": 52.94504225254059,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 0,
+        "op": "aten.mm.default",
+        "event": 9989
+      },
+      "live_end_bytes": 31190960896,
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26895993344,
+          "storages": 425,
+          "gib": 25.048845767974854
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 256,
+          "storages": 2,
+          "gib": 2.384185791015625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.0
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 42057728,
+          "storages": 5,
+          "gib": 0.0391693115234375
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 1835008000,
+          "storages": 50,
+          "gib": 1.708984375
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 1838592,
+          "storages": 6,
+          "gib": 0.0017123222351074219
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 8513083392,
+          "storages": 270,
+          "gib": 7.928426742553711
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 5662310400,
+          "storages": 120,
+          "gib": 5.2734375
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 7415529472,
+          "storages": 60,
+          "gib": 6.90625
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 362807296,
+          "storages": 3,
+          "gib": 0.337890625
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "bytes": 1825710464,
+          "storages": 35,
+          "gib": 1.7003253698349
+        }
+      ],
+      "allocations": 153916,
+      "alias_results": 160186,
+      "operation_count": 315822,
+      "rank": 0,
+      "micro_batch": 16,
+      "sequences": [
+        256,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "resident_bytes": 4294967296,
+      "counts": {
+        "parameter_gradient_hooks": 6800,
+        "resident_adds": 464,
+        "offloaded_parameters": 6336
+      },
+      "seconds": 214.9886967597995,
+      "skipped_kernel_launches": 7296,
+      "device_initialized": false,
+      "calibration_read": false,
+      "weights_loaded": false,
+      "parameter_count": 13447996672,
+      "source_hashes": {
+        "predict_meta.py": "da75756e17cf1c2054fcb67ed003db51b747b5ec77daaa1cc66f837244c10d7d",
+        "storage_tracker.py": "3ff676367c924fb82c360e84e4eb96a4efb2408b1c9a19dc408e286d52a8fb64",
+        "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+        "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b"
+      },
+      "config_sha256": "f8d190c5b89c1521220f935d2567a587d6e291ed69066a45a106560b05a2174c",
+      "limitations": [
+        "Counts meta/ATen tensor storages, not native CANN workspace or allocator reserve/runtime.",
+        "Uses real model/autograd/checkpoint code with a meta-only device-context adapter.",
+        "Triton host wrappers allocate real meta tensors; launch bodies are skipped, compiler/internal workspace remains unknown.",
+        "NPU-specific backward layouts/copies may differ from meta kernels; discrepancies are not fitted away.",
+        "Explicit mask shapes assume the padded eager-attention branch.",
+        "Copy completion is modeled as same-stream storage reuse; no timing claim for arbitrary asynchronous streams."
+      ],
+      "case": "step3",
+      "prediction_sha256": "72ff5e4dfa1135e32620abeedef21b1528d7f89a73591cc48c5568b183054f99"
+    },
+    {
+      "peak_bytes": 58039913224,
+      "peak_gib": 54.05388141423464,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 0,
+        "op": "aten._log_softmax_backward_data.default",
+        "event": 4803
+      },
+      "live_end_bytes": 31190971136,
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26896003584,
+          "storages": 426,
+          "gib": 25.048855304718018
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 256,
+          "storages": 2,
+          "gib": 2.384185791015625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.0
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 41975808,
+          "storages": 2,
+          "gib": 0.039093017578125
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 1050628,
+          "storages": 4,
+          "gib": 0.000978473573923111
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 964689920,
+          "storages": 23,
+          "gib": 0.8984375
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 5448519680,
+          "storages": 149,
+          "gib": 5.074329376220703
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 3623878656,
+          "storages": 64,
+          "gib": 3.375
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 4563402752,
+          "storages": 32,
+          "gib": 4.25
+        },
+        {
+          "category": "loss_forward_intermediates",
+          "bytes": 4068474880,
+          "storages": 1,
+          "gib": 3.7890625
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 8136949764,
+          "storages": 3,
+          "gib": 7.57812500372529
+        }
+      ],
+      "allocations": 154608,
+      "alias_results": 160586,
+      "operation_count": 316897,
+      "rank": 1,
+      "micro_batch": 16,
+      "sequences": [
+        256,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "resident_bytes": 4294967296,
+      "counts": {
+        "parameter_gradient_hooks": 6816,
+        "resident_adds": 464,
+        "offloaded_parameters": 6352
+      },
+      "seconds": 164.24840043997392,
+      "skipped_kernel_launches": 7296,
+      "device_initialized": false,
+      "calibration_read": false,
+      "weights_loaded": false,
+      "parameter_count": 13448001792,
+      "source_hashes": {
+        "predict_meta.py": "da75756e17cf1c2054fcb67ed003db51b747b5ec77daaa1cc66f837244c10d7d",
+        "storage_tracker.py": "3ff676367c924fb82c360e84e4eb96a4efb2408b1c9a19dc408e286d52a8fb64",
+        "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+        "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b"
+      },
+      "config_sha256": "f8d190c5b89c1521220f935d2567a587d6e291ed69066a45a106560b05a2174c",
+      "limitations": [
+        "Counts meta/ATen tensor storages, not native CANN workspace or allocator reserve/runtime.",
+        "Uses real model/autograd/checkpoint code with a meta-only device-context adapter.",
+        "Triton host wrappers allocate real meta tensors; launch bodies are skipped, compiler/internal workspace remains unknown.",
+        "NPU-specific backward layouts/copies may differ from meta kernels; discrepancies are not fitted away.",
+        "Explicit mask shapes assume the padded eager-attention branch.",
+        "Copy completion is modeled as same-stream storage reuse; no timing claim for arbitrary asynchronous streams."
+      ],
+      "case": "step3",
+      "prediction_sha256": "e77349a921d16e0c7d1b02e4dc106eba3fe00be4f2b3cc1a947842133ec3c4a1"
+    }
+  ],
+  "inputs": {
+    "step1": [
+      192,
+      192,
+      256,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      256,
+      192,
+      192,
+      256,
+      256,
+      192,
+      256
+    ],
+    "step2": [
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192
+    ],
+    "step3": [
+      256,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192,
+      192
+    ]
+  },
+  "seal_inputs_sha256": "48e18167726dded5454027f0c38ab79f3df2882cfeba3085d11d24b3eac9d7db",
+  "runtime": {
+    "torch": "2.10.0+cpu",
+    "torch_npu": "2.10.0.post4",
+    "transformers": "5.14.1",
+    "device_initialized": false,
+    "library_source_sha256": {
+      "modeling_qwen3_5": "0e2cd8dc50885b2701d26b116c585eedcdc62a24080ec34345af55b963126ded",
+      "checkpoint": "b6ac0745d58fc891f0f741b433e4fdd59efb1e9fe991c6b3f2b8fc460f7d5d7a"
+    }
+  },
+  "upstream_source_sha256": {
+    "veomni/ops/kernels/gated_delta_rule/chunk_gated_delta_rule/standard/triton.py": "72d9bcb54f8b0db508be8f92d45e5a0759e9148a43fc9b8ba59510978c4d4e77",
+    "veomni/ops/kernels/gated_delta_rule/optional.py": "9c2b5e7e45f501aeb105724dff402ae385ac701035abfbf761a0573c125b9bb5",
+    "veomni/ops/kernels/gated_delta_rule/vendor/triton/__init__.py": "75570c595323612fd3d111312ed35fd5d8c3202a1fda0c8e919bf0cac8d6cdcf",
+    "veomni/ops/kernels/gated_delta_rule/vendor/triton/chunk_delta_h.py": "be2a3ea02335865c7eba85285b34f8b6c9a23fd33db1c99335ead6f3d932f80b",
+    "veomni/ops/kernels/gated_delta_rule/vendor/triton/chunk_o.py": "40d944b06e0d4a1cdb70f3f6bff9d6c6c5fc7ecb066195a0b1341cc665d12503",
+    "veomni/ops/kernels/gated_delta_rule/vendor/triton/chunk_scaled_dot_kkt.py": "5f4ee80f09f37805f6ee00a2bb4a909b140223217d1d9c31e71d06e0ccdd3fd1",
+    "veomni/ops/kernels/gated_delta_rule/vendor/triton/convolution.py": "b86314e2d6bd5b5393231257ed23980c12a256e3d0b38a57e5da2f599978a663",
+    "veomni/ops/kernels/gated_delta_rule/vendor/triton/cumsum.py": "7fe743ebcac29ea3abc812ed69eeaabc0c4207825f9e7819f81a4b819ed5bbf5",
+    "veomni/ops/kernels/gated_delta_rule/vendor/triton/solve_tril.py": "52b3d59cf7fdf0a4004265ff571ac6a89eeb8822815b85d1434c349c4314649a",
+    "veomni/ops/kernels/gated_delta_rule/vendor/triton/utils.py": "bca6e3cf164a27027cad1b249ca1c34ccb67d8a93af259f8fe4b5891aa6b0beb",
+    "veomni/ops/kernels/gated_delta_rule/vendor/triton/wy_fast.py": "6ed8d3d000068a123f3a560697a8bd52c87d888f236e5d2373235a6be4c26877"
+  }
+}

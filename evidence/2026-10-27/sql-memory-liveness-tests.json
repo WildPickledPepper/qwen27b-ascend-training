@@ -1,0 +1,89 @@
+{
+  "storage": {
+    "checks": {
+      "view_retains_base_and_noncontiguous_reshape_copies": true,
+      "expand_and_detach_share_unique_storage": true,
+      "native_savedvariable_lifetime_and_gradient_release": true,
+      "inplace_accumulation_creates_no_result_storage": true
+    },
+    "device": "meta",
+    "device_initialized": false
+  },
+  "checkpoint": {
+    "checks": {
+      "checkpoint_reduces_forward_retention": true,
+      "real_nonreentrant_recompute_traced": true,
+      "graph_release_returns_to_weights": true
+    },
+    "plain": {
+      "checkpoint": false,
+      "forward_live_bytes": 12845056,
+      "peak_bytes": 17170440,
+      "recompute_allocations": 0,
+      "live_end_bytes": 262144,
+      "weight_bytes": 262144
+    },
+    "checkpoint": {
+      "checkpoint": true,
+      "forward_live_bytes": 4456448,
+      "peak_bytes": 17170440,
+      "recompute_allocations": 2,
+      "live_end_bytes": 262144,
+      "weight_bytes": 262144
+    }
+  },
+  "npu_linear_layout": {
+    "op_plugin_commit": "8b9c8534fa41eff367a41c155843daa530ab3a08",
+    "cases": [
+      {
+        "input_shape": [
+          2,
+          3
+        ],
+        "incoming_shape": [
+          5,
+          3
+        ],
+        "incoming_stride": [
+          1,
+          5
+        ],
+        "accumulated_stride": [
+          3,
+          1
+        ],
+        "copy_created": true
+      },
+      {
+        "input_shape": [
+          2,
+          4,
+          3
+        ],
+        "incoming_shape": [
+          5,
+          3
+        ],
+        "incoming_stride": [
+          1,
+          5
+        ],
+        "accumulated_stride": [
+          3,
+          1
+        ],
+        "copy_created": true
+      }
+    ],
+    "checks": {
+      "native_autograd_creates_layout_copy": true,
+      "shape_rules_2d_and_3d": true
+    },
+    "no_numeric_kernel_executed": true
+  },
+  "unchanged_selected_recipe": {
+    "train_resident.py": "82f93b881768daedd9fc534ee53d22db82f4adeba59b342641769ecc80ee2972",
+    "resident_gradients.py": "33de64f76e8990c6aafdc3ae76f616f7e4fd7e57539d3bd93dfc2c55272ece7e",
+    "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b"
+  }
+}

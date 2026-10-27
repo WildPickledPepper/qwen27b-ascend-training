@@ -1,0 +1,717 @@
+{
+  "method": "Actual meta/autograd/checkpoint storage lifetimes; predictions sealed before comparison",
+  "predictions_read_observations": false,
+  "calibration_coefficients_used": false,
+  "cases": [
+    {
+      "case": "step1",
+      "rank": 0,
+      "physical_card": 2,
+      "predicted_bytes": 60694647936,
+      "observed_bytes": 60730805248,
+      "predicted_gib": 56.52629578113556,
+      "observed_gib": 56.559969902038574,
+      "signed_error_mib": -34.4822998046875,
+      "signed_error_percent": -0.05953702054887662,
+      "absolute_error_percent": 0.05953702054887662,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 12,
+        "op": "aten.mm.default",
+        "event": 245597
+      },
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26895993344,
+          "storages": 425,
+          "gib": 25.048845767974854
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 256,
+          "storages": 2,
+          "gib": 2.384185791015625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.0
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 42074112,
+          "storages": 5,
+          "gib": 0.0391845703125
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 2097152000,
+          "storages": 50,
+          "gib": 1.953125
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 2101248,
+          "storages": 6,
+          "gib": 0.001956939697265625
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 9822689280,
+          "storages": 270,
+          "gib": 9.148092269897461
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 6794772480,
+          "storages": 120,
+          "gib": 6.328125
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 8556380160,
+          "storages": 60,
+          "gib": 7.96875
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 362807296,
+          "storages": 3,
+          "gib": 0.337890625
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "bytes": 1825710464,
+          "storages": 35,
+          "gib": 1.7003253698349
+        }
+      ],
+      "parameter_gradient_hooks": 6800,
+      "resident_adds": 464,
+      "storage_allocations": 153916,
+      "alias_results": 160186,
+      "skipped_kernel_launches": 7296,
+      "prediction_sha256": "427ea93fdf36bb6fb1e63a0cf0895d8f65868769de9a0193021461f30335d76b",
+      "composition_at_respective_peaks": [
+        {
+          "category": "weight",
+          "predicted_bytes": 26895993344,
+          "observed_bytes": 26896200192,
+          "signed_error_mib": -0.197265625
+        },
+        {
+          "category": "resident_gradient",
+          "predicted_bytes": 4294967296,
+          "observed_bytes": 4294982144,
+          "signed_error_mib": -0.01416015625
+        },
+        {
+          "category": "ffn_forward",
+          "predicted_bytes": 8556380160,
+          "observed_bytes": 8556380160,
+          "signed_error_mib": 0.0
+        },
+        {
+          "category": "rmsnorm_forward",
+          "predicted_bytes": 9822689280,
+          "observed_bytes": 9822689280,
+          "signed_error_mib": 0.0
+        },
+        {
+          "category": "attention_forward",
+          "predicted_bytes": 6794772480,
+          "observed_bytes": 6794772480,
+          "signed_error_mib": 0.0
+        },
+        {
+          "category": "checkpoint_recompute",
+          "predicted_bytes": 1825710464,
+          "observed_bytes": 1683104768,
+          "signed_error_mib": 135.9993896484375
+        },
+        {
+          "category": "loss_forward",
+          "predicted_bytes": 0,
+          "observed_bytes": 0,
+          "signed_error_mib": 0.0
+        },
+        {
+          "category": "backward_temporary",
+          "predicted_bytes": 362807296,
+          "observed_bytes": 541066752,
+          "signed_error_mib": -170.00146484375
+        },
+        {
+          "category": "other_boundary_inputs",
+          "predicted_bytes": 2141327616,
+          "observed_bytes": 2141328896,
+          "signed_error_mib": -0.001220703125
+        }
+      ]
+    },
+    {
+      "case": "step1",
+      "rank": 1,
+      "physical_card": 3,
+      "predicted_bytes": 58039913224,
+      "observed_bytes": 58040279040,
+      "predicted_gib": 54.05388141423464,
+      "observed_gib": 54.054222106933594,
+      "signed_error_mib": -0.34886932373046875,
+      "signed_error_percent": -0.0006302795335423666,
+      "absolute_error_percent": 0.0006302795335423666,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 2,
+        "op": "aten._log_softmax_backward_data.default",
+        "event": 44205
+      },
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26896003584,
+          "storages": 426,
+          "gib": 25.048855304718018
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 256,
+          "storages": 2,
+          "gib": 2.384185791015625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.0
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 41975808,
+          "storages": 2,
+          "gib": 0.039093017578125
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 1050628,
+          "storages": 4,
+          "gib": 0.000978473573923111
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 964689920,
+          "storages": 23,
+          "gib": 0.8984375
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 5448519680,
+          "storages": 149,
+          "gib": 5.074329376220703
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 3623878656,
+          "storages": 64,
+          "gib": 3.375
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 4563402752,
+          "storages": 32,
+          "gib": 4.25
+        },
+        {
+          "category": "loss_forward_intermediates",
+          "bytes": 4068474880,
+          "storages": 1,
+          "gib": 3.7890625
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 8136949764,
+          "storages": 3,
+          "gib": 7.57812500372529
+        }
+      ],
+      "parameter_gradient_hooks": 6816,
+      "resident_adds": 464,
+      "storage_allocations": 154608,
+      "alias_results": 160586,
+      "skipped_kernel_launches": 7296,
+      "prediction_sha256": "173b1cf4205925eaa887ab698e0ae90c1c0ed8be29cd7f6c9500d4ccfbd0157d",
+      "composition_at_respective_peaks": [
+        {
+          "category": "weight",
+          "predicted_bytes": 26896003584,
+          "observed_bytes": 26896210944,
+          "signed_error_mib": -0.19775390625
+        },
+        {
+          "category": "resident_gradient",
+          "predicted_bytes": 4294967296,
+          "observed_bytes": 4294982144,
+          "signed_error_mib": -0.01416015625
+        },
+        {
+          "category": "ffn_forward",
+          "predicted_bytes": 4563402752,
+          "observed_bytes": 4563402752,
+          "signed_error_mib": 0.0
+        },
+        {
+          "category": "rmsnorm_forward",
+          "predicted_bytes": 5448519680,
+          "observed_bytes": 5448519680,
+          "signed_error_mib": 0.0
+        },
+        {
+          "category": "attention_forward",
+          "predicted_bytes": 3623878656,
+          "observed_bytes": 3623878656,
+          "signed_error_mib": 0.0
+        },
+        {
+          "category": "checkpoint_recompute",
+          "predicted_bytes": 0,
+          "observed_bytes": 0,
+          "signed_error_mib": 0.0
+        },
+        {
+          "category": "loss_forward",
+          "predicted_bytes": 4068474880,
+          "observed_bytes": 4068474880,
+          "signed_error_mib": 0.0
+        },
+        {
+          "category": "backward_temporary",
+          "predicted_bytes": 8136949764,
+          "observed_bytes": 8136949760,
+          "signed_error_mib": 3.814697265625e-06
+        },
+        {
+          "category": "other_boundary_inputs",
+          "predicted_bytes": 1007716612,
+          "observed_bytes": 1007718912,
+          "signed_error_mib": -0.002193450927734375
+        }
+      ]
+    },
+    {
+      "case": "step2",
+      "rank": 0,
+      "physical_card": 2,
+      "predicted_bytes": 52939034752,
+      "observed_bytes": 53011120128,
+      "predicted_gib": 49.30331814289093,
+      "observed_gib": 49.370452880859375,
+      "signed_error_mib": -68.7459716796875,
+      "signed_error_percent": -0.13598161258608296,
+      "absolute_error_percent": 0.13598161258608296,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 0,
+        "op": "aten.mm.default",
+        "event": 9989
+      },
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26895993344,
+          "storages": 425,
+          "gib": 25.048845767974854
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 256,
+          "storages": 2,
+          "gib": 2.384185791015625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.0
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 31555584,
+          "storages": 5,
+          "gib": 0.029388427734375
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 1572864000,
+          "storages": 50,
+          "gib": 1.46484375
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 1575936,
+          "storages": 6,
+          "gib": 0.0014677047729492188
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 7367178240,
+          "storages": 270,
+          "gib": 6.86121940612793
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 4671406080,
+          "storages": 120,
+          "gib": 4.3505859375
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 6417285120,
+          "storages": 60,
+          "gib": 5.9765625
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 316669952,
+          "storages": 3,
+          "gib": 0.294921875
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "bytes": 1369538944,
+          "storages": 35,
+          "gib": 1.2754825353622437
+        }
+      ],
+      "parameter_gradient_hooks": 6800,
+      "resident_adds": 464,
+      "storage_allocations": 153916,
+      "alias_results": 160186,
+      "skipped_kernel_launches": 7296,
+      "prediction_sha256": "c41ded011068e1212aece9343b6667ce3ffcac4c6e74a841721950f780c3ff8d"
+    },
+    {
+      "case": "step2",
+      "rank": 1,
+      "physical_card": 3,
+      "predicted_bytes": 51101276424,
+      "observed_bytes": 51101919232,
+      "predicted_gib": 47.59177232533693,
+      "observed_gib": 47.59237098693848,
+      "signed_error_mib": -0.6130294799804688,
+      "signed_error_percent": -0.0012578940471524873,
+      "absolute_error_percent": 0.0012578940471524873,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 0,
+        "op": "aten._log_softmax_backward_data.default",
+        "event": 4803
+      },
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26896003584,
+          "storages": 426,
+          "gib": 25.048855304718018
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 256,
+          "storages": 2,
+          "gib": 2.384185791015625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.0
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 31481856,
+          "storages": 2,
+          "gib": 0.02931976318359375
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 787972,
+          "storages": 4,
+          "gib": 0.0007338561117649078
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 723517440,
+          "storages": 23,
+          "gib": 0.673828125
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 4086480896,
+          "storages": 149,
+          "gib": 3.8058319091796875
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 2491416576,
+          "storages": 64,
+          "gib": 2.3203125
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 3422552064,
+          "storages": 32,
+          "gib": 3.1875
+        },
+        {
+          "category": "loss_forward_intermediates",
+          "bytes": 3051356160,
+          "storages": 1,
+          "gib": 2.841796875
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 6102712324,
+          "storages": 3,
+          "gib": 5.68359375372529
+        }
+      ],
+      "parameter_gradient_hooks": 6816,
+      "resident_adds": 464,
+      "storage_allocations": 154608,
+      "alias_results": 160586,
+      "skipped_kernel_launches": 7296,
+      "prediction_sha256": "f2e2d70364ecfeb774d8cb249adcd6a50941b7b70f151320d4ee4bf03e615605"
+    },
+    {
+      "case": "step3",
+      "rank": 0,
+      "physical_card": 2,
+      "predicted_bytes": 56849306240,
+      "observed_bytes": 56885740032,
+      "predicted_gib": 52.94504225254059,
+      "observed_gib": 52.97897386550903,
+      "signed_error_mib": -34.7459716796875,
+      "signed_error_percent": -0.06404732008321393,
+      "absolute_error_percent": 0.06404732008321393,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 0,
+        "op": "aten.mm.default",
+        "event": 9989
+      },
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26895993344,
+          "storages": 425,
+          "gib": 25.048845767974854
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 256,
+          "storages": 2,
+          "gib": 2.384185791015625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.0
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 42057728,
+          "storages": 5,
+          "gib": 0.0391693115234375
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 1835008000,
+          "storages": 50,
+          "gib": 1.708984375
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 1838592,
+          "storages": 6,
+          "gib": 0.0017123222351074219
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 8513083392,
+          "storages": 270,
+          "gib": 7.928426742553711
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 5662310400,
+          "storages": 120,
+          "gib": 5.2734375
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 7415529472,
+          "storages": 60,
+          "gib": 6.90625
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 362807296,
+          "storages": 3,
+          "gib": 0.337890625
+        },
+        {
+          "category": "checkpoint_recompute_intermediates",
+          "bytes": 1825710464,
+          "storages": 35,
+          "gib": 1.7003253698349
+        }
+      ],
+      "parameter_gradient_hooks": 6800,
+      "resident_adds": 464,
+      "storage_allocations": 153916,
+      "alias_results": 160186,
+      "skipped_kernel_launches": 7296,
+      "prediction_sha256": "72ff5e4dfa1135e32620abeedef21b1528d7f89a73591cc48c5568b183054f99"
+    },
+    {
+      "case": "step3",
+      "rank": 1,
+      "physical_card": 3,
+      "predicted_bytes": 58039913224,
+      "observed_bytes": 58040556032,
+      "predicted_gib": 54.05388141423464,
+      "observed_gib": 54.05448007583618,
+      "signed_error_mib": -0.6130294799804688,
+      "signed_error_percent": -0.0011075152340814846,
+      "absolute_error_percent": 0.0011075152340814846,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 0,
+        "op": "aten._log_softmax_backward_data.default",
+        "event": 4803
+      },
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26896003584,
+          "storages": 426,
+          "gib": 25.048855304718018
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 256,
+          "storages": 2,
+          "gib": 2.384185791015625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.0
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 41975808,
+          "storages": 2,
+          "gib": 0.039093017578125
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 1050628,
+          "storages": 4,
+          "gib": 0.000978473573923111
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 964689920,
+          "storages": 23,
+          "gib": 0.8984375
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 5448519680,
+          "storages": 149,
+          "gib": 5.074329376220703
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 3623878656,
+          "storages": 64,
+          "gib": 3.375
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 4563402752,
+          "storages": 32,
+          "gib": 4.25
+        },
+        {
+          "category": "loss_forward_intermediates",
+          "bytes": 4068474880,
+          "storages": 1,
+          "gib": 3.7890625
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 8136949764,
+          "storages": 3,
+          "gib": 7.57812500372529
+        }
+      ],
+      "parameter_gradient_hooks": 6816,
+      "resident_adds": 464,
+      "storage_allocations": 154608,
+      "alias_results": 160586,
+      "skipped_kernel_launches": 7296,
+      "prediction_sha256": "e77349a921d16e0c7d1b02e4dc106eba3fe00be4f2b3cc1a947842133ec3c4a1"
+    }
+  ],
+  "maximum_absolute_error_percent": 0.13598161258608296,
+  "source_hashes": {
+    "step1-0": {
+      "predict_meta.py": "da75756e17cf1c2054fcb67ed003db51b747b5ec77daaa1cc66f837244c10d7d",
+      "storage_tracker.py": "3ff676367c924fb82c360e84e4eb96a4efb2408b1c9a19dc408e286d52a8fb64",
+      "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+      "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b"
+    },
+    "step1-1": {
+      "predict_meta.py": "da75756e17cf1c2054fcb67ed003db51b747b5ec77daaa1cc66f837244c10d7d",
+      "storage_tracker.py": "3ff676367c924fb82c360e84e4eb96a4efb2408b1c9a19dc408e286d52a8fb64",
+      "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+      "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b"
+    },
+    "step2-0": {
+      "predict_meta.py": "da75756e17cf1c2054fcb67ed003db51b747b5ec77daaa1cc66f837244c10d7d",
+      "storage_tracker.py": "3ff676367c924fb82c360e84e4eb96a4efb2408b1c9a19dc408e286d52a8fb64",
+      "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+      "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b"
+    },
+    "step2-1": {
+      "predict_meta.py": "da75756e17cf1c2054fcb67ed003db51b747b5ec77daaa1cc66f837244c10d7d",
+      "storage_tracker.py": "3ff676367c924fb82c360e84e4eb96a4efb2408b1c9a19dc408e286d52a8fb64",
+      "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+      "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b"
+    },
+    "step3-0": {
+      "predict_meta.py": "da75756e17cf1c2054fcb67ed003db51b747b5ec77daaa1cc66f837244c10d7d",
+      "storage_tracker.py": "3ff676367c924fb82c360e84e4eb96a4efb2408b1c9a19dc408e286d52a8fb64",
+      "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+      "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b"
+    },
+    "step3-1": {
+      "predict_meta.py": "da75756e17cf1c2054fcb67ed003db51b747b5ec77daaa1cc66f837244c10d7d",
+      "storage_tracker.py": "3ff676367c924fb82c360e84e4eb96a4efb2408b1c9a19dc408e286d52a8fb64",
+      "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+      "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b"
+    }
+  },
+  "limits": [
+    "Accuracy is against historical NPU framework allocated peaks, not complete physical HBM.",
+    "Category comparison uses each implementation's own peak; it is not a per-address event alignment.",
+    "Small total error does not prove cancellation-free per-category accuracy.",
+    "CANN/internal compiler workspace, runtime/reserve and arbitrary multi-stream timing remain uncovered.",
+    "Native NPU backward layouts/copies can differ from meta. Any discrepancies are retained rather than fitted."
+  ]
+}
