@@ -1,0 +1,233 @@
+{
+  "initialization": [
+    {
+      "rank": 0,
+      "physical_card": 3,
+      "matmul": true,
+      "hccl": true,
+      "p2p": true,
+      "torch": "2.10.0+cpu",
+      "torch_npu": "2.10.0.post4"
+    },
+    {
+      "rank": 1,
+      "physical_card": 4,
+      "matmul": true,
+      "hccl": true,
+      "p2p": true,
+      "torch": "2.10.0+cpu",
+      "torch_npu": "2.10.0.post4"
+    }
+  ],
+  "output_head_probe": {
+    "device": "npu",
+    "physical_card": 3,
+    "cases": [
+      {
+        "shape": [
+          2,
+          17,
+          64,
+          256
+        ],
+        "chunk_tokens": 8,
+        "reference_loss": 5.545295715332031,
+        "chunk_loss": 5.545295238494873,
+        "loss_abs_error": 4.76837158203125e-07,
+        "gradient_relative_l2": [
+          0.0,
+          0.0035605907905846834
+        ],
+        "gradients_finite": true
+      },
+      {
+        "shape": [
+          1,
+          32,
+          5120,
+          248320
+        ],
+        "chunk_tokens": 16,
+        "reference_loss": 12.365835189819336,
+        "chunk_loss": 12.365833282470703,
+        "loss_abs_error": 1.9073486328125e-06,
+        "gradient_relative_l2": [
+          3.466317366473959e-06,
+          0.0006074447301216424
+        ],
+        "gradients_finite": true
+      }
+    ],
+    "scope": "Short-token output-head shapes, not full-model convergence"
+  },
+  "tiny_three_step_comparison": {
+    "scope": "All tensors of tiny three-step pipeline; BF16 chunking not bitwise equivalent",
+    "checks_passed": true,
+    "rows": [
+      {
+        "rank": 0,
+        "step": 1,
+        "metrics": {
+          "master": {
+            "relative_l2": 0.0,
+            "maximum_absolute_error": 0.0,
+            "finite": true
+          },
+          "grad": {
+            "relative_l2": 0.0,
+            "maximum_absolute_error": 0.0,
+            "finite": true
+          },
+          "m": {
+            "relative_l2": 6.366146437315554e-07,
+            "maximum_absolute_error": 1.3969838619232178e-09,
+            "finite": true
+          },
+          "v": {
+            "relative_l2": 1.278266147161169e-06,
+            "maximum_absolute_error": 7.389644451905042e-13,
+            "finite": true
+          }
+        }
+      },
+      {
+        "rank": 0,
+        "step": 2,
+        "metrics": {
+          "master": {
+            "relative_l2": 8.016834660032012e-11,
+            "maximum_absolute_error": 2.3283064365386963e-10,
+            "finite": true
+          },
+          "grad": {
+            "relative_l2": 0.0,
+            "maximum_absolute_error": 0.0,
+            "finite": true
+          },
+          "m": {
+            "relative_l2": 6.379220315116923e-07,
+            "maximum_absolute_error": 2.7939677238464355e-09,
+            "finite": true
+          },
+          "v": {
+            "relative_l2": 1.2783598247745314e-06,
+            "maximum_absolute_error": 1.5916157281026244e-12,
+            "finite": true
+          }
+        }
+      },
+      {
+        "rank": 0,
+        "step": 3,
+        "metrics": {
+          "master": {
+            "relative_l2": 7.673796299402756e-10,
+            "maximum_absolute_error": 1.862645149230957e-09,
+            "finite": true
+          },
+          "grad": {
+            "relative_l2": 0.0,
+            "maximum_absolute_error": 0.0,
+            "finite": true
+          },
+          "m": {
+            "relative_l2": 5.398156127780928e-06,
+            "maximum_absolute_error": 3.4924596548080444e-08,
+            "finite": true
+          },
+          "v": {
+            "relative_l2": 9.893017669201182e-06,
+            "maximum_absolute_error": 1.7621459846850485e-11,
+            "finite": true
+          }
+        }
+      },
+      {
+        "rank": 1,
+        "step": 1,
+        "metrics": {
+          "master": {
+            "relative_l2": 0.0,
+            "maximum_absolute_error": 0.0,
+            "finite": true
+          },
+          "grad": {
+            "relative_l2": 0.002608646320481519,
+            "maximum_absolute_error": 0.0001220703125,
+            "finite": true
+          },
+          "m": {
+            "relative_l2": 0.0026086469781454224,
+            "maximum_absolute_error": 8.112983778119087e-06,
+            "finite": true
+          },
+          "v": {
+            "relative_l2": 0.006180495729338828,
+            "maximum_absolute_error": 2.007340071941144e-09,
+            "finite": true
+          }
+        }
+      },
+      {
+        "rank": 1,
+        "step": 2,
+        "metrics": {
+          "master": {
+            "relative_l2": 1.2607125582000856e-07,
+            "maximum_absolute_error": 1.125037670135498e-06,
+            "finite": true
+          },
+          "grad": {
+            "relative_l2": 0.002608646320481519,
+            "maximum_absolute_error": 0.0001220703125,
+            "finite": true
+          },
+          "m": {
+            "relative_l2": 0.00260864658411249,
+            "maximum_absolute_error": 1.5414785593748093e-05,
+            "finite": true
+          },
+          "v": {
+            "relative_l2": 0.006180497069102916,
+            "maximum_absolute_error": 4.012690624222159e-09,
+            "finite": true
+          }
+        }
+      },
+      {
+        "rank": 1,
+        "step": 3,
+        "metrics": {
+          "master": {
+            "relative_l2": 3.4521480605592754e-07,
+            "maximum_absolute_error": 2.3730099201202393e-06,
+            "finite": true
+          },
+          "grad": {
+            "relative_l2": 0.0026150968805848007,
+            "maximum_absolute_error": 0.0001220703125,
+            "finite": true
+          },
+          "m": {
+            "relative_l2": 0.00205836692197566,
+            "maximum_absolute_error": 2.1994230337440968e-05,
+            "finite": true
+          },
+          "v": {
+            "relative_l2": 0.004880663375394454,
+            "maximum_absolute_error": 5.1048800742137246e-09,
+            "finite": true
+          }
+        }
+      }
+    ]
+  },
+  "initial_failure": {
+    "stage": "tiny output-head elementwise comparison",
+    "parameter": "lm_head.weight",
+    "maximum_absolute_error": 0.0001220703125,
+    "full_model_not_started": true,
+    "resolution": "Retain original elementwise pass/fail, additionally use the preflight output-head relative-L2 threshold 0.02 only for chunked lm_head; all other elementwise gates unchanged. No numeric implementation changed."
+  },
+  "full_model_status": "in progress; no full-model result yet"
+}
