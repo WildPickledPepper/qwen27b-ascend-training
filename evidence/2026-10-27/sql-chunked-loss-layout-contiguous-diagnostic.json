@@ -1,0 +1,891 @@
+{
+  "physical_card": 4,
+  "shape": [
+    16,
+    256,
+    5120,
+    248320
+  ],
+  "loss": 12.434024810791016,
+  "allocated_peak_bytes": 10260390400,
+  "records": [
+    {
+      "stage": "before_contiguous",
+      "start": 0,
+      "allocated_bytes": 5174793728,
+      "peak_bytes": 5714811904,
+      "dw": null,
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          1,
+          248320
+        ],
+        "contiguous": false,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "after_gradient",
+      "start": 0,
+      "allocated_bytes": 5174793728,
+      "peak_bytes": 7717593088,
+      "dw": null,
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "before_contiguous",
+      "start": 512,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 8257609216,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          1,
+          248320
+        ],
+        "contiguous": false,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "after_gradient",
+      "start": 512,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "before_add",
+      "start": 512,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "after_add",
+      "start": 512,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "before_contiguous",
+      "start": 1024,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          1,
+          248320
+        ],
+        "contiguous": false,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "after_gradient",
+      "start": 1024,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "before_add",
+      "start": 1024,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "after_add",
+      "start": 1024,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "before_contiguous",
+      "start": 1536,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          1,
+          248320
+        ],
+        "contiguous": false,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "after_gradient",
+      "start": 1536,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "before_add",
+      "start": 1536,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "after_add",
+      "start": 1536,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "before_contiguous",
+      "start": 2048,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          1,
+          248320
+        ],
+        "contiguous": false,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "after_gradient",
+      "start": 2048,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "before_add",
+      "start": 2048,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "after_add",
+      "start": 2048,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "before_contiguous",
+      "start": 2560,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          1,
+          248320
+        ],
+        "contiguous": false,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "after_gradient",
+      "start": 2560,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "before_add",
+      "start": 2560,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "after_add",
+      "start": 2560,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "before_contiguous",
+      "start": 3072,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          1,
+          248320
+        ],
+        "contiguous": false,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "after_gradient",
+      "start": 3072,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "before_add",
+      "start": 3072,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "after_add",
+      "start": 3072,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "before_contiguous",
+      "start": 3584,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          1,
+          248320
+        ],
+        "contiguous": false,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "after_gradient",
+      "start": 3584,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "before_add",
+      "start": 3584,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    },
+    {
+      "stage": "after_add",
+      "start": 3584,
+      "allocated_bytes": 7717591040,
+      "peak_bytes": 10260390400,
+      "dw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      },
+      "gw": {
+        "shape": [
+          248320,
+          5120
+        ],
+        "stride": [
+          5120,
+          1
+        ],
+        "contiguous": true,
+        "dtype": "torch.bfloat16"
+      }
+    }
+  ]
+}

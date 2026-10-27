@@ -2,12 +2,12 @@
 import argparse,json,math
 from pathlib import Path
 import torch
-p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--candidate',default='tiny-chunk-v2.private');a=p.parse_args()
 rows=[]
 for rank in [0,1]:
  for step in [1,2,3]:
   b=torch.load(a.root/'tiny-baseline.private'/f'probe-rank{rank}-step{step}.private.pt',map_location='cpu',weights_only=True)
-  c=torch.load(a.root/'tiny-chunk-v2.private'/f'probe-rank{rank}-step{step}.private.pt',map_location='cpu',weights_only=True)
+  c=torch.load(a.root/a.candidate/f'probe-rank{rank}-step{step}.private.pt',map_location='cpu',weights_only=True)
   metrics={}
   for group in ['master','grad','m','v']:
    def values(s):
