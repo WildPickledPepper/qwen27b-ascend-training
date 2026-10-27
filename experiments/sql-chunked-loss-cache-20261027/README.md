@@ -1,11 +1,47 @@
-# 用chunked loss释放的显存扩展梯度驻留（进行中）
+# 用chunked loss释放的显存扩展梯度驻留：完成
 
-2026-10-27用户授权。在实时空闲物理3/4号910B2上，最终512-token分块＋连续化loss保持，rank0/3号缓存4GiB不变，rank1/4号由4→8GiB。按原参数贪心选择，实际恰好8GiB、77个完整参数梯度（旧29个）。不改训练batch、更新边界、48层重计算、BF16累加顺序或CPU FP32 master/m/v。
+2026-10-27，在物理3/4号910B2完成独立短训。将4号卡梯度缓存从4扩到8GiB；3号保持4GiB。新增4GiB使4号每轮少传60GiB梯度、CPU累加少8.38秒，但全程80.022→81.725秒，慢2.13%，未采用为速度默认配置。结束两卡无活动进程。
 
-新增4GiB在16micro期间留NPU逐次累加、末尾只卸载一次，理论上每次更新少4×(16−1)=60GiB D2H；GPU预算增加不减少CPU主权重/m/v容量。以49.835765GiB实测峰值加持久4GiB估算约53.84GiB，另保留allocator余量，不把估算当放得下证明。
+## 固定训练配置
 
-复用刚完成的4/4GiB contiguous-loss三步对照，不重跑基线。tiny三步完整grad/master/m/v全部逐位相同后才启动27B原768条三步；完整实验仍在进行。原81.22秒入口及上轮4/4源码不改，独立目录运行，结束清理自己进程。
+Qwen3.5-27B文本全参26,895,998,464参数；自定义PyTorch/Transformers前32/后32层两段同步1F1B，CPU DeepSpeed CPUAdam组件；BF16计算与梯度累积，CPU FP32主权重、m/v不变。global256/micro16/16micro、48层非重入激活重算、SQL原768条顺序/padding不变。loss仍512token分块＋显式梯度连续化。3号NUMA4/24核，4号NUMA0/24核。复用刚完成的4/4GiB三步对照，不重复基线；第一步lr0预热，后两步均值计时。
 
-`train_cache.py`只新增每rank预算参数；`resident_gradients.py`在新副本中将授权预算上限改为8GiB，其余保序逻辑不变。`run_sequence.py`先检查3/4空闲、tiny及逐位门槛，再完整3步；环境提供既有MODEL_DIR、DATA_DIR、CPU_ADAM_EXTENSION、VEOMNI_SOURCE、TINY_REFERENCE（上轮tiny-contiguous输出）。不涉及共享库或模型文件修改。
+`train_cache.py`只加入每rank预算；`resident_gradients.py`独立副本允许最多8GiB，保留完整参数选择和16micro相加顺序。每轮更新边界不变，不提前更新参数。tiny三步所有梯度、FP32主权重、m/v逐位一致后才启动27B。
 
-`collect_results.py`核对相同数据/FP32状态、逐步D2H差额、驻留调用、范数和验证，输出过滤聚合结果。CPU累加/等待等存在重叠，不能相加凑整步。
+## 实测
+
+| 项目 | 原4/4GiB | 新4/8GiB |
+|---|---:|---:|
+| 每次更新耗时（后两步均值） |80.0218秒|81.7246秒|
+| 两个计时步 |79.8940 / 80.1496秒|80.4690 / 82.9801秒|
+| 3号 allocated峰值 |56.55997GiB|56.55997GiB|
+| 4号 allocated峰值 |49.83577GiB|53.83579GiB|
+| 4号 reserved峰值 |50.35156GiB|54.34180GiB|
+| 4号NPU缓存参数个数 |29|77|
+| 4号每轮D2H |340.78168GiB|280.78168GiB|
+| 4号CPU梯度相加累计 |46.2679秒|37.8910秒|
+| 4号接收槽等待累计 |33.8033秒|26.5950秒|
+| 3号CPU梯度相加累计 |48.8356秒|48.3791秒|
+| 3号接收槽等待累计 |39.2044秒|37.1066秒|
+| 3号前后向＋梯度排空 |66.0609秒|63.8802秒|
+| 4号前后向＋梯度排空 |62.8978秒|61.2495秒|
+| 更新/权重回传/末尾同步（慢rank） |12.6394秒|16.5098秒|
+
+D2H差额逐步核对为4GiB×(16−1)=60GiB=64,424,509,440字节；3号差额0。CPU累加、槽等待与计算互相重叠，不能把这些列相加当整步耗时。更新计时覆盖CPUAdam、回传和末尾跨rank barrier，不能将增加的3.87秒全部归咎CPUAdam或缓存排空。新配置前后向阶段缩短、更新同步阶段延长，净结果没有加速；具体尾部增长根因未逐事件采样，保留未知。仅两步计时不作稳定性能退化结论。
+
+## 数值与显存预测
+
+tiny三个步骤、两个rank的完整grad/master/m/v逐位相同。27B三步全局梯度范数逐步相同，原/新短验证均loss0.8530882597、正确204/224token。完整27B未逐张量比所有状态，短验证不等于长期质量验证。
+
+独立CPU/meta先封存8GiB配置预测，未读新实测：4号首步53.835394859GiB，实际53.835530281GiB，实际高0.138672MiB。三步最大53.835788250GiB。该模型依赖实际执行路径源码及固定布局/分配粒度规则，只覆盖framework allocated，不覆盖CANN内部workspace、reserved或物理HBM。原跨步约270KiB残差未归因。
+
+## 复现与证据
+
+`run_sequence.py`先检查3/4空闲、tiny逐位门槛再三步27B；沿用原MODEL_DIR、DATA_DIR、CPU_ADAM_EXTENSION、VEOMNI_SOURCE，TINY_REFERENCE指向上轮tiny-contiguous输出。完整模型调用`train_cache.py --resident-gib-by-rank 4,8 --loss-chunk-tokens 512 --steps 3`。原81.22秒入口、上轮4/4源码、共享库与源模型不改。
+
+- [实际结果和逐步检查](../../evidence/2026-10-27/sql-chunked-loss-cache-results.json)
+- [tiny完整状态逐位检查](../../evidence/2026-10-27/sql-chunked-loss-cache-tiny-exact.json)
+- [事前预测与封存SHA](../../evidence/2026-10-27/sql-chunked-loss-cache-prediction.json)
+- [资源退出检查](../../evidence/2026-10-27/sql-chunked-loss-cache-cleanup.json)
+
+新缓存确实把空余显存用于梯度累积，但未解决整条流水线的速度问题。本轮不扩大训练或再改缓存；保留独立候选和结果，原速度默认入口不变。

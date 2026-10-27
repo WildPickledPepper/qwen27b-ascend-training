@@ -1,0 +1,8 @@
+{
+  "checked_utc": "2026-10-27T10:37:06.225448+00:00",
+  "job_complete": true,
+  "all_three_phases_returncode": 0,
+  "physical3_no_running_processes": true,
+  "physical4_no_running_processes": true,
+  "verification": "npu-smi info after completion; raw output retained privately; other tasks untouched"
+}

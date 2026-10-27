@@ -1,0 +1,702 @@
+{
+  "scope": "Reuse just-completed 4/4GiB contiguous-loss reference; new physical3/4 4/8GiB run, same768 SQL samples/global256/micro16/16micro/48checkpoint/BF16/CPU FP32 master-m-v",
+  "runs": {
+    "reference": {
+      "rank_results": [
+        {
+          "loss_chunk_tokens": 512,
+          "physical_card": 3,
+          "steps": [
+            {
+              "loss_chunk_tokens": 512,
+              "physical_card": 3,
+              "step": 1,
+              "seconds": 129.04013968002982,
+              "profiled": false,
+              "phase": {
+                "forward_wall": 4.8744938804302365,
+                "backward_wall": 62.56163695012219,
+                "p2p_wall": 0.017924349755048752
+              },
+              "forward_backward_and_drain_seconds": 73.44516728981398,
+              "cpu_update_return_seconds": 54.13636271003634,
+              "grad_norm": 40.5043129213961,
+              "norm_device": "npu",
+              "global_norm_seconds": 1.458643050165847,
+              "gradient_d2h_bytes": 365911384064,
+              "offload_slot_wait": 42.47391417901963,
+              "worker_copy_wait_seconds": 15.489497285336256,
+              "worker_cpu_add_seconds": 49.27047782135196,
+              "resident_add_calls": 464,
+              "resident_add_bytes": 68719476736,
+              "allocated_peak": 60730805248,
+              "reserved_peak": 63340281856,
+              "input_tokens": 28426,
+              "padded_tokens": 54272
+            },
+            {
+              "loss_chunk_tokens": 512,
+              "physical_card": 3,
+              "step": 2,
+              "seconds": 79.89402131992392,
+              "profiled": false,
+              "phase": {
+                "forward_wall": 4.491851870436221,
+                "backward_wall": 55.555928779765964,
+                "p2p_wall": 0.017665149876847863
+              },
+              "forward_backward_and_drain_seconds": 65.98463062988594,
+              "cpu_update_return_seconds": 12.629879310028628,
+              "grad_norm": 40.57344083957509,
+              "norm_device": "npu",
+              "global_norm_seconds": 1.279532590182498,
+              "gradient_d2h_bytes": 365911384064,
+              "offload_slot_wait": 39.35816243337467,
+              "worker_copy_wait_seconds": 10.717545830411837,
+              "worker_cpu_add_seconds": 49.21009431662969,
+              "resident_add_calls": 464,
+              "resident_add_bytes": 68719476736,
+              "allocated_peak": 53011120128,
+              "reserved_peak": 63340281856,
+              "input_tokens": 28549,
+              "padded_tokens": 49152
+            },
+            {
+              "loss_chunk_tokens": 512,
+              "physical_card": 3,
+              "step": 3,
+              "seconds": 80.14933953993022,
+              "profiled": false,
+              "phase": {
+                "forward_wall": 4.5230335898231715,
+                "backward_wall": 55.844496560283005,
+                "p2p_wall": 0.017734540393576026
+              },
+              "forward_backward_and_drain_seconds": 66.13712323992513,
+              "cpu_update_return_seconds": 12.648557639913633,
+              "grad_norm": 38.772188392885916,
+              "norm_device": "npu",
+              "global_norm_seconds": 1.3636721901129931,
+              "gradient_d2h_bytes": 365911384064,
+              "offload_slot_wait": 39.05057470314205,
+              "worker_copy_wait_seconds": 11.456808101153001,
+              "worker_cpu_add_seconds": 48.461011436069384,
+              "resident_add_calls": 464,
+              "resident_add_bytes": 68719476736,
+              "allocated_peak": 56885740032,
+              "reserved_peak": 63340281856,
+              "input_tokens": 28564,
+              "padded_tokens": 50176
+            }
+          ],
+          "validation_before": {
+            "loss": 1.0108281373977661,
+            "assistant_tokens": 224,
+            "correct": 202
+          },
+          "validation_after_768": {
+            "loss": 0.8530882596969604,
+            "assistant_tokens": 224,
+            "correct": 204
+          },
+          "parameters": 13447996672,
+          "state_bytes": 107583973376,
+          "normal_mean": 80.02168042992707,
+          "protocol": "global256/micro16/16 pipeline micros; original paired DP groups and padding",
+          "gradient_precision": "BF16 accumulation, FP32 Adam; changed reduction order"
+        },
+        {
+          "loss_chunk_tokens": 512,
+          "physical_card": 4,
+          "steps": [
+            {
+              "loss_chunk_tokens": 512,
+              "physical_card": 4,
+              "step": 1,
+              "seconds": 129.0403572700452,
+              "profiled": false,
+              "phase": {
+                "forward_wall": 5.375026899622753,
+                "backward_wall": 59.90377780050039,
+                "p2p_wall": 0.03901726007461548
+              },
+              "forward_backward_and_drain_seconds": 70.11806438001804,
+              "cpu_update_return_seconds": 54.13653445011005,
+              "grad_norm": 40.5043129213961,
+              "norm_device": "npu",
+              "global_norm_seconds": 4.785776099888608,
+              "gradient_d2h_bytes": 365911547904,
+              "offload_slot_wait": 31.78665565373376,
+              "worker_copy_wait_seconds": 10.965521114645526,
+              "worker_cpu_add_seconds": 46.24340957822278,
+              "resident_add_calls": 464,
+              "resident_add_bytes": 68719476736,
+              "allocated_peak": 53510468608,
+              "reserved_peak": 54064578560,
+              "input_tokens": 28426,
+              "padded_tokens": 54272
+            },
+            {
+              "loss_chunk_tokens": 512,
+              "physical_card": 4,
+              "step": 2,
+              "seconds": 79.89396155998111,
+              "profiled": false,
+              "phase": {
+                "forward_wall": 4.766576930414885,
+                "backward_wall": 56.19858830003068,
+                "p2p_wall": 0.03843847010284662
+              },
+              "forward_backward_and_drain_seconds": 62.660429519834,
+              "cpu_update_return_seconds": 12.62975040008314,
+              "grad_norm": 40.57344083957509,
+              "norm_device": "npu",
+              "global_norm_seconds": 4.603796279989183,
+              "gradient_d2h_bytes": 365911547904,
+              "offload_slot_wait": 33.70028228731826,
+              "worker_copy_wait_seconds": 10.102798472391441,
+              "worker_cpu_add_seconds": 46.34316233010031,
+              "resident_add_calls": 464,
+              "resident_add_bytes": 68719476736,
+              "allocated_peak": 49612971008,
+              "reserved_peak": 54064578560,
+              "input_tokens": 28549,
+              "padded_tokens": 49152
+            },
+            {
+              "loss_chunk_tokens": 512,
+              "physical_card": 4,
+              "step": 3,
+              "seconds": 80.14955580001697,
+              "profiled": false,
+              "phase": {
+                "forward_wall": 4.8006243102718145,
+                "backward_wall": 56.39130903035402,
+                "p2p_wall": 0.03858672990463674
+              },
+              "forward_backward_and_drain_seconds": 63.1350710298866,
+              "cpu_update_return_seconds": 12.648953180061653,
+              "grad_norm": 38.772188392885916,
+              "norm_device": "npu",
+              "global_norm_seconds": 4.365544500062242,
+              "gradient_d2h_bytes": 365911547904,
+              "offload_slot_wait": 33.90635087178089,
+              "worker_copy_wait_seconds": 10.440874281572178,
+              "worker_cpu_add_seconds": 46.1926188536454,
+              "resident_add_calls": 464,
+              "resident_add_bytes": 68719476736,
+              "allocated_peak": 53510745600,
+              "reserved_peak": 54064578560,
+              "input_tokens": 28564,
+              "padded_tokens": 50176
+            }
+          ],
+          "validation_before": {
+            "loss": 1.0108281373977661,
+            "assistant_tokens": 224,
+            "correct": 202
+          },
+          "validation_after_768": {
+            "loss": 0.8530882596969604,
+            "assistant_tokens": 224,
+            "correct": 204
+          },
+          "parameters": 13448001792,
+          "state_bytes": 107584014336,
+          "normal_mean": 80.02175867999904,
+          "protocol": "global256/micro16/16 pipeline micros; original paired DP groups and padding",
+          "gradient_precision": "BF16 accumulation, FP32 Adam; changed reduction order"
+        }
+      ],
+      "step_seconds": [
+        129.0403572700452,
+        79.89402131992392,
+        80.14955580001697
+      ],
+      "warm_mean_seconds": 80.02178855997045,
+      "plans": [
+        {
+          "budget_bytes": 4294967296,
+          "allocated_bytes": 4294967296,
+          "selected_parameters": 29,
+          "total_parameters": 425,
+          "dtype": "BF16",
+          "order": "same per-parameter 16 microbatch additions",
+          "flush": "once after all microbatches; no early optimizer update"
+        },
+        {
+          "budget_bytes": 4294967296,
+          "allocated_bytes": 4294967296,
+          "selected_parameters": 29,
+          "total_parameters": 426,
+          "dtype": "BF16",
+          "order": "same per-parameter 16 microbatch additions",
+          "flush": "once after all microbatches; no early optimizer update"
+        }
+      ],
+      "peak_allocated_gib": [
+        56.559969902038574,
+        49.83576536178589
+      ],
+      "peak_reserved_gib": [
+        58.990234375,
+        50.3515625
+      ]
+    },
+    "cache4-8": {
+      "rank_results": [
+        {
+          "resident_budget_gib": 4.0,
+          "loss_chunk_tokens": 512,
+          "physical_card": 3,
+          "steps": [
+            {
+              "resident_budget_gib": 4.0,
+              "loss_chunk_tokens": 512,
+              "physical_card": 3,
+              "step": 1,
+              "seconds": 122.36384697002359,
+              "profiled": false,
+              "phase": {
+                "forward_wall": 4.92294178949669,
+                "backward_wall": 60.09834569040686,
+                "p2p_wall": 0.017660849262028933
+              },
+              "forward_backward_and_drain_seconds": 70.76558961998671,
+              "cpu_update_return_seconds": 50.240186230046675,
+              "grad_norm": 40.5043129213961,
+              "norm_device": "npu",
+              "global_norm_seconds": 1.3581055898685008,
+              "gradient_d2h_bytes": 365911384064,
+              "offload_slot_wait": 38.935863139806315,
+              "worker_copy_wait_seconds": 13.751020647818223,
+              "worker_cpu_add_seconds": 48.327853160211816,
+              "resident_add_calls": 464,
+              "resident_add_bytes": 68719476736,
+              "allocated_peak": 60730805248,
+              "reserved_peak": 63340281856,
+              "input_tokens": 28426,
+              "padded_tokens": 54272
+            },
+            {
+              "resident_budget_gib": 4.0,
+              "loss_chunk_tokens": 512,
+              "physical_card": 3,
+              "step": 2,
+              "seconds": 80.46893546986394,
+              "profiled": false,
+              "phase": {
+                "forward_wall": 4.559581680456176,
+                "backward_wall": 53.05341271008365,
+                "p2p_wall": 0.017723529832437634
+              },
+              "forward_backward_and_drain_seconds": 63.15139095997438,
+              "cpu_update_return_seconds": 15.932627159869298,
+              "grad_norm": 40.57344083957509,
+              "norm_device": "npu",
+              "global_norm_seconds": 1.3849364300258458,
+              "gradient_d2h_bytes": 365911384064,
+              "offload_slot_wait": 36.59677653457038,
+              "worker_copy_wait_seconds": 9.309906149515882,
+              "worker_cpu_add_seconds": 47.72966549335979,
+              "resident_add_calls": 464,
+              "resident_add_bytes": 68719476736,
+              "allocated_peak": 53011120128,
+              "reserved_peak": 63340281856,
+              "input_tokens": 28549,
+              "padded_tokens": 49152
+            },
+            {
+              "resident_budget_gib": 4.0,
+              "loss_chunk_tokens": 512,
+              "physical_card": 3,
+              "step": 3,
+              "seconds": 82.98011714988388,
+              "profiled": false,
+              "phase": {
+                "forward_wall": 4.492752099409699,
+                "backward_wall": 54.44008126016706,
+                "p2p_wall": 0.017250149976462126
+              },
+              "forward_backward_and_drain_seconds": 64.60904397978447,
+              "cpu_update_return_seconds": 17.08670836011879,
+              "grad_norm": 38.772188392885916,
+              "norm_device": "npu",
+              "global_norm_seconds": 1.284377139993012,
+              "gradient_d2h_bytes": 365911384064,
+              "offload_slot_wait": 37.61647854791954,
+              "worker_copy_wait_seconds": 9.42224605800584,
+              "worker_cpu_add_seconds": 49.02860095282085,
+              "resident_add_calls": 464,
+              "resident_add_bytes": 68719476736,
+              "allocated_peak": 56885740032,
+              "reserved_peak": 63340281856,
+              "input_tokens": 28564,
+              "padded_tokens": 50176
+            }
+          ],
+          "validation_before": {
+            "loss": 1.0108281373977661,
+            "assistant_tokens": 224,
+            "correct": 202
+          },
+          "validation_after_768": {
+            "loss": 0.8530882596969604,
+            "assistant_tokens": 224,
+            "correct": 204
+          },
+          "parameters": 13447996672,
+          "state_bytes": 107583973376,
+          "normal_mean": 81.72452630987391,
+          "protocol": "global256/micro16/16 pipeline micros; original paired DP groups and padding",
+          "gradient_precision": "BF16 accumulation, FP32 Adam; changed reduction order"
+        },
+        {
+          "resident_budget_gib": 8.0,
+          "loss_chunk_tokens": 512,
+          "physical_card": 4,
+          "steps": [
+            {
+              "resident_budget_gib": 8.0,
+              "loss_chunk_tokens": 512,
+              "physical_card": 4,
+              "step": 1,
+              "seconds": 122.36403728998266,
+              "profiled": false,
+              "phase": {
+                "forward_wall": 5.343305699992925,
+                "backward_wall": 55.841207299614325,
+                "p2p_wall": 0.03754999930970371
+              },
+              "forward_backward_and_drain_seconds": 67.867400029907,
+              "cpu_update_return_seconds": 50.24029635009356,
+              "grad_norm": 40.5043129213961,
+              "norm_device": "npu",
+              "global_norm_seconds": 4.2563670699018985,
+              "gradient_d2h_bytes": 301487038464,
+              "offload_slot_wait": 25.134255948476493,
+              "worker_copy_wait_seconds": 15.772387007484213,
+              "worker_cpu_add_seconds": 37.949429320404306,
+              "resident_add_calls": 1232,
+              "resident_add_bytes": 137438953472,
+              "allocated_peak": 57805460480,
+              "reserved_peak": 58349060096,
+              "input_tokens": 28426,
+              "padded_tokens": 54272
+            },
+            {
+              "resident_budget_gib": 8.0,
+              "loss_chunk_tokens": 512,
+              "physical_card": 4,
+              "step": 2,
+              "seconds": 80.46898671006784,
+              "profiled": false,
+              "phase": {
+                "forward_wall": 5.004801919916645,
+                "backward_wall": 51.62784260022454,
+                "p2p_wall": 0.03750530001707375
+              },
+              "forward_backward_and_drain_seconds": 60.5841955000069,
+              "cpu_update_return_seconds": 15.93293905002065,
+              "grad_norm": 40.57344083957509,
+              "norm_device": "npu",
+              "global_norm_seconds": 3.9518910699989647,
+              "gradient_d2h_bytes": 301487038464,
+              "offload_slot_wait": 26.78946252958849,
+              "worker_copy_wait_seconds": 14.376086805481464,
+              "worker_cpu_add_seconds": 37.90487673855387,
+              "resident_add_calls": 1232,
+              "resident_add_bytes": 137438953472,
+              "allocated_peak": 53907962880,
+              "reserved_peak": 58349060096,
+              "input_tokens": 28549,
+              "padded_tokens": 49152
+            },
+            {
+              "resident_budget_gib": 8.0,
+              "loss_chunk_tokens": 512,
+              "physical_card": 4,
+              "step": 3,
+              "seconds": 82.97989448998123,
+              "profiled": false,
+              "phase": {
+                "forward_wall": 4.824831630336121,
+                "backward_wall": 52.06051753903739,
+                "p2p_wall": 0.03717662999406457
+              },
+              "forward_backward_and_drain_seconds": 61.91483362996951,
+              "cpu_update_return_seconds": 17.08671540999785,
+              "grad_norm": 38.772188392885916,
+              "norm_device": "npu",
+              "global_norm_seconds": 3.978372950106859,
+              "gradient_d2h_bytes": 301487038464,
+              "offload_slot_wait": 26.400585107970983,
+              "worker_copy_wait_seconds": 14.76504841237329,
+              "worker_cpu_add_seconds": 37.877083849394694,
+              "resident_add_calls": 1232,
+              "resident_add_bytes": 137438953472,
+              "allocated_peak": 57805737472,
+              "reserved_peak": 58349060096,
+              "input_tokens": 28564,
+              "padded_tokens": 50176
+            }
+          ],
+          "validation_before": {
+            "loss": 1.0108281373977661,
+            "assistant_tokens": 224,
+            "correct": 202
+          },
+          "validation_after_768": {
+            "loss": 0.8530882596969604,
+            "assistant_tokens": 224,
+            "correct": 204
+          },
+          "parameters": 13448001792,
+          "state_bytes": 107584014336,
+          "normal_mean": 81.72444060002454,
+          "protocol": "global256/micro16/16 pipeline micros; original paired DP groups and padding",
+          "gradient_precision": "BF16 accumulation, FP32 Adam; changed reduction order"
+        }
+      ],
+      "step_seconds": [
+        122.36403728998266,
+        80.46898671006784,
+        82.98011714988388
+      ],
+      "warm_mean_seconds": 81.72455192997586,
+      "plans": [
+        {
+          "budget_bytes": 4294967296,
+          "allocated_bytes": 4294967296,
+          "selected_parameters": 29,
+          "total_parameters": 425,
+          "dtype": "BF16",
+          "order": "same per-parameter 16 microbatch additions",
+          "flush": "once after all microbatches; no early optimizer update"
+        },
+        {
+          "budget_bytes": 8589934592,
+          "allocated_bytes": 8589934592,
+          "selected_parameters": 77,
+          "total_parameters": 426,
+          "dtype": "BF16",
+          "order": "same per-parameter 16 microbatch additions",
+          "flush": "once after all microbatches; no early optimizer update"
+        }
+      ],
+      "peak_allocated_gib": [
+        56.559969902038574,
+        53.83578824996948
+      ],
+      "peak_reserved_gib": [
+        58.990234375,
+        54.341796875
+      ]
+    }
+  },
+  "checks": [
+    {
+      "rank": 0,
+      "physical_card": 3,
+      "d2h_saved_bytes_per_update": 0,
+      "d2h_saved_gib_per_update": 0.0,
+      "grad_norm_exact_each_step": [
+        true,
+        true,
+        true
+      ],
+      "validation_exact": true
+    },
+    {
+      "rank": 1,
+      "physical_card": 4,
+      "d2h_saved_bytes_per_update": 64424509440,
+      "d2h_saved_gib_per_update": 60.0,
+      "grad_norm_exact_each_step": [
+        true,
+        true,
+        true
+      ],
+      "validation_exact": true
+    }
+  ],
+  "tiny_exact": {
+    "all_exact": true,
+    "scope": "All tiny tensors at three steps; not a full-model bitwise proof",
+    "rows": [
+      {
+        "rank": 0,
+        "step": 1,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      },
+      {
+        "rank": 0,
+        "step": 2,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      },
+      {
+        "rank": 0,
+        "step": 3,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      },
+      {
+        "rank": 1,
+        "step": 1,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      },
+      {
+        "rank": 1,
+        "step": 2,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      },
+      {
+        "rank": 1,
+        "step": 3,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      }
+    ]
+  },
+  "source_sha256": {
+    "chunked_loss_contiguous.py": "89e2a46f93a4ced2810d28837621e03f12ce16de156518429591750f1e353418",
+    "community_gdn.py": "69936fad825c1be1d7c2f2cb9ad63f42b2c9849e8680ca98bffd73827f8a9bac",
+    "compare_exact.py": "a078654cb6b2a0635839bc2bd1afae7dbf5bc35a9aadd2839e6cbd63605ea085",
+    "resident_gradients.py": "bdc1aa6d43d428c9a39ed03707eb97ba8e1d233bf3a0e067220a6e2d389098c1",
+    "run_sequence.py": "db0a950693aa18fa204bc5d297ffd0554f00d5ed1358b47b313ede63dec77078",
+    "train_cache.py": "0faa18fb82d46629d30f41be2c9efe9c82553451a271ab6ff95622326ffdfd0e"
+  },
+  "reporting_source_sha256": "c018188e12c8c96c7c048217855a77be9bd44ae7e9d74fb65e8ffbee73c0c868",
+  "elapsed_change_percent": 2.127874670945795,
+  "limits": [
+    "Three updates only, first learning rate zero; no long-term quality or sustained performance claim.",
+    "Tiny states compared completely bitwise; full model only norms/validation/workload verified, not all tensors.",
+    "Worker CPU-add/slot wait/update durations can overlap; do not sum them as a critical-path partition.",
+    "Framework allocated/reserved peaks exclude some runtime/driver allocations.",
+    "Only physical4/rank1 cache expanded; physical3/rank0 unchanged."
+  ]
+}

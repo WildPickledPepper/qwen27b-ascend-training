@@ -1,0 +1,149 @@
+{
+  "peak_bytes": 57805315072,
+  "peak_gib": 53.835394859313965,
+  "peak_requested_bytes": 57805064984,
+  "peak_context": {
+    "phase": "backward",
+    "micro": 2,
+    "op": "aten.clone.default",
+    "event": 42640
+  },
+  "live_end_bytes": 35486185984,
+  "categories": [
+    {
+      "category": "weight",
+      "bytes": 26896210944,
+      "requested_bytes": 26896003584,
+      "storages": 426,
+      "gib": 25.04904842376709
+    },
+    {
+      "category": "model_buffer",
+      "bytes": 1024,
+      "requested_bytes": 256,
+      "storages": 2,
+      "gib": 9.5367431640625e-07
+    },
+    {
+      "category": "resident_gradient",
+      "bytes": 8589974016,
+      "requested_bytes": 8589934592,
+      "storages": 77,
+      "gib": 8.000036716461182
+    },
+    {
+      "category": "inputs_and_pipeline",
+      "bytes": 41975808,
+      "requested_bytes": 41975808,
+      "storages": 2,
+      "gib": 0.039093017578125
+    },
+    {
+      "category": "other_explicit_tensor",
+      "bytes": 1084416,
+      "requested_bytes": 1083404,
+      "storages": 6,
+      "gib": 0.0010099411010742188
+    },
+    {
+      "category": "hidden_states_and_boundaries",
+      "bytes": 964689920,
+      "requested_bytes": 964689920,
+      "storages": 23,
+      "gib": 0.8984375
+    },
+    {
+      "category": "rmsnorm_forward_intermediates",
+      "bytes": 5448519680,
+      "requested_bytes": 5448519680,
+      "storages": 149,
+      "gib": 5.074329376220703
+    },
+    {
+      "category": "attention_forward_intermediates",
+      "bytes": 3623878656,
+      "requested_bytes": 3623878656,
+      "storages": 64,
+      "gib": 3.375
+    },
+    {
+      "category": "ffn_forward_intermediates",
+      "bytes": 4563402752,
+      "requested_bytes": 4563402752,
+      "storages": 32,
+      "gib": 4.25
+    },
+    {
+      "category": "backward_temporary",
+      "bytes": 7675577856,
+      "requested_bytes": 7675576332,
+      "storages": 8,
+      "gib": 7.148438930511475
+    }
+  ],
+  "allocations": 160852,
+  "alias_results": 145608,
+  "operation_count": 307919,
+  "loss_chunk_tokens": 512,
+  "rank": 1,
+  "micro_batch": 16,
+  "sequences": [
+    192,
+    192,
+    256,
+    192,
+    192,
+    192,
+    192,
+    192,
+    192,
+    256,
+    192,
+    192,
+    256,
+    256,
+    192,
+    256
+  ],
+  "resident_bytes": 8589934592,
+  "counts": {
+    "parameter_gradient_hooks": 6816,
+    "resident_adds": 1232,
+    "offloaded_parameters": 5584
+  },
+  "seconds": 173.70339848985896,
+  "skipped_kernel_launches": 7296,
+  "device_initialized": false,
+  "calibration_read": false,
+  "weights_loaded": false,
+  "parameter_count": 13448001792,
+  "parameter_tensors": 426,
+  "resident_tensors": 77,
+  "op_plugin_rule_commit": "8b9c8534fa41eff367a41c155843daa530ab3a08",
+  "source_hashes": {
+    "predict_meta.py": "4e24ef5ae29c9d165a73fea202a89161e77b7a5b3f2df6344c7ae9217ba20045",
+    "storage_tracker.py": "5b5256689a8a41d6eff42cefa0d17bbb0d3bca618442819aca5b88c8af177ebe",
+    "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+    "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b",
+    "npu_linear_meta.py": "0b6b47aa04a3910d9e52c43c5d5ee4f766ffdc84efc00346f71f616ce03a6b77",
+    "chunked_loss.py": "89e2a46f93a4ced2810d28837621e03f12ce16de156518429591750f1e353418"
+  },
+  "config_sha256": "f8d190c5b89c1521220f935d2567a587d6e291ed69066a45a106560b05a2174c",
+  "limitations": [
+    "Counts meta/ATen tensor storages, not native CANN workspace or allocator reserve/runtime.",
+    "Uses real model/autograd/checkpoint code with a meta-only device-context adapter.",
+    "Triton host wrappers allocate real meta tensors; launch bodies are skipped, compiler/internal workspace remains unknown.",
+    "NPU-specific backward layouts/copies may differ from meta kernels; discrepancies are not fitted away.",
+    "Explicit mask shapes assume the padded eager-attention branch.",
+    "Copy completion is modeled as same-stream storage reuse; no timing claim for arbitrary asynchronous streams."
+  ],
+  "seal": {
+    "sha256": "fbc5e5ebb5a2d280137cefc90d38c8310621a34ee8fe3dd0a7b455cfcd179ed2",
+    "cache8_observations_read": false
+  },
+  "validation": {
+    "actual_first_step_allocated_bytes": 57805460480,
+    "actual_minus_predicted_mib": 0.138671875,
+    "scope": "First-step rank1 framework allocated only; prediction sealed before reading cache8 observations. Not physical HBM/reserved/internal workspace prediction."
+  }
+}
