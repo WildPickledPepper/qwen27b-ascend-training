@@ -1,0 +1,1544 @@
+{
+  "scope": "Prospective framework tensor memory only, physical card3/rank1; not a trained/deployed NPU candidate.",
+  "micro_batch": 16,
+  "global_batch": 256,
+  "resident_gib": 4,
+  "checkpoint_layers": 48,
+  "input_sequences": [
+    192,
+    192,
+    256,
+    192,
+    192,
+    192,
+    192,
+    192,
+    192,
+    256,
+    192,
+    192,
+    256,
+    256,
+    192,
+    256
+  ],
+  "vocab_size": 248320,
+  "hidden_size": 5120,
+  "rows": [
+    {
+      "peak_bytes": 58040137216,
+      "peak_gib": 54.05409002304077,
+      "peak_requested_bytes": 58039913224,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 2,
+        "op": "aten._log_softmax_backward_data.default",
+        "event": 42039
+      },
+      "live_end_bytes": 31191194112,
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26896210944,
+          "requested_bytes": 26896003584,
+          "storages": 426,
+          "gib": 25.04904842376709
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 1024,
+          "requested_bytes": 256,
+          "storages": 2,
+          "gib": 9.5367431640625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294982144,
+          "requested_bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.000013828277588
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 41975808,
+          "requested_bytes": 41975808,
+          "storages": 2,
+          "gib": 0.039093017578125
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 1051136,
+          "requested_bytes": 1050628,
+          "storages": 4,
+          "gib": 0.0009789466857910156
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 964689920,
+          "requested_bytes": 964689920,
+          "storages": 23,
+          "gib": 0.8984375
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 5448519680,
+          "requested_bytes": 5448519680,
+          "storages": 149,
+          "gib": 5.074329376220703
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 3623878656,
+          "requested_bytes": 3623878656,
+          "storages": 64,
+          "gib": 3.375
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 4563402752,
+          "requested_bytes": 4563402752,
+          "storages": 32,
+          "gib": 4.25
+        },
+        {
+          "category": "loss_forward_intermediates",
+          "bytes": 4068474880,
+          "requested_bytes": 4068474880,
+          "storages": 1,
+          "gib": 3.7890625
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 8136950272,
+          "requested_bytes": 8136949764,
+          "storages": 3,
+          "gib": 7.578125476837158
+        }
+      ],
+      "allocations": 158976,
+      "alias_results": 142874,
+      "operation_count": 303553,
+      "loss_chunk_tokens": 0,
+      "rank": 1,
+      "micro_batch": 16,
+      "sequences": [
+        192,
+        192,
+        256,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        256,
+        192,
+        192,
+        256,
+        256,
+        192,
+        256
+      ],
+      "resident_bytes": 4294967296,
+      "counts": {
+        "parameter_gradient_hooks": 6816,
+        "resident_adds": 464,
+        "offloaded_parameters": 6352
+      },
+      "seconds": 169.28482134989463,
+      "skipped_kernel_launches": 7296,
+      "device_initialized": false,
+      "calibration_read": false,
+      "weights_loaded": false,
+      "parameter_count": 13448001792,
+      "parameter_tensors": 426,
+      "resident_tensors": 29,
+      "op_plugin_rule_commit": "8b9c8534fa41eff367a41c155843daa530ab3a08",
+      "source_hashes": {
+        "predict_meta.py": "4e24ef5ae29c9d165a73fea202a89161e77b7a5b3f2df6344c7ae9217ba20045",
+        "storage_tracker.py": "5b5256689a8a41d6eff42cefa0d17bbb0d3bca618442819aca5b88c8af177ebe",
+        "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+        "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b",
+        "npu_linear_meta.py": "0b6b47aa04a3910d9e52c43c5d5ee4f766ffdc84efc00346f71f616ce03a6b77",
+        "chunked_loss.py": "9f10dfc99c75cb46957b442d95fcbc5e70f3206f05e1b8af3f150671a58edbf7"
+      },
+      "config_sha256": "f8d190c5b89c1521220f935d2567a587d6e291ed69066a45a106560b05a2174c",
+      "limitations": [
+        "Counts meta/ATen tensor storages, not native CANN workspace or allocator reserve/runtime.",
+        "Uses real model/autograd/checkpoint code with a meta-only device-context adapter.",
+        "Triton host wrappers allocate real meta tensors; launch bodies are skipped, compiler/internal workspace remains unknown.",
+        "NPU-specific backward layouts/copies may differ from meta kernels; discrepancies are not fitted away.",
+        "Explicit mask shapes assume the padded eager-attention branch.",
+        "Copy completion is modeled as same-stream storage reuse; no timing claim for arbitrary asynchronous streams."
+      ],
+      "case": "baseline",
+      "saved_bytes": 0,
+      "saved_gib": 0.0,
+      "saved_percent": 0.0,
+      "prediction_sha256": "79321cd116f4ef7d3c4820a2c81ee84a643e5bb5a38d3ef904c321a5d25c5266",
+      "largest_runtime_blocks_at_peak": [
+        {
+          "shape": [
+            4096,
+            248320
+          ],
+          "stride": [
+            248320,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 4068474880,
+          "allocated": 4068474880,
+          "category": "loss_forward_intermediates",
+          "phase": "forward",
+          "op": "aten._log_softmax.default"
+        },
+        {
+          "shape": [
+            4096,
+            248320
+          ],
+          "stride": [
+            248320,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 4068474880,
+          "allocated": 4068474880,
+          "category": "backward_temporary",
+          "phase": "backward",
+          "op": "aten.nll_loss_backward.default"
+        },
+        {
+          "shape": [
+            4096,
+            248320
+          ],
+          "stride": [
+            248320,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 4068474880,
+          "allocated": 4068474880,
+          "category": "backward_temporary",
+          "phase": "backward",
+          "op": "aten._log_softmax_backward_data.default"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.silu.default"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.mul.Tensor"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.empty.memory_format"
+        }
+      ]
+    },
+    {
+      "peak_bytes": 51092044800,
+      "peak_gib": 47.58317470550537,
+      "peak_requested_bytes": 51091819288,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 2,
+        "op": "aten.empty.memory_format",
+        "event": 43003
+      },
+      "live_end_bytes": 31191194112,
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26896210944,
+          "requested_bytes": 26896003584,
+          "storages": 426,
+          "gib": 25.04904842376709
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 1024,
+          "requested_bytes": 256,
+          "storages": 2,
+          "gib": 9.5367431640625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294982144,
+          "requested_bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.000013828277588
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 41975808,
+          "requested_bytes": 41975808,
+          "storages": 2,
+          "gib": 0.039093017578125
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 1084416,
+          "requested_bytes": 1083404,
+          "storages": 6,
+          "gib": 0.0010099411010742188
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 964689920,
+          "requested_bytes": 964689920,
+          "storages": 23,
+          "gib": 0.8984375
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 5448519680,
+          "requested_bytes": 5448519680,
+          "storages": 149,
+          "gib": 5.074329376220703
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 3623878656,
+          "requested_bytes": 3623878656,
+          "storages": 64,
+          "gib": 3.375
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 4563402752,
+          "requested_bytes": 4563402752,
+          "storages": 32,
+          "gib": 4.25
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 5257299456,
+          "requested_bytes": 5257297932,
+          "storages": 8,
+          "gib": 4.896241664886475
+        }
+      ],
+      "allocations": 162516,
+      "alias_results": 146758,
+      "operation_count": 310569,
+      "loss_chunk_tokens": 256,
+      "rank": 1,
+      "micro_batch": 16,
+      "sequences": [
+        192,
+        192,
+        256,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        256,
+        192,
+        192,
+        256,
+        256,
+        192,
+        256
+      ],
+      "resident_bytes": 4294967296,
+      "counts": {
+        "parameter_gradient_hooks": 6816,
+        "resident_adds": 464,
+        "offloaded_parameters": 6352
+      },
+      "seconds": 176.04207031987607,
+      "skipped_kernel_launches": 7296,
+      "device_initialized": false,
+      "calibration_read": false,
+      "weights_loaded": false,
+      "parameter_count": 13448001792,
+      "parameter_tensors": 426,
+      "resident_tensors": 29,
+      "op_plugin_rule_commit": "8b9c8534fa41eff367a41c155843daa530ab3a08",
+      "source_hashes": {
+        "predict_meta.py": "4e24ef5ae29c9d165a73fea202a89161e77b7a5b3f2df6344c7ae9217ba20045",
+        "storage_tracker.py": "5b5256689a8a41d6eff42cefa0d17bbb0d3bca618442819aca5b88c8af177ebe",
+        "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+        "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b",
+        "npu_linear_meta.py": "0b6b47aa04a3910d9e52c43c5d5ee4f766ffdc84efc00346f71f616ce03a6b77",
+        "chunked_loss.py": "9f10dfc99c75cb46957b442d95fcbc5e70f3206f05e1b8af3f150671a58edbf7"
+      },
+      "config_sha256": "f8d190c5b89c1521220f935d2567a587d6e291ed69066a45a106560b05a2174c",
+      "limitations": [
+        "Counts meta/ATen tensor storages, not native CANN workspace or allocator reserve/runtime.",
+        "Uses real model/autograd/checkpoint code with a meta-only device-context adapter.",
+        "Triton host wrappers allocate real meta tensors; launch bodies are skipped, compiler/internal workspace remains unknown.",
+        "NPU-specific backward layouts/copies may differ from meta kernels; discrepancies are not fitted away.",
+        "Explicit mask shapes assume the padded eager-attention branch.",
+        "Copy completion is modeled as same-stream storage reuse; no timing claim for arbitrary asynchronous streams."
+      ],
+      "case": "chunk256",
+      "saved_bytes": 6948092416,
+      "saved_gib": 6.4709153175354,
+      "saved_percent": 11.97118537149945,
+      "prediction_sha256": "2704a4b9868e4b60d7f50787918408c818776cdc8b67e17f8ce4be407c8e410f",
+      "largest_runtime_blocks_at_peak": [
+        {
+          "shape": [
+            5120,
+            248320
+          ],
+          "stride": [
+            248320,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 2542796800,
+          "allocated": 2542796800,
+          "category": "backward_temporary",
+          "phase": "backward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            5120,
+            248320
+          ],
+          "stride": [
+            248320,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 2542796800,
+          "allocated": 2542796800,
+          "category": "backward_temporary",
+          "phase": "backward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.silu.default"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.mul.Tensor"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.silu.default"
+        }
+      ]
+    },
+    {
+      "peak_bytes": 51221806080,
+      "peak_gib": 47.70402431488037,
+      "peak_requested_bytes": 51221580568,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 2,
+        "op": "aten.empty.memory_format",
+        "event": 42531
+      },
+      "live_end_bytes": 31191194112,
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26896210944,
+          "requested_bytes": 26896003584,
+          "storages": 426,
+          "gib": 25.04904842376709
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 1024,
+          "requested_bytes": 256,
+          "storages": 2,
+          "gib": 9.5367431640625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294982144,
+          "requested_bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.000013828277588
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 41975808,
+          "requested_bytes": 41975808,
+          "storages": 2,
+          "gib": 0.039093017578125
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 1084416,
+          "requested_bytes": 1083404,
+          "storages": 6,
+          "gib": 0.0010099411010742188
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 964689920,
+          "requested_bytes": 964689920,
+          "storages": 23,
+          "gib": 0.8984375
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 5448519680,
+          "requested_bytes": 5448519680,
+          "storages": 149,
+          "gib": 5.074329376220703
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 3623878656,
+          "requested_bytes": 3623878656,
+          "storages": 64,
+          "gib": 3.375
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 4563402752,
+          "requested_bytes": 4563402752,
+          "storages": 32,
+          "gib": 4.25
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 5387060736,
+          "requested_bytes": 5387059212,
+          "storages": 8,
+          "gib": 5.017091274261475
+        }
+      ],
+      "allocations": 160714,
+      "alias_results": 144744,
+      "operation_count": 306965,
+      "loss_chunk_tokens": 512,
+      "rank": 1,
+      "micro_batch": 16,
+      "sequences": [
+        192,
+        192,
+        256,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        256,
+        192,
+        192,
+        256,
+        256,
+        192,
+        256
+      ],
+      "resident_bytes": 4294967296,
+      "counts": {
+        "parameter_gradient_hooks": 6816,
+        "resident_adds": 464,
+        "offloaded_parameters": 6352
+      },
+      "seconds": 170.80811440991238,
+      "skipped_kernel_launches": 7296,
+      "device_initialized": false,
+      "calibration_read": false,
+      "weights_loaded": false,
+      "parameter_count": 13448001792,
+      "parameter_tensors": 426,
+      "resident_tensors": 29,
+      "op_plugin_rule_commit": "8b9c8534fa41eff367a41c155843daa530ab3a08",
+      "source_hashes": {
+        "predict_meta.py": "4e24ef5ae29c9d165a73fea202a89161e77b7a5b3f2df6344c7ae9217ba20045",
+        "storage_tracker.py": "5b5256689a8a41d6eff42cefa0d17bbb0d3bca618442819aca5b88c8af177ebe",
+        "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+        "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b",
+        "npu_linear_meta.py": "0b6b47aa04a3910d9e52c43c5d5ee4f766ffdc84efc00346f71f616ce03a6b77",
+        "chunked_loss.py": "9f10dfc99c75cb46957b442d95fcbc5e70f3206f05e1b8af3f150671a58edbf7"
+      },
+      "config_sha256": "f8d190c5b89c1521220f935d2567a587d6e291ed69066a45a106560b05a2174c",
+      "limitations": [
+        "Counts meta/ATen tensor storages, not native CANN workspace or allocator reserve/runtime.",
+        "Uses real model/autograd/checkpoint code with a meta-only device-context adapter.",
+        "Triton host wrappers allocate real meta tensors; launch bodies are skipped, compiler/internal workspace remains unknown.",
+        "NPU-specific backward layouts/copies may differ from meta kernels; discrepancies are not fitted away.",
+        "Explicit mask shapes assume the padded eager-attention branch.",
+        "Copy completion is modeled as same-stream storage reuse; no timing claim for arbitrary asynchronous streams."
+      ],
+      "case": "chunk512",
+      "saved_bytes": 6818331136,
+      "saved_gib": 6.3500657081604,
+      "saved_percent": 11.74761374292613,
+      "prediction_sha256": "d9a54c743772f5102572fe394d353cd70c0f3d718f81bbd29498f3eebbdaaeee",
+      "largest_runtime_blocks_at_peak": [
+        {
+          "shape": [
+            5120,
+            248320
+          ],
+          "stride": [
+            248320,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 2542796800,
+          "allocated": 2542796800,
+          "category": "backward_temporary",
+          "phase": "backward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            5120,
+            248320
+          ],
+          "stride": [
+            248320,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 2542796800,
+          "allocated": 2542796800,
+          "category": "backward_temporary",
+          "phase": "backward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            512,
+            248320
+          ],
+          "stride": [
+            248320,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 254279680,
+          "allocated": 254279680,
+          "category": "backward_temporary",
+          "phase": "backward",
+          "op": "aten._to_copy.default"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.silu.default"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.mul.Tensor"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.empty.memory_format"
+        }
+      ]
+    },
+    {
+      "peak_bytes": 51481328640,
+      "peak_gib": 47.94572353363037,
+      "peak_requested_bytes": 51481103128,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 2,
+        "op": "aten.empty.memory_format",
+        "event": 42295
+      },
+      "live_end_bytes": 31191194112,
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26896210944,
+          "requested_bytes": 26896003584,
+          "storages": 426,
+          "gib": 25.04904842376709
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 1024,
+          "requested_bytes": 256,
+          "storages": 2,
+          "gib": 9.5367431640625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294982144,
+          "requested_bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.000013828277588
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 41975808,
+          "requested_bytes": 41975808,
+          "storages": 2,
+          "gib": 0.039093017578125
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 1084416,
+          "requested_bytes": 1083404,
+          "storages": 6,
+          "gib": 0.0010099411010742188
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 964689920,
+          "requested_bytes": 964689920,
+          "storages": 23,
+          "gib": 0.8984375
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 5448519680,
+          "requested_bytes": 5448519680,
+          "storages": 149,
+          "gib": 5.074329376220703
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 3623878656,
+          "requested_bytes": 3623878656,
+          "storages": 64,
+          "gib": 3.375
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 4563402752,
+          "requested_bytes": 4563402752,
+          "storages": 32,
+          "gib": 4.25
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 5646583296,
+          "requested_bytes": 5646581772,
+          "storages": 8,
+          "gib": 5.258790493011475
+        }
+      ],
+      "allocations": 159813,
+      "alias_results": 143737,
+      "operation_count": 305163,
+      "loss_chunk_tokens": 1024,
+      "rank": 1,
+      "micro_batch": 16,
+      "sequences": [
+        192,
+        192,
+        256,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        256,
+        192,
+        192,
+        256,
+        256,
+        192,
+        256
+      ],
+      "resident_bytes": 4294967296,
+      "counts": {
+        "parameter_gradient_hooks": 6816,
+        "resident_adds": 464,
+        "offloaded_parameters": 6352
+      },
+      "seconds": 174.06554927979596,
+      "skipped_kernel_launches": 7296,
+      "device_initialized": false,
+      "calibration_read": false,
+      "weights_loaded": false,
+      "parameter_count": 13448001792,
+      "parameter_tensors": 426,
+      "resident_tensors": 29,
+      "op_plugin_rule_commit": "8b9c8534fa41eff367a41c155843daa530ab3a08",
+      "source_hashes": {
+        "predict_meta.py": "4e24ef5ae29c9d165a73fea202a89161e77b7a5b3f2df6344c7ae9217ba20045",
+        "storage_tracker.py": "5b5256689a8a41d6eff42cefa0d17bbb0d3bca618442819aca5b88c8af177ebe",
+        "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+        "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b",
+        "npu_linear_meta.py": "0b6b47aa04a3910d9e52c43c5d5ee4f766ffdc84efc00346f71f616ce03a6b77",
+        "chunked_loss.py": "9f10dfc99c75cb46957b442d95fcbc5e70f3206f05e1b8af3f150671a58edbf7"
+      },
+      "config_sha256": "f8d190c5b89c1521220f935d2567a587d6e291ed69066a45a106560b05a2174c",
+      "limitations": [
+        "Counts meta/ATen tensor storages, not native CANN workspace or allocator reserve/runtime.",
+        "Uses real model/autograd/checkpoint code with a meta-only device-context adapter.",
+        "Triton host wrappers allocate real meta tensors; launch bodies are skipped, compiler/internal workspace remains unknown.",
+        "NPU-specific backward layouts/copies may differ from meta kernels; discrepancies are not fitted away.",
+        "Explicit mask shapes assume the padded eager-attention branch.",
+        "Copy completion is modeled as same-stream storage reuse; no timing claim for arbitrary asynchronous streams."
+      ],
+      "case": "chunk1024",
+      "saved_bytes": 6558808576,
+      "saved_gib": 6.1083664894104,
+      "saved_percent": 11.300470485779494,
+      "prediction_sha256": "a28d18552187d1cbd41d7de9eaf6f58c72672ecd15df2978372dde73d15ae77d",
+      "largest_runtime_blocks_at_peak": [
+        {
+          "shape": [
+            5120,
+            248320
+          ],
+          "stride": [
+            248320,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 2542796800,
+          "allocated": 2542796800,
+          "category": "backward_temporary",
+          "phase": "backward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            5120,
+            248320
+          ],
+          "stride": [
+            248320,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 2542796800,
+          "allocated": 2542796800,
+          "category": "backward_temporary",
+          "phase": "backward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            1024,
+            248320
+          ],
+          "stride": [
+            248320,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 508559360,
+          "allocated": 508559360,
+          "category": "backward_temporary",
+          "phase": "backward",
+          "op": "aten._to_copy.default"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.silu.default"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.mul.Tensor"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.empty.memory_format"
+        }
+      ]
+    },
+    {
+      "peak_bytes": 54522199040,
+      "peak_gib": 50.77775478363037,
+      "peak_requested_bytes": 54521973528,
+      "peak_context": {
+        "phase": "backward",
+        "micro": 2,
+        "op": "aten._log_softmax_backward_data.default",
+        "event": 42204
+      },
+      "live_end_bytes": 31191194112,
+      "categories": [
+        {
+          "category": "weight",
+          "bytes": 26896210944,
+          "requested_bytes": 26896003584,
+          "storages": 426,
+          "gib": 25.04904842376709
+        },
+        {
+          "category": "model_buffer",
+          "bytes": 1024,
+          "requested_bytes": 256,
+          "storages": 2,
+          "gib": 9.5367431640625e-07
+        },
+        {
+          "category": "resident_gradient",
+          "bytes": 4294982144,
+          "requested_bytes": 4294967296,
+          "storages": 29,
+          "gib": 4.000013828277588
+        },
+        {
+          "category": "inputs_and_pipeline",
+          "bytes": 41975808,
+          "requested_bytes": 41975808,
+          "storages": 2,
+          "gib": 0.039093017578125
+        },
+        {
+          "category": "other_explicit_tensor",
+          "bytes": 1084416,
+          "requested_bytes": 1083404,
+          "storages": 6,
+          "gib": 0.0010099411010742188
+        },
+        {
+          "category": "hidden_states_and_boundaries",
+          "bytes": 964689920,
+          "requested_bytes": 964689920,
+          "storages": 23,
+          "gib": 0.8984375
+        },
+        {
+          "category": "rmsnorm_forward_intermediates",
+          "bytes": 5448519680,
+          "requested_bytes": 5448519680,
+          "storages": 149,
+          "gib": 5.074329376220703
+        },
+        {
+          "category": "attention_forward_intermediates",
+          "bytes": 3623878656,
+          "requested_bytes": 3623878656,
+          "storages": 64,
+          "gib": 3.375
+        },
+        {
+          "category": "ffn_forward_intermediates",
+          "bytes": 4563402752,
+          "requested_bytes": 4563402752,
+          "storages": 32,
+          "gib": 4.25
+        },
+        {
+          "category": "backward_temporary",
+          "bytes": 8687453696,
+          "requested_bytes": 8687452172,
+          "storages": 8,
+          "gib": 8.090821743011475
+        }
+      ],
+      "allocations": 159456,
+      "alias_results": 143338,
+      "operation_count": 304449,
+      "loss_chunk_tokens": 2048,
+      "rank": 1,
+      "micro_batch": 16,
+      "sequences": [
+        192,
+        192,
+        256,
+        192,
+        192,
+        192,
+        192,
+        192,
+        192,
+        256,
+        192,
+        192,
+        256,
+        256,
+        192,
+        256
+      ],
+      "resident_bytes": 4294967296,
+      "counts": {
+        "parameter_gradient_hooks": 6816,
+        "resident_adds": 464,
+        "offloaded_parameters": 6352
+      },
+      "seconds": 172.66845534997992,
+      "skipped_kernel_launches": 7296,
+      "device_initialized": false,
+      "calibration_read": false,
+      "weights_loaded": false,
+      "parameter_count": 13448001792,
+      "parameter_tensors": 426,
+      "resident_tensors": 29,
+      "op_plugin_rule_commit": "8b9c8534fa41eff367a41c155843daa530ab3a08",
+      "source_hashes": {
+        "predict_meta.py": "4e24ef5ae29c9d165a73fea202a89161e77b7a5b3f2df6344c7ae9217ba20045",
+        "storage_tracker.py": "5b5256689a8a41d6eff42cefa0d17bbb0d3bca618442819aca5b88c8af177ebe",
+        "launch_stub.py": "a2e0f4d9e5fc2d3e197400bc3ee9348d62babaccfe31cec13afc03132b17c4b2",
+        "community_gdn.py": "87f2e295e9a8ae9115a9c659aa861c26aa863cea09f8eba310c4c6e4e496304b",
+        "npu_linear_meta.py": "0b6b47aa04a3910d9e52c43c5d5ee4f766ffdc84efc00346f71f616ce03a6b77",
+        "chunked_loss.py": "9f10dfc99c75cb46957b442d95fcbc5e70f3206f05e1b8af3f150671a58edbf7"
+      },
+      "config_sha256": "f8d190c5b89c1521220f935d2567a587d6e291ed69066a45a106560b05a2174c",
+      "limitations": [
+        "Counts meta/ATen tensor storages, not native CANN workspace or allocator reserve/runtime.",
+        "Uses real model/autograd/checkpoint code with a meta-only device-context adapter.",
+        "Triton host wrappers allocate real meta tensors; launch bodies are skipped, compiler/internal workspace remains unknown.",
+        "NPU-specific backward layouts/copies may differ from meta kernels; discrepancies are not fitted away.",
+        "Explicit mask shapes assume the padded eager-attention branch.",
+        "Copy completion is modeled as same-stream storage reuse; no timing claim for arbitrary asynchronous streams."
+      ],
+      "case": "chunk2048",
+      "saved_bytes": 3517938176,
+      "saved_gib": 3.2763352394104004,
+      "saved_percent": 6.061216159616875,
+      "prediction_sha256": "1eb18a603b02b10d7f0fd3dc589fd0a822a987070a07e4407cc6a8ed37e262bb",
+      "largest_runtime_blocks_at_peak": [
+        {
+          "shape": [
+            5120,
+            248320
+          ],
+          "stride": [
+            248320,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 2542796800,
+          "allocated": 2542796800,
+          "category": "backward_temporary",
+          "phase": "backward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            2048,
+            248320
+          ],
+          "stride": [
+            248320,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 2034237440,
+          "allocated": 2034237440,
+          "category": "backward_temporary",
+          "phase": "backward",
+          "op": "aten._log_softmax.default"
+        },
+        {
+          "shape": [
+            2048,
+            248320
+          ],
+          "stride": [
+            248320,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 2034237440,
+          "allocated": 2034237440,
+          "category": "backward_temporary",
+          "phase": "backward",
+          "op": "aten.nll_loss_backward.default"
+        },
+        {
+          "shape": [
+            2048,
+            248320
+          ],
+          "stride": [
+            248320,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 2034237440,
+          "allocated": 2034237440,
+          "category": "backward_temporary",
+          "phase": "backward",
+          "op": "aten._log_softmax_backward_data.default"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.silu.default"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.empty.memory_format"
+        },
+        {
+          "shape": [
+            16,
+            256,
+            17408
+          ],
+          "stride": [
+            4456448,
+            17408,
+            1
+          ],
+          "dtype": "torch.bfloat16",
+          "bytes": 142606336,
+          "allocated": 142606336,
+          "category": "ffn_forward_intermediates",
+          "phase": "forward",
+          "op": "aten.mul.Tensor"
+        }
+      ]
+    }
+  ],
+  "cpu_numerical_tests": {
+    "device": "cpu",
+    "cases": [
+      {
+        "dtype": "torch.float32",
+        "chunk_tokens": 1,
+        "loss_abs_error": 0.0,
+        "hidden_gradient_relative_l2": 0.0,
+        "weight_gradient_relative_l2": 4.404180842243477e-08
+      },
+      {
+        "dtype": "torch.float32",
+        "chunk_tokens": 4,
+        "loss_abs_error": 0.0,
+        "hidden_gradient_relative_l2": 0.0,
+        "weight_gradient_relative_l2": 6.96402793209927e-08
+      },
+      {
+        "dtype": "torch.float32",
+        "chunk_tokens": 7,
+        "loss_abs_error": 0.0,
+        "hidden_gradient_relative_l2": 0.0,
+        "weight_gradient_relative_l2": 5.990381879428242e-08
+      },
+      {
+        "dtype": "torch.float32",
+        "chunk_tokens": 18,
+        "loss_abs_error": 0.0,
+        "hidden_gradient_relative_l2": 0.0,
+        "weight_gradient_relative_l2": 0.0
+      },
+      {
+        "dtype": "torch.float32",
+        "chunk_tokens": 32,
+        "loss_abs_error": 0.0,
+        "hidden_gradient_relative_l2": 0.0,
+        "weight_gradient_relative_l2": 0.0
+      },
+      {
+        "dtype": "torch.bfloat16",
+        "chunk_tokens": 1,
+        "loss_abs_error": 0.0,
+        "hidden_gradient_relative_l2": 0.0,
+        "weight_gradient_relative_l2": 0.003942483104765415
+      },
+      {
+        "dtype": "torch.bfloat16",
+        "chunk_tokens": 4,
+        "loss_abs_error": 4.76837158203125e-07,
+        "hidden_gradient_relative_l2": 0.0,
+        "weight_gradient_relative_l2": 0.003091931575909257
+      },
+      {
+        "dtype": "torch.bfloat16",
+        "chunk_tokens": 7,
+        "loss_abs_error": 4.76837158203125e-07,
+        "hidden_gradient_relative_l2": 0.0,
+        "weight_gradient_relative_l2": 0.002868406940251589
+      },
+      {
+        "dtype": "torch.bfloat16",
+        "chunk_tokens": 18,
+        "loss_abs_error": 0.0,
+        "hidden_gradient_relative_l2": 0.0,
+        "weight_gradient_relative_l2": 0.0
+      },
+      {
+        "dtype": "torch.bfloat16",
+        "chunk_tokens": 32,
+        "loss_abs_error": 0.0,
+        "hidden_gradient_relative_l2": 0.0,
+        "weight_gradient_relative_l2": 0.0
+      }
+    ],
+    "scope": "Small tensors only; BF16 accumulation order changes. Not full-model/NPU quality validation."
+  },
+  "limits": [
+    "Baseline and chunked use identical allocator granularity rules inherited from historical trace, not a new physical allocator model.",
+    "No chunked-loss NPU measurement, full-model numeric validation, timing or CANN workspace estimate.",
+    "Chunked backward recomputes logits/CE, retains full BF16 output-weight gradient, accumulates BF16 partial gradients and can change rounding.",
+    "Card2 unchanged; per-card savings cannot be applied to card2 or the maximum across both cards.",
+    "No forward attention/context splitting, no lower precision or optimizer state changes."
+  ]
+}

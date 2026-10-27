@@ -1,5 +1,8 @@
 # Qwen27B Ascend 训练日志
 
+**2026-10-27输出层分块建模（未上卡）**：原81.22秒配置没有chunked loss。CPU/meta具体分块反向方案预测3号卡峰值54.05→47.70GiB（512 token/块，省6.35GiB），2号卡峰值约56.56GiB不变。BF16分块累加有舍入差异，仅通过CPU小张量测试；无NPU性能/整模型质量验证，不替换训练入口。[方案、峰值与局限](experiments/sql-chunked-loss-model-20261027/README.md)。
+
+
 **2026-10-27更新：前四项已实现当前固定路径的CPU/meta生命周期预测。** 使用实际模型/autograd/checkpoint及固定TorchNPU线性反向布局规则，追踪中间结果、流水线/重算叠加、临时梯度和共享存储；先封存再比历史实测，8个单卡峰值最大差0.746MiB。第一版136/170MiB分项抵消已查明并修正，原三组属于诊断后复测，另加入2GiB策略检查。**CANN内部workspace、驱动及allocator预留仍未建模，不能宣称完整物理显存预测完成。** 原81.22秒入口保持、无NPU初始化、未加载权重，见[实现、分项误差与边界](experiments/sql-memory-liveness-20261027/README.md)。
 
 

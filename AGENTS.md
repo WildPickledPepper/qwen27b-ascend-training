@@ -1,5 +1,8 @@
 # 训练仓库维护约定
 
+- 2026-10-27 chunked loss仅事前建模完成：当前81.22秒入口仍未分块；CPU/meta方案512token块使rank1峰值预测54.0541→47.7040GiB（省6.3501），rank0不变。完整16micro与四种块先封存，CPU数值小测通过但BF16分块梯度累加有舍入差异；未上卡/未初始化NPU/未加载27B权重，不宣称性能或整模型质量通过。新方案独立目录，不修改原训练入口；workspace/reserved等未知。
+
+
 - 2026-10-27分配粒度修正已完成：核实实测轨迹`requested_bytes`/`bytes`后，初始化块多一个512边界、运行时块只向上取整，`storage_tracker.py`改为记录分配字节。重算8个allocated峰值最大差0.533MiB/0.001055%，残差=实测reconciliation 280,576/141,312B+模型2,048/512B+step2起276,480/276,992B。早期"全局严格512边界→2,560B"结论为聚合巧合已作废；step2起270KiB未定位（原脚本跨步状态均在CPU）。纯CPU运行，无NPU初始化；运行需`qwen27b-full-sft-20261023/env.sh`（torch_npu 5dd8ef3f），用`~/mindstudio/env.sh`会被版本断言拦下。
 
 - 2026-10-27前四项固定路径实现已完成并验证：CPU/meta真实模型/autograd/48层checkpoint/原16micro流水线与native storage弱引用，固定TorchNPU/op-plugin源码布局规则；修正版8个单卡allocated峰值最大差0.746MiB，分项抵消已消除。原三组属于诊断后复测，新增2GiB策略先封存再读取实测；不得声称任意框架/完整物理HBM预测完成。内部workspace、runtime/reserved/碎片和通用异步释放仍未知。无NPU初始化/权重加载/真实训练，原三份LF哈希保持；后续研究按用户指令进行。
