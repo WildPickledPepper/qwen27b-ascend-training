@@ -1,0 +1,162 @@
+{
+  "all_exact": true,
+  "scope": "All tiny tensors at three steps; not a full-model bitwise proof",
+  "rows": [
+    {
+      "rank": 0,
+      "step": 1,
+      "checks": {
+        "master": {
+          "exact": true,
+          "tensors": 23,
+          "maximum_absolute_error": 0.0
+        },
+        "grad": {
+          "exact": true,
+          "tensors": 23,
+          "maximum_absolute_error": 0.0
+        },
+        "m": {
+          "exact": true,
+          "tensors": 23,
+          "maximum_absolute_error": 0.0
+        },
+        "v": {
+          "exact": true,
+          "tensors": 23,
+          "maximum_absolute_error": 0.0
+        }
+      }
+    },
+    {
+      "rank": 0,
+      "step": 2,
+      "checks": {
+        "master": {
+          "exact": true,
+          "tensors": 23,
+          "maximum_absolute_error": 0.0
+        },
+        "grad": {
+          "exact": true,
+          "tensors": 23,
+          "maximum_absolute_error": 0.0
+        },
+        "m": {
+          "exact": true,
+          "tensors": 23,
+          "maximum_absolute_error": 0.0
+        },
+        "v": {
+          "exact": true,
+          "tensors": 23,
+          "maximum_absolute_error": 0.0
+        }
+      }
+    },
+    {
+      "rank": 0,
+      "step": 3,
+      "checks": {
+        "master": {
+          "exact": true,
+          "tensors": 23,
+          "maximum_absolute_error": 0.0
+        },
+        "grad": {
+          "exact": true,
+          "tensors": 23,
+          "maximum_absolute_error": 0.0
+        },
+        "m": {
+          "exact": true,
+          "tensors": 23,
+          "maximum_absolute_error": 0.0
+        },
+        "v": {
+          "exact": true,
+          "tensors": 23,
+          "maximum_absolute_error": 0.0
+        }
+      }
+    },
+    {
+      "rank": 1,
+      "step": 1,
+      "checks": {
+        "master": {
+          "exact": true,
+          "tensors": 24,
+          "maximum_absolute_error": 0.0
+        },
+        "grad": {
+          "exact": true,
+          "tensors": 24,
+          "maximum_absolute_error": 0.0
+        },
+        "m": {
+          "exact": true,
+          "tensors": 24,
+          "maximum_absolute_error": 0.0
+        },
+        "v": {
+          "exact": true,
+          "tensors": 24,
+          "maximum_absolute_error": 0.0
+        }
+      }
+    },
+    {
+      "rank": 1,
+      "step": 2,
+      "checks": {
+        "master": {
+          "exact": true,
+          "tensors": 24,
+          "maximum_absolute_error": 0.0
+        },
+        "grad": {
+          "exact": true,
+          "tensors": 24,
+          "maximum_absolute_error": 0.0
+        },
+        "m": {
+          "exact": true,
+          "tensors": 24,
+          "maximum_absolute_error": 0.0
+        },
+        "v": {
+          "exact": true,
+          "tensors": 24,
+          "maximum_absolute_error": 0.0
+        }
+      }
+    },
+    {
+      "rank": 1,
+      "step": 3,
+      "checks": {
+        "master": {
+          "exact": true,
+          "tensors": 24,
+          "maximum_absolute_error": 0.0
+        },
+        "grad": {
+          "exact": true,
+          "tensors": 24,
+          "maximum_absolute_error": 0.0
+        },
+        "m": {
+          "exact": true,
+          "tensors": 24,
+          "maximum_absolute_error": 0.0
+        },
+        "v": {
+          "exact": true,
+          "tensors": 24,
+          "maximum_absolute_error": 0.0
+        }
+      }
+    }
+  ]
+}
