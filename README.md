@@ -1,5 +1,8 @@
 # Qwen27B Ascend 训练日志
 
+**2026-10-27 chunked loss已在3/4号910B2实测**：512token块＋梯度连续化使rank1 allocated峰值54.05448→49.83577GiB（省4.21871GiB），rank0 56.55997GiB不变；reserved少5.91797GiB。后两轮77.986→80.022秒，慢2.61%，保留省显存候选，不替换原81.22秒入口。初版非连续add曾导致峰值升高，旧6.35GiB预测作废；新显式布局路径meta第一组与实测差0.139MiB。短验证loss0.85510→0.85309、正确token205→204/224，不声称精度等价；3/4已释放。[完整结果与原因](experiments/sql-chunked-loss-device-20261027/README.md)。
+
+
 **2026-10-27输出层分块建模（未上卡）**：原81.22秒配置没有chunked loss。CPU/meta具体分块反向方案预测3号卡峰值54.05→47.70GiB（512 token/块，省6.35GiB），2号卡峰值约56.56GiB不变。BF16分块累加有舍入差异，仅通过CPU小张量测试；无NPU性能/整模型质量验证，不替换训练入口。[方案、峰值与局限](experiments/sql-chunked-loss-model-20261027/README.md)。
 
 
