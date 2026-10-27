@@ -42,3 +42,8 @@
 最值得处理的是3号训练线程等待CPU接收槽这一段，目标是缩短更新前最后完成一方的时间。4号范数阶段的领先被同步吸收，是阶段失衡的证据；继续只优化4号会受另一阶段限制。末尾barrier平均仅约0.4秒，不应先把主要精力放在那里。不据host P2P计时推断设备通信完全无等待；本轮未采设备时序，不能量化所有NPU idle区间或声称36秒全部可回收。
 
 [派生统计与判断边界](../../evidence/2026-10-27/sql-cache-wait-analysis.json)；[原始分段计时](../../evidence/2026-10-27/sql-cache-tail-results.json)。两卡维持此前已释放状态，本轮只读归档，不启动新实验。
+
+
+## 多泳道图
+
+新增[详细PNG](../../artifacts/2026-10-27/detailed-training-swimlanes.png)与[可放大HTML](../../artifacts/2026-10-27/detailed-training-swimlanes.html)。A使用同次第2步实测边界；B是源码执行机制示意，没有实测逐事件坐标，不据此计算DMA/计算重叠量或NPU idle。以两槽简化真实16槽，区分主线程、NPU同流计算/复制、CPU累加worker及槽生命周期。绿色CPU梯度累加属于蓝色阶段，与紫色CPUAdam不同；C说明排空/全局裁剪依赖。渲染脚本可复现，PNG已视觉检查。
