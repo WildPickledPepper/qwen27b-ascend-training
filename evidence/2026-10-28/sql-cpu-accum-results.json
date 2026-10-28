@@ -1,0 +1,90 @@
+{
+  "experiment": "sql-cpu-accum-20261028",
+  "date": "2026-10-28",
+  "host": "mindstudio-server (aarch64, 192 cores, 8 NUMA nodes, 2x Ascend 910B2 physical 0/3)",
+  "workload": {
+    "params_per_rank": 425,
+    "elements_per_rank": 13447996672,
+    "chunk_elements": 67108864,
+    "slices_per_pass": 539,
+    "microbatches_per_step": 16,
+    "resident_params": 29,
+    "resident_budget_bytes": 4294967296,
+    "resident_add_calls_per_step": 464,
+    "d2h_bytes_per_step": 365911384064,
+    "note": "16 microbatches per step confirmed by resident_add_calls = 29 params x 16; the earlier 8-microbatch / 1.7x-duplication hypothesis was wrong and is withdrawn"
+  },
+  "cpu_only_replay": {
+    "method": "same 425-param slice sequence, no NPU; single process; 24 threads pinned to NUMA node 4",
+    "single_run_seconds": {
+      "torch_add_": 46.24,
+      "k1_kernel": 39.77,
+      "k2_kernel": 31.40,
+      "k4_kernel": 41.25
+    },
+    "effective_gbs": {
+      "torch_add_": 27.92,
+      "k1_kernel": 32.46,
+      "k2_kernel": 27.41,
+      "k4_kernel": 15.65
+    },
+    "traffic_tb": {
+      "k1_kernel": 1.29,
+      "k2_kernel": 0.86,
+      "k4_kernel": 0.65
+    },
+    "interleaved_median_4pass_seconds": {
+      "torch_add_": 12.67,
+      "k1_kernel": 10.03,
+      "k2_kernel": 4.62
+    },
+    "single_thread_reference": {"torch_1_thread_gbs": 2.01, "torch_16_threads_gbs": 32.08, "torch_24_threads_gbs": 26.14},
+    "rejected_directions": [
+      "MADV_HUGEPAGE: 27.09 ms vs 15.90 ms (worse, noisy)",
+      "24 to 16 threads: within noise",
+      "two-NUMA interleave with 48 threads: +9% only",
+      "python-level 2 MiB tiled grouping: 12.8 GB/s (thread dispatch overhead)",
+      "k=4 read streams: slower than k=2"
+    ],
+    "bitwise_check": {"region_elements": 16777216, "differing_elements_k1_vs_torch": 0}
+  },
+  "tiny_equivalence": {
+    "reference": "independent FP32-path reference gradients saved by rank1",
+    "torch": {"exact_params": "23/23", "worst_relative_deviation": 0.0},
+    "k1": {"exact_params": "23/23", "worst_relative_deviation": 0.0},
+    "k2": {"exact_params": "0/23", "worst_relative_deviation": 0.012, "approx_bf16_ulp": 3.1}
+  },
+  "end_to_end": {
+    "protocol": "fixed 256 samples, 16 microbatches, 3 steps, BF16 compute + CPU FP32 master/m/v, 4 GiB NPU-resident gradients, physical cards 0/3",
+    "same_window_pair": {
+      "load_at_start": 126.94,
+      "torch_control": {"steps_2_3_mean_seconds": 133.82, "cpu_add_rank0_rank1": [49.96, 49.02], "slot_wait_rank0": 36.2},
+      "k1_kernel": {"steps_2_3_mean_seconds": 121.09, "cpu_add_rank0_rank1": [31.01, 35.16], "slot_wait_rank0": 0.0},
+      "step_time_change_percent": -9.5,
+      "cpu_add_change_percent": -33
+    },
+    "k2_result": {"steps_2_3_mean_seconds": 128.65, "cpu_add_rank0_rank1": [33.6, 39.4], "slot_wait_rank0": 0.0,
+                  "verdict": "rejected: slower than k1 despite less accumulator traffic"},
+    "k2_overhead_evidence": {
+      "worker_copy_wait_seconds": [41.5, 40.7],
+      "k1_worker_copy_wait_seconds": [30.8, 33.4],
+      "global_norm_seconds": 31.1,
+      "k1_global_norm_seconds": 15.8,
+      "first_step_tail_seconds": 483.8,
+      "note": "54 GiB pinned staging per rank: first-touch cost in step 1, slower D2H into a large pinned region, and the norm pass degrades"
+    },
+    "numerics": {
+      "grad_norms_torch_and_k1": [40.502924, 40.572267, 38.679349],
+      "grad_norms_k2": [40.504828, 40.571747, 38.648928],
+      "validation_after_torch": {"loss": 1.0108281373977661, "correct": 202, "assistant_tokens": 224},
+      "validation_after_768_torch_and_k1": {"loss": 0.855101466178894, "correct": 205, "assistant_tokens": 224},
+      "validation_after_768_k2": {"loss": 0.8587093353271484, "correct": 205, "assistant_tokens": 224}
+    },
+    "load_note": "shared machine: load 50-177 during the runs; only the same-window pair is used for the speed claim"
+  },
+  "conclusion": {
+    "adopted_candidate": "k1 fused kernel: same addition order, bitwise-identical results, -9.5% step time and -33% CPU accumulation time in the same window",
+    "rejected": "k2 two-microbatch batching: lower accumulator traffic in isolation but slower end to end because of pinned staging, D2H and norm overhead",
+    "not_default_yet": "81.22 s entry untouched; k1 remains an opt-in flag (--cpu-accum k1) pending a longer run"
+  }
+}
