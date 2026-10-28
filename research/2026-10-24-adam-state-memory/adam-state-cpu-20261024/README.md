@@ -39,15 +39,15 @@ python audit.py
 
 - [experiment.py](experiment.py)：FP32 参考、15 格式、合成梯度、反例、历史梯度重放。
 - [results-v2/summary.csv](results-v2/summary.csv)：90 行配置汇总。
-- [results-v2/per_step.csv](results-v2/per_step.csv)：23040 个向量步骤的 m、v、更新、权重误差。
+- `results-v2/per_step.csv`：23040 个向量步骤的 m、v、更新、权重误差。**此明细未入库**，重跑 `experiment.py` 可再生成。
 - [results-v2/run.json](results-v2/run.json)：固定种子、输入哈希、脚本哈希、环境和反例值。
 - [results-v2/memory.csv](results-v2/memory.csv)：实际序列化字节和 Python 编解码堆峰值。
-- [results-v2/temporal.csv](results-v2/temporal.csv)：时间差分必须连同旧状态锚点计费。
+- `results-v2/temporal.csv`：时间差分必须连同旧状态锚点计费。**此明细未入库**，同上重跑生成。
 - [followup.py](followup.py)、[followup-results/summary.json](followup-results/summary.json)：位布局边界、Hidden Ratio、固定窗口存储。
 - [candidates.py](candidates.py)、[candidate-results/summary.csv](candidate-results/summary.csv)：独立实现的三种近似候选，54 行配置。
-- [candidate-results/per_step.csv](candidate-results/per_step.csv)：13824 个候选向量步骤。
-- [audit.json](audit.json)、[SHA256SUMS.json](SHA256SUMS.json)：通过的断言、工作区测量及文件哈希。
-- [journal/2026-10-24.md](journal/2026-10-24.md)：阶段结果和阻塞。
+- `candidate-results/per_step.csv`：13824 个候选向量步骤。**此明细未入库**，重跑 `candidates.py` 可再生成。
+- [audit.json](audit.json)：通过的断言与工作区测量；逐文件哈希清单（`SHA256SUMS.json`）未入库。
+- [journal/2026-10-24.md](../../../journal/2026-10-24.md)：阶段结果和阻塞。
 - [literature_notes.md](literature_notes.md)：主来源、此前文献核查记录和本地验证的边界。
 
 ## 固定的参考语义

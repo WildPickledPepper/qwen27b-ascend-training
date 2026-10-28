@@ -1,5 +1,22 @@
 # Qwen27B Ascend 训练日志
 
+## 当前状态（截至 2026-10-28）
+
+| 用途 | 入口 | 关键数字 | 状态 |
+|---|---|---|---|
+| SQL 短跑默认 | [sql-batch-tuning-20261025](experiments/sql-batch-tuning-20261025/README.md) | global128、每卡 micro16、累积4、max512；286.37 秒达到短验证 loss≤0.86 | 已采用 |
+| 固定 256 条最快 | [sql-pipeline-overlap-20261026](experiments/sql-pipeline-overlap-20261026/README.md) | 81.2160 秒/256 条；每卡 4 GiB 保序 BF16 梯度驻留、48 层重算 | 已采用 |
+| BF16 混合精度口径 | — | BF16 计算 + CPU FP32 master/m/v，m/v 不压缩不量化 | 约定 |
+| 最近一轮：16 槽 D2H 归因 | [sql-d2h16-msprof-03-20261028](experiments/sql-d2h16-msprof-03-20261028/README.md) | 15 次长等共 12.498 秒等 `model.norm.weight`，实际 DMA 约 38.66 微秒 | 诊断完成，默认未改 |
+| chunked loss 省显存 | [sql-chunked-loss-device-20261027](experiments/sql-chunked-loss-device-20261027/README.md) | 每卡省 4.21871 GiB，整步慢 2.61% | 已否决 |
+| 在线 BF16 压缩换梯度缓存 | [bf16-resident-training-20261026](experiments/bf16-resident-training-20261026/README.md) | 81.22→89.04 秒 | 已否决 |
+| 张量并行 TP2 | [sql-tensor-parallel-20261026](experiments/sql-tensor-parallel-20261026/README.md) | 195.75 秒/256 条 | 已否决 |
+| 黑盒显存建模 | [sql-memory-model-20261026](experiments/sql-memory-model-20261026/README.md) | 依赖实测快照，事前预测未完成 | 已撤回 |
+
+状态标签：**已采用** / **已否决** / **仅预测（未上卡）** / **已撤回**。常驻约定见 [AGENTS.md](AGENTS.md)，环境见 [environment.md](environment.md)，逐轮授权与结论归档见 [journal/decisions-log.md](journal/decisions-log.md)。
+
+## 历史记录（倒序，最新在上）
+
 **2026-10-28固定16槽0/3卡msprof定位完成：CPU长断粮主要等下一份梯度产出，不是DMA传几百毫秒。3号16micro间15次长等，全部model.norm.weight/10KiB、全部16空槽；合计12.498秒，实际DMA仅约38.66微秒。典型1.34秒窗含约0.532秒HCCL等待/同步及约0.792秒计算覆盖，D2H调用已提前提交。0号同类128MiB块实际约6ms，大块全量中位8.42/11.09ms。tiny全状态及27B三步范数/短验证一致、槽大小数量不变、0/3已释放。数据已Stop并完整解析，源事件/CANN TASK/调用联合验证，详细时钟误差与采样边界保留；不自动继续优化。** [固定16槽实测定位](experiments/sql-d2h16-msprof-03-20261028/README.md)。
 
 **2026-10-28缓冲变慢定向分析完成：不是消除全部空等，3/4号add间仍6.49/19.12秒；真实D2H并发会拖慢CPU原生加法。固定内存16GiB受控重放，CPU-only1.439秒、事件空跑1.465秒、真实D2H2.198秒、加轻量记录2.196秒；原生aten同步增加。未跑27B训练，不把52.70%套回整模型或声称硬件带宽/NUMA根因已逐项分离。物理3已退出，原默认/源模型未改，本轮结束。** [隔离分析](experiments/sql-buffer-isolation-20261028/README.md)。
@@ -111,6 +128,10 @@ BF16权重无损归档已完成：当前源checkpoint按训练一致转换后的
 - [2026-10-24研究归档与验证记录](journal/2026-10-24.md)
 - [后续讨论汇总：混合精度、梯度窗口与30 GiB预算](research/adam-fp32-lossless/discussion-summary.md)
 - [纠正位容量研究及可复核脚本](research/adam-fp32-lossless/correction-bit-report.md)
+
+- [常驻维护约定](AGENTS.md)
+- [运行环境与依赖](environment.md)
+- [授权与逐轮结果归档](journal/decisions-log.md)
 
 - [首个基线的完整配置、结果与复现方法](experiments/qwen27b-swift-sft/README.md)
 - [2026-10-23训练日志](journal/2026-10-23.md)
