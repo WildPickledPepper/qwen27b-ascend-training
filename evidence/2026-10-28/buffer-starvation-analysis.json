@@ -1,0 +1,1306 @@
+{
+  "scope": "Existing 4/8GiB ready-buffer experiment,32slots; first-to-last CPU add, excludes initial fill; slot states reconstructed at wait midpoint, not direct snapshots",
+  "records": [
+    {
+      "rank": 0,
+      "physical_card": 3,
+      "step": 2,
+      "trace_sha256": "0fdf8c5162c0e661e713194fd49520e108150e1bf3ae73b696c932f626cd4be5",
+      "steady_ready_wait_split_seconds": {
+        "before_needed_copy_call": 2.5908750602975488,
+        "inside_copy_enqueue_call": 0.0018700000364333391,
+        "after_enqueue_until_completion_notice": 3.619494849583134,
+        "after_notice_until_cpu_get": 0.045106797479093075
+      },
+      "long_waits": [
+        {
+          "block_index": 483,
+          "start_seconds": 7.879728439962491,
+          "end_seconds": 8.340962500078604,
+          "wait_seconds": 0.46123406011611223,
+          "enqueue_start_seconds": 8.088353469967842,
+          "enqueue_end_seconds": 8.088488940149546,
+          "completion_notice_seconds": 8.340910790022463,
+          "wait_split_seconds": [
+            0.2086250300053507,
+            0.0001354701817035675,
+            0.25242184987291694,
+            5.171005614101887e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 966,
+          "start_seconds": 11.242182080168277,
+          "end_seconds": 11.735273640137166,
+          "wait_seconds": 0.49309155996888876,
+          "enqueue_start_seconds": 11.462905330117792,
+          "enqueue_end_seconds": 11.463035500142723,
+          "completion_notice_seconds": 11.735201860079542,
+          "wait_split_seconds": [
+            0.22072324994951487,
+            0.00013017002493143082,
+            0.2721663599368185,
+            7.178005762398243e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 1449,
+          "start_seconds": 15.32070310995914,
+          "end_seconds": 15.700512510025874,
+          "wait_seconds": 0.37980940006673336,
+          "enqueue_start_seconds": 15.486562510021031,
+          "enqueue_end_seconds": 15.48670117999427,
+          "completion_notice_seconds": 15.700453280005604,
+          "wait_split_seconds": [
+            0.16585940006189048,
+            0.00013866997323930264,
+            0.21375210001133382,
+            5.923002026975155e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 1932,
+          "start_seconds": 18.98220116016455,
+          "end_seconds": 19.40632524015382,
+          "wait_seconds": 0.4241240799892694,
+          "enqueue_start_seconds": 19.15833875001408,
+          "enqueue_end_seconds": 19.158464550040662,
+          "completion_notice_seconds": 19.40626376005821,
+          "wait_split_seconds": [
+            0.17613758984953165,
+            0.00012580002658069134,
+            0.247799210017547,
+            6.148009561002254e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 2415,
+          "start_seconds": 22.636624890146777,
+          "end_seconds": 23.08570297015831,
+          "wait_seconds": 0.4490780800115317,
+          "enqueue_start_seconds": 22.834354940103367,
+          "enqueue_end_seconds": 22.834481379948556,
+          "completion_notice_seconds": 23.085626899963245,
+          "wait_split_seconds": [
+            0.19773004995658994,
+            0.00012643984518945217,
+            0.2511455200146884,
+            7.607019506394863e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 2898,
+          "start_seconds": 26.32261677016504,
+          "end_seconds": 26.745322860078886,
+          "wait_seconds": 0.42270608991384506,
+          "enqueue_start_seconds": 26.499656120082363,
+          "enqueue_end_seconds": 26.499782009981573,
+          "completion_notice_seconds": 26.74523423006758,
+          "wait_split_seconds": [
+            0.1770393499173224,
+            0.00012588989920914173,
+            0.2454522200860083,
+            8.863001130521297e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 3381,
+          "start_seconds": 30.476986370049417,
+          "end_seconds": 30.834925170056522,
+          "wait_seconds": 0.3579388000071049,
+          "enqueue_start_seconds": 30.596739780157804,
+          "enqueue_end_seconds": 30.596912240143865,
+          "completion_notice_seconds": 30.834849110106006,
+          "wait_split_seconds": [
+            0.11975341010838747,
+            0.00017245998606085777,
+            0.23793686996214092,
+            7.605995051562786e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 3864,
+          "start_seconds": 34.19965175003745,
+          "end_seconds": 34.673518009949476,
+          "wait_seconds": 0.4738662599120289,
+          "enqueue_start_seconds": 34.414202460087836,
+          "enqueue_end_seconds": 34.41433596005663,
+          "completion_notice_seconds": 34.67345452005975,
+          "wait_split_seconds": [
+            0.21455071005038917,
+            0.00013349996879696846,
+            0.2591185600031167,
+            6.348988972604275e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 4347,
+          "start_seconds": 37.98319943994284,
+          "end_seconds": 38.425047510070726,
+          "wait_seconds": 0.4418480701278895,
+          "enqueue_start_seconds": 38.17552970000543,
+          "enqueue_end_seconds": 38.17565457010642,
+          "completion_notice_seconds": 38.424980130046606,
+          "wait_split_seconds": [
+            0.19233026006259024,
+            0.00012487010098993778,
+            0.24932555994018912,
+            6.73800241202116e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 4830,
+          "start_seconds": 41.67821527994238,
+          "end_seconds": 42.085125300101936,
+          "wait_seconds": 0.40691002015955746,
+          "enqueue_start_seconds": 41.84227035008371,
+          "enqueue_end_seconds": 41.842406130163,
+          "completion_notice_seconds": 42.0850643501617,
+          "wait_split_seconds": [
+            0.16405507014133036,
+            0.0001357800792902708,
+            0.2426582199987024,
+            6.0949940234422684e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 5313,
+          "start_seconds": 45.48576765996404,
+          "end_seconds": 45.89514285000041,
+          "wait_seconds": 0.40937519003637135,
+          "enqueue_start_seconds": 45.65686102001928,
+          "enqueue_end_seconds": 45.65698571014218,
+          "completion_notice_seconds": 45.89506241003983,
+          "wait_split_seconds": [
+            0.171093360055238,
+            0.00012469012290239334,
+            0.2380766998976469,
+            8.043996058404446e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 5796,
+          "start_seconds": 49.25729942996986,
+          "end_seconds": 49.66493971995078,
+          "wait_seconds": 0.40764028998091817,
+          "enqueue_start_seconds": 49.42333529004827,
+          "enqueue_end_seconds": 49.42347516003065,
+          "completion_notice_seconds": 49.66486826003529,
+          "wait_split_seconds": [
+            0.16603586007840931,
+            0.00013986998237669468,
+            0.2413931000046432,
+            7.145991548895836e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 6279,
+          "start_seconds": 52.9227380300872,
+          "end_seconds": 53.35841155005619,
+          "wait_seconds": 0.4356735199689865,
+          "enqueue_start_seconds": 53.11454764008522,
+          "enqueue_end_seconds": 53.11467502010055,
+          "completion_notice_seconds": 53.358262880006805,
+          "wait_split_seconds": [
+            0.19180960999801755,
+            0.0001273800153285265,
+            0.2435878599062562,
+            0.00014867004938423634
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 6762,
+          "start_seconds": 56.61296540009789,
+          "end_seconds": 57.04077465995215,
+          "wait_seconds": 0.4278092598542571,
+          "enqueue_start_seconds": 56.83809751016088,
+          "enqueue_end_seconds": 56.83822651999071,
+          "completion_notice_seconds": 57.04063497995958,
+          "wait_split_seconds": [
+            0.2251321100629866,
+            0.00012900982983410358,
+            0.20240845996886492,
+            0.00013967999257147312
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 7245,
+          "start_seconds": 60.29220567015,
+          "end_seconds": 60.514662800123915,
+          "wait_seconds": 0.2224571299739182,
+          "enqueue_start_seconds": 60.18241885001771,
+          "enqueue_end_seconds": 60.18258142005652,
+          "completion_notice_seconds": 60.51445793011226,
+          "wait_split_seconds": [
+            0.0,
+            0.0,
+            0.22225225996226072,
+            0.00020487001165747643
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "physical_card": 3,
+      "step": 3,
+      "trace_sha256": "c2b5651e07a7ae437d36aa481954cfcf4e6c62f3aa2c23d8fc11f5aa8d4be653",
+      "steady_ready_wait_split_seconds": {
+        "before_needed_copy_call": 2.5187817504629493,
+        "inside_copy_enqueue_call": 0.0018697800114750862,
+        "after_enqueue_until_completion_notice": 3.4916719796601683,
+        "after_notice_until_cpu_get": 0.04384744539856911
+      },
+      "long_waits": [
+        {
+          "block_index": 483,
+          "start_seconds": 8.32479464984499,
+          "end_seconds": 8.793624359881505,
+          "wait_seconds": 0.4688297100365162,
+          "enqueue_start_seconds": 8.537900839932263,
+          "enqueue_end_seconds": 8.538030680036172,
+          "completion_notice_seconds": 8.7935613298323,
+          "wait_split_seconds": [
+            0.21310619008727372,
+            0.00012984010390937328,
+            0.2555306497961283,
+            6.303004920482635e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 966,
+          "start_seconds": 12.009144099894911,
+          "end_seconds": 12.427601279923692,
+          "wait_seconds": 0.4184571800287813,
+          "enqueue_start_seconds": 12.182720029959455,
+          "enqueue_end_seconds": 12.18285268987529,
+          "completion_notice_seconds": 12.42749637993984,
+          "wait_split_seconds": [
+            0.17357593006454408,
+            0.0001326599158346653,
+            0.24464369006454945,
+            0.00010489998385310173
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 1449,
+          "start_seconds": 15.631212869891897,
+          "end_seconds": 16.04442011984065,
+          "wait_seconds": 0.4132072499487549,
+          "enqueue_start_seconds": 15.801003949949518,
+          "enqueue_end_seconds": 15.801137059926987,
+          "completion_notice_seconds": 16.044342529959977,
+          "wait_split_seconds": [
+            0.169791080057621,
+            0.00013310997746884823,
+            0.24320547003298998,
+            7.758988067507744e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 1932,
+          "start_seconds": 19.313167129876092,
+          "end_seconds": 19.733914479846135,
+          "wait_seconds": 0.4207473499700427,
+          "enqueue_start_seconds": 19.490808789851144,
+          "enqueue_end_seconds": 19.490939639974385,
+          "completion_notice_seconds": 19.73384439991787,
+          "wait_split_seconds": [
+            0.17764165997505188,
+            0.00013085012324154377,
+            0.24290475994348526,
+            7.007992826402187e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 2415,
+          "start_seconds": 22.912436799844727,
+          "end_seconds": 23.332471459871158,
+          "wait_seconds": 0.4200346600264311,
+          "enqueue_start_seconds": 23.088168159825727,
+          "enqueue_end_seconds": 23.08829658990726,
+          "completion_notice_seconds": 23.332400369923562,
+          "wait_split_seconds": [
+            0.17573135998100042,
+            0.00012843008153140545,
+            0.24410378001630306,
+            7.108994759619236e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 2898,
+          "start_seconds": 26.796445289859548,
+          "end_seconds": 27.204057689988986,
+          "wait_seconds": 0.40761240012943745,
+          "enqueue_start_seconds": 26.97353109996766,
+          "enqueue_end_seconds": 26.97366203996353,
+          "completion_notice_seconds": 27.20398820983246,
+          "wait_split_seconds": [
+            0.1770858101081103,
+            0.00013093999586999416,
+            0.23032616986893117,
+            6.94801565259695e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 3381,
+          "start_seconds": 30.404618759872392,
+          "end_seconds": 30.811434699920937,
+          "wait_seconds": 0.4068159400485456,
+          "enqueue_start_seconds": 30.569471519906074,
+          "enqueue_end_seconds": 30.569610169855878,
+          "completion_notice_seconds": 30.81136429985054,
+          "wait_split_seconds": [
+            0.164852760033682,
+            0.0001386499498039484,
+            0.24175412999466062,
+            7.040007039904594e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 3864,
+          "start_seconds": 34.677004099823534,
+          "end_seconds": 35.04312879987992,
+          "wait_seconds": 0.366124700056389,
+          "enqueue_start_seconds": 34.80715154996142,
+          "enqueue_end_seconds": 34.80729144997895,
+          "completion_notice_seconds": 35.04303026990965,
+          "wait_split_seconds": [
+            0.13014745013788342,
+            0.00013990001752972603,
+            0.23573881993070245,
+            9.852997027337551e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 4347,
+          "start_seconds": 38.650725779822096,
+          "end_seconds": 39.05316673987545,
+          "wait_seconds": 0.4024409600533545,
+          "enqueue_start_seconds": 38.814043829916045,
+          "enqueue_end_seconds": 38.81418828992173,
+          "completion_notice_seconds": 39.05310335988179,
+          "wait_split_seconds": [
+            0.16331805009394884,
+            0.00014446000568568707,
+            0.23891506996005774,
+            6.337999366223812e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 4830,
+          "start_seconds": 42.38294466002844,
+          "end_seconds": 42.820195339852944,
+          "wait_seconds": 0.4372506798245013,
+          "enqueue_start_seconds": 42.57078555994667,
+          "enqueue_end_seconds": 42.57091331994161,
+          "completion_notice_seconds": 42.820084099890664,
+          "wait_split_seconds": [
+            0.1878408999182284,
+            0.0001277599949389696,
+            0.24917077994905412,
+            0.0001112399622797966
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 5313,
+          "start_seconds": 45.86068312986754,
+          "end_seconds": 46.335477959830314,
+          "wait_seconds": 0.4747948299627751,
+          "enqueue_start_seconds": 46.07855138997547,
+          "enqueue_end_seconds": 46.078686989843845,
+          "completion_notice_seconds": 46.3353987399023,
+          "wait_split_seconds": [
+            0.21786826010793447,
+            0.0001355998683720827,
+            0.25671175005845726,
+            7.921992801129818e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 5796,
+          "start_seconds": 49.52261933987029,
+          "end_seconds": 49.964560869848356,
+          "wait_seconds": 0.4419415299780667,
+          "enqueue_start_seconds": 49.716161409858614,
+          "enqueue_end_seconds": 49.716301939915866,
+          "completion_notice_seconds": 49.964505809824914,
+          "wait_split_seconds": [
+            0.19354206998832524,
+            0.0001405300572514534,
+            0.24820386990904808,
+            5.5060023441910744e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 6279,
+          "start_seconds": 53.15745608997531,
+          "end_seconds": 53.59097040002234,
+          "wait_seconds": 0.43351431004703045,
+          "enqueue_start_seconds": 53.34687568992376,
+          "enqueue_end_seconds": 53.34700047993101,
+          "completion_notice_seconds": 53.59089941997081,
+          "wait_split_seconds": [
+            0.18941959994845092,
+            0.00012479000724852085,
+            0.24389894003979862,
+            7.098005153238773e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        },
+        {
+          "block_index": 6762,
+          "start_seconds": 56.83308439003304,
+          "end_seconds": 57.26471451995894,
+          "wait_seconds": 0.43163012992590666,
+          "enqueue_start_seconds": 57.01794501999393,
+          "enqueue_end_seconds": 57.01807727990672,
+          "completion_notice_seconds": 57.26464467984624,
+          "wait_split_seconds": [
+            0.18486062996089458,
+            0.00013225991278886795,
+            0.24656739993952215,
+            6.984011270105839e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 7,
+            "empty": 25,
+            "enqueued_but_unconfirmed": 7
+          }
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "physical_card": 4,
+      "step": 2,
+      "trace_sha256": "0eefde49b67fc7d033c336408ed688906fe3b697ce7f6316b641a8e64e10b3ba",
+      "steady_ready_wait_split_seconds": {
+        "before_needed_copy_call": 8.427136870101094,
+        "inside_copy_enqueue_call": 0.009269689675420523,
+        "after_enqueue_until_completion_notice": 9.80657829111442,
+        "after_notice_until_cpu_get": 0.05720053939148784
+      },
+      "long_waits": [
+        {
+          "block_index": 412,
+          "start_seconds": 4.606839260086417,
+          "end_seconds": 5.39756358996965,
+          "wait_seconds": 0.7907243298832327,
+          "enqueue_start_seconds": 4.874762880150229,
+          "enqueue_end_seconds": 4.874959839973599,
+          "completion_notice_seconds": 5.397455950034782,
+          "wait_split_seconds": [
+            0.26792362006381154,
+            0.00019695982336997986,
+            0.5224961100611836,
+            0.00010763993486762047
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 8,
+            "empty": 24,
+            "enqueued_but_unconfirmed": 8
+          }
+        },
+        {
+          "block_index": 824,
+          "start_seconds": 7.987647369969636,
+          "end_seconds": 9.127459600102156,
+          "wait_seconds": 1.1398122301325202,
+          "enqueue_start_seconds": 8.605991899967194,
+          "enqueue_end_seconds": 8.60616858000867,
+          "completion_notice_seconds": 9.127416010014713,
+          "wait_split_seconds": [
+            0.6183445299975574,
+            0.00017668004147708416,
+            0.5212474300060421,
+            4.3590087443590164e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 1236,
+          "start_seconds": 11.731982930097729,
+          "end_seconds": 12.523582830093801,
+          "wait_seconds": 0.791599899996072,
+          "enqueue_start_seconds": 12.003313990077004,
+          "enqueue_end_seconds": 12.003523980034515,
+          "completion_notice_seconds": 12.523469730047509,
+          "wait_split_seconds": [
+            0.27133105997927487,
+            0.00020998995751142502,
+            0.5199457500129938,
+            0.00011310004629194736
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 8,
+            "empty": 24,
+            "enqueued_but_unconfirmed": 8
+          }
+        },
+        {
+          "block_index": 1648,
+          "start_seconds": 15.239691170165315,
+          "end_seconds": 16.486663850024343,
+          "wait_seconds": 1.2469726798590273,
+          "enqueue_start_seconds": 15.966086500091478,
+          "enqueue_end_seconds": 15.966229229932651,
+          "completion_notice_seconds": 16.486542789964005,
+          "wait_split_seconds": [
+            0.726395329926163,
+            0.00014272984117269516,
+            0.5203135600313544,
+            0.00012106006033718586
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 2060,
+          "start_seconds": 19.181898260023445,
+          "end_seconds": 20.192591940052807,
+          "wait_seconds": 1.0106936800293624,
+          "enqueue_start_seconds": 19.67348000011407,
+          "enqueue_end_seconds": 19.673619200009853,
+          "completion_notice_seconds": 20.19242978002876,
+          "wait_split_seconds": [
+            0.4915817400906235,
+            0.00013919989578425884,
+            0.5188105800189078,
+            0.0001621600240468979
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 8,
+            "empty": 24,
+            "enqueued_but_unconfirmed": 8
+          }
+        },
+        {
+          "block_index": 2472,
+          "start_seconds": 22.88994054007344,
+          "end_seconds": 23.872562870150432,
+          "wait_seconds": 0.9826223300769925,
+          "enqueue_start_seconds": 23.35455697006546,
+          "enqueue_end_seconds": 23.354693530127406,
+          "completion_notice_seconds": 23.87241304013878,
+          "wait_split_seconds": [
+            0.46461642999202013,
+            0.00013656006194651127,
+            0.517719510011375,
+            0.00014983001165091991
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 8,
+            "empty": 24,
+            "enqueued_but_unconfirmed": 8
+          }
+        },
+        {
+          "block_index": 2884,
+          "start_seconds": 26.59467028011568,
+          "end_seconds": 27.531078190077096,
+          "wait_seconds": 0.9364079099614173,
+          "enqueue_start_seconds": 27.065035640029237,
+          "enqueue_end_seconds": 27.065196230076253,
+          "completion_notice_seconds": 27.530926320003346,
+          "wait_split_seconds": [
+            0.47036535991355777,
+            0.00016059004701673985,
+            0.4657300899270922,
+            0.00015187007375061512
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 3296,
+          "start_seconds": 30.255791319999844,
+          "end_seconds": 31.62214114004746,
+          "wait_seconds": 1.366349820047617,
+          "enqueue_start_seconds": 31.106501530157402,
+          "enqueue_end_seconds": 31.106632040115073,
+          "completion_notice_seconds": 31.62199903000146,
+          "wait_split_seconds": [
+            0.8507102101575583,
+            0.00013050995767116547,
+            0.5153669898863882,
+            0.00014211004599928856
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 3708,
+          "start_seconds": 34.35090617998503,
+          "end_seconds": 35.46027320995927,
+          "wait_seconds": 1.109367029974237,
+          "enqueue_start_seconds": 34.942839100025594,
+          "enqueue_end_seconds": 34.94298329995945,
+          "completion_notice_seconds": 35.460183560149744,
+          "wait_split_seconds": [
+            0.5919329200405627,
+            0.0001441999338567257,
+            0.5172002601902932,
+            8.964980952441692e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 4120,
+          "start_seconds": 38.09158203005791,
+          "end_seconds": 39.21173897013068,
+          "wait_seconds": 1.1201569400727749,
+          "enqueue_start_seconds": 38.69178421003744,
+          "enqueue_end_seconds": 38.691933769965544,
+          "completion_notice_seconds": 39.211627670098096,
+          "wait_split_seconds": [
+            0.600202179979533,
+            0.00014955992810428143,
+            0.5196939001325518,
+            0.0001113000325858593
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 4532,
+          "start_seconds": 41.88878598995507,
+          "end_seconds": 42.87148684007116,
+          "wait_seconds": 0.982700850116089,
+          "enqueue_start_seconds": 42.34927177010104,
+          "enqueue_end_seconds": 42.34940755995922,
+          "completion_notice_seconds": 42.871382059995085,
+          "wait_split_seconds": [
+            0.46048578014597297,
+            0.00013578985817730427,
+            0.5219745000358671,
+            0.00010478007607161999
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 8,
+            "empty": 24,
+            "enqueued_but_unconfirmed": 8
+          }
+        },
+        {
+          "block_index": 4944,
+          "start_seconds": 45.47588728996925,
+          "end_seconds": 46.68190894997679,
+          "wait_seconds": 1.2060216600075364,
+          "enqueue_start_seconds": 46.16117905010469,
+          "enqueue_end_seconds": 46.1613247001078,
+          "completion_notice_seconds": 46.68175929016434,
+          "wait_split_seconds": [
+            0.685291760135442,
+            0.000145650003105402,
+            0.5204345900565386,
+            0.00014965981245040894
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 5356,
+          "start_seconds": 49.27471038000658,
+          "end_seconds": 50.45147750014439,
+          "wait_seconds": 1.1767671201378107,
+          "enqueue_start_seconds": 49.93021380994469,
+          "enqueue_end_seconds": 49.93035682011396,
+          "completion_notice_seconds": 50.45136206015013,
+          "wait_split_seconds": [
+            0.6555034299381077,
+            0.00014301016926765442,
+            0.5210052400361747,
+            0.00011543999426066875
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 5768,
+          "start_seconds": 53.13008085009642,
+          "end_seconds": 54.14494004007429,
+          "wait_seconds": 1.0148591899778694,
+          "enqueue_start_seconds": 53.62485000002198,
+          "enqueue_end_seconds": 53.62504703993909,
+          "completion_notice_seconds": 54.144830000121146,
+          "wait_split_seconds": [
+            0.49476914992555976,
+            0.0001970399171113968,
+            0.5197829601820558,
+            0.00011003995314240456
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 8,
+            "empty": 24,
+            "enqueued_but_unconfirmed": 8
+          }
+        },
+        {
+          "block_index": 6180,
+          "start_seconds": 56.836194480070844,
+          "end_seconds": 57.8407217101194,
+          "wait_seconds": 1.0045272300485522,
+          "enqueue_start_seconds": 57.56978788995184,
+          "enqueue_end_seconds": 57.56995611009188,
+          "completion_notice_seconds": 57.840665840078145,
+          "wait_split_seconds": [
+            0.7335934098809958,
+            0.0001682201400399208,
+            0.2707097299862653,
+            5.5870041251182556e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "physical_card": 4,
+      "step": 3,
+      "trace_sha256": "3b51437c43e265affb3706a2a255a5807ae2504c625776fc38271bc1d8367b58",
+      "steady_ready_wait_split_seconds": {
+        "before_needed_copy_call": 8.985922410385683,
+        "inside_copy_enqueue_call": 0.009400869952514768,
+        "after_enqueue_until_completion_notice": 10.340650838566944,
+        "after_notice_until_cpu_get": 0.05892165843397379
+      },
+      "long_waits": [
+        {
+          "block_index": 412,
+          "start_seconds": 5.11738704983145,
+          "end_seconds": 5.909641220001504,
+          "wait_seconds": 0.7922541701700538,
+          "enqueue_start_seconds": 5.384096189867705,
+          "enqueue_end_seconds": 5.38423403003253,
+          "completion_notice_seconds": 5.90951848984696,
+          "wait_split_seconds": [
+            0.2667091400362551,
+            0.00013784016482532024,
+            0.5252844598144293,
+            0.00012273015454411507
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 8,
+            "empty": 24,
+            "enqueued_but_unconfirmed": 8
+          }
+        },
+        {
+          "block_index": 824,
+          "start_seconds": 8.508610179880634,
+          "end_seconds": 9.580219879979268,
+          "wait_seconds": 1.0716097000986338,
+          "enqueue_start_seconds": 9.0604996799957,
+          "enqueue_end_seconds": 9.060648730024695,
+          "completion_notice_seconds": 9.580122799845412,
+          "wait_split_seconds": [
+            0.5518895001150668,
+            0.00014905002899467945,
+            0.519474069820717,
+            9.708013385534286e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 1236,
+          "start_seconds": 12.175277789821848,
+          "end_seconds": 13.213745469925925,
+          "wait_seconds": 1.0384676801040769,
+          "enqueue_start_seconds": 12.696492010029033,
+          "enqueue_end_seconds": 12.696637840010226,
+          "completion_notice_seconds": 13.213641989976168,
+          "wait_split_seconds": [
+            0.5212142202071846,
+            0.00014582998119294643,
+            0.5170041499659419,
+            0.00010347994975745678
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 1648,
+          "start_seconds": 15.777031610021368,
+          "end_seconds": 16.83081652992405,
+          "wait_seconds": 1.0537849199026823,
+          "enqueue_start_seconds": 16.31128051993437,
+          "enqueue_end_seconds": 16.31142743001692,
+          "completion_notice_seconds": 16.83074234984815,
+          "wait_split_seconds": [
+            0.5342489099130034,
+            0.00014691008254885674,
+            0.5193149198312312,
+            7.418007589876652e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 2060,
+          "start_seconds": 19.509768099989742,
+          "end_seconds": 20.52019971003756,
+          "wait_seconds": 1.0104316100478172,
+          "enqueue_start_seconds": 20.006737099960446,
+          "enqueue_end_seconds": 20.00689463992603,
+          "completion_notice_seconds": 20.520108059979975,
+          "wait_split_seconds": [
+            0.4969689999707043,
+            0.00015753996558487415,
+            0.513213420053944,
+            9.165005758404732e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 8,
+            "empty": 24,
+            "enqueued_but_unconfirmed": 8
+          }
+        },
+        {
+          "block_index": 2472,
+          "start_seconds": 23.133858969900757,
+          "end_seconds": 24.11890258989297,
+          "wait_seconds": 0.9850436199922115,
+          "enqueue_start_seconds": 23.60036743991077,
+          "enqueue_end_seconds": 23.600573899922892,
+          "completion_notice_seconds": 24.118715759832412,
+          "wait_split_seconds": [
+            0.4665084700100124,
+            0.0002064600121229887,
+            0.5181418599095196,
+            0.00018683006055653095
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 8,
+            "empty": 24,
+            "enqueued_but_unconfirmed": 8
+          }
+        },
+        {
+          "block_index": 2884,
+          "start_seconds": 26.69883884000592,
+          "end_seconds": 27.990367099875584,
+          "wait_seconds": 1.291528259869665,
+          "enqueue_start_seconds": 27.46810348983854,
+          "enqueue_end_seconds": 27.46824139985256,
+          "completion_notice_seconds": 27.990239769918844,
+          "wait_split_seconds": [
+            0.7692646498326212,
+            0.0001379100140184164,
+            0.5219983700662851,
+            0.00012732995674014091
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 3296,
+          "start_seconds": 30.529455529991537,
+          "end_seconds": 31.59774740994908,
+          "wait_seconds": 1.0682918799575418,
+          "enqueue_start_seconds": 31.08541309996508,
+          "enqueue_end_seconds": 31.08556344988756,
+          "completion_notice_seconds": 31.597647140035406,
+          "wait_split_seconds": [
+            0.5559575699735433,
+            0.000150349922478199,
+            0.5120836901478469,
+            0.00010026991367340088
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 3708,
+          "start_seconds": 34.18998824991286,
+          "end_seconds": 35.82907881983556,
+          "wait_seconds": 1.6390905699227005,
+          "enqueue_start_seconds": 35.30810314998962,
+          "enqueue_end_seconds": 35.30827451986261,
+          "completion_notice_seconds": 35.82896432001144,
+          "wait_split_seconds": [
+            1.1181149000767618,
+            0.00017136987298727036,
+            0.5206898001488298,
+            0.00011449982412159443
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 4120,
+          "start_seconds": 38.404746379936114,
+          "end_seconds": 39.83843096997589,
+          "wait_seconds": 1.4336845900397748,
+          "enqueue_start_seconds": 39.3185868000146,
+          "enqueue_end_seconds": 39.31873965985142,
+          "completion_notice_seconds": 39.83833817997947,
+          "wait_split_seconds": [
+            0.9138404200784862,
+            0.00015285983681678772,
+            0.5195985201280564,
+            9.278999641537666e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 4532,
+          "start_seconds": 42.396300569875166,
+          "end_seconds": 43.606697879964486,
+          "wait_seconds": 1.21039731008932,
+          "enqueue_start_seconds": 43.082498820032924,
+          "enqueue_end_seconds": 43.082651830045506,
+          "completion_notice_seconds": 43.60655809985474,
+          "wait_split_seconds": [
+            0.6861982501577586,
+            0.00015301001258194447,
+            0.5239062698092312,
+            0.00013978010974824429
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 4944,
+          "start_seconds": 46.181890019914135,
+          "end_seconds": 47.12185017997399,
+          "wait_seconds": 0.9399601600598544,
+          "enqueue_start_seconds": 46.60285763000138,
+          "enqueue_end_seconds": 46.603041199967265,
+          "completion_notice_seconds": 47.121749870013446,
+          "wait_split_seconds": [
+            0.4209676100872457,
+            0.00018356996588408947,
+            0.5187086700461805,
+            0.00010030996054410934
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 8,
+            "empty": 24,
+            "enqueued_but_unconfirmed": 8
+          }
+        },
+        {
+          "block_index": 5356,
+          "start_seconds": 49.68866457999684,
+          "end_seconds": 50.75115549983457,
+          "wait_seconds": 1.0624909198377281,
+          "enqueue_start_seconds": 50.231074729934335,
+          "enqueue_end_seconds": 50.23122864984907,
+          "completion_notice_seconds": 50.75104445987381,
+          "wait_split_seconds": [
+            0.5424101499374956,
+            0.0001539199147373438,
+            0.5198158100247383,
+            0.00011103996075689793
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 5768,
+          "start_seconds": 53.33103488991037,
+          "end_seconds": 54.37759605003521,
+          "wait_seconds": 1.0465611601248384,
+          "enqueue_start_seconds": 53.856478039873764,
+          "enqueue_end_seconds": 53.85662109986879,
+          "completion_notice_seconds": 54.37748339003883,
+          "wait_split_seconds": [
+            0.5254431499633938,
+            0.00014305999502539635,
+            0.5208622901700437,
+            0.00011265999637544155
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        },
+        {
+          "block_index": 6180,
+          "start_seconds": 56.958710649982095,
+          "end_seconds": 58.051060899859294,
+          "wait_seconds": 1.0923502498771995,
+          "enqueue_start_seconds": 57.53071953984909,
+          "enqueue_end_seconds": 57.53084847005084,
+          "completion_notice_seconds": 58.05097456998192,
+          "wait_split_seconds": [
+            0.5720088898669928,
+            0.00012893020175397396,
+            0.5201260999310762,
+            8.63298773765564e-05
+          ],
+          "midpoint_slot_estimate": {
+            "ready": 0,
+            "occupied": 0,
+            "empty": 32,
+            "enqueued_but_unconfirmed": 0
+          }
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Completion monitor timestamp can lag real DMA completion; after-enqueue wait includes producer dependencies/runtime and transfer, not pure link time.",
+    "Slot acquire/CPU-add-end timestamp differs from actual queue bookkeeping by small host overhead.",
+    "No job identity in trace; FIFO counts and equal event cardinalities provide chunk alignment.",
+    "Cannot identify exact NPU compute op from host spans alone."
+  ]
+}
