@@ -1,0 +1,53 @@
+{
+  "serial_control": {
+    "overlap": false,
+    "stage_count_before_next_micro": 0,
+    "expected": [
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0
+    ],
+    "actual": [
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0
+    ],
+    "correct": true
+  },
+  "next_micro_before_completion": {
+    "overlap": true,
+    "stage_count_before_next_micro": 0,
+    "expected": [
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0
+    ],
+    "actual": [
+      4.0,
+      4.0,
+      4.0,
+      4.0,
+      4.0,
+      4.0,
+      4.0,
+      4.0
+    ],
+    "correct": false
+  },
+  "scope": "CPU-only simulated legal completion delay; does not assert historical NPU runs encountered this schedule."
+}
