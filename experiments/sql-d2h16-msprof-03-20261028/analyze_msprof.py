@@ -17,13 +17,20 @@ compute_macro = '''WITH compute_view AS (
     LEFT JOIN STRING_IDS n ON n.id = c.name
     LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType
 )'''
-copy_sql = '''SELECT m.globalTaskId, MIN(t.startNs), MAX(t.endNs), MAX(m.size), MAX(t.streamId),
- MIN(c.startNs), MAX(c.endNs), MAX(n.value)
+comm_macro = '''WITH comm_view AS (
+    SELECT ROUND(c.endNs - c.startNs) AS duration_ns, n.value AS op_name, t.value AS op_type, g.value AS group_name
+    FROM COMMUNICATION_OP c
+    LEFT JOIN STRING_IDS n ON n.id = c.opName
+    LEFT JOIN STRING_IDS t ON t.id = c.opType
+    LEFT JOIN STRING_IDS g ON g.id = c.groupName
+)'''
+copy_sql = '''SELECT t.connectionId, MIN(t.startNs), MAX(t.endNs), SUM(m.size), MAX(t.streamId),
+ MIN(c.startNs), MAX(c.endNs), MAX(n.value),COUNT(*),SUM(t.endNs-t.startNs)
  FROM MEMCPY_INFO m JOIN TASK t ON t.globalTaskId=m.globalTaskId
  LEFT JOIN CANN_API c ON c.connectionId=t.connectionId
  LEFT JOIN STRING_IDS n ON n.id=c.name
  WHERE m.memcpyOperation=?
- GROUP BY m.globalTaskId ORDER BY MIN(t.startNs)'''
+ GROUP BY t.connectionId ORDER BY MIN(t.startNs)'''
 marker_sql = '''SELECT MIN(CAST(p.startNs AS INTEGER)), MAX(CAST(p.endNs AS INTEGER)), n.value
  FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name
  WHERE n.value LIKE 'diag/gradient_hook/%'
@@ -51,6 +58,8 @@ for rank in [0,1]:
     db = sqlite3.connect('file:'+str(dbpath)+'?mode=ro', uri=True)
     db.execute('PRAGMA query_only=ON')
     db.row_factory = None
+    comm_overview = db.execute(comm_macro+''' SELECT op_type,COUNT(*),SUM(duration_ns)
+      FROM comm_view GROUP BY op_type ORDER BY SUM(duration_ns) DESC LIMIT 20''').fetchall()
     enums = dict(db.execute('SELECT id,name FROM ENUM_MEMCPY_OPERATION ORDER BY id LIMIT 20'))
     direction = next(k for k,v in enums.items() if v == 'device to host')
     diagpath = a.folder/f'device-diagnostics-rank{rank}-step3.private.json'
@@ -88,21 +97,21 @@ for rank in [0,1]:
     first_add = min(x['cpu_add_start_host'] for x in cs)
     waits = []; details = []
     for i,(c,d) in enumerate(zip(copies,cs)):
-        taskid,start,end,n,sid,api_start,api_end,api_name = c
+        taskid,start,end,n,sid,api_start,api_end,api_name = c[:8]
         lo,hi = lower[i],upper[i]
         assert hi>=lo-50000, ('event/native clock mismatch',lo,hi)
         base = (global_lo+global_hi)/2 if common else (lo+hi)/2
-        uncertainty = (global_hi-global_lo)/2 if common else abs(hi-lo)/2
+        uncertainty = max(50000,(global_hi-global_lo)/2 if common else abs(hi-lo)/2)
         source_ready = base+d['device_source_ready_ms']*1e6
         w0 = host_base+d['cpu_get_wait_start_host']*1e9
         w1 = host_base+d['cpu_get_return_host']*1e9
         native_ms = (end-start)/1e6
         item = dict(sequence=d['sequence'],param=d['param'],param_name=manifest[d['param']]['name'],
                     param_shape=manifest[d['param']]['shape'],element_offset=d['element_offset'],bytes=n,
-                    device_dma_ms=native_ms,event_bounded_copy_ms=d['device_copy_service_ms'],
+                    device_dma_ms=native_ms,native_fragment_count=c[8],native_dma_active_sum_ms=c[9]/1e6,native_fragment_gap_ms=native_ms-c[9]/1e6,event_bounded_copy_ms=d['device_copy_service_ms'],
                     gib_per_second=n/2**30/(native_ms/1000) if native_ms>0 else None,
                     host_copy_call_ms=(api_end-api_start)/1e6 if api_start is not None else None,
-                    runtime_api=api_name,
+                    runtime_api=api_name,runtime_api_start_seconds=(api_start-host_base)/1e9 if api_start is not None else None,runtime_api_end_seconds=(api_end-host_base)/1e9 if api_end is not None else None,
                     producer_hook_seconds=d['producer_hook_host'],producer_admit_seconds=d['producer_admit_host'],
                     source_ready_seconds=(source_ready-host_base)/1e9,
                     native_copy_start_seconds=(start-host_base)/1e9,native_copy_end_seconds=(end-host_base)/1e9,
@@ -117,7 +126,7 @@ for rank in [0,1]:
                         max(0,min(w1,end)-max(w0,start)),max(0,w1-max(w0,end))]
             assert abs(sum(portions)-(w1-w0))<4096
             item['wait_split_ms'] = dict(zip(['before_source_ready','source_ready_until_DMA','actual_DMA','DMA_done_until_CPU_get'],[x/1e6 for x in portions]))
-            item['native_task_id'] = taskid
+            item['native_connection_id'] = taskid
             item['_absolute_wait_start'] = w0
             item['_absolute_source_ready'] = source_ready
             waits.append(item)
@@ -129,6 +138,26 @@ for rank in [0,1]:
              FROM compute_view v JOIN TASK t ON t.globalTaskId=v.globalTaskId
              WHERE t.startNs<? AND t.endNs>? GROUP BY v.op_name ORDER BY overlap_ns DESC LIMIT 10'''
             item['compute_tasks_before_source_ready'] = db.execute(sql,(end,start,end,start)).fetchall()
+            interval_sql = compute_macro+''' SELECT MIN(t.startNs),MAX(t.endNs),MAX(v.op_name),COUNT(*)
+             FROM compute_view v JOIN TASK t ON t.globalTaskId=v.globalTaskId
+             WHERE t.startNs<? AND t.endNs>? GROUP BY v.globalTaskId,t.startNs,t.endNs
+             ORDER BY MIN(t.startNs)'''
+            intervals = db.execute(interval_sql,(end,start)).fetchall()
+            clipped = sorted((max(start,x[0]),min(end,x[1])) for x in intervals if min(end,x[1])>max(start,x[0]))
+            merged = []
+            for x,y in clipped:
+                if merged and x<=merged[-1][1]:
+                    merged[-1][1] = max(merged[-1][1],y)
+                else:
+                    merged.append([x,y])
+            item['compute_union_ms_before_source_ready'] = sum(y-x for x,y in merged)/1e6
+            item['compute_intervals_relative_step'] = [[(x-host_base)/1e9,(y-host_base)/1e9,n] for x,y,n,_ in intervals]
+            # Track B: explicit hardware time-window question; schema from skill reference.
+            comm_sql = '''SELECT n.value,MIN(c.startNs),MAX(c.endNs),SUM(MAX(0,MIN(c.endNs,?)-MAX(c.startNs,?)))
+             FROM COMMUNICATION_OP c LEFT JOIN STRING_IDS n ON n.id=c.opName
+             WHERE c.startNs<? AND c.endNs>? GROUP BY c.opId,c.opName ORDER BY MIN(c.startNs) LIMIT 20'''
+            comm_rows = db.execute(comm_sql,(end,start,end,start)).fetchall()
+            item['communications_before_source_ready'] = [dict(name=n,start_seconds=(x-host_base)/1e9,end_seconds=(y-host_base)/1e9,overlap_ms=z/1e6) for n,x,y,z in comm_rows]
     for item in details:
         for k in [k for k in item if k.startswith('_')]:
             del item[k]
@@ -137,6 +166,7 @@ for rank in [0,1]:
     reports.append(dict(rank=rank,physical_card=[0,3][rank],validation=validation,slots=16,
                         db_sha256=hashlib.sha256(dbpath.read_bytes()).hexdigest(),diagnostic_sha256=hashlib.sha256(diagpath.read_bytes()).hexdigest(),
                         copy_count=len(copies),copy_bytes=sum(x['bytes'] for x in details),copy_stream_id=stream,
+                        communication_overview=comm_overview,
                         host_clock_offset_mad_us=host_mad/1000,
                         host_clock_offset_spread_us=(max(offsets)-min(offsets))/1000,
                         common_device_clock_bounds=common,
@@ -150,7 +180,7 @@ payload = dict(reports=reports,queries=dict(copy=copy_sql,markers=marker_sql,com
                limits=['Profiled iteration timing is not normal training throughput.',
                        'Source readiness is a stream event after gradient work, an upper bound on mathematical gradient readiness.',
                        'Host offset uses recorded scope/hook matching; device-clock mapping bounded by native DMA task and events.',
-                       'Event-bounded copy span includes host enqueue gaps; native TASK duration is actual DMA task service.',
+                       'Event-bounded copy span includes host enqueue gaps; native DMA tasks grouped by CANN connectionId reconstruct one copy, with fragment-active sum and envelope reported separately.',
                        'Compute top durations can overlap across tasks and do not sum to window length.'])
 a.output.write_text(json.dumps(payload,indent=2))
 for r in reports:

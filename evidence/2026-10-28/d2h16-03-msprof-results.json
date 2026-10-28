@@ -1,0 +1,2551 @@
+{
+  "reports": [
+    {
+      "rank": 0,
+      "physical_card": 0,
+      "validation": null,
+      "slots": 16,
+      "db_sha256": "588daa3bb5c4f44ca4607d44a9286a86063750fec89d6243c3cbd73a9ecc04d0",
+      "diagnostic_sha256": "d57e3932a3a3afe7bb7bc1b142fd2349e68cc4bb9714393d7d193f29a861b1d5",
+      "copy_count": 7784,
+      "copy_bytes": 365911384064,
+      "copy_stream_id": 456,
+      "communication_overview": [
+        [
+          "hcom_batchSendRecv_",
+          17,
+          5364330499.0
+        ],
+        [
+          "hcom_allReduce_",
+          2,
+          487602182.0
+        ]
+      ],
+      "host_clock_offset_mad_us": 15.104,
+      "host_clock_offset_spread_us": 6075.392,
+      "common_device_clock_bounds": false,
+      "device_clock_bound_width_ms": null,
+      "dma_ms_quantiles": {
+        "0": 0.00182,
+        "0.5": 2.196463,
+        "0.9": 8.438169,
+        "0.99": 11.766975,
+        "1": 18.125062
+      },
+      "full128MiB_dma_ms_quantiles": {
+        "0": 5.744035,
+        "0.5": 8.419249,
+        "0.9": 10.946959,
+        "0.99": 13.839956,
+        "1": 18.125062
+      },
+      "long_wait_count": 15,
+      "long_wait_split_totals_seconds": {
+        "before_source_ready": 9.274092799999998,
+        "source_ready_until_DMA": 7.424e-06,
+        "actual_DMA": 0.090470993,
+        "DMA_done_until_CPU_get": 0.005441792000000002
+      },
+      "long_waits": [
+        {
+          "sequence": 397,
+          "param": 422,
+          "param_name": "model.layers.31.mlp.down_proj.weight",
+          "param_shape": [
+            5120,
+            17408
+          ],
+          "element_offset": 0,
+          "bytes": 134217728,
+          "device_dma_ms": 6.211024,
+          "native_fragment_count": 2,
+          "native_dma_active_sum_ms": 6.210864,
+          "native_fragment_gap_ms": 0.00016000000000016001,
+          "event_bounded_copy_ms": 6.2109375,
+          "gib_per_second": 20.125505874715667,
+          "host_copy_call_ms": 0.03814,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 10.434287872,
+          "runtime_api_end_seconds": 10.434326016,
+          "producer_hook_seconds": 10.433009000029415,
+          "producer_admit_seconds": 10.433348310180008,
+          "source_ready_seconds": 10.635443712,
+          "native_copy_start_seconds": 10.635443712,
+          "native_copy_end_seconds": 10.641654784,
+          "cpu_get_wait_start_seconds": 10.055761239957064,
+          "cpu_get_return_seconds": 10.642842250177637,
+          "cpu_get_wait_ms": 587.081216,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 10.055777890142053,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 579.68256,
+            "source_ready_until_DMA": 0.0,
+            "actual_DMA": 6.211024,
+            "DMA_done_until_CPU_get": 1.187584
+          },
+          "native_connection_id": 549738
+        },
+        {
+          "sequence": 793,
+          "param": 422,
+          "param_name": "model.layers.31.mlp.down_proj.weight",
+          "param_shape": [
+            5120,
+            17408
+          ],
+          "element_offset": 0,
+          "bytes": 134217728,
+          "device_dma_ms": 6.264566,
+          "native_fragment_count": 2,
+          "native_dma_active_sum_ms": 6.264406,
+          "native_fragment_gap_ms": 0.00016000000000016001,
+          "event_bounded_copy_ms": 6.265625,
+          "gib_per_second": 19.95349717761773,
+          "host_copy_call_ms": 0.03653,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 14.615514624,
+          "runtime_api_end_seconds": 14.615551232,
+          "producer_hook_seconds": 14.614358100108802,
+          "producer_admit_seconds": 14.614694610005245,
+          "source_ready_seconds": 14.927523328,
+          "native_copy_start_seconds": 14.92752384,
+          "native_copy_end_seconds": 14.933788416,
+          "cpu_get_wait_start_seconds": 14.252866380149499,
+          "cpu_get_return_seconds": 14.934791620122269,
+          "cpu_get_wait_ms": 681.925376,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 14.252882250119,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 674.657024,
+            "source_ready_until_DMA": 0.000512,
+            "actual_DMA": 6.264566,
+            "DMA_done_until_CPU_get": 1.003264
+          },
+          "native_connection_id": 678193,
+          "compute_tasks_before_source_ready": [
+            [
+              "aclnnMatmul_MatMulV3Common_MatMulV3",
+              202,
+              267768535
+            ],
+            [
+              "chunk_fwd_kernel_o",
+              24,
+              58385525
+            ],
+            [
+              "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+              24,
+              28346088
+            ],
+            [
+              "solve_tril_64x64_kernel",
+              24,
+              27814278
+            ],
+            [
+              "aclnnMul_MulAiCore_Mul",
+              446,
+              27378932
+            ],
+            [
+              "aclnnInplaceCopy_TransposeAiCore_Transpose",
+              353,
+              20488627
+            ],
+            [
+              "recompute_w_u_fwd_kernel",
+              24,
+              11011581
+            ],
+            [
+              "aclnnInplaceCopy_CastAiCore_Cast",
+              389,
+              8274761
+            ],
+            [
+              "aclnnSilu_SiluAiCore_Swish",
+              80,
+              7286602
+            ],
+            [
+              "aclnnConvolution_Conv2dWithFlag_Conv2D",
+              24,
+              7156302
+            ]
+          ],
+          "compute_union_ms_before_source_ready": 516.545843,
+          "communications_before_source_ready": [
+            {
+              "name": "hcom_batchSendRecv__612_3_1",
+              "start_seconds": 14.767415808,
+              "end_seconds": 14.923329792,
+              "overlap_ms": 155.913835
+            }
+          ]
+        },
+        {
+          "sequence": 1189,
+          "param": 422,
+          "param_name": "model.layers.31.mlp.down_proj.weight",
+          "param_shape": [
+            5120,
+            17408
+          ],
+          "element_offset": 0,
+          "bytes": 134217728,
+          "device_dma_ms": 6.375067,
+          "native_fragment_count": 2,
+          "native_dma_active_sum_ms": 6.374927,
+          "native_fragment_gap_ms": 0.000140000000000029,
+          "event_bounded_copy_ms": 6.375,
+          "gib_per_second": 19.607637064833984,
+          "host_copy_call_ms": 0.03739,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 19.323395584,
+          "runtime_api_end_seconds": 19.323433216,
+          "producer_hook_seconds": 19.322292960016057,
+          "producer_admit_seconds": 19.322632260154933,
+          "source_ready_seconds": 19.469980416,
+          "native_copy_start_seconds": 19.469980416,
+          "native_copy_end_seconds": 19.476355328,
+          "cpu_get_wait_start_seconds": 18.485158790135756,
+          "cpu_get_return_seconds": 19.477258109953254,
+          "cpu_get_wait_ms": 992.099072,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 18.48517494997941,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 984.821504,
+            "source_ready_until_DMA": 0.0,
+            "actual_DMA": 6.375067,
+            "DMA_done_until_CPU_get": 0.902656
+          },
+          "native_connection_id": 797403,
+          "compute_tasks_before_source_ready": [
+            [
+              "aclnnMatmul_MatMulV3Common_MatMulV3",
+              202,
+              267711804
+            ],
+            [
+              "chunk_fwd_kernel_o",
+              24,
+              58460245
+            ],
+            [
+              "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+              24,
+              28303526
+            ],
+            [
+              "solve_tril_64x64_kernel",
+              24,
+              27804636
+            ],
+            [
+              "aclnnMul_MulAiCore_Mul",
+              447,
+              27468771
+            ],
+            [
+              "aclnnInplaceCopy_TransposeAiCore_Transpose",
+              353,
+              20342830
+            ],
+            [
+              "recompute_w_u_fwd_kernel",
+              24,
+              10992639
+            ],
+            [
+              "aclnnInplaceCopy_CastAiCore_Cast",
+              389,
+              8293673
+            ],
+            [
+              "aclnnSilu_SiluAiCore_Swish",
+              80,
+              7321929
+            ],
+            [
+              "aclnnConvolution_Conv2dWithFlag_Conv2D",
+              24,
+              7146684
+            ]
+          ],
+          "compute_union_ms_before_source_ready": 516.619634,
+          "communications_before_source_ready": [
+            {
+              "name": "hcom_batchSendRecv__612_4_1",
+              "start_seconds": 19.45333504,
+              "end_seconds": 19.46576768,
+              "overlap_ms": 12.432569
+            }
+          ]
+        },
+        {
+          "sequence": 1585,
+          "param": 422,
+          "param_name": "model.layers.31.mlp.down_proj.weight",
+          "param_shape": [
+            5120,
+            17408
+          ],
+          "element_offset": 0,
+          "bytes": 134217728,
+          "device_dma_ms": 6.115202,
+          "native_fragment_count": 2,
+          "native_dma_active_sum_ms": 6.115042,
+          "native_fragment_gap_ms": 0.00016000000000016001,
+          "event_bounded_copy_ms": 6.115234375,
+          "gib_per_second": 20.440861969890772,
+          "host_copy_call_ms": 0.03533,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 23.25843456,
+          "runtime_api_end_seconds": 23.258469888,
+          "producer_hook_seconds": 23.257290079956874,
+          "producer_admit_seconds": 23.257626120001078,
+          "source_ready_seconds": 23.48484608,
+          "native_copy_start_seconds": 23.48484608,
+          "native_copy_end_seconds": 23.490961408,
+          "cpu_get_wait_start_seconds": 22.891795709962025,
+          "cpu_get_return_seconds": 23.49153081001714,
+          "cpu_get_wait_ms": 599.73504,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 22.89181251008995,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 593.050368,
+            "source_ready_until_DMA": 0.0,
+            "actual_DMA": 6.115202,
+            "DMA_done_until_CPU_get": 0.569344
+          },
+          "native_connection_id": 908246
+        },
+        {
+          "sequence": 1981,
+          "param": 422,
+          "param_name": "model.layers.31.mlp.down_proj.weight",
+          "param_shape": [
+            5120,
+            17408
+          ],
+          "element_offset": 0,
+          "bytes": 134217728,
+          "device_dma_ms": 5.846557,
+          "native_fragment_count": 2,
+          "native_dma_active_sum_ms": 5.846397,
+          "native_fragment_gap_ms": 0.00016000000000016001,
+          "event_bounded_copy_ms": 5.84765625,
+          "gib_per_second": 21.380104564104997,
+          "host_copy_call_ms": 0.03531,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 27.285821696,
+          "runtime_api_end_seconds": 27.285857024,
+          "producer_hook_seconds": 27.284614630043507,
+          "producer_admit_seconds": 27.284963990096003,
+          "source_ready_seconds": 27.453139712,
+          "native_copy_start_seconds": 27.45314048,
+          "native_copy_end_seconds": 27.458987008,
+          "cpu_get_wait_start_seconds": 26.921276360051706,
+          "cpu_get_return_seconds": 27.45943457004614,
+          "cpu_get_wait_ms": 538.15808,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 26.92129616998136,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 531.863296,
+            "source_ready_until_DMA": 0.000768,
+            "actual_DMA": 5.846557,
+            "DMA_done_until_CPU_get": 0.447488
+          },
+          "native_connection_id": 977641
+        },
+        {
+          "sequence": 2377,
+          "param": 422,
+          "param_name": "model.layers.31.mlp.down_proj.weight",
+          "param_shape": [
+            5120,
+            17408
+          ],
+          "element_offset": 0,
+          "bytes": 134217728,
+          "device_dma_ms": 6.038181,
+          "native_fragment_count": 2,
+          "native_dma_active_sum_ms": 6.038021,
+          "native_fragment_gap_ms": 0.00016000000000016001,
+          "event_bounded_copy_ms": 6.037109375,
+          "gib_per_second": 20.701598709942612,
+          "host_copy_call_ms": 0.03791,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 31.332098816,
+          "runtime_api_end_seconds": 31.332136704,
+          "producer_hook_seconds": 31.330976410070434,
+          "producer_admit_seconds": 31.331320400116965,
+          "source_ready_seconds": 31.611684096,
+          "native_copy_start_seconds": 31.611685376,
+          "native_copy_end_seconds": 31.617723648,
+          "cpu_get_wait_start_seconds": 30.9668644501362,
+          "cpu_get_return_seconds": 31.617960710078478,
+          "cpu_get_wait_ms": 651.09632,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 30.966879580169916,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 644.819712,
+            "source_ready_until_DMA": 0.00128,
+            "actual_DMA": 6.038181,
+            "DMA_done_until_CPU_get": 0.237056
+          },
+          "native_connection_id": 1046914,
+          "compute_tasks_before_source_ready": [
+            [
+              "aclnnMatmul_MatMulV3Common_MatMulV3",
+              202,
+              267570570
+            ],
+            [
+              "chunk_fwd_kernel_o",
+              24,
+              58482968
+            ],
+            [
+              "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+              24,
+              28312549
+            ],
+            [
+              "solve_tril_64x64_kernel",
+              24,
+              27805976
+            ],
+            [
+              "aclnnMul_MulAiCore_Mul",
+              448,
+              27489373
+            ],
+            [
+              "aclnnInplaceCopy_TransposeAiCore_Transpose",
+              353,
+              20367342
+            ],
+            [
+              "recompute_w_u_fwd_kernel",
+              24,
+              11052882
+            ],
+            [
+              "aclnnInplaceCopy_CastAiCore_Cast",
+              392,
+              8297447
+            ],
+            [
+              "aclnnSilu_SiluAiCore_Swish",
+              80,
+              7283418
+            ],
+            [
+              "aclnnConvolution_Conv2dWithFlag_Conv2D",
+              24,
+              7143624
+            ]
+          ],
+          "compute_union_ms_before_source_ready": 516.690265,
+          "communications_before_source_ready": [
+            {
+              "name": "hcom_batchSendRecv__612_7_1",
+              "start_seconds": 31.48252032,
+              "end_seconds": 31.607481856,
+              "overlap_ms": 124.961537
+            }
+          ]
+        },
+        {
+          "sequence": 2773,
+          "param": 422,
+          "param_name": "model.layers.31.mlp.down_proj.weight",
+          "param_shape": [
+            5120,
+            17408
+          ],
+          "element_offset": 0,
+          "bytes": 134217728,
+          "device_dma_ms": 6.359607,
+          "native_fragment_count": 2,
+          "native_dma_active_sum_ms": 6.359447,
+          "native_fragment_gap_ms": 0.00015999999999927184,
+          "event_bounded_copy_ms": 6.359375,
+          "gib_per_second": 19.65530259967322,
+          "host_copy_call_ms": 0.03804,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 35.388783872,
+          "runtime_api_end_seconds": 35.388822016,
+          "producer_hook_seconds": 35.38760617002845,
+          "producer_admit_seconds": 35.38795310002752,
+          "source_ready_seconds": 35.659842304,
+          "native_copy_start_seconds": 35.659842048,
+          "native_copy_end_seconds": 35.666201856,
+          "cpu_get_wait_start_seconds": 35.020296229980886,
+          "cpu_get_return_seconds": 35.66662525013089,
+          "cpu_get_wait_ms": 646.329088,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 35.02031045011245,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 639.545856,
+            "source_ready_until_DMA": 0.0,
+            "actual_DMA": 6.359607,
+            "DMA_done_until_CPU_get": 0.423424
+          },
+          "native_connection_id": 1116433
+        },
+        {
+          "sequence": 3169,
+          "param": 422,
+          "param_name": "model.layers.31.mlp.down_proj.weight",
+          "param_shape": [
+            5120,
+            17408
+          ],
+          "element_offset": 0,
+          "bytes": 134217728,
+          "device_dma_ms": 6.262565,
+          "native_fragment_count": 2,
+          "native_dma_active_sum_ms": 6.262405,
+          "native_fragment_gap_ms": 0.00016000000000016001,
+          "event_bounded_copy_ms": 6.26171875,
+          "gib_per_second": 19.95987267198025,
+          "host_copy_call_ms": 0.03843,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 39.550676736,
+          "runtime_api_end_seconds": 39.550715136,
+          "producer_hook_seconds": 39.549428730038926,
+          "producer_admit_seconds": 39.549790899967775,
+          "source_ready_seconds": 39.879153152,
+          "native_copy_start_seconds": 39.87915264,
+          "native_copy_end_seconds": 39.885415424,
+          "cpu_get_wait_start_seconds": 39.1459413501434,
+          "cpu_get_return_seconds": 39.88567782007158,
+          "cpu_get_wait_ms": 739.736576,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 39.1459577800706,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 733.211392,
+            "source_ready_until_DMA": 0.0,
+            "actual_DMA": 6.262565,
+            "DMA_done_until_CPU_get": 0.2624
+          },
+          "native_connection_id": 1185749,
+          "compute_tasks_before_source_ready": [
+            [
+              "aclnnMatmul_MatMulV3Common_MatMulV3",
+              202,
+              266776067
+            ],
+            [
+              "chunk_fwd_kernel_o",
+              24,
+              58330867
+            ],
+            [
+              "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+              24,
+              28317402
+            ],
+            [
+              "solve_tril_64x64_kernel",
+              24,
+              27799055
+            ],
+            [
+              "aclnnMul_MulAiCore_Mul",
+              446,
+              27379908
+            ],
+            [
+              "aclnnInplaceCopy_TransposeAiCore_Transpose",
+              353,
+              20506407
+            ],
+            [
+              "recompute_w_u_fwd_kernel",
+              24,
+              10981959
+            ],
+            [
+              "aclnnInplaceCopy_CastAiCore_Cast",
+              389,
+              8439703
+            ],
+            [
+              "aclnnSilu_SiluAiCore_Swish",
+              80,
+              7279537
+            ],
+            [
+              "aclnnConvolution_Conv2dWithFlag_Conv2D",
+              24,
+              7154521
+            ]
+          ],
+          "compute_union_ms_before_source_ready": 515.745094,
+          "communications_before_source_ready": [
+            {
+              "name": "hcom_batchSendRecv__612_9_1",
+              "start_seconds": 39.659767552,
+              "end_seconds": 39.874953472,
+              "overlap_ms": 215.185739
+            }
+          ]
+        },
+        {
+          "sequence": 3565,
+          "param": 422,
+          "param_name": "model.layers.31.mlp.down_proj.weight",
+          "param_shape": [
+            5120,
+            17408
+          ],
+          "element_offset": 0,
+          "bytes": 134217728,
+          "device_dma_ms": 6.145083,
+          "native_fragment_count": 2,
+          "native_dma_active_sum_ms": 6.144923,
+          "native_fragment_gap_ms": 0.00015999999999927184,
+          "event_bounded_copy_ms": 6.14453125,
+          "gib_per_second": 20.34146650256799,
+          "host_copy_call_ms": 0.03928,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 43.777343232,
+          "runtime_api_end_seconds": 43.777382656,
+          "producer_hook_seconds": 43.77613713010214,
+          "producer_admit_seconds": 43.77648030011915,
+          "source_ready_seconds": 43.92755072,
+          "native_copy_start_seconds": 43.927550464,
+          "native_copy_end_seconds": 43.933695488,
+          "cpu_get_wait_start_seconds": 43.369975350098684,
+          "cpu_get_return_seconds": 43.933749119983986,
+          "cpu_get_wait_ms": 563.773696,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 43.36999181006104,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 557.575168,
+            "source_ready_until_DMA": 0.0,
+            "actual_DMA": 6.145083,
+            "DMA_done_until_CPU_get": 0.053504
+          },
+          "native_connection_id": 1255223
+        },
+        {
+          "sequence": 3961,
+          "param": 422,
+          "param_name": "model.layers.31.mlp.down_proj.weight",
+          "param_shape": [
+            5120,
+            17408
+          ],
+          "element_offset": 0,
+          "bytes": 134217728,
+          "device_dma_ms": 5.786896,
+          "native_fragment_count": 2,
+          "native_dma_active_sum_ms": 5.786736,
+          "native_fragment_gap_ms": 0.00015999999999927184,
+          "event_bounded_copy_ms": 5.7890625,
+          "gib_per_second": 21.60052643074975,
+          "host_copy_call_ms": 0.03541,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 47.616192768,
+          "runtime_api_end_seconds": 47.616228096,
+          "producer_hook_seconds": 47.61506913998164,
+          "producer_admit_seconds": 47.61538235004991,
+          "source_ready_seconds": 47.812192256,
+          "native_copy_start_seconds": 47.81219328,
+          "native_copy_end_seconds": 47.81798016,
+          "cpu_get_wait_start_seconds": 47.21234442014247,
+          "cpu_get_return_seconds": 47.81805760995485,
+          "cpu_get_wait_ms": 605.713408,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 47.21236611995846,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 599.847936,
+            "source_ready_until_DMA": 0.001024,
+            "actual_DMA": 5.786896,
+            "DMA_done_until_CPU_get": 0.077568
+          },
+          "native_connection_id": 1324694
+        },
+        {
+          "sequence": 4357,
+          "param": 422,
+          "param_name": "model.layers.31.mlp.down_proj.weight",
+          "param_shape": [
+            5120,
+            17408
+          ],
+          "element_offset": 0,
+          "bytes": 134217728,
+          "device_dma_ms": 6.041861,
+          "native_fragment_count": 2,
+          "native_dma_active_sum_ms": 6.041701,
+          "native_fragment_gap_ms": 0.00016000000000016001,
+          "event_bounded_copy_ms": 6.04296875,
+          "gib_per_second": 20.68898970035888,
+          "host_copy_call_ms": 0.03701,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 51.664438528,
+          "runtime_api_end_seconds": 51.664475648,
+          "producer_hook_seconds": 51.663305839989334,
+          "producer_admit_seconds": 51.66364658996463,
+          "source_ready_seconds": 51.898267648,
+          "native_copy_start_seconds": 51.89826816,
+          "native_copy_end_seconds": 51.904310016,
+          "cpu_get_wait_start_seconds": 51.256173860048875,
+          "cpu_get_return_seconds": 51.90458751004189,
+          "cpu_get_wait_ms": 648.413696,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 51.25619389000349,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 642.093824,
+            "source_ready_until_DMA": 0.000512,
+            "actual_DMA": 6.041861,
+            "DMA_done_until_CPU_get": 0.277504
+          },
+          "native_connection_id": 1394312
+        },
+        {
+          "sequence": 4753,
+          "param": 422,
+          "param_name": "model.layers.31.mlp.down_proj.weight",
+          "param_shape": [
+            5120,
+            17408
+          ],
+          "element_offset": 0,
+          "bytes": 134217728,
+          "device_dma_ms": 5.99208,
+          "native_fragment_count": 2,
+          "native_dma_active_sum_ms": 5.99194,
+          "native_fragment_gap_ms": 0.000140000000000029,
+          "event_bounded_copy_ms": 5.9921875,
+          "gib_per_second": 20.860869681312668,
+          "host_copy_call_ms": 0.03283,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 55.835809536,
+          "runtime_api_end_seconds": 55.835842304,
+          "producer_hook_seconds": 55.8347614700906,
+          "producer_admit_seconds": 55.835101310163736,
+          "source_ready_seconds": 56.009127936,
+          "native_copy_start_seconds": 56.009127936,
+          "native_copy_end_seconds": 56.015120128,
+          "cpu_get_wait_start_seconds": 55.46914247004315,
+          "cpu_get_return_seconds": 56.014867700170726,
+          "cpu_get_wait_ms": 545.725184,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 55.469157240120694,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 539.985408,
+            "source_ready_until_DMA": 0.0,
+            "actual_DMA": 5.739776,
+            "DMA_done_until_CPU_get": 0.0
+          },
+          "native_connection_id": 1463831
+        },
+        {
+          "sequence": 5149,
+          "param": 422,
+          "param_name": "model.layers.31.mlp.down_proj.weight",
+          "param_shape": [
+            5120,
+            17408
+          ],
+          "element_offset": 0,
+          "bytes": 134217728,
+          "device_dma_ms": 6.116062,
+          "native_fragment_count": 2,
+          "native_dma_active_sum_ms": 6.115902,
+          "native_fragment_gap_ms": 0.00016000000000016001,
+          "event_bounded_copy_ms": 6.11328125,
+          "gib_per_second": 20.437987711700764,
+          "host_copy_call_ms": 0.03733,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 59.738718208,
+          "runtime_api_end_seconds": 59.738755584,
+          "producer_hook_seconds": 59.737483960110694,
+          "producer_admit_seconds": 59.73785947007127,
+          "source_ready_seconds": 59.904866048,
+          "native_copy_start_seconds": 59.904868864,
+          "native_copy_end_seconds": 59.91098496,
+          "cpu_get_wait_start_seconds": 59.37092544999905,
+          "cpu_get_return_seconds": 59.910637110006064,
+          "cpu_get_wait_ms": 539.711488,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 59.37094201007858,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 533.94048,
+            "source_ready_until_DMA": 0.002816,
+            "actual_DMA": 5.768192,
+            "DMA_done_until_CPU_get": 0.0
+          },
+          "native_connection_id": 1533550
+        },
+        {
+          "sequence": 5545,
+          "param": 422,
+          "param_name": "model.layers.31.mlp.down_proj.weight",
+          "param_shape": [
+            5120,
+            17408
+          ],
+          "element_offset": 0,
+          "bytes": 134217728,
+          "device_dma_ms": 6.037981,
+          "native_fragment_count": 2,
+          "native_dma_active_sum_ms": 6.037821,
+          "native_fragment_gap_ms": 0.00016000000000016001,
+          "event_bounded_copy_ms": 6.0390625,
+          "gib_per_second": 20.702284422557803,
+          "host_copy_call_ms": 0.0391,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 63.64146432,
+          "runtime_api_end_seconds": 63.641503488,
+          "producer_hook_seconds": 63.64022372011095,
+          "producer_admit_seconds": 63.64054166013375,
+          "source_ready_seconds": 63.806974976,
+          "native_copy_start_seconds": 63.806975488,
+          "native_copy_end_seconds": 63.813013504,
+          "cpu_get_wait_start_seconds": 63.273897079983726,
+          "cpu_get_return_seconds": 63.81267543998547,
+          "cpu_get_wait_ms": 538.778368,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 63.27391094015911,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 533.078016,
+            "source_ready_until_DMA": 0.000512,
+            "actual_DMA": 5.69984,
+            "DMA_done_until_CPU_get": 0.0
+          },
+          "native_connection_id": 1603131
+        },
+        {
+          "sequence": 5941,
+          "param": 422,
+          "param_name": "model.layers.31.mlp.down_proj.weight",
+          "param_shape": [
+            5120,
+            17408
+          ],
+          "element_offset": 0,
+          "bytes": 134217728,
+          "device_dma_ms": 6.102361,
+          "native_fragment_count": 2,
+          "native_dma_active_sum_ms": 6.102221,
+          "native_fragment_gap_ms": 0.000140000000000029,
+          "event_bounded_copy_ms": 6.1015625,
+          "gib_per_second": 20.483875011655325,
+          "host_copy_call_ms": 0.03918,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 67.146045952,
+          "runtime_api_end_seconds": 67.14608512,
+          "producer_hook_seconds": 67.14463075995445,
+          "producer_admit_seconds": 67.14489993010648,
+          "source_ready_seconds": 67.654802688,
+          "native_copy_start_seconds": 67.654802432,
+          "native_copy_end_seconds": 67.660904704,
+          "cpu_get_wait_start_seconds": 67.16888209013268,
+          "cpu_get_return_seconds": 67.66061905003153,
+          "cpu_get_wait_ms": 491.736832,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 67.16890117013827,
+            "counts": {
+              "reserved_or_copying": 7,
+              "free": 9
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 534784000
+          },
+          "wait_split_ms": {
+            "before_source_ready": 485.920256,
+            "source_ready_until_DMA": 0.0,
+            "actual_DMA": 5.816576,
+            "DMA_done_until_CPU_get": 0.0
+          },
+          "native_connection_id": 1656726
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "physical_card": 3,
+      "validation": {
+        "type": "framework PyTorch",
+        "stopped": true,
+        "parsed": true,
+        "config": {
+          "common_config": {
+            "activities": [
+              "ProfilerActivity.CPU",
+              "ProfilerActivity.NPU"
+            ],
+            "schedule": {},
+            "record_shapes": false,
+            "profile_memory": false,
+            "with_stack": false,
+            "with_flops": false,
+            "with_modules": false
+          },
+          "experimental_config": {
+            "_profiler_level": "Level2",
+            "_aic_metrics": "ACL_AICORE_NONE",
+            "_l2_cache": false,
+            "_msprof_tx": false,
+            "_mstx": false,
+            "_data_simplification": false,
+            "record_op_args": false,
+            "_export_type": [
+              "text",
+              "db"
+            ],
+            "_host_sys": [],
+            "_op_attr": false,
+            "_gc_detect_threshold": null,
+            "_mstx_domain_include": [],
+            "_mstx_domain_exclude": [],
+            "_sys_io": false,
+            "_sys_interconnection": false
+          }
+        },
+        "db_present": true,
+        "trace_present": true,
+        "kernel_csv_present": true
+      },
+      "slots": 16,
+      "db_sha256": "399b19825ca736697942d586e60482643ee1cf683134ca14ac3337e685dd1019",
+      "diagnostic_sha256": "2eb07821902e60f4b4fcc3b243abd93484839d54b565d38b0b4a3a0a4c7cc40f",
+      "copy_count": 6720,
+      "copy_bytes": 301487038464,
+      "copy_stream_id": 1162,
+      "communication_overview": [
+        [
+          "hcom_allReduce_",
+          2,
+          2487563420.0
+        ],
+        [
+          "hcom_batchSendRecv_",
+          32,
+          1039190200.0
+        ]
+      ],
+      "host_clock_offset_mad_us": 15.872,
+      "host_clock_offset_spread_us": 7821.056,
+      "common_device_clock_bounds": false,
+      "device_clock_bound_width_ms": null,
+      "dma_ms_quantiles": {
+        "0": 0.0018,
+        "0.5": 2.30958,
+        "0.9": 10.46596,
+        "0.99": 15.11222,
+        "1": 19.74816
+      },
+      "full128MiB_dma_ms_quantiles": {
+        "0": 6.20392,
+        "0.5": 11.08538,
+        "0.9": 14.0595,
+        "0.99": 17.82724,
+        "1": 19.74816
+      },
+      "long_wait_count": 15,
+      "long_wait_split_totals_seconds": {
+        "before_source_ready": 12.491503104,
+        "source_ready_until_DMA": 1.2288e-05,
+        "actual_DMA": 3.866e-05,
+        "DMA_done_until_CPU_get": 0.006847232
+      },
+      "long_waits": [
+        {
+          "sequence": 350,
+          "param": 424,
+          "param_name": "model.norm.weight",
+          "param_shape": [
+            5120
+          ],
+          "element_offset": 0,
+          "bytes": 10240,
+          "device_dma_ms": 0.00274,
+          "native_fragment_count": 1,
+          "native_dma_active_sum_ms": 0.00274,
+          "native_fragment_gap_ms": 0.0,
+          "event_bounded_copy_ms": 0.00341796875,
+          "gib_per_second": 3.4805631985629564,
+          "host_copy_call_ms": 0.03081,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 6.741513984,
+          "runtime_api_end_seconds": 6.741544704,
+          "producer_hook_seconds": 6.740262710023671,
+          "producer_admit_seconds": 6.7406036199536175,
+          "source_ready_seconds": 7.167607296,
+          "native_copy_start_seconds": 7.167608064,
+          "native_copy_end_seconds": 7.16761088,
+          "cpu_get_wait_start_seconds": 6.378067400073633,
+          "cpu_get_return_seconds": 7.168111150152981,
+          "cpu_get_wait_ms": 790.043648,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 6.378082039998844,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 789.53984,
+            "source_ready_until_DMA": 0.000768,
+            "actual_DMA": 0.00274,
+            "DMA_done_until_CPU_get": 0.500224
+          },
+          "native_connection_id": 516164
+        },
+        {
+          "sequence": 699,
+          "param": 424,
+          "param_name": "model.norm.weight",
+          "param_shape": [
+            5120
+          ],
+          "element_offset": 0,
+          "bytes": 10240,
+          "device_dma_ms": 0.0025,
+          "native_fragment_count": 1,
+          "native_dma_active_sum_ms": 0.0025,
+          "native_fragment_gap_ms": 0.0,
+          "event_bounded_copy_ms": 0.0029296875,
+          "gib_per_second": 3.8146972656249996,
+          "host_copy_call_ms": 0.03329,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 11.003419136,
+          "runtime_api_end_seconds": 11.003452416,
+          "producer_hook_seconds": 11.002119250129908,
+          "producer_admit_seconds": 11.002490600105375,
+          "source_ready_seconds": 11.433488896,
+          "native_copy_start_seconds": 11.433490176,
+          "native_copy_end_seconds": 11.43349248,
+          "cpu_get_wait_start_seconds": 10.64340009004809,
+          "cpu_get_return_seconds": 11.433929709950462,
+          "cpu_get_wait_ms": 790.529536,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 10.643415689934045,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 790.088704,
+            "source_ready_until_DMA": 0.00128,
+            "actual_DMA": 0.0025,
+            "DMA_done_until_CPU_get": 0.437248
+          },
+          "native_connection_id": 632189
+        },
+        {
+          "sequence": 1048,
+          "param": 424,
+          "param_name": "model.norm.weight",
+          "param_shape": [
+            5120
+          ],
+          "element_offset": 0,
+          "bytes": 10240,
+          "device_dma_ms": 0.00256,
+          "native_fragment_count": 1,
+          "native_dma_active_sum_ms": 0.00256,
+          "native_fragment_gap_ms": 0.0,
+          "event_bounded_copy_ms": 0.0029296875,
+          "gib_per_second": 3.725290298461914,
+          "host_copy_call_ms": 0.02552,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 15.289080576,
+          "runtime_api_end_seconds": 15.289106176,
+          "producer_hook_seconds": 15.287832230096683,
+          "producer_admit_seconds": 15.288188060047105,
+          "source_ready_seconds": 15.761920512,
+          "native_copy_start_seconds": 15.761921792,
+          "native_copy_end_seconds": 15.761924352,
+          "cpu_get_wait_start_seconds": 14.93298584013246,
+          "cpu_get_return_seconds": 15.762542050099,
+          "cpu_get_wait_ms": 829.556224,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 14.933000440010801,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 828.934656,
+            "source_ready_until_DMA": 0.00128,
+            "actual_DMA": 0.00256,
+            "DMA_done_until_CPU_get": 0.617728
+          },
+          "native_connection_id": 752221,
+          "compute_tasks_before_source_ready": [
+            [
+              "aclnnMatmul_MatMulV3Common_MatMulV3",
+              211,
+              332120377
+            ],
+            [
+              "aclnnInplaceCopy_TransposeAiCore_Transpose",
+              358,
+              78384480
+            ],
+            [
+              "aclnnMatmul_MatMulCommon_MatMulV2",
+              60,
+              71708560
+            ],
+            [
+              "chunk_fwd_kernel_o",
+              24,
+              58205320
+            ],
+            [
+              "aclnnAdd_AddAiCore_Add",
+              124,
+              46395000
+            ],
+            [
+              "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+              24,
+              28240240
+            ],
+            [
+              "solve_tril_64x64_kernel",
+              24,
+              27767740
+            ],
+            [
+              "aclnnMul_MulAiCore_Mul",
+              451,
+              27630320
+            ],
+            [
+              "aclnnInplaceCopy_CastAiCore_Cast",
+              412,
+              18578479
+            ],
+            [
+              "aclnnLogSoftmax_LogSoftmaxAiCore_LogSoftmaxV2",
+              12,
+              14533120
+            ]
+          ],
+          "compute_union_ms_before_source_ready": 789.524636,
+          "communications_before_source_ready": []
+        },
+        {
+          "sequence": 1397,
+          "param": 424,
+          "param_name": "model.norm.weight",
+          "param_shape": [
+            5120
+          ],
+          "element_offset": 0,
+          "bytes": 10240,
+          "device_dma_ms": 0.0025,
+          "native_fragment_count": 1,
+          "native_dma_active_sum_ms": 0.0025,
+          "native_fragment_gap_ms": 0.0,
+          "event_bounded_copy_ms": 0.00390625,
+          "gib_per_second": 3.8146972656249996,
+          "host_copy_call_ms": 0.02939,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 19.869275904,
+          "runtime_api_end_seconds": 19.869305344,
+          "producer_hook_seconds": 19.86826253007166,
+          "producer_admit_seconds": 19.868606850039214,
+          "source_ready_seconds": 20.264178944,
+          "native_copy_start_seconds": 20.264179456,
+          "native_copy_end_seconds": 20.264182016,
+          "cpu_get_wait_start_seconds": 18.923939400119707,
+          "cpu_get_return_seconds": 20.264718210091814,
+          "cpu_get_wait_ms": 1340.779008,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 18.923960180021822,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 1340.239616,
+            "source_ready_until_DMA": 0.000512,
+            "actual_DMA": 0.0025,
+            "DMA_done_until_CPU_get": 0.53632
+          },
+          "native_connection_id": 903399,
+          "compute_tasks_before_source_ready": [
+            [
+              "aclnnMatmul_MatMulV3Common_MatMulV3",
+              212,
+              333250440
+            ],
+            [
+              "aclnnInplaceCopy_TransposeAiCore_Transpose",
+              360,
+              78330960
+            ],
+            [
+              "aclnnMatmul_MatMulCommon_MatMulV2",
+              60,
+              71668380
+            ],
+            [
+              "chunk_fwd_kernel_o",
+              24,
+              58180300
+            ],
+            [
+              "aclnnAdd_AddAiCore_Add",
+              124,
+              46415400
+            ],
+            [
+              "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+              24,
+              28155280
+            ],
+            [
+              "solve_tril_64x64_kernel",
+              24,
+              27766980
+            ],
+            [
+              "aclnnMul_MulAiCore_Mul",
+              455,
+              27761991
+            ],
+            [
+              "aclnnInplaceCopy_CastAiCore_Cast",
+              419,
+              18676180
+            ],
+            [
+              "aclnnLogSoftmax_LogSoftmaxAiCore_LogSoftmaxV2",
+              12,
+              14432140
+            ]
+          ],
+          "compute_union_ms_before_source_ready": 791.758811,
+          "communications_before_source_ready": [
+            {
+              "name": "hcom_batchSendRecv__612_7_1",
+              "start_seconds": 18.899323904,
+              "end_seconds": 19.45573504,
+              "overlap_ms": 531.795705
+            },
+            {
+              "name": "hcom_batchSendRecv__612_8_1",
+              "start_seconds": 19.465063168,
+              "end_seconds": 19.466830336,
+              "overlap_ms": 1.76706
+            }
+          ]
+        },
+        {
+          "sequence": 1746,
+          "param": 424,
+          "param_name": "model.norm.weight",
+          "param_shape": [
+            5120
+          ],
+          "element_offset": 0,
+          "bytes": 10240,
+          "device_dma_ms": 0.00242,
+          "native_fragment_count": 1,
+          "native_dma_active_sum_ms": 0.00242,
+          "native_fragment_gap_ms": 0.0,
+          "event_bounded_copy_ms": 0.001953125,
+          "gib_per_second": 3.9408029603564056,
+          "host_copy_call_ms": 0.03336,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 23.882136832,
+          "runtime_api_end_seconds": 23.882170112,
+          "producer_hook_seconds": 23.880778660066426,
+          "producer_admit_seconds": 23.8811388600152,
+          "source_ready_seconds": 24.281895168,
+          "native_copy_start_seconds": 24.281896704,
+          "native_copy_end_seconds": 24.281899264,
+          "cpu_get_wait_start_seconds": 23.492031840141863,
+          "cpu_get_return_seconds": 24.28237721999176,
+          "cpu_get_wait_ms": 790.345472,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 23.492047579959035,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 789.863424,
+            "source_ready_until_DMA": 0.001536,
+            "actual_DMA": 0.00242,
+            "DMA_done_until_CPU_get": 0.477952
+          },
+          "native_connection_id": 975109
+        },
+        {
+          "sequence": 2095,
+          "param": 424,
+          "param_name": "model.norm.weight",
+          "param_shape": [
+            5120
+          ],
+          "element_offset": 0,
+          "bytes": 10240,
+          "device_dma_ms": 0.00256,
+          "native_fragment_count": 1,
+          "native_dma_active_sum_ms": 0.00256,
+          "native_fragment_gap_ms": 0.0,
+          "event_bounded_copy_ms": 0.001953125,
+          "gib_per_second": 3.725290298461914,
+          "host_copy_call_ms": 0.02723,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 27.828263936,
+          "runtime_api_end_seconds": 27.828291328,
+          "producer_hook_seconds": 27.82706350996159,
+          "producer_admit_seconds": 27.827473970130086,
+          "source_ready_seconds": 28.247266816,
+          "native_copy_start_seconds": 28.24726656,
+          "native_copy_end_seconds": 28.24726912,
+          "cpu_get_wait_start_seconds": 27.43823185004294,
+          "cpu_get_return_seconds": 28.247731380164623,
+          "cpu_get_wait_ms": 809.499648,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 27.43825121014379,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 809.034752,
+            "source_ready_until_DMA": 0.0,
+            "actual_DMA": 0.00256,
+            "DMA_done_until_CPU_get": 0.462336
+          },
+          "native_connection_id": 1045561,
+          "compute_tasks_before_source_ready": [
+            [
+              "aclnnMatmul_MatMulV3Common_MatMulV3",
+              212,
+              333278020
+            ],
+            [
+              "aclnnInplaceCopy_TransposeAiCore_Transpose",
+              360,
+              78472400
+            ],
+            [
+              "aclnnMatmul_MatMulCommon_MatMulV2",
+              60,
+              71682320
+            ],
+            [
+              "chunk_fwd_kernel_o",
+              24,
+              58162500
+            ],
+            [
+              "aclnnAdd_AddAiCore_Add",
+              124,
+              46432760
+            ],
+            [
+              "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+              24,
+              28193760
+            ],
+            [
+              "aclnnMul_MulAiCore_Mul",
+              455,
+              27798223
+            ],
+            [
+              "solve_tril_64x64_kernel",
+              24,
+              27769580
+            ],
+            [
+              "aclnnInplaceCopy_CastAiCore_Cast",
+              419,
+              18656720
+            ],
+            [
+              "aclnnLogSoftmax_LogSoftmaxAiCore_LogSoftmaxV2",
+              12,
+              14465440
+            ]
+          ],
+          "compute_union_ms_before_source_ready": 792.157583,
+          "communications_before_source_ready": [
+            {
+              "name": "hcom_batchSendRecv__612_11_1",
+              "start_seconds": 27.415787776,
+              "end_seconds": 27.439043584,
+              "overlap_ms": 0.811845
+            },
+            {
+              "name": "hcom_batchSendRecv__612_12_1",
+              "start_seconds": 27.448040192,
+              "end_seconds": 27.449847808,
+              "overlap_ms": 1.80756
+            }
+          ]
+        },
+        {
+          "sequence": 2444,
+          "param": 424,
+          "param_name": "model.norm.weight",
+          "param_shape": [
+            5120
+          ],
+          "element_offset": 0,
+          "bytes": 10240,
+          "device_dma_ms": 0.0026,
+          "native_fragment_count": 1,
+          "native_dma_active_sum_ms": 0.0026,
+          "native_fragment_gap_ms": 0.0,
+          "event_bounded_copy_ms": 0.00390625,
+          "gib_per_second": 3.6679781400240388,
+          "host_copy_call_ms": 0.03134,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 31.975808768,
+          "runtime_api_end_seconds": 31.975840256,
+          "producer_hook_seconds": 31.974599810084328,
+          "producer_admit_seconds": 31.974928159965202,
+          "source_ready_seconds": 32.421096448,
+          "native_copy_start_seconds": 32.421097216,
+          "native_copy_end_seconds": 32.421099776,
+          "cpu_get_wait_start_seconds": 31.619222600013018,
+          "cpu_get_return_seconds": 32.42155320011079,
+          "cpu_get_wait_ms": 802.330624,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 31.619237930048257,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 801.87392,
+            "source_ready_until_DMA": 0.000768,
+            "actual_DMA": 0.0026,
+            "DMA_done_until_CPU_get": 0.453376
+          },
+          "native_connection_id": 1116047,
+          "compute_tasks_before_source_ready": [
+            [
+              "aclnnMatmul_MatMulV3Common_MatMulV3",
+              210,
+              331555800
+            ],
+            [
+              "aclnnInplaceCopy_TransposeAiCore_Transpose",
+              358,
+              78287880
+            ],
+            [
+              "aclnnMatmul_MatMulCommon_MatMulV2",
+              58,
+              71677740
+            ],
+            [
+              "chunk_fwd_kernel_o",
+              24,
+              58292520
+            ],
+            [
+              "aclnnAdd_AddAiCore_Add",
+              124,
+              46385220
+            ],
+            [
+              "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+              24,
+              28258320
+            ],
+            [
+              "solve_tril_64x64_kernel",
+              24,
+              27774400
+            ],
+            [
+              "aclnnMul_MulAiCore_Mul",
+              451,
+              27640840
+            ],
+            [
+              "aclnnInplaceCopy_CastAiCore_Cast",
+              412,
+              18586640
+            ],
+            [
+              "aclnnLogSoftmax_LogSoftmaxAiCore_LogSoftmaxV2",
+              12,
+              14475440
+            ]
+          ],
+          "compute_union_ms_before_source_ready": 788.347805,
+          "communications_before_source_ready": []
+        },
+        {
+          "sequence": 2793,
+          "param": 424,
+          "param_name": "model.norm.weight",
+          "param_shape": [
+            5120
+          ],
+          "element_offset": 0,
+          "bytes": 10240,
+          "device_dma_ms": 0.00244,
+          "native_fragment_count": 1,
+          "native_dma_active_sum_ms": 0.00244,
+          "native_fragment_gap_ms": 0.0,
+          "event_bounded_copy_ms": 0.0,
+          "gib_per_second": 3.9085012967469264,
+          "host_copy_call_ms": 0.03317,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 36.028425216,
+          "runtime_api_end_seconds": 36.02845824,
+          "producer_hook_seconds": 36.02697644010186,
+          "producer_admit_seconds": 36.02739050006494,
+          "source_ready_seconds": 36.457137408,
+          "native_copy_start_seconds": 36.457139968,
+          "native_copy_end_seconds": 36.457142272,
+          "cpu_get_wait_start_seconds": 35.6665390401613,
+          "cpu_get_return_seconds": 36.45758223999292,
+          "cpu_get_wait_ms": 791.043328,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 35.66655581002124,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 790.5984,
+            "source_ready_until_DMA": 0.00256,
+            "actual_DMA": 0.00244,
+            "DMA_done_until_CPU_get": 0.440064
+          },
+          "native_connection_id": 1186266
+        },
+        {
+          "sequence": 3142,
+          "param": 424,
+          "param_name": "model.norm.weight",
+          "param_shape": [
+            5120
+          ],
+          "element_offset": 0,
+          "bytes": 10240,
+          "device_dma_ms": 0.0029,
+          "native_fragment_count": 1,
+          "native_dma_active_sum_ms": 0.0029,
+          "native_fragment_gap_ms": 0.0,
+          "event_bounded_copy_ms": 0.00390625,
+          "gib_per_second": 3.2885321255387936,
+          "host_copy_call_ms": 0.03198,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 40.246296064,
+          "runtime_api_end_seconds": 40.246328064,
+          "producer_hook_seconds": 40.24502904014662,
+          "producer_admit_seconds": 40.24541826010682,
+          "source_ready_seconds": 40.676718336,
+          "native_copy_start_seconds": 40.676718848,
+          "native_copy_end_seconds": 40.676721664,
+          "cpu_get_wait_start_seconds": 39.886571020120755,
+          "cpu_get_return_seconds": 40.677151810145006,
+          "cpu_get_wait_ms": 790.580736,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 39.8865862400271,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 790.147328,
+            "source_ready_until_DMA": 0.000512,
+            "actual_DMA": 0.0029,
+            "DMA_done_until_CPU_get": 0.43008
+          },
+          "native_connection_id": 1256211
+        },
+        {
+          "sequence": 3491,
+          "param": 424,
+          "param_name": "model.norm.weight",
+          "param_shape": [
+            5120
+          ],
+          "element_offset": 0,
+          "bytes": 10240,
+          "device_dma_ms": 0.00242,
+          "native_fragment_count": 1,
+          "native_dma_active_sum_ms": 0.00242,
+          "native_fragment_gap_ms": 0.0,
+          "event_bounded_copy_ms": 0.00390625,
+          "gib_per_second": 3.9408029603564056,
+          "host_copy_call_ms": 0.03099,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 44.297962752,
+          "runtime_api_end_seconds": 44.297993728,
+          "producer_hook_seconds": 44.29672787012532,
+          "producer_admit_seconds": 44.29708058014512,
+          "source_ready_seconds": 44.724149248,
+          "native_copy_start_seconds": 44.724150016,
+          "native_copy_end_seconds": 44.724152576,
+          "cpu_get_wait_start_seconds": 43.93265190999955,
+          "cpu_get_return_seconds": 44.72452809009701,
+          "cpu_get_wait_ms": 791.876096,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 43.932668870082125,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 791.497216,
+            "source_ready_until_DMA": 0.000768,
+            "actual_DMA": 0.00242,
+            "DMA_done_until_CPU_get": 0.375552
+          },
+          "native_connection_id": 1326563
+        },
+        {
+          "sequence": 3840,
+          "param": 424,
+          "param_name": "model.norm.weight",
+          "param_shape": [
+            5120
+          ],
+          "element_offset": 0,
+          "bytes": 10240,
+          "device_dma_ms": 0.00254,
+          "native_fragment_count": 1,
+          "native_dma_active_sum_ms": 0.00254,
+          "native_fragment_gap_ms": 0.0,
+          "event_bounded_copy_ms": 0.00390625,
+          "gib_per_second": 3.7546232929379917,
+          "host_copy_call_ms": 0.02651,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 48.173673984,
+          "runtime_api_end_seconds": 48.173700352,
+          "producer_hook_seconds": 48.17252450995147,
+          "producer_admit_seconds": 48.17288010008633,
+          "source_ready_seconds": 48.608160256,
+          "native_copy_start_seconds": 48.608160768,
+          "native_copy_end_seconds": 48.608163328,
+          "cpu_get_wait_start_seconds": 47.816507030045614,
+          "cpu_get_return_seconds": 48.60855697002262,
+          "cpu_get_wait_ms": 792.04992,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 47.81652219011448,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 791.65312,
+            "source_ready_until_DMA": 0.000512,
+            "actual_DMA": 0.00254,
+            "DMA_done_until_CPU_get": 0.393728
+          },
+          "native_connection_id": 1397086
+        },
+        {
+          "sequence": 4189,
+          "param": 424,
+          "param_name": "model.norm.weight",
+          "param_shape": [
+            5120
+          ],
+          "element_offset": 0,
+          "bytes": 10240,
+          "device_dma_ms": 0.00264,
+          "native_fragment_count": 1,
+          "native_dma_active_sum_ms": 0.00264,
+          "native_fragment_gap_ms": 0.0,
+          "event_bounded_copy_ms": 0.00390625,
+          "gib_per_second": 3.6124027136600376,
+          "host_copy_call_ms": 0.03297,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 52.269916416,
+          "runtime_api_end_seconds": 52.269949184,
+          "producer_hook_seconds": 52.26862511993386,
+          "producer_admit_seconds": 52.26898946007714,
+          "source_ready_seconds": 52.695148032,
+          "native_copy_start_seconds": 52.695148544,
+          "native_copy_end_seconds": 52.695151104,
+          "cpu_get_wait_start_seconds": 51.904164710082114,
+          "cpu_get_return_seconds": 52.69555414002389,
+          "cpu_get_wait_ms": 791.38944,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 51.90417981008068,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 790.983424,
+            "source_ready_until_DMA": 0.000512,
+            "actual_DMA": 0.00264,
+            "DMA_done_until_CPU_get": 0.402944
+          },
+          "native_connection_id": 1467438
+        },
+        {
+          "sequence": 4538,
+          "param": 424,
+          "param_name": "model.norm.weight",
+          "param_shape": [
+            5120
+          ],
+          "element_offset": 0,
+          "bytes": 10240,
+          "device_dma_ms": 0.00258,
+          "native_fragment_count": 1,
+          "native_dma_active_sum_ms": 0.00258,
+          "native_fragment_gap_ms": 0.0,
+          "event_bounded_copy_ms": 0.0,
+          "gib_per_second": 3.6964120790939923,
+          "host_copy_call_ms": 0.03398,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 56.3875904,
+          "runtime_api_end_seconds": 56.387624448,
+          "producer_hook_seconds": 56.38634137995541,
+          "producer_admit_seconds": 56.38669147994369,
+          "source_ready_seconds": 56.805856256,
+          "native_copy_start_seconds": 56.805854976,
+          "native_copy_end_seconds": 56.805857536,
+          "cpu_get_wait_start_seconds": 56.01594198006205,
+          "cpu_get_return_seconds": 56.80627744994126,
+          "cpu_get_wait_ms": 790.335488,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 56.01595641998574,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 789.913088,
+            "source_ready_until_DMA": 0.0,
+            "actual_DMA": 0.00258,
+            "DMA_done_until_CPU_get": 0.41984
+          },
+          "native_connection_id": 1537965
+        },
+        {
+          "sequence": 4887,
+          "param": 424,
+          "param_name": "model.norm.weight",
+          "param_shape": [
+            5120
+          ],
+          "element_offset": 0,
+          "bytes": 10240,
+          "device_dma_ms": 0.00252,
+          "native_fragment_count": 1,
+          "native_dma_active_sum_ms": 0.00252,
+          "native_fragment_gap_ms": 0.0,
+          "event_bounded_copy_ms": 0.00390625,
+          "gib_per_second": 3.784421890500992,
+          "host_copy_call_ms": 0.02704,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 60.262793984,
+          "runtime_api_end_seconds": 60.26282112,
+          "producer_hook_seconds": 60.26165502006188,
+          "producer_admit_seconds": 60.26200236007571,
+          "source_ready_seconds": 60.698702592,
+          "native_copy_start_seconds": 60.69870336,
+          "native_copy_end_seconds": 60.698705664,
+          "cpu_get_wait_start_seconds": 59.90108722005971,
+          "cpu_get_return_seconds": 60.69920621998608,
+          "cpu_get_wait_ms": 798.118912,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 59.90110139013268,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 797.61536,
+            "source_ready_until_DMA": 0.000768,
+            "actual_DMA": 0.00252,
+            "DMA_done_until_CPU_get": 0.50048
+          },
+          "native_connection_id": 1608586
+        },
+        {
+          "sequence": 5236,
+          "param": 424,
+          "param_name": "model.norm.weight",
+          "param_shape": [
+            5120
+          ],
+          "element_offset": 0,
+          "bytes": 10240,
+          "device_dma_ms": 0.00274,
+          "native_fragment_count": 1,
+          "native_dma_active_sum_ms": 0.00274,
+          "native_fragment_gap_ms": 0.0,
+          "event_bounded_copy_ms": 0.00390625,
+          "gib_per_second": 3.4805631985629564,
+          "host_copy_call_ms": 0.03054,
+          "runtime_api": "aclrtMemcpyAsyncWithCondition",
+          "runtime_api_start_seconds": 64.167490304,
+          "runtime_api_end_seconds": 64.167520768,
+          "producer_hook_seconds": 64.16631632996723,
+          "producer_admit_seconds": 64.16664775996469,
+          "source_ready_seconds": 64.600204544,
+          "native_copy_start_seconds": 64.600205056,
+          "native_copy_end_seconds": 64.600207872,
+          "cpu_get_wait_start_seconds": 63.80068441014737,
+          "cpu_get_return_seconds": 64.60060726013035,
+          "cpu_get_wait_ms": 799.922944,
+          "clock_source_uncertainty_ms": 0.05,
+          "snapshot": {
+            "host": 63.8007006701082,
+            "counts": {
+              "free": 16
+            },
+            "ready_queue_size": 0,
+            "device_backlog_bytes": 0
+          },
+          "wait_split_ms": {
+            "before_source_ready": 799.520256,
+            "source_ready_until_DMA": 0.000512,
+            "actual_DMA": 0.00274,
+            "DMA_done_until_CPU_get": 0.39936
+          },
+          "native_connection_id": 1679071
+        }
+      ]
+    }
+  ],
+  "queries": {
+    "copy": "SELECT t.connectionId, MIN(t.startNs), MAX(t.endNs), SUM(m.size), MAX(t.streamId),\n MIN(c.startNs), MAX(c.endNs), MAX(n.value),COUNT(*),SUM(t.endNs-t.startNs)\n FROM MEMCPY_INFO m JOIN TASK t ON t.globalTaskId=m.globalTaskId\n LEFT JOIN CANN_API c ON c.connectionId=t.connectionId\n LEFT JOIN STRING_IDS n ON n.id=c.name\n WHERE m.memcpyOperation=?\n GROUP BY t.connectionId ORDER BY MIN(t.startNs)",
+    "markers": "SELECT MIN(CAST(p.startNs AS INTEGER)), MAX(CAST(p.endNs AS INTEGER)), n.value\n FROM PYTORCH_API p JOIN STRING_IDS n ON n.id=p.name\n WHERE n.value LIKE 'diag/gradient_hook/%'\n GROUP BY p.startNs,p.endNs,p.name,p.globalTid ORDER BY MIN(CAST(p.startNs AS INTEGER))",
+    "compute_macro": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)"
+  },
+  "limits": [
+    "Profiled iteration timing is not normal training throughput.",
+    "Source readiness is a stream event after gradient work, an upper bound on mathematical gradient readiness.",
+    "Host offset uses recorded scope/hook matching; device-clock mapping bounded by native DMA task and events.",
+    "Event-bounded copy span includes host enqueue gaps; native DMA tasks grouped by CANN connectionId reconstruct one copy, with fragment-active sum and envelope reported separately.",
+    "Compute top durations can overlap across tasks and do not sum to window length."
+  ],
+  "protocol_checks": [
+    {
+      "rank": 0,
+      "physical_card": 0,
+      "grad_norm_exact": [
+        true,
+        true,
+        true
+      ],
+      "validation_exact": true,
+      "fixed_slots": 16
+    },
+    {
+      "rank": 1,
+      "physical_card": 3,
+      "grad_norm_exact": [
+        true,
+        true,
+        true
+      ],
+      "validation_exact": true,
+      "fixed_slots": 16
+    }
+  ],
+  "training_results": [
+    {
+      "resident_budget_gib": 4.0,
+      "loss_chunk_tokens": 512,
+      "physical_card": 0,
+      "steps": [
+        {
+          "resident_budget_gib": 4.0,
+          "loss_chunk_tokens": 512,
+          "physical_card": 0,
+          "step": 1,
+          "seconds": 683.0054317298345,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 5.217167709954083,
+            "backward_wall": 71.51913140993565,
+            "p2p_wall": 0.02515605976805091
+          },
+          "forward_backward_and_drain_seconds": 84.05874335998669,
+          "cpu_update_return_seconds": 597.1673937500454,
+          "tail_seconds": {
+            "gradient_fp32_and_clip": 7.778923480305821,
+            "cpu_adam": 518.1060010306537,
+            "staging_reuse_wait": 0.7761847116053104,
+            "fp32_to_pinned_bf16": 3.360114373266697,
+            "h2d_copy_call": 0.13458349416032434,
+            "event_record": 0.13133106962777674,
+            "final_event_wait": 2.047000452876091e-05,
+            "device_sync": 9.43201594054699e-05,
+            "end_barrier": 66.85119571001269
+          },
+          "barrier_enter_unix": 1793159544.2243338,
+          "grad_norm": 40.5043129213961,
+          "norm_device": "npu",
+          "global_norm_seconds": 1.77929748990573,
+          "buffer_metrics": {
+            "cpu_add_count": 7784,
+            "cpu_first_to_last_span": 75.01916432986036,
+            "cpu_add_busy_seconds": 57.266486699227244,
+            "cpu_between_add_gap_seconds": 17.752677630633116,
+            "cpu_max_between_add_gap": 2.2883877099957317,
+            "cpu_busy_fraction": 0.763358099370791,
+            "copy_thread_wait_free_slot_seconds": 45.1708634912502,
+            "main_thread_wait_device_budget_seconds": 42.13261334318668,
+            "device_backlog_peak_bytes": 534794240,
+            "device_backlog_budget_bytes": 536870912,
+            "cpu_receiving_slot_bytes": 2147483648,
+            "scope": "CPU busy over first-to-last add; excludes initial fill/final tail. Gaps include scheduling overhead; not all pure starvation."
+          },
+          "gradient_d2h_bytes": 365911384064,
+          "main_backlog_wait": 42.13261334318668,
+          "worker_copy_wait_seconds": 40.953864368842915,
+          "worker_cpu_add_seconds": 57.266486699227244,
+          "resident_add_calls": 464,
+          "resident_add_bytes": 68719476736,
+          "allocated_peak": 61027581952,
+          "reserved_peak": 63340281856,
+          "input_tokens": 28426,
+          "padded_tokens": 54272
+        },
+        {
+          "resident_budget_gib": 4.0,
+          "loss_chunk_tokens": 512,
+          "physical_card": 0,
+          "step": 2,
+          "seconds": 98.02148972987197,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 5.136952140135691,
+            "backward_wall": 65.27909800014459,
+            "p2p_wall": 0.02280897065065801
+          },
+          "forward_backward_and_drain_seconds": 77.51769511005841,
+          "cpu_update_return_seconds": 18.832543660188094,
+          "tail_seconds": {
+            "gradient_fp32_and_clip": 4.838236731942743,
+            "cpu_adam": 7.757190229604021,
+            "staging_reuse_wait": 0.19973019347526133,
+            "fp32_to_pinned_bf16": 3.2275978305842727,
+            "h2d_copy_call": 0.13499137805774808,
+            "event_record": 0.12437635147944093,
+            "final_event_wait": 2.3609958589076996e-05,
+            "device_sync": 0.00012031989172101021,
+            "end_barrier": 2.5224304399453104
+          },
+          "barrier_enter_unix": 1793159706.9133902,
+          "grad_norm": 40.57344083957509,
+          "norm_device": "npu",
+          "global_norm_seconds": 1.6712538697756827,
+          "buffer_metrics": {
+            "cpu_add_count": 7784,
+            "cpu_first_to_last_span": 71.32469928986393,
+            "cpu_add_busy_seconds": 60.550718964543194,
+            "cpu_between_add_gap_seconds": 10.773980325320736,
+            "cpu_max_between_add_gap": 1.4285295999143273,
+            "cpu_busy_fraction": 0.8489446091944219,
+            "copy_thread_wait_free_slot_seconds": 48.5223618359305,
+            "main_thread_wait_device_budget_seconds": 37.82391385175288,
+            "device_backlog_peak_bytes": 534794240,
+            "device_backlog_budget_bytes": 536870912,
+            "cpu_receiving_slot_bytes": 2147483648,
+            "scope": "CPU busy over first-to-last add; excludes initial fill/final tail. Gaps include scheduling overhead; not all pure starvation."
+          },
+          "gradient_d2h_bytes": 365911384064,
+          "main_backlog_wait": 37.82391385175288,
+          "worker_copy_wait_seconds": 34.46264029061422,
+          "worker_cpu_add_seconds": 60.550718964543194,
+          "resident_add_calls": 464,
+          "resident_add_bytes": 68719476736,
+          "allocated_peak": 53247090176,
+          "reserved_peak": 63340281856,
+          "input_tokens": 28549,
+          "padded_tokens": 49152
+        },
+        {
+          "resident_budget_gib": 4.0,
+          "loss_chunk_tokens": 512,
+          "physical_card": 0,
+          "step": 3,
+          "seconds": 91.42679231008515,
+          "profiled": true,
+          "phase": {
+            "forward_wall": 6.602710669627413,
+            "backward_wall": 58.54299859004095,
+            "p2p_wall": 0.024977449793368578
+          },
+          "forward_backward_and_drain_seconds": 71.63198100007139,
+          "cpu_update_return_seconds": 18.02723090001382,
+          "tail_seconds": {
+            "gradient_fp32_and_clip": 5.245661709224805,
+            "cpu_adam": 8.242121398216113,
+            "staging_reuse_wait": 0.19372244062833488,
+            "fp32_to_pinned_bf16": 3.4164951217826456,
+            "h2d_copy_call": 0.16083842189982533,
+            "event_record": 0.25075791613198817,
+            "final_event_wait": 0.00017622997984290123,
+            "device_sync": 0.00010953005403280258,
+            "end_barrier": 0.4888537300284952
+          },
+          "barrier_enter_unix": 1793159800.86638,
+          "grad_norm": 38.772188392885916,
+          "norm_device": "npu",
+          "global_norm_seconds": 1.7675841199234128,
+          "buffer_metrics": {
+            "cpu_add_count": 7784,
+            "cpu_first_to_last_span": 65.2525987601839,
+            "cpu_add_busy_seconds": 54.57994741760194,
+            "cpu_between_add_gap_seconds": 10.672651342581958,
+            "cpu_max_between_add_gap": 0.9921675601508468,
+            "cpu_busy_fraction": 0.836440976369293,
+            "copy_thread_wait_free_slot_seconds": 31.630534229800105,
+            "main_thread_wait_device_budget_seconds": 18.25157478218898,
+            "device_backlog_peak_bytes": 534794240,
+            "device_backlog_budget_bytes": 536870912,
+            "cpu_receiving_slot_bytes": 2147483648,
+            "scope": "CPU busy over first-to-last add; excludes initial fill/final tail. Gaps include scheduling overhead; not all pure starvation."
+          },
+          "gradient_d2h_bytes": 365911384064,
+          "main_backlog_wait": 18.25157478218898,
+          "worker_copy_wait_seconds": 36.03653080854565,
+          "worker_cpu_add_seconds": 54.57994741760194,
+          "resident_add_calls": 464,
+          "resident_add_bytes": 68719476736,
+          "allocated_peak": 56992693248,
+          "reserved_peak": 63340281856,
+          "input_tokens": 28564,
+          "padded_tokens": 50176
+        }
+      ],
+      "validation_before": {
+        "loss": 1.0108281373977661,
+        "assistant_tokens": 224,
+        "correct": 202
+      },
+      "validation_after_768": {
+        "loss": 0.8530882596969604,
+        "assistant_tokens": 224,
+        "correct": 204
+      },
+      "parameters": 13447996672,
+      "state_bytes": 107583973376,
+      "normal_mean": 94.72414101997856,
+      "protocol": "global256/micro16/16 pipeline micros; original paired DP groups and padding",
+      "gradient_precision": "BF16 accumulation, FP32 Adam; changed reduction order"
+    },
+    {
+      "resident_budget_gib": 8.0,
+      "loss_chunk_tokens": 512,
+      "physical_card": 3,
+      "steps": [
+        {
+          "resident_budget_gib": 8.0,
+          "loss_chunk_tokens": 512,
+          "physical_card": 3,
+          "step": 1,
+          "seconds": 683.0053285099566,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 5.487299870001152,
+            "backward_wall": 69.41560852038674,
+            "p2p_wall": 0.04517798940651119
+          },
+          "forward_backward_and_drain_seconds": 81.53374377009459,
+          "cpu_update_return_seconds": 597.167444649851,
+          "tail_seconds": {
+            "gradient_fp32_and_clip": 166.53967212955467,
+            "cpu_adam": 424.91863352875225,
+            "staging_reuse_wait": 1.7412378794979304,
+            "fp32_to_pinned_bf16": 3.688532980158925,
+            "h2d_copy_call": 0.12231351621448994,
+            "event_record": 0.11922893137671053,
+            "final_event_wait": 0.008225809782743454,
+            "device_sync": 0.00010320008732378483,
+            "end_barrier": 0.0011465998832136393
+          },
+          "barrier_enter_unix": 1793159611.0744033,
+          "grad_norm": 40.5043129213961,
+          "norm_device": "npu",
+          "global_norm_seconds": 4.3041420800145715,
+          "buffer_metrics": {
+            "cpu_add_count": 6720,
+            "cpu_first_to_last_span": 78.04625353985466,
+            "cpu_add_busy_seconds": 56.71239162911661,
+            "cpu_between_add_gap_seconds": 21.33386191073805,
+            "cpu_max_between_add_gap": 3.665669849840924,
+            "cpu_busy_fraction": 0.7266510441805664,
+            "copy_thread_wait_free_slot_seconds": 43.385486553190276,
+            "main_thread_wait_device_budget_seconds": 37.34474629862234,
+            "device_backlog_peak_bytes": 535962496,
+            "device_backlog_budget_bytes": 536870912,
+            "cpu_receiving_slot_bytes": 2147483648,
+            "scope": "CPU busy over first-to-last add; excludes initial fill/final tail. Gaps include scheduling overhead; not all pure starvation."
+          },
+          "gradient_d2h_bytes": 301487038464,
+          "main_backlog_wait": 37.34474629862234,
+          "worker_copy_wait_seconds": 36.73537772311829,
+          "worker_cpu_add_seconds": 56.71239162911661,
+          "resident_add_calls": 1232,
+          "resident_add_bytes": 137438953472,
+          "allocated_peak": 57805460480,
+          "reserved_peak": 58349060096,
+          "input_tokens": 28426,
+          "padded_tokens": 54272
+        },
+        {
+          "resident_budget_gib": 8.0,
+          "loss_chunk_tokens": 512,
+          "physical_card": 3,
+          "step": 2,
+          "seconds": 98.02175503992476,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 4.925111720571294,
+            "backward_wall": 63.982372749829665,
+            "p2p_wall": 0.04317818023264408
+          },
+          "forward_backward_and_drain_seconds": 75.04436169983819,
+          "cpu_update_return_seconds": 18.832637609913945,
+          "tail_seconds": {
+            "gradient_fp32_and_clip": 6.516182296676561,
+            "cpu_adam": 8.313824692508206,
+            "staging_reuse_wait": 0.26095933630131185,
+            "fp32_to_pinned_bf16": 3.4808886446990073,
+            "h2d_copy_call": 0.11613103002309799,
+            "event_record": 0.10760589153505862,
+            "final_event_wait": 0.008104349952191114,
+            "device_sync": 0.0001368899829685688,
+            "end_barrier": 0.0010858599562197924
+          },
+          "barrier_enter_unix": 1793159709.4347649,
+          "grad_norm": 40.57344083957509,
+          "norm_device": "npu",
+          "global_norm_seconds": 4.144758080132306,
+          "buffer_metrics": {
+            "cpu_add_count": 6720,
+            "cpu_first_to_last_span": 71.81651802989654,
+            "cpu_add_busy_seconds": 54.70706299087033,
+            "cpu_between_add_gap_seconds": 17.109455039026216,
+            "cpu_max_between_add_gap": 1.5733231198973954,
+            "cpu_busy_fraction": 0.7617615625432619,
+            "copy_thread_wait_free_slot_seconds": 42.70303868292831,
+            "main_thread_wait_device_budget_seconds": 35.40972244087607,
+            "device_backlog_peak_bytes": 534907328,
+            "device_backlog_budget_bytes": 536870912,
+            "cpu_receiving_slot_bytes": 2147483648,
+            "scope": "CPU busy over first-to-last add; excludes initial fill/final tail. Gaps include scheduling overhead; not all pure starvation."
+          },
+          "gradient_d2h_bytes": 301487038464,
+          "main_backlog_wait": 35.40972244087607,
+          "worker_copy_wait_seconds": 36.816793001722544,
+          "worker_cpu_add_seconds": 54.70706299087033,
+          "resident_add_calls": 1232,
+          "resident_add_bytes": 137438953472,
+          "allocated_peak": 53907962880,
+          "reserved_peak": 58349060096,
+          "input_tokens": 28549,
+          "padded_tokens": 49152
+        },
+        {
+          "resident_budget_gib": 8.0,
+          "loss_chunk_tokens": 512,
+          "physical_card": 3,
+          "step": 3,
+          "seconds": 91.42838036012836,
+          "profiled": true,
+          "phase": {
+            "forward_wall": 6.165965080494061,
+            "backward_wall": 58.93494791071862,
+            "p2p_wall": 0.05198588082566857
+          },
+          "forward_backward_and_drain_seconds": 68.86760068009607,
+          "cpu_update_return_seconds": 18.0276516599115,
+          "tail_seconds": {
+            "gradient_fp32_and_clip": 5.512864010408521,
+            "cpu_adam": 8.252543809823692,
+            "staging_reuse_wait": 0.20444253785535693,
+            "fp32_to_pinned_bf16": 3.6586758736521006,
+            "h2d_copy_call": 0.14273068006150424,
+            "event_record": 0.21836813865229487,
+            "final_event_wait": 0.0076647798996418715,
+            "device_sync": 0.00011049001477658749,
+            "end_barrier": 0.001390579855069518
+          },
+          "barrier_enter_unix": 1793159801.3539822,
+          "grad_norm": 38.772188392885916,
+          "norm_device": "npu",
+          "global_norm_seconds": 4.53313028998673,
+          "buffer_metrics": {
+            "cpu_add_count": 6720,
+            "cpu_first_to_last_span": 65.79692771984264,
+            "cpu_add_busy_seconds": 48.77907667006366,
+            "cpu_between_add_gap_seconds": 17.017851049778983,
+            "cpu_max_between_add_gap": 1.3408994700293988,
+            "cpu_busy_fraction": 0.741357968532521,
+            "copy_thread_wait_free_slot_seconds": 29.185679409420118,
+            "main_thread_wait_device_budget_seconds": 20.3026150832884,
+            "device_backlog_peak_bytes": 534794240,
+            "device_backlog_budget_bytes": 536870912,
+            "cpu_receiving_slot_bytes": 2147483648,
+            "scope": "CPU busy over first-to-last add; excludes initial fill/final tail. Gaps include scheduling overhead; not all pure starvation."
+          },
+          "gradient_d2h_bytes": 301487038464,
+          "main_backlog_wait": 20.3026150832884,
+          "worker_copy_wait_seconds": 38.15300162695348,
+          "worker_cpu_add_seconds": 48.77907667006366,
+          "resident_add_calls": 1232,
+          "resident_add_bytes": 137438953472,
+          "allocated_peak": 57805737472,
+          "reserved_peak": 58349060096,
+          "input_tokens": 28564,
+          "padded_tokens": 50176
+        }
+      ],
+      "validation_before": {
+        "loss": 1.0108281373977661,
+        "assistant_tokens": 224,
+        "correct": 202
+      },
+      "validation_after_768": {
+        "loss": 0.8530882596969604,
+        "assistant_tokens": 224,
+        "correct": 204
+      },
+      "parameters": 13448001792,
+      "state_bytes": 107584014336,
+      "normal_mean": 94.72506770002656,
+      "protocol": "global256/micro16/16 pipeline micros; original paired DP groups and padding",
+      "gradient_precision": "BF16 accumulation, FP32 Adam; changed reduction order"
+    }
+  ],
+  "tiny_exact": {
+    "all_exact": true,
+    "scope": "All tiny tensors at three steps; not a full-model bitwise proof",
+    "rows": [
+      {
+        "rank": 0,
+        "step": 1,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      },
+      {
+        "rank": 0,
+        "step": 2,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      },
+      {
+        "rank": 0,
+        "step": 3,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      },
+      {
+        "rank": 1,
+        "step": 1,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      },
+      {
+        "rank": 1,
+        "step": 2,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      },
+      {
+        "rank": 1,
+        "step": 3,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      }
+    ]
+  },
+  "cleanup": {
+    "no_running_processes": {
+      "0": true,
+      "3": true
+    }
+  },
+  "training_source_sha256": {
+    "train_buffered.py": "a99b7ec5e5d9dda2c9e1ae888cae481f9ec9a2710bed9bd5dd0a8ce3073cb97e",
+    "buffered_offload.py": "67ba2a86911a805f70e2b38c2f2045de9b607ec43e2d9b4a936f09bfde831fae",
+    "diagnostic_events.py": "1280b18606095f3842a3aa81b2b72b86bdfcd365ec2e43df7f6853a4f1d24d76",
+    "resident_gradients.py": "bdc1aa6d43d428c9a39ed03707eb97ba8e1d233bf3a0e067220a6e2d389098c1",
+    "community_gdn.py": "69936fad825c1be1d7c2f2cb9ad63f42b2c9849e8680ca98bffd73827f8a9bac",
+    "chunked_loss_contiguous.py": "89e2a46f93a4ced2810d28837621e03f12ce16de156518429591750f1e353418",
+    "run_sequence.py": "6ad05083cf29cd02854b761dd921c8329980be67b1ee5bac0741006689e8df87"
+  },
+  "analysis_source_sha256": "b0f2a208990cbf6d427fbad8868e2c9546bc21bd37c4e3b947dc0786ee22e35d"
+}
