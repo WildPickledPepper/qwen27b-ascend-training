@@ -1,0 +1,650 @@
+{
+  "step_seconds": [
+    130.57993292994797,
+    90.48469853005372,
+    90.82948130997829
+  ],
+  "reference_step_seconds": [
+    394.34121224982664,
+    86.0267671099864,
+    87.55783450999297
+  ],
+  "warm_seconds": 90.657089920016,
+  "reference_warm_seconds": 86.79230080998968,
+  "time_change_percent": 4.452916991436062,
+  "checks": [
+    {
+      "rank": 0,
+      "workload_exact": true,
+      "model_and_topology_exact": true,
+      "state_bytes_exact": true,
+      "validation_before_exact": true,
+      "validation_after_exact": false,
+      "grad_norms_exact": true,
+      "norm_pairs": [
+        [
+          40.5043129213961,
+          40.5043129213961
+        ],
+        [
+          40.57344083957509,
+          40.57344083957509
+        ],
+        [
+          38.772188392885916,
+          38.772188392885916
+        ]
+      ]
+    },
+    {
+      "rank": 1,
+      "workload_exact": true,
+      "model_and_topology_exact": true,
+      "state_bytes_exact": true,
+      "validation_before_exact": true,
+      "validation_after_exact": false,
+      "grad_norms_exact": true,
+      "norm_pairs": [
+        [
+          40.5043129213961,
+          40.5043129213961
+        ],
+        [
+          40.57344083957509,
+          40.57344083957509
+        ],
+        [
+          38.772188392885916,
+          38.772188392885916
+        ]
+      ]
+    }
+  ],
+  "warm_metrics": [
+    {
+      "rank": 0,
+      "physical_card": 0,
+      "metrics": {
+        "reference": {
+          "seconds": 86.79217821999919,
+          "forward_backward_and_drain_seconds": 69.60739860497415,
+          "global_norm_seconds": 1.5990689949830994,
+          "cpu_update_return_seconds": 15.585714510059915,
+          "worker_cpu_add_seconds": 51.19258043298032,
+          "offload_slot_wait": 26.039776515681297,
+          "worker_copy_wait_seconds": 10.974759002914652,
+          "tail_mean": {
+            "gradient_fp32_and_clip": 3.91998640447855,
+            "cpu_adam": 7.183793606003746,
+            "staging_reuse_wait": 0.1421234713634476,
+            "fp32_to_pinned_bf16": 2.0299400213407353,
+            "h2d_copy_call": 0.12512439221609384,
+            "event_record": 0.12210994877386838,
+            "final_event_wait": 2.7584843337535858e-05,
+            "device_sync": 0.00011326000094413757,
+            "end_barrier": 2.036870234995149
+          },
+          "allocated_peak_gib": 56.559969902038574,
+          "reserved_peak_gib": 58.990234375
+        },
+        "kernel_only": {
+          "seconds": 90.65707077004481,
+          "forward_backward_and_drain_seconds": 69.36832090502139,
+          "global_norm_seconds": 1.412038245005533,
+          "cpu_update_return_seconds": 19.876713125035167,
+          "worker_cpu_add_seconds": 43.11928301153239,
+          "offload_slot_wait": 14.366152782342397,
+          "worker_copy_wait_seconds": 19.48295338312164,
+          "tail_mean": {
+            "gradient_fp32_and_clip": 7.59012994018849,
+            "cpu_adam": 9.914248930290341,
+            "staging_reuse_wait": 0.1491741333156824,
+            "fp32_to_pinned_bf16": 1.9763398480135947,
+            "h2d_copy_call": 0.11626882548443973,
+            "event_record": 0.10576106642838567,
+            "final_event_wait": 2.9064947739243507e-05,
+            "device_sync": 0.00011208991054445505,
+            "end_barrier": 0.0010563350515440106
+          },
+          "allocated_peak_gib": 56.559969902038574,
+          "reserved_peak_gib": 58.990234375
+        }
+      }
+    },
+    {
+      "rank": 1,
+      "physical_card": 3,
+      "metrics": {
+        "reference": {
+          "seconds": 86.79229124996345,
+          "forward_backward_and_drain_seconds": 66.8581682050135,
+          "global_norm_seconds": 4.348259134916589,
+          "cpu_update_return_seconds": 15.585866034962237,
+          "worker_cpu_add_seconds": 40.78163396753371,
+          "offload_slot_wait": 21.774190218071453,
+          "worker_copy_wait_seconds": 16.08964730228763,
+          "tail_mean": {
+            "gradient_fp32_and_clip": 4.918450799072161,
+            "cpu_adam": 7.623849594616331,
+            "staging_reuse_wait": 0.134562793886289,
+            "fp32_to_pinned_bf16": 2.6668749852105975,
+            "h2d_copy_call": 0.10487362428102642,
+            "event_record": 0.10400742129422724,
+            "final_event_wait": 0.006280899979174137,
+            "device_sync": 0.00010436517186462879,
+            "end_barrier": 0.0010099000064656138
+          },
+          "allocated_peak_gib": 53.83578824996948,
+          "reserved_peak_gib": 54.341796875
+        },
+        "kernel_only": {
+          "seconds": 90.657089920016,
+          "forward_backward_and_drain_seconds": 66.3337370500667,
+          "global_norm_seconds": 4.446655630017631,
+          "cpu_update_return_seconds": 19.876700384891592,
+          "worker_cpu_add_seconds": 34.569161663297564,
+          "offload_slot_wait": 24.602559916558675,
+          "worker_copy_wait_seconds": 15.381129713146947,
+          "tail_mean": {
+            "gradient_fp32_and_clip": 4.197642703191377,
+            "cpu_adam": 9.204200629959814,
+            "staging_reuse_wait": 0.1358792840037495,
+            "fp32_to_pinned_bf16": 1.7256989936577156,
+            "h2d_copy_call": 0.09969574108254164,
+            "event_record": 0.09829124971292913,
+            "final_event_wait": 0.00661468505859375,
+            "device_sync": 9.076495189219713e-05,
+            "end_barrier": 4.3824114800663665
+          },
+          "allocated_peak_gib": 53.83578824996948,
+          "reserved_peak_gib": 54.341796875
+        }
+      }
+    }
+  ],
+  "kernel_validation": {
+    "random_finite_bf16_elements": 1048576,
+    "differing_bits": 0,
+    "sequential_16_additions_exact": true,
+    "threads_configured_inside_calling_thread": true,
+    "scope": "Finite BF16 inputs; no NaN payload equivalence claim"
+  },
+  "tiny_validation": {
+    "all_exact": true,
+    "scope": "All tiny tensors at three steps; not a full-model bitwise proof",
+    "rows": [
+      {
+        "rank": 0,
+        "step": 1,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      },
+      {
+        "rank": 0,
+        "step": 2,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      },
+      {
+        "rank": 0,
+        "step": 3,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 23,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      },
+      {
+        "rank": 1,
+        "step": 1,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      },
+      {
+        "rank": 1,
+        "step": 2,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      },
+      {
+        "rank": 1,
+        "step": 3,
+        "checks": {
+          "master": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "grad": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "m": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          },
+          "v": {
+            "exact": true,
+            "tensors": 24,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      }
+    ]
+  },
+  "rank_results": [
+    {
+      "resident_budget_gib": 4.0,
+      "loss_chunk_tokens": 512,
+      "physical_card": 0,
+      "steps": [
+        {
+          "resident_budget_gib": 4.0,
+          "loss_chunk_tokens": 512,
+          "physical_card": 0,
+          "step": 1,
+          "seconds": 130.57977129006758,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 5.1410243005957454,
+            "backward_wall": 64.9454910599161,
+            "p2p_wall": 0.018389470875263214
+          },
+          "forward_backward_and_drain_seconds": 76.68599849985912,
+          "cpu_update_return_seconds": 52.35524025000632,
+          "tail_seconds": {
+            "gradient_fp32_and_clip": 5.902511449996382,
+            "cpu_adam": 30.24862070614472,
+            "staging_reuse_wait": 0.08934321068227291,
+            "fp32_to_pinned_bf16": 2.166718431049958,
+            "h2d_copy_call": 0.11966660129837692,
+            "event_record": 0.10562144103460014,
+            "final_event_wait": 2.053985372185707e-05,
+            "device_sync": 7.661012932658195e-05,
+            "end_barrier": 13.699159600073472
+          },
+          "barrier_enter_unix": 1793188612.761472,
+          "grad_norm": 40.5043129213961,
+          "norm_device": "npu",
+          "global_norm_seconds": 1.5385355700273067,
+          "gradient_d2h_bytes": 365911384064,
+          "offload_slot_wait": 17.990151459816843,
+          "worker_copy_wait_seconds": 21.934949403395876,
+          "worker_cpu_add_seconds": 45.10014800936915,
+          "cpu_kernel_calls": 7784,
+          "resident_add_calls": 464,
+          "resident_add_bytes": 68719476736,
+          "allocated_peak": 60730805248,
+          "reserved_peak": 63340281856,
+          "input_tokens": 28426,
+          "padded_tokens": 54272
+        },
+        {
+          "resident_budget_gib": 4.0,
+          "loss_chunk_tokens": 512,
+          "physical_card": 0,
+          "step": 2,
+          "seconds": 90.4846750900615,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 4.491545720025897,
+            "backward_wall": 58.35939886025153,
+            "p2p_wall": 0.018366829957813025
+          },
+          "forward_backward_and_drain_seconds": 68.79218352003954,
+          "cpu_update_return_seconds": 20.266941169975325,
+          "tail_seconds": {
+            "gradient_fp32_and_clip": 7.728000249713659,
+            "cpu_adam": 10.146894101984799,
+            "staging_reuse_wait": 0.16296887421049178,
+            "fp32_to_pinned_bf16": 1.9829636183567345,
+            "h2d_copy_call": 0.11527067981660366,
+            "event_record": 0.10596500639803708,
+            "final_event_wait": 3.2670097425580025e-05,
+            "device_sync": 0.00013211998157203197,
+            "end_barrier": 0.0011648701038211584
+          },
+          "barrier_enter_unix": 1793188716.9634085,
+          "grad_norm": 40.57344083957509,
+          "norm_device": "npu",
+          "global_norm_seconds": 1.4255521800369024,
+          "gradient_d2h_bytes": 365911384064,
+          "offload_slot_wait": 13.96692833979614,
+          "worker_copy_wait_seconds": 19.251124711008742,
+          "worker_cpu_add_seconds": 42.841460610041395,
+          "cpu_kernel_calls": 15568,
+          "resident_add_calls": 464,
+          "resident_add_bytes": 68719476736,
+          "allocated_peak": 53011120128,
+          "reserved_peak": 63340281856,
+          "input_tokens": 28549,
+          "padded_tokens": 49152
+        },
+        {
+          "resident_budget_gib": 4.0,
+          "loss_chunk_tokens": 512,
+          "physical_card": 0,
+          "step": 3,
+          "seconds": 90.82946645002812,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 4.46073513943702,
+            "backward_wall": 59.394064240157604,
+            "p2p_wall": 0.017942960606887937
+          },
+          "forward_backward_and_drain_seconds": 69.94445829000324,
+          "cpu_update_return_seconds": 19.486485080095008,
+          "tail_seconds": {
+            "gradient_fp32_and_clip": 7.45225963066332,
+            "cpu_adam": 9.681603758595884,
+            "staging_reuse_wait": 0.13537939242087305,
+            "fp32_to_pinned_bf16": 1.969716077670455,
+            "h2d_copy_call": 0.1172669711522758,
+            "event_record": 0.10555712645873427,
+            "final_event_wait": 2.545979805290699e-05,
+            "device_sync": 9.205983951687813e-05,
+            "end_barrier": 0.0009477999992668629
+          },
+          "barrier_enter_unix": 1793188807.8150306,
+          "grad_norm": 38.772188392885916,
+          "norm_device": "npu",
+          "global_norm_seconds": 1.3985243099741638,
+          "gradient_d2h_bytes": 365911384064,
+          "offload_slot_wait": 14.765377224888653,
+          "worker_copy_wait_seconds": 19.714782055234537,
+          "worker_cpu_add_seconds": 43.39710541302338,
+          "cpu_kernel_calls": 23352,
+          "resident_add_calls": 464,
+          "resident_add_bytes": 68719476736,
+          "allocated_peak": 56885740032,
+          "reserved_peak": 63340281856,
+          "input_tokens": 28564,
+          "padded_tokens": 50176
+        }
+      ],
+      "validation_before": {
+        "loss": 1.0108281373977661,
+        "assistant_tokens": 224,
+        "correct": 202
+      },
+      "validation_after_768": {
+        "loss": 0.8530882000923157,
+        "assistant_tokens": 224,
+        "correct": 204
+      },
+      "parameters": 13447996672,
+      "state_bytes": 107583973376,
+      "normal_mean": 90.65707077004481,
+      "protocol": "global256/micro16/16 pipeline micros; original paired DP groups and padding",
+      "gradient_precision": "BF16 accumulation, FP32 Adam; changed reduction order"
+    },
+    {
+      "resident_budget_gib": 8.0,
+      "loss_chunk_tokens": 512,
+      "physical_card": 3,
+      "steps": [
+        {
+          "resident_budget_gib": 8.0,
+          "loss_chunk_tokens": 512,
+          "physical_card": 3,
+          "step": 1,
+          "seconds": 130.57993292994797,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 5.708627539919689,
+            "backward_wall": 54.8560238503851,
+            "p2p_wall": 0.03428144101053476
+          },
+          "forward_backward_and_drain_seconds": 73.37206009007059,
+          "cpu_update_return_seconds": 52.35531643987633,
+          "tail_seconds": {
+            "gradient_fp32_and_clip": 12.893906909739599,
+            "cpu_adam": 37.2932865889743,
+            "staging_reuse_wait": 0.09691922552883625,
+            "fp32_to_pinned_bf16": 1.8233316028490663,
+            "h2d_copy_call": 0.09946259087882936,
+            "event_record": 0.09971945872530341,
+            "final_event_wait": 0.020812959875911474,
+            "device_sync": 0.00010501011274755001,
+            "end_barrier": 0.0010604700073599815
+          },
+          "barrier_enter_unix": 1793188626.4596043,
+          "grad_norm": 40.5043129213961,
+          "norm_device": "npu",
+          "global_norm_seconds": 4.852558400016278,
+          "gradient_d2h_bytes": 301487038464,
+          "offload_slot_wait": 23.78320928220637,
+          "worker_copy_wait_seconds": 17.27529442938976,
+          "worker_cpu_add_seconds": 35.17474793083966,
+          "cpu_kernel_calls": 6720,
+          "resident_add_calls": 1232,
+          "resident_add_bytes": 137438953472,
+          "allocated_peak": 57805460480,
+          "reserved_peak": 58349060096,
+          "input_tokens": 28426,
+          "padded_tokens": 54272
+        },
+        {
+          "resident_budget_gib": 8.0,
+          "loss_chunk_tokens": 512,
+          "physical_card": 3,
+          "step": 2,
+          "seconds": 90.48469853005372,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 5.054542770143598,
+            "backward_wall": 49.306440860265866,
+            "p2p_wall": 0.03454598947428167
+          },
+          "forward_backward_and_drain_seconds": 65.68569270009175,
+          "cpu_update_return_seconds": 20.266941299894825,
+          "tail_seconds": {
+            "gradient_fp32_and_clip": 4.242950536077842,
+            "cpu_adam": 9.335242565954104,
+            "staging_reuse_wait": 0.13501245831139386,
+            "fp32_to_pinned_bf16": 1.7201643579173833,
+            "h2d_copy_call": 0.09981507109478116,
+            "event_record": 0.09851727983914316,
+            "final_event_wait": 0.006787670077756047,
+            "device_sync": 9.276997298002243e-05,
+            "end_barrier": 4.602517770137638
+          },
+          "barrier_enter_unix": 1793188712.3619108,
+          "grad_norm": 40.57344083957509,
+          "norm_device": "npu",
+          "global_norm_seconds": 4.532068050000817,
+          "gradient_d2h_bytes": 301487038464,
+          "offload_slot_wait": 24.38530320674181,
+          "worker_copy_wait_seconds": 15.177796767326072,
+          "worker_cpu_add_seconds": 34.35822427459061,
+          "cpu_kernel_calls": 13440,
+          "resident_add_calls": 1232,
+          "resident_add_bytes": 137438953472,
+          "allocated_peak": 53907962880,
+          "reserved_peak": 58349060096,
+          "input_tokens": 28549,
+          "padded_tokens": 49152
+        },
+        {
+          "resident_budget_gib": 8.0,
+          "loss_chunk_tokens": 512,
+          "physical_card": 3,
+          "step": 3,
+          "seconds": 90.82948130997829,
+          "profiled": false,
+          "phase": {
+            "forward_wall": 5.120749830501154,
+            "backward_wall": 50.0503911501728,
+            "p2p_wall": 0.03432323946617544
+          },
+          "forward_backward_and_drain_seconds": 66.98178140004165,
+          "cpu_update_return_seconds": 19.48645946988836,
+          "tail_seconds": {
+            "gradient_fp32_and_clip": 4.152334870304912,
+            "cpu_adam": 9.073158693965524,
+            "staging_reuse_wait": 0.13674610969610512,
+            "fp32_to_pinned_bf16": 1.731233629398048,
+            "h2d_copy_call": 0.09957641107030213,
+            "event_record": 0.0980652195867151,
+            "final_event_wait": 0.006441700039431453,
+            "device_sync": 8.875993080437183e-05,
+            "end_barrier": 4.162305189995095
+          },
+          "barrier_enter_unix": 1793188803.6535888,
+          "grad_norm": 38.772188392885916,
+          "norm_device": "npu",
+          "global_norm_seconds": 4.361243210034445,
+          "gradient_d2h_bytes": 301487038464,
+          "offload_slot_wait": 24.81981662637554,
+          "worker_copy_wait_seconds": 15.584462658967823,
+          "worker_cpu_add_seconds": 34.780099052004516,
+          "cpu_kernel_calls": 20160,
+          "resident_add_calls": 1232,
+          "resident_add_bytes": 137438953472,
+          "allocated_peak": 57805737472,
+          "reserved_peak": 58349060096,
+          "input_tokens": 28564,
+          "padded_tokens": 50176
+        }
+      ],
+      "validation_before": {
+        "loss": 1.0108281373977661,
+        "assistant_tokens": 224,
+        "correct": 202
+      },
+      "validation_after_768": {
+        "loss": 0.8530882000923157,
+        "assistant_tokens": 224,
+        "correct": 204
+      },
+      "parameters": 13448001792,
+      "state_bytes": 107584014336,
+      "normal_mean": 90.657089920016,
+      "protocol": "global256/micro16/16 pipeline micros; original paired DP groups and padding",
+      "gradient_precision": "BF16 accumulation, FP32 Adam; changed reduction order"
+    }
+  ],
+  "slots_per_rank": 16,
+  "slot_bytes": 134217728,
+  "kernel_calls_are_cumulative": true,
+  "source_sha256": {
+    "run_sequence.py": "0ab458f56c80035dee8355b8b7c2ed5284179c19087116643f230e11ebc32e44",
+    "train_k1.py": "1f5b8d22597789b6095d2ed88ed254fd113b810c3f678c18fe4d12403edb2e9c",
+    "slot_kernel.py": "89dd055c0ca884e0cb24dd89b57dce5992330bd69dba8894ab4d29582bcedcf4",
+    "cpu_fused_accum.c": "09774af2c1ba3aab72e3c68626e858b49ff00247d728669baf66bce33d8db106",
+    "resident_gradients.py": "bdc1aa6d43d428c9a39ed03707eb97ba8e1d233bf3a0e067220a6e2d389098c1",
+    "chunked_loss_contiguous.py": "89e2a46f93a4ced2810d28837621e03f12ce16de156518429591750f1e353418",
+    "community_gdn.py": "69936fad825c1be1d7c2f2cb9ad63f42b2c9849e8680ca98bffd73827f8a9bac"
+  },
+  "cleanup": {
+    "physical_card_no_processes": {
+      "0": true,
+      "3": true
+    }
+  },
+  "limits": [
+    "Sequential candidate compared with preceding same-card replay, not an interleaved A/B; load may change.",
+    "Two timed updates only; first lr0 warmup excluded.",
+    "Tiny all-state equality and full-model norms/short validation are not a full-model state or long-term quality proof.",
+    "Host copy wait contains device dependency wait; not native DMA duration."
+  ]
+}
