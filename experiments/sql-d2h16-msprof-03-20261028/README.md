@@ -38,6 +38,8 @@ Ascend PyTorch Profiler CPU+NPU、Level2、AiCoreNone、record_shapes/profile_me
 
 通信和计算覆盖可能有少量重叠，数字不能直接相加作独立分解。这里已能清楚区分：复制调用提前下发了，但源梯度还不可用；并非CPU忘记提交，也不是DMA持续传1.34秒。
 
+补充：[Insight实际视图、CPU/D2H重叠与16槽全满证据](insight-overlap.md)。以下全槽空结论针对micro交界长等待，不能推广到整步；其他阶段确实存在15槽就绪+1槽CPU处理中，复制线程因无空槽而等待。
+
 ## 为什么所有槽都空，且反复发生
 
 一轮16个micro，3号恰好15次>100ms长断粮，序号350、699、1048…5236，相差349，全部等待每个新micro的`model.norm.weight`；15次直接快照均16空槽。CPU已处理完上一micro需要卸载的梯度，但下一micro仍处于通信/前向/输出头反向，下一份梯度还没就绪。驻留在NPU的梯度也不会逐micro交给CPU，所以梯度供应本来是分段的。

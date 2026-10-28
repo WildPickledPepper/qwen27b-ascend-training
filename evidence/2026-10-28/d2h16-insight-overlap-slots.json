@@ -1,0 +1,59 @@
+{
+  "statistics": [
+    {
+      "physical_card": 0,
+      "cpu_add_seconds": 54.57994741760194,
+      "dma_active_seconds": 23.802835712000178,
+      "overlap_seconds": 23.413939024155724,
+      "host_clock_offset_mad_us": 15.104,
+      "dma_bytes": 365911384064,
+      "cpu_chunks": 7784,
+      "dma_fragments": 9701,
+      "all16_occupied_seconds": 38.65613494790159,
+      "all16_occupied_episodes": 4788,
+      "copier_wait_free_slot_seconds": 31.630534229800105,
+      "copier_wait_over1ms_seconds": 31.43837639177218,
+      "longest_full_example": {
+        "start_seconds": 20.950476410100237,
+        "end_seconds": 20.978338920045644,
+        "occupied_slots": 16,
+        "ready_slots": 15,
+        "processing_slots": 1,
+        "valid_payload_mib": 731.0258178710938
+      }
+    },
+    {
+      "physical_card": 3,
+      "cpu_add_seconds": 48.77907667006366,
+      "dma_active_seconds": 24.611814143999794,
+      "overlap_seconds": 23.57579761013728,
+      "host_clock_offset_mad_us": 15.872,
+      "dma_bytes": 301487038464,
+      "cpu_chunks": 6720,
+      "dma_fragments": 8277,
+      "all16_occupied_seconds": 33.666043273638934,
+      "all16_occupied_episodes": 3633,
+      "copier_wait_free_slot_seconds": 29.185679409420118,
+      "copier_wait_over1ms_seconds": 29.032028382876888,
+      "longest_full_example": {
+        "start_seconds": 38.86988340015523,
+        "end_seconds": 38.912358389934525,
+        "occupied_slots": 16,
+        "ready_slots": 15,
+        "processing_slots": 1,
+        "valid_payload_mib": 689.0355834960938
+      }
+    }
+  ],
+  "sources": {
+    "cpu": "per-chunk measured host spans (not native profiler CPU worker events)",
+    "dma": "unmodified native msprof hardware TASK spans"
+  },
+  "limits": [
+    "Derived diagnostic trace, not complete original model trace.",
+    "Clock alignment has the reported median absolute deviation; overlap is approximate.",
+    "CPU means BF16 gradient addition only, excludes CPUAdam.",
+    "Durations overlap and must not be added."
+  ],
+  "fixed_slots_per_rank": 16
+}
