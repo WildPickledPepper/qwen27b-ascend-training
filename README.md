@@ -6,7 +6,7 @@
 |---|---|---|---|
 | SQL 短跑默认 | [sql-batch-tuning-20261025](experiments/sql-batch-tuning-20261025/README.md) | global128、每卡 micro16、累积4、max512；286.37 秒达到短验证 loss≤0.86 | 已采用 |
 | 固定 256 条最快 | [sql-pipeline-overlap-20261026](experiments/sql-pipeline-overlap-20261026/README.md) | 81.2160 秒/256 条；每卡 4 GiB 保序 BF16 梯度驻留、48 层重算 | 已采用 |
-| CPU 梯度累加内核 | [sql-cpu-accum-20261028](experiments/sql-cpu-accum-20261028/README.md) | 同窗口 133.82→121.09 秒（−9.5%），CPU 累加 −33%，验证与梯度范数逐位一致 | 已采用候选（`--cpu-accum k1`） |
+| CPU 梯度累加内核 | [sql-cpu-accum-20261028](experiments/sql-cpu-accum-20261028/README.md) | 默认配置下 93.27→94.29 秒（无收益）；CPU 累加 45.6→29.5 秒但不在关键路径 | 不采用（`--cpu-accum k1` 可选） |
 | BF16 混合精度口径 | — | BF16 计算 + CPU FP32 master/m/v，m/v 不压缩不量化 | 约定 |
 | 最近一轮：16 槽 D2H 归因 | [sql-d2h16-msprof-03-20261028](experiments/sql-d2h16-msprof-03-20261028/README.md) | 15 次长等共 12.498 秒等 `model.norm.weight`，实际 DMA 约 38.66 微秒 | 诊断完成，默认未改 |
 | chunked loss 省显存 | [sql-chunked-loss-device-20261027](experiments/sql-chunked-loss-device-20261027/README.md) | 每卡省 4.21871 GiB，整步慢 2.61% | 已否决 |

@@ -43,6 +43,6 @@
 | SQL 短跑默认（global128） | `experiments/sql-batch-tuning-20261025/run_selected.py` | 每卡 micro16、累积4、max512；286.37 秒达到短验证 loss≤0.86 |
 | 固定 256 条最快 | `experiments/sql-pipeline-overlap-20261026/run_selected.py` | 81.2160 秒/256 条；每卡 4 GiB 保序 BF16 梯度驻留、48 层重算 |
 | 最近一轮诊断（未改默认） | `experiments/sql-d2h16-msprof-03-20261028/` | 16 槽固定配置下 15 次长等共 12.498 秒，实际 DMA 仅约 38.66 微秒 |
-| CPU 累加候选（未替换默认） | `experiments/sql-cpu-accum-20261028/` | 同窗口 121.09 秒 vs 对照 133.82 秒（−9.5%），CPU 累加 −33%，逐位一致；`--cpu-accum k1` |
+| CPU 累加内核（不采用） | `experiments/sql-cpu-accum-20261028/` | 默认配置复现 93.27→94.29 秒（无收益）；CPU 累加 −35% 但不在关键路径 |
 
 入口或数字变化时，先改这张表，再改 README 状态表。环境与依赖见 [environment.md](environment.md)。
