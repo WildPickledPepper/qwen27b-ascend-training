@@ -54,3 +54,8 @@ tiny三步全量grad/master/m/v逐位一致；27B三步范数、输入与填充t
 [CANN异步内存复制说明](https://www.hiascend.com/doc_center/source/zh/CANNCommunityEdition/910/API/runtimeapi/aclcppdevg_03_0106.html)说明锁页内存支持异步下发；[AscendCL官方基本概念](https://www.hiascend.com/document/detail/zh/canncommercial/700/inferapplicationdev/aclcppdevg/aclcppdevg_0003.html)说明Stream/Event管理执行与同步。不能因支持异步便声称一定实现重叠或没有带宽竞争。
 
 本轮结束，不启动新的容量/线程/流组合测试，原速度入口保持。
+
+
+## 2026-10-28后续隔离分析
+
+[固定内存CPU原生加法与D2H事件对照](../sql-buffer-isolation-20261028/README.md)验证了实际搬运并发时CPU add变慢，队列/event空跑与轻量记录不足以解释该受控实验主要增量；仍不等于历史5.52秒全部归因或硬件带宽根因已定。未重新训练模型。

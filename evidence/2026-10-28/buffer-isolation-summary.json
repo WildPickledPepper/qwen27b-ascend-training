@@ -1,0 +1,50 @@
+{
+  "client_date": "2026-10-28",
+  "scope": "Fixed allocations, CPU96:119/NUMA preferred4, physical3, BF16128MiB x128 blocks=16GiB; no model training",
+  "means": {
+    "cpu32": {
+      "cpu_add_outer_wall_seconds": 1.4391907453536987,
+      "cpu_add_aten_wall_seconds": 1.43328199,
+      "outer_minus_aten_seconds": 0.005908755353698725,
+      "ready_wait_seconds": 0.00029485998675227165,
+      "process_cpu_seconds": 31.968542000000028
+    },
+    "event32": {
+      "cpu_add_outer_wall_seconds": 1.4652080060914159,
+      "cpu_add_aten_wall_seconds": 1.4588666899999998,
+      "outer_minus_aten_seconds": 0.006341316091416083,
+      "ready_wait_seconds": 0.0010283548617735505,
+      "process_cpu_seconds": 32.43097500000002
+    },
+    "copy32": {
+      "cpu_add_outer_wall_seconds": 2.197642134036869,
+      "cpu_add_aten_wall_seconds": 2.191904525000001,
+      "outer_minus_aten_seconds": 0.005737609036868152,
+      "ready_wait_seconds": 0.008290295023471117,
+      "process_cpu_seconds": 39.25300100000001
+    },
+    "copy32trace": {
+      "cpu_add_outer_wall_seconds": 2.19575285341125,
+      "cpu_add_aten_wall_seconds": 2.1899338500000014,
+      "outer_minus_aten_seconds": 0.0058190034112484135,
+      "ready_wait_seconds": 0.007672830019146204,
+      "process_cpu_seconds": 39.06169599999998
+    }
+  },
+  "copy_vs_cpu_outer_change_percent": 52.69985171401108,
+  "cleanup": {
+    "state": "complete",
+    "returncode": 0,
+    "physical3_no_processes": true,
+    "finished": 1793150475.008141
+  },
+  "claims": [
+    "Concurrent real D2H workload reproducibly slows CPU aten::add_ relative to event-only and no-copy on same buffers.",
+    "Queue/event-only and light host logging are small in this controlled replay.",
+    "No claim that all historical5.52s extra add time is explained; no hardware PMU breakdown of memory bandwidth/NUMA/runtime."
+  ],
+  "source_lf_sha256": {
+    "benchmark.py": "c07a8baecc80ff480468428ae28e93eae4a92c006525e5cfa0dabeab3f8e517f",
+    "benchmark_event_control.py": "25bc41d7e462cad5f1aac561a014e3a8a7f11b13d74e22917e8268f97d6b2848"
+  }
+}
