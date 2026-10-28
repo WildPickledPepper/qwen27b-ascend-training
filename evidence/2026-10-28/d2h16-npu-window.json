@@ -1,0 +1,280 @@
+{
+  "selected_cpu_wait": {
+    "sequence": 3142,
+    "param": 424,
+    "param_name": "model.norm.weight",
+    "param_shape": [
+      5120
+    ],
+    "element_offset": 0,
+    "bytes": 10240,
+    "device_dma_ms": 0.0029,
+    "native_fragment_count": 1,
+    "native_dma_active_sum_ms": 0.0029,
+    "native_fragment_gap_ms": 0.0,
+    "event_bounded_copy_ms": 0.00390625,
+    "gib_per_second": 3.2885321255387936,
+    "host_copy_call_ms": 0.03198,
+    "runtime_api": "aclrtMemcpyAsyncWithCondition",
+    "runtime_api_start_seconds": 40.246296064,
+    "runtime_api_end_seconds": 40.246328064,
+    "producer_hook_seconds": 40.24502904014662,
+    "producer_admit_seconds": 40.24541826010682,
+    "source_ready_seconds": 40.676718336,
+    "native_copy_start_seconds": 40.676718848,
+    "native_copy_end_seconds": 40.676721664,
+    "cpu_get_wait_start_seconds": 39.886571020120755,
+    "cpu_get_return_seconds": 40.677151810145006,
+    "cpu_get_wait_ms": 790.580736,
+    "clock_source_uncertainty_ms": 0.05,
+    "snapshot": {
+      "host": 39.8865862400271,
+      "counts": {
+        "free": 16
+      },
+      "ready_queue_size": 0,
+      "device_backlog_bytes": 0,
+      "slots": [
+        {
+          "state": "free"
+        },
+        {
+          "state": "free"
+        },
+        {
+          "state": "free"
+        },
+        {
+          "state": "free"
+        },
+        {
+          "state": "free"
+        },
+        {
+          "state": "free"
+        },
+        {
+          "state": "free"
+        },
+        {
+          "state": "free"
+        },
+        {
+          "state": "free"
+        },
+        {
+          "state": "free"
+        },
+        {
+          "state": "free"
+        },
+        {
+          "state": "free"
+        },
+        {
+          "state": "free"
+        },
+        {
+          "state": "free"
+        },
+        {
+          "state": "free"
+        },
+        {
+          "state": "free"
+        }
+      ]
+    },
+    "wait_split_ms": {
+      "before_source_ready": 790.147328,
+      "source_ready_until_DMA": 0.000512,
+      "actual_DMA": 0.0029,
+      "DMA_done_until_CPU_get": 0.43008
+    },
+    "native_connection_id": 1256211
+  },
+  "device_windows": [
+    {
+      "physical_card": 0,
+      "window_seconds": [
+        39.886571020120755,
+        40.677151810145006
+      ],
+      "window_ms": 790.5807900242507,
+      "compute_union_ms": 400.82539802420314,
+      "compute_coverage": 0.5070011858141759,
+      "compute_tasks": 1873,
+      "communication": [],
+      "host_scopes": [
+        {
+          "name": "pipeline/stage0/backward",
+          "start_seconds": 39.547363072,
+          "end_seconds": 43.340984064
+        }
+      ],
+      "main_backlog_wait_ms": 134.35456925071776,
+      "compute_gaps_covered_by_backlog_wait_ms": 83.32420431418086,
+      "longest_compute_gaps": [
+        {
+          "start_seconds": 40.49670912,
+          "end_seconds": 40.534445568,
+          "ms": 37.736448000003975,
+          "backlog_wait_overlap_ms": 35.49418015756345
+        },
+        {
+          "start_seconds": 40.271778816,
+          "end_seconds": 40.292706304,
+          "ms": 20.927487999998107,
+          "backlog_wait_overlap_ms": 19.524813986940615
+        },
+        {
+          "start_seconds": 40.639141888,
+          "end_seconds": 40.65408,
+          "ms": 14.938112000002945,
+          "backlog_wait_overlap_ms": 13.416902054174784
+        },
+        {
+          "start_seconds": 40.597778176,
+          "end_seconds": 40.611027456,
+          "ms": 13.249280000003694,
+          "backlog_wait_overlap_ms": 0
+        },
+        {
+          "start_seconds": 40.174941184,
+          "end_seconds": 40.187156736,
+          "ms": 12.215552000000685,
+          "backlog_wait_overlap_ms": 0
+        },
+        {
+          "start_seconds": 40.65412096,
+          "end_seconds": 40.666133504,
+          "ms": 12.012544000000958,
+          "backlog_wait_overlap_ms": 0
+        },
+        {
+          "start_seconds": 40.484655872,
+          "end_seconds": 40.492754176,
+          "ms": 8.098304000000667,
+          "backlog_wait_overlap_ms": 6.68406811208655
+        },
+        {
+          "start_seconds": 40.318287616,
+          "end_seconds": 40.326368,
+          "ms": 8.080384000002994,
+          "backlog_wait_overlap_ms": 6.290234056812949
+        },
+        {
+          "start_seconds": 40.333312512,
+          "end_seconds": 40.340743168,
+          "ms": 7.430656000003921,
+          "backlog_wait_overlap_ms": 0
+        },
+        {
+          "start_seconds": 39.966588672,
+          "end_seconds": 39.972100864,
+          "ms": 5.51219199999764,
+          "backlog_wait_overlap_ms": 0
+        }
+      ],
+      "max_compute_gap_ms": 37.736448000003975
+    },
+    {
+      "physical_card": 3,
+      "window_seconds": [
+        39.886571020120755,
+        40.677151810145006
+      ],
+      "window_ms": 790.5807900242507,
+      "compute_union_ms": 789.0074140242831,
+      "compute_coverage": 0.9980098479246892,
+      "compute_tasks": 3412,
+      "communication": [],
+      "host_scopes": [
+        {
+          "name": "pipeline/stage1/forward",
+          "start_seconds": 39.8745792,
+          "end_seconds": 40.229909248
+        },
+        {
+          "name": "pipeline/stage1/backward",
+          "start_seconds": 40.22998144,
+          "end_seconds": 43.900576768
+        }
+      ],
+      "main_backlog_wait_ms": 420.1429800596088,
+      "compute_gaps_covered_by_backlog_wait_ms": 0.18355200000286231,
+      "longest_compute_gaps": [
+        {
+          "start_seconds": 39.888449024,
+          "end_seconds": 39.888798976,
+          "ms": 0.3499519999934364,
+          "backlog_wait_overlap_ms": 0
+        },
+        {
+          "start_seconds": 39.888988416,
+          "end_seconds": 39.889183488,
+          "ms": 0.19507200000390412,
+          "backlog_wait_overlap_ms": 0
+        },
+        {
+          "start_seconds": 39.8880256,
+          "end_seconds": 39.888219904,
+          "ms": 0.19430400000430836,
+          "backlog_wait_overlap_ms": 0
+        },
+        {
+          "start_seconds": 39.88822784,
+          "end_seconds": 39.888363776,
+          "ms": 0.13593599999950357,
+          "backlog_wait_overlap_ms": 0
+        },
+        {
+          "start_seconds": 39.888377856,
+          "end_seconds": 39.888434432,
+          "ms": 0.0565759999986426,
+          "backlog_wait_overlap_ms": 0
+        },
+        {
+          "start_seconds": 39.888941312,
+          "end_seconds": 39.88896768,
+          "ms": 0.026368000000331904,
+          "backlog_wait_overlap_ms": 0
+        },
+        {
+          "start_seconds": 40.055042816,
+          "end_seconds": 40.055044352,
+          "ms": 0.0015360000062969448,
+          "backlog_wait_overlap_ms": 0
+        },
+        {
+          "start_seconds": 40.09496064,
+          "end_seconds": 40.094962176,
+          "ms": 0.0015360000062969448,
+          "backlog_wait_overlap_ms": 0
+        },
+        {
+          "start_seconds": 40.210796544,
+          "end_seconds": 40.21079808,
+          "ms": 0.0015360000062969448,
+          "backlog_wait_overlap_ms": 0
+        },
+        {
+          "start_seconds": 40.2448832,
+          "end_seconds": 40.244884736,
+          "ms": 0.0015360000062969448,
+          "backlog_wait_overlap_ms": 0
+        }
+      ],
+      "max_compute_gap_ms": 0.3499519999934364
+    }
+  ],
+  "queries": {
+    "compute": "WITH compute_view AS (\n    SELECT c.globalTaskId, ROUND(t.endNs - t.startNs) AS duration_ns, n.value AS op_name, type_str.value AS op_type\n    FROM COMPUTE_TASK_INFO c\n    LEFT JOIN TASK t ON t.globalTaskId = c.globalTaskId\n    LEFT JOIN STRING_IDS n ON n.id = c.name\n    LEFT JOIN STRING_IDS type_str ON type_str.id = c.opType\n)"
+  },
+  "limits": [
+    "Only selected screenshot window; no whole-step conclusion.",
+    "Host scopes show CPU submission phases, not exact device forward/backward duration.",
+    "Compute coverage denotes task presence, not full hardware utilization.",
+    "Cross-rank step-relative clocks use their respective measured step origins."
+  ]
+}

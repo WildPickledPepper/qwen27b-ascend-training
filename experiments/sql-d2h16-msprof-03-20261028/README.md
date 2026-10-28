@@ -38,7 +38,7 @@ Ascend PyTorch Profiler CPU+NPU、Level2、AiCoreNone、record_shapes/profile_me
 
 通信和计算覆盖可能有少量重叠，数字不能直接相加作独立分解。这里已能清楚区分：复制调用提前下发了，但源梯度还不可用；并非CPU忘记提交，也不是DMA持续传1.34秒。
 
-补充：[Insight实际视图、CPU/D2H重叠与16槽全满证据](insight-overlap.md)。以下全槽空结论针对micro交界长等待，不能推广到整步；其他阶段确实存在15槽就绪+1槽CPU处理中，复制线程因无空槽而等待。
+补充：[Insight实际视图、CPU/D2H重叠与16槽全满证据](insight-overlap.md)；[截图所选窗口NPU连续性](npu-selected-window.md)：3号NPU计算覆盖99.8%，0号50.7%并有部分主线程卸载背压重叠停顿。以下全槽空结论针对micro交界长等待，不能推广到整步；其他阶段确实存在15槽就绪+1槽CPU处理中，复制线程因无空槽而等待。
 
 ## 为什么所有槽都空，且反复发生
 
