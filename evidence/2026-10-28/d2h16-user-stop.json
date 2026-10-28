@@ -1,0 +1,9 @@
+{
+  "state": "stopped_by_user",
+  "physical_cards_no_processes": {
+    "3": true,
+    "4": true
+  },
+  "checked_unix": 1793151762.9805856,
+  "reason": "User explicitly requests release for another user; no further collection or training"
+}
