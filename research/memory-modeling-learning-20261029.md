@@ -55,7 +55,7 @@
 | 计算权重FP32→BF16 | 整模型计算权重100.20→50.10GiB；每个适用元素4→2字节 | 张量大小的确定计算；激活、梯度和主权重位置要另算，不能推导总峰值也减半 |
 | FP32主权重、m、v放CPU | 这三项合计约300.59GiB放在CPU；当前NPU没有它们的完整常驻副本 | 位置和字节账；我们没有跑一个“300.59GiB全驻留两张NPU”的可行对照 |
 | 两段PP划分计算权重 | 整模型50.10GiB BF16计算权重分布到两段，每段约25.05GiB | 静态分工；整步峰值还要加入激活、梯度和通信 |
-| 48/64层激活重计算 | 层内长期保存结果减少，反向新增重算临时结果 | 已追踪当前配置的存活集合；缺少其他条件完全相同的“关闭重算”前后峰值，暂不给节省GiB数 |
+| 激活重计算 | 历史同配置48层→64层，最大单卡allocated46.38→35.77GiB，少10.61GiB；全关时约60GiB已OOM | 10月25日ZeRO-3、global32/micro16的历史实测，详见第4节；后续PP配置应另算 |
 | 调整micro batch | 当前micro16、序列256时，一份BF16隐藏状态40MiB、FFN中间结果136MiB | 当前形状已知；总峰值需重跑对应生命周期，不能按micro比例直接缩放整张卡 |
 | 显存建模本身 | 运行算法及张量不变时，占用不变 | 模型用于预测和选择优化，不是直接省显存的执行手段 |
 
@@ -297,7 +297,19 @@ B×S×(4I+H)×d
 
 关闭checkpoint的层保留更多前向结果，节省反向重算时间。
 
-**本方法的显存变化——激活重计算。** 未开启的层要把反向依赖的更多内部结果留到反向；开启后，这部分长期保存量减少，但边界输入仍保存，反向重算时又短暂增加临时结果。我们当前前段实测峰值里，重算中间结果为1.568GiB、边界/层间/流水线暂存合计约1.992GiB，这两项仍占显存。当前没有相同其他条件下“0层重算→48层重算”的配对峰值，节省的总GiB尚未测定，不能用1.568GiB代替这个差值。
+**本方法的显存变化——先看已有的真实前后对照。** 10月25日已经测过0层、48层、64层重计算。它们采用Qwen3.5-27B、双卡ZeRO-3、BF16计算、CPU FP32主权重/m/v、global32、每卡micro16、相同32条短样本和padding；48/64两组的ZeRO配置、绑核、输入哈希及长度已重新核对一致。
+
+| 重计算设置 | rank0 allocated | rank1 allocated | 两卡中较大的单卡峰值 | 结果 |
+|---|---:|---:|---:|---|
+| 0层：完全关闭 | 失败时已约60.01GiB | 失败时已约59.99GiB | 已接近60GiB | OOM，未跑完；不是完整峰值 |
+| 48层开启、16层关闭 | 46.2696GiB | 46.3750GiB | 46.3750GiB | 完成 |
+| 64层全部开启 | 35.7699GiB | 35.7699GiB | 35.7699GiB | 完成 |
+
+**这组已完成对照直接说明：从48层增加到64层重算，最大单卡峰值少了10.6051GiB，约10.61GiB。** 逐卡分别少10.4997GiB、10.6051GiB。
+
+完全不重算的组尚未跑完就接近60GiB并OOM；48层重算的成功峰值是46.38GiB，相对失败时已经达到的占用低约13.6GiB。不开组的完整峰值没跑出来，因此这不是精确的“不开→开48层”完整峰值差。
+
+这组数字来自旧短样本ZeRO-3训练，不是后来的global256两段PP。后续PP里约1.568GiB的“当前重算结果”和约1.992GiB的“边界/层间/流水线暂存”，描述的是开启重算后仍然保留的内容；它们不再用来代替上面实际测得的前后差值。当前PP在0层重算时的完整峰值仍没有同配置对照。
 
 ### 4.2 建模时要同时保留什么
 
@@ -311,11 +323,15 @@ B×S×(4I+H)×d
 
 旧前半模型峰值里，当前重算中间结果约1.568GiB。这是某时刻一项分配，不是“48层重算相对其他比例恰好省1.5GiB”的实测结论。
 
+因此，回答“重计算实际省多少”时先给第4.1节的历史对照：48→64层，46.38→35.77GiB，少10.61GiB；这一段1.568GiB只用于解释当前PP峰值的组成。
+
 也不能把重算额外耗时统一定为30%。我们需要按实际重算的层、算子和early-stop路径计算，再用计时验证。
 
 ### 4.3 为什么不是全部64层都重算
 
 全部重算通常进一步减少保存量，却增加执行工作。我们用48/64作为已验证的容量与速度折中，判断依据是完整模型能否放下及整步耗时。
+
+历史同一组记录中，64层全部重算43.62秒/更新，48层重算42.46秒/更新。我们当时少做16层的重算，记录上快约1.16秒，同时最大单卡峰值35.77→46.38GiB，多用约10.61GiB。这才是这次取舍实际对应的“显存换时间”。后来的PP激活存活方式不同，不能直接照搬这一差值。
 
 ---
 
@@ -869,5 +885,7 @@ chunked prefill属于推理调度，可降低一次prefill的部分激活/工作
 - [历史78秒配置复现](https://github.com/WildPickledPepper/qwen27b-ascend-training/blob/main/experiments/sql-78s-replay-20261028/README.md)
 - [CPU大stash复用问题检查](https://github.com/WildPickledPepper/qwen27b-ascend-training/blob/main/experiments/sql-cpu-accum-review-20261028/README.md)
 - [原16槽只换k1实测](https://github.com/WildPickledPepper/qwen27b-ascend-training/blob/main/experiments/sql-k1-fixed16-20261028/README.md)
+- [重计算0/48/64层历史试验](https://github.com/WildPickledPepper/qwen27b-ascend-training/blob/main/experiments/dual-throughput-20261025/README.md)
+- [历史重算配置、数据与显存复核](https://github.com/WildPickledPepper/qwen27b-ascend-training/blob/main/evidence/2026-10-29/checkpoint-memory-history-review.json)
 - [历史32槽及独立D2H组合试验](https://github.com/WildPickledPepper/qwen27b-ascend-training/blob/main/experiments/sql-ready-buffer-20261027/README.md)
 - [分块loss后扩后段驻留的显存变化](https://github.com/WildPickledPepper/qwen27b-ascend-training/blob/main/experiments/sql-chunked-loss-cache-20261027/README.md)

@@ -1,0 +1,79 @@
+{
+  "source": "evidence/2026-10-25/dual-throughput-results.json",
+  "source_sha256": "d3db18a2e271c7a38fe4034cc1d8a11f6d9424c13ef8cf0e64aafd9e4663e121",
+  "protocol": {
+    "model_parameters": 26895998464,
+    "parallelism": "DP2 + ZeRO-3 CPU FP32 optimizer offload",
+    "physical_cards": [
+      2,
+      3
+    ],
+    "global_batch": 32,
+    "micro_batch_per_rank": 16,
+    "accumulation": 1,
+    "sample_length_range": [
+      28,
+      125
+    ],
+    "padded_positions_per_update": 3984
+  },
+  "comparison_checks": {
+    "parameters_equal": true,
+    "deepspeed_config_equal": true,
+    "global_batch_equal": true,
+    "micro_batch_equal": true,
+    "initial_validation_equal": true,
+    "training_hashes_equal": true,
+    "training_lengths_equal": true,
+    "validation_hashes_equal": true,
+    "affinity_equal": true,
+    "task_queue_enable_equal": true,
+    "accumulation_equal": true,
+    "padding_equal": true
+  },
+  "all64": {
+    "checkpoint_layers": 64,
+    "case": "mb16-g32-v2",
+    "peak_allocated_gib_by_rank": [
+      35.76993799209595,
+      35.76993799209595
+    ],
+    "warm_seconds": 43.61741251987405
+  },
+  "selective48": {
+    "checkpoint_layers": 48,
+    "case": "checkpoint-selective",
+    "peak_allocated_gib_by_rank": [
+      46.26963806152344,
+      46.375011920928955
+    ],
+    "warm_seconds": 42.4595535149565
+  },
+  "off0": {
+    "completed": false,
+    "outcome": "OOM",
+    "recorded_enabled_layers_by_rank": [
+      0,
+      0
+    ],
+    "allocated_gib_when_oom_by_rank": [
+      60.01,
+      59.99
+    ],
+    "reserved_gib_when_oom_by_rank": [
+      60.12,
+      60.11
+    ],
+    "failed_request_mib_by_rank": [
+      22,
+      16
+    ],
+    "scope": "Rounded values read from original checkpoint-off log; not a completed iteration peak."
+  },
+  "additional_16_checkpoint_layers_reduce_max_card_peak_gib": 10.605073928833008,
+  "limits": [
+    "Historical short-sample ZeRO-3 configuration; do not transplant the GiB savings to the later PP/global256 setup.",
+    "Off0 failed before completion; complete off0 peak and exact off0-vs48 full-iteration savings are unavailable.",
+    "Peak allocated metric, not reserved or total physical HBM."
+  ]
+}
